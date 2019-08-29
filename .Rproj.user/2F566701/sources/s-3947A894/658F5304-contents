@@ -2,10 +2,9 @@ bookdown::gitbook:
   css: style.css
   config:
     toc:
+      collapse: section
       before: |
-        <li><a href="./">A Minimal Book Example</a></li>
-      after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+        <li><a href="./">Наука о данных для ЦГИ в R</a></li>
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
@@ -13,4 +12,7 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
+  fig_width: 7
+  fig_height: 4
+  highlight: tango
 bookdown::epub_book: default

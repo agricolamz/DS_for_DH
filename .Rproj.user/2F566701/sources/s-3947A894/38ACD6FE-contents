@@ -1,4 +1,4 @@
-book_filename: "Наука о данных для цифровых гуманитарных исследований"
+book_filename: "DS_for_DH"
 delete_merged_file: true
 language:
   ui:
