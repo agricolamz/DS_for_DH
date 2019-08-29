@@ -3,4 +3,5 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: "Глава "
+delete_merged_file: true
 output_dir: "docs"
