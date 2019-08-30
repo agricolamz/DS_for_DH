@@ -6,6 +6,10 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Наука о данных для ЦГИ в R</a></li>
     download: ["pdf", "epub"]
+    sharing: no
+    edit:
+      link: https://github.com/agricolamz/DS_for_DH/edit/master/%s
+      text: "Edit"
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
