@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="section-2.html"/>
+<link rel="next" href="section-3.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -129,14 +129,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Наука о данных в R для ЦГИ</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Введение</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#r--rstudio"><i class="fa fa-check"></i><b>1.1</b> Установка R и RStudio</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#section-1"><i class="fa fa-check"></i><b>1.2</b> Полезные ссылки</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Вступление</a></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Введение в R</a><ul>
-<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#rstudio"><i class="fa fa-check"></i><b>2.1</b> Rstudio</a></li>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#section-1"><i class="fa fa-check"></i><b>2.1</b> Наука о данных</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r--rstudio"><i class="fa fa-check"></i><b>2.2</b> Установка R и RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#section-2"><i class="fa fa-check"></i><b>2.3</b> Полезные ссылки</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#rstudio"><i class="fa fa-check"></i><b>2.4</b> Rstudio</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="section-2.html"><a href="section-2.html"><i class="fa fa-check"></i>Список литературы</a></li>
+<li class="chapter" data-level="" data-path="section-3.html"><a href="section-3.html"><i class="fa fa-check"></i>Список литературы</a></li>
 </ul>
 
       </nav>
@@ -156,12 +156,99 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">2</span> Введение в R</h1>
+<div id="section-1" class="section level2">
+<h2><span class="header-section-number">2.1</span> Наука о данных</h2>
+<p>Наука о данных — это новая область знаний, которая активно развивается в последнее время. Она находиться на пересечении компьютерных наук, статистики и математики и трудно сказать, действительно ли это наука. При этом это движение развивается в самых разных научных направлениях, иногда даже оформляясь в отдельную отрасль:</p>
+<ul>
+<li>биоинформатика</li>
+<li>цифровые гуманитарные исследования</li>
+<li>датажурналистика</li>
+<li>…</li>
+</ul>
+<p>Все больше книг “Data Scince for …”:</p>
+<ul>
+<li>psychologists <span class="citation">(Hansjörg <a href="#ref-hansjoerg19" role="doc-biblioref">2019</a>)</span></li>
+<li>buisness <span class="citation">(Provost and Fawcett <a href="#ref-provost13" role="doc-biblioref">2013</a>)</span></li>
+<li>public policy <span class="citation">(Brooks and Cooper <a href="#ref-brooks13" role="doc-biblioref">2013</a>)</span></li>
+<li>fraud detection <span class="citation">(Baesens, Van Vlasselaer, and Verbeke <a href="#ref-baesens15" role="doc-biblioref">2015</a>)</span></li>
+<li>…</li>
+</ul>
+<p>Среди умений датасаентистов можно перечислить следующие:</p>
+<ul>
+<li>сбор и обработка данных</li>
+<li>трансформация данных</li>
+<li>визуализация данных</li>
+<li>моделирование данных</li>
+<li>представление полученных результатов</li>
+</ul>
+<p>Все эти темы в той или иной мере будут представлены на нашем курсе.</p>
+</div>
+<div id="r--rstudio" class="section level2">
+<h2><span class="header-section-number">2.2</span> Установка R и RStudio</h2>
+<p>В данной книге используется исключительно R <span class="citation">(R Core Team <a href="#ref-r_core_team19" role="doc-biblioref">2019</a>)</span>, так что для занятий понадобятся:</p>
+<ul>
+<li>R
+<ul>
+<li><a href="https://cran.r-project.org/bin/windows/base/">на Windows</a></li>
+<li><a href="https://cran.r-project.org/bin/macosx/">на Mac</a></li>
+<li><a href="https://cran.rstudio.com/bin/linux/">на Linux</a>, также можно добавить зеркало и установить из командной строки:</li>
+</ul></li>
+</ul>
+<pre><code>sudo apt-get install r-cran-base</code></pre>
+<ul>
+<li>RStudio — IDE для R (<a href="https://www.rstudio.com/products/rstudio/download/">можно скачать здесь</a>)</li>
+<li>и некоторые пакеты на R</li>
+</ul>
+<p>Часто можно увидеть или услышать, что R — язык программирования для “статистической обработки данных”. Изначально это, конечно, было правдой, но уже давно R — это полноценный язык программирования, который при помощи своих пакетом позволяет решать огромный спектр задач. В данной книге используются следующая версия R:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro.html#cb2-1"></a><span class="kw">sessionInfo</span>()<span class="op">$</span>R.version<span class="op">$</span>version.string</span></code></pre></div>
+<pre><code>## [1] &quot;R version 3.6.1 (2019-07-05)&quot;</code></pre>
+<p>Некоторые люди не любят устанавливать лишние программы себе на компьютер, несколько вариантов есть и для них:</p>
+<ul>
+<li><a href="https://rstudio.cloud/">RStudio cloud</a> — полная функциональность RStudio, пока бесплатная, но скоро это исправят;</li>
+<li><a href="https://www.rollapp.com/app/rstudio">RStudio on rollApp</a> — облачная среда, позволяющая разворачивать программы.</li>
+</ul>
+</div>
+<div id="section-2" class="section level2">
+<h2><span class="header-section-number">2.3</span> Полезные ссылки</h2>
+<p>В интернете легко найти документацию и туториалы по самым разным вопросам в R, так что главный залог успеха — грамматно пользоваться поисковиком, и лучше на английском языке.</p>
+<ul>
+<li><a href="https://r4ds.had.co.nz/">книга <span class="citation">(Wickham and Grolemund <a href="#ref-wickham16" role="doc-biblioref">2016</a>)</span></a> является достаточно сильной альтернативой всему курсу</li>
+<li><a href="https://stackoverflow.com">stackoverflow</a> — сервис, где достаточно быстро отвечают на любые вопросы (не обязательно по R)</li>
+<li><a href="https://community.rstudio.com/">RStudio community</a> — быстро отвечают на вопросы, связанные с R</li>
+<li><a href="https://ru.stackoverflow.com">русский stackoverflow</a></li>
+<li><a href="https://www.r-bloggers.com/">R-bloggers</a> — сайт, где собираются новинки, связанные с R</li>
+<li><a href="https://t.me/rlang_ru">чат</a>, где можно спрашивать про R на русском (но почитайте <a href="https://github.com/r-lang-group-ru/group-rules/blob/master/README.md">правила чата</a>, перед тем как спрашивать)</li>
+<li><a href="https://t.me/joinchat/CxZg5goGc6rlWGjcvOYrpA">чат</a> по визуализации данных, <a href="https://t.me/ddjrus">чат</a> датажурналистов</li>
+<li><a href="https://t.me/chartomojka">канал про визуализацию</a>, <a href="https://t.me/novaya_data">дата-блог “Новой газеты”</a>, …</li>
+</ul>
+</div>
 <div id="rstudio" class="section level2">
-<h2><span class="header-section-number">2.1</span> Rstudio</h2>
+<h2><span class="header-section-number">2.4</span> Rstudio</h2>
 <p>Когда вы откроете RStudio первый раз, вы увидите три панели: консоль, окружение и историю, а также панель для всего остального. Если ткнуть в консоли на значок уменьшения, то можно открыть дополнительную панель, где можно писать скрипт.</p>
 <p><img src="images/01_01_rstudio.png" width="250" /></p>
 <p>Существуют разные типы пользователей: одни любят работать в консоли, другие предпочитают скрипты. Консоль позволяет иметь интерактивный режим команда-ответ, а скрипт является по сути текстовым документом, фрагменты которого можно для отладки запускать в консоли.</p>
 
+</div>
+</div>
+<h3>Список литературы</h3>
+<div id="refs" class="references">
+<div id="ref-baesens15">
+<p>Baesens, Bart, Veronique Van Vlasselaer, and Wouter Verbeke. 2015. <em>Fraud Analytics Using Descriptive, Predictive, and Social Network Techniques: A Guide to Data Science for Fraud Detection</em>. John Wiley &amp; Sons.</p>
+</div>
+<div id="ref-brooks13">
+<p>Brooks, Harvey, and Chester L Cooper. 2013. <em>Science for Public Policy</em>. Elsevier.</p>
+</div>
+<div id="ref-hansjoerg19">
+<p>Hansjörg, Neth. 2019. <em>Data Science for Psychologists</em>. self published.</p>
+</div>
+<div id="ref-provost13">
+<p>Provost, Foster, and Tom Fawcett. 2013. <em>Data Science for Business: What You Need to Know About Data Mining and Data-Analytic Thinking</em>. O’Reilly Media, Inc.</p>
+</div>
+<div id="ref-r_core_team19">
+<p>R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
+</div>
+<div id="ref-wickham16">
+<p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. O’Reilly Media, Inc.</p>
 </div>
 </div>
             </section>
@@ -170,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="section-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="section-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
