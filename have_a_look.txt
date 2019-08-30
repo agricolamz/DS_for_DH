@@ -1,0 +1,9 @@
+https://github.com/JohnCoene/twinetbook
+https://geanders.github.io/navy_public_health/
+https://m-clark.github.io/generalized-additive-models/
+https://m-clark.github.io/mixed-models-with-R/
+https://m-clark.github.io/data-processing-and-visualization/
+https://m-clark.github.io/text-analysis-with-R/
+https://m-clark.github.io/bayesian-basics/
+https://socviz.co/
+https://serialmentor.com/dataviz/

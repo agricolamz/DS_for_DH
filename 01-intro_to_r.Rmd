@@ -11,6 +11,7 @@
 Все больше книг "Data Scince for ...":
 
 * psychologists [@hansjoerg19]
+* immunologists [@thomas19]
 * buisness [@provost13]
 * public policy [@brooks13]
 * fraud detection [@baesens15]
