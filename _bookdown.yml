@@ -1,6 +1,17 @@
 book_filename: "DS_for_DH"
 delete_merged_file: true
 language:
+  label:
+    fig: 'Рисунок '
+    tab: 'Таблица '
+    eq: 'Уравнение '
+    thm: 'Теорема '
+    exm: 'Пример '
+    exr: 'Упражнение '
+    solution: 'Решение. '
   ui:
-    chapter_name: "Глава "
+    edit: Edit
+    ref: 'Ссылки на литературу'
+    chapter_name: ''
 output_dir: "docs"
+

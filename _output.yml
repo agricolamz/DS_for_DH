@@ -4,7 +4,7 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-        <li><a href="./">Наука о данных для ЦГИ в R</a></li>
+        <li><a href="./">Наука о данных в R для ЦГИ</a></li>
     download: ["pdf", "epub"]
     sharing: no
     edit:
@@ -15,7 +15,6 @@ bookdown::pdf_book:
     in_header: preamble.tex
   latex_engine: xelatex
   citation_package: natbib
-  keep_tex: yes
   fig_width: 7
   fig_height: 4
   highlight: tango

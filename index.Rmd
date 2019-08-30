@@ -1,5 +1,5 @@
 --- 
-title: "Наука о данных для Цифровых гуманитарных исследований в R"
+title: "Наука о данных в R для программы Цифровых гуманитарных исследований"
 author: "Г. А. Мороз"
 bibliography:
 - bibliography.bib
@@ -17,7 +17,15 @@ biblio-style: apalike
 
 В данной книге используется исключительно R [@r_core_team19], так что для занятий понадобятся:
 
-* R ([можно скачать здесь](https://www.r-project.org/))
+* R
+    * [на Windows](https://cran.r-project.org/bin/windows/base/)
+    * [на Mac](https://cran.r-project.org/bin/macosx/)
+    * [на Linux](https://cran.rstudio.com/bin/linux/), также можно добавить зеркало и установить из командной строки:
+    
+```
+sudo apt-get install r-cran-base
+```
+
 * RStudio --- IDE для R ([можно скачать здесь](https://www.rstudio.com/products/rstudio/download/))
 * и некоторые пакеты на R
 
@@ -31,7 +39,7 @@ sessionInfo()$R.version$version.string
 
 * [RStudio cloud](https://rstudio.cloud/) --- полная функциональность RStudio, пока бесплатная, но скоро это исправят;
 * [RStudio on rollApp](https://www.rollapp.com/app/rstudio) --- облачная среда, позволяющая разворачивать программы.
-  
+
 ## Полезные ссылки
 
 В интернете легко найти документацию и туториалы по самым разным вопросам в R, так что главный залог успеха --- грамматно пользоваться поисковиком, и лучше на английском языке.
