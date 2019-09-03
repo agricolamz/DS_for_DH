@@ -7,3 +7,4 @@ https://m-clark.github.io/text-analysis-with-R/
 https://m-clark.github.io/bayesian-basics/
 https://socviz.co/
 https://serialmentor.com/dataviz/
+https://www.data-imaginist.com/2019/1-giraffe-2-giraffe-go/
