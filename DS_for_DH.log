@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2019/dev/Debian) (preloaded format=xelatex 2019.3.9)  3 SEP 2019 22:40
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2019/dev/Debian) (preloaded format=xelatex 2019.3.9)  3 SEP 2019 22:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -877,11 +877,8 @@ File: images/ThePracticalDev_2016-Apr-13.jpg Graphic file (type bmp)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[10]
-Underfull \vbox (badness 1052) has occurred while \output is active []
-
-[11]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 434.
+[10] [11]
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 435.
 
 (/home/agricolamz/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -889,34 +886,34 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 434.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 435.
 
 (/home/agricolamz/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 434
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 435
 .
 (/home/agricolamz/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 434
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 435
 .
 (/home/agricolamz/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 434.
+(Font)              <10> on input line 435.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 434.
+(Font)              <7> on input line 435.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 434.
-LaTeX Font Info:    Try loading font information for U+msa on input line 434.
+(Font)              <5> on input line 435.
+LaTeX Font Info:    Try loading font information for U+msa on input line 435.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 434.
+LaTeX Font Info:    Try loading font information for U+msb on input line 435.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -941,7 +938,8 @@ Underfull \vbox (badness 4595) has occurred while \output is active []
 
 [15] [16]
 Missing character: There is no В in font [lmmono10-regular]:!
-Mis
+Missing character: There is no с in font [lmmono10-regular]:!
+Missing char
 
 ! kpathsea: Running mktexpk --mfmode / --bdpi 600 --mag 1+0/600 --dpi 600 rm-lmr10
 ! mktexpk: don't know how to create bitmap font for rm-lmr10.
