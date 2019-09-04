@@ -6,7 +6,7 @@
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
-##Вектор {#solvvec_task_1}
+## Вектор {#solvvec_task_1}
 
 - Посчитайте логарифм от 8912162342 по основанию 6
 
@@ -201,12 +201,12 @@ sum(vec2, na.rm = TRUE)
 #(1:10)*2
 ```
 
-##Списки {#solvlist_ta}
+## Списки {#solvlist_ta}
 
 Дан список `list_1`:
 
-```{r, echo = T}
-list_1 = list(numbers = 1:5, letters = letters, logic = T)
+```{r, echo = TRUE}
+list_1 = list(numbers = 1:5, letters = letters, logic = TRUE)
 list_1
 ```
 
@@ -303,7 +303,7 @@ tab2
 ```
 
 
-##Датафрейм {#solvdf_task}
+## Датафрейм {#solvdf_task}
 
 - Кто является 274ым персонажем в `got` датафрейме? Из какого он дома?
 
