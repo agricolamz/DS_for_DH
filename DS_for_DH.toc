@@ -1,0 +1,46 @@
+\babel@toc {russian}{}
+\contentsline {chapter}{\numberline {1}Вступление}{5}{chapter.1}% 
+\contentsline {chapter}{\numberline {2}Введение в R}{7}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Наука о данных}{7}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Установка R и RStudio}{8}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Полезные ссылки}{8}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Rstudio}{9}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Введение в R}{10}{section.2.5}% 
+\contentsline {subsection}{\numberline {2.5.1}R как калькулятор}{10}{subsection.2.5.1}% 
+\contentsline {subsection}{\numberline {2.5.2}Функции}{11}{subsection.2.5.2}% 
+\contentsline {subsection}{\numberline {2.5.3}Переменные}{14}{subsection.2.5.3}% 
+\contentsline {section}{\numberline {2.6}Типы данных}{17}{section.2.6}% 
+\contentsline {section}{\numberline {2.7}Вектор}{19}{section.2.7}% 
+\contentsline {subsection}{\numberline {2.7.1}Coercion}{20}{subsection.2.7.1}% 
+\contentsline {subsection}{\numberline {2.7.2}Операции с векторами}{22}{subsection.2.7.2}% 
+\contentsline {subsection}{\numberline {2.7.3}Recycling}{23}{subsection.2.7.3}% 
+\contentsline {subsection}{\numberline {2.7.4}Индексирование векторов}{23}{subsection.2.7.4}% 
+\contentsline {subsection}{\numberline {2.7.5}NA --- пропущенные значения}{26}{subsection.2.7.5}% 
+\contentsline {subsection}{\numberline {2.7.6}В любой непонятной ситуации --- ищите в поисковике}{27}{subsection.2.7.6}% 
+\contentsline {section}{\numberline {2.8}Матрицы (matrix)}{29}{section.2.8}% 
+\contentsline {section}{\numberline {2.9}Списки (list)}{31}{section.2.9}% 
+\contentsline {section}{\numberline {2.10}Data.frame}{34}{section.2.10}% 
+\contentsline {section}{\numberline {2.11}Начинаем работу с реальными данными}{36}{section.2.11}% 
+\contentsline {subsection}{\numberline {2.11.1}Рабочая папка и проекты}{36}{subsection.2.11.1}% 
+\contentsline {subsection}{\numberline {2.11.2}Импорт данных}{37}{subsection.2.11.2}% 
+\contentsline {section}{\numberline {2.12}Препроцессинг данных в R}{39}{section.2.12}% 
+\contentsline {subsection}{\numberline {2.12.1}Исследование данных}{39}{subsection.2.12.1}% 
+\contentsline {subsection}{\numberline {2.12.2}Subsetting}{41}{subsection.2.12.2}% 
+\contentsline {subsection}{\numberline {2.12.3}Создание новых колонок}{45}{subsection.2.12.3}% 
+\contentsline {subsection}{\numberline {2.12.4}data.table vs.~tidyverse}{45}{subsection.2.12.4}% 
+\contentsline {chapter}{\numberline {3}Трансформация данных}{47}{chapter.3}% 
+\contentsline {chapter}{\numberline {4}Визуализация данных}{49}{chapter.4}% 
+\contentsline {chapter}{\numberline {5}Условия и работа со списками}{51}{chapter.5}% 
+\contentsline {chapter}{\numberline {6}Представление данных: rmarkdown, github, shiny}{53}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}Работа со строками}{55}{chapter.7}% 
+\contentsline {chapter}{\numberline {8}Работа с текстами: tidytext, udpipe}{57}{chapter.8}% 
+\contentsline {chapter}{\numberline {9}Сбор данных из интернета: rvest}{59}{chapter.9}% 
+\contentsline {chapter}{\numberline {10}Нестандартные данные: время, OCR, карты}{61}{chapter.10}% 
+\contentsline {chapter}{\numberline {11}Задания}{63}{chapter.11}% 
+\contentsline {section}{\numberline {11.1}Вектор. Операции с векторами}{64}{section.11.1}% 
+\contentsline {section}{\numberline {11.2}Вектор. Индексирование}{65}{section.11.2}% 
+\contentsline {section}{\numberline {11.3}Матрицы}{67}{section.11.3}% 
+\contentsline {chapter}{\numberline {12}Решения\_заданий}{71}{chapter.12}% 
+\contentsline {section}{\numberline {12.1}Вектор. Операции с векторами}{72}{section.12.1}% 
+\contentsline {section}{\numberline {12.2}Вектор. Индексирование}{73}{section.12.2}% 
+\contentsline {section}{\numberline {12.3}Матрицы}{76}{section.12.3}% 

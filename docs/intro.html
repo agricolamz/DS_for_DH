@@ -467,7 +467,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="atomic" class="section level2">
 <h2><span class="header-section-number">2.7</span> Вектор</h2>
-<p>Если у вас не было линейной алгебры (или у вас с ней было все плохо), то просто запомните, что <strong>вектор</strong> (==<strong>atomic vector</strong> ==<strong>atomic</strong>) — это набор (столбик) чисел в определенном порядке.</p>
+<p>Если у вас не было линейной алгебры (или у вас с ней было все плохо), то просто запомните, что <strong>вектор</strong> (или <strong>atomic vector</strong> или <strong>atomic</strong>) — это набор (столбик) чисел в определенном порядке.</p>
 <blockquote>
 <p>P.S. Если вы привыкли из школьного курса физики считать вектора стрелочками, то не спешите возмущаться и паниковать. Представьте стрелочки как точки из нуля координат {0,0} до какой-то точки на координатной плоскости, например, {2,1}. Вот последние два числа и будем считать вектором. Поэтому постарайтесь на время выбросить стрелочки из головы.</p>
 </blockquote>
@@ -695,7 +695,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p lang="en" dir="ltr">
 Computer Programming To Be Officially Renamed “Googling Stack Overflow”<br><br>Source: <a href="http://t.co/xu7acfXvFF">http://t.co/xu7acfXvFF</a> <a href="http://t.co/iJ9k7aAVhd">pic.twitter.com/iJ9k7aAVhd</a>
 </p>
-— Stack Exchange (<span class="citation">(<span class="citeproc-not-found" data-reference-id="StackExchange"><strong>???</strong></span>)</span>) <a href="https://twitter.com/StackExchange/status/623139544276299776?ref_src=twsrc%5Etfw">July 20, 2015</a>
+— Stack Exchange <a href="https://twitter.com/StackExchange/status/623139544276299776?ref_src=twsrc%5Etfw">July 20, 2015</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p>Главное, помните: загуглить работающий ответ всегда недостаточно. Надо понять, как и почему он работает. Иначе что-то обязательно пойдет не так.</p>
@@ -704,7 +704,7 @@ Computer Programming To Be Officially Renamed “Googling Stack Overflow”<br><
 <p lang="en" dir="ltr">
 Does anyone ever get good at R or do they just get good at googling how to do things in R
 </p>
-— 🔬🖤Lauren M. Seyler, Ph.D.❤️⚒ (<span class="citation">(<span class="citeproc-not-found" data-reference-id="mousquemere"><strong>???</strong></span>)</span>) <a href="https://twitter.com/mousquemere/status/1125522375141883907?ref_src=twsrc%5Etfw">May 6, 2019</a>
+— 🔬🖤Lauren M. Seyler, Ph.D.❤️⚒ (<span class="citation">(<span class="citeproc-not-found" data-reference-id="a"><strong>???</strong></span>)</span> href=“<a href="https://twitter.com/mousquemere/status/1125522375141883907?ref_src=twsrc%5Etfw" class="uri">https://twitter.com/mousquemere/status/1125522375141883907?ref_src=twsrc%5Etfw</a>”&gt;May 6, 2019</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p>Итак, с векторами мы более-менее разобрались. Помните, что вектора — это один из краеугольных камней Вашей работы в R. Если Вы хорошо с ними разобрались, то дальше все будет довольно несложно. Тем не менее, вектора — это не все. Есть еще два важных типа данных: списки (<strong>list</strong>) и матрицы (<strong>matrix</strong>). Их можно рассматривать как своеобразное “расширение” векторов, каждый в свою сторону. Ну а списки и матрицы нужны чтобы понять основной тип данных в R — <strong>data.frame</strong>.</p>
@@ -836,9 +836,11 @@ Does anyone ever get good at R or do they just get good at googling how to do th
 <p lang="en" dir="ltr">
 Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a>. Inspired by the Residence Inn <a href="http://t.co/YQ6axb2w7t">pic.twitter.com/YQ6axb2w7t</a>
 </p>
-— Hadley Wickham (<span class="citation">(<span class="citeproc-not-found" data-reference-id="hadleywickham"><strong>???</strong></span>)</span>) <a href="https://twitter.com/hadleywickham/status/643381054758363136?ref_src=twsrc%5Etfw">September 14, 2015</a>
+— Hadley Wickham (@ href=“<a href="https://twitter.com/hadleywickham/status/643381054758363136?ref_src=twsrc%5Etfw" class="uri">https://twitter.com/hadleywickham/status/643381054758363136?ref_src=twsrc%5Etfw</a>”&gt;September 14, 2015</a>
 </blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+
+</script>
 <p>Как и в случае с вектором, к элементу списка можно обращаться по имени.</p>
 <div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="intro.html#cb231-1"></a>namedl[[<span class="st">&#39;age&#39;</span>]]</span></code></pre></div>
 <pre><code>## [1] 24</code></pre>
@@ -1206,7 +1208,7 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 <p>Оба подхода обладают своими преимуществами и недостатками, но на сегодняшний день <code>tidyverse</code> считается более популярным. Основное преимущество этого подхода — в относительной легкости освоения. Обычно код, написанный в <code>tidyverse</code> можно примерно понять, даже не владея им.</p>
 <p>Преимущество <code>data.table</code> — в суровом лаконичном синтаксисе и наиболее эффективных алгоритмах. Последние обеспечивают очень серьезный прирост в скорости в работе с данными. Чтение файлов и манипуляция данными может быть на порядки быстрее, поэтому если Ваш датасет с трудом пролезает в оперативную память компьютера, а исполнение скрипта занимает длительное время - стоит задуматься о переходе на <code>data.table</code>.</p>
 <p>Что из этого учить — решать Вам, но знать оба совсем не обязательно: они решают те же самые задачи, просто совсем разными способами. За data.table — скорость, за tidyverse - понятность синтаксиса. Очень советую почитать обсуждение на эту тему <a href="https://stackoverflow.com/questions/21435339/data-table-vs-dplyr-can-one-do-something-well-the-other-cant-or-does-poorly">здесь</a>.</p>
-<p><img src="New-Mind-Map_1.jpg" /></p>
+<p>[](imimages/New-Mind-Map.jpg</p>
 
 </div>
 </div>
