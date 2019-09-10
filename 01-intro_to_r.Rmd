@@ -1080,4 +1080,4 @@ got$Is.Alive <- is.na(got$Book.of.Death)
 
 Что из этого учить --- решать Вам, но знать оба совсем не обязательно: они решают те же самые задачи, просто совсем разными способами. За data.table --- скорость, за tidyverse - понятность синтаксиса. Очень советую почитать обсуждение на эту тему [здесь](https://stackoverflow.com/questions/21435339/data-table-vs-dplyr-can-one-do-something-well-the-other-cant-or-does-poorly). 
 
-![](imimages/New-Mind-Map.jpg)
+![](images/New-Mind-Map.jpg)
