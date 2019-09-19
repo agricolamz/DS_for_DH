@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="2.11 Начинаем работу с реальными данными | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+<meta property="og:type" content="book" />
+
+
+
+
+
+<meta name="author" content="Г. А. Мороз, И. С. Поздняков" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+
+<meta name="description" content="2.11 Начинаем работу с реальными данными | Наука о данных в R для программы Цифровых гуманитарных исследований">
+
+<title>2.11 Начинаем работу с реальными данными | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#section"><span class="toc-section-number">1</span> О курсе</a></li>
+<li class="has-sub"><a href="2-intro.html#intro"><span class="toc-section-number">2</span> Введение в R</a><ul>
+<li><a href="2-1-section-1.html#section-1"><span class="toc-section-number">2.1</span> Наука о данных</a></li>
+<li><a href="2-2-r-rstudio.html#r--rstudio"><span class="toc-section-number">2.2</span> Установка R и RStudio</a></li>
+<li><a href="2-3-section-2.html#section-2"><span class="toc-section-number">2.3</span> Полезные ссылки</a></li>
+<li><a href="2-4-rstudio.html#rstudio"><span class="toc-section-number">2.4</span> Rstudio</a></li>
+<li class="has-sub"><a href="2-5-r.html#r"><span class="toc-section-number">2.5</span> Введение в R</a><ul>
+<li><a href="2-5-r.html#calc"><span class="toc-section-number">2.5.1</span> R как калькулятор</a></li>
+<li><a href="2-5-r.html#func"><span class="toc-section-number">2.5.2</span> Функции</a></li>
+<li><a href="2-5-r.html#variables"><span class="toc-section-number">2.5.3</span> Переменные</a></li>
+</ul></li>
+<li><a href="2-6-data-types.html#data_types"><span class="toc-section-number">2.6</span> Типы данных</a></li>
+<li class="has-sub"><a href="2-7-atomic.html#atomic"><span class="toc-section-number">2.7</span> Вектор</a><ul>
+<li><a href="2-7-atomic.html#coercion"><span class="toc-section-number">2.7.1</span> Coercion</a></li>
+<li><a href="2-7-atomic.html#vector_op"><span class="toc-section-number">2.7.2</span> Операции с векторами</a></li>
+<li><a href="2-7-atomic.html#recycling"><span class="toc-section-number">2.7.3</span> Recycling</a></li>
+<li><a href="2-7-atomic.html#index_atomic"><span class="toc-section-number">2.7.4</span> Индексирование векторов</a></li>
+<li><a href="2-7-atomic.html#na"><span class="toc-section-number">2.7.5</span> NA — пропущенные значения</a></li>
+<li><a href="2-7-atomic.html#google"><span class="toc-section-number">2.7.6</span> В любой непонятной ситуации — ищите в поисковике</a></li>
+</ul></li>
+<li><a href="2-8-matrix.html#matrix"><span class="toc-section-number">2.8</span> Матрицы (matrix)</a></li>
+<li><a href="2-9-list.html#list"><span class="toc-section-number">2.9</span> Списки (list)</a></li>
+<li><a href="2-10-df.html#df"><span class="toc-section-number">2.10</span> Data.frame</a></li>
+<li class="has-sub"><a href="2-11-real-data.html#real_data"><span class="toc-section-number">2.11</span> Начинаем работу с реальными данными</a><ul>
+<li><a href="2-11-real-data.html#wd"><span class="toc-section-number">2.11.1</span> Рабочая папка и проекты</a></li>
+<li><a href="2-11-real-data.html#import"><span class="toc-section-number">2.11.2</span> Импорт данных</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-12-prep.html#prep"><span class="toc-section-number">2.12</span> Препроцессинг данных в R</a><ul>
+<li><a href="2-12-prep.html#explore"><span class="toc-section-number">2.12.1</span> Исследование данных</a></li>
+<li><a href="2-12-prep.html#subset"><span class="toc-section-number">2.12.2</span> Subsetting</a></li>
+<li><a href="2-12-prep.html#newcol"><span class="toc-section-number">2.12.3</span> Создание новых колонок</a></li>
+<li><a href="2-12-prep.html#dtvstidy"><span class="toc-section-number">2.12.4</span> data.table vs. tidyverse</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="3-tidy-dplyr.html#tidy_dplyr"><span class="toc-section-number">3</span> <code>tidyverse</code>: Загрузка и трансформация данных</a><ul>
+<li class="has-sub"><a href="3-1-section-3.html#section-3"><span class="toc-section-number">3.1</span> Загрузка данных</a><ul>
+<li><a href="3-1-section-3.html#section-4"><span class="toc-section-number">3.1.1</span> Рабочая директория</a></li>
+<li><a href="3-1-section-3.html#section-5"><span class="toc-section-number">3.1.2</span> Загрузка данных</a></li>
+</ul></li>
+</ul></li>
+<li><a href="4-viz-1.html#viz_1"><span class="toc-section-number">4</span> Визуализация данных</a></li>
+<li><a href="5-dplyr-purr.html#dplyr_purr"><span class="toc-section-number">5</span> Условия и работа со списками</a></li>
+<li><a href="6-data-presentation.html#data_presentation"><span class="toc-section-number">6</span> Представление данных: rmarkdown, github, shiny</a></li>
+<li><a href="7-strings.html#strings"><span class="toc-section-number">7</span> Работа со строками</a></li>
+<li><a href="8-tidytext.html#tidytext"><span class="toc-section-number">8</span> Работа с текстами: tidytext, udpipe</a></li>
+<li><a href="9-rvest.html#rvest"><span class="toc-section-number">9</span> Сбор данных из интернета: rvest</a></li>
+<li><a href="10-non-standard-data.html#non_standard_data"><span class="toc-section-number">10</span> Нестандартные данные: время, OCR, карты</a></li>
+<li class="has-sub"><a href="11-tasks.html#tasks"><span class="toc-section-number">11</span> Задания</a><ul>
+<li><a href="11-1-vec-task-1.html#vec_task_1"><span class="toc-section-number">11.1</span> Вектор</a></li>
+<li><a href="11-2-vec-op.html#vec_op"><span class="toc-section-number">11.2</span> Вектор. Операции с векторами</a></li>
+<li><a href="11-3-vec-task-2.html#vec_task_2"><span class="toc-section-number">11.3</span> Вектор. Индексирование</a></li>
+<li><a href="11-4-list-ta.html#list_ta"><span class="toc-section-number">11.4</span> Списки</a></li>
+<li><a href="11-5-t.html#t"><span class="toc-section-number">11.5</span> Матрицы</a></li>
+<li><a href="11-6-df-task.html#df_task"><span class="toc-section-number">11.6</span> Датафрейм</a></li>
+</ul></li>
+<li class="has-sub"><a href="12-solutions.html#solutions"><span class="toc-section-number">12</span> Решения_заданий</a><ul>
+<li><a href="12-1-solvvec-task-1.html#solvvec_task_1"><span class="toc-section-number">12.1</span> Вектор</a></li>
+<li><a href="12-2-solvvec-op.html#solvvec_op"><span class="toc-section-number">12.2</span> Вектор. Операции с векторами</a></li>
+<li><a href="12-3-solvvec-task-2.html#solvvec_task_2"><span class="toc-section-number">12.3</span> Вектор. Индексирование</a></li>
+<li><a href="12-4-solvlist-ta.html#solvlist_ta"><span class="toc-section-number">12.4</span> Списки</a></li>
+<li><a href="12-5-solvt.html#solvt"><span class="toc-section-number">12.5</span> Матрицы</a></li>
+<li><a href="12-6-solvdf-task.html#solvdf_task"><span class="toc-section-number">12.6</span> Датафрейм</a></li>
+</ul></li>
+<li><a href="section-6.html#section-6">Ссылки на литературу</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="real_data" class="section level2">
+<h2><span class="header-section-number">2.11</span> Начинаем работу с реальными данными</h2>
+<p>Итак, пришло время перейти к реальным данным. Мы начнем с использования датасета (так мы будем называть любой набор данных) по Игре Престолов, а точнее, по книгам цикла <em>“Песнь льда и пламени”</em> Дж. Мартина. Да, будут спойлеры, но сериал уже давно закончился и сильно разошелся с книгами…</p>
+<div id="wd" class="section level3">
+<h3><span class="header-section-number">2.11.1</span> Рабочая папка и проекты</h3>
+<p>Для начала скачайте файл по <a href="https://raw.githubusercontent.com/Pozdniakov/stats/master/data/character-deaths.csv">ссылке</a></p>
+<p>Он, скорее всего, появился у Вас в папке “Загрузки”. Если мы будем просто пытаться прочитать этот файл (например, с помощью <code>read.csv()</code> — мы к этой функцией очень скоро перейдем), указав его имя и разрешение, то наткнемся на такую ошибку:</p>
+<blockquote>
+<p>Ошибка в file(file, “rt”) :не могу открыть соединение
+Вдобавок: Предупреждение:
+В file(file, “rt”) :
+не могу открыть файл ‘character-deaths.csv’: No such file or directory</p>
+</blockquote>
+<p>Это означает, что R не может найти нужный файл. Вообще-то мы даже не сказали, где искать. Нам нужно как-то совместить место, где R ищет загружаемые файлы и сами файлы. Для этого есть несколько способов.</p>
+<ul>
+<li>Магомет идет к горе: перемещение файлов в рабочую папку.</li>
+</ul>
+<p>Для этого нужно узнать, какая папка является рабочей с помощью функции <code>getwd()</code> (без аргументов), найти эту папку в проводнике и переместить туда файл. После этого можно использовать просто название файла с разрешением:</p>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="2-11-real-data.html#cb248-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;character-deaths.csv&quot;</span>)</span></code></pre></div>
+<ul>
+<li>Гора идет к Магомету: изменение рабочей папки.</li>
+</ul>
+<p>Можно просто сменить рабочую папку с помощью <code>setwd()</code> на ту, где сейчас лежит файл, прописав путь до этой папки. Теперь файл находится в рабочей папке:</p>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="2-11-real-data.html#cb249-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;character-deaths.csv&quot;</span>)</span></code></pre></div>
+<p>Этот вариант использовать не рекомендуется. Как минимум, это сразу делает невозможным запустить скрипт на другом компьютере.</p>
+<ul>
+<li>Гора находит Магомета по месту прописки: указание полного пути файла.</li>
+</ul>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="2-11-real-data.html#cb250-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;/Users/Username/Some_Folder/character-deaths.csv&quot;</span>)</span></code></pre></div>
+<p>Этот вариант страдает теми же проблемами, что и предыдущий, поэтому тоже не рекомендуется.</p>
+<blockquote>
+<p>Для пользователей Windows есть дополнительная сложность: знак <code>/</code> является особым знаком для R, поэтому вместо него нужно использовать двойной <code>//</code>.</p>
+</blockquote>
+<ul>
+<li>Магомет использует кнопочный интерфейс: Import Dataset.</li>
+</ul>
+<p>Во вкладке Environment справа в окне RStudio есть кнопка “Import Dataset”. Возможно, у Вас возникло непреодолимое желание отдохнуть от написания кода и понажимать кнопочки — сопротивляйтесь этому всеми силами, но не вините себя, если не сдержитесь.</p>
+<ul>
+<li>Гора находит Магомета в интернете.</li>
+</ul>
+<p>Многие функции в R, предназначенные для чтения файлов, могут прочитать файл не только на Вашем компьютере, но и сразу из интернета. Для этого просто используйте ссылку вместо пути:</p>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="2-11-real-data.html#cb251-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Pozdniakov/stats/master/data/character-deaths.csv&quot;</span>)</span></code></pre></div>
+<ul>
+<li>Каждый Магомет получает по своей горе: использование проектов в RStudio.</li>
+</ul>
+<p>На первый взгляд это кажется чем-то очень сложным, но это не так. Это очень просто и ОЧЕНЬ удобно. При создании проекта создается отдельная папочка, где у Вас лежат данные, хранятся скрипты, вспомогательные файлы и отчеты. Если нужно вернуться к другому проекту — просто открываете другой проект, с другими файлами и скриптами. Это еще помогает не пересекаться переменным из разных проектов — а то, знаете, использование двух переменных <code>data</code> в разных скриптах чревато ошибками. Поэтому очень удобным решением будет выделение отдельного проекта под этот курс.</p>
+</div>
+<div id="import" class="section level3">
+<h3><span class="header-section-number">2.11.2</span> Импорт данных</h3>
+<p>Как Вы уже поняли, импортирование данных - одна из самых муторных и неприятных вещей в R. Если у Вас получится с этим справится, то все остальное - ерунда. Мы уже разобрались с первой частью этого процесса - нахождением файла с данными, осталось научиться их читать.</p>
+<p>Здесь стоит сделать небольшую ремарку. Довольно часто данные представляют собой табличку. Или же их можно свести к табличке. Такая табличка, как мы уже выяснили, удобно репрезентируется в виде датафрейма. Но как эти данные хранятся на компьютере? Есть два варианта: в <em>бинарном</em> и в <em>текстовом</em> файле.</p>
+<p>Текстовый файл означает, что такой файл можно открыть в программе “Блокнот” или ее аналоге и увидеть напечатанный текст: скрипт, роман или упорядоченный набор цифр и букв. Нас сейчас интересует именно последний случай. Таблица может быть представлена как текст: отдельные строчки в файле будут разделять разные строчки таблицы, а какой-нибудь знак-разделитель отделет колонки друг от друга.</p>
+<p>Для чтения данных из текстового файла есть довольно удобная функция <code>read.table()</code>. Почитайте хэлп по ней и ужаснитесь: столько разных параметров на входе! Но там же вы увидете функции <code>read.csv()</code>, <code>read.csv2()</code> и некоторые другие — по сути, это тот же <code>read.table()</code>, но с другими дефолтными параметрами, соответствующие формату файла, который мы загружаем. В данном случае используется формат .csv, что означает Comma Separated Values (Значения, Разделенные Запятыми). Это просто текстовый файл, в котором “закодирована” таблица: разные строчки разделяют разные строчки таблицы, а столбцы отделяются запятыми. С этим связана одна проблема: в некоторых странах (в т.ч. и России) принято использовать запятую для разделения дробной части числа, а не точку, как это делается в большинстве стран мира. Поэтому есть “другой” формат .csv, где значения разделены точкой с запятой (<code>;</code>), а дробные значения - запятой (<code>,</code>). В этом и различие функций <code>read.csv()</code> и <code>read.csv2()</code> — первая функция предназначена для “международного” формата, вторая - для (условно) “Российского”.</p>
+<p>В первой строчке обычно содержатся названия столбцов - и это чертовски удобно, функции <code>read.csv()</code> и <code>read.csv2()</code> по дефолту считают первую строчку именно как название для колонок.</p>
+<p>Итак, прочитаем наш файл. Для этого используем только параметр <code>file =</code>, который идет первым, и для параметра <code>stringsAsFactors =</code> поставим значение <code>FALSE</code>:</p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="2-11-real-data.html#cb252-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/character-deaths.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<blockquote>
+<p>По сути, факторы - это примерно то же самое, что и character, но закодированные числами. Когда-то это было придумано для экономии используемых времени и памяти, сейчас же обычно становится просто лишней морокой. Но некоторые функции требуют именно character, некоторые factor, в большинстве случаев это без разницы. Но иногда непонимание может привести к дурацким ошибкам. В данном случае мы просто пока обойдемся без факторов.</p>
+</blockquote>
+<p>Можете проверить с помощью <code>View(got)</code>: все работает! Если же вылезает какая-то странная ерунда или же просто ошибка - попробуйте другие функции и покопаться с параметрами. Для этого читайте Help.</p>
+<p>Кроме .csv формата есть и другие варианты хранения таблиц в виде текста. Например, .tsv
+- тоже самое, что и .csv, но разделитель - знак табуляции. Для чтения таких файлов есть функция <code>read.delim()</code> и <code>read.delim2()</code>. Впрочем, даже если бы ее и не было, можно было бы просто подобрать нужные параметры для функции <code>read.table()</code>. Есть даже функции, которые пытаются сами “угадать” нужные параметры для чтения — часто они справляются с этим довольно удачно. Но не всегда. Поэтому стоит научиться справляться с любого рода данными на входе.</p>
+<p>Тем не менее, далеко не всегда таблицы представлены в виде текстового файла. Самый распространенный пример таблицы в бинарном виде — родные форматы Microsoft Excel. Если Вы попробуете открыть .xlsx файл в Блокноте, то увидите кракозябры. Это делает работу с этим файлами гораздо менее удобной, поэтому стоит избегать экселевских форматов и стараться все сохранять в .csv.</p>
+<blockquote>
+<p>Для работы с экселевскими файлами есть много пакетов: readxl, xlsx, openxlsx. Для чтения файлов SPSS, Stata, SAS есть пакет foreign. Что такое пакеты и как их устанавливать мы изучим позже.</p>
+</blockquote>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="2-10-df.html"><button class="btn btn-default">Previous</button></a>
+<a href="2-12-prep.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

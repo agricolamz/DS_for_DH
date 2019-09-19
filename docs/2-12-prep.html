@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="2.12 Препроцессинг данных в R | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+<meta property="og:type" content="book" />
+
+
+
+
+
+<meta name="author" content="Г. А. Мороз, И. С. Поздняков" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+
+<meta name="description" content="2.12 Препроцессинг данных в R | Наука о данных в R для программы Цифровых гуманитарных исследований">
+
+<title>2.12 Препроцессинг данных в R | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#section"><span class="toc-section-number">1</span> О курсе</a></li>
+<li class="has-sub"><a href="2-intro.html#intro"><span class="toc-section-number">2</span> Введение в R</a><ul>
+<li><a href="2-1-section-1.html#section-1"><span class="toc-section-number">2.1</span> Наука о данных</a></li>
+<li><a href="2-2-r-rstudio.html#r--rstudio"><span class="toc-section-number">2.2</span> Установка R и RStudio</a></li>
+<li><a href="2-3-section-2.html#section-2"><span class="toc-section-number">2.3</span> Полезные ссылки</a></li>
+<li><a href="2-4-rstudio.html#rstudio"><span class="toc-section-number">2.4</span> Rstudio</a></li>
+<li class="has-sub"><a href="2-5-r.html#r"><span class="toc-section-number">2.5</span> Введение в R</a><ul>
+<li><a href="2-5-r.html#calc"><span class="toc-section-number">2.5.1</span> R как калькулятор</a></li>
+<li><a href="2-5-r.html#func"><span class="toc-section-number">2.5.2</span> Функции</a></li>
+<li><a href="2-5-r.html#variables"><span class="toc-section-number">2.5.3</span> Переменные</a></li>
+</ul></li>
+<li><a href="2-6-data-types.html#data_types"><span class="toc-section-number">2.6</span> Типы данных</a></li>
+<li class="has-sub"><a href="2-7-atomic.html#atomic"><span class="toc-section-number">2.7</span> Вектор</a><ul>
+<li><a href="2-7-atomic.html#coercion"><span class="toc-section-number">2.7.1</span> Coercion</a></li>
+<li><a href="2-7-atomic.html#vector_op"><span class="toc-section-number">2.7.2</span> Операции с векторами</a></li>
+<li><a href="2-7-atomic.html#recycling"><span class="toc-section-number">2.7.3</span> Recycling</a></li>
+<li><a href="2-7-atomic.html#index_atomic"><span class="toc-section-number">2.7.4</span> Индексирование векторов</a></li>
+<li><a href="2-7-atomic.html#na"><span class="toc-section-number">2.7.5</span> NA — пропущенные значения</a></li>
+<li><a href="2-7-atomic.html#google"><span class="toc-section-number">2.7.6</span> В любой непонятной ситуации — ищите в поисковике</a></li>
+</ul></li>
+<li><a href="2-8-matrix.html#matrix"><span class="toc-section-number">2.8</span> Матрицы (matrix)</a></li>
+<li><a href="2-9-list.html#list"><span class="toc-section-number">2.9</span> Списки (list)</a></li>
+<li><a href="2-10-df.html#df"><span class="toc-section-number">2.10</span> Data.frame</a></li>
+<li class="has-sub"><a href="2-11-real-data.html#real_data"><span class="toc-section-number">2.11</span> Начинаем работу с реальными данными</a><ul>
+<li><a href="2-11-real-data.html#wd"><span class="toc-section-number">2.11.1</span> Рабочая папка и проекты</a></li>
+<li><a href="2-11-real-data.html#import"><span class="toc-section-number">2.11.2</span> Импорт данных</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-12-prep.html#prep"><span class="toc-section-number">2.12</span> Препроцессинг данных в R</a><ul>
+<li><a href="2-12-prep.html#explore"><span class="toc-section-number">2.12.1</span> Исследование данных</a></li>
+<li><a href="2-12-prep.html#subset"><span class="toc-section-number">2.12.2</span> Subsetting</a></li>
+<li><a href="2-12-prep.html#newcol"><span class="toc-section-number">2.12.3</span> Создание новых колонок</a></li>
+<li><a href="2-12-prep.html#dtvstidy"><span class="toc-section-number">2.12.4</span> data.table vs. tidyverse</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="3-tidy-dplyr.html#tidy_dplyr"><span class="toc-section-number">3</span> <code>tidyverse</code>: Загрузка и трансформация данных</a><ul>
+<li class="has-sub"><a href="3-1-section-3.html#section-3"><span class="toc-section-number">3.1</span> Загрузка данных</a><ul>
+<li><a href="3-1-section-3.html#section-4"><span class="toc-section-number">3.1.1</span> Рабочая директория</a></li>
+<li><a href="3-1-section-3.html#section-5"><span class="toc-section-number">3.1.2</span> Загрузка данных</a></li>
+</ul></li>
+</ul></li>
+<li><a href="4-viz-1.html#viz_1"><span class="toc-section-number">4</span> Визуализация данных</a></li>
+<li><a href="5-dplyr-purr.html#dplyr_purr"><span class="toc-section-number">5</span> Условия и работа со списками</a></li>
+<li><a href="6-data-presentation.html#data_presentation"><span class="toc-section-number">6</span> Представление данных: rmarkdown, github, shiny</a></li>
+<li><a href="7-strings.html#strings"><span class="toc-section-number">7</span> Работа со строками</a></li>
+<li><a href="8-tidytext.html#tidytext"><span class="toc-section-number">8</span> Работа с текстами: tidytext, udpipe</a></li>
+<li><a href="9-rvest.html#rvest"><span class="toc-section-number">9</span> Сбор данных из интернета: rvest</a></li>
+<li><a href="10-non-standard-data.html#non_standard_data"><span class="toc-section-number">10</span> Нестандартные данные: время, OCR, карты</a></li>
+<li class="has-sub"><a href="11-tasks.html#tasks"><span class="toc-section-number">11</span> Задания</a><ul>
+<li><a href="11-1-vec-task-1.html#vec_task_1"><span class="toc-section-number">11.1</span> Вектор</a></li>
+<li><a href="11-2-vec-op.html#vec_op"><span class="toc-section-number">11.2</span> Вектор. Операции с векторами</a></li>
+<li><a href="11-3-vec-task-2.html#vec_task_2"><span class="toc-section-number">11.3</span> Вектор. Индексирование</a></li>
+<li><a href="11-4-list-ta.html#list_ta"><span class="toc-section-number">11.4</span> Списки</a></li>
+<li><a href="11-5-t.html#t"><span class="toc-section-number">11.5</span> Матрицы</a></li>
+<li><a href="11-6-df-task.html#df_task"><span class="toc-section-number">11.6</span> Датафрейм</a></li>
+</ul></li>
+<li class="has-sub"><a href="12-solutions.html#solutions"><span class="toc-section-number">12</span> Решения_заданий</a><ul>
+<li><a href="12-1-solvvec-task-1.html#solvvec_task_1"><span class="toc-section-number">12.1</span> Вектор</a></li>
+<li><a href="12-2-solvvec-op.html#solvvec_op"><span class="toc-section-number">12.2</span> Вектор. Операции с векторами</a></li>
+<li><a href="12-3-solvvec-task-2.html#solvvec_task_2"><span class="toc-section-number">12.3</span> Вектор. Индексирование</a></li>
+<li><a href="12-4-solvlist-ta.html#solvlist_ta"><span class="toc-section-number">12.4</span> Списки</a></li>
+<li><a href="12-5-solvt.html#solvt"><span class="toc-section-number">12.5</span> Матрицы</a></li>
+<li><a href="12-6-solvdf-task.html#solvdf_task"><span class="toc-section-number">12.6</span> Датафрейм</a></li>
+</ul></li>
+<li><a href="section-6.html#section-6">Ссылки на литературу</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="prep" class="section level2">
+<h2><span class="header-section-number">2.12</span> Препроцессинг данных в R</h2>
+<p>Вчера мы узнали про основы языка R, про то, как работать с векторами, списками, матрицами и, наконец, датафреймами. Мы закончили день на загрузке данных, с чего мы и начнем сегодня:</p>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="2-12-prep.html#cb253-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/character-deaths.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> F)</span></code></pre></div>
+<p>После загрузки данных стоит немного “осмотреть” получившийся датафрейм <code>got</code>.</p>
+<div id="explore" class="section level3">
+<h3><span class="header-section-number">2.12.1</span> Исследование данных</h3>
+<p>Ок, давайте немного поизучаем датасет. Обычно мы привыкли глазами пробегать по данным, листая строки и столбцы — и это вполне правильно и логично, от этого не нужно отучаться. Но мы можем дополнить наш базовый зрительнопоисковой инструментарий несколькими полезными командами.</p>
+<p>Во-первых, вспомним другую полезную функцию <code>str()</code>:</p>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="2-12-prep.html#cb254-1"></a><span class="kw">str</span>(got)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    917 obs. of  13 variables:
+##  $ Name              : chr  &quot;Addam Marbrand&quot; &quot;Aegon Frey (Jinglebell)&quot; &quot;Aegon Targaryen&quot; &quot;Adrack Humble&quot; ...
+##  $ Allegiances       : chr  &quot;Lannister&quot; &quot;None&quot; &quot;House Targaryen&quot; &quot;House Greyjoy&quot; ...
+##  $ Death.Year        : int  NA 299 NA 300 NA NA 300 300 NA NA ...
+##  $ Book.of.Death     : int  NA 3 NA 5 NA NA 4 5 NA NA ...
+##  $ Death.Chapter     : int  NA 51 NA 20 NA NA 35 NA NA NA ...
+##  $ Book.Intro.Chapter: int  56 49 5 20 NA NA 21 59 11 0 ...
+##  $ Gender            : int  1 1 1 1 1 1 1 0 1 1 ...
+##  $ Nobility          : int  1 1 1 1 1 1 1 1 1 0 ...
+##  $ GoT               : int  1 0 0 0 0 0 1 1 0 0 ...
+##  $ CoK               : int  1 0 0 0 0 1 0 1 1 0 ...
+##  $ SoS               : int  1 1 0 0 1 1 1 1 0 1 ...
+##  $ FfC               : int  1 0 0 0 0 0 1 0 1 0 ...
+##  $ DwD               : int  0 0 1 1 0 0 0 1 0 0 ...</code></pre>
+<p>Давайте разберемся с переменными в датафрейме:</p>
+<p>Колонка <code>Name</code> — здесь все понятно. Важно, что эти имена записаны абсолютно по-разному: где-то с фамилией, где-то без, где-то в скобочках есть пояснения. Колонка <code>Allegiances</code> — к какому дому принадлежит персонаж. С этим сложно, иногда они меняют дома, здесь путаются сами семьи и персонажи, лояльные им. Особой разницы между <code>Stark</code> и <code>House Stark</code> нет. Следующие колонки - <code>Death Year</code>, <code>Book.of.Death</code>, <code>Death.Chapter</code>, <code>Book.Intro.Chapter</code> — означают номер главы, в которой персонаж впервые появляется, а так же номер книги, глава и год (от завоевания Вестероса Эйгоном Таргариеном), в которой персонаж умирает. <code>Gender</code> — <code>1</code> для мужчин, <code>0</code> для женщин. <code>Nobility</code> — дворянское происхождение персонажа. Последние 5 столбцов содержат информацию, появлялся ли персонаж в книге (всего книг пока что 5).</p>
+<p>Другая полезная функция для больших таблиц — функция <code>head()</code>: она выведет первые несколько (по дефолту 6) строчек датафрейма.</p>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="2-12-prep.html#cb256-1"></a><span class="kw">head</span>(got)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Death.Year"],"name":[3],"type":["int"],"align":["right"]},{"label":["Book.of.Death"],"name":[4],"type":["int"],"align":["right"]},{"label":["Death.Chapter"],"name":[5],"type":["int"],"align":["right"]},{"label":["Book.Intro.Chapter"],"name":[6],"type":["int"],"align":["right"]},{"label":["Gender"],"name":[7],"type":["int"],"align":["right"]},{"label":["Nobility"],"name":[8],"type":["int"],"align":["right"]},{"label":["GoT"],"name":[9],"type":["int"],"align":["right"]},{"label":["CoK"],"name":[10],"type":["int"],"align":["right"]},{"label":["SoS"],"name":[11],"type":["int"],"align":["right"]},{"label":["FfC"],"name":[12],"type":["int"],"align":["right"]},{"label":["DwD"],"name":[13],"type":["int"],"align":["right"]}],"data":[{"1":"Addam Marbrand","2":"Lannister","3":"NA","4":"NA","5":"NA","6":"56","7":"1","8":"1","9":"1","10":"1","11":"1","12":"1","13":"0","_rn_":"1"},{"1":"Aegon Frey (Jinglebell)","2":"None","3":"299","4":"3","5":"51","6":"49","7":"1","8":"1","9":"0","10":"0","11":"1","12":"0","13":"0","_rn_":"2"},{"1":"Aegon Targaryen","2":"House Targaryen","3":"NA","4":"NA","5":"NA","6":"5","7":"1","8":"1","9":"0","10":"0","11":"0","12":"0","13":"1","_rn_":"3"},{"1":"Adrack Humble","2":"House Greyjoy","3":"300","4":"5","5":"20","6":"20","7":"1","8":"1","9":"0","10":"0","11":"0","12":"0","13":"1","_rn_":"4"},{"1":"Aemon Costayne","2":"Lannister","3":"NA","4":"NA","5":"NA","6":"NA","7":"1","8":"1","9":"0","10":"0","11":"1","12":"0","13":"0","_rn_":"5"},{"1":"Aemon Estermont","2":"Baratheon","3":"NA","4":"NA","5":"NA","6":"NA","7":"1","8":"1","9":"0","10":"1","11":"1","12":"0","13":"0","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Есть еще функция <code>tail()</code>. Догадайтесь сами, что она делает.</p>
+<p>Для некоторых переменных полезно посмотреть таблицы частотности с помощью функции table():</p>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="2-12-prep.html#cb257-1"></a><span class="kw">table</span>(got<span class="op">$</span>Allegiances)</span></code></pre></div>
+<pre><code>## 
+##           Arryn       Baratheon         Greyjoy     House Arryn 
+##              23              56              51               7 
+## House Baratheon   House Greyjoy House Lannister   House Martell 
+##               8              24              21              12 
+##     House Stark House Targaryen     House Tully    House Tyrell 
+##              35              19               8              11 
+##       Lannister         Martell   Night&#39;s Watch            None 
+##              81              25             116             253 
+##           Stark       Targaryen           Tully          Tyrell 
+##              73              17              22              15 
+##        Wildling 
+##              40</code></pre>
+<p>Уау! Очень просто и удобно, не так ли? Функция <code>table()</code> может принимать сразу несколько столбцов. Это удобно для получения <em>таблиц сопряженности</em>:</p>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="2-12-prep.html#cb259-1"></a><span class="kw">table</span>(got<span class="op">$</span>Allegiances, got<span class="op">$</span>Gender)</span></code></pre></div>
+<pre><code>##                  
+##                     0   1
+##   Arryn             3  20
+##   Baratheon         6  50
+##   Greyjoy           4  47
+##   House Arryn       3   4
+##   House Baratheon   0   8
+##   House Greyjoy     1  23
+##   House Lannister   2  19
+##   House Martell     7   5
+##   House Stark       6  29
+##   House Targaryen   5  14
+##   House Tully       0   8
+##   House Tyrell      4   7
+##   Lannister        12  69
+##   Martell           7  18
+##   Night&#39;s Watch     0 116
+##   None             51 202
+##   Stark            21  52
+##   Targaryen         1  16
+##   Tully             2  20
+##   Tyrell            6   9
+##   Wildling         16  24</code></pre>
+</div>
+<div id="subset" class="section level3">
+<h3><span class="header-section-number">2.12.2</span> Subsetting</h3>
+<p>Как мы обсуждали на прошлом занятии, мы можем сабсеттить (выделять часть датафрейма) датафрейм, обращаясь к нему и как к матрице: <em>датафрейм[вектор_с_номерами_строк, вектор_с_номерами_колонок]</em></p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="2-12-prep.html#cb261-1"></a>got[<span class="dv">100</span><span class="op">:</span><span class="dv">115</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"Blue Bard","2":"House Tyrell","_rn_":"100"},{"1":"Bonifer Hasty","2":"Lannister","_rn_":"101"},{"1":"Borcas","2":"Night's Watch","_rn_":"102"},{"1":"Boremund Harlaw","2":"Greyjoy","_rn_":"103"},{"1":"Boros Blount","2":"Baratheon","_rn_":"104"},{"1":"Borroq","2":"Wildling","_rn_":"105"},{"1":"Bowen Marsh","2":"Night's Watch","_rn_":"106"},{"1":"Bran Stark","2":"House Stark","_rn_":"107"},{"1":"Brandon Norrey","2":"Stark","_rn_":"108"},{"1":"Brenett","2":"None","_rn_":"109"},{"1":"Brienne of Tarth","2":"Stark","_rn_":"110"},{"1":"Bronn","2":"Lannister","_rn_":"111"},{"1":"Brown Bernarr","2":"Night's Watch","_rn_":"112"},{"1":"Brusco","2":"None","_rn_":"113"},{"1":"Bryan Fossoway","2":"Baratheon","_rn_":"114"},{"1":"Bryce Caron","2":"Baratheon","_rn_":"115"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>и используя имена колонок:</p>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="2-12-prep.html#cb262-1"></a>got[<span class="dv">508</span><span class="op">:</span><span class="dv">515</span>, <span class="st">&quot;Name&quot;</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;Mance Rayder&quot;    &quot;Mandon Moore&quot;    &quot;Maric Seaworth&quot;  &quot;Marei&quot;          
+## [5] &quot;Margaery Tyrell&quot; &quot;Marillion&quot;       &quot;Maris&quot;           &quot;Marissa Frey&quot;</code></pre>
+<p>и даже используя вектора названий колонок!</p>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="2-12-prep.html#cb264-1"></a>got[<span class="dv">508</span><span class="op">:</span><span class="dv">515</span>, <span class="kw">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Allegiances&quot;</span>, <span class="st">&quot;Gender&quot;</span>)]</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Gender"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"Mance Rayder","2":"Wildling","3":"1","_rn_":"508"},{"1":"Mandon Moore","2":"Baratheon","3":"1","_rn_":"509"},{"1":"Maric Seaworth","2":"House Baratheon","3":"1","_rn_":"510"},{"1":"Marei","2":"None","3":"0","_rn_":"511"},{"1":"Margaery Tyrell","2":"House Tyrell","3":"0","_rn_":"512"},{"1":"Marillion","2":"Arryn","3":"1","_rn_":"513"},{"1":"Maris","2":"Wildling","3":"0","_rn_":"514"},{"1":"Marissa Frey","2":"None","3":"0","_rn_":"515"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Мы можем вытаскивать отдельные колонки как векторы:</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="2-12-prep.html#cb265-1"></a>houses &lt;-<span class="st"> </span>got<span class="op">$</span>Allegiances</span>
+<span id="cb265-2"><a href="2-12-prep.html#cb265-2"></a><span class="kw">unique</span>(houses) <span class="co">#посмотреть все уникальные значения --- почти как с помощью table()</span></span></code></pre></div>
+<pre><code>##  [1] &quot;Lannister&quot;       &quot;None&quot;            &quot;House Targaryen&quot;
+##  [4] &quot;House Greyjoy&quot;   &quot;Baratheon&quot;       &quot;Night&#39;s Watch&quot;  
+##  [7] &quot;Arryn&quot;           &quot;House Stark&quot;     &quot;House Tyrell&quot;   
+## [10] &quot;Tyrell&quot;          &quot;Stark&quot;           &quot;Greyjoy&quot;        
+## [13] &quot;House Lannister&quot; &quot;Martell&quot;         &quot;House Martell&quot;  
+## [16] &quot;Wildling&quot;        &quot;Targaryen&quot;       &quot;House Arryn&quot;    
+## [19] &quot;House Tully&quot;     &quot;Tully&quot;           &quot;House Baratheon&quot;</code></pre>
+<p>Итак, давайте решим нашу первую задачу — вытащим в отдельный датасет всех представителей Ночного Дозора.
+Для этого нам нужно создать вектор логических значений — результат сравнений колонки <code>Allegiances</code> со значением <code>"Night's Watch"</code> и использовать его как вектор индексов для датафрейма.</p>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="2-12-prep.html#cb267-1"></a>vectornight &lt;-<span class="st"> </span>got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span></span>
+<span id="cb267-2"><a href="2-12-prep.html#cb267-2"></a><span class="kw">head</span>(vectornight)</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<p>Теперь этот вектор с <code>TRUE</code> и <code>FALSE</code> нам надо использовать для индексирования строк. Но что со столбцами? Если мы хотем сохранить все столбцы, то после запятой внутри квадратных скобок нам не нужно ничего указывать:</p>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="2-12-prep.html#cb269-1"></a>nightswatch &lt;-<span class="st"> </span>got[vectornight,]</span>
+<span id="cb269-2"><a href="2-12-prep.html#cb269-2"></a><span class="kw">head</span>(nightswatch)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Death.Year"],"name":[3],"type":["int"],"align":["right"]},{"label":["Book.of.Death"],"name":[4],"type":["int"],"align":["right"]},{"label":["Death.Chapter"],"name":[5],"type":["int"],"align":["right"]},{"label":["Book.Intro.Chapter"],"name":[6],"type":["int"],"align":["right"]},{"label":["Gender"],"name":[7],"type":["int"],"align":["right"]},{"label":["Nobility"],"name":[8],"type":["int"],"align":["right"]},{"label":["GoT"],"name":[9],"type":["int"],"align":["right"]},{"label":["CoK"],"name":[10],"type":["int"],"align":["right"]},{"label":["SoS"],"name":[11],"type":["int"],"align":["right"]},{"label":["FfC"],"name":[12],"type":["int"],"align":["right"]},{"label":["DwD"],"name":[13],"type":["int"],"align":["right"]}],"data":[{"1":"Aemon Targaryen (son of Maekar I)","2":"Night's Watch","3":"300","4":"4","5":"35","6":"21","7":"1","8":"1","9":"1","10":"0","11":"1","12":"1","13":"0","_rn_":"7"},{"1":"Aethan","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"0","7":"1","8":"0","9":"0","10":"0","11":"1","12":"0","13":"0","_rn_":"10"},{"1":"Alan of Rosby","2":"Night's Watch","3":"300","4":"5","5":"4","6":"18","7":"1","8":"1","9":"0","10":"1","11":"1","12":"0","13":"1","_rn_":"13"},{"1":"Albett","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"26","7":"1","8":"0","9":"1","10":"0","11":"0","12":"0","13":"0","_rn_":"16"},{"1":"Alliser Thorne","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"19","7":"1","8":"0","9":"1","10":"1","11":"1","12":"0","13":"1","_rn_":"24"},{"1":"Arron","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"75","7":"1","8":"0","9":"0","10":"0","11":"1","12":"0","13":"1","_rn_":"49"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Вуаля!
+Все это можно сделать проще и в одну строку:</p>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="2-12-prep.html#cb270-1"></a>nightswatch &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span>,]</span></code></pre></div>
+<p>И не забывайте про запятую!</p>
+<p>Теперь попробуем вытащить одновременно всех Одичалых (<code>Wildling</code>) и всех представителей Ночного Дозора. Это можно сделать, используя оператор <code>|</code> (ИЛИ) при выборе колонок:</p>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="2-12-prep.html#cb271-1"></a>nightwatch_wildling &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span> <span class="op">|</span><span class="st"> </span>got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Wildling&quot;</span>,]</span>
+<span id="cb271-2"><a href="2-12-prep.html#cb271-2"></a><span class="kw">head</span>(nightwatch_wildling)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Death.Year"],"name":[3],"type":["int"],"align":["right"]},{"label":["Book.of.Death"],"name":[4],"type":["int"],"align":["right"]},{"label":["Death.Chapter"],"name":[5],"type":["int"],"align":["right"]},{"label":["Book.Intro.Chapter"],"name":[6],"type":["int"],"align":["right"]},{"label":["Gender"],"name":[7],"type":["int"],"align":["right"]},{"label":["Nobility"],"name":[8],"type":["int"],"align":["right"]},{"label":["GoT"],"name":[9],"type":["int"],"align":["right"]},{"label":["CoK"],"name":[10],"type":["int"],"align":["right"]},{"label":["SoS"],"name":[11],"type":["int"],"align":["right"]},{"label":["FfC"],"name":[12],"type":["int"],"align":["right"]},{"label":["DwD"],"name":[13],"type":["int"],"align":["right"]}],"data":[{"1":"Aemon Targaryen (son of Maekar I)","2":"Night's Watch","3":"300","4":"4","5":"35","6":"21","7":"1","8":"1","9":"1","10":"0","11":"1","12":"1","13":"0","_rn_":"7"},{"1":"Aethan","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"0","7":"1","8":"0","9":"0","10":"0","11":"1","12":"0","13":"0","_rn_":"10"},{"1":"Alan of Rosby","2":"Night's Watch","3":"300","4":"5","5":"4","6":"18","7":"1","8":"1","9":"0","10":"1","11":"1","12":"0","13":"1","_rn_":"13"},{"1":"Albett","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"26","7":"1","8":"0","9":"1","10":"0","11":"0","12":"0","13":"0","_rn_":"16"},{"1":"Alliser Thorne","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"19","7":"1","8":"0","9":"1","10":"1","11":"1","12":"0","13":"1","_rn_":"24"},{"1":"Arron","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"75","7":"1","8":"0","9":"0","10":"0","11":"1","12":"0","13":"1","_rn_":"49"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<blockquote>
+<p>Кажется очевидным следующий вариант: <code>got[got$Allegiances == c("Night's Watch", "Wildling"),]</code>. Однако это выдаст не совсем то, что нужно, хотя результат может показаться верным на первый взгляд. Попробуйте самостоятельно ответить на вопрос, что происходит в данном случае и чем результат отличается от предполагаемого. Подсказка: вспомните правило recycling.</p>
+</blockquote>
+<p>Для таких случаев есть удобный оператор <code>%in%</code>, который позволяет сравнить каждое значение вектора с целым набором значений. Если значение вектора хотя бы один раз встречается в векторе справа от <code>%in%</code>, то результат — <code>TRUE</code>:</p>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="2-12-prep.html#cb272-1"></a><span class="dv">1</span><span class="op">:</span><span class="dv">6</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE FALSE  TRUE  TRUE FALSE</code></pre>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="2-12-prep.html#cb274-1"></a>nightwatch_wildling &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Night&#39;s Watch&quot;</span>, <span class="st">&quot;Wildling&quot;</span>),]</span>
+<span id="cb274-2"><a href="2-12-prep.html#cb274-2"></a><span class="kw">head</span>(nightwatch_wildling)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Death.Year"],"name":[3],"type":["int"],"align":["right"]},{"label":["Book.of.Death"],"name":[4],"type":["int"],"align":["right"]},{"label":["Death.Chapter"],"name":[5],"type":["int"],"align":["right"]},{"label":["Book.Intro.Chapter"],"name":[6],"type":["int"],"align":["right"]},{"label":["Gender"],"name":[7],"type":["int"],"align":["right"]},{"label":["Nobility"],"name":[8],"type":["int"],"align":["right"]},{"label":["GoT"],"name":[9],"type":["int"],"align":["right"]},{"label":["CoK"],"name":[10],"type":["int"],"align":["right"]},{"label":["SoS"],"name":[11],"type":["int"],"align":["right"]},{"label":["FfC"],"name":[12],"type":["int"],"align":["right"]},{"label":["DwD"],"name":[13],"type":["int"],"align":["right"]}],"data":[{"1":"Aemon Targaryen (son of Maekar I)","2":"Night's Watch","3":"300","4":"4","5":"35","6":"21","7":"1","8":"1","9":"1","10":"0","11":"1","12":"1","13":"0","_rn_":"7"},{"1":"Aethan","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"0","7":"1","8":"0","9":"0","10":"0","11":"1","12":"0","13":"0","_rn_":"10"},{"1":"Alan of Rosby","2":"Night's Watch","3":"300","4":"5","5":"4","6":"18","7":"1","8":"1","9":"0","10":"1","11":"1","12":"0","13":"1","_rn_":"13"},{"1":"Albett","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"26","7":"1","8":"0","9":"1","10":"0","11":"0","12":"0","13":"0","_rn_":"16"},{"1":"Alliser Thorne","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"19","7":"1","8":"0","9":"1","10":"1","11":"1","12":"0","13":"1","_rn_":"24"},{"1":"Arron","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"75","7":"1","8":"0","9":"0","10":"0","11":"1","12":"0","13":"1","_rn_":"49"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="newcol" class="section level3">
+<h3><span class="header-section-number">2.12.3</span> Создание новых колонок</h3>
+<p>Давайте создадим новую колонку, которая будет означать, жив ли еще персонаж (по книгам).
+Заметьте, что в этом датасете, хоть он и посвящен смертям персонажей, нет нужной колонки. Мы можем попытаться “вытащить” эту информацию. В колонках <code>Death.Year</code>, <code>Death.Chapter</code> и <code>Book.of.Death</code> стоит <code>NA</code> у многих персонажей. Например, у <code>Arya Stark</code>, которая и по книгам, и по сериалу живее всех живых и мертвых:</p>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="2-12-prep.html#cb275-1"></a>got[got<span class="op">$</span>Name <span class="op">==</span><span class="st"> &quot;Arya Stark&quot;</span>,]</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Death.Year"],"name":[3],"type":["int"],"align":["right"]},{"label":["Book.of.Death"],"name":[4],"type":["int"],"align":["right"]},{"label":["Death.Chapter"],"name":[5],"type":["int"],"align":["right"]},{"label":["Book.Intro.Chapter"],"name":[6],"type":["int"],"align":["right"]},{"label":["Gender"],"name":[7],"type":["int"],"align":["right"]},{"label":["Nobility"],"name":[8],"type":["int"],"align":["right"]},{"label":["GoT"],"name":[9],"type":["int"],"align":["right"]},{"label":["CoK"],"name":[10],"type":["int"],"align":["right"]},{"label":["SoS"],"name":[11],"type":["int"],"align":["right"]},{"label":["FfC"],"name":[12],"type":["int"],"align":["right"]},{"label":["DwD"],"name":[13],"type":["int"],"align":["right"]}],"data":[{"1":"Arya Stark","2":"Stark","3":"NA","4":"NA","5":"NA","6":"2","7":"0","8":"1","9":"1","10":"1","11":"1","12":"1","13":"1","_rn_":"56"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Следовательно, если в <code>Book.of.Death</code> стоит <code>NA</code>, мы можем предположить, что Джордж Мартин еще не занес своей карающей руки над этим героем.</p>
+<p>Мы можем создать новую колонку <code>Is.Alive</code>:</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="2-12-prep.html#cb276-1"></a>got<span class="op">$</span>Is.Alive &lt;-<span class="st"> </span><span class="kw">is.na</span>(got<span class="op">$</span>Book.of.Death)</span></code></pre></div>
+</div>
+<div id="dtvstidy" class="section level3">
+<h3><span class="header-section-number">2.12.4</span> data.table vs. tidyverse</h3>
+<p>В принципе, с помощью базового R можно сделать все, что угодно. Однако базовые инструменты R — не всегда самые удобные. Идея сделать работу с датафреймами в R еще быстрее и удобнее сподвигла разработчиков на создание новых инструментов — <code>data.table</code> и <code>tidyverse</code> (<code>dplyr</code>). Это два конкурирующих подхода, которые сильно перерабатывают язык, хотя это по-прежнему все тот же R — поэтому их еще называют “диалектами” R.</p>
+<p>Оба подхода обладают своими преимуществами и недостатками, но на сегодняшний день <code>tidyverse</code> считается более популярным. Основное преимущество этого подхода — в относительной легкости освоения. Обычно код, написанный в <code>tidyverse</code> можно примерно понять, даже не владея им.</p>
+<p>Преимущество <code>data.table</code> — в суровом лаконичном синтаксисе и наиболее эффективных алгоритмах. Последние обеспечивают очень серьезный прирост в скорости в работе с данными. Чтение файлов и манипуляция данными может быть на порядки быстрее, поэтому если Ваш датасет с трудом пролезает в оперативную память компьютера, а исполнение скрипта занимает длительное время - стоит задуматься о переходе на <code>data.table</code>.</p>
+<p>Что из этого учить — решать Вам, но знать оба совсем не обязательно: они решают те же самые задачи, просто совсем разными способами. За data.table — скорость, за tidyverse - понятность синтаксиса. Очень советую почитать обсуждение на эту тему <a href="https://stackoverflow.com/questions/21435339/data-table-vs-dplyr-can-one-do-something-well-the-other-cant-or-does-poorly">здесь</a>.</p>
+<p><img src="images/New-Mind-Map.jpg" /></p>
+
+</div>
+</div>
+<!-- </div> -->
+<p style="text-align: center;">
+<a href="2-11-real-data.html"><button class="btn btn-default">Previous</button></a>
+<a href="3-tidy-dplyr.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

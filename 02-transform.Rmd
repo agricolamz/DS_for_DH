@@ -34,8 +34,12 @@ library(tidyverse)
 #### Misspelling dataset
 Этот датасет я переработал из данных, собранных для статьи [The Gyllenhaal Experiment](https://pudding.cool/2019/02/gyllenhaal/), написанной Расселом Гольденбергом и Мэттом Дэниэлсом для издания [pudding](https://pudding.cool). Они анализировали ошибки в правописании при поиске имен и фамилий звезд.
 
-```{r}
-mispellings <- read_csv("")
+```{r, cache=TRUE}
+mispellings <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/misspeling_dataset.csv")
 ```
 
+
+```{r}
+mispellings
+```
 

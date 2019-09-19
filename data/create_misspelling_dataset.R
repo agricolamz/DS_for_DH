@@ -4,10 +4,10 @@ library(jsonlite)
 df <- jsonlite::read_json("https://pudding.cool/2019/02/sankey-data/data-all.json")
 df <- df$data$names
 
-mispellings <- map_dfr(1:15, function(i){
+misspellings <- map_dfr(1:15, function(i){
   tibble(correct = names(df)[i],
          spelling = map_chr(df[[i]], "name"),
          count = map_int(df[[i]], "count"))
 })
 
-write_csv(mispellings, "data/misspeling_dataset.csv")
+write_csv(misspellings, "data/misspelling_dataset.csv")

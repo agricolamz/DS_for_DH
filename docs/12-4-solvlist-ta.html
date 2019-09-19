@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="12.4 Списки | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+<meta property="og:type" content="book" />
+
+
+
+
+
+<meta name="author" content="Г. А. Мороз, И. С. Поздняков" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+
+<meta name="description" content="12.4 Списки | Наука о данных в R для программы Цифровых гуманитарных исследований">
+
+<title>12.4 Списки | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#section"><span class="toc-section-number">1</span> О курсе</a></li>
+<li class="has-sub"><a href="2-intro.html#intro"><span class="toc-section-number">2</span> Введение в R</a><ul>
+<li><a href="2-1-section-1.html#section-1"><span class="toc-section-number">2.1</span> Наука о данных</a></li>
+<li><a href="2-2-r-rstudio.html#r--rstudio"><span class="toc-section-number">2.2</span> Установка R и RStudio</a></li>
+<li><a href="2-3-section-2.html#section-2"><span class="toc-section-number">2.3</span> Полезные ссылки</a></li>
+<li><a href="2-4-rstudio.html#rstudio"><span class="toc-section-number">2.4</span> Rstudio</a></li>
+<li class="has-sub"><a href="2-5-r.html#r"><span class="toc-section-number">2.5</span> Введение в R</a><ul>
+<li><a href="2-5-r.html#calc"><span class="toc-section-number">2.5.1</span> R как калькулятор</a></li>
+<li><a href="2-5-r.html#func"><span class="toc-section-number">2.5.2</span> Функции</a></li>
+<li><a href="2-5-r.html#variables"><span class="toc-section-number">2.5.3</span> Переменные</a></li>
+</ul></li>
+<li><a href="2-6-data-types.html#data_types"><span class="toc-section-number">2.6</span> Типы данных</a></li>
+<li class="has-sub"><a href="2-7-atomic.html#atomic"><span class="toc-section-number">2.7</span> Вектор</a><ul>
+<li><a href="2-7-atomic.html#coercion"><span class="toc-section-number">2.7.1</span> Coercion</a></li>
+<li><a href="2-7-atomic.html#vector_op"><span class="toc-section-number">2.7.2</span> Операции с векторами</a></li>
+<li><a href="2-7-atomic.html#recycling"><span class="toc-section-number">2.7.3</span> Recycling</a></li>
+<li><a href="2-7-atomic.html#index_atomic"><span class="toc-section-number">2.7.4</span> Индексирование векторов</a></li>
+<li><a href="2-7-atomic.html#na"><span class="toc-section-number">2.7.5</span> NA — пропущенные значения</a></li>
+<li><a href="2-7-atomic.html#google"><span class="toc-section-number">2.7.6</span> В любой непонятной ситуации — ищите в поисковике</a></li>
+</ul></li>
+<li><a href="2-8-matrix.html#matrix"><span class="toc-section-number">2.8</span> Матрицы (matrix)</a></li>
+<li><a href="2-9-list.html#list"><span class="toc-section-number">2.9</span> Списки (list)</a></li>
+<li><a href="2-10-df.html#df"><span class="toc-section-number">2.10</span> Data.frame</a></li>
+<li class="has-sub"><a href="2-11-real-data.html#real_data"><span class="toc-section-number">2.11</span> Начинаем работу с реальными данными</a><ul>
+<li><a href="2-11-real-data.html#wd"><span class="toc-section-number">2.11.1</span> Рабочая папка и проекты</a></li>
+<li><a href="2-11-real-data.html#import"><span class="toc-section-number">2.11.2</span> Импорт данных</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-12-prep.html#prep"><span class="toc-section-number">2.12</span> Препроцессинг данных в R</a><ul>
+<li><a href="2-12-prep.html#explore"><span class="toc-section-number">2.12.1</span> Исследование данных</a></li>
+<li><a href="2-12-prep.html#subset"><span class="toc-section-number">2.12.2</span> Subsetting</a></li>
+<li><a href="2-12-prep.html#newcol"><span class="toc-section-number">2.12.3</span> Создание новых колонок</a></li>
+<li><a href="2-12-prep.html#dtvstidy"><span class="toc-section-number">2.12.4</span> data.table vs. tidyverse</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="3-tidy-dplyr.html#tidy_dplyr"><span class="toc-section-number">3</span> <code>tidyverse</code>: Загрузка и трансформация данных</a><ul>
+<li class="has-sub"><a href="3-1-section-3.html#section-3"><span class="toc-section-number">3.1</span> Загрузка данных</a><ul>
+<li><a href="3-1-section-3.html#section-4"><span class="toc-section-number">3.1.1</span> Рабочая директория</a></li>
+<li><a href="3-1-section-3.html#section-5"><span class="toc-section-number">3.1.2</span> Загрузка данных</a></li>
+</ul></li>
+</ul></li>
+<li><a href="4-viz-1.html#viz_1"><span class="toc-section-number">4</span> Визуализация данных</a></li>
+<li><a href="5-dplyr-purr.html#dplyr_purr"><span class="toc-section-number">5</span> Условия и работа со списками</a></li>
+<li><a href="6-data-presentation.html#data_presentation"><span class="toc-section-number">6</span> Представление данных: rmarkdown, github, shiny</a></li>
+<li><a href="7-strings.html#strings"><span class="toc-section-number">7</span> Работа со строками</a></li>
+<li><a href="8-tidytext.html#tidytext"><span class="toc-section-number">8</span> Работа с текстами: tidytext, udpipe</a></li>
+<li><a href="9-rvest.html#rvest"><span class="toc-section-number">9</span> Сбор данных из интернета: rvest</a></li>
+<li><a href="10-non-standard-data.html#non_standard_data"><span class="toc-section-number">10</span> Нестандартные данные: время, OCR, карты</a></li>
+<li class="has-sub"><a href="11-tasks.html#tasks"><span class="toc-section-number">11</span> Задания</a><ul>
+<li><a href="11-1-vec-task-1.html#vec_task_1"><span class="toc-section-number">11.1</span> Вектор</a></li>
+<li><a href="11-2-vec-op.html#vec_op"><span class="toc-section-number">11.2</span> Вектор. Операции с векторами</a></li>
+<li><a href="11-3-vec-task-2.html#vec_task_2"><span class="toc-section-number">11.3</span> Вектор. Индексирование</a></li>
+<li><a href="11-4-list-ta.html#list_ta"><span class="toc-section-number">11.4</span> Списки</a></li>
+<li><a href="11-5-t.html#t"><span class="toc-section-number">11.5</span> Матрицы</a></li>
+<li><a href="11-6-df-task.html#df_task"><span class="toc-section-number">11.6</span> Датафрейм</a></li>
+</ul></li>
+<li class="has-sub"><a href="12-solutions.html#solutions"><span class="toc-section-number">12</span> Решения_заданий</a><ul>
+<li><a href="12-1-solvvec-task-1.html#solvvec_task_1"><span class="toc-section-number">12.1</span> Вектор</a></li>
+<li><a href="12-2-solvvec-op.html#solvvec_op"><span class="toc-section-number">12.2</span> Вектор. Операции с векторами</a></li>
+<li><a href="12-3-solvvec-task-2.html#solvvec_task_2"><span class="toc-section-number">12.3</span> Вектор. Индексирование</a></li>
+<li><a href="12-4-solvlist-ta.html#solvlist_ta"><span class="toc-section-number">12.4</span> Списки</a></li>
+<li><a href="12-5-solvt.html#solvt"><span class="toc-section-number">12.5</span> Матрицы</a></li>
+<li><a href="12-6-solvdf-task.html#solvdf_task"><span class="toc-section-number">12.6</span> Датафрейм</a></li>
+</ul></li>
+<li><a href="section-6.html#section-6">Ссылки на литературу</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="solvlist_ta" class="section level2">
+<h2><span class="header-section-number">12.4</span> Списки</h2>
+<p>Дан список <code>list_1</code>:</p>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="12-4-solvlist-ta.html#cb393-1"></a>list_<span class="dv">1</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">numbers =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letters =</span> letters, <span class="dt">logic =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb393-2"><a href="12-4-solvlist-ta.html#cb393-2"></a>list_<span class="dv">1</span></span></code></pre></div>
+<pre><code>## $numbers
+## [1] 1 2 3 4 5
+## 
+## $letters
+##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot;
+## [18] &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+## 
+## $logic
+## [1] TRUE</code></pre>
+<ul>
+<li>Найдите первый элемент списка. Ответ должен быть списком.</li>
+</ul>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="12-4-solvlist-ta.html#cb395-1"></a>list_<span class="dv">1</span>[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## $numbers
+## [1] 1 2 3 4 5</code></pre>
+<ul>
+<li>Теперь найдите содержание первого элемента списка двумя разными способами. Ответ должен быть вектором.</li>
+</ul>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="12-4-solvlist-ta.html#cb397-1"></a>list_<span class="dv">1</span>[[<span class="dv">1</span>]]</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="12-4-solvlist-ta.html#cb399-1"></a>list_<span class="dv">1</span><span class="op">$</span>numbers</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<p>Теперь возьмите первый элемент содержания первого элемента списка. Ответ должен быть вектором.</p>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="12-4-solvlist-ta.html#cb401-1"></a>list_<span class="dv">1</span>[[<span class="dv">1</span>]][<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>Создайте список <code>list_2</code>, содержащий в себе два списка <code>list_1</code> с именами <code>pupa</code> и <code>lupa</code>.</p>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="12-4-solvlist-ta.html#cb403-1"></a>list_<span class="dv">2</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">pupa =</span> list_<span class="dv">1</span>, <span class="dt">lupa =</span> list_<span class="dv">1</span>)</span>
+<span id="cb403-2"><a href="12-4-solvlist-ta.html#cb403-2"></a>list_<span class="dv">2</span></span></code></pre></div>
+<pre><code>## $pupa
+## $pupa$numbers
+## [1] 1 2 3 4 5
+## 
+## $pupa$letters
+##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot;
+## [18] &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+## 
+## $pupa$logic
+## [1] TRUE
+## 
+## 
+## $lupa
+## $lupa$numbers
+## [1] 1 2 3 4 5
+## 
+## $lupa$letters
+##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot;
+## [18] &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+## 
+## $lupa$logic
+## [1] TRUE</code></pre>
+<p>Извлеките первый элемент списка, из него - второй полэлемент, а из него - третье значение</p>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="12-4-solvlist-ta.html#cb405-1"></a>list_<span class="dv">2</span>[[<span class="dv">1</span>]][[<span class="dv">2</span>]][<span class="dv">3</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;c&quot;</code></pre>
+</div>
+<p style="text-align: center;">
+<a href="12-3-solvvec-task-2.html"><button class="btn btn-default">Previous</button></a>
+<a href="12-5-solvt.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>
