@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="tasks.html"/>
-<link rel="next" href="section-3.html"/>
+<link rel="next" href="section-6.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -163,7 +163,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.12.4" data-path="intro.html"><a href="intro.html#dtvstidy"><i class="fa fa-check"></i><b>2.12.4</b> data.table vs. tidyverse</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html"><i class="fa fa-check"></i><b>3</b> Трансформация данных</a></li>
+<li class="chapter" data-level="3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html"><i class="fa fa-check"></i><b>3</b> <code>tidyverse</code>: Загрузка и трансформация данных</a><ul>
+<li class="chapter" data-level="3.1" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#section-3"><i class="fa fa-check"></i><b>3.1</b> Загрузка данных</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#section-4"><i class="fa fa-check"></i><b>3.1.1</b> Рабочая директория</a></li>
+<li class="chapter" data-level="3.1.2" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#section-5"><i class="fa fa-check"></i><b>3.1.2</b> Загрузка данных</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="viz-1.html"><a href="viz-1.html"><i class="fa fa-check"></i><b>4</b> Визуализация данных</a></li>
 <li class="chapter" data-level="5" data-path="dplyr-purr.html"><a href="dplyr-purr.html"><i class="fa fa-check"></i><b>5</b> Условия и работа со списками</a></li>
 <li class="chapter" data-level="6" data-path="data-presentation.html"><a href="data-presentation.html"><i class="fa fa-check"></i><b>6</b> Представление данных: rmarkdown, github, shiny</a></li>
@@ -187,7 +192,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.5" data-path="solutions.html"><a href="solutions.html#solvt"><i class="fa fa-check"></i><b>12.5</b> Матрицы</a></li>
 <li class="chapter" data-level="12.6" data-path="solutions.html"><a href="solutions.html#solvdf_task"><i class="fa fa-check"></i><b>12.6</b> Датафрейм</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="section-3.html"><a href="section-3.html"><i class="fa fa-check"></i>Ссылки на литературу</a></li>
+<li class="chapter" data-level="" data-path="section-6.html"><a href="section-6.html"><i class="fa fa-check"></i>Ссылки на литературу</a></li>
 </ul>
 
       </nav>
@@ -212,145 +217,145 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Посчитайте логарифм от 8912162342 по основанию 6</li>
 </ul>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="solutions.html#cb341-1"></a><span class="kw">log</span>(<span class="dv">8912162342</span>, <span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="solutions.html#cb345-1"></a><span class="kw">log</span>(<span class="dv">8912162342</span>, <span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## [1] 12.7867</code></pre>
 <ul>
 <li>Теперь натуральный логарифм 10 и умножьте его на 5</li>
 </ul>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="solutions.html#cb343-1"></a><span class="kw">log</span>(<span class="dv">10</span>)<span class="op">*</span><span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="solutions.html#cb347-1"></a><span class="kw">log</span>(<span class="dv">10</span>)<span class="op">*</span><span class="dv">5</span></span></code></pre></div>
 <pre><code>## [1] 11.51293</code></pre>
 <ul>
 <li>Создайте вектор от 1 до 20</li>
 </ul>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="solutions.html#cb345-1"></a><span class="dv">1</span><span class="op">:</span><span class="dv">20</span></span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="solutions.html#cb349-1"></a><span class="dv">1</span><span class="op">:</span><span class="dv">20</span></span></code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</code></pre>
 <ul>
 <li>Создайте вектор от 20 до 1</li>
 </ul>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="solutions.html#cb347-1"></a><span class="dv">20</span><span class="op">:</span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="solutions.html#cb351-1"></a><span class="dv">20</span><span class="op">:</span><span class="dv">1</span></span></code></pre></div>
 <pre><code>##  [1] 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1</code></pre>
 <ul>
 <li>Создайте вектор от 1 до 20 и снова до 1. Число 20 должно присутствовать только один раз!</li>
 </ul>
-<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="solutions.html#cb349-1"></a><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>, <span class="dv">19</span><span class="op">:</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="solutions.html#cb353-1"></a><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>, <span class="dv">19</span><span class="op">:</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 19 18 17
 ## [24] 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1</code></pre>
 <ul>
 <li>Создайте вектор 2, 4, 6, … , 18, 20</li>
 </ul>
-<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="solutions.html#cb351-1"></a><span class="kw">seq</span>(<span class="dv">2</span>,<span class="dv">20</span>, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="solutions.html#cb355-1"></a><span class="kw">seq</span>(<span class="dv">2</span>,<span class="dv">20</span>, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##  [1]  2  4  6  8 10 12 14 16 18 20</code></pre>
 <ul>
 <li>Создайте вектор из одной единицы, двух двоек, трех троек, …. , девяти девяток</li>
 </ul>
-<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="solutions.html#cb353-1"></a><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="solutions.html#cb357-1"></a><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)</span></code></pre></div>
 <pre><code>##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8
 ## [36] 8 9 9 9 9 9 9 9 9 9</code></pre>
 <ul>
 <li>Сделайте вектор vec, в котором соедините <code>3</code>, а также значения <code>"Мой"</code> и <code>"вектор"</code>.</li>
 </ul>
-<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="solutions.html#cb355-1"></a>vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="st">&quot;Мой&quot;</span>, <span class="st">&quot;вектор&quot;</span>)</span>
-<span id="cb355-2"><a href="solutions.html#cb355-2"></a>vec</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="solutions.html#cb359-1"></a>vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="st">&quot;Мой&quot;</span>, <span class="st">&quot;вектор&quot;</span>)</span>
+<span id="cb359-2"><a href="solutions.html#cb359-2"></a>vec</span></code></pre></div>
 <pre><code>## [1] &quot;3&quot;      &quot;Мой&quot;    &quot;вектор&quot;</code></pre>
 <ul>
 <li>Вычесть <code>TRUE</code> из 10</li>
 </ul>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="solutions.html#cb357-1"></a><span class="dv">10</span> <span class="op">-</span><span class="st"> </span><span class="ot">TRUE</span></span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="solutions.html#cb361-1"></a><span class="dv">10</span> <span class="op">-</span><span class="st"> </span><span class="ot">TRUE</span></span></code></pre></div>
 <pre><code>## [1] 9</code></pre>
 <ul>
 <li>Соедините значение <code>10</code> и <code>TRUE</code> в вектор <code>vec</code></li>
 </ul>
-<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="solutions.html#cb359-1"></a>vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="ot">TRUE</span>)</span>
-<span id="cb359-2"><a href="solutions.html#cb359-2"></a>vec</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="solutions.html#cb363-1"></a>vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="ot">TRUE</span>)</span>
+<span id="cb363-2"><a href="solutions.html#cb363-2"></a>vec</span></code></pre></div>
 <pre><code>## [1] 10  1</code></pre>
 <ul>
 <li>Соедините вектор <code>vec</code> и значение <code>"r"</code>:</li>
 </ul>
-<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="solutions.html#cb361-1"></a><span class="kw">c</span>(vec, <span class="st">&quot;r&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="solutions.html#cb365-1"></a><span class="kw">c</span>(vec, <span class="st">&quot;r&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;10&quot; &quot;1&quot;  &quot;r&quot;</code></pre>
 <ul>
 <li>Соедините значения <code>10</code>, <code>TRUE</code>, <code>"r"</code> в вектор.</li>
 </ul>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="solutions.html#cb363-1"></a><span class="kw">c</span>(<span class="dv">10</span>, <span class="ot">TRUE</span>, <span class="st">&quot;r&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="solutions.html#cb367-1"></a><span class="kw">c</span>(<span class="dv">10</span>, <span class="ot">TRUE</span>, <span class="st">&quot;r&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;10&quot;   &quot;TRUE&quot; &quot;r&quot;</code></pre>
 </div>
 <div id="solvvec_op" class="section level2">
 <h2><span class="header-section-number">12.2</span> Вектор. Операции с векторами</h2>
 <p>Создайте вектор <code>p</code>, состоящий из значений 4, 5, 6, 7, и вектор <code>q</code>, состоящий из 0, 1, 2, 3.</p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="solutions.html#cb365-1"></a>p &lt;-<span class="st"> </span><span class="dv">4</span><span class="op">:</span><span class="dv">7</span></span>
-<span id="cb365-2"><a href="solutions.html#cb365-2"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="solutions.html#cb369-1"></a>p &lt;-<span class="st"> </span><span class="dv">4</span><span class="op">:</span><span class="dv">7</span></span>
+<span id="cb369-2"><a href="solutions.html#cb369-2"></a>p</span></code></pre></div>
 <pre><code>## [1] 4 5 6 7</code></pre>
-<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="solutions.html#cb367-1"></a>q &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span></span>
-<span id="cb367-2"><a href="solutions.html#cb367-2"></a>q</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="solutions.html#cb371-1"></a>q &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span></span>
+<span id="cb371-2"><a href="solutions.html#cb371-2"></a>q</span></code></pre></div>
 <pre><code>## [1] 0 1 2 3</code></pre>
 <p>Посчитайте поэлементную сумму векторов <code>p</code> и <code>q</code>:</p>
-<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="solutions.html#cb369-1"></a>p <span class="op">+</span><span class="st"> </span>q</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="solutions.html#cb373-1"></a>p <span class="op">+</span><span class="st"> </span>q</span></code></pre></div>
 <pre><code>## [1]  4  6  8 10</code></pre>
 <p>Посчитайте поэлементную разницу <code>p</code> и <code>q</code>:</p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="solutions.html#cb371-1"></a>p <span class="op">-</span><span class="st"> </span>q</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="solutions.html#cb375-1"></a>p <span class="op">-</span><span class="st"> </span>q</span></code></pre></div>
 <pre><code>## [1] 4 4 4 4</code></pre>
 <p>Поделите каждый элемент вектора <code>p</code> на соответствующий ему элемент вектора <code>q</code>:</p>
 <blockquote>
 <p>О, да, Вам нужно делить на 0!</p>
 </blockquote>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="solutions.html#cb373-1"></a>p<span class="op">/</span>q</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="solutions.html#cb377-1"></a>p<span class="op">/</span>q</span></code></pre></div>
 <pre><code>## [1]      Inf 5.000000 3.000000 2.333333</code></pre>
 <p>Возведите каждый элемент вектора <code>p</code> в степень соответствующего ему элемента вектора <code>q</code>:</p>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="solutions.html#cb375-1"></a>p<span class="op">^</span>q</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="solutions.html#cb379-1"></a>p<span class="op">^</span>q</span></code></pre></div>
 <pre><code>## [1]   1   5  36 343</code></pre>
 <p>Создайте вектор квадратов чисел от 1 до 10:</p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="solutions.html#cb377-1"></a>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="solutions.html#cb381-1"></a>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
 <pre><code>##  [1]   1   4   9  16  25  36  49  64  81 100</code></pre>
 <p>Создайте вектор 0, 2, 0, 4, … , 18, 0, 20</p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="solutions.html#cb379-1"></a><span class="dv">1</span><span class="op">:</span><span class="dv">20</span> <span class="op">*</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="solutions.html#cb383-1"></a><span class="dv">1</span><span class="op">:</span><span class="dv">20</span> <span class="op">*</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span></span></code></pre></div>
 <pre><code>##  [1]  0  2  0  4  0  6  0  8  0 10  0 12  0 14  0 16  0 18  0 20</code></pre>
 </div>
 <div id="solvvec_task_2" class="section level2">
 <h2><span class="header-section-number">12.3</span> Вектор. Индексирование</h2>
 <p>Создайте вектор <code>vec1</code>:</p>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="solutions.html#cb381-1"></a>vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">15</span>, <span class="dv">1</span>, <span class="dv">11</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="solutions.html#cb385-1"></a>vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">15</span>, <span class="dv">1</span>, <span class="dv">11</span>)</span></code></pre></div>
 <ul>
 <li>Найдите второй элемент вектора <code>vec1</code>:</li>
 </ul>
-<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="solutions.html#cb382-1"></a>vec1[<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="solutions.html#cb386-1"></a>vec1[<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 <ul>
 <li>Найдите последний элемент вектора <code>vec1</code></li>
 </ul>
-<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="solutions.html#cb384-1"></a>vec1[<span class="kw">length</span>(vec1)]</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="solutions.html#cb388-1"></a>vec1[<span class="kw">length</span>(vec1)]</span></code></pre></div>
 <pre><code>## [1] 11</code></pre>
 <ul>
 <li>Найдите все значения вектора <code>vec1</code>, которые больше 4</li>
 </ul>
-<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="solutions.html#cb386-1"></a>vec1[vec1<span class="op">&gt;</span><span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="solutions.html#cb390-1"></a>vec1[vec1<span class="op">&gt;</span><span class="dv">4</span>]</span></code></pre></div>
 <pre><code>## [1]  5  8  9 10 15 11</code></pre>
 <ul>
 <li>Найдите все значения вектора vec1, которые больше 4, но меньше 10</li>
 </ul>
-<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="solutions.html#cb388-1"></a>vec1[vec1<span class="op">&gt;</span><span class="dv">4</span> <span class="op">&amp;</span><span class="st"> </span>vec1<span class="op">&lt;</span><span class="dv">10</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="solutions.html#cb392-1"></a>vec1[vec1<span class="op">&gt;</span><span class="dv">4</span> <span class="op">&amp;</span><span class="st"> </span>vec1<span class="op">&lt;</span><span class="dv">10</span>]</span></code></pre></div>
 <pre><code>## [1] 5 8 9</code></pre>
 <ul>
 <li>Возведите в квадрат каждое значение вектора <code>vec1</code></li>
 </ul>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="solutions.html#cb390-1"></a>vec1<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="solutions.html#cb394-1"></a>vec1<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
 <pre><code>##  [1]   9  25   4   1  64  16  81 100   9 225   1 121</code></pre>
 <ul>
 <li>Возведите в квадрат каждое нечетное значение вектора и извлеките корень каждого четного значения <code>vec1</code></li>
 </ul>
-<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="solutions.html#cb392-1"></a>vec1 <span class="op">^</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="fl">0.5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="solutions.html#cb396-1"></a>vec1 <span class="op">^</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="fl">0.5</span>)</span></code></pre></div>
 <pre><code>##  [1]  9.000000  2.236068  4.000000  1.000000 64.000000  2.000000 81.000000
 ##  [8]  3.162278  9.000000  3.872983  1.000000  3.316625</code></pre>
 <ul>
 <li>Создайте вектор <code>vec2</code>, в котором будут значения все значения <code>vec1</code>, которые меньше 10 будут заменены на <code>NA</code>.</li>
 </ul>
-<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="solutions.html#cb394-1"></a>vec2 &lt;-<span class="st"> </span>vec1</span>
-<span id="cb394-2"><a href="solutions.html#cb394-2"></a>vec2[vec2<span class="op">&lt;</span><span class="dv">10</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
-<span id="cb394-3"><a href="solutions.html#cb394-3"></a>vec2</span></code></pre></div>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="solutions.html#cb398-1"></a>vec2 &lt;-<span class="st"> </span>vec1</span>
+<span id="cb398-2"><a href="solutions.html#cb398-2"></a>vec2[vec2<span class="op">&lt;</span><span class="dv">10</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb398-3"><a href="solutions.html#cb398-3"></a>vec2</span></code></pre></div>
 <pre><code>##  [1] NA NA NA NA NA NA NA 10 NA 15 NA 11</code></pre>
 <ul>
 <li>Посчитайте сумму <code>vec2</code> с помощью функции <code>sum()</code>. Ответ <code>NA</code> не считается!</li>
 </ul>
-<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="solutions.html#cb396-1"></a><span class="kw">sum</span>(vec2, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="solutions.html#cb400-1"></a><span class="kw">sum</span>(vec2, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 36</code></pre>
 <ul>
 <li>Создайте вектор 2, 4, 6, … , 18, 20 как минимум 2 новыми способами</li>
@@ -358,15 +363,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Знаю, это задание может показаться бессмысленным, но это очень базовая операция, с помощью которой можно, например, разделить данные на две части. Чем больше способов Вы знаете, тем лучше!</p>
 </blockquote>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="solutions.html#cb398-1"></a>(<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)[<span class="kw">c</span>(F,T)]</span></code></pre></div>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="solutions.html#cb402-1"></a>(<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>)[<span class="kw">c</span>(F,T)]</span></code></pre></div>
 <pre><code>## integer(0)</code></pre>
-<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="solutions.html#cb400-1"></a><span class="co">#(1:10)*2</span></span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="solutions.html#cb404-1"></a><span class="co">#(1:10)*2</span></span></code></pre></div>
 </div>
 <div id="solvlist_ta" class="section level2">
 <h2><span class="header-section-number">12.4</span> Списки</h2>
 <p>Дан список <code>list_1</code>:</p>
-<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="solutions.html#cb401-1"></a>list_<span class="dv">1</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">numbers =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letters =</span> letters, <span class="dt">logic =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb401-2"><a href="solutions.html#cb401-2"></a>list_<span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="solutions.html#cb405-1"></a>list_<span class="dv">1</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">numbers =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letters =</span> letters, <span class="dt">logic =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb405-2"><a href="solutions.html#cb405-2"></a>list_<span class="dv">1</span></span></code></pre></div>
 <pre><code>## $numbers
 ## [1] 1 2 3 4 5
 ## 
@@ -379,22 +384,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Найдите первый элемент списка. Ответ должен быть списком.</li>
 </ul>
-<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="solutions.html#cb403-1"></a>list_<span class="dv">1</span>[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="solutions.html#cb407-1"></a>list_<span class="dv">1</span>[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## $numbers
 ## [1] 1 2 3 4 5</code></pre>
 <ul>
 <li>Теперь найдите содержание первого элемента списка двумя разными способами. Ответ должен быть вектором.</li>
 </ul>
-<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="solutions.html#cb405-1"></a>list_<span class="dv">1</span>[[<span class="dv">1</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="solutions.html#cb409-1"></a>list_<span class="dv">1</span>[[<span class="dv">1</span>]]</span></code></pre></div>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="solutions.html#cb407-1"></a>list_<span class="dv">1</span><span class="op">$</span>numbers</span></code></pre></div>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="solutions.html#cb411-1"></a>list_<span class="dv">1</span><span class="op">$</span>numbers</span></code></pre></div>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 <p>Теперь возьмите первый элемент содержания первого элемента списка. Ответ должен быть вектором.</p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="solutions.html#cb409-1"></a>list_<span class="dv">1</span>[[<span class="dv">1</span>]][<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="solutions.html#cb413-1"></a>list_<span class="dv">1</span>[[<span class="dv">1</span>]][<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p>Создайте список <code>list_2</code>, содержащий в себе два списка <code>list_1</code> с именами <code>pupa</code> и <code>lupa</code>.</p>
-<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="solutions.html#cb411-1"></a>list_<span class="dv">2</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">pupa =</span> list_<span class="dv">1</span>, <span class="dt">lupa =</span> list_<span class="dv">1</span>)</span>
-<span id="cb411-2"><a href="solutions.html#cb411-2"></a>list_<span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="solutions.html#cb415-1"></a>list_<span class="dv">2</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">pupa =</span> list_<span class="dv">1</span>, <span class="dt">lupa =</span> list_<span class="dv">1</span>)</span>
+<span id="cb415-2"><a href="solutions.html#cb415-2"></a>list_<span class="dv">2</span></span></code></pre></div>
 <pre><code>## $pupa
 ## $pupa$numbers
 ## [1] 1 2 3 4 5
@@ -418,7 +423,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $lupa$logic
 ## [1] TRUE</code></pre>
 <p>Извлеките первый элемент списка, из него - второй полэлемент, а из него - третье значение</p>
-<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="solutions.html#cb413-1"></a>list_<span class="dv">2</span>[[<span class="dv">1</span>]][[<span class="dv">2</span>]][<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="solutions.html#cb417-1"></a>list_<span class="dv">2</span>[[<span class="dv">1</span>]][[<span class="dv">2</span>]][<span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;c&quot;</code></pre>
 </div>
 <div id="solvt" class="section level2">
@@ -426,8 +431,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Создайте матрицу 4х4, состоящую из единиц. Назовите ее <code>M</code></li>
 </ul>
-<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="solutions.html#cb415-1"></a>M &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">16</span>), <span class="dt">ncol =</span> <span class="dv">4</span>)</span>
-<span id="cb415-2"><a href="solutions.html#cb415-2"></a>M</span></code></pre></div>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="solutions.html#cb419-1"></a>M &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">16</span>), <span class="dt">ncol =</span> <span class="dv">4</span>)</span>
+<span id="cb419-2"><a href="solutions.html#cb419-2"></a>M</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    1    1    1    1
 ## [2,]    1    1    1    1
@@ -436,8 +441,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Поменяйте все некрайние значения матрицы <code>M</code> (то есть значения на позициях [2,2], [2,3], [3,2] и [3,3]) на число 2.</li>
 </ul>
-<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="solutions.html#cb417-1"></a>M[<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>] &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb417-2"><a href="solutions.html#cb417-2"></a>M</span></code></pre></div>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="solutions.html#cb421-1"></a>M[<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>] &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb421-2"><a href="solutions.html#cb421-2"></a>M</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    1    1    1    1
 ## [2,]    1    2    2    1
@@ -446,7 +451,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Выделите второй и третий столбик из матрицы <code>M</code></li>
 </ul>
-<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="solutions.html#cb419-1"></a>M[,<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="solutions.html#cb423-1"></a>M[,<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>]</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    1    1
 ## [2,]    2    2
@@ -455,13 +460,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Сравните (<code>==</code>) вторую колонку и вторую строчку матрицы <code>M</code></li>
 </ul>
-<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="solutions.html#cb421-1"></a>M[,<span class="dv">2</span>] <span class="op">==</span><span class="st"> </span>M[<span class="dv">2</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="solutions.html#cb425-1"></a>M[,<span class="dv">2</span>] <span class="op">==</span><span class="st"> </span>M[<span class="dv">2</span>,]</span></code></pre></div>
 <pre><code>## [1] TRUE TRUE TRUE TRUE</code></pre>
 <ul>
 <li>Создайте таблицу умножения (9х9) в виде матрицы. Сохраните ее в переменную <code>tab</code>:</li>
 </ul>
-<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="solutions.html#cb423-1"></a>tab &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>, <span class="kw">rep</span>(<span class="dv">9</span>,<span class="dv">9</span>))<span class="op">*</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">9</span>)</span>
-<span id="cb423-2"><a href="solutions.html#cb423-2"></a>tab</span></code></pre></div>
+<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb427-1"><a href="solutions.html#cb427-1"></a>tab &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>, <span class="kw">rep</span>(<span class="dv">9</span>,<span class="dv">9</span>))<span class="op">*</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">9</span>)</span>
+<span id="cb427-2"><a href="solutions.html#cb427-2"></a>tab</span></code></pre></div>
 <pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
 ##  [1,]    1    2    3    4    5    6    7    8    9
 ##  [2,]    2    4    6    8   10   12   14   16   18
@@ -472,13 +477,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  [7,]    7   14   21   28   35   42   49   56   63
 ##  [8,]    8   16   24   32   40   48   56   64   72
 ##  [9,]    9   18   27   36   45   54   63   72   81</code></pre>
-<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="solutions.html#cb425-1"></a><span class="co">#Еще</span></span>
-<span id="cb425-2"><a href="solutions.html#cb425-2"></a><span class="co">#outer(1:9, 1:9, &quot;*&quot;)</span></span>
-<span id="cb425-3"><a href="solutions.html#cb425-3"></a><span class="co">#1:9 %o% 1:9</span></span></code></pre></div>
+<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb429-1"><a href="solutions.html#cb429-1"></a><span class="co">#Еще</span></span>
+<span id="cb429-2"><a href="solutions.html#cb429-2"></a><span class="co">#outer(1:9, 1:9, &quot;*&quot;)</span></span>
+<span id="cb429-3"><a href="solutions.html#cb429-3"></a><span class="co">#1:9 %o% 1:9</span></span></code></pre></div>
 <ul>
 <li>Из матрицы <code>tab</code> выделите подматрицу, включающую в себя только строчки с 6 по 8 и столбцы с 3 по 7.</li>
 </ul>
-<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="solutions.html#cb426-1"></a>tab[<span class="dv">6</span><span class="op">:</span><span class="dv">8</span>, <span class="dv">3</span><span class="op">:</span><span class="dv">7</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="solutions.html#cb430-1"></a>tab[<span class="dv">6</span><span class="op">:</span><span class="dv">8</span>, <span class="dv">3</span><span class="op">:</span><span class="dv">7</span>]</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5]
 ## [1,]   18   24   30   36   42
 ## [2,]   21   28   35   42   49
@@ -489,7 +494,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Матрица - это почти вектор. К нему можно обращаться с единственным индексом.</p>
 </blockquote>
-<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="solutions.html#cb428-1"></a>tab<span class="op">&gt;=</span><span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="solutions.html#cb432-1"></a>tab<span class="op">&gt;=</span><span class="dv">10</span></span></code></pre></div>
 <pre><code>##        [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9]
 ##  [1,] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
 ##  [2,] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
@@ -503,9 +508,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Создайте матрицу <code>tab2</code>, в которой все значения <code>tab</code> меньше 10 заменены на 0.</li>
 </ul>
-<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="solutions.html#cb430-1"></a>tab2 &lt;-<span class="st"> </span>tab</span>
-<span id="cb430-2"><a href="solutions.html#cb430-2"></a>tab2[tab<span class="op">&lt;</span><span class="dv">10</span>] &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb430-3"><a href="solutions.html#cb430-3"></a>tab2</span></code></pre></div>
+<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="solutions.html#cb434-1"></a>tab2 &lt;-<span class="st"> </span>tab</span>
+<span id="cb434-2"><a href="solutions.html#cb434-2"></a>tab2[tab<span class="op">&lt;</span><span class="dv">10</span>] &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb434-3"><a href="solutions.html#cb434-3"></a>tab2</span></code></pre></div>
 <pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
 ##  [1,]    0    0    0    0    0    0    0    0    0
 ##  [2,]    0    0    0    0   10   12   14   16   18
@@ -522,13 +527,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Кто является 274ым персонажем в <code>got</code> датафрейме? Из какого он дома?</li>
 </ul>
-<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="solutions.html#cb432-1"></a>got[<span class="dv">274</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="solutions.html#cb436-1"></a>got[<span class="dv">274</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span></code></pre></div>
 <pre><code>##       Name Allegiances
 ## 274 Gendry        None</code></pre>
 <ul>
 <li>Найдите имена всех персонажей из дома (<code>Allegiances</code>) <code>"Tyrell"</code> и <code>"House Tyrell"</code>.</li>
 </ul>
-<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="solutions.html#cb434-1"></a>got[got<span class="op">$</span>Allegiances <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Tyrell&quot;</span>, <span class="st">&quot;House Tyrell&quot;</span>), <span class="st">&quot;Name&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="solutions.html#cb438-1"></a>got[got<span class="op">$</span>Allegiances <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Tyrell&quot;</span>, <span class="st">&quot;House Tyrell&quot;</span>), <span class="st">&quot;Name&quot;</span>]</span></code></pre></div>
 <pre><code>##  [1] &quot;Alerie Hightower&quot;  &quot;Alla Tyrell&quot;       &quot;Alyn Ambrose&quot;     
 ##  [4] &quot;Arryk (Guard)&quot;     &quot;Arwyn Oakheart&quot;    &quot;Bayard Norcross&quot;  
 ##  [7] &quot;Blue Bard&quot;         &quot;Butterbumps&quot;       &quot;Elinor Tyrell&quot;    
@@ -541,8 +546,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Создайте новый датафрейм <code>greyjoy_women</code>, который будет включать в себя только женщин Грейджоев (<code>"Greyjoy"</code>, <code>"House Greyjoy"</code>)</li>
 </ul>
-<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="solutions.html#cb436-1"></a>greyjoy_women &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Greyjoy&quot;</span>, <span class="st">&quot;House Greyjoy&quot;</span>) <span class="op">&amp;</span><span class="st"> </span>got<span class="op">$</span>Gender <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, ]</span>
-<span id="cb436-2"><a href="solutions.html#cb436-2"></a>greyjoy_women</span></code></pre></div>
+<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="solutions.html#cb440-1"></a>greyjoy_women &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Greyjoy&quot;</span>, <span class="st">&quot;House Greyjoy&quot;</span>) <span class="op">&amp;</span><span class="st"> </span>got<span class="op">$</span>Gender <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, ]</span>
+<span id="cb440-2"><a href="solutions.html#cb440-2"></a>greyjoy_women</span></code></pre></div>
 <pre><code>##                    Name   Allegiances Death.Year Book.of.Death
 ## 58         Asha Greyjoy House Greyjoy         NA            NA
 ## 248       Falia Flowers       Greyjoy         NA            NA
@@ -564,22 +569,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Сколько всего женских персонажей в книгах “Песни льда и пламени”?</li>
 </ul>
-<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="solutions.html#cb438-1"></a><span class="kw">sum</span>(got<span class="op">$</span>Gender <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="solutions.html#cb442-1"></a><span class="kw">sum</span>(got<span class="op">$</span>Gender <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 157</code></pre>
 <ul>
 <li>Сколько всего женских персонажей дворянского происхождения в книгах “Песни льда и пламени”?</li>
 </ul>
-<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="solutions.html#cb440-1"></a><span class="kw">sum</span>((got<span class="op">$</span>Gender <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) <span class="op">&amp;</span><span class="st"> </span>(got<span class="op">$</span>Nobility <span class="op">==</span><span class="st"> </span><span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="solutions.html#cb444-1"></a><span class="kw">sum</span>((got<span class="op">$</span>Gender <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) <span class="op">&amp;</span><span class="st"> </span>(got<span class="op">$</span>Nobility <span class="op">==</span><span class="st"> </span><span class="dv">1</span>))</span></code></pre></div>
 <pre><code>## [1] 84</code></pre>
 <ul>
 <li>Поcчитатйе процентную (!) долю знати от общего числа персонажей (<code>Nobility</code>) в <code>Night's Watch</code>.</li>
 </ul>
-<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="solutions.html#cb442-1"></a><span class="kw">mean</span>(got[got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span>, <span class="st">&quot;Nobility&quot;</span>])<span class="op">*</span><span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="solutions.html#cb446-1"></a><span class="kw">mean</span>(got[got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span>, <span class="st">&quot;Nobility&quot;</span>])<span class="op">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## [1] 9.482759</code></pre>
 <ul>
 <li>Поcчитатйе процентную (!) долю знати от общего числа персонажей (<code>Nobility</code>) у <code>Lannister</code>.</li>
 </ul>
-<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="solutions.html#cb444-1"></a><span class="kw">mean</span>(got[got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Lannister&quot;</span>, <span class="st">&quot;Nobility&quot;</span>])<span class="op">*</span><span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="solutions.html#cb448-1"></a><span class="kw">mean</span>(got[got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Lannister&quot;</span>, <span class="st">&quot;Nobility&quot;</span>])<span class="op">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## [1] 71.60494</code></pre>
 <ul>
 <li>Какая из книг цикла самая кровавая? Для ответа на этот вопрос подсчитайте таблицу частот для колонки <code>got$Book.of.Death</code>:</li>
@@ -587,7 +592,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Это можно сделать с помощью функции <code>table()</code>, но в дальнейшем Вы узнаете и другие способы - подобная задача возникает достаточно часто.</p>
 </blockquote>
-<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="solutions.html#cb446-1"></a><span class="kw">table</span>(got<span class="op">$</span>Book.of.Death)</span></code></pre></div>
+<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="solutions.html#cb450-1"></a><span class="kw">table</span>(got<span class="op">$</span>Book.of.Death)</span></code></pre></div>
 <pre><code>## 
 ##  1  2  3  4  5 
 ## 49 73 97 27 61</code></pre>
@@ -600,7 +605,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="tasks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="section-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="section-6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
