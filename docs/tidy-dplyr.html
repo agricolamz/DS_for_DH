@@ -245,13 +245,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><em>tidytext</em>, для работы с текстами и корпусами</li>
 <li><em>broom</em>, для перевода в tidy формат статистические модели</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="tidy-dplyr.html#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
-<pre><code>## ── Attaching packages ───────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="tidy-dplyr.html#cb287-1"></a><span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<pre><code>## ── Attaching packages ───────────</code></pre>
 <pre><code>## ✔ ggplot2 3.2.1     ✔ purrr   0.3.2
 ## ✔ tibble  2.1.3     ✔ dplyr   0.8.3
 ## ✔ tidyr   1.0.0     ✔ stringr 1.4.0
 ## ✔ readr   1.3.1     ✔ forcats 0.4.0</code></pre>
-<pre><code>## ── Conflicts ──────────────────────────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ────────────────────
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <div id="section-3" class="section level2">
@@ -268,24 +268,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="readr-readxl" class="section level3">
 <h3><span class="header-section-number">3.1.3</span> Загрузка данных: readr, readxl</h3>
 <p>Стандартной функцией для чтения <code>.csv</code> файлов в R является функция <code>read.csv()</code>, но мы будем использовать функцию <code>read_csv()</code> из пакета <code>readr</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tidy-dplyr.html#cb5-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;...&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="tidy-dplyr.html#cb291-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;...&quot;</span>)</span></code></pre></div>
 <p>Вместо многоточия может стоять:</p>
 <ul>
 <li>название файла (если он, есть в текущей рабочей дериктории)</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="tidy-dplyr.html#cb6-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;my_file.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="tidy-dplyr.html#cb292-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;my_file.csv&quot;</span>)</span></code></pre></div>
 <ul>
 <li>относительный путь к файлу (если он, верен для текущей рабочей дериктории)</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tidy-dplyr.html#cb7-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;data/my_file.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="tidy-dplyr.html#cb293-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;data/my_file.csv&quot;</span>)</span></code></pre></div>
 <ul>
 <li>полный путь к файлу (если он, верен для текущей рабочей дериктории)</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="tidy-dplyr.html#cb8-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;/home/user_name/work/data/my_file.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="tidy-dplyr.html#cb294-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;/home/user_name/work/data/my_file.csv&quot;</span>)</span></code></pre></div>
 <ul>
 <li>интернет ссылка (тогда, компьютер должен быть подключен к интернету)</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tidy-dplyr.html#cb9-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;https://my_host/my_file.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="tidy-dplyr.html#cb295-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;https://my_host/my_file.csv&quot;</span>)</span></code></pre></div>
 <p>Для чтения других форматов <code>.csv</code> файлов используются другие функции:</p>
 <ul>
 <li><code>read_tsv()</code> – для файлов с табуляцией в качестве разделителя</li>
@@ -304,41 +304,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2 б        ʔ           β    
 ## 3 в        ʃ           γ</code></pre>
 <p>Благодаря <code>readxl</code> пакету Также данные можно скачать напрямую из файлов <code>.xls</code> (функция <code>read_xls</code>) и <code>.xlsx</code> (функция <code>read_xlsx</code>), однако эти функции не умеют читать из интернета.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tidy-dplyr.html#cb11-1"></a><span class="kw">library</span>(<span class="st">&quot;readxl&quot;</span>)</span>
-<span id="cb11-2"><a href="tidy-dplyr.html#cb11-2"></a>xlsx_example &lt;-<span class="st"> </span><span class="kw">read_xlsx</span>(<span class="st">&quot;...&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="tidy-dplyr.html#cb297-1"></a><span class="kw">library</span>(<span class="st">&quot;readxl&quot;</span>)</span>
+<span id="cb297-2"><a href="tidy-dplyr.html#cb297-2"></a>xlsx_example &lt;-<span class="st"> </span><span class="kw">read_xlsx</span>(<span class="st">&quot;...&quot;</span>)</span></code></pre></div>
 <p>Существует еще один экстравагантный способ хранить данные: это формат файлов R <code>.RData</code>. Создадим data.frame:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="tidy-dplyr.html#cb12-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">letters =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>),</span>
-<span id="cb12-2"><a href="tidy-dplyr.html#cb12-2"></a>                 <span class="dt">numbers =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>)</span>
-<span id="cb12-3"><a href="tidy-dplyr.html#cb12-3"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="tidy-dplyr.html#cb298-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">letters =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>),</span>
+<span id="cb298-2"><a href="tidy-dplyr.html#cb298-2"></a>                 <span class="dt">numbers =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>)</span>
+<span id="cb298-3"><a href="tidy-dplyr.html#cb298-3"></a>df</span></code></pre></div>
 <pre><code>##   letters numbers
 ## 1       a       1
 ## 2       b       2</code></pre>
 <p>Теперь можно сохранить файл…</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="tidy-dplyr.html#cb14-1"></a><span class="kw">save</span>(df, <span class="dt">file =</span> <span class="st">&quot;data/my_df.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="tidy-dplyr.html#cb300-1"></a><span class="kw">save</span>(df, <span class="dt">file =</span> <span class="st">&quot;data/my_df.RData&quot;</span>)</span></code></pre></div>
 <p>удалить переменную…</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="tidy-dplyr.html#cb15-1"></a><span class="kw">rm</span>(df)</span>
-<span id="cb15-2"><a href="tidy-dplyr.html#cb15-2"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="tidy-dplyr.html#cb301-1"></a><span class="kw">rm</span>(df)</span>
+<span id="cb301-2"><a href="tidy-dplyr.html#cb301-2"></a>df</span></code></pre></div>
 <pre><code>## function (x, df1, df2, ncp, log = FALSE) 
 ## {
 ##     if (missing(ncp)) 
 ##         .Call(C_df, x, df1, df2, log)
 ##     else .Call(C_dnf, x, df1, df2, ncp, log)
 ## }
-## &lt;bytecode: 0x5f313f19bfc8&gt;
+## &lt;bytecode: 0x5afffec4cd20&gt;
 ## &lt;environment: namespace:stats&gt;</code></pre>
 <p>и загрузить все снова:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="tidy-dplyr.html#cb17-1"></a><span class="kw">load</span>(<span class="st">&quot;data/my_df.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="tidy-dplyr.html#cb303-1"></a><span class="kw">load</span>(<span class="st">&quot;data/my_df.RData&quot;</span>)</span></code></pre></div>
 <div id="misspelling-dataset" class="section level4">
 <h4><span class="header-section-number">3.1.3.1</span> Misspelling dataset</h4>
 <p>Этот датасет я переработал из данных, собранных для статьи <a href="https://pudding.cool/2019/02/gyllenhaal/">The Gyllenhaal Experiment</a>, написанной Расселом Гольденбергом и Мэттом Дэниэлсом для издания <a href="https://pudding.cool">pudding</a>. Они анализировали ошибки в правописании при поиске имен и фамилий звезд.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="tidy-dplyr.html#cb18-1"></a>misspellings &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/misspelling_dataset.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="tidy-dplyr.html#cb304-1"></a>misspellings &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/misspelling_dataset.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   correct = col_character(),
 ##   spelling = col_character(),
 ##   count = col_double()
 ## )</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="tidy-dplyr.html#cb20-1"></a>misspellings</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="tidy-dplyr.html#cb306-1"></a>misspellings</span></code></pre></div>
 <pre><code>## # A tibble: 15,477 x 3
 ##    correct   spelling    count
 ##    &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;
@@ -362,7 +362,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="diamonds" class="section level4">
 <h4><span class="header-section-number">3.1.3.2</span> <code>diamonds</code></h4>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="tidy-dplyr.html#cb22-1"></a>diamonds</span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="tidy-dplyr.html#cb308-1"></a>diamonds</span></code></pre></div>
 <pre><code>## # A tibble: 53,940 x 10
 ##    carat cut       color clarity depth table price     x     y     z
 ##    &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -377,26 +377,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9 0.22  Fair      E     VS2      65.1    61   337  3.87  3.78  2.49
 ## 10 0.23  Very Good H     VS1      59.4    61   338  4     4.05  2.39
 ## # … with 53,930 more rows</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="tidy-dplyr.html#cb24-1"></a>?diamonds</span></code></pre></div>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="tidy-dplyr.html#cb310-1"></a>?diamonds</span></code></pre></div>
 </div>
 </div>
 </div>
 <div id="tibble" class="section level2">
 <h2><span class="header-section-number">3.2</span> <code>tibble</code></h2>
 <p>Пакет <code>tibble</code> – является альтернативой штатного датафрейма в R. Существует встроенная переменная <code>month.name</code>:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="tidy-dplyr.html#cb25-1"></a>month.name</span></code></pre></div>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="tidy-dplyr.html#cb311-1"></a>month.name</span></code></pre></div>
 <pre><code>##  [1] &quot;January&quot;   &quot;February&quot;  &quot;March&quot;     &quot;April&quot;     &quot;May&quot;      
 ##  [6] &quot;June&quot;      &quot;July&quot;      &quot;August&quot;    &quot;September&quot; &quot;October&quot;  
 ## [11] &quot;November&quot;  &quot;December&quot;</code></pre>
 <p>Можно создать датафрейм таким образом:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="tidy-dplyr.html#cb27-1"></a><span class="kw">data.frame</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,</span>
-<span id="cb27-2"><a href="tidy-dplyr.html#cb27-2"></a>           <span class="dt">months =</span> month.name,</span>
-<span id="cb27-3"><a href="tidy-dplyr.html#cb27-3"></a>           <span class="dt">n_letters =</span> <span class="kw">nchar</span>(months))</span></code></pre></div>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="tidy-dplyr.html#cb313-1"></a><span class="kw">data.frame</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,</span>
+<span id="cb313-2"><a href="tidy-dplyr.html#cb313-2"></a>           <span class="dt">months =</span> month.name,</span>
+<span id="cb313-3"><a href="tidy-dplyr.html#cb313-3"></a>           <span class="dt">n_letters =</span> <span class="kw">nchar</span>(months))</span></code></pre></div>
 <pre><code>## Error in nchar(months): cannot coerce type &#39;closure&#39; to vector of type &#39;character&#39;</code></pre>
 <p>Однако переменная <code>months</code> не создана пользователем, так что данный код выдает ошибку. Корректный способ сделать это базовыми средствами:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="tidy-dplyr.html#cb29-1"></a><span class="kw">data.frame</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,</span>
-<span id="cb29-2"><a href="tidy-dplyr.html#cb29-2"></a>           <span class="dt">months =</span> month.name,</span>
-<span id="cb29-3"><a href="tidy-dplyr.html#cb29-3"></a>           <span class="dt">n_letters =</span> <span class="kw">nchar</span>(month.name))</span></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="tidy-dplyr.html#cb315-1"></a><span class="kw">data.frame</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,</span>
+<span id="cb315-2"><a href="tidy-dplyr.html#cb315-2"></a>           <span class="dt">months =</span> month.name,</span>
+<span id="cb315-3"><a href="tidy-dplyr.html#cb315-3"></a>           <span class="dt">n_letters =</span> <span class="kw">nchar</span>(month.name))</span></code></pre></div>
 <pre><code>##    id    months n_letters
 ## 1   1   January         7
 ## 2   2  February         8
@@ -411,9 +411,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 11 11  November         8
 ## 12 12  December         8</code></pre>
 <p>Одно из отличий <code>tibble</code> от базового датафрейма – возможность использовать создаваемые “по ходу пьесы переменные”</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="tidy-dplyr.html#cb31-1"></a><span class="kw">tibble</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,</span>
-<span id="cb31-2"><a href="tidy-dplyr.html#cb31-2"></a>       <span class="dt">months =</span> month.name,</span>
-<span id="cb31-3"><a href="tidy-dplyr.html#cb31-3"></a>       <span class="dt">n_letters =</span> <span class="kw">nchar</span>(months))</span></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="tidy-dplyr.html#cb317-1"></a><span class="kw">tibble</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,</span>
+<span id="cb317-2"><a href="tidy-dplyr.html#cb317-2"></a>       <span class="dt">months =</span> month.name,</span>
+<span id="cb317-3"><a href="tidy-dplyr.html#cb317-3"></a>       <span class="dt">n_letters =</span> <span class="kw">nchar</span>(months))</span></code></pre></div>
 <pre><code>## # A tibble: 12 x 3
 ##       id months    n_letters
 ##    &lt;int&gt; &lt;chr&gt;         &lt;int&gt;
@@ -430,10 +430,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 11    11 November          8
 ## 12    12 December          8</code></pre>
 <p>Если в окружении пользователя уже есть переменная с датафреймом, его легко можно переделать в <code>tibble</code> при помощи функции <code>as_tibble()</code>:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="tidy-dplyr.html#cb33-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,</span>
-<span id="cb33-2"><a href="tidy-dplyr.html#cb33-2"></a>                 <span class="dt">months =</span> month.name)</span>
-<span id="cb33-3"><a href="tidy-dplyr.html#cb33-3"></a></span>
-<span id="cb33-4"><a href="tidy-dplyr.html#cb33-4"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="tidy-dplyr.html#cb319-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,</span>
+<span id="cb319-2"><a href="tidy-dplyr.html#cb319-2"></a>                 <span class="dt">months =</span> month.name)</span>
+<span id="cb319-3"><a href="tidy-dplyr.html#cb319-3"></a></span>
+<span id="cb319-4"><a href="tidy-dplyr.html#cb319-4"></a>df</span></code></pre></div>
 <pre><code>##    id    months
 ## 1   1   January
 ## 2   2  February
@@ -447,7 +447,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 10   October
 ## 11 11  November
 ## 12 12  December</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="tidy-dplyr.html#cb35-1"></a><span class="kw">as_tibble</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="tidy-dplyr.html#cb321-1"></a><span class="kw">as_tibble</span>(df)</span></code></pre></div>
 <pre><code>## # A tibble: 12 x 2
 ##       id months   
 ##    &lt;int&gt; &lt;fct&gt;    
@@ -470,8 +470,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="dplyrfilter" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> <code>dplyr::filter()</code></h3>
 <p>Сколько неправильных произношений, которые написали меньше 10 юзеров?</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="tidy-dplyr.html#cb37-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb37-2"><a href="tidy-dplyr.html#cb37-2"></a><span class="st">  </span><span class="kw">filter</span>(count <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="tidy-dplyr.html#cb323-1"></a>misspellings <span class="op">%&gt;%</span></span>
+<span id="cb323-2"><a href="tidy-dplyr.html#cb323-2"></a><span class="st">  </span><span class="kw">filter</span>(count <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 14,279 x 3
 ##    correct   spelling    count
 ##    &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;
@@ -487,16 +487,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 deschanel daschenell      9
 ## # … with 14,269 more rows</code></pre>
 <p><code>%&gt;%</code> — конвеер (pipe) отправляет результат работы одной функции в другую.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="tidy-dplyr.html#cb39-1"></a><span class="kw">sort</span>(<span class="kw">sqrt</span>(<span class="kw">abs</span>(<span class="kw">sin</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">22</span>))), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="tidy-dplyr.html#cb325-1"></a><span class="kw">sort</span>(<span class="kw">sqrt</span>(<span class="kw">abs</span>(<span class="kw">sin</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">22</span>))), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>##  [1] 0.9999951 0.9952926 0.9946649 0.9805088 0.9792468 0.9554817 0.9535709
 ##  [8] 0.9173173 0.9146888 0.8699440 0.8665952 0.8105471 0.8064043 0.7375779
 ## [15] 0.7325114 0.6482029 0.6419646 0.5365662 0.5285977 0.3871398 0.3756594
 ## [22] 0.0940814</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="tidy-dplyr.html#cb41-1"></a><span class="dv">1</span><span class="op">:</span><span class="dv">22</span> <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb41-2"><a href="tidy-dplyr.html#cb41-2"></a><span class="st">  </span><span class="kw">sin</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb41-3"><a href="tidy-dplyr.html#cb41-3"></a><span class="st">  </span><span class="kw">abs</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb41-4"><a href="tidy-dplyr.html#cb41-4"></a><span class="st">  </span><span class="kw">sqrt</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb41-5"><a href="tidy-dplyr.html#cb41-5"></a><span class="st">  </span><span class="kw">sort</span>(., <span class="dt">decreasing =</span> <span class="ot">TRUE</span>) <span class="co"># зачем здесь точка?</span></span></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="tidy-dplyr.html#cb327-1"></a><span class="dv">1</span><span class="op">:</span><span class="dv">22</span> <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb327-2"><a href="tidy-dplyr.html#cb327-2"></a><span class="st">  </span><span class="kw">sin</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb327-3"><a href="tidy-dplyr.html#cb327-3"></a><span class="st">  </span><span class="kw">abs</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb327-4"><a href="tidy-dplyr.html#cb327-4"></a><span class="st">  </span><span class="kw">sqrt</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb327-5"><a href="tidy-dplyr.html#cb327-5"></a><span class="st">  </span><span class="kw">sort</span>(., <span class="dt">decreasing =</span> <span class="ot">TRUE</span>) <span class="co"># зачем здесь точка?</span></span></code></pre></div>
 <pre><code>##  [1] 0.9999951 0.9952926 0.9946649 0.9805088 0.9792468 0.9554817 0.9535709
 ##  [8] 0.9173173 0.9146888 0.8699440 0.8665952 0.8105471 0.8064043 0.7375779
 ## [15] 0.7325114 0.6482029 0.6419646 0.5365662 0.5285977 0.3871398 0.3756594
@@ -506,8 +506,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dplyrslice" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> <code>dplyr::slice()</code></h3>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="tidy-dplyr.html#cb43-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb43-2"><a href="tidy-dplyr.html#cb43-2"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="tidy-dplyr.html#cb329-1"></a>misspellings <span class="op">%&gt;%</span></span>
+<span id="cb329-2"><a href="tidy-dplyr.html#cb329-2"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">7</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 5 x 3
 ##   correct   spelling    count
 ##   &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;
@@ -519,8 +519,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dplyrselect" class="section level3">
 <h3><span class="header-section-number">3.3.3</span> <code>dplyr::select()</code></h3>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="tidy-dplyr.html#cb45-1"></a>diamonds <span class="op">%&gt;%</span></span>
-<span id="cb45-2"><a href="tidy-dplyr.html#cb45-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="dv">8</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="tidy-dplyr.html#cb331-1"></a>diamonds <span class="op">%&gt;%</span></span>
+<span id="cb331-2"><a href="tidy-dplyr.html#cb331-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="dv">8</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 53,940 x 3
 ##        x     y     z
 ##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -535,8 +535,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9  3.87  3.78  2.49
 ## 10  4     4.05  2.39
 ## # … with 53,930 more rows</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="tidy-dplyr.html#cb47-1"></a>diamonds <span class="op">%&gt;%</span></span>
-<span id="cb47-2"><a href="tidy-dplyr.html#cb47-2"></a><span class="st">  </span><span class="kw">select</span>(color<span class="op">:</span>price)</span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="tidy-dplyr.html#cb333-1"></a>diamonds <span class="op">%&gt;%</span></span>
+<span id="cb333-2"><a href="tidy-dplyr.html#cb333-2"></a><span class="st">  </span><span class="kw">select</span>(color<span class="op">:</span>price)</span></code></pre></div>
 <pre><code>## # A tibble: 53,940 x 5
 ##    color clarity depth table price
 ##    &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
@@ -551,8 +551,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9 E     VS2      65.1    61   337
 ## 10 H     VS1      59.4    61   338
 ## # … with 53,930 more rows</code></pre>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="tidy-dplyr.html#cb49-1"></a>diamonds <span class="op">%&gt;%</span></span>
-<span id="cb49-2"><a href="tidy-dplyr.html#cb49-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>carat)</span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="tidy-dplyr.html#cb335-1"></a>diamonds <span class="op">%&gt;%</span></span>
+<span id="cb335-2"><a href="tidy-dplyr.html#cb335-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>carat)</span></code></pre></div>
 <pre><code>## # A tibble: 53,940 x 9
 ##    cut       color clarity depth table price     x     y     z
 ##    &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -567,8 +567,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9 Fair      E     VS2      65.1    61   337  3.87  3.78  2.49
 ## 10 Very Good H     VS1      59.4    61   338  4     4.05  2.39
 ## # … with 53,930 more rows</code></pre>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="tidy-dplyr.html#cb51-1"></a>diamonds <span class="op">%&gt;%</span></span>
-<span id="cb51-2"><a href="tidy-dplyr.html#cb51-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(carat, cut, x, y, z))</span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="tidy-dplyr.html#cb337-1"></a>diamonds <span class="op">%&gt;%</span></span>
+<span id="cb337-2"><a href="tidy-dplyr.html#cb337-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(carat, cut, x, y, z))</span></code></pre></div>
 <pre><code>## # A tibble: 53,940 x 5
 ##    color clarity depth table price
 ##    &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
@@ -583,8 +583,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9 E     VS2      65.1    61   337
 ## 10 H     VS1      59.4    61   338
 ## # … with 53,930 more rows</code></pre>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="tidy-dplyr.html#cb53-1"></a>diamonds <span class="op">%&gt;%</span></span>
-<span id="cb53-2"><a href="tidy-dplyr.html#cb53-2"></a><span class="st">  </span><span class="kw">select</span>(cut, depth, price)</span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="tidy-dplyr.html#cb339-1"></a>diamonds <span class="op">%&gt;%</span></span>
+<span id="cb339-2"><a href="tidy-dplyr.html#cb339-2"></a><span class="st">  </span><span class="kw">select</span>(cut, depth, price)</span></code></pre></div>
 <pre><code>## # A tibble: 53,940 x 3
 ##    cut       depth price
 ##    &lt;ord&gt;     &lt;dbl&gt; &lt;int&gt;
@@ -602,8 +602,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dplyrarrange" class="section level3">
 <h3><span class="header-section-number">3.3.4</span> <code>dplyr::arrange()</code></h3>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="tidy-dplyr.html#cb55-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb55-2"><a href="tidy-dplyr.html#cb55-2"></a><span class="st">  </span><span class="kw">arrange</span>(count)</span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="tidy-dplyr.html#cb341-1"></a>misspellings <span class="op">%&gt;%</span></span>
+<span id="cb341-2"><a href="tidy-dplyr.html#cb341-2"></a><span class="st">  </span><span class="kw">arrange</span>(count)</span></code></pre></div>
 <pre><code>## # A tibble: 15,477 x 3
 ##    correct   spelling   count
 ##    &lt;chr&gt;     &lt;chr&gt;      &lt;dbl&gt;
@@ -618,8 +618,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9 deschanel dishana        1
 ## 10 deschanel deshaneil      1
 ## # … with 15,467 more rows</code></pre>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="tidy-dplyr.html#cb57-1"></a>diamonds <span class="op">%&gt;%</span></span>
-<span id="cb57-2"><a href="tidy-dplyr.html#cb57-2"></a><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(carat), price)</span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="tidy-dplyr.html#cb343-1"></a>diamonds <span class="op">%&gt;%</span></span>
+<span id="cb343-2"><a href="tidy-dplyr.html#cb343-2"></a><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(carat), price)</span></code></pre></div>
 <pre><code>## # A tibble: 53,940 x 10
 ##    carat cut       color clarity depth table price     x     y     z
 ##    &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -637,8 +637,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dplyrdistinct" class="section level3">
 <h3><span class="header-section-number">3.3.5</span> <code>dplyr::distinct()</code></h3>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="tidy-dplyr.html#cb59-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb59-2"><a href="tidy-dplyr.html#cb59-2"></a><span class="st">  </span><span class="kw">distinct</span>(correct)</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="tidy-dplyr.html#cb345-1"></a>misspellings <span class="op">%&gt;%</span></span>
+<span id="cb345-2"><a href="tidy-dplyr.html#cb345-2"></a><span class="st">  </span><span class="kw">distinct</span>(correct)</span></code></pre></div>
 <pre><code>## # A tibble: 15 x 1
 ##    correct     
 ##    &lt;chr&gt;       
@@ -657,8 +657,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 13 palahniuk   
 ## 14 picabo      
 ## 15 johansson</code></pre>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="tidy-dplyr.html#cb61-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb61-2"><a href="tidy-dplyr.html#cb61-2"></a><span class="st">  </span><span class="kw">distinct</span>(spelling)</span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="tidy-dplyr.html#cb347-1"></a>misspellings <span class="op">%&gt;%</span></span>
+<span id="cb347-2"><a href="tidy-dplyr.html#cb347-2"></a><span class="st">  </span><span class="kw">distinct</span>(spelling)</span></code></pre></div>
 <pre><code>## # A tibble: 15,462 x 1
 ##    spelling   
 ##    &lt;chr&gt;      
@@ -673,8 +673,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9 deschanell 
 ## 10 deschenal  
 ## # … with 15,452 more rows</code></pre>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="tidy-dplyr.html#cb63-1"></a>diamonds <span class="op">%&gt;%</span></span>
-<span id="cb63-2"><a href="tidy-dplyr.html#cb63-2"></a><span class="st">  </span><span class="kw">distinct</span>(color, cut)</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="tidy-dplyr.html#cb349-1"></a>diamonds <span class="op">%&gt;%</span></span>
+<span id="cb349-2"><a href="tidy-dplyr.html#cb349-2"></a><span class="st">  </span><span class="kw">distinct</span>(color, cut)</span></code></pre></div>
 <pre><code>## # A tibble: 35 x 2
 ##    color cut      
 ##    &lt;ord&gt; &lt;ord&gt;    
@@ -692,8 +692,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dplyrmutate" class="section level3">
 <h3><span class="header-section-number">3.3.6</span> <code>dplyr::mutate()</code></h3>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="tidy-dplyr.html#cb65-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb65-2"><a href="tidy-dplyr.html#cb65-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">misspelling_length =</span> <span class="kw">nchar</span>(spelling))</span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="tidy-dplyr.html#cb351-1"></a>misspellings <span class="op">%&gt;%</span></span>
+<span id="cb351-2"><a href="tidy-dplyr.html#cb351-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">misspelling_length =</span> <span class="kw">nchar</span>(spelling))</span></code></pre></div>
 <pre><code>## # A tibble: 15,477 x 4
 ##    correct   spelling    count misspelling_length
 ##    &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;              &lt;int&gt;
@@ -711,15 +711,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dplyrgroup_by...-summarise..." class="section level3">
 <h3><span class="header-section-number">3.3.7</span> <code>dplyr::group_by(...) %&gt;% summarise(...)</code></h3>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="tidy-dplyr.html#cb67-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb67-2"><a href="tidy-dplyr.html#cb67-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">min</span>(count), <span class="kw">mean</span>(count))</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="tidy-dplyr.html#cb353-1"></a>misspellings <span class="op">%&gt;%</span></span>
+<span id="cb353-2"><a href="tidy-dplyr.html#cb353-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">min</span>(count), <span class="kw">mean</span>(count))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 2
 ##   `min(count)` `mean(count)`
 ##          &lt;dbl&gt;         &lt;dbl&gt;
 ## 1            1          21.8</code></pre>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="tidy-dplyr.html#cb69-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb69-2"><a href="tidy-dplyr.html#cb69-2"></a><span class="st">  </span><span class="kw">group_by</span>(correct) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb69-3"><a href="tidy-dplyr.html#cb69-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">mean</span>(count))</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="tidy-dplyr.html#cb355-1"></a>misspellings <span class="op">%&gt;%</span></span>
+<span id="cb355-2"><a href="tidy-dplyr.html#cb355-2"></a><span class="st">  </span><span class="kw">group_by</span>(correct) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb355-3"><a href="tidy-dplyr.html#cb355-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">mean</span>(count))</span></code></pre></div>
 <pre><code>## # A tibble: 15 x 2
 ##    correct      `mean(count)`
 ##    &lt;chr&gt;                &lt;dbl&gt;
@@ -738,9 +738,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 13 picabo               23.2 
 ## 14 poehler              65.3 
 ## 15 shyamalan            16.9</code></pre>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="tidy-dplyr.html#cb71-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb71-2"><a href="tidy-dplyr.html#cb71-2"></a><span class="st">  </span><span class="kw">group_by</span>(correct) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb71-3"><a href="tidy-dplyr.html#cb71-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">my_mean =</span> <span class="kw">mean</span>(count))</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="tidy-dplyr.html#cb357-1"></a>misspellings <span class="op">%&gt;%</span></span>
+<span id="cb357-2"><a href="tidy-dplyr.html#cb357-2"></a><span class="st">  </span><span class="kw">group_by</span>(correct) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb357-3"><a href="tidy-dplyr.html#cb357-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">my_mean =</span> <span class="kw">mean</span>(count))</span></code></pre></div>
 <pre><code>## # A tibble: 15 x 2
 ##    correct      my_mean
 ##    &lt;chr&gt;          &lt;dbl&gt;
@@ -760,9 +760,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 14 poehler        65.3 
 ## 15 shyamalan      16.9</code></pre>
 <p>Если нужно посчитать количество вхождений, то можно использовать функцию <code>n()</code> в <code>summarise()</code> или же функцию <code>count()</code>:</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="tidy-dplyr.html#cb73-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb73-2"><a href="tidy-dplyr.html#cb73-2"></a><span class="st">  </span><span class="kw">group_by</span>(correct) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb73-3"><a href="tidy-dplyr.html#cb73-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="tidy-dplyr.html#cb359-1"></a>misspellings <span class="op">%&gt;%</span></span>
+<span id="cb359-2"><a href="tidy-dplyr.html#cb359-2"></a><span class="st">  </span><span class="kw">group_by</span>(correct) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb359-3"><a href="tidy-dplyr.html#cb359-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 15 x 2
 ##    correct          n
 ##    &lt;chr&gt;        &lt;int&gt;
@@ -781,8 +781,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 13 picabo         460
 ## 14 poehler        386
 ## 15 shyamalan     1473</code></pre>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="tidy-dplyr.html#cb75-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb75-2"><a href="tidy-dplyr.html#cb75-2"></a><span class="st">  </span><span class="kw">count</span>(correct)</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="tidy-dplyr.html#cb361-1"></a>misspellings <span class="op">%&gt;%</span></span>
+<span id="cb361-2"><a href="tidy-dplyr.html#cb361-2"></a><span class="st">  </span><span class="kw">count</span>(correct)</span></code></pre></div>
 <pre><code>## # A tibble: 15 x 2
 ##    correct          n
 ##    &lt;chr&gt;        &lt;int&gt;
@@ -802,8 +802,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 14 poehler        386
 ## 15 shyamalan     1473</code></pre>
 <p>Можно даже отсортировать результат:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="tidy-dplyr.html#cb77-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb77-2"><a href="tidy-dplyr.html#cb77-2"></a><span class="st">  </span><span class="kw">count</span>(correct, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="tidy-dplyr.html#cb363-1"></a>misspellings <span class="op">%&gt;%</span></span>
+<span id="cb363-2"><a href="tidy-dplyr.html#cb363-2"></a><span class="st">  </span><span class="kw">count</span>(correct, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 15 x 2
 ##    correct          n
 ##    &lt;chr&gt;        &lt;int&gt;
@@ -823,9 +823,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 14 mcgwire        262
 ## 15 minaj          200</code></pre>
 <p>Если вы хотите создать не какое-то саммари, а целый дополнительный столбец с этим саммари вместо функции <code>summarise()</code> нужно использовать функцию <code>mutate()</code>:</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="tidy-dplyr.html#cb79-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb79-2"><a href="tidy-dplyr.html#cb79-2"></a><span class="st">  </span><span class="kw">group_by</span>(correct) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb79-3"><a href="tidy-dplyr.html#cb79-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">my_mean =</span> <span class="kw">mean</span>(count))</span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="tidy-dplyr.html#cb365-1"></a>misspellings <span class="op">%&gt;%</span></span>
+<span id="cb365-2"><a href="tidy-dplyr.html#cb365-2"></a><span class="st">  </span><span class="kw">group_by</span>(correct) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb365-3"><a href="tidy-dplyr.html#cb365-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">my_mean =</span> <span class="kw">mean</span>(count))</span></code></pre></div>
 <pre><code>## # A tibble: 15,477 x 4
 ## # Groups:   correct [15]
 ##    correct   spelling    count my_mean
@@ -844,14 +844,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dplyr.._join" class="section level3">
 <h3><span class="header-section-number">3.3.8</span> <code>dplyr::.._join()</code></h3>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="tidy-dplyr.html#cb81-1"></a>languages &lt;-<span class="st"> </span><span class="kw">data_frame</span>(</span>
-<span id="cb81-2"><a href="tidy-dplyr.html#cb81-2"></a>  <span class="dt">languages =</span> <span class="kw">c</span>(<span class="st">&quot;Selkup&quot;</span>, <span class="st">&quot;French&quot;</span>, <span class="st">&quot;Chukchi&quot;</span>, <span class="st">&quot;Polish&quot;</span>),</span>
-<span id="cb81-3"><a href="tidy-dplyr.html#cb81-3"></a>  <span class="dt">countries =</span> <span class="kw">c</span>(<span class="st">&quot;Russia&quot;</span>, <span class="st">&quot;France&quot;</span>, <span class="st">&quot;Russia&quot;</span>, <span class="st">&quot;Poland&quot;</span>),</span>
-<span id="cb81-4"><a href="tidy-dplyr.html#cb81-4"></a>  <span class="dt">iso =</span> <span class="kw">c</span>(<span class="st">&quot;sel&quot;</span>, <span class="st">&quot;fra&quot;</span>, <span class="st">&quot;ckt&quot;</span>, <span class="st">&quot;pol&quot;</span>)</span>
-<span id="cb81-5"><a href="tidy-dplyr.html#cb81-5"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="tidy-dplyr.html#cb367-1"></a>languages &lt;-<span class="st"> </span><span class="kw">data_frame</span>(</span>
+<span id="cb367-2"><a href="tidy-dplyr.html#cb367-2"></a>  <span class="dt">languages =</span> <span class="kw">c</span>(<span class="st">&quot;Selkup&quot;</span>, <span class="st">&quot;French&quot;</span>, <span class="st">&quot;Chukchi&quot;</span>, <span class="st">&quot;Polish&quot;</span>),</span>
+<span id="cb367-3"><a href="tidy-dplyr.html#cb367-3"></a>  <span class="dt">countries =</span> <span class="kw">c</span>(<span class="st">&quot;Russia&quot;</span>, <span class="st">&quot;France&quot;</span>, <span class="st">&quot;Russia&quot;</span>, <span class="st">&quot;Poland&quot;</span>),</span>
+<span id="cb367-4"><a href="tidy-dplyr.html#cb367-4"></a>  <span class="dt">iso =</span> <span class="kw">c</span>(<span class="st">&quot;sel&quot;</span>, <span class="st">&quot;fra&quot;</span>, <span class="st">&quot;ckt&quot;</span>, <span class="st">&quot;pol&quot;</span>)</span>
+<span id="cb367-5"><a href="tidy-dplyr.html#cb367-5"></a>  )</span></code></pre></div>
 <pre><code>## Warning: `data_frame()` is deprecated, use `tibble()`.
 ## This warning is displayed once per session.</code></pre>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="tidy-dplyr.html#cb83-1"></a>languages</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="tidy-dplyr.html#cb369-1"></a>languages</span></code></pre></div>
 <pre><code>## # A tibble: 4 x 3
 ##   languages countries iso  
 ##   &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;
@@ -859,17 +859,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2 French    France    fra  
 ## 3 Chukchi   Russia    ckt  
 ## 4 Polish    Poland    pol</code></pre>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="tidy-dplyr.html#cb85-1"></a>country_population &lt;-<span class="st"> </span><span class="kw">data_frame</span>(</span>
-<span id="cb85-2"><a href="tidy-dplyr.html#cb85-2"></a>  <span class="dt">countries =</span> <span class="kw">c</span>(<span class="st">&quot;Russia&quot;</span>, <span class="st">&quot;Poland&quot;</span>, <span class="st">&quot;Finland&quot;</span>),</span>
-<span id="cb85-3"><a href="tidy-dplyr.html#cb85-3"></a>  <span class="dt">population_mln =</span> <span class="kw">c</span>(<span class="dv">143</span>, <span class="dv">38</span>, <span class="dv">5</span>))</span>
-<span id="cb85-4"><a href="tidy-dplyr.html#cb85-4"></a>country_population</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="tidy-dplyr.html#cb371-1"></a>country_population &lt;-<span class="st"> </span><span class="kw">data_frame</span>(</span>
+<span id="cb371-2"><a href="tidy-dplyr.html#cb371-2"></a>  <span class="dt">countries =</span> <span class="kw">c</span>(<span class="st">&quot;Russia&quot;</span>, <span class="st">&quot;Poland&quot;</span>, <span class="st">&quot;Finland&quot;</span>),</span>
+<span id="cb371-3"><a href="tidy-dplyr.html#cb371-3"></a>  <span class="dt">population_mln =</span> <span class="kw">c</span>(<span class="dv">143</span>, <span class="dv">38</span>, <span class="dv">5</span>))</span>
+<span id="cb371-4"><a href="tidy-dplyr.html#cb371-4"></a>country_population</span></code></pre></div>
 <pre><code>## # A tibble: 3 x 2
 ##   countries population_mln
 ##   &lt;chr&gt;              &lt;dbl&gt;
 ## 1 Russia               143
 ## 2 Poland                38
 ## 3 Finland                5</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="tidy-dplyr.html#cb87-1"></a><span class="kw">inner_join</span>(languages, country_population)</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="tidy-dplyr.html#cb373-1"></a><span class="kw">inner_join</span>(languages, country_population)</span></code></pre></div>
 <pre><code>## Joining, by = &quot;countries&quot;</code></pre>
 <pre><code>## # A tibble: 3 x 4
 ##   languages countries iso   population_mln
@@ -877,7 +877,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 1 Selkup    Russia    sel              143
 ## 2 Chukchi   Russia    ckt              143
 ## 3 Polish    Poland    pol               38</code></pre>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="tidy-dplyr.html#cb90-1"></a><span class="kw">left_join</span>(languages, country_population)</span></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="tidy-dplyr.html#cb376-1"></a><span class="kw">left_join</span>(languages, country_population)</span></code></pre></div>
 <pre><code>## Joining, by = &quot;countries&quot;</code></pre>
 <pre><code>## # A tibble: 4 x 4
 ##   languages countries iso   population_mln
@@ -886,7 +886,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2 French    France    fra               NA
 ## 3 Chukchi   Russia    ckt              143
 ## 4 Polish    Poland    pol               38</code></pre>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="tidy-dplyr.html#cb93-1"></a><span class="kw">right_join</span>(languages, country_population)</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="tidy-dplyr.html#cb379-1"></a><span class="kw">right_join</span>(languages, country_population)</span></code></pre></div>
 <pre><code>## Joining, by = &quot;countries&quot;</code></pre>
 <pre><code>## # A tibble: 4 x 4
 ##   languages countries iso   population_mln
@@ -895,19 +895,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2 Chukchi   Russia    ckt              143
 ## 3 Polish    Poland    pol               38
 ## 4 &lt;NA&gt;      Finland   &lt;NA&gt;               5</code></pre>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="tidy-dplyr.html#cb96-1"></a><span class="kw">anti_join</span>(languages, country_population)</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="tidy-dplyr.html#cb382-1"></a><span class="kw">anti_join</span>(languages, country_population)</span></code></pre></div>
 <pre><code>## Joining, by = &quot;countries&quot;</code></pre>
 <pre><code>## # A tibble: 1 x 3
 ##   languages countries iso  
 ##   &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;
 ## 1 French    France    fra</code></pre>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="tidy-dplyr.html#cb99-1"></a><span class="kw">anti_join</span>(country_population, languages)</span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="tidy-dplyr.html#cb385-1"></a><span class="kw">anti_join</span>(country_population, languages)</span></code></pre></div>
 <pre><code>## Joining, by = &quot;countries&quot;</code></pre>
 <pre><code>## # A tibble: 1 x 2
 ##   countries population_mln
 ##   &lt;chr&gt;              &lt;dbl&gt;
 ## 1 Finland                5</code></pre>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="tidy-dplyr.html#cb102-1"></a><span class="kw">full_join</span>(country_population, languages)</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="tidy-dplyr.html#cb388-1"></a><span class="kw">full_join</span>(country_population, languages)</span></code></pre></div>
 <pre><code>## Joining, by = &quot;countries&quot;</code></pre>
 <pre><code>## # A tibble: 5 x 4
 ##   countries population_mln languages iso  
@@ -924,76 +924,106 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Short format</li>
 </ul>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="tidy-dplyr.html#cb105-1"></a>df.short &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</span>
-<span id="cb105-2"><a href="tidy-dplyr.html#cb105-2"></a>                   <span class="dt">consonant =</span> <span class="kw">c</span>(<span class="st">&quot;stops&quot;</span>, <span class="st">&quot;fricatives&quot;</span>, <span class="st">&quot;affricates&quot;</span>, <span class="st">&quot;nasals&quot;</span>),</span>
-<span id="cb105-3"><a href="tidy-dplyr.html#cb105-3"></a>                   <span class="dt">initial =</span> <span class="kw">c</span>(<span class="dv">123</span>, <span class="dv">87</span>, <span class="dv">73</span>, <span class="dv">7</span>),</span>
-<span id="cb105-4"><a href="tidy-dplyr.html#cb105-4"></a>                   <span class="dt">intervocal =</span> <span class="kw">c</span>(<span class="dv">57</span>, <span class="dv">77</span>, <span class="dv">82</span>, <span class="dv">78</span>),</span>
-<span id="cb105-5"><a href="tidy-dplyr.html#cb105-5"></a>                   <span class="dt">final =</span> <span class="kw">c</span>(<span class="dv">30</span>, <span class="dv">69</span>, <span class="dv">12</span>, <span class="dv">104</span>))</span>
-<span id="cb105-6"><a href="tidy-dplyr.html#cb105-6"></a>df.short</span></code></pre></div>
-<pre><code>##    consonant initial intervocal final
-## 1      stops     123         57    30
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="tidy-dplyr.html#cb391-1"></a>df.short &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">consonant =</span> <span class="kw">c</span>(<span class="st">&quot;stops&quot;</span>, <span class="st">&quot;fricatives&quot;</span>, <span class="st">&quot;affricates&quot;</span>, <span class="st">&quot;nasals&quot;</span>),</span>
+<span id="cb391-2"><a href="tidy-dplyr.html#cb391-2"></a>                   <span class="dt">initial =</span> <span class="kw">c</span>(<span class="dv">123</span>, <span class="dv">87</span>, <span class="dv">73</span>, <span class="dv">7</span>),</span>
+<span id="cb391-3"><a href="tidy-dplyr.html#cb391-3"></a>                   <span class="dt">intervocal =</span> <span class="kw">c</span>(<span class="dv">57</span>, <span class="dv">77</span>, <span class="dv">82</span>, <span class="dv">78</span>),</span>
+<span id="cb391-4"><a href="tidy-dplyr.html#cb391-4"></a>                   <span class="dt">final =</span> <span class="kw">c</span>(<span class="dv">30</span>, <span class="dv">69</span>, <span class="dv">12</span>, <span class="dv">104</span>))</span>
+<span id="cb391-5"><a href="tidy-dplyr.html#cb391-5"></a>df.short</span></code></pre></div>
+<pre><code>## # A tibble: 4 x 4
+##   consonant  initial intervocal final
+##   &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1 stops          123         57    30
 ## 2 fricatives      87         77    69
 ## 3 affricates      73         82    12
-## 4     nasals       7         78   104</code></pre>
+## 4 nasals           7         78   104</code></pre>
 <ul>
 <li>Long format</li>
 </ul>
-<pre><code>##     consonant   position number
-## 1       stops    initial    123
-## 2  fricatives    initial     87
-## 3  affricates    initial     73
-## 4      nasals    initial      7
-## 5       stops intervocal     57
-## 6  fricatives intervocal     77
-## 7  affricates intervocal     82
-## 8      nasals intervocal     78
-## 9       stops      final     30
-## 10 fricatives      final     69
-## 11 affricates      final     12
-## 12     nasals      final    104</code></pre>
+<pre><code>## # A tibble: 12 x 3
+##    consonant  position   number
+##    &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;
+##  1 stops      initial       123
+##  2 stops      intervocal     57
+##  3 stops      final          30
+##  4 fricatives initial        87
+##  5 fricatives intervocal     77
+##  6 fricatives final          69
+##  7 affricates initial        73
+##  8 affricates intervocal     82
+##  9 affricates final          12
+## 10 nasals     initial         7
+## 11 nasals     intervocal     78
+## 12 nasals     final         104</code></pre>
 <ul>
 <li>Short format → Long format: <code>tidyr::gather()</code></li>
 </ul>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="tidy-dplyr.html#cb108-1"></a>df.short &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</span>
-<span id="cb108-2"><a href="tidy-dplyr.html#cb108-2"></a>                   <span class="dt">consonant =</span> <span class="kw">c</span>(<span class="st">&quot;stops&quot;</span>, <span class="st">&quot;fricatives&quot;</span>, <span class="st">&quot;affricates&quot;</span>, <span class="st">&quot;nasals&quot;</span>),</span>
-<span id="cb108-3"><a href="tidy-dplyr.html#cb108-3"></a>                   <span class="dt">initial =</span> <span class="kw">c</span>(<span class="dv">123</span>, <span class="dv">87</span>, <span class="dv">73</span>, <span class="dv">7</span>),</span>
-<span id="cb108-4"><a href="tidy-dplyr.html#cb108-4"></a>                   <span class="dt">intervocal =</span> <span class="kw">c</span>(<span class="dv">57</span>, <span class="dv">77</span>, <span class="dv">82</span>, <span class="dv">78</span>),</span>
-<span id="cb108-5"><a href="tidy-dplyr.html#cb108-5"></a>                   <span class="dt">final =</span> <span class="kw">c</span>(<span class="dv">30</span>, <span class="dv">69</span>, <span class="dv">12</span>, <span class="dv">104</span>))</span>
-<span id="cb108-6"><a href="tidy-dplyr.html#cb108-6"></a>df.short</span></code></pre></div>
-<pre><code>##    consonant initial intervocal final
-## 1      stops     123         57    30
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="tidy-dplyr.html#cb394-1"></a>df.short &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">consonant =</span> <span class="kw">c</span>(<span class="st">&quot;stops&quot;</span>, <span class="st">&quot;fricatives&quot;</span>, <span class="st">&quot;affricates&quot;</span>, <span class="st">&quot;nasals&quot;</span>),</span>
+<span id="cb394-2"><a href="tidy-dplyr.html#cb394-2"></a>                   <span class="dt">initial =</span> <span class="kw">c</span>(<span class="dv">123</span>, <span class="dv">87</span>, <span class="dv">73</span>, <span class="dv">7</span>),</span>
+<span id="cb394-3"><a href="tidy-dplyr.html#cb394-3"></a>                   <span class="dt">intervocal =</span> <span class="kw">c</span>(<span class="dv">57</span>, <span class="dv">77</span>, <span class="dv">82</span>, <span class="dv">78</span>),</span>
+<span id="cb394-4"><a href="tidy-dplyr.html#cb394-4"></a>                   <span class="dt">final =</span> <span class="kw">c</span>(<span class="dv">30</span>, <span class="dv">69</span>, <span class="dv">12</span>, <span class="dv">104</span>))</span>
+<span id="cb394-5"><a href="tidy-dplyr.html#cb394-5"></a>df.short</span></code></pre></div>
+<pre><code>## # A tibble: 4 x 4
+##   consonant  initial intervocal final
+##   &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1 stops          123         57    30
 ## 2 fricatives      87         77    69
 ## 3 affricates      73         82    12
-## 4     nasals       7         78   104</code></pre>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="tidy-dplyr.html#cb110-1"></a>df.short <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb110-2"><a href="tidy-dplyr.html#cb110-2"></a><span class="st">  </span><span class="kw">gather</span>(position, number, initial<span class="op">:</span>final) -&gt;</span>
-<span id="cb110-3"><a href="tidy-dplyr.html#cb110-3"></a><span class="st">  </span>df.long</span>
-<span id="cb110-4"><a href="tidy-dplyr.html#cb110-4"></a>df.long</span></code></pre></div>
-<pre><code>##     consonant   position number
-## 1       stops    initial    123
-## 2  fricatives    initial     87
-## 3  affricates    initial     73
-## 4      nasals    initial      7
-## 5       stops intervocal     57
-## 6  fricatives intervocal     77
-## 7  affricates intervocal     82
-## 8      nasals intervocal     78
-## 9       stops      final     30
-## 10 fricatives      final     69
-## 11 affricates      final     12
-## 12     nasals      final    104</code></pre>
+## 4 nasals           7         78   104</code></pre>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="tidy-dplyr.html#cb396-1"></a>df.short <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb396-2"><a href="tidy-dplyr.html#cb396-2"></a><span class="st">  </span><span class="kw">gather</span>(position, number, initial<span class="op">:</span>final) -&gt;</span>
+<span id="cb396-3"><a href="tidy-dplyr.html#cb396-3"></a><span class="st">  </span>df.long</span>
+<span id="cb396-4"><a href="tidy-dplyr.html#cb396-4"></a></span>
+<span id="cb396-5"><a href="tidy-dplyr.html#cb396-5"></a>df.long</span></code></pre></div>
+<pre><code>## # A tibble: 12 x 3
+##    consonant  position   number
+##    &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;
+##  1 stops      initial       123
+##  2 fricatives initial        87
+##  3 affricates initial        73
+##  4 nasals     initial         7
+##  5 stops      intervocal     57
+##  6 fricatives intervocal     77
+##  7 affricates intervocal     82
+##  8 nasals     intervocal     78
+##  9 stops      final          30
+## 10 fricatives final          69
+## 11 affricates final          12
+## 12 nasals     final         104</code></pre>
+<p>Аналогично:</p>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="tidy-dplyr.html#cb398-1"></a>df.short <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb398-2"><a href="tidy-dplyr.html#cb398-2"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;position&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;number&quot;</span>, <span class="op">-</span>consonant) -&gt;</span>
+<span id="cb398-3"><a href="tidy-dplyr.html#cb398-3"></a><span class="st">  </span>df.long</span>
+<span id="cb398-4"><a href="tidy-dplyr.html#cb398-4"></a></span>
+<span id="cb398-5"><a href="tidy-dplyr.html#cb398-5"></a>df.long</span></code></pre></div>
+<pre><code>## # A tibble: 12 x 3
+##    consonant  position   number
+##    &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;
+##  1 stops      initial       123
+##  2 stops      intervocal     57
+##  3 stops      final          30
+##  4 fricatives initial        87
+##  5 fricatives intervocal     77
+##  6 fricatives final          69
+##  7 affricates initial        73
+##  8 affricates intervocal     82
+##  9 affricates final          12
+## 10 nasals     initial         7
+## 11 nasals     intervocal     78
+## 12 nasals     final         104</code></pre>
 <ul>
 <li>Long format → Short format: <code>tidyr::spread()</code></li>
 </ul>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="tidy-dplyr.html#cb112-1"></a>df.long <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb112-2"><a href="tidy-dplyr.html#cb112-2"></a><span class="st">  </span><span class="kw">spread</span>(position, number) -&gt;</span>
-<span id="cb112-3"><a href="tidy-dplyr.html#cb112-3"></a><span class="st">  </span>df.short</span>
-<span id="cb112-4"><a href="tidy-dplyr.html#cb112-4"></a>df.short</span></code></pre></div>
-<pre><code>##    consonant final initial intervocal
-## 1 affricates    12      73         82
-## 2 fricatives    69      87         77
-## 3     nasals   104       7         78
-## 4      stops    30     123         57</code></pre>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="tidy-dplyr.html#cb400-1"></a>df.long <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb400-2"><a href="tidy-dplyr.html#cb400-2"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> position, <span class="dt">values_from =</span> number)-&gt;</span>
+<span id="cb400-3"><a href="tidy-dplyr.html#cb400-3"></a><span class="st">  </span>df.short</span>
+<span id="cb400-4"><a href="tidy-dplyr.html#cb400-4"></a>df.short</span></code></pre></div>
+<pre><code>## # A tibble: 4 x 4
+##   consonant  initial intervocal final
+##   &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1 stops          123         57    30
+## 2 fricatives      87         77    69
+## 3 affricates      73         82    12
+## 4 nasals           7         78   104</code></pre>
 
 </div>
 </div>

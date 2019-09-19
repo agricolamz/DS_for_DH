@@ -335,8 +335,7 @@ full_join(country_population, languages)
 * Short format
 
 ```{r}
-df.short <- data.frame(
-                   consonant = c("stops", "fricatives", "affricates", "nasals"),
+df.short <- tibble(consonant = c("stops", "fricatives", "affricates", "nasals"),
                    initial = c(123, 87, 73, 7),
                    intervocal = c(57, 77, 82, 78),
                    final = c(30, 69, 12, 104))
@@ -347,7 +346,7 @@ df.short
 
 ```{r, echo = FALSE}
 df.short %>% 
-  gather(position, number, initial:final) ->
+  pivot_longer(names_to = "position", values_to = "number", initial:final)->
   df.long
 df.long
 ```
@@ -355,8 +354,7 @@ df.long
 * Short format → Long format: `tidyr::gather()`
 
 ```{r}
-df.short <- data.frame(
-                   consonant = c("stops", "fricatives", "affricates", "nasals"),
+df.short <- tibble(consonant = c("stops", "fricatives", "affricates", "nasals"),
                    initial = c(123, 87, 73, 7),
                    intervocal = c(57, 77, 82, 78),
                    final = c(30, 69, 12, 104))
@@ -365,14 +363,26 @@ df.short
 df.short %>% 
   gather(position, number, initial:final) ->
   df.long
+
 df.long
 ```
+
+Аналогично:
+
+```{r}
+df.short %>% 
+  pivot_longer(names_to = "position", values_to = "number", -consonant) ->
+  df.long
+
+df.long
+```
+
 
 * Long format → Short format: `tidyr::spread()`
 
 ```{r}
 df.long %>% 
-  spread(position, number) ->
+  pivot_wider(names_from = position, values_from = number)->
   df.short
 df.short
 ```
