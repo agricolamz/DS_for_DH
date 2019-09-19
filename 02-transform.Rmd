@@ -21,7 +21,7 @@
 * _broom_, для перевода в tidy формат статистические модели
 
 ```{r, message = TRUE}
-library(tidyverse)
+library("tidyverse")
 ```
 
 ## Загрузка данных
@@ -33,7 +33,7 @@ library(tidyverse)
 
 Существет много форматов данных, которые придумали люди. Большинство из них можно загрузить в R. Так как центральный объект в R -- таблица $n \times k$, то и работать мы большую часть времени будем с таблицами. Наиболее распространенные способы хранить данные сейчас это `.csv` (разберем в данном разделе) и `.json` (разберем в разделе @ref{dplyr_purr}).
 
-`.csv` (comma separated values) -- является обычным текстовым файлом, в котором перечислены значения с некоторым фиксированным разделителем: запятой, табуляцией, точка с запятой, пробел и др. Такие файлы обычно легко открывает LibreOffice, а в Microsoft Excel нужны некоторые трюки.
+`.csv` (comma separated values) -- является обычным текстовым файлом, в котором перечислены значения с некоторым фиксированным разделителем: запятой, табуляцией, точка с запятой, пробел и др. Такие файлы обычно легко открывает LibreOffice, а в [Microsoft Excel нужны некоторые трюки](https://superuser.com/questions/291445/how-do-you-change-default-delimiter-in-the-text-import-in-excel).
 
 ### Загрузка данных: readr, readxl
 Стандартной функцией для чтения `.csv` файлов в R является функция `read.csv()`, но мы будем использовать функцию `read_csv()` из пакета `readr`.
@@ -76,9 +76,23 @@ read_csv("https://my_host/my_file.csv")
 
 > Попробуйте корректно считать в R файл [по этой ссылке](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/scary_letters.csv).
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 read_csv2("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/scary_letters.csv")
 ```
+
+Благодаря `readxl` пакету Также данные можно скачать напрямую из файлов `.xls` (функция `read_xls`) и `.xlsx` (функция `read_xlsx`).
+
+```{r}
+library("readxl")
+xlsx_example <- read_xlsx("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/scary_letters.xlsx")
+```
+
+Существует еще один экстравагантный способ хранить данные: это формат файлов R `.Rdata`.
+
+```{r}
+
+```
+
 
 
 #### Misspelling dataset
@@ -109,7 +123,7 @@ month.name
 
 Можно создать датафрейм таким образом:
 
-```{r, eval = FALSE}
+```{r error=TRUE}
 data.frame(id = 1:12,
            months = month.name,
            n_letters = nchar(months))
@@ -142,6 +156,4 @@ as_tibble(df)
 ```
 
 Функицонально `tibble` от `data.frame` ничем не отличается, однако существует ряд несущественных отличий. Кроме того стоит помнить, что многие функции из `tidyverse` возвращают именно `tibble`, а не `data.frame`.
-
-
 
