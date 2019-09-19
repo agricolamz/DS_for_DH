@@ -27,7 +27,7 @@ library(tidyverse)
 ## Загрузка данных
 ### Рабочая директория
 
-Все в R 
+Все в R происходит где-то. Нужно загружать файлы с данными, нужно их куда-то сохранять. Желательно иметь для каждого проекта некоторую отдельную папку на компьютере, куда складывать все, отнсящееся к этому проекту. Две команды позволят опредить текущую рабочую дерикторию (`getwd()`) и (`setwd(.../path/to/your/directory)`).
 
 ### Загрузка данных
 
@@ -35,11 +35,11 @@ library(tidyverse)
 Этот датасет я переработал из данных, собранных для статьи [The Gyllenhaal Experiment](https://pudding.cool/2019/02/gyllenhaal/), написанной Расселом Гольденбергом и Мэттом Дэниэлсом для издания [pudding](https://pudding.cool). Они анализировали ошибки в правописании при поиске имен и фамилий звезд.
 
 ```{r, cache=TRUE}
-mispellings <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/misspeling_dataset.csv")
+misspellings <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/misspelling_dataset.csv")
 ```
 
 
 ```{r}
-mispellings
+misspellings
 ```
 
