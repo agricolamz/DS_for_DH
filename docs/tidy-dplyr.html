@@ -166,8 +166,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html"><i class="fa fa-check"></i><b>3</b> <code>tidyverse</code>: Загрузка и трансформация данных</a><ul>
 <li class="chapter" data-level="3.1" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#section-3"><i class="fa fa-check"></i><b>3.1</b> Загрузка данных</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#section-4"><i class="fa fa-check"></i><b>3.1.1</b> Рабочая директория</a></li>
-<li class="chapter" data-level="3.1.2" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#section-5"><i class="fa fa-check"></i><b>3.1.2</b> Загрузка данных</a></li>
+<li class="chapter" data-level="3.1.2" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#csv"><i class="fa fa-check"></i><b>3.1.2</b> Форматы данных: <code>.csv</code></a></li>
+<li class="chapter" data-level="3.1.3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#readr-readxl"><i class="fa fa-check"></i><b>3.1.3</b> Загрузка данных: readr, readxl</a></li>
 </ul></li>
+<li class="chapter" data-level="3.2" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#tibble"><i class="fa fa-check"></i><b>3.2</b> <code>tibble</code></a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="viz-1.html"><a href="viz-1.html"><i class="fa fa-check"></i><b>4</b> Визуализация данных</a></li>
 <li class="chapter" data-level="5" data-path="dplyr-purr.html"><a href="dplyr-purr.html"><i class="fa fa-check"></i><b>5</b> Условия и работа со списками</a></li>
@@ -192,7 +194,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.5" data-path="solutions.html"><a href="solutions.html#solvt"><i class="fa fa-check"></i><b>12.5</b> Матрицы</a></li>
 <li class="chapter" data-level="12.6" data-path="solutions.html"><a href="solutions.html#solvdf_task"><i class="fa fa-check"></i><b>12.6</b> Датафрейм</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="section-6.html"><a href="section-6.html"><i class="fa fa-check"></i>Ссылки на литературу</a></li>
+<li class="chapter" data-level="" data-path="section-5.html"><a href="section-5.html"><i class="fa fa-check"></i>Ссылки на литературу</a></li>
 </ul>
 
       </nav>
@@ -245,21 +247,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.1</span> Загрузка данных</h2>
 <div id="section-4" class="section level3">
 <h3><span class="header-section-number">3.1.1</span> Рабочая директория</h3>
-<p>Все в R</p>
+<p>Все в R происходит где-то. Нужно загружать файлы с данными, нужно их куда-то сохранять. Желательно иметь для каждого проекта некоторую отдельную папку на компьютере, куда складывать все, отнсящееся к этому проекту. Две команды позволят опредить текущую рабочую дерикторию (<code>getwd()</code>) и (<code>setwd(.../path/to/your/directory)</code>).</p>
 </div>
-<div id="section-5" class="section level3">
-<h3><span class="header-section-number">3.1.2</span> Загрузка данных</h3>
+<div id="csv" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Форматы данных: <code>.csv</code></h3>
+<p>Существет много форматов данных, которые придумали люди. Большинство из них можно загрузить в R. Так как центральный объект в R – таблица <span class="math inline">\(n \times k\)</span>, то и работать мы большую часть времени будем с таблицами. Наиболее распространенные способы хранить данные сейчас это <code>.csv</code> (разберем в данном разделе) и <code>.json</code> (разберем в разделе <span class="citation">(<span class="citeproc-not-found" data-reference-id="ref"><strong>???</strong></span>)</span>{dplyr_purr}).</p>
+<p><code>.csv</code> (comma separated values) – является обычным текстовым файлом, в котором перечислены значения с некоторым фиксированным разделителем: запятой, табуляцией, точка с запятой, пробел и др. Такие файлы обычно легко открывает LibreOffice, а в Microsoft Excel нужны некоторые трюки.</p>
+</div>
+<div id="readr-readxl" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Загрузка данных: readr, readxl</h3>
+<p>Стандартной функцией для чтения <code>.csv</code> файлов в R является функция <code>read.csv()</code>, но мы будем использовать функцию <code>read_csv()</code> из пакета <code>readr</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tidy-dplyr.html#cb5-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;...&quot;</span>)</span></code></pre></div>
+<p>Вместо многоточия может стоять:</p>
+<ul>
+<li>название файла (если он, есть в текущей рабочей дериктории)</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="tidy-dplyr.html#cb6-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;my_file.csv&quot;</span>)</span></code></pre></div>
+<ul>
+<li>относительный путь к файлу (если он, верен для текущей рабочей дериктории)</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tidy-dplyr.html#cb7-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;data/my_file.csv&quot;</span>)</span></code></pre></div>
+<ul>
+<li>полный путь к файлу (если он, верен для текущей рабочей дериктории)</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="tidy-dplyr.html#cb8-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;/home/user_name/work/data/my_file.csv&quot;</span>)</span></code></pre></div>
+<ul>
+<li>интернет ссылка (тогда, компьютер должен быть подключен к интернету)</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tidy-dplyr.html#cb9-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;https://my_host/my_file.csv&quot;</span>)</span></code></pre></div>
+<p>Для чтения других форматов <code>.csv</code> файлов используются другие функции:</p>
+<ul>
+<li><code>read_tsv()</code> – для файлов с табуляцией в качестве разделителя</li>
+<li><code>read_csv2()</code> – для файлов с точкой с запятой в качестве разделителя</li>
+<li><code>read_delim(file = "...", delim = "...")</code> – для файлов с любым разделителем, задаваемым аргументом <code>delim</code></li>
+</ul>
+<p>Стандартной практикой является создавать первой строкой <code>.csv</code> файлов названия столбцов, поэтому по умолчанию функции <code>read_...()</code> будут создавать таблицу, считая первую строку названием столбцов. Чтобы изменить это поведение следует использовать аргумент <code>col_names = FALSE</code>.</p>
+<p>Другая проблема при чтении файлов – кодировка и локаль. На разных компьютерах разные локали и дефолтные кодировки, так что имеет смысл знать про аргумент <code>locale("en_US", encoding = "UTF-8")</code>.</p>
+<blockquote>
+<p>Попробуйте корректно считать в R файл <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/scary_letters.csv">по этой ссылке</a>.</p>
+</blockquote>
 <div id="misspelling-dataset" class="section level4">
-<h4><span class="header-section-number">3.1.2.1</span> Misspelling dataset</h4>
+<h4><span class="header-section-number">3.1.3.1</span> Misspelling dataset</h4>
 <p>Этот датасет я переработал из данных, собранных для статьи <a href="https://pudding.cool/2019/02/gyllenhaal/">The Gyllenhaal Experiment</a>, написанной Расселом Гольденбергом и Мэттом Дэниэлсом для издания <a href="https://pudding.cool">pudding</a>. Они анализировали ошибки в правописании при поиске имен и фамилий звезд.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tidy-dplyr.html#cb5-1"></a>misspellings &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/misspelling_dataset.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="tidy-dplyr.html#cb10-1"></a>misspellings &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/misspelling_dataset.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   correct = col_character(),
 ##   spelling = col_character(),
 ##   count = col_double()
 ## )</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tidy-dplyr.html#cb7-1"></a>misspellings</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="tidy-dplyr.html#cb12-1"></a>misspellings</span></code></pre></div>
 <pre><code>## # A tibble: 15,477 x 3
 ##    correct   spelling    count
 ##    &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;
@@ -274,9 +311,98 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9 deschanel deschanell    174
 ## 10 deschanel deschenal     165
 ## # … with 15,467 more rows</code></pre>
+<p>В датасете следующие переменные:</p>
+<ul>
+<li><code>correct</code> – корректное написание фамилии</li>
+<li><code>spelling</code> – написание, которое сделали пользователи</li>
+<li><code>count</code> – количество случаев такого написания</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="tibble" class="section level2">
+<h2><span class="header-section-number">3.2</span> <code>tibble</code></h2>
+<p>Пакет <code>tibble</code> – является альтернативой штатного датафрейма в R. Существует встроенная переменная <code>month.name</code>:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="tidy-dplyr.html#cb14-1"></a>month.name</span></code></pre></div>
+<pre><code>##  [1] &quot;January&quot;   &quot;February&quot;  &quot;March&quot;     &quot;April&quot;     &quot;May&quot;      
+##  [6] &quot;June&quot;      &quot;July&quot;      &quot;August&quot;    &quot;September&quot; &quot;October&quot;  
+## [11] &quot;November&quot;  &quot;December&quot;</code></pre>
+<p>Можно создать датафрейм таким образом:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="tidy-dplyr.html#cb16-1"></a><span class="kw">data.frame</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,</span>
+<span id="cb16-2"><a href="tidy-dplyr.html#cb16-2"></a>           <span class="dt">months =</span> month.name,</span>
+<span id="cb16-3"><a href="tidy-dplyr.html#cb16-3"></a>           <span class="dt">n_letters =</span> <span class="kw">nchar</span>(months))</span></code></pre></div>
+<p>Однако переменная <code>months</code> не создана пользователем, так что данный код выдает ошибку. Корректный способ сделать это базовыми средствами:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="tidy-dplyr.html#cb17-1"></a><span class="kw">data.frame</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,</span>
+<span id="cb17-2"><a href="tidy-dplyr.html#cb17-2"></a>           <span class="dt">months =</span> month.name,</span>
+<span id="cb17-3"><a href="tidy-dplyr.html#cb17-3"></a>           <span class="dt">n_letters =</span> <span class="kw">nchar</span>(month.name))</span></code></pre></div>
+<pre><code>##    id    months n_letters
+## 1   1   January         7
+## 2   2  February         8
+## 3   3     March         5
+## 4   4     April         5
+## 5   5       May         3
+## 6   6      June         4
+## 7   7      July         4
+## 8   8    August         6
+## 9   9 September         9
+## 10 10   October         7
+## 11 11  November         8
+## 12 12  December         8</code></pre>
+<p>Одно из отличий <code>tibble</code> от базового датафрейма – возможность использовать создаваемые “по ходу пьесы переменные”</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="tidy-dplyr.html#cb19-1"></a><span class="kw">tibble</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,</span>
+<span id="cb19-2"><a href="tidy-dplyr.html#cb19-2"></a>       <span class="dt">months =</span> month.name,</span>
+<span id="cb19-3"><a href="tidy-dplyr.html#cb19-3"></a>       <span class="dt">n_letters =</span> <span class="kw">nchar</span>(months))</span></code></pre></div>
+<pre><code>## # A tibble: 12 x 3
+##       id months    n_letters
+##    &lt;int&gt; &lt;chr&gt;         &lt;int&gt;
+##  1     1 January           7
+##  2     2 February          8
+##  3     3 March             5
+##  4     4 April             5
+##  5     5 May               3
+##  6     6 June              4
+##  7     7 July              4
+##  8     8 August            6
+##  9     9 September         9
+## 10    10 October           7
+## 11    11 November          8
+## 12    12 December          8</code></pre>
+<p>Если в окружении пользователя уже есть переменная с датафреймом, его легко можно переделать в <code>tibble</code> при помощи функции <code>as_tibble()</code>:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="tidy-dplyr.html#cb21-1"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">12</span>,</span>
+<span id="cb21-2"><a href="tidy-dplyr.html#cb21-2"></a>                 <span class="dt">months =</span> month.name)</span>
+<span id="cb21-3"><a href="tidy-dplyr.html#cb21-3"></a></span>
+<span id="cb21-4"><a href="tidy-dplyr.html#cb21-4"></a>df</span></code></pre></div>
+<pre><code>##    id    months
+## 1   1   January
+## 2   2  February
+## 3   3     March
+## 4   4     April
+## 5   5       May
+## 6   6      June
+## 7   7      July
+## 8   8    August
+## 9   9 September
+## 10 10   October
+## 11 11  November
+## 12 12  December</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="tidy-dplyr.html#cb23-1"></a><span class="kw">as_tibble</span>(df)</span></code></pre></div>
+<pre><code>## # A tibble: 12 x 2
+##       id months   
+##    &lt;int&gt; &lt;fct&gt;    
+##  1     1 January  
+##  2     2 February 
+##  3     3 March    
+##  4     4 April    
+##  5     5 May      
+##  6     6 June     
+##  7     7 July     
+##  8     8 August   
+##  9     9 September
+## 10    10 October  
+## 11    11 November 
+## 12    12 December</code></pre>
+<p>Функицонально <code>tibble</code> от <code>data.frame</code> ничем не отличается, однако существует ряд несущественных отличий. Кроме того стоит помнить, что многие функции из <code>tidyverse</code> возвращают именно <code>tibble</code>, а не <code>data.frame</code>.</p>
 
-</div>
-</div>
 </div>
 </div>
             </section>
@@ -321,6 +447,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
