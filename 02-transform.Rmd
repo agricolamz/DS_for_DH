@@ -80,20 +80,39 @@ read_csv("https://my_host/my_file.csv")
 read_csv2("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/scary_letters.csv")
 ```
 
-Благодаря `readxl` пакету Также данные можно скачать напрямую из файлов `.xls` (функция `read_xls`) и `.xlsx` (функция `read_xlsx`).
+Благодаря `readxl` пакету Также данные можно скачать напрямую из файлов `.xls` (функция `read_xls`) и `.xlsx` (функция `read_xlsx`), однако эти функции не умеют читать из интернета.
 
-```{r}
+```{r, eval = FALSE}
 library("readxl")
-xlsx_example <- read_xlsx("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/scary_letters.xlsx")
+xlsx_example <- read_xlsx("...")
 ```
 
-Существует еще один экстравагантный способ хранить данные: это формат файлов R `.Rdata`.
+Существует еще один экстравагантный способ хранить данные: это формат файлов R `.RData`. Создадим data.frame:
 
 ```{r}
-
+df <- data.frame(letters = c("a", "b"),
+                 numbers = 1:2)
+df
 ```
 
+Теперь можно сохранить файл...
 
+```{r}
+save(df, file = "data/my_df.RData")
+```
+
+удалить переменную...
+
+```{r error = TRUE}
+rm(df)
+df
+```
+
+и загрузить все снова:
+
+```{r}
+load("data/my_df.RData")
+```
 
 #### Misspelling dataset
 Этот датасет я переработал из данных, собранных для статьи [The Gyllenhaal Experiment](https://pudding.cool/2019/02/gyllenhaal/), написанной Расселом Гольденбергом и Мэттом Дэниэлсом для издания [pudding](https://pudding.cool). Они анализировали ошибки в правописании при поиске имен и фамилий звезд.
@@ -112,6 +131,14 @@ misspellings
 * `correct` -- корректное написание фамилии
 * `spelling` -- написание, которое сделали пользователи
 * `count` -- количество случаев такого написания
+
+#### `diamonds`
+
+```{r}
+diamonds
+?diamonds
+```
+
 
 ## `tibble`
 
@@ -157,3 +184,195 @@ as_tibble(df)
 
 Функицонально `tibble` от `data.frame` ничем не отличается, однако существует ряд несущественных отличий. Кроме того стоит помнить, что многие функции из `tidyverse` возвращают именно `tibble`, а не `data.frame`.
 
+## `dplyr`
+### `dplyr::filter()`
+Сколько неправильных произношений, которые написали меньше 10 юзеров?
+
+```{r}
+misspellings %>%
+  filter(count < 10)
+```
+
+`%>%` --- конвеер (pipe) отправляет результат работы одной функции в другую.
+
+```{r}
+sort(sqrt(abs(sin(1:22))), decreasing = TRUE)
+1:22 %>% 
+  sin() %>% 
+  abs() %>% 
+  sqrt() %>% 
+  sort(., decreasing = TRUE) # зачем здесь точка?
+```
+
+Конвееры в _tidyverse_ пришли из пакета _magrittr_. Иногда они работают не корректно с функциями не из _tidyverse_.
+
+![](https://magrittr.tidyverse.org/logo.png)
+
+### `dplyr::slice()`
+
+```{r}
+misspellings %>%
+  slice(3:7)
+```
+
+
+
+### `dplyr::select()`
+
+```{r}
+diamonds %>%
+  select(8:10)
+
+diamonds %>%
+  select(color:price)
+
+diamonds %>%
+  select(-carat)
+
+diamonds %>%
+  select(-c(carat, cut, x, y, z))
+
+diamonds %>%
+  select(cut, depth, price)
+```
+
+### `dplyr::arrange()`
+
+```{r}
+misspellings %>%
+  arrange(count)
+
+diamonds %>%
+  arrange(desc(carat), price)
+```
+
+### `dplyr::distinct()`
+
+```{r}
+misspellings %>%
+  distinct(correct)
+
+misspellings %>%
+  distinct(spelling)
+
+diamonds %>%
+  distinct(color, cut)
+```
+
+### `dplyr::mutate()`
+
+```{r}
+misspellings %>%
+  mutate(misspelling_length = nchar(spelling))
+```
+
+### `dplyr::group_by(...) %>% summarise(...)`
+
+```{r}
+misspellings %>%
+  summarise(min(count), mean(count))
+
+misspellings %>%
+  group_by(correct) %>% 
+  summarise(mean(count))
+
+misspellings %>%
+  group_by(correct) %>% 
+  summarise(my_mean = mean(count))
+```
+
+Если нужно посчитать количество вхождений, то можно использовать функцию `n()` в `summarise()` или же функцию `count()`:
+
+```{r}
+misspellings %>%
+  group_by(correct) %>% 
+  summarise(n = n())
+
+
+misspellings %>%
+  count(correct)
+```
+
+Можно даже отсортировать результат:
+
+```{r}
+misspellings %>%
+  count(correct, sort = TRUE)
+```
+
+Если вы хотите создать не какое-то саммари, а целый дополнительный столбец с этим саммари вместо функции `summarise()` нужно использовать функцию `mutate()`:
+
+```{r}
+misspellings %>%
+  group_by(correct) %>% 
+  mutate(my_mean = mean(count))
+```
+
+
+### `dplyr::.._join()`
+
+```{r}
+languages <- data_frame(
+  languages = c("Selkup", "French", "Chukchi", "Polish"),
+  countries = c("Russia", "France", "Russia", "Poland"),
+  iso = c("sel", "fra", "ckt", "pol")
+  )
+languages
+country_population <- data_frame(
+  countries = c("Russia", "Poland", "Finland"),
+  population_mln = c(143, 38, 5))
+country_population
+inner_join(languages, country_population)
+left_join(languages, country_population)
+right_join(languages, country_population)
+anti_join(languages, country_population)
+anti_join(country_population, languages)
+full_join(country_population, languages)
+```
+
+## `tidyr` package
+
+* Short format
+
+```{r}
+df.short <- data.frame(
+                   consonant = c("stops", "fricatives", "affricates", "nasals"),
+                   initial = c(123, 87, 73, 7),
+                   intervocal = c(57, 77, 82, 78),
+                   final = c(30, 69, 12, 104))
+df.short
+```
+
+* Long format
+
+```{r, echo = FALSE}
+df.short %>% 
+  gather(position, number, initial:final) ->
+  df.long
+df.long
+```
+
+* Short format → Long format: `tidyr::gather()`
+
+```{r}
+df.short <- data.frame(
+                   consonant = c("stops", "fricatives", "affricates", "nasals"),
+                   initial = c(123, 87, 73, 7),
+                   intervocal = c(57, 77, 82, 78),
+                   final = c(30, 69, 12, 104))
+df.short
+
+df.short %>% 
+  gather(position, number, initial:final) ->
+  df.long
+df.long
+```
+
+* Long format → Short format: `tidyr::spread()`
+
+```{r}
+df.long %>% 
+  spread(position, number) ->
+  df.short
+df.short
+```
