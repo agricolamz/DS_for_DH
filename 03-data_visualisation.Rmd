@@ -322,6 +322,27 @@ misspelling %>%
   coord_flip()
 ```
 
+
+## Точки, джиттер (jitter), ящики с усами (boxplot), (violinplot)
+
+```{r, cache=TRUE}
+diamonds %>% 
+  ggplot(aes(cut, price))+
+  geom_point()
+
+diamonds %>% 
+  ggplot(aes(cut, price))+
+  geom_jitter()
+
+diamonds %>% 
+  ggplot(aes(cut, price))+
+  geom_boxplot()
+
+diamonds %>% 
+  ggplot(aes(cut, price))+
+  geom_violin()
+```
+
 ## Гистограммы
 ## Функции плотности
 ## Фасетизация
