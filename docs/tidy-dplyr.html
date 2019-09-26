@@ -269,12 +269,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><em>broom</em>, для перевода в tidy формат статистические модели</li>
 </ul>
 <div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="tidy-dplyr.html#cb287-1"></a><span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
-<pre><code>## ── Attaching packages ────────</code></pre>
+<pre><code>## ── Attaching packages ────────────── tidyverse 1.2.1 ──</code></pre>
 <pre><code>## ✔ ggplot2 3.2.1     ✔ purrr   0.3.2
 ## ✔ tibble  2.1.3     ✔ dplyr   0.8.3
 ## ✔ tidyr   1.0.0     ✔ stringr 1.4.0
 ## ✔ readr   1.3.1     ✔ forcats 0.4.0</code></pre>
-<pre><code>## ── Conflicts ─────────────────
+<pre><code>## ── Conflicts ───────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <div id="section-3" class="section level2">
@@ -489,6 +489,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.3</span> <code>dplyr</code></h2>
 <div id="dplyrfilter" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> <code>dplyr::filter()</code></h3>
+<p>Эта функция фильтрует строчки по условиям, основанным на столбцах.</p>
 <p>Сколько неправильных произношений, которые написали меньше 10 юзеров?</p>
 <div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="tidy-dplyr.html#cb324-1"></a>misspellings <span class="op">%&gt;%</span></span>
 <span id="cb324-2"><a href="tidy-dplyr.html#cb324-2"></a><span class="st">  </span><span class="kw">filter</span>(count <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>)</span></code></pre></div>
@@ -526,6 +527,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dplyrslice" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> <code>dplyr::slice()</code></h3>
+<p>Эта функция фильтрует строчки по индексу.</p>
 <div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="tidy-dplyr.html#cb330-1"></a>misspellings <span class="op">%&gt;%</span></span>
 <span id="cb330-2"><a href="tidy-dplyr.html#cb330-2"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">7</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 5 x 3
@@ -539,6 +541,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dplyrselect" class="section level3">
 <h3><span class="header-section-number">3.3.3</span> <code>dplyr::select()</code></h3>
+<p>Эта функция позволяет выбрать столбцы.</p>
 <div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="tidy-dplyr.html#cb332-1"></a>diamonds <span class="op">%&gt;%</span></span>
 <span id="cb332-2"><a href="tidy-dplyr.html#cb332-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="dv">8</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 53,940 x 3
@@ -622,6 +625,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dplyrarrange" class="section level3">
 <h3><span class="header-section-number">3.3.4</span> <code>dplyr::arrange()</code></h3>
+<p>Эта функция сортирует (строки по алфавиту, а числа по порядку).</p>
 <div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="tidy-dplyr.html#cb342-1"></a>misspellings <span class="op">%&gt;%</span></span>
 <span id="cb342-2"><a href="tidy-dplyr.html#cb342-2"></a><span class="st">  </span><span class="kw">arrange</span>(count)</span></code></pre></div>
 <pre><code>## # A tibble: 15,477 x 3
@@ -657,6 +661,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dplyrdistinct" class="section level3">
 <h3><span class="header-section-number">3.3.5</span> <code>dplyr::distinct()</code></h3>
+<p>Эта функция возращает уникальные значения в столбце или комбинации столбцов.</p>
 <div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="tidy-dplyr.html#cb346-1"></a>misspellings <span class="op">%&gt;%</span></span>
 <span id="cb346-2"><a href="tidy-dplyr.html#cb346-2"></a><span class="st">  </span><span class="kw">distinct</span>(correct)</span></code></pre></div>
 <pre><code>## # A tibble: 15 x 1
@@ -712,25 +717,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dplyrmutate" class="section level3">
 <h3><span class="header-section-number">3.3.6</span> <code>dplyr::mutate()</code></h3>
+<p>Эта функция позволяет создать новые переменные.</p>
 <div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="tidy-dplyr.html#cb352-1"></a>misspellings <span class="op">%&gt;%</span></span>
-<span id="cb352-2"><a href="tidy-dplyr.html#cb352-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">misspelling_length =</span> <span class="kw">nchar</span>(spelling))</span></code></pre></div>
-<pre><code>## # A tibble: 15,477 x 4
-##    correct   spelling    count misspelling_length
-##    &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;              &lt;int&gt;
-##  1 deschanel deschanel   18338                  9
-##  2 deschanel dechanel     1550                  8
-##  3 deschanel deschannel    934                 10
-##  4 deschanel deschenel     404                  9
-##  5 deschanel deshanel      364                  8
-##  6 deschanel dechannel     359                  9
-##  7 deschanel deschanelle   316                 11
-##  8 deschanel dechanelle    192                 10
-##  9 deschanel deschanell    174                 10
-## 10 deschanel deschenal     165                  9
+<span id="cb352-2"><a href="tidy-dplyr.html#cb352-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">misspelling_length =</span> <span class="kw">nchar</span>(spelling),</span>
+<span id="cb352-3"><a href="tidy-dplyr.html#cb352-3"></a>         <span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 15,477 x 5
+##    correct   spelling    count misspelling_length    id
+##    &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;              &lt;int&gt; &lt;int&gt;
+##  1 deschanel deschanel   18338                  9     1
+##  2 deschanel dechanel     1550                  8     2
+##  3 deschanel deschannel    934                 10     3
+##  4 deschanel deschenel     404                  9     4
+##  5 deschanel deshanel      364                  8     5
+##  6 deschanel dechannel     359                  9     6
+##  7 deschanel deschanelle   316                 11     7
+##  8 deschanel dechanelle    192                 10     8
+##  9 deschanel deschanell    174                 10     9
+## 10 deschanel deschenal     165                  9    10
 ## # … with 15,467 more rows</code></pre>
 </div>
 <div id="dplyrgroup_by...-summarise..." class="section level3">
 <h3><span class="header-section-number">3.3.7</span> <code>dplyr::group_by(...) %&gt;% summarise(...)</code></h3>
+<p>Эта функция позволяет сгруппировать переменные по какому-то из столбцов и получить какой-нибудь вывод из описательной статистики.</p>
 <div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="tidy-dplyr.html#cb354-1"></a>misspellings <span class="op">%&gt;%</span></span>
 <span id="cb354-2"><a href="tidy-dplyr.html#cb354-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">min</span>(count), <span class="kw">mean</span>(count))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 2
@@ -864,6 +872,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dplyr.._join" class="section level3">
 <h3><span class="header-section-number">3.3.8</span> <code>dplyr::.._join()</code></h3>
+<p>Эта функция позволяет соединять датафреймы.</p>
 <div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="tidy-dplyr.html#cb368-1"></a>languages &lt;-<span class="st"> </span><span class="kw">data_frame</span>(</span>
 <span id="cb368-2"><a href="tidy-dplyr.html#cb368-2"></a>  <span class="dt">languages =</span> <span class="kw">c</span>(<span class="st">&quot;Selkup&quot;</span>, <span class="st">&quot;French&quot;</span>, <span class="st">&quot;Chukchi&quot;</span>, <span class="st">&quot;Polish&quot;</span>),</span>
 <span id="cb368-3"><a href="tidy-dplyr.html#cb368-3"></a>  <span class="dt">countries =</span> <span class="kw">c</span>(<span class="st">&quot;Russia&quot;</span>, <span class="st">&quot;France&quot;</span>, <span class="st">&quot;Russia&quot;</span>, <span class="st">&quot;Poland&quot;</span>),</span>

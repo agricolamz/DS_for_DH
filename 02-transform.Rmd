@@ -192,6 +192,9 @@ as_tibble(df)
 
 ## `dplyr`
 ### `dplyr::filter()`
+
+Эта функция фильтрует строчки по условиям, основанным на столбцах.
+
 Сколько неправильных произношений, которые написали меньше 10 юзеров?
 
 ```{r}
@@ -216,14 +219,16 @@ sort(sqrt(abs(sin(1:22))), decreasing = TRUE)
 
 ### `dplyr::slice()`
 
+Эта функция фильтрует строчки по индексу.
+
 ```{r}
 misspellings %>%
   slice(3:7)
 ```
 
-
-
 ### `dplyr::select()`
+
+Эта функция позволяет выбрать столбцы.
 
 ```{r}
 diamonds %>%
@@ -244,6 +249,8 @@ diamonds %>%
 
 ### `dplyr::arrange()`
 
+Эта функция сортирует (строки по алфавиту, а числа по порядку).
+
 ```{r}
 misspellings %>%
   arrange(count)
@@ -253,6 +260,7 @@ diamonds %>%
 ```
 
 ### `dplyr::distinct()`
+Эта функция возращает уникальные значения в столбце или комбинации столбцов.
 
 ```{r}
 misspellings %>%
@@ -267,12 +275,17 @@ diamonds %>%
 
 ### `dplyr::mutate()`
 
+Эта функция позволяет создать новые переменные.
+
 ```{r}
 misspellings %>%
-  mutate(misspelling_length = nchar(spelling))
+  mutate(misspelling_length = nchar(spelling),
+         id = 1:n())
 ```
 
 ### `dplyr::group_by(...) %>% summarise(...)`
+
+Эта функция позволяет сгруппировать переменные по какому-то из столбцов и получить какой-нибудь вывод из описательной статистики.
 
 ```{r}
 misspellings %>%
@@ -316,6 +329,9 @@ misspellings %>%
 
 
 ### `dplyr::.._join()`
+
+Эта функция позволяет соединять датафреймы.
+
 
 ```{r}
 languages <- data_frame(

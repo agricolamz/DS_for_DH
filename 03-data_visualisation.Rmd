@@ -182,7 +182,7 @@ diamonds %>%
 ```
 
 ### Логарифмические шкалы
-![](https://pbs.twimg.com/media/CTxg970WwAApE98.png)
+![](images/log_scales.png)
 
 Рассмотрим словарь [Ляшевской, Шарова 2011]
 

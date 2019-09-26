@@ -1,10 +1,4 @@
 base
-methods
-datasets
-utils
-grDevices
-graphics
-stats
 tidyverse
 ggplot2
 tibble
@@ -14,3 +8,4 @@ purrr
 dplyr
 stringr
 forcats
+ggrepel
