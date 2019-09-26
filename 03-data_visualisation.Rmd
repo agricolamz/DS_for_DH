@@ -10,12 +10,34 @@ library("tidyverse")
 ```
 
 ## Зачем визуализировать данные?
-## Основы ggplot
+### Квартет Анскомба
+В работе Anscombe, F. J. (1973). "Graphs in Statistical Analysis" представлен следующий датасет:
+
+```{r}
+quartet <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/anscombe.csv")
+quartet
+quartet %>% 
+  group_by(dataset) %>% 
+  summarise(mean_X = mean(x),
+            mean_Y = mean(y),
+            sd_X = sd(x),
+            sd_Y = sd(y),
+            cor = cor(x, y),
+            n_obs = n()) %>% 
+  select(-dataset) %>% 
+  round(., 2)
+```
+
+
+
+## Основы `ggplot2`
+Пакет `ggplot2` -- современный стандарт для создания графиков в R. Для этого пакета пишут [массу расширений](http://www.ggplot2-exts.org/gallery/).
+
 
 ## Визуализация комбинаций признаков
-### Диаграмма Сэнки (Sankey diagram)
+### Потоковая Диаграмма (Sankey diagram)
 
-Один из способов визуализации отношений между признаками называется [диаграмма Sankey](https://en.wikipedia.org/wiki/Sankey_diagram).
+Один из способов визуализации отношений между признаками называется [потоковая диаграмма](https://en.wikipedia.org/wiki/Sankey_diagram).
 
 ```{r}
 library("ggforce")
@@ -26,20 +48,22 @@ zhadina %>%
   geom_parallel_sets(aes(fill = type), alpha = 0.6, axis.width = 0.5) +
   geom_parallel_sets_axes(axis.width = 0.5, color = "lightgrey", fill = "white") +
   geom_parallel_sets_labels(angle = 0) +
-  theme_no_axes()
+  theme_no_axes()+
+  theme(legend.position = "bottom")
 ```
 
 А как поменять порядок? Снова факторы.
 
 ```{r}
-  zhadina %>% 
+zhadina %>% 
   gather_set_data(1:3) %>% 
   mutate(y = reorder(y, n)) %>% 
   ggplot(aes(x, id = id, split = y, value = n))+
   geom_parallel_sets(aes(fill = type), alpha = 0.6, axis.width = 0.5) +
   geom_parallel_sets_axes(axis.width = 0.5, color = "lightgrey", fill = "white") +
   geom_parallel_sets_labels(angle = 0) +
-  theme_no_axes()
+  theme_no_axes()+
+  theme(legend.position = "bottom")
 ```
 
 Можно донастроить, задав собственный порядок в аргументе `levels` функции `factor()`.
