@@ -178,8 +178,16 @@ diamonds %>%
        title = "Связь цены и веса бриллиантов",
        subtitle = "Данные взяты из датасеты diamonds",
        caption = "график сделан при помощи пакета ggplot2")+
-  theme(legend.position = "bottom")
+  theme(legend.position = "bottom") # у функции theme() огромный функционал
 ```
+
+### Логарифмические шкалы
+![](https://pbs.twimg.com/media/CTxg970WwAApE98.png)
+
+```{r, cache=TRUE}
+
+```
+
 
 ## Визуализация комбинаций признаков
 ### Потоковая Диаграмма (Sankey diagram)
