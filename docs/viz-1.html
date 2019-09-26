@@ -183,10 +183,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#tidyr-package"><i class="fa fa-check"></i><b>3.4</b> <code>tidyr</code> package</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="viz-1.html"><a href="viz-1.html"><i class="fa fa-check"></i><b>4</b> Визуализация данных</a><ul>
-<li class="chapter" data-level="4.1" data-path="viz-1.html"><a href="viz-1.html#section-5"><i class="fa fa-check"></i><b>4.1</b> Зачем визуализировать данные?</a></li>
-<li class="chapter" data-level="4.2" data-path="viz-1.html"><a href="viz-1.html#ggplot"><i class="fa fa-check"></i><b>4.2</b> Основы ggplot</a></li>
-<li class="chapter" data-level="4.3" data-path="viz-1.html"><a href="viz-1.html#section-6"><i class="fa fa-check"></i><b>4.3</b> Визуализация комбинаций признаков</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="viz-1.html"><a href="viz-1.html#sankey-diagram"><i class="fa fa-check"></i><b>4.3.1</b> Диаграмма Сэнки (Sankey diagram)</a></li>
+<li class="chapter" data-level="4.1" data-path="viz-1.html"><a href="viz-1.html#section-5"><i class="fa fa-check"></i><b>4.1</b> Зачем визуализировать данные?</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="viz-1.html"><a href="viz-1.html#section-6"><i class="fa fa-check"></i><b>4.1.1</b> Квартет Анскомба</a></li>
+<li class="chapter" data-level="4.1.2" data-path="viz-1.html"><a href="viz-1.html#section-7"><i class="fa fa-check"></i><b>4.1.2</b> Датазаурус</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="viz-1.html"><a href="viz-1.html#ggplot2"><i class="fa fa-check"></i><b>4.2</b> Основы <code>ggplot2</code></a></li>
+<li class="chapter" data-level="4.3" data-path="viz-1.html"><a href="viz-1.html#section-8"><i class="fa fa-check"></i><b>4.3</b> Визуализация комбинаций признаков</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="viz-1.html"><a href="viz-1.html#sankey-diagram"><i class="fa fa-check"></i><b>4.3.1</b> Потоковая Диаграмма (Sankey diagram)</a></li>
 <li class="chapter" data-level="4.3.2" data-path="viz-1.html"><a href="viz-1.html#upset-plot"><i class="fa fa-check"></i><b>4.3.2</b> UpSet Plot</a></li>
 </ul></li>
 </ul></li>
@@ -212,7 +215,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.5" data-path="solutions.html"><a href="solutions.html#solvt"><i class="fa fa-check"></i><b>12.5</b> Матрицы</a></li>
 <li class="chapter" data-level="12.6" data-path="solutions.html"><a href="solutions.html#solvdf_task"><i class="fa fa-check"></i><b>12.6</b> Датафрейм</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="section-7.html"><a href="section-7.html"><i class="fa fa-check"></i>Ссылки на литературу</a></li>
+<li class="chapter" data-level="" data-path="section-9.html"><a href="section-9.html"><i class="fa fa-check"></i>Ссылки на литературу</a></li>
 </ul>
 
       </nav>
@@ -235,17 +238,103 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="viz-1.html#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
 <div id="section-5" class="section level2">
 <h2><span class="header-section-number">4.1</span> Зачем визуализировать данные?</h2>
+<div id="section-6" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Квартет Анскомба</h3>
+<p>В работе Anscombe, F. J. (1973). “Graphs in Statistical Analysis” представлен следующий датасет:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="viz-1.html#cb2-1"></a>quartet &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/anscombe.csv&quot;</span>)</span>
+<span id="cb2-2"><a href="viz-1.html#cb2-2"></a>quartet</span></code></pre></div>
+<pre><code>## # A tibble: 44 x 4
+##       id dataset     x     y
+##    &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1     1       1    10  8.04
+##  2     1       2    10  9.14
+##  3     1       3    10  7.46
+##  4     1       4     8  6.58
+##  5     2       1     8  6.95
+##  6     2       2     8  8.14
+##  7     2       3     8  6.77
+##  8     2       4     8  5.76
+##  9     3       1    13  7.58
+## 10     3       2    13  8.74
+## # … with 34 more rows</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="viz-1.html#cb4-1"></a>quartet <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-2"><a href="viz-1.html#cb4-2"></a><span class="st">  </span><span class="kw">group_by</span>(dataset) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-3"><a href="viz-1.html#cb4-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_X =</span> <span class="kw">mean</span>(x),</span>
+<span id="cb4-4"><a href="viz-1.html#cb4-4"></a>            <span class="dt">mean_Y =</span> <span class="kw">mean</span>(y),</span>
+<span id="cb4-5"><a href="viz-1.html#cb4-5"></a>            <span class="dt">sd_X =</span> <span class="kw">sd</span>(x),</span>
+<span id="cb4-6"><a href="viz-1.html#cb4-6"></a>            <span class="dt">sd_Y =</span> <span class="kw">sd</span>(y),</span>
+<span id="cb4-7"><a href="viz-1.html#cb4-7"></a>            <span class="dt">cor =</span> <span class="kw">cor</span>(x, y),</span>
+<span id="cb4-8"><a href="viz-1.html#cb4-8"></a>            <span class="dt">n_obs =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-9"><a href="viz-1.html#cb4-9"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>dataset) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-10"><a href="viz-1.html#cb4-10"></a><span class="st">  </span><span class="kw">round</span>(<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 4 x 6
+##   mean_X mean_Y  sd_X  sd_Y   cor n_obs
+##    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1      9    7.5  3.32  2.03  0.82    11
+## 2      9    7.5  3.32  2.03  0.82    11
+## 3      9    7.5  3.32  2.03  0.82    11
+## 4      9    7.5  3.32  2.03  0.82    11</code></pre>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
-<div id="ggplot" class="section level2">
-<h2><span class="header-section-number">4.2</span> Основы ggplot</h2>
+<div id="section-7" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Датазаурус</h3>
+<p>В работе <a href="https://www.autodeskresearch.com/sites/default/files/SameStats-DifferentGraphs.pdf">Matejka and Fitzmaurice (2017) “Same Stats, Different Graphs”</a> были представлены следующие датасеты:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="viz-1.html#cb6-1"></a>datasaurus &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/datasaurus.csv&quot;</span>)</span>
+<span id="cb6-2"><a href="viz-1.html#cb6-2"></a>datasaurus</span></code></pre></div>
+<pre><code>## # A tibble: 1,846 x 3
+##    dataset     x     y
+##    &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+##  1 dino     55.4  97.2
+##  2 dino     51.5  96.0
+##  3 dino     46.2  94.5
+##  4 dino     42.8  91.4
+##  5 dino     40.8  88.3
+##  6 dino     38.7  84.9
+##  7 dino     35.6  79.9
+##  8 dino     33.1  77.6
+##  9 dino     29.0  74.5
+## 10 dino     26.2  71.4
+## # … with 1,836 more rows</code></pre>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="viz-1.html#cb8-1"></a>datasaurus <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb8-2"><a href="viz-1.html#cb8-2"></a><span class="st">  </span><span class="kw">group_by</span>(dataset) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb8-3"><a href="viz-1.html#cb8-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_X =</span> <span class="kw">mean</span>(x),</span>
+<span id="cb8-4"><a href="viz-1.html#cb8-4"></a>            <span class="dt">mean_Y =</span> <span class="kw">mean</span>(y),</span>
+<span id="cb8-5"><a href="viz-1.html#cb8-5"></a>            <span class="dt">sd_X =</span> <span class="kw">sd</span>(x),</span>
+<span id="cb8-6"><a href="viz-1.html#cb8-6"></a>            <span class="dt">sd_Y =</span> <span class="kw">sd</span>(y),</span>
+<span id="cb8-7"><a href="viz-1.html#cb8-7"></a>            <span class="dt">cor =</span> <span class="kw">cor</span>(x, y),</span>
+<span id="cb8-8"><a href="viz-1.html#cb8-8"></a>            <span class="dt">n_obs =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb8-9"><a href="viz-1.html#cb8-9"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>dataset) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb8-10"><a href="viz-1.html#cb8-10"></a><span class="st">  </span><span class="kw">round</span>(<span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 13 x 6
+##    mean_X mean_Y  sd_X  sd_Y   cor n_obs
+##     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1   54.3   47.8  16.8  26.9  -0.1   142
+##  2   54.3   47.8  16.8  26.9  -0.1   142
+##  3   54.3   47.8  16.8  26.9  -0.1   142
+##  4   54.3   47.8  16.8  26.9  -0.1   142
+##  5   54.3   47.8  16.8  26.9  -0.1   142
+##  6   54.3   47.8  16.8  26.9  -0.1   142
+##  7   54.3   47.8  16.8  26.9  -0.1   142
+##  8   54.3   47.8  16.8  26.9  -0.1   142
+##  9   54.3   47.8  16.8  26.9  -0.1   142
+## 10   54.3   47.8  16.8  26.9  -0.1   142
+## 11   54.3   47.8  16.8  26.9  -0.1   142
+## 12   54.3   47.8  16.8  26.9  -0.1   142
+## 13   54.3   47.8  16.8  26.9  -0.1   142</code></pre>
 </div>
-<div id="section-6" class="section level2">
+</div>
+<div id="ggplot2" class="section level2">
+<h2><span class="header-section-number">4.2</span> Основы <code>ggplot2</code></h2>
+<p>Пакет <code>ggplot2</code> – современный стандарт для создания графиков в R. Для этого пакета пишут <a href="http://www.ggplot2-exts.org/gallery/">массу расширений</a>.</p>
+</div>
+<div id="section-8" class="section level2">
 <h2><span class="header-section-number">4.3</span> Визуализация комбинаций признаков</h2>
 <div id="sankey-diagram" class="section level3">
-<h3><span class="header-section-number">4.3.1</span> Диаграмма Сэнки (Sankey diagram)</h3>
-<p>Один из способов визуализации отношений между признаками называется <a href="https://en.wikipedia.org/wiki/Sankey_diagram">диаграмма Sankey</a>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="viz-1.html#cb2-1"></a><span class="kw">library</span>(<span class="st">&quot;ggforce&quot;</span>)</span>
-<span id="cb2-2"><a href="viz-1.html#cb2-2"></a>zhadina &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/zhadina.csv&quot;</span>)</span></code></pre></div>
+<h3><span class="header-section-number">4.3.1</span> Потоковая Диаграмма (Sankey diagram)</h3>
+<p>Один из способов визуализации отношений между признаками называется <a href="https://en.wikipedia.org/wiki/Sankey_diagram">потоковая диаграмма</a>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="viz-1.html#cb10-1"></a><span class="kw">library</span>(<span class="st">&quot;ggforce&quot;</span>)</span>
+<span id="cb10-2"><a href="viz-1.html#cb10-2"></a>zhadina &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/zhadina.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   word_1 = col_character(),
@@ -254,34 +343,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   type = col_character(),
 ##   n = col_double()
 ## )</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="viz-1.html#cb4-1"></a>zhadina <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb4-2"><a href="viz-1.html#cb4-2"></a><span class="st">  </span><span class="kw">gather_set_data</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb4-3"><a href="viz-1.html#cb4-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(x, <span class="dt">id =</span> id, <span class="dt">split =</span> y, <span class="dt">value =</span> n))<span class="op">+</span></span>
-<span id="cb4-4"><a href="viz-1.html#cb4-4"></a><span class="st">  </span><span class="kw">geom_parallel_sets</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> type), <span class="dt">alpha =</span> <span class="fl">0.6</span>, <span class="dt">axis.width =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
-<span id="cb4-5"><a href="viz-1.html#cb4-5"></a><span class="st">  </span><span class="kw">geom_parallel_sets_axes</span>(<span class="dt">axis.width =</span> <span class="fl">0.5</span>, <span class="dt">color =</span> <span class="st">&quot;lightgrey&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="op">+</span></span>
-<span id="cb4-6"><a href="viz-1.html#cb4-6"></a><span class="st">  </span><span class="kw">geom_parallel_sets_labels</span>(<span class="dt">angle =</span> <span class="dv">0</span>) <span class="op">+</span></span>
-<span id="cb4-7"><a href="viz-1.html#cb4-7"></a><span class="st">  </span><span class="kw">theme_no_axes</span>()<span class="op">+</span></span>
-<span id="cb4-8"><a href="viz-1.html#cb4-8"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="viz-1.html#cb12-1"></a>zhadina <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb12-2"><a href="viz-1.html#cb12-2"></a><span class="st">  </span><span class="kw">gather_set_data</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb12-3"><a href="viz-1.html#cb12-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(x, <span class="dt">id =</span> id, <span class="dt">split =</span> y, <span class="dt">value =</span> n))<span class="op">+</span></span>
+<span id="cb12-4"><a href="viz-1.html#cb12-4"></a><span class="st">  </span><span class="kw">geom_parallel_sets</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> type), <span class="dt">alpha =</span> <span class="fl">0.6</span>, <span class="dt">axis.width =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb12-5"><a href="viz-1.html#cb12-5"></a><span class="st">  </span><span class="kw">geom_parallel_sets_axes</span>(<span class="dt">axis.width =</span> <span class="fl">0.5</span>, <span class="dt">color =</span> <span class="st">&quot;lightgrey&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="op">+</span></span>
+<span id="cb12-6"><a href="viz-1.html#cb12-6"></a><span class="st">  </span><span class="kw">geom_parallel_sets_labels</span>(<span class="dt">angle =</span> <span class="dv">0</span>) <span class="op">+</span></span>
+<span id="cb12-7"><a href="viz-1.html#cb12-7"></a><span class="st">  </span><span class="kw">theme_no_axes</span>()<span class="op">+</span></span>
+<span id="cb12-8"><a href="viz-1.html#cb12-8"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>А как поменять порядок? Снова факторы.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="viz-1.html#cb5-1"></a>zhadina <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb5-2"><a href="viz-1.html#cb5-2"></a><span class="st">  </span><span class="kw">gather_set_data</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb5-3"><a href="viz-1.html#cb5-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">y =</span> <span class="kw">reorder</span>(y, n)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb5-4"><a href="viz-1.html#cb5-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(x, <span class="dt">id =</span> id, <span class="dt">split =</span> y, <span class="dt">value =</span> n))<span class="op">+</span></span>
-<span id="cb5-5"><a href="viz-1.html#cb5-5"></a><span class="st">  </span><span class="kw">geom_parallel_sets</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> type), <span class="dt">alpha =</span> <span class="fl">0.6</span>, <span class="dt">axis.width =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
-<span id="cb5-6"><a href="viz-1.html#cb5-6"></a><span class="st">  </span><span class="kw">geom_parallel_sets_axes</span>(<span class="dt">axis.width =</span> <span class="fl">0.5</span>, <span class="dt">color =</span> <span class="st">&quot;lightgrey&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="op">+</span></span>
-<span id="cb5-7"><a href="viz-1.html#cb5-7"></a><span class="st">  </span><span class="kw">geom_parallel_sets_labels</span>(<span class="dt">angle =</span> <span class="dv">0</span>) <span class="op">+</span></span>
-<span id="cb5-8"><a href="viz-1.html#cb5-8"></a><span class="st">  </span><span class="kw">theme_no_axes</span>()<span class="op">+</span></span>
-<span id="cb5-9"><a href="viz-1.html#cb5-9"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="viz-1.html#cb13-1"></a>zhadina <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb13-2"><a href="viz-1.html#cb13-2"></a><span class="st">  </span><span class="kw">gather_set_data</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb13-3"><a href="viz-1.html#cb13-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">y =</span> <span class="kw">reorder</span>(y, n)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb13-4"><a href="viz-1.html#cb13-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(x, <span class="dt">id =</span> id, <span class="dt">split =</span> y, <span class="dt">value =</span> n))<span class="op">+</span></span>
+<span id="cb13-5"><a href="viz-1.html#cb13-5"></a><span class="st">  </span><span class="kw">geom_parallel_sets</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> type), <span class="dt">alpha =</span> <span class="fl">0.6</span>, <span class="dt">axis.width =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb13-6"><a href="viz-1.html#cb13-6"></a><span class="st">  </span><span class="kw">geom_parallel_sets_axes</span>(<span class="dt">axis.width =</span> <span class="fl">0.5</span>, <span class="dt">color =</span> <span class="st">&quot;lightgrey&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="op">+</span></span>
+<span id="cb13-7"><a href="viz-1.html#cb13-7"></a><span class="st">  </span><span class="kw">geom_parallel_sets_labels</span>(<span class="dt">angle =</span> <span class="dv">0</span>) <span class="op">+</span></span>
+<span id="cb13-8"><a href="viz-1.html#cb13-8"></a><span class="st">  </span><span class="kw">theme_no_axes</span>()<span class="op">+</span></span>
+<span id="cb13-9"><a href="viz-1.html#cb13-9"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Можно донастроить, задав собственный порядок в аргументе <code>levels</code> функции <code>factor()</code>.</p>
 </div>
 <div id="upset-plot" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> UpSet Plot</h3>
 <p>Если диаграмма Sankey визуализирует попарные отношения между переменными, то график UpSet потенциально может визуализировать все возможные комбинации и является хорошей альтернативой диаграмме Вена, с большим количеством переменных (см. <a href="https://www.littlemissdata.com/blog/set-analysis">эту статью Лауры Эллис</a>).</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="viz-1.html#cb6-1"></a><span class="kw">library</span>(UpSetR)</span>
-<span id="cb6-2"><a href="viz-1.html#cb6-2"></a>movies &lt;-<span class="st"> </span><span class="kw">read.csv</span>( <span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;movies.csv&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;UpSetR&quot;</span>), <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;;&quot;</span> )</span>
-<span id="cb6-3"><a href="viz-1.html#cb6-3"></a><span class="kw">str</span>(movies)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="viz-1.html#cb14-1"></a><span class="kw">library</span>(UpSetR)</span>
+<span id="cb14-2"><a href="viz-1.html#cb14-2"></a>movies &lt;-<span class="st"> </span><span class="kw">read.csv</span>( <span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;movies.csv&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;UpSetR&quot;</span>), <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;;&quot;</span> )</span>
+<span id="cb14-3"><a href="viz-1.html#cb14-3"></a><span class="kw">str</span>(movies)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    3883 obs. of  21 variables:
 ##  $ Name       : Factor w/ 3883 levels &quot;...And Justice for All (1979)&quot;,..: 3576 1860 1485 3718 1179 1564 3012 3551 3364 1426 ...
 ##  $ ReleaseDate: int  1995 1995 1995 1995 1995 1995 1995 1995 1995 1995 ...
@@ -304,8 +393,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  $ Western    : int  0 0 0 0 0 0 0 0 0 0 ...
 ##  $ AvgRating  : num  4.15 3.2 3.02 2.73 3.01 3.88 3.41 3.01 2.66 3.54 ...
 ##  $ Watches    : int  2077 701 478 170 296 940 458 68 102 888 ...</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="viz-1.html#cb8-1"></a><span class="kw">upset</span>(movies[,<span class="dv">3</span><span class="op">:</span><span class="dv">19</span>], <span class="dt">nsets =</span> <span class="dv">16</span>, <span class="dt">order.by =</span> <span class="st">&quot;freq&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="viz-1.html#cb16-1"></a><span class="kw">upset</span>(movies[,<span class="dv">3</span><span class="op">:</span><span class="dv">19</span>], <span class="dt">nsets =</span> <span class="dv">16</span>, <span class="dt">order.by =</span> <span class="st">&quot;freq&quot;</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 
 </div>
 </div>

@@ -13,7 +13,7 @@ library("tidyverse")
 ### Квартет Анскомба
 В работе Anscombe, F. J. (1973). "Graphs in Statistical Analysis" представлен следующий датасет:
 
-```{r}
+```{r, message= FALSE}
 quartet <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/anscombe.csv")
 quartet
 quartet %>% 
@@ -25,7 +25,7 @@ quartet %>%
             cor = cor(x, y),
             n_obs = n()) %>% 
   select(-dataset) %>% 
-  round(., 2)
+  round(2)
 ```
 
 ```{r, echo = FALSE, message=FALSE}
@@ -42,14 +42,8 @@ quartet %>%
 В работе [Matejka and Fitzmaurice (2017) "Same Stats, Different Graphs"](https://www.autodeskresearch.com/sites/default/files/SameStats-DifferentGraphs.pdf) были представлены следующие датасеты:
 
 ```{r, message= FALSE}
-datasaurus <- read_tsv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/datasaurus.csv")
-head(datasaurus)
-ggplot(datasaurus_dozen, aes(x=x, y=y, colour=dataset))+
-  geom_point()+
-  theme_void()+
-  theme(legend.position = "none")+
-  facet_wrap(~dataset, ncol=3)
-
+datasaurus <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/datasaurus.csv")
+datasaurus
 ```
 
 ```{r, echo=FALSE, message= FALSE}
@@ -70,11 +64,14 @@ datasaurus %>%
             cor = cor(x, y),
             n_obs = n()) %>% 
   select(-dataset) %>% 
-  round(., 1)
+  round(1)
 ```
 
 ## Основы `ggplot2`
 Пакет `ggplot2` -- современный стандарт для создания графиков в R. Для этого пакета пишут [массу расширений](http://www.ggplot2-exts.org/gallery/).
+
+### Диаграмма рассеяния (Scaterplot)
+
 
 
 ## Визуализация комбинаций признаков
