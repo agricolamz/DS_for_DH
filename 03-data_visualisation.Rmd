@@ -1,1 +1,58 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Визуализация данных {#viz_1}
+
+```{r, message = FALSE}
+library("tidyverse")
+```
+
+
+## Зачем визуализировать данные?
+## Основы ggplot
+
+## Визуализация комбинаций признаков
+### Диаграмма Sankey
+
+Один из способов визуализации отношений между признаками называется [диаграмма Sankey](https://en.wikipedia.org/wiki/Sankey_diagram).
+
+```{r}
+library("ggforce")
+zhadina <- read_csv("data/zhadina.csv")
+zhadina %>% 
+  gather_set_data(1:3) %>% 
+  ggplot(aes(x, id = id, split = y, value = n))+
+  geom_parallel_sets(aes(fill = type), alpha = 0.6, axis.width = 0.5) +
+  geom_parallel_sets_axes(axis.width = 0.5, color = "lightgrey", fill = "white") +
+  geom_parallel_sets_labels(angle = 0) +
+  theme_no_axes()
+```
+
+А как поменять порядок? Снова факторы.
+
+```{r}
+  zhadina %>% 
+  gather_set_data(1:3) %>% 
+  mutate(y = reorder(y, n)) %>% 
+  ggplot(aes(x, id = id, split = y, value = n))+
+  geom_parallel_sets(aes(fill = type), alpha = 0.6, axis.width = 0.5) +
+  geom_parallel_sets_axes(axis.width = 0.5, color = "lightgrey", fill = "white") +
+  geom_parallel_sets_labels(angle = 0) +
+  theme_no_axes()
+```
+
+Можно донастроить, задав собственный порядок в аргументе `levels` функции `factor()`.
+
+### UpSet Plot
+
+Если диаграмма Sankey визуализирует попарные отношения между переменными, то график UpSet потенциально может визуализировать все возможные комбинации и является хорошей альтернативой диаграмме Вена, с большим количеством переменных (см. [эту статью Лауры Эллис](https://www.littlemissdata.com/blog/set-analysis)).
+
+```{r, fig.height=9}
+library(UpSetR)
+movies <- read.csv( system.file("extdata", "movies.csv", package = "UpSetR"), header=TRUE, sep=";" )
+str(movies)
+upset(movies[,3:19], nsets = 16, order.by = "freq")
+```
+
