@@ -9,7 +9,6 @@ editor_options:
 library("tidyverse")
 ```
 
-
 ## Зачем визуализировать данные?
 ## Основы ggplot
 
@@ -20,7 +19,7 @@ library("tidyverse")
 
 ```{r}
 library("ggforce")
-zhadina <- read_csv("data/zhadina.csv")
+zhadina <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/zhadina.csv")
 zhadina %>% 
   gather_set_data(1:3) %>% 
   ggplot(aes(x, id = id, split = y, value = n))+
