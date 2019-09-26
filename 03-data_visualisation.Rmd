@@ -28,7 +28,50 @@ quartet %>%
   round(., 2)
 ```
 
+```{r, echo = FALSE, message=FALSE}
+library(ggplot2)
+quartet %>% 
+  ggplot(aes(x, y))+
+  geom_point()+
+  geom_smooth(method = "lm", se = F)+
+  facet_wrap(~dataset)+
+  theme_bw()
+```
 
+### Датазаурус
+В работе [Matejka and Fitzmaurice (2017) "Same Stats, Different Graphs"](https://www.autodeskresearch.com/sites/default/files/SameStats-DifferentGraphs.pdf) были представлены следующие датасеты:
+
+```{r, message= FALSE}
+datasaurus <- read_tsv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/datasaurus.csv")
+head(datasaurus)
+ggplot(datasaurus_dozen, aes(x=x, y=y, colour=dataset))+
+  geom_point()+
+  theme_void()+
+  theme(legend.position = "none")+
+  facet_wrap(~dataset, ncol=3)
+
+```
+
+```{r, echo=FALSE, message= FALSE}
+datasaurus %>% 
+  ggplot(aes(x, y))+
+  geom_point()+
+  facet_wrap(~dataset)+
+  theme_bw()
+```
+
+```{r}
+datasaurus %>% 
+  group_by(dataset) %>% 
+  summarise(mean_X = mean(x),
+            mean_Y = mean(y),
+            sd_X = sd(x),
+            sd_Y = sd(y),
+            cor = cor(x, y),
+            n_obs = n()) %>% 
+  select(-dataset) %>% 
+  round(., 1)
+```
 
 ## Основы `ggplot2`
 Пакет `ggplot2` -- современный стандарт для создания графиков в R. Для этого пакета пишут [массу расширений](http://www.ggplot2-exts.org/gallery/).
