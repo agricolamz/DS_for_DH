@@ -72,7 +72,114 @@ datasaurus %>%
 
 ### Диаграмма рассеяния (Scaterplot)
 
+* ggplot2
+```{r}
+ggplot(data = diamonds, aes(carat, price)) +
+  geom_point()
+```
 
+* dplyr, ggplot2
+```{r}
+diamonds %>%
+  ggplot(aes(carat, price))+
+  geom_point()
+```
+
+### Слои
+
+```{r}
+diamonds %>%
+  ggplot(aes(carat, price))+
+  geom_point()+
+  geom_smooth()
+```
+
+```{r}
+diamonds %>%
+  ggplot(aes(carat, price))+
+  geom_smooth()+
+  geom_point()
+```
+
+
+### `aes()`
+
+```{r}
+diamonds %>%
+  ggplot(aes(carat, price, color = cut))+
+  geom_point()
+```
+
+```{r}
+diamonds %>%
+  ggplot(aes(carat, price))+
+  geom_point(color = "green")
+```
+
+```{r}
+diamonds %>%
+  ggplot(aes(carat, price))+
+  geom_point(aes(color = cut))
+```
+
+```{r}
+diamonds %>%
+  ggplot(aes(carat, price, shape = cut))+
+  geom_point()
+```
+
+```{r}
+diamonds %>%
+  ggplot(aes(carat, price, label = color))+
+  geom_text()
+```
+
+```{r}
+diamonds %>%
+  slice(1:100) %>% 
+  ggplot(aes(carat, price, label = color))+
+  geom_label()
+```
+
+Иногда аннотации налезают друг на друга:
+
+```{r}
+library(ggrepel)
+diamonds %>%
+  slice(1:100) %>% 
+  ggplot(aes(carat, price, label = color))+
+  geom_text_repel()
+```
+
+```{r}
+diamonds %>%
+  slice(1:100) %>% 
+  ggplot(aes(carat, price, label = color))+
+  geom_text_repel()+
+  geom_point()
+```
+
+```{r}
+diamonds %>%
+  slice(1:100) %>% 
+  ggplot(aes(carat, price, label = color, fill = cut))+ # fill отвечает за закрашивание
+  geom_label_repel(alpha = 0.5)+ # alpha отвечает за прозрачность
+  geom_point()
+```
+
+### Оформление
+
+```{r}
+diamonds %>%
+  ggplot(aes(carat, price, color = cut))+
+  geom_point() + 
+  labs(x = "вес (в каратах)",
+       y = "цена (в долларах)",
+       title = "Связь цены и веса бриллиантов",
+       subtitle = "Данные взяты из датасеты diamonds",
+       caption = "график сделан при помощи пакета ggplot2")+
+  theme(legend.position = "bottom")
+```
 
 ## Визуализация комбинаций признаков
 ### Потоковая Диаграмма (Sankey diagram)
