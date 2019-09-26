@@ -220,7 +220,108 @@ diamonds %>%
 ```
 
 ## Столбчатые диаграммы (barplots)
+
+Одна и та же информация может быть представлена в агрегированном и не агрегированном варианте:
+
+```{r}
+misspelling <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/misspelling_dataset.csv")
+misspelling 
+```
+
+* переменные spelling **аггрегирована**: для каждого значения представлено значение в столбце count, которое обозначает количество каждого из написаний
+* переменные correct **неаггрегированы**: в этом столбце она повторяется, для того, чтобы сделать вывод, нужно отдельно посчитать количество вариантов
+
+
+Для аггрегированных данных используется `geom_col()`
+```{r}
+misspelling %>% 
+  slice(1:20) %>% 
+  ggplot(aes(spelling, count))+
+  geom_col()
+```
+
+Перевернем оси:
+```{r}
+misspelling %>% 
+  slice(1:20) %>% 
+  ggplot(aes(spelling, count))+
+  geom_col()+
+  coord_flip()
+```
+
+Для аггрегированных данных используется `geom_bar()`
+
+```{r}
+misspelling %>% 
+  ggplot(aes(correct))+
+  geom_bar()
+```
+
+Перевернем оси:
+```{r}
+misspelling %>% 
+  ggplot(aes(correct))+
+  geom_bar()+
+  coord_flip()
+```
+
 ## Факторы
+Как можно заметить по предыдущему разделу, переменные на графике упорядочены по алфавиту. Чтобы это исправить нужно обсудить факторы:
+
+```{r}
+my_factor <- factor(misspelling$correct)
+head(my_factor)
+levels(my_factor)
+levels(my_factor) <- rev(levels(my_factor))
+head(my_factor)
+
+misspelling %>% 
+  mutate(correct = factor(correct, levels = c("deschanel",
+                                              "galifianakis",
+                                              "johansson",
+                                              "kaepernick",
+                                              "labeouf",
+                                              "macaulay",
+                                              "mcgwire",
+                                              "mclachlan",
+                                              "minaj",
+                                              "morissette",
+                                              "palahniuk",
+                                              "picabo",
+                                              "poehler",
+                                              "shyamalan",
+                                              "mcconaughey"))) %>% 
+  ggplot(aes(correct))+
+  geom_bar()+
+  coord_flip()
+```
+
+Иногда полезной бывает функция `reorder()`:
+
+```{r}
+misspelling %>% 
+  count(correct)
+
+misspelling %>% 
+  count(correct) %>% 
+  mutate(correct = reorder(correct, n)) %>% 
+  ggplot(aes(correct, n))+
+  geom_col()+
+  coord_flip()
+```
+
+Можно совмещать разные `geom_...`:
+
+```{r}
+misspelling %>% 
+  count(correct) %>% 
+  mutate(correct = reorder(correct, n)) %>% 
+  ggplot(aes(correct, n, label = n))+
+  geom_col()+
+  geom_text(nudge_y = 150)+
+  coord_flip()
+```
+
 ## Гистограммы
 ## Функции плотности
 ## Фасетизация
