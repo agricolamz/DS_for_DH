@@ -13,7 +13,7 @@ library("tidyverse")
 ## Основы ggplot
 
 ## Визуализация комбинаций признаков
-### Диаграмма Sankey
+### Диаграмма Сэнки (Sankey diagram)
 
 Один из способов визуализации отношений между признаками называется [диаграмма Sankey](https://en.wikipedia.org/wiki/Sankey_diagram).
 

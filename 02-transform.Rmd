@@ -340,57 +340,41 @@ full_join(country_population, languages)
 
 Давайте посмотрим на датасет с количеством носителей разных языков в Индии согласно переписи 2001 года (данные из Википедии):
 
+
+```{r}
+langs_in_india_short <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/languages_in_india.csv")
+```
+
 * Short format
 
 ```{r}
-df.short <- tibble(consonant = c("stops", "fricatives", "affricates", "nasals"),
-                   initial = c(123, 87, 73, 7),
-                   intervocal = c(57, 77, 82, 78),
-                   final = c(30, 69, 12, 104))
-df.short
+langs_in_india_short
 ```
 
 * Long format
 
 ```{r, echo = FALSE}
-df.short %>% 
-  pivot_longer(names_to = "position", values_to = "number", initial:final)->
-  df.long
-df.long
+langs_in_india_short %>% 
+  pivot_longer(names_to = "type", values_to = "n_speakers", n_L1_sp:n_all_sp)->
+  langs_in_india_long
+langs_in_india_long
 ```
 
-* Short format → Long format: `tidyr::gather()`
+* Short format → Long format: `tidyr::pivot_longer()`
 
 ```{r}
-df.short <- tibble(consonant = c("stops", "fricatives", "affricates", "nasals"),
-                   initial = c(123, 87, 73, 7),
-                   intervocal = c(57, 77, 82, 78),
-                   final = c(30, 69, 12, 104))
-df.short
+langs_in_india_short %>% 
+  pivot_longer(names_to = "type", values_to = "n_speakers", n_L1_sp:n_all_sp)->
+  langs_in_india_long
 
-df.short %>% 
-  gather(position, number, initial:final) ->
-  df.long
-
-df.long
+langs_in_india_long
 ```
 
-Аналогично:
+* Long format → Short format: `tidyr::pivot_wider()`
 
 ```{r}
-df.short %>% 
-  pivot_longer(names_to = "position", values_to = "number", -consonant) ->
-  df.long
-
-df.long
-```
-
-
-* Long format → Short format: `tidyr::spread()`
-
-```{r}
-df.long %>% 
-  pivot_wider(names_from = position, values_from = number)->
-  df.short
-df.short
+langs_in_india_long %>% 
+  pivot_wider(names_from = "type", values_from = "n_speakers")->
+  langs_in_india_short
+langs_in_india_short
 ```
