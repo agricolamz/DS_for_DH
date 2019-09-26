@@ -184,10 +184,46 @@ diamonds %>%
 ### Логарифмические шкалы
 ![](https://pbs.twimg.com/media/CTxg970WwAApE98.png)
 
-```{r, cache=TRUE}
+Рассмотрим словарь [Ляшевской, Шарова 2011]
 
+```{r freqdict_download, cache=TRUE}
+freqdict <- read_tsv("https://github.com/agricolamz/DS_for_DH/raw/master/data/freq_dict_2011.csv")
+freqdict %>% 
+  arrange(desc(freq_ipm)) %>% 
+  mutate(id = 1:n()) %>% 
+  slice(1:150) %>% 
+  ggplot(aes(id, freq_ipm))+
+  geom_point()
 ```
 
+```{r freqdict_visualise, cache=TRUE}
+freqdict %>% 
+  arrange(desc(freq_ipm)) %>% 
+  mutate(id = 1:n()) %>% 
+  slice(1:150) %>% 
+  ggplot(aes(id, freq_ipm, label = lemma))+
+  geom_point()+
+  geom_text_repel()+
+  scale_y_log10()
+```
+
+### `annotate()`
+Функция `annotate` добавляет `geom` к графику.
+```{r}
+diamonds %>%
+  ggplot(aes(carat, price, color = cut))+
+  geom_point()+
+  annotate(geom = "rect", xmin = 4.8, xmax = 5.2,
+           ymin = 17500, ymax = 18500, fill = "red", alpha = 0.2) + 
+  annotate(geom = "text", x = 4.7, y = 16600,
+           label = "помогите...\n я в розовом\nквадратике")
+```
+
+## Столбчатые диаграммы (barplots)
+## Факторы
+## Гистограммы
+## Функции плотности
+## Фасетизация
 
 ## Визуализация комбинаций признаков
 ### Потоковая Диаграмма (Sankey diagram)
