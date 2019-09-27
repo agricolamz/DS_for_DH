@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  27 SEP 2019 10:29
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  27 SEP 2019 10:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1817,8 +1817,8 @@ Overfull \hbox (59.25pt too wide) in paragraph at lines 3172--3172
 File: images/magrittr.png Graphic file (type bmp)
 <images/magrittr.png>
 [61]
-File: /home/agricolamz/Desktop/filter.png Graphic file (type bmp)
-</home/agricolamz/Desktop/filter.png>
+File: images/filter.png Graphic file (type bmp)
+<images/filter.png>
 File: images/select.png Graphic file (type bmp)
 <images/select.png>
 [62] [63] [64]
@@ -2671,10 +2671,10 @@ Package rerunfilecheck Info: File `DS_for_DH.out' has not changed.
 (rerunfilecheck)             Checksum: 3BDFA302312B05C57836C8E86EF66F05.
  ) 
 Here is how much of TeX's memory you used:
- 26741 strings out of 492909
- 502489 string characters out of 6132923
+ 26737 strings out of 492909
+ 502342 string characters out of 6132923
  638888 words of memory out of 5000000
- 30457 multiletter control sequences out of 15000+600000
+ 30454 multiletter control sequences out of 15000+600000
  553220 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  53i,9n,116p,1180b,499s stack positions out of 5000i,500n,10000p,200000b,80000s

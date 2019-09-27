@@ -226,7 +226,7 @@ sort(sqrt(abs(sin(1:22))), decreasing = TRUE)
 
 Эта функция фильтрует строчки по индексу.
 
-![](/home/agricolamz/Desktop/filter.png)
+![](images/filter.png)
 
 ```{r}
 misspellings %>%
