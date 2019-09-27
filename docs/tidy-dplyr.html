@@ -175,10 +175,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.2" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrslice"><i class="fa fa-check"></i><b>3.3.2</b> <code>dplyr::slice()</code></a></li>
 <li class="chapter" data-level="3.3.3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrselect"><i class="fa fa-check"></i><b>3.3.3</b> <code>dplyr::select()</code></a></li>
 <li class="chapter" data-level="3.3.4" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrarrange"><i class="fa fa-check"></i><b>3.3.4</b> <code>dplyr::arrange()</code></a></li>
-<li class="chapter" data-level="3.3.5" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrmutate"><i class="fa fa-check"></i><b>3.3.5</b> <code>dplyr::mutate()</code></a></li>
-<li class="chapter" data-level="3.3.6" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrgroup_by...-summarise..."><i class="fa fa-check"></i><b>3.3.6</b> <code>dplyr::group_by(...) %&gt;% summarise(...)</code></a></li>
-<li class="chapter" data-level="3.3.7" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#bind_..."><i class="fa fa-check"></i><b>3.3.7</b> <code>bind_...</code></a></li>
-<li class="chapter" data-level="3.3.8" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyr.._join"><i class="fa fa-check"></i><b>3.3.8</b> <code>dplyr::.._join()</code></a></li>
+<li class="chapter" data-level="3.3.5" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrdistinct"><i class="fa fa-check"></i><b>3.3.5</b> <code>dplyr::distinct()</code></a></li>
+<li class="chapter" data-level="3.3.6" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrmutate"><i class="fa fa-check"></i><b>3.3.6</b> <code>dplyr::mutate()</code></a></li>
+<li class="chapter" data-level="3.3.7" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrgroup_by...-summarise..."><i class="fa fa-check"></i><b>3.3.7</b> <code>dplyr::group_by(...) %&gt;% summarise(...)</code></a></li>
+<li class="chapter" data-level="3.3.8" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#bind_..."><i class="fa fa-check"></i><b>3.3.8</b> <code>bind_...</code></a></li>
+<li class="chapter" data-level="3.3.9" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyr.._join"><i class="fa fa-check"></i><b>3.3.9</b> <code>dplyr::.._join()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#tidyr-package"><i class="fa fa-check"></i><b>3.4</b> <code>tidyr</code> package</a></li>
 </ul></li>
@@ -317,9 +318,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Стандартной практикой является создавать первой строкой <code>.csv</code> файлов названия столбцов, поэтому по умолчанию функции <code>read_...()</code> будут создавать таблицу, считая первую строку названием столбцов. Чтобы изменить это поведение следует использовать аргумент <code>col_names = FALSE</code>.</p>
 <p>Другая проблема при чтении файлов – кодировка и локаль. На разных компьютерах разные локали и дефолтные кодировки, так что имеет смысл знать про аргумент <code>locale(encoding = "UTF-8")</code>.</p>
-<blockquote>
-<p>Попробуйте корректно считать в R файл <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/scary_letters.csv">по этой ссылке</a>.</p>
-</blockquote>
+<div class="rmdtask">
+<p>
+Попробуйте корректно считать в R файл <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/scary_letters.csv">по этой ссылке</a>.
+</p>
+</div>
 <pre><code>## # A tibble: 3 x 3
 ##   cyrillic ipa_symbols greek
 ##   &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;
@@ -662,8 +665,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9  3.51 Premium   J     VS2      62.5    59 18701  9.66  9.63  6.03
 ## 10  3.5  Ideal     H     I1       62.8    57 12587  9.65  9.59  6.03
 ## # … with 53,930 more rows</code></pre>
-<p>### <code>dplyr::distinct()</code>
-Эта функция возращает уникальные значения в столбце или комбинации столбцов.</p>
+</div>
+<div id="dplyrdistinct" class="section level3">
+<h3><span class="header-section-number">3.3.5</span> <code>dplyr::distinct()</code></h3>
+<p>Эта функция возращает уникальные значения в столбце или комбинации столбцов.</p>
 <div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="tidy-dplyr.html#cb346-1"></a>misspellings <span class="op">%&gt;%</span></span>
 <span id="cb346-2"><a href="tidy-dplyr.html#cb346-2"></a><span class="st">  </span><span class="kw">distinct</span>(correct)</span></code></pre></div>
 <pre><code>## # A tibble: 15 x 1
@@ -723,7 +728,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div id="dplyrmutate" class="section level3">
-<h3><span class="header-section-number">3.3.5</span> <code>dplyr::mutate()</code></h3>
+<h3><span class="header-section-number">3.3.6</span> <code>dplyr::mutate()</code></h3>
 <p>Эта функция позволяет создать новые переменные.</p>
 <p><img src="images/mutate.png" /></p>
 <div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="tidy-dplyr.html#cb352-1"></a>misspellings <span class="op">%&gt;%</span></span>
@@ -750,7 +755,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 <div id="dplyrgroup_by...-summarise..." class="section level3">
-<h3><span class="header-section-number">3.3.6</span> <code>dplyr::group_by(...) %&gt;% summarise(...)</code></h3>
+<h3><span class="header-section-number">3.3.7</span> <code>dplyr::group_by(...) %&gt;% summarise(...)</code></h3>
 <p>Эта функция позволяет сгруппировать переменные по какому-то из столбцов и получить какой-нибудь вывод из описательной статистики (максимум, минимум, последний, первый, среднее, медиану и т. п.).</p>
 <p><img src="images/group_by_s.png" /></p>
 <div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="tidy-dplyr.html#cb354-1"></a>misspellings <span class="op">%&gt;%</span></span>
@@ -897,10 +902,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div id="bind_..." class="section level3">
-<h3><span class="header-section-number">3.3.7</span> <code>bind_...</code></h3>
+<h3><span class="header-section-number">3.3.8</span> <code>bind_...</code></h3>
 </div>
 <div id="dplyr.._join" class="section level3">
-<h3><span class="header-section-number">3.3.8</span> <code>dplyr::.._join()</code></h3>
+<h3><span class="header-section-number">3.3.9</span> <code>dplyr::.._join()</code></h3>
 <p>Эти функции позволяют соединять датафреймы.</p>
 <div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="tidy-dplyr.html#cb368-1"></a>languages &lt;-<span class="st"> </span><span class="kw">data_frame</span>(</span>
 <span id="cb368-2"><a href="tidy-dplyr.html#cb368-2"></a>  <span class="dt">languages =</span> <span class="kw">c</span>(<span class="st">&quot;Selkup&quot;</span>, <span class="st">&quot;French&quot;</span>, <span class="st">&quot;Chukchi&quot;</span>, <span class="st">&quot;Polish&quot;</span>),</span>

@@ -175,10 +175,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.2" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrslice"><i class="fa fa-check"></i><b>3.3.2</b> <code>dplyr::slice()</code></a></li>
 <li class="chapter" data-level="3.3.3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrselect"><i class="fa fa-check"></i><b>3.3.3</b> <code>dplyr::select()</code></a></li>
 <li class="chapter" data-level="3.3.4" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrarrange"><i class="fa fa-check"></i><b>3.3.4</b> <code>dplyr::arrange()</code></a></li>
-<li class="chapter" data-level="3.3.5" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrmutate"><i class="fa fa-check"></i><b>3.3.5</b> <code>dplyr::mutate()</code></a></li>
-<li class="chapter" data-level="3.3.6" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrgroup_by...-summarise..."><i class="fa fa-check"></i><b>3.3.6</b> <code>dplyr::group_by(...) %&gt;% summarise(...)</code></a></li>
-<li class="chapter" data-level="3.3.7" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#bind_..."><i class="fa fa-check"></i><b>3.3.7</b> <code>bind_...</code></a></li>
-<li class="chapter" data-level="3.3.8" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyr.._join"><i class="fa fa-check"></i><b>3.3.8</b> <code>dplyr::.._join()</code></a></li>
+<li class="chapter" data-level="3.3.5" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrdistinct"><i class="fa fa-check"></i><b>3.3.5</b> <code>dplyr::distinct()</code></a></li>
+<li class="chapter" data-level="3.3.6" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrmutate"><i class="fa fa-check"></i><b>3.3.6</b> <code>dplyr::mutate()</code></a></li>
+<li class="chapter" data-level="3.3.7" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrgroup_by...-summarise..."><i class="fa fa-check"></i><b>3.3.7</b> <code>dplyr::group_by(...) %&gt;% summarise(...)</code></a></li>
+<li class="chapter" data-level="3.3.8" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#bind_..."><i class="fa fa-check"></i><b>3.3.8</b> <code>bind_...</code></a></li>
+<li class="chapter" data-level="3.3.9" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyr.._join"><i class="fa fa-check"></i><b>3.3.9</b> <code>dplyr::.._join()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#tidyr-package"><i class="fa fa-check"></i><b>3.4</b> <code>tidyr</code> package</a></li>
 </ul></li>
@@ -287,7 +288,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2      9    7.5  3.32  2.03  0.82    11
 ## 3      9    7.5  3.32  2.03  0.82    11
 ## 4      9    7.5  3.32  2.03  0.82    11</code></pre>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-151-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-152-1.png" width="672" /></p>
 </div>
 <div id="section-7" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> Датазаурус</h3>
@@ -308,7 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9 dino     29.0  74.5
 ## 10 dino     26.2  71.4
 ## # … with 1,836 more rows</code></pre>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-153-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-154-1.png" width="672" /></p>
 <div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="viz-1.html#cb408-1"></a>datasaurus <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb408-2"><a href="viz-1.html#cb408-2"></a><span class="st">  </span><span class="kw">group_by</span>(dataset) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb408-3"><a href="viz-1.html#cb408-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_X =</span> <span class="kw">mean</span>(x),</span>
@@ -347,14 +348,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="viz-1.html#cb410-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(carat, price)) <span class="op">+</span></span>
 <span id="cb410-2"><a href="viz-1.html#cb410-2"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-155-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-156-1.png" width="672" /></p>
 <ul>
 <li>dplyr, ggplot2</li>
 </ul>
 <div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="viz-1.html#cb411-1"></a>diamonds <span class="op">%&gt;%</span></span>
 <span id="cb411-2"><a href="viz-1.html#cb411-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(carat, price))<span class="op">+</span></span>
 <span id="cb411-3"><a href="viz-1.html#cb411-3"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-156-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-157-1.png" width="672" /></p>
 </div>
 <div id="section-8" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Слои</h3>
@@ -363,60 +364,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb412-3"><a href="viz-1.html#cb412-3"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
 <span id="cb412-4"><a href="viz-1.html#cb412-4"></a><span class="st">  </span><span class="kw">geom_smooth</span>()</span></code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;</code></pre>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-157-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-158-1.png" width="672" /></p>
 <div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="viz-1.html#cb414-1"></a>diamonds <span class="op">%&gt;%</span></span>
 <span id="cb414-2"><a href="viz-1.html#cb414-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(carat, price))<span class="op">+</span></span>
 <span id="cb414-3"><a href="viz-1.html#cb414-3"></a><span class="st">  </span><span class="kw">geom_smooth</span>()<span class="op">+</span></span>
 <span id="cb414-4"><a href="viz-1.html#cb414-4"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;</code></pre>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-158-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-159-1.png" width="672" /></p>
 </div>
 <div id="aes" class="section level3">
 <h3><span class="header-section-number">4.2.3</span> <code>aes()</code></h3>
 <div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="viz-1.html#cb416-1"></a>diamonds <span class="op">%&gt;%</span></span>
 <span id="cb416-2"><a href="viz-1.html#cb416-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(carat, price, <span class="dt">color =</span> cut))<span class="op">+</span></span>
 <span id="cb416-3"><a href="viz-1.html#cb416-3"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-159-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-160-1.png" width="672" /></p>
 <div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="viz-1.html#cb417-1"></a>diamonds <span class="op">%&gt;%</span></span>
 <span id="cb417-2"><a href="viz-1.html#cb417-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(carat, price))<span class="op">+</span></span>
 <span id="cb417-3"><a href="viz-1.html#cb417-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-160-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-161-1.png" width="672" /></p>
 <div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="viz-1.html#cb418-1"></a>diamonds <span class="op">%&gt;%</span></span>
 <span id="cb418-2"><a href="viz-1.html#cb418-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(carat, price))<span class="op">+</span></span>
 <span id="cb418-3"><a href="viz-1.html#cb418-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> cut))</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-161-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-162-1.png" width="672" /></p>
 <div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="viz-1.html#cb419-1"></a>diamonds <span class="op">%&gt;%</span></span>
 <span id="cb419-2"><a href="viz-1.html#cb419-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(carat, price, <span class="dt">shape =</span> cut))<span class="op">+</span></span>
 <span id="cb419-3"><a href="viz-1.html#cb419-3"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-162-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-163-1.png" width="672" /></p>
 <div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="viz-1.html#cb420-1"></a>diamonds <span class="op">%&gt;%</span></span>
 <span id="cb420-2"><a href="viz-1.html#cb420-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(carat, price, <span class="dt">label =</span> color))<span class="op">+</span></span>
 <span id="cb420-3"><a href="viz-1.html#cb420-3"></a><span class="st">  </span><span class="kw">geom_text</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-163-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-164-1.png" width="672" /></p>
 <div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="viz-1.html#cb421-1"></a>diamonds <span class="op">%&gt;%</span></span>
 <span id="cb421-2"><a href="viz-1.html#cb421-2"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb421-3"><a href="viz-1.html#cb421-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(carat, price, <span class="dt">label =</span> color))<span class="op">+</span></span>
 <span id="cb421-4"><a href="viz-1.html#cb421-4"></a><span class="st">  </span><span class="kw">geom_label</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-164-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-165-1.png" width="672" /></p>
 <p>Иногда аннотации налезают друг на друга:</p>
 <div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="viz-1.html#cb422-1"></a><span class="kw">library</span>(ggrepel)</span>
 <span id="cb422-2"><a href="viz-1.html#cb422-2"></a>diamonds <span class="op">%&gt;%</span></span>
 <span id="cb422-3"><a href="viz-1.html#cb422-3"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb422-4"><a href="viz-1.html#cb422-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(carat, price, <span class="dt">label =</span> color))<span class="op">+</span></span>
 <span id="cb422-5"><a href="viz-1.html#cb422-5"></a><span class="st">  </span><span class="kw">geom_text_repel</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-165-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-166-1.png" width="672" /></p>
 <div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="viz-1.html#cb423-1"></a>diamonds <span class="op">%&gt;%</span></span>
 <span id="cb423-2"><a href="viz-1.html#cb423-2"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb423-3"><a href="viz-1.html#cb423-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(carat, price, <span class="dt">label =</span> color))<span class="op">+</span></span>
 <span id="cb423-4"><a href="viz-1.html#cb423-4"></a><span class="st">  </span><span class="kw">geom_text_repel</span>()<span class="op">+</span></span>
 <span id="cb423-5"><a href="viz-1.html#cb423-5"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-166-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-167-1.png" width="672" /></p>
 <div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="viz-1.html#cb424-1"></a>diamonds <span class="op">%&gt;%</span></span>
 <span id="cb424-2"><a href="viz-1.html#cb424-2"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb424-3"><a href="viz-1.html#cb424-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(carat, price, <span class="dt">label =</span> color, <span class="dt">fill =</span> cut))<span class="op">+</span><span class="st"> </span><span class="co"># fill отвечает за закрашивание</span></span>
 <span id="cb424-4"><a href="viz-1.html#cb424-4"></a><span class="st">  </span><span class="kw">geom_label_repel</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)<span class="op">+</span><span class="st"> </span><span class="co"># alpha отвечает за прозрачность</span></span>
 <span id="cb424-5"><a href="viz-1.html#cb424-5"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-167-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-168-1.png" width="672" /></p>
 </div>
 <div id="section-9" class="section level3">
 <h3><span class="header-section-number">4.2.4</span> Оформление</h3>
@@ -429,7 +430,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb425-7"><a href="viz-1.html#cb425-7"></a>       <span class="dt">subtitle =</span> <span class="st">&quot;Данные взяты из датасеты diamonds&quot;</span>,</span>
 <span id="cb425-8"><a href="viz-1.html#cb425-8"></a>       <span class="dt">caption =</span> <span class="st">&quot;график сделан при помощи пакета ggplot2&quot;</span>)<span class="op">+</span></span>
 <span id="cb425-9"><a href="viz-1.html#cb425-9"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>) <span class="co"># у функции theme() огромный функционал</span></span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-168-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-169-1.png" width="672" /></p>
 </div>
 <div id="section-10" class="section level3">
 <h3><span class="header-section-number">4.2.5</span> Логарифмические шкалы</h3>
@@ -469,7 +470,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb430-5"><a href="viz-1.html#cb430-5"></a>           <span class="dt">ymin =</span> <span class="dv">17500</span>, <span class="dt">ymax =</span> <span class="dv">18500</span>, <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.2</span>) <span class="op">+</span><span class="st"> </span></span>
 <span id="cb430-6"><a href="viz-1.html#cb430-6"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="dt">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="dt">x =</span> <span class="fl">4.7</span>, <span class="dt">y =</span> <span class="dv">16600</span>,</span>
 <span id="cb430-7"><a href="viz-1.html#cb430-7"></a>           <span class="dt">label =</span> <span class="st">&quot;помогите...</span><span class="ch">\n</span><span class="st"> я в розовом</span><span class="ch">\n</span><span class="st">квадратике&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-169-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-170-1.png" width="672" /></p>
 </div>
 </div>
 <div id="barplots" class="section level2">
@@ -506,25 +507,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb435-2"><a href="viz-1.html#cb435-2"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb435-3"><a href="viz-1.html#cb435-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(spelling, count))<span class="op">+</span></span>
 <span id="cb435-4"><a href="viz-1.html#cb435-4"></a><span class="st">  </span><span class="kw">geom_col</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-171-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-172-1.png" width="672" /></p>
 <p>Перевернем оси:</p>
 <div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="viz-1.html#cb436-1"></a>misspelling <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb436-2"><a href="viz-1.html#cb436-2"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb436-3"><a href="viz-1.html#cb436-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(spelling, count))<span class="op">+</span></span>
 <span id="cb436-4"><a href="viz-1.html#cb436-4"></a><span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span></span>
 <span id="cb436-5"><a href="viz-1.html#cb436-5"></a><span class="st">  </span><span class="kw">coord_flip</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-172-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-173-1.png" width="672" /></p>
 <p>Для аггрегированных данных используется <code>geom_bar()</code></p>
 <div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="viz-1.html#cb437-1"></a>misspelling <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb437-2"><a href="viz-1.html#cb437-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(correct))<span class="op">+</span></span>
 <span id="cb437-3"><a href="viz-1.html#cb437-3"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-173-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-174-1.png" width="672" /></p>
 <p>Перевернем оси:</p>
 <div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="viz-1.html#cb438-1"></a>misspelling <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb438-2"><a href="viz-1.html#cb438-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(correct))<span class="op">+</span></span>
 <span id="cb438-3"><a href="viz-1.html#cb438-3"></a><span class="st">  </span><span class="kw">geom_bar</span>()<span class="op">+</span></span>
 <span id="cb438-4"><a href="viz-1.html#cb438-4"></a><span class="st">  </span><span class="kw">coord_flip</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-174-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-175-1.png" width="672" /></p>
 </div>
 <div id="section-11" class="section level2">
 <h2><span class="header-section-number">4.4</span> Факторы</h2>
@@ -561,7 +562,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb445-17"><a href="viz-1.html#cb445-17"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(correct))<span class="op">+</span></span>
 <span id="cb445-18"><a href="viz-1.html#cb445-18"></a><span class="st">  </span><span class="kw">geom_bar</span>()<span class="op">+</span></span>
 <span id="cb445-19"><a href="viz-1.html#cb445-19"></a><span class="st">  </span><span class="kw">coord_flip</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-175-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-176-1.png" width="672" /></p>
 <p>Иногда полезной бывает функция <code>reorder()</code>:</p>
 <div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="viz-1.html#cb446-1"></a>misspelling <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb446-2"><a href="viz-1.html#cb446-2"></a><span class="st">  </span><span class="kw">count</span>(correct)</span></code></pre></div>
@@ -589,7 +590,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb448-4"><a href="viz-1.html#cb448-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(correct, n))<span class="op">+</span></span>
 <span id="cb448-5"><a href="viz-1.html#cb448-5"></a><span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span></span>
 <span id="cb448-6"><a href="viz-1.html#cb448-6"></a><span class="st">  </span><span class="kw">coord_flip</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-176-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-177-1.png" width="672" /></p>
 <p>Можно совмещать разные <code>geom_...</code>:</p>
 <div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="viz-1.html#cb449-1"></a>misspelling <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb449-2"><a href="viz-1.html#cb449-2"></a><span class="st">  </span><span class="kw">count</span>(correct) <span class="op">%&gt;%</span><span class="st"> </span></span>
@@ -598,26 +599,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb449-5"><a href="viz-1.html#cb449-5"></a><span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span></span>
 <span id="cb449-6"><a href="viz-1.html#cb449-6"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)<span class="op">+</span></span>
 <span id="cb449-7"><a href="viz-1.html#cb449-7"></a><span class="st">  </span><span class="kw">coord_flip</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-177-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-178-1.png" width="672" /></p>
 </div>
 <div id="jitter----boxplot-violinplot" class="section level2">
 <h2><span class="header-section-number">4.5</span> Точки, джиттер (jitter), ящики с усами (boxplot), (violinplot)</h2>
 <div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="viz-1.html#cb450-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb450-2"><a href="viz-1.html#cb450-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(cut, price))<span class="op">+</span></span>
 <span id="cb450-3"><a href="viz-1.html#cb450-3"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-178-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-179-1.png" width="672" /></p>
 <div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="viz-1.html#cb451-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb451-2"><a href="viz-1.html#cb451-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(cut, price))<span class="op">+</span></span>
 <span id="cb451-3"><a href="viz-1.html#cb451-3"></a><span class="st">  </span><span class="kw">geom_jitter</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-178-2.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-179-2.png" width="672" /></p>
 <div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="viz-1.html#cb452-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb452-2"><a href="viz-1.html#cb452-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(cut, price))<span class="op">+</span></span>
 <span id="cb452-3"><a href="viz-1.html#cb452-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-178-3.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-179-3.png" width="672" /></p>
 <div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="viz-1.html#cb453-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb453-2"><a href="viz-1.html#cb453-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(cut, price))<span class="op">+</span></span>
 <span id="cb453-3"><a href="viz-1.html#cb453-3"></a><span class="st">  </span><span class="kw">geom_violin</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-178-4.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-179-4.png" width="672" /></p>
 </div>
 <div id="section-12" class="section level2">
 <h2><span class="header-section-number">4.6</span> Гистограммы</h2>
@@ -651,7 +652,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb456-6"><a href="viz-1.html#cb456-6"></a><span class="st">  </span><span class="kw">geom_parallel_sets_labels</span>(<span class="dt">angle =</span> <span class="dv">0</span>) <span class="op">+</span></span>
 <span id="cb456-7"><a href="viz-1.html#cb456-7"></a><span class="st">  </span><span class="kw">theme_no_axes</span>()<span class="op">+</span></span>
 <span id="cb456-8"><a href="viz-1.html#cb456-8"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-179-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-180-1.png" width="672" /></p>
 <p>А как поменять порядок? Снова факторы.</p>
 <div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="viz-1.html#cb457-1"></a>zhadina <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb457-2"><a href="viz-1.html#cb457-2"></a><span class="st">  </span><span class="kw">gather_set_data</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
@@ -662,7 +663,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb457-7"><a href="viz-1.html#cb457-7"></a><span class="st">  </span><span class="kw">geom_parallel_sets_labels</span>(<span class="dt">angle =</span> <span class="dv">0</span>) <span class="op">+</span></span>
 <span id="cb457-8"><a href="viz-1.html#cb457-8"></a><span class="st">  </span><span class="kw">theme_no_axes</span>()<span class="op">+</span></span>
 <span id="cb457-9"><a href="viz-1.html#cb457-9"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-180-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-181-1.png" width="672" /></p>
 <p>Можно донастроить, задав собственный порядок в аргументе <code>levels</code> функции <code>factor()</code>.</p>
 </div>
 <div id="upset-plot" class="section level3">
@@ -694,7 +695,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  $ AvgRating  : num  4.15 3.2 3.02 2.73 3.01 3.88 3.41 3.01 2.66 3.54 ...
 ##  $ Watches    : int  2077 701 478 170 296 940 458 68 102 888 ...</code></pre>
 <div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="viz-1.html#cb460-1"></a><span class="kw">upset</span>(movies[,<span class="dv">3</span><span class="op">:</span><span class="dv">19</span>], <span class="dt">nsets =</span> <span class="dv">16</span>, <span class="dt">order.by =</span> <span class="st">&quot;freq&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-181-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-182-1.png" width="672" /></p>
 
 </div>
 </div>

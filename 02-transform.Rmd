@@ -79,7 +79,9 @@ read_csv("https://my_host/my_file.csv")
 
 Другая проблема при чтении файлов -- кодировка и локаль. На разных компьютерах разные локали и дефолтные кодировки, так что имеет смысл знать про аргумент `locale(encoding = "UTF-8")`.
 
-> Попробуйте корректно считать в R файл [по этой ссылке](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/scary_letters.csv).
+```{block, type = "rmdtask"}
+Попробуйте корректно считать в R файл [по этой ссылке](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/scary_letters.csv).
+```
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 read_csv2("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/scary_letters.csv")
@@ -268,7 +270,7 @@ diamonds %>%
   arrange(desc(carat), price)
 ```
 
-  ### `dplyr::distinct()`
+### `dplyr::distinct()`
 Эта функция возращает уникальные значения в столбце или комбинации столбцов.
 
 ```{r}
