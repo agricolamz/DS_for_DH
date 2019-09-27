@@ -352,7 +352,7 @@ diamonds %>%
 
 Один из способов визуализации отношений между признаками называется [потоковая диаграмма](https://en.wikipedia.org/wiki/Sankey_diagram).
 
-```{r}
+```{r, warning=FALSE}
 library("ggforce")
 zhadina <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/zhadina.csv")
 zhadina %>% 
@@ -367,7 +367,7 @@ zhadina %>%
 
 А как поменять порядок? Снова факторы.
 
-```{r}
+```{r, warning=FALSE}
 zhadina %>% 
   gather_set_data(1:3) %>% 
   mutate(y = reorder(y, n)) %>% 

@@ -191,7 +191,12 @@ as_tibble(df)
 Функицонально `tibble` от `data.frame` ничем не отличается, однако существует ряд несущественных отличий. Кроме того стоит помнить, что многие функции из `tidyverse` возвращают именно `tibble`, а не `data.frame`.
 
 ## `dplyr`
+
+В сжатом виде содержание этого раздела хранится [вот здесь](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf).
+
 ### `dplyr::filter()`
+
+![](images/filter.png)
 
 Эта функция фильтрует строчки по условиям, основанным на столбцах.
 
@@ -221,6 +226,8 @@ sort(sqrt(abs(sin(1:22))), decreasing = TRUE)
 
 Эта функция фильтрует строчки по индексу.
 
+![](/home/agricolamz/Desktop/filter.png)
+
 ```{r}
 misspellings %>%
   slice(3:7)
@@ -229,6 +236,8 @@ misspellings %>%
 ### `dplyr::select()`
 
 Эта функция позволяет выбрать столбцы.
+
+![](images/select.png)
 
 ```{r}
 diamonds %>%
@@ -259,7 +268,7 @@ diamonds %>%
   arrange(desc(carat), price)
 ```
 
-### `dplyr::distinct()`
+  ### `dplyr::distinct()`
 Эта функция возращает уникальные значения в столбце или комбинации столбцов.
 
 ```{r}
@@ -273,9 +282,22 @@ diamonds %>%
   distinct(color, cut)
 ```
 
+```{block, type = "rmdtask"}
+Во встроенном в `tidyverse` датасете `starwars` отфильтруйте существ выше 180 (`height`) и весом меньше 80 (`mass`) и выведите уникальные значений мест, откуда они происходят (`homeworld`).
+```
+
+```{r, include=FALSE}
+starwars %>% 
+  filter(height > 180, mass < 80) %>% 
+  distinct(homeworld)
+```
+
+
 ### `dplyr::mutate()`
 
 Эта функция позволяет создать новые переменные.
+
+![](images/mutate.png)
 
 ```{r}
 misspellings %>%
@@ -283,10 +305,25 @@ misspellings %>%
          id = 1:n())
 ```
 
+```{block2, type = "rmdtask"}
+Создайте переменную с [индексом Кетле](https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81_%D0%BC%D0%B0%D1%81%D1%81%D1%8B_%D1%82%D0%B5%D0%BB%D0%B0):  $\frac{mass}{height^2}$ для всех существ датасета `starwars`. Сколько героев страдают ожирением (т. е. имеют индекс массы тела больше 30)? (Не забудьте перевести рост из сантиметров в метры).
+```
+
+```{r,include=FALSE}
+starwars %>% 
+  mutate(height = height/100,
+         BMI = mass/(height^2)) %>% 
+  select(name, height, mass, BMI) %>% 
+  filter(BMI >= 30)
+```
+
+
 ### `dplyr::group_by(...) %>% summarise(...)`
 
-Эта функция позволяет сгруппировать переменные по какому-то из столбцов и получить какой-нибудь вывод из описательной статистики.
+Эта функция позволяет сгруппировать переменные по какому-то из столбцов и получить какой-нибудь вывод из описательной статистики (максимум, минимум, последний, первый, среднее, медиану и т. п.).
 
+![](images/group_by_s.png)
+  
 ```{r}
 misspellings %>%
   summarise(min(count), mean(count))
@@ -312,6 +349,10 @@ misspellings %>%
   count(correct)
 ```
 
+```{block, type = "rmdtask"}
+А что будет, если в датасете `misspellings` создать переменную `n` и зоставить отсортировать по переменным `correct` и `n`?
+```
+
 Можно даже отсортировать результат:
 
 ```{r}
@@ -327,11 +368,27 @@ misspellings %>%
   mutate(my_mean = mean(count))
 ```
 
+Схематически это выглядит так:
+
+![](images/group_by_m.png)
+
+```{block, type = "rmdtask"}
+В датасете starwars запишите в отдельную переменную среднее значение роста (`height`) по каждой расе (`species`).
+```
+
+```{r, include=FALSE}
+starwars %>% 
+  group_by(species) %>% 
+  mutate(mean_height = mean(height, na.rm = TRUE))
+```
+
+### `bind_...`
+
+
 
 ### `dplyr::.._join()`
 
-Эта функция позволяет соединять датафреймы.
-
+Эти функции позволяют соединять датафреймы.
 
 ```{r}
 languages <- data_frame(
@@ -351,6 +408,8 @@ anti_join(languages, country_population)
 anti_join(country_population, languages)
 full_join(country_population, languages)
 ```
+
+![](images/joins.png)
 
 ## `tidyr` package
 
