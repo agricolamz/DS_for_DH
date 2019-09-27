@@ -4,7 +4,7 @@
   background: #e6f6fa 5px center/3em no-repeat;
 }
 .task {
-  background-image: url("images/code.png");
+  background-image: url("../images/task.png");
 }
 p.caption {
   color: #777;

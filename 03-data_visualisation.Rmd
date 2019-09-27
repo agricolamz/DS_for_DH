@@ -3,6 +3,11 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE)
+```
+
 # Визуализация данных {#viz_1}
 
 ```{r, message = FALSE}

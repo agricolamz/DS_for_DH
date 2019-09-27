@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 Работа с текстами: tidytext, udpipe | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
+  <meta name="description" content="8 Работа с текстами: tidytext, udpipe | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 Работа с текстами: tidytext, udpipe | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 Работа с текстами: tidytext, udpipe | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+  
+  
+  
+
+<meta name="author" content="Г. А. Мороз, И. С. Поздняков" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="strings.html"/>
+<link rel="next" href="rvest.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Наука о данных в R для ЦГИ</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> О курсе</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Введение в R</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#section-1"><i class="fa fa-check"></i><b>2.1</b> Наука о данных</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r--rstudio"><i class="fa fa-check"></i><b>2.2</b> Установка R и RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#section-2"><i class="fa fa-check"></i><b>2.3</b> Полезные ссылки</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#rstudio"><i class="fa fa-check"></i><b>2.4</b> Rstudio</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#r"><i class="fa fa-check"></i><b>2.5</b> Введение в R</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="intro.html"><a href="intro.html#calc"><i class="fa fa-check"></i><b>2.5.1</b> R как калькулятор</a></li>
+<li class="chapter" data-level="2.5.2" data-path="intro.html"><a href="intro.html#func"><i class="fa fa-check"></i><b>2.5.2</b> Функции</a></li>
+<li class="chapter" data-level="2.5.3" data-path="intro.html"><a href="intro.html#variables"><i class="fa fa-check"></i><b>2.5.3</b> Переменные</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#data_types"><i class="fa fa-check"></i><b>2.6</b> Типы данных</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#atomic"><i class="fa fa-check"></i><b>2.7</b> Вектор</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="intro.html"><a href="intro.html#coercion"><i class="fa fa-check"></i><b>2.7.1</b> Coercion</a></li>
+<li class="chapter" data-level="2.7.2" data-path="intro.html"><a href="intro.html#vector_op"><i class="fa fa-check"></i><b>2.7.2</b> Операции с векторами</a></li>
+<li class="chapter" data-level="2.7.3" data-path="intro.html"><a href="intro.html#recycling"><i class="fa fa-check"></i><b>2.7.3</b> Recycling</a></li>
+<li class="chapter" data-level="2.7.4" data-path="intro.html"><a href="intro.html#index_atomic"><i class="fa fa-check"></i><b>2.7.4</b> Индексирование векторов</a></li>
+<li class="chapter" data-level="2.7.5" data-path="intro.html"><a href="intro.html#na"><i class="fa fa-check"></i><b>2.7.5</b> NA — пропущенные значения</a></li>
+<li class="chapter" data-level="2.7.6" data-path="intro.html"><a href="intro.html#google"><i class="fa fa-check"></i><b>2.7.6</b> В любой непонятной ситуации — ищите в поисковике</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#matrix"><i class="fa fa-check"></i><b>2.8</b> Матрицы (matrix)</a></li>
+<li class="chapter" data-level="2.9" data-path="intro.html"><a href="intro.html#list"><i class="fa fa-check"></i><b>2.9</b> Списки (list)</a></li>
+<li class="chapter" data-level="2.10" data-path="intro.html"><a href="intro.html#df"><i class="fa fa-check"></i><b>2.10</b> Data.frame</a></li>
+<li class="chapter" data-level="2.11" data-path="intro.html"><a href="intro.html#real_data"><i class="fa fa-check"></i><b>2.11</b> Начинаем работу с реальными данными</a><ul>
+<li class="chapter" data-level="2.11.1" data-path="intro.html"><a href="intro.html#wd"><i class="fa fa-check"></i><b>2.11.1</b> Рабочая папка и проекты</a></li>
+<li class="chapter" data-level="2.11.2" data-path="intro.html"><a href="intro.html#import"><i class="fa fa-check"></i><b>2.11.2</b> Импорт данных</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="intro.html"><a href="intro.html#prep"><i class="fa fa-check"></i><b>2.12</b> Препроцессинг данных в R</a><ul>
+<li class="chapter" data-level="2.12.1" data-path="intro.html"><a href="intro.html#explore"><i class="fa fa-check"></i><b>2.12.1</b> Исследование данных</a></li>
+<li class="chapter" data-level="2.12.2" data-path="intro.html"><a href="intro.html#subset"><i class="fa fa-check"></i><b>2.12.2</b> Subsetting</a></li>
+<li class="chapter" data-level="2.12.3" data-path="intro.html"><a href="intro.html#newcol"><i class="fa fa-check"></i><b>2.12.3</b> Создание новых колонок</a></li>
+<li class="chapter" data-level="2.12.4" data-path="intro.html"><a href="intro.html#dtvstidy"><i class="fa fa-check"></i><b>2.12.4</b> data.table vs. tidyverse</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html"><i class="fa fa-check"></i><b>3</b> <code>tidyverse</code>: Загрузка и трансформация данных</a><ul>
+<li class="chapter" data-level="3.1" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#section-3"><i class="fa fa-check"></i><b>3.1</b> Загрузка данных</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#section-4"><i class="fa fa-check"></i><b>3.1.1</b> Рабочая директория</a></li>
+<li class="chapter" data-level="3.1.2" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#csv"><i class="fa fa-check"></i><b>3.1.2</b> Форматы данных: <code>.csv</code></a></li>
+<li class="chapter" data-level="3.1.3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#readr-readxl"><i class="fa fa-check"></i><b>3.1.3</b> Загрузка данных: readr, readxl</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#tibble"><i class="fa fa-check"></i><b>3.2</b> <code>tibble</code></a></li>
+<li class="chapter" data-level="3.3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyr"><i class="fa fa-check"></i><b>3.3</b> <code>dplyr</code></a><ul>
+<li class="chapter" data-level="3.3.1" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrfilter"><i class="fa fa-check"></i><b>3.3.1</b> <code>dplyr::filter()</code></a></li>
+<li class="chapter" data-level="3.3.2" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrslice"><i class="fa fa-check"></i><b>3.3.2</b> <code>dplyr::slice()</code></a></li>
+<li class="chapter" data-level="3.3.3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrselect"><i class="fa fa-check"></i><b>3.3.3</b> <code>dplyr::select()</code></a></li>
+<li class="chapter" data-level="3.3.4" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrarrange"><i class="fa fa-check"></i><b>3.3.4</b> <code>dplyr::arrange()</code></a></li>
+<li class="chapter" data-level="3.3.5" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrmutate"><i class="fa fa-check"></i><b>3.3.5</b> <code>dplyr::mutate()</code></a></li>
+<li class="chapter" data-level="3.3.6" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrgroup_by...-summarise..."><i class="fa fa-check"></i><b>3.3.6</b> <code>dplyr::group_by(...) %&gt;% summarise(...)</code></a></li>
+<li class="chapter" data-level="3.3.7" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#bind_..."><i class="fa fa-check"></i><b>3.3.7</b> <code>bind_...</code></a></li>
+<li class="chapter" data-level="3.3.8" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyr.._join"><i class="fa fa-check"></i><b>3.3.8</b> <code>dplyr::.._join()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#tidyr-package"><i class="fa fa-check"></i><b>3.4</b> <code>tidyr</code> package</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="viz-1.html"><a href="viz-1.html"><i class="fa fa-check"></i><b>4</b> Визуализация данных</a><ul>
+<li class="chapter" data-level="4.1" data-path="viz-1.html"><a href="viz-1.html#section-5"><i class="fa fa-check"></i><b>4.1</b> Зачем визуализировать данные?</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="viz-1.html"><a href="viz-1.html#section-6"><i class="fa fa-check"></i><b>4.1.1</b> Квартет Анскомба</a></li>
+<li class="chapter" data-level="4.1.2" data-path="viz-1.html"><a href="viz-1.html#section-7"><i class="fa fa-check"></i><b>4.1.2</b> Датазаурус</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="viz-1.html"><a href="viz-1.html#ggplot2"><i class="fa fa-check"></i><b>4.2</b> Основы <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="4.2.1" data-path="viz-1.html"><a href="viz-1.html#scaterplot"><i class="fa fa-check"></i><b>4.2.1</b> Диаграмма рассеяния (Scaterplot)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="viz-1.html"><a href="viz-1.html#section-8"><i class="fa fa-check"></i><b>4.2.2</b> Слои</a></li>
+<li class="chapter" data-level="4.2.3" data-path="viz-1.html"><a href="viz-1.html#aes"><i class="fa fa-check"></i><b>4.2.3</b> <code>aes()</code></a></li>
+<li class="chapter" data-level="4.2.4" data-path="viz-1.html"><a href="viz-1.html#section-9"><i class="fa fa-check"></i><b>4.2.4</b> Оформление</a></li>
+<li class="chapter" data-level="4.2.5" data-path="viz-1.html"><a href="viz-1.html#section-10"><i class="fa fa-check"></i><b>4.2.5</b> Логарифмические шкалы</a></li>
+<li class="chapter" data-level="4.2.6" data-path="viz-1.html"><a href="viz-1.html#annotate"><i class="fa fa-check"></i><b>4.2.6</b> <code>annotate()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="viz-1.html"><a href="viz-1.html#barplots"><i class="fa fa-check"></i><b>4.3</b> Столбчатые диаграммы (barplots)</a></li>
+<li class="chapter" data-level="4.4" data-path="viz-1.html"><a href="viz-1.html#section-11"><i class="fa fa-check"></i><b>4.4</b> Факторы</a></li>
+<li class="chapter" data-level="4.5" data-path="viz-1.html"><a href="viz-1.html#jitter----boxplot-violinplot"><i class="fa fa-check"></i><b>4.5</b> Точки, джиттер (jitter), ящики с усами (boxplot), (violinplot)</a></li>
+<li class="chapter" data-level="4.6" data-path="viz-1.html"><a href="viz-1.html#section-12"><i class="fa fa-check"></i><b>4.6</b> Гистограммы</a></li>
+<li class="chapter" data-level="4.7" data-path="viz-1.html"><a href="viz-1.html#section-13"><i class="fa fa-check"></i><b>4.7</b> Функции плотности</a></li>
+<li class="chapter" data-level="4.8" data-path="viz-1.html"><a href="viz-1.html#section-14"><i class="fa fa-check"></i><b>4.8</b> Фасетизация</a></li>
+<li class="chapter" data-level="4.9" data-path="viz-1.html"><a href="viz-1.html#section-15"><i class="fa fa-check"></i><b>4.9</b> Визуализация комбинаций признаков</a><ul>
+<li class="chapter" data-level="4.9.1" data-path="viz-1.html"><a href="viz-1.html#sankey-diagram"><i class="fa fa-check"></i><b>4.9.1</b> Потоковая Диаграмма (Sankey diagram)</a></li>
+<li class="chapter" data-level="4.9.2" data-path="viz-1.html"><a href="viz-1.html#upset-plot"><i class="fa fa-check"></i><b>4.9.2</b> UpSet Plot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="purr.html"><a href="purr.html"><i class="fa fa-check"></i><b>5</b> Условия и работа со списками</a></li>
+<li class="chapter" data-level="6" data-path="data-presentation.html"><a href="data-presentation.html"><i class="fa fa-check"></i><b>6</b> Представление данных: rmarkdown, github, shiny</a></li>
+<li class="chapter" data-level="7" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>7</b> Работа со строками</a></li>
+<li class="chapter" data-level="8" data-path="tidytext.html"><a href="tidytext.html"><i class="fa fa-check"></i><b>8</b> Работа с текстами: tidytext, udpipe</a></li>
+<li class="chapter" data-level="9" data-path="rvest.html"><a href="rvest.html"><i class="fa fa-check"></i><b>9</b> Сбор данных из интернета: rvest</a></li>
+<li class="chapter" data-level="10" data-path="non-standard-data.html"><a href="non-standard-data.html"><i class="fa fa-check"></i><b>10</b> Нестандартные данные: время, OCR, карты</a></li>
+<li class="chapter" data-level="11" data-path="tasks.html"><a href="tasks.html"><i class="fa fa-check"></i><b>11</b> Задания</a><ul>
+<li class="chapter" data-level="11.1" data-path="tasks.html"><a href="tasks.html#vec_task_1"><i class="fa fa-check"></i><b>11.1</b> Вектор</a></li>
+<li class="chapter" data-level="11.2" data-path="tasks.html"><a href="tasks.html#vec_op"><i class="fa fa-check"></i><b>11.2</b> Вектор. Операции с векторами</a></li>
+<li class="chapter" data-level="11.3" data-path="tasks.html"><a href="tasks.html#vec_task_2"><i class="fa fa-check"></i><b>11.3</b> Вектор. Индексирование</a></li>
+<li class="chapter" data-level="11.4" data-path="tasks.html"><a href="tasks.html#list_ta"><i class="fa fa-check"></i><b>11.4</b> Списки</a></li>
+<li class="chapter" data-level="11.5" data-path="tasks.html"><a href="tasks.html#t"><i class="fa fa-check"></i><b>11.5</b> Матрицы</a></li>
+<li class="chapter" data-level="11.6" data-path="tasks.html"><a href="tasks.html#df_task"><i class="fa fa-check"></i><b>11.6</b> Датафрейм</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i><b>12</b> Решения_заданий</a><ul>
+<li class="chapter" data-level="12.1" data-path="solutions.html"><a href="solutions.html#solvvec_task_1"><i class="fa fa-check"></i><b>12.1</b> Вектор</a></li>
+<li class="chapter" data-level="12.2" data-path="solutions.html"><a href="solutions.html#solvvec_op"><i class="fa fa-check"></i><b>12.2</b> Вектор. Операции с векторами</a></li>
+<li class="chapter" data-level="12.3" data-path="solutions.html"><a href="solutions.html#solvvec_task_2"><i class="fa fa-check"></i><b>12.3</b> Вектор. Индексирование</a></li>
+<li class="chapter" data-level="12.4" data-path="solutions.html"><a href="solutions.html#solvlist_ta"><i class="fa fa-check"></i><b>12.4</b> Списки</a></li>
+<li class="chapter" data-level="12.5" data-path="solutions.html"><a href="solutions.html#solvt"><i class="fa fa-check"></i><b>12.5</b> Матрицы</a></li>
+<li class="chapter" data-level="12.6" data-path="solutions.html"><a href="solutions.html#solvdf_task"><i class="fa fa-check"></i><b>12.6</b> Датафрейм</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="section-16.html"><a href="section-16.html"><i class="fa fa-check"></i>Ссылки на литературу</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Наука о данных в R для программы Цифровых гуманитарных исследований</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tidytext" class="section level1">
+<h1><span class="header-section-number">8</span> Работа с текстами: tidytext, udpipe</h1>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="strings.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rvest.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/agricolamz/DS_for_DH/edit/master/08-texts.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["DS_for_DH.pdf", "DS_for_DH.epub"],
+"toc": {
+"collapse": "section"
+},
+"self_contained": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
