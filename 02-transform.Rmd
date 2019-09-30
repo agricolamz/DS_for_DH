@@ -193,8 +193,7 @@ as_tibble(df)
 Функицонально `tibble` от `data.frame` ничем не отличается, однако существует ряд несущественных отличий. Кроме того стоит помнить, что многие функции из `tidyverse` возвращают именно `tibble`, а не `data.frame`.
 
 ## `dplyr`
-
-В сжатом виде содержание этого раздела хранится [вот здесь](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf).
+В сжатом виде содержание этого раздела хранится [вот здесь](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) или [здесь](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf).
 
 ### `dplyr::filter()`
 

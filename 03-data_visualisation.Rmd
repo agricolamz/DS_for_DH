@@ -6,6 +6,7 @@ editor_options:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE)
+ggplot2::theme_set(ggplot2::theme_bw())
 ```
 
 # Визуализация данных {#viz_1}
@@ -73,7 +74,7 @@ datasaurus %>%
 ```
 
 ## Основы `ggplot2`
-Пакет `ggplot2` -- современный стандарт для создания графиков в R. Для этого пакета пишут [массу расширений](http://www.ggplot2-exts.org/gallery/).
+Пакет `ggplot2` -- современный стандарт для создания графиков в R. Для этого пакета пишут [массу расширений](http://www.ggplot2-exts.org/gallery/). В сжатом виде информация про ggplot2 [содержиться здесь](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf).
 
 ### Диаграмма рассеяния (Scaterplot)
 
@@ -301,6 +302,10 @@ misspelling %>%
   coord_flip()
 ```
 
+Для работы с факторами удобно использовать пакет `forcats` (входит в `tidyverse`, вот [ссылка на cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/factors.pdf)).
+
+
+
 Иногда полезной бывает функция `reorder()`:
 
 ```{r}
@@ -320,11 +325,43 @@ misspelling %>%
 ```{r}
 misspelling %>% 
   count(correct) %>% 
-  mutate(correct = reorder(correct, n)) %>% 
-  ggplot(aes(correct, n, label = n))+
+  ggplot(aes(fct_reorder(correct, n), 
+             n, 
+             label = n))+
   geom_col()+
   geom_text(nudge_y = 150)+
   coord_flip()
+```
+
+
+```{block, type = "rmdtask"}
+На новостном портале meduza.io недавно вышла [новость о применения закона "о неуважении к власти в интернете"](https://meduza.io/short/2019/09/30/pervye-polgoda-primeneniya-zakona-o-neuvazhenii-k-vlasti-v-internete-doklad-agory). Постройте графики из этой новости. Для того, чтобы создать объединяющую линию по всем группам, нужно использовать `geom_line()`, заведя перед этим общую для всех наблюдений переменную с одним значением, например, `type`, а потом в `aes(..., group = type)`. При построении графиков я использовал цвет `"tan3"`.
+```
+![](images/visualisation_task.png)
+
+```{r, echo=FALSE}
+months <- c("апрель", "май", "июнь", "июль", "август", "сентябрь")
+tibble(month = factor(months, levels = months),
+       value = c(2, 12, 14, 8, 5, 4),
+       type = 1) %>% 
+  ggplot(aes(month, value, label = value, group = type))+
+  geom_point(color = "tan3")+
+  geom_text(nudge_y = 1)+
+  geom_line(color = "tan3")+
+  theme_bw()+
+  labs(title = "Сколько дел возбудили по новому закону", x = "", y = "") ->
+  p1
+
+tibble(words = c("Путин", "общество", "губернаторы", "силовики", '"Единая Россия"', "местные чиновники", "судьи", "депутаты", "конституция", "Росатом"),
+       values = c(26, 4, 3, 3, 2, 2, 2, 1, 1, 1)) %>%
+  ggplot(aes(fct_reorder(words, values), values, label = values))+
+  geom_col(fill = "tan3")+
+  geom_text(nudge_y = 0.6)+
+  coord_flip()+
+  labs(title = "Кто был объектом неуважения", x = "", y = "", caption = "данные meduza.io") ->
+  p2
+
+plot(gridExtra::arrangeGrob(p1, p2, nrow = 2))
 ```
 
 
