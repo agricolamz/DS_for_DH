@@ -304,9 +304,7 @@ misspelling %>%
 
 Для работы с факторами удобно использовать пакет `forcats` (входит в `tidyverse`, вот [ссылка на cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/factors.pdf)).
 
-
-
-Иногда полезной бывает функция `reorder()`:
+Иногда полезной бывает функция `fct_reorder()`:
 
 ```{r}
 misspelling %>% 
@@ -314,8 +312,7 @@ misspelling %>%
 
 misspelling %>% 
   count(correct) %>% 
-  mutate(correct = reorder(correct, n)) %>% 
-  ggplot(aes(correct, n))+
+  ggplot(aes(fct_reorder(correct, n), n))+
   geom_col()+
   coord_flip()
 ```
@@ -325,9 +322,7 @@ misspelling %>%
 ```{r}
 misspelling %>% 
   count(correct) %>% 
-  ggplot(aes(fct_reorder(correct, n), 
-             n, 
-             label = n))+
+  ggplot(aes(fct_reorder(correct, n), n, label = n))+
   geom_col()+
   geom_text(nudge_y = 150)+
   coord_flip()

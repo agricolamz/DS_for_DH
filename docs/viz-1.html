@@ -564,7 +564,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb445-19"><a href="viz-1.html#cb445-19"></a><span class="st">  </span><span class="kw">coord_flip</span>()</span></code></pre></div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-176-1.png" width="672" /></p>
 <p>Для работы с факторами удобно использовать пакет <code>forcats</code> (входит в <code>tidyverse</code>, вот <a href="https://github.com/rstudio/cheatsheets/raw/master/factors.pdf">ссылка на cheatsheet</a>).</p>
-<p>Иногда полезной бывает функция <code>reorder()</code>:</p>
+<p>Иногда полезной бывает функция <code>fct_reorder()</code>:</p>
 <div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="viz-1.html#cb446-1"></a>misspelling <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb446-2"><a href="viz-1.html#cb446-2"></a><span class="st">  </span><span class="kw">count</span>(correct)</span></code></pre></div>
 <pre><code>## # A tibble: 15 x 2
@@ -587,20 +587,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 15 shyamalan     1473</code></pre>
 <div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="viz-1.html#cb448-1"></a>misspelling <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb448-2"><a href="viz-1.html#cb448-2"></a><span class="st">  </span><span class="kw">count</span>(correct) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb448-3"><a href="viz-1.html#cb448-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">correct =</span> <span class="kw">reorder</span>(correct, n)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb448-4"><a href="viz-1.html#cb448-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(correct, n))<span class="op">+</span></span>
-<span id="cb448-5"><a href="viz-1.html#cb448-5"></a><span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span></span>
-<span id="cb448-6"><a href="viz-1.html#cb448-6"></a><span class="st">  </span><span class="kw">coord_flip</span>()</span></code></pre></div>
+<span id="cb448-3"><a href="viz-1.html#cb448-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="kw">fct_reorder</span>(correct, n), n))<span class="op">+</span></span>
+<span id="cb448-4"><a href="viz-1.html#cb448-4"></a><span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span></span>
+<span id="cb448-5"><a href="viz-1.html#cb448-5"></a><span class="st">  </span><span class="kw">coord_flip</span>()</span></code></pre></div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-177-1.png" width="672" /></p>
 <p>Можно совмещать разные <code>geom_...</code>:</p>
 <div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="viz-1.html#cb449-1"></a>misspelling <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb449-2"><a href="viz-1.html#cb449-2"></a><span class="st">  </span><span class="kw">count</span>(correct) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb449-3"><a href="viz-1.html#cb449-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="kw">fct_reorder</span>(correct, n), </span>
-<span id="cb449-4"><a href="viz-1.html#cb449-4"></a>             n, </span>
-<span id="cb449-5"><a href="viz-1.html#cb449-5"></a>             <span class="dt">label =</span> n))<span class="op">+</span></span>
-<span id="cb449-6"><a href="viz-1.html#cb449-6"></a><span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span></span>
-<span id="cb449-7"><a href="viz-1.html#cb449-7"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)<span class="op">+</span></span>
-<span id="cb449-8"><a href="viz-1.html#cb449-8"></a><span class="st">  </span><span class="kw">coord_flip</span>()</span></code></pre></div>
+<span id="cb449-3"><a href="viz-1.html#cb449-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="kw">fct_reorder</span>(correct, n), n, <span class="dt">label =</span> n))<span class="op">+</span></span>
+<span id="cb449-4"><a href="viz-1.html#cb449-4"></a><span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span></span>
+<span id="cb449-5"><a href="viz-1.html#cb449-5"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">nudge_y =</span> <span class="dv">150</span>)<span class="op">+</span></span>
+<span id="cb449-6"><a href="viz-1.html#cb449-6"></a><span class="st">  </span><span class="kw">coord_flip</span>()</span></code></pre></div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-178-1.png" width="672" /></p>
 <div class="rmdtask">
 <p>

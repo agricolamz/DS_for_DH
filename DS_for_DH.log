@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  30 SEP 2019 11:17
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  30 SEP 2019 11:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2313,7 +2313,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/task.png Graphic file (type bmp)
 <images/task.png>
 
-Overfull \hbox (193.59253pt too wide) in paragraph at lines 4655--4655
+Overfull \hbox (193.59253pt too wide) in paragraph at lines 4652--4652
 [][][][]$[][][][][] [] [] [] [][][][][][] [] [][] [] [][][][][] [] [][][][] [] 
 [][] [] [][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -2321,7 +2321,7 @@ Overfull \hbox (193.59253pt too wide) in paragraph at lines 4655--4655
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 4653--4661
+Underfull \hbox (badness 1264) in paragraph at lines 4650--4658
 \TU/brill(0)/m/n/10 нужно использовать \TU/lmtt/m/n/10 geom_line()\TU/brill(0)/
 m/n/10 , заведя перед этим общую для всех
  []
@@ -2367,25 +2367,25 @@ df)
 Underfull \vbox (badness 6032) has occurred while \output is active []
 
 [105]
-Overfull \hbox (337.5pt too wide) in paragraph at lines 4816--4816
+Overfull \hbox (337.5pt too wide) in paragraph at lines 4813--4813
 []\TU/lmtt/m/n/10 ##  $ Name       : Factor w/ 3883 levels "...And Justice for 
 All (1979)",..: 3576 1860 1485 3718 1179 1564 3012 3551 3364 1426 ...[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 4816--4816
+Overfull \hbox (59.25pt too wide) in paragraph at lines 4813--4813
 []\TU/lmtt/m/n/10 ##  $ ReleaseDate: int  1995 1995 1995 1995 1995 1995 1995 19
 95 1995 1995 ...[] 
  []
 
 [106]
-Overfull \hbox (54.0pt too wide) in paragraph at lines 4816--4816
+Overfull \hbox (54.0pt too wide) in paragraph at lines 4813--4813
 []\TU/lmtt/m/n/10 ##  $ AvgRating  : num  4.15 3.2 3.02 2.73 3.01 3.88 3.41 3.0
 1 2.66 3.54 ...[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 4816--4816
+Overfull \hbox (6.75pt too wide) in paragraph at lines 4813--4813
 []\TU/lmtt/m/n/10 ##  $ Watches    : int  2077 701 478 170 296 940 458 68 102 8
 88 ...[] 
  []
@@ -2425,25 +2425,25 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Глава 11.
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 4878--4878
+Overfull \hbox (6.75pt too wide) in paragraph at lines 4875--4875
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 4888--4888
+Overfull \hbox (6.75pt too wide) in paragraph at lines 4885--4885
 []\TU/lmtt/m/n/10 ##  [1] 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3
   2  1[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 4899--4899
+Overfull \hbox (54.0pt too wide) in paragraph at lines 4896--4896
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20 19 18 17[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 4920--4920
+Overfull \hbox (59.25pt too wide) in paragraph at lines 4917--4917
 []\TU/lmtt/m/n/10 ##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7
  7 8 8 8 8 8 8 8[] 
  []
@@ -2467,31 +2467,31 @@ Missing character: There is no т in font [lmmono10-regular]:!
 Missing character: There is no о in font [lmmono10-regular]:!
 Missing character: There is no р in font [lmmono10-regular]:!
 [121]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5023--5023
+Overfull \hbox (6.75pt too wide) in paragraph at lines 5020--5020
 []\TU/lmtt/m/n/10 ##  [1]  0  2  0  4  0  6  0  8  0 10  0 12  0 14  0 16  0 18
   0 20[] 
  []
 
 [122]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 5095--5095
+Overfull \hbox (59.25pt too wide) in paragraph at lines 5092--5092
 []\TU/lmtt/m/n/10 ##  [1]  9.000000  2.236068  4.000000  1.000000 64.000000  2.
 000000 81.000000[] 
  []
 
 [123]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5153--5153
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5150--5150
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5211--5211
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5208--5208
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
 
 [124]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5211--5211
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5208--5208
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
@@ -2500,55 +2500,55 @@ n" "o" "p" "q"[]
 Underfull \vbox (badness 5302) has occurred while \output is active []
 
 [126]
-Underfull \hbox (badness 2384) in paragraph at lines 5365--5366
+Underfull \hbox (badness 2384) in paragraph at lines 5362--5363
 []\TU/brill(0)/m/n/10 Найдите имена всех персонажей из дома (\TU/lmtt/m/n/10 Al
 legiances\TU/brill(0)/m/n/10 ) \TU/lmtt/m/n/10 "Tyrell" \TU/brill(0)/m/n/10 и
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5405--5405
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5402--5402
 []\TU/lmtt/m/n/10 ##     Death.Chapter Book.Intro.Chapter Gender Nobility GoT C
 oK SoS FfC DwD[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5405--5405
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5402--5402
 []\TU/lmtt/m/n/10 ## 58             NA                 11      0        1   0  
  1   0   1   1[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5405--5405
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5402--5402
 []\TU/lmtt/m/n/10 ## 248            NA                 29      0        0   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5405--5405
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5402--5402
 []\TU/lmtt/m/n/10 ## 313            NA                  1      0        1   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5405--5405
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5402--5402
 []\TU/lmtt/m/n/10 ## 319            NA                  1      0        1   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5405--5405
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5402--5402
 []\TU/lmtt/m/n/10 ## 806            NA                 11      0        0   0  
  0   0   1   0[] 
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 5430--5431
+Underfull \hbox (badness 2065) in paragraph at lines 5427--5428
 []\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
 онажей
  []
 
 [127]
-Underfull \hbox (badness 2065) in paragraph at lines 5440--5441
+Underfull \hbox (badness 2065) in paragraph at lines 5437--5438
 []\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
 онажей
  []
@@ -2556,13 +2556,13 @@ Underfull \hbox (badness 2065) in paragraph at lines 5440--5441
 [128]
 Глава 12.
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5515--5515
+Overfull \hbox (6.75pt too wide) in paragraph at lines 5512--5512
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5531--5531
+Overfull \hbox (6.75pt too wide) in paragraph at lines 5528--5528
 []\TU/lmtt/m/n/10 ##  [1] 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3
   2  1[] 
  []
@@ -2570,13 +2570,13 @@ Overfull \hbox (6.75pt too wide) in paragraph at lines 5531--5531
 [129
 
 ]
-Overfull \hbox (54.0pt too wide) in paragraph at lines 5548--5548
+Overfull \hbox (54.0pt too wide) in paragraph at lines 5545--5545
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20 19 18 17[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 5581--5581
+Overfull \hbox (59.25pt too wide) in paragraph at lines 5578--5578
 []\TU/lmtt/m/n/10 ##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7
  7 8 8 8 8 8 8 8[] 
  []
@@ -2609,31 +2609,31 @@ Missing character: There is no т in font [lmmono10-regular]:!
 Missing character: There is no о in font [lmmono10-regular]:!
 Missing character: There is no р in font [lmmono10-regular]:!
 [130] [131]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5766--5766
+Overfull \hbox (6.75pt too wide) in paragraph at lines 5763--5763
 []\TU/lmtt/m/n/10 ##  [1]  0  2  0  4  0  6  0  8  0 10  0 12  0 14  0 16  0 18
   0 20[] 
  []
 
 [132]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 5874--5874
+Overfull \hbox (59.25pt too wide) in paragraph at lines 5871--5871
 []\TU/lmtt/m/n/10 ##  [1]  9.000000  2.236068  4.000000  1.000000 64.000000  2.
 000000 81.000000[] 
  []
 
 [133]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5958--5958
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5955--5955
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
 
 [134]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6047--6047
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6044--6044
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6047--6047
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6044--6044
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
@@ -2643,68 +2643,68 @@ Missing character: There is no Е in font [lmmono10-italic]:!
 Missing character: There is no щ in font [lmmono10-italic]:!
 Missing character: There is no е in font [lmmono10-italic]:!
 [137]
-Underfull \hbox (badness 2384) in paragraph at lines 6274--6275
+Underfull \hbox (badness 2384) in paragraph at lines 6271--6272
 []\TU/brill(0)/m/n/10 Найдите имена всех персонажей из дома (\TU/lmtt/m/n/10 Al
 legiances\TU/brill(0)/m/n/10 ) \TU/lmtt/m/n/10 "Tyrell" \TU/brill(0)/m/n/10 и
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6327--6327
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6324--6324
 []\TU/lmtt/m/n/10 ##     Death.Chapter Book.Intro.Chapter Gender Nobility GoT C
 oK SoS FfC DwD[] 
  []
 
 [138]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6327--6327
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6324--6324
 []\TU/lmtt/m/n/10 ## 58             NA                 11      0        1   0  
  1   0   1   1[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6327--6327
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6324--6324
 []\TU/lmtt/m/n/10 ## 248            NA                 29      0        0   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6327--6327
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6324--6324
 []\TU/lmtt/m/n/10 ## 313            NA                  1      0        1   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6327--6327
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6324--6324
 []\TU/lmtt/m/n/10 ## 319            NA                  1      0        1   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6327--6327
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6324--6324
 []\TU/lmtt/m/n/10 ## 806            NA                 11      0        0   0  
  0   0   1   0[] 
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 6364--6365
+Underfull \hbox (badness 2065) in paragraph at lines 6361--6362
 []\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
 онажей
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 6380--6381
+Underfull \hbox (badness 2065) in paragraph at lines 6377--6378
 []\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
 онажей
  []
 
 [139] (./DS_for_DH.bbl [140])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6418.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6415.
 [141
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 6418.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 6415.
 (./DS_for_DH.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 6418.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6418.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 6415.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6415.
 
 Package rerunfilecheck Info: File `DS_for_DH.out' has not changed.
 (rerunfilecheck)             Checksum: 3BDFA302312B05C57836C8E86EF66F05.
