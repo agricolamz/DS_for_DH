@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  30 SEP 2019 11:27
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  30 SEP 2019 11:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2318,12 +2318,6 @@ Overfull \hbox (193.59253pt too wide) in paragraph at lines 4652--4652
 [][] [] [][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][]$[]| 
- []
-
-
-Underfull \hbox (badness 1264) in paragraph at lines 4650--4658
-\TU/brill(0)/m/n/10 нужно использовать \TU/lmtt/m/n/10 geom_line()\TU/brill(0)/
-m/n/10 , заведя перед этим общую для всех
  []
 
 File: images/visualisation_task.png Graphic file (type bmp)
