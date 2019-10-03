@@ -454,3 +454,77 @@ langs_in_india_long %>%
   langs_in_india_short
 langs_in_india_short
 ```
+
+
+```{block, type = "rmdtask"}
+[Вот здесь](https://github.com/agricolamz/DS_for_DH/blob/master/data/daghestan_census.xlsx?raw=true) лежит датасет, который содержит информацию о селах в Дагестане в формате `.xlsx`. Данные разделены по разным листам и содержат следующие переменные (данные получены из разных источников, поэтому имеют суффикс `_s1` -- первый источник и `_s2` -- второй источник):
+
+* `id_s1` -- (s1) идентификационный номер из первого источника;
+* `name_1885` -- (s1) название селения из переписи 1885
+* `census_1885` -- (s1) число людей из переписи 1885
+* `name_1895` -- (s1) название селения из переписи 1895
+* `census_1895` -- (s1) число людей из переписи 1895
+* `name_1926` -- (s1) название селения из переписи 1926
+* `language_s1` -- (s1) язык данного селения согласно первому источнику
+* `census_1926` -- (s1) число людей из переписи 1926
+* `name_2010` -- (s1) название селения из переписи 2010
+* `census_2010` -- (s1) число людей из переписи 2010
+* `name_s2` -- (s2) название селения согласно второму источнику
+* `language_s2` -- (s2) язык данного селения согласно первому источнику
+* `Lat` -- (s2) широта селения
+* `Lon` -- (s2) долгота селения
+* `elevation` -- (s2) высота селения над уровнем моря
+
+Во-первых, объедините все листы `.xlsx` воедино:
+```
+
+```{r,  echo=FALSE, message=FALSE}
+s1 <- readxl::read_xlsx("data/daghestan_census.xlsx", 1)
+s2 <- readxl::read_xlsx("data/daghestan_census.xlsx", 2)
+s3 <- readxl::read_xlsx("data/daghestan_census.xlsx", 3)
+s4 <- readxl::read_xlsx("data/daghestan_census.xlsx", 4)
+s5 <- readxl::read_xlsx("data/daghestan_census.xlsx", 5)
+s6 <- readxl::read_xlsx("data/daghestan_census.xlsx", 6)
+
+s1 %>% 
+  left_join(s2) %>% 
+  left_join(s3) %>% 
+  left_join(s4) %>% 
+  left_join(s6) %>% 
+  left_join(s5) ->
+  merged
+head(merged)
+```
+
+```{block, type = "rmdtask"}
+Во-вторых, посчитайте, относительно скольких селений первый и второй источник согласуются относительно языка селения.
+```
+
+```{r,  include=FALSE}
+merged %>% 
+  count(language_s1 == language_s2)
+```
+
+```{block, type = "rmdtask"}
+В-третьих, посчитайте среднюю высоту над уровнем моря для языков из первого источника. Какой выше всех?
+```
+
+```{r,  include=FALSE}
+merged %>% 
+  group_by(language_s1) %>% 
+  summarise(m_el = mean(elevation)) %>% 
+  arrange(-m_el)
+```
+
+```{block, type = "rmdtask"}
+В-четвертых, посчитайте количество населения, которое говорило на каждом из языков из второго датасета, согласно каждой переписи. Приведите значения для лакского языка (`Lak`).
+```
+
+```{r,  echo=FALSE, message=FALSE}
+merged %>% 
+  select(language_s2, census_1885, census_1895, census_1926, census_2010) %>% 
+  pivot_longer(names_to = "census", values_to = "n_people", census_1885:census_2010) %>% 
+  group_by(language_s2, census) %>% 
+  summarise(n = sum(n_people)) %>% 
+  pivot_wider(names_from = "census", values_from = "n")
+```
