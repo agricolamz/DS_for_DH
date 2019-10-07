@@ -340,10 +340,10 @@ tibble(month = factor(months, levels = months),
        value = c(2, 12, 14, 8, 5, 4),
        type = 1) %>% 
   ggplot(aes(month, value, label = value, group = type))+
+  geom_line(color = "tan3")+
+  geom_point(color = "white", size = 4)+
   geom_point(color = "tan3")+
   geom_text(nudge_y = 1)+
-  geom_line(color = "tan3")+
-  theme_bw()+
   labs(title = "Сколько дел возбудили по новому закону", x = "", y = "") ->
   p1
 

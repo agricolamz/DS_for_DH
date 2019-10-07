@@ -270,12 +270,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><em>broom</em>, для перевода в tidy формат статистические модели</li>
 </ul>
 <div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="tidy-dplyr.html#cb287-1"></a><span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
-<pre><code>## ── Attaching packages ────────</code></pre>
+<pre><code>## ── Attaching packages ────────────── tidyverse 1.2.1 ──</code></pre>
 <pre><code>## ✔ ggplot2 3.2.1     ✔ purrr   0.3.2
 ## ✔ tibble  2.1.3     ✔ dplyr   0.8.3
 ## ✔ tidyr   1.0.0     ✔ stringr 1.4.0
 ## ✔ readr   1.3.1     ✔ forcats 0.4.0</code></pre>
-<pre><code>## ── Conflicts ─────────────────
+<pre><code>## ── Conflicts ───────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <div id="section-3" class="section level2">
@@ -1158,20 +1158,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 <pre><code>## # A tibble: 25 x 5
-## # Groups:   language_s2 [25]
-##    language_s2 census_1885 census_1895 census_1926 census_2010
-##    &lt;chr&gt;             &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
-##  1 Aghul              6577        6813        7886       11642
-##  2 Akhvakh            3535        3229        2697        5977
-##  3 Andi               4600        4543        4583       10946
-##  4 Archi               804         765         126         200
-##  5 Avar             255173      239496      288439      477164
-##  6 Bagvalal           2807        2625        3049        4057
-##  7 Bezhta             2330        2546        1270        4549
-##  8 Botlikh            1383        1323        1346       12501
-##  9 Chamalal           3731        3742        2714        5452
-## 10 Chechen            4178        4188        4678       19978
-## # … with 15 more rows</code></pre>
+##    language_s2 `s_1885 &lt;- sum(… `s_1895 &lt;- sum(… `s_1926 &lt;- sum(…
+##    &lt;chr&gt;                  &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+##  1 Aghul                   6577             6813             7886
+##  2 Akhvakh                 3535             3229             2697
+##  3 Andi                    4600             4543             4583
+##  4 Archi                    804              765              126
+##  5 Avar                  110191           123363           103565
+##  6 Bagvalal                2807             2625             3049
+##  7 Bezhta                  2330             2546             1270
+##  8 Botlikh                 1383             1323             1346
+##  9 Chamalal                3731             3742             2714
+## 10 Chechen                  396              344              524
+## # … with 15 more rows, and 1 more variable: `s_2010 &lt;-
+## #   sum(census_2010)` &lt;dbl&gt;</code></pre>
 
 </div>
 </div>

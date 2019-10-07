@@ -487,11 +487,12 @@ s5 <- readxl::read_xlsx("data/daghestan_census.xlsx", 5)
 s6 <- readxl::read_xlsx("data/daghestan_census.xlsx", 6)
 
 s1 %>% 
-  left_join(s2) %>% 
+  left_join(s2) %>%
   left_join(s3) %>% 
   left_join(s4) %>% 
   left_join(s6) %>% 
-  left_join(s5) ->
+  left_join(s5) %>% 
+  distinct() ->
   merged
 head(merged)
 ```
@@ -522,9 +523,9 @@ merged %>%
 
 ```{r,  echo=FALSE, message=FALSE}
 merged %>% 
-  select(language_s2, census_1885, census_1895, census_1926, census_2010) %>% 
-  pivot_longer(names_to = "census", values_to = "n_people", census_1885:census_2010) %>% 
-  group_by(language_s2, census) %>% 
-  summarise(n = sum(n_people)) %>% 
-  pivot_wider(names_from = "census", values_from = "n")
+  group_by(language_s2) %>% 
+  summarise(s_1885 <- sum(census_1885),
+            s_1895 <- sum(census_1895),
+            s_1926 <- sum(census_1926),
+            s_2010 <- sum(census_2010))
 ```

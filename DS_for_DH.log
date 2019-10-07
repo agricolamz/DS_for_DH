@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  3 OCT 2019 18:06
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  7 OCT 2019 08:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2095,7 +2095,79 @@ File: images/task.png Graphic file (type bmp)
 <images/task.png>
 File: images/task.png Graphic file (type bmp)
 <images/task.png>
-[78] [79] [80
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4118--4118
+[]\TU/lmtt/m/n/10 ##    language_s2 []s_1885 <- sum(~ []s_1895 <- sum(~ []s_192
+6 <- sum(~[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4118--4118
+[]\TU/lmtt/m/n/10 ##    <chr>                  <dbl>            <dbl>          
+  <dbl>[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4118--4118
+[]\TU/lmtt/m/n/10 ##  1 Aghul                   6577             6813          
+   7886[] 
+ []
+
+[78]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4118--4118
+[]\TU/lmtt/m/n/10 ##  2 Akhvakh                 3535             3229          
+   2697[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4118--4118
+[]\TU/lmtt/m/n/10 ##  3 Andi                    4600             4543          
+   4583[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4118--4118
+[]\TU/lmtt/m/n/10 ##  4 Archi                    804              765          
+    126[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4118--4118
+[]\TU/lmtt/m/n/10 ##  5 Avar                  110191           123363          
+ 103565[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4118--4118
+[]\TU/lmtt/m/n/10 ##  6 Bagvalal                2807             2625          
+   3049[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4118--4118
+[]\TU/lmtt/m/n/10 ##  7 Bezhta                  2330             2546          
+   1270[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4118--4118
+[]\TU/lmtt/m/n/10 ##  8 Botlikh                 1383             1323          
+   1346[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4118--4118
+[]\TU/lmtt/m/n/10 ##  9 Chamalal                3731             3742          
+   2714[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4118--4118
+[]\TU/lmtt/m/n/10 ## 10 Chechen                  396              344          
+    524[] 
+ []
+
+[79] [80
 
 ]
 Глава 4.
