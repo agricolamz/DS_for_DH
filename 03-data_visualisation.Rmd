@@ -328,6 +328,21 @@ misspelling %>%
   coord_flip()
 ```
 
+```{block, type = "rmdtask"}
+На Pudding вышла [статья про английские пабы](https://pudding.cool/2019/10/pubs/). [Здесь](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/UK_pubs.csv) лежит немного обработанный датасет, которые они использовали. Визуализируйте 30 самых частотоных названий пабов в Великобритании. 
+```
+
+```{r, echo=FALSE, message = FALSE}
+read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/UK_pubs.csv") %>% 
+  count(pub_name, sort = TRUE) %>% 
+  mutate(pub_name = reorder(pub_name, n)) %>% 
+  slice(1:30) %>% 
+  ggplot(aes(pub_name, n, label = n))+
+  geom_col()+
+  geom_text(nudge_y = 10)+
+  coord_flip()+
+  labs(x = "", y = "", caption = "data from https://pudding.cool/2019/10/pubs/")
+```
 
 ```{block, type = "rmdtask"}
 На новостном портале meduza.io недавно вышла [новость о применения закона "о неуважении к власти в интернете"](https://meduza.io/short/2019/09/30/pervye-polgoda-primeneniya-zakona-o-neuvazhenii-k-vlasti-v-internete-doklad-agory). Постройте графики из этой новости. Для того, чтобы создать объединяющую линию по всем месяцам, нужно использовать `geom_line()`, заведя перед этим общую для всех наблюдений переменную с одним значением, например, `type = 1`, а потом в `aes(..., group = type)`. При построении графиков я использовал цвет `"tan3"`.
@@ -359,10 +374,6 @@ tibble(words = c("Путин", "общество", "губернаторы", "с
 plot(gridExtra::arrangeGrob(p1, p2, nrow = 2))
 ```
 
-
-```{block, type = "rmdtask"}
-На Pudding вышла [статья про английские пабы](https://pudding.cool/2019/10/pubs/). Здесь лежит немного обработанный датасет, которые они использовали.
-```
 
 ## Точки, джиттер (jitter), ящики с усами (boxplot), (violinplot)
 
