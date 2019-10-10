@@ -360,6 +360,10 @@ plot(gridExtra::arrangeGrob(p1, p2, nrow = 2))
 ```
 
 
+```{block, type = "rmdtask"}
+На Pudding вышла [статья про английские пабы](https://pudding.cool/2019/10/pubs/). Здесь лежит немного обработанный датасет, которые они использовали.
+```
+
 ## Точки, джиттер (jitter), ящики с усами (boxplot), (violinplot)
 
 ```{r, cache=TRUE}
