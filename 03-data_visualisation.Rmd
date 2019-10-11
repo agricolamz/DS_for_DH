@@ -225,6 +225,17 @@ diamonds %>%
            label = "помогите...\n я в розовом\nквадратике")
 ```
 
+```{block, type = "rmdtask"}
+Скачайте [вот этот датасет](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/first_scatterplot.csv) и постройте диаграмму рассеяния.
+```
+
+```{r, include = FALSE}
+read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/first_scatterplot.csv") %>% 
+  ggplot(aes(x, y))+
+  geom_point()
+```
+
+
 ## Столбчатые диаграммы (barplots)
 
 Одна и та же информация может быть представлена в агрегированном и не агрегированном варианте:
