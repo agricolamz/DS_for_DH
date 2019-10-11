@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  10 OCT 2019 08:47
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  11 OCT 2019 13:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2529,74 +2529,83 @@ Missing character: There is no е in font [lmmono10-regular]:!
 File: DS_for_DH_files/figure-latex/unnamed-chunk-184-1.pdf Graphic file (type p
 df)
 <use DS_for_DH_files/figure-latex/unnamed-chunk-184-1.pdf>
+File: images/task.png Graphic file (type bmp)
+<images/task.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 4892--4892
+[][][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][][][][] [] []
+[][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] [] [][][
+][] []
+ []
+
 [97]
-File: DS_for_DH_files/figure-latex/unnamed-chunk-186-1.pdf Graphic file (type p
+File: DS_for_DH_files/figure-latex/unnamed-chunk-188-1.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-186-1.pdf>
+<use DS_for_DH_files/figure-latex/unnamed-chunk-188-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [98]
-File: DS_for_DH_files/figure-latex/unnamed-chunk-187-1.pdf Graphic file (type p
+File: DS_for_DH_files/figure-latex/unnamed-chunk-189-1.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-187-1.pdf>
+<use DS_for_DH_files/figure-latex/unnamed-chunk-189-1.pdf>
 
 Underfull \vbox (badness 2027) has occurred while \output is active []
 
 [99]
-File: DS_for_DH_files/figure-latex/unnamed-chunk-188-1.pdf Graphic file (type p
+File: DS_for_DH_files/figure-latex/unnamed-chunk-190-1.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-188-1.pdf>
-File: DS_for_DH_files/figure-latex/unnamed-chunk-189-1.pdf Graphic file (type p
+<use DS_for_DH_files/figure-latex/unnamed-chunk-190-1.pdf>
+File: DS_for_DH_files/figure-latex/unnamed-chunk-191-1.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-189-1.pdf>
+<use DS_for_DH_files/figure-latex/unnamed-chunk-191-1.pdf>
 [100]
-Overfull \hbox (1.5pt too wide) in paragraph at lines 5007--5007
+Overfull \hbox (1.5pt too wide) in paragraph at lines 5013--5013
 []\TU/lmtt/m/n/10 ## [1] deschanel deschanel deschanel deschanel deschanel desc
 hanel[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 5007--5007
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5013--5013
 []\TU/lmtt/m/n/10 ## 15 Levels: deschanel galifianakis johansson kaepernick ...
  shyamalan[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 5032--5032
+Overfull \hbox (1.5pt too wide) in paragraph at lines 5038--5038
 []\TU/lmtt/m/n/10 ## [1] shyamalan shyamalan shyamalan shyamalan shyamalan shya
 malan[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 5032--5032
+Overfull \hbox (38.25pt too wide) in paragraph at lines 5038--5038
 []\TU/lmtt/m/n/10 ## 15 Levels: shyamalan poehler picabo palahniuk morissette .
 .. deschanel[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 5060--5060
+Overfull \hbox (1.5pt too wide) in paragraph at lines 5066--5066
 []\TU/lmtt/m/n/10 ## mutate: converted []correct[] from character to factor (0 
 new NA)[] 
  []
 
 [101]
-File: DS_for_DH_files/figure-latex/unnamed-chunk-190-1.pdf Graphic file (type p
+File: DS_for_DH_files/figure-latex/unnamed-chunk-192-1.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-190-1.pdf>
+<use DS_for_DH_files/figure-latex/unnamed-chunk-192-1.pdf>
 
-Underfull \hbox (badness 6284) in paragraph at lines 5064--5065
+Underfull \hbox (badness 6284) in paragraph at lines 5070--5071
 []\TU/brill(0)/m/n/10 Для работы с факторами удобно использовать пакет \TU/lmtt
 /m/n/10 forcats \TU/brill(0)/m/n/10 (входит в
  []
 
 [102]
-File: DS_for_DH_files/figure-latex/unnamed-chunk-191-1.pdf Graphic file (type p
+File: DS_for_DH_files/figure-latex/unnamed-chunk-193-1.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-191-1.pdf>
-File: DS_for_DH_files/figure-latex/unnamed-chunk-192-1.pdf Graphic file (type p
+<use DS_for_DH_files/figure-latex/unnamed-chunk-193-1.pdf>
+File: DS_for_DH_files/figure-latex/unnamed-chunk-194-1.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-192-1.pdf>
+<use DS_for_DH_files/figure-latex/unnamed-chunk-194-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2604,19 +2613,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/task.png Graphic file (type bmp)
 <images/task.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 5138--5138
+Underfull \hbox (badness 10000) in paragraph at lines 5144--5144
 [][][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][][][][] [] []
 [][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] [] [][][
 ][] [] [][] []
  []
 
-File: DS_for_DH_files/figure-latex/unnamed-chunk-194-1.pdf Graphic file (type p
+File: DS_for_DH_files/figure-latex/unnamed-chunk-196-1.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-194-1.pdf>
+<use DS_for_DH_files/figure-latex/unnamed-chunk-196-1.pdf>
 File: images/task.png Graphic file (type bmp)
 <images/task.png>
 
-Overfull \hbox (193.59253pt too wide) in paragraph at lines 5148--5148
+Overfull \hbox (193.59253pt too wide) in paragraph at lines 5154--5154
 [][][][]$[][][][][] [] [] [] [][][][][][] [] [][] [] [][][][][] [] [][][][] [] 
 [][] [] [][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -2626,64 +2635,64 @@ Overfull \hbox (193.59253pt too wide) in paragraph at lines 5148--5148
 [104]
 File: images/visualisation_task.png Graphic file (type bmp)
 <images/visualisation_task.png>
-File: DS_for_DH_files/figure-latex/unnamed-chunk-196-1.pdf Graphic file (type p
+File: DS_for_DH_files/figure-latex/unnamed-chunk-198-1.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-196-1.pdf>
+<use DS_for_DH_files/figure-latex/unnamed-chunk-198-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [105]
-File: DS_for_DH_files/figure-latex/unnamed-chunk-197-1.pdf Graphic file (type p
+File: DS_for_DH_files/figure-latex/unnamed-chunk-199-1.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-197-1.pdf>
+<use DS_for_DH_files/figure-latex/unnamed-chunk-199-1.pdf>
 
 Underfull \vbox (badness 1946) has occurred while \output is active []
 
 [106]
-File: DS_for_DH_files/figure-latex/unnamed-chunk-197-2.pdf Graphic file (type p
+File: DS_for_DH_files/figure-latex/unnamed-chunk-199-2.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-197-2.pdf>
-File: DS_for_DH_files/figure-latex/unnamed-chunk-197-3.pdf Graphic file (type p
+<use DS_for_DH_files/figure-latex/unnamed-chunk-199-2.pdf>
+File: DS_for_DH_files/figure-latex/unnamed-chunk-199-3.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-197-3.pdf>
+<use DS_for_DH_files/figure-latex/unnamed-chunk-199-3.pdf>
 [107]
-File: DS_for_DH_files/figure-latex/unnamed-chunk-197-4.pdf Graphic file (type p
+File: DS_for_DH_files/figure-latex/unnamed-chunk-199-4.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-197-4.pdf>
+<use DS_for_DH_files/figure-latex/unnamed-chunk-199-4.pdf>
 [108]
-File: DS_for_DH_files/figure-latex/unnamed-chunk-198-1.pdf Graphic file (type p
+File: DS_for_DH_files/figure-latex/unnamed-chunk-200-1.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-198-1.pdf>
-File: DS_for_DH_files/figure-latex/unnamed-chunk-199-1.pdf Graphic file (type p
+<use DS_for_DH_files/figure-latex/unnamed-chunk-200-1.pdf>
+File: DS_for_DH_files/figure-latex/unnamed-chunk-201-1.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-199-1.pdf>
+<use DS_for_DH_files/figure-latex/unnamed-chunk-201-1.pdf>
 [109]
-Overfull \hbox (337.5pt too wide) in paragraph at lines 5313--5313
+Overfull \hbox (337.5pt too wide) in paragraph at lines 5319--5319
 []\TU/lmtt/m/n/10 ##  $ Name       : Factor w/ 3883 levels "...And Justice for 
 All (1979)",..: 3576 1860 1485 3718 1179 1564 3012 3551 3364 1426 ...[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 5313--5313
+Overfull \hbox (59.25pt too wide) in paragraph at lines 5319--5319
 []\TU/lmtt/m/n/10 ##  $ ReleaseDate: int  1995 1995 1995 1995 1995 1995 1995 19
 95 1995 1995 ...[] 
  []
 
 [110]
-Overfull \hbox (54.0pt too wide) in paragraph at lines 5313--5313
+Overfull \hbox (54.0pt too wide) in paragraph at lines 5319--5319
 []\TU/lmtt/m/n/10 ##  $ AvgRating  : num  4.15 3.2 3.02 2.73 3.01 3.88 3.41 3.0
 1 2.66 3.54 ...[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5313--5313
+Overfull \hbox (6.75pt too wide) in paragraph at lines 5319--5319
 []\TU/lmtt/m/n/10 ##  $ Watches    : int  2077 701 478 170 296 940 458 68 102 8
 88 ...[] 
  []
 
-File: DS_for_DH_files/figure-latex/unnamed-chunk-200-1.pdf Graphic file (type p
+File: DS_for_DH_files/figure-latex/unnamed-chunk-202-1.pdf Graphic file (type p
 df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-200-1.pdf>
+<use DS_for_DH_files/figure-latex/unnamed-chunk-202-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2716,25 +2725,25 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Глава 11.
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5375--5375
+Overfull \hbox (6.75pt too wide) in paragraph at lines 5381--5381
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5385--5385
+Overfull \hbox (6.75pt too wide) in paragraph at lines 5391--5391
 []\TU/lmtt/m/n/10 ##  [1] 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3
   2  1[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 5396--5396
+Overfull \hbox (54.0pt too wide) in paragraph at lines 5402--5402
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20 19 18 17[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 5417--5417
+Overfull \hbox (59.25pt too wide) in paragraph at lines 5423--5423
 []\TU/lmtt/m/n/10 ##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7
  7 8 8 8 8 8 8 8[] 
  []
@@ -2758,31 +2767,31 @@ Missing character: There is no т in font [lmmono10-regular]:!
 Missing character: There is no о in font [lmmono10-regular]:!
 Missing character: There is no р in font [lmmono10-regular]:!
 [125]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5520--5520
+Overfull \hbox (6.75pt too wide) in paragraph at lines 5526--5526
 []\TU/lmtt/m/n/10 ##  [1]  0  2  0  4  0  6  0  8  0 10  0 12  0 14  0 16  0 18
   0 20[] 
  []
 
 [126]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 5592--5592
+Overfull \hbox (59.25pt too wide) in paragraph at lines 5598--5598
 []\TU/lmtt/m/n/10 ##  [1]  9.000000  2.236068  4.000000  1.000000 64.000000  2.
 000000 81.000000[] 
  []
 
 [127]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5650--5650
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5656--5656
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5708--5708
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5714--5714
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
 
 [128]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5708--5708
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5714--5714
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
@@ -2791,55 +2800,55 @@ n" "o" "p" "q"[]
 Underfull \vbox (badness 5302) has occurred while \output is active []
 
 [130]
-Underfull \hbox (badness 2384) in paragraph at lines 5862--5863
+Underfull \hbox (badness 2384) in paragraph at lines 5868--5869
 []\TU/brill(0)/m/n/10 Найдите имена всех персонажей из дома (\TU/lmtt/m/n/10 Al
 legiances\TU/brill(0)/m/n/10 ) \TU/lmtt/m/n/10 "Tyrell" \TU/brill(0)/m/n/10 и
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5902--5902
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5908--5908
 []\TU/lmtt/m/n/10 ##     Death.Chapter Book.Intro.Chapter Gender Nobility GoT C
 oK SoS FfC DwD[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5902--5902
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5908--5908
 []\TU/lmtt/m/n/10 ## 58             NA                 11      0        1   0  
  1   0   1   1[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5902--5902
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5908--5908
 []\TU/lmtt/m/n/10 ## 248            NA                 29      0        0   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5902--5902
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5908--5908
 []\TU/lmtt/m/n/10 ## 313            NA                  1      0        1   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5902--5902
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5908--5908
 []\TU/lmtt/m/n/10 ## 319            NA                  1      0        1   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5902--5902
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5908--5908
 []\TU/lmtt/m/n/10 ## 806            NA                 11      0        0   0  
  0   0   1   0[] 
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 5927--5928
+Underfull \hbox (badness 2065) in paragraph at lines 5933--5934
 []\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
 онажей
  []
 
 [131]
-Underfull \hbox (badness 2065) in paragraph at lines 5937--5938
+Underfull \hbox (badness 2065) in paragraph at lines 5943--5944
 []\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
 онажей
  []
@@ -2847,13 +2856,13 @@ Underfull \hbox (badness 2065) in paragraph at lines 5937--5938
 [132]
 Глава 12.
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6012--6012
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6018--6018
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6028--6028
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6034--6034
 []\TU/lmtt/m/n/10 ##  [1] 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3
   2  1[] 
  []
@@ -2861,13 +2870,13 @@ Overfull \hbox (6.75pt too wide) in paragraph at lines 6028--6028
 [133
 
 ]
-Overfull \hbox (54.0pt too wide) in paragraph at lines 6045--6045
+Overfull \hbox (54.0pt too wide) in paragraph at lines 6051--6051
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20 19 18 17[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 6078--6078
+Overfull \hbox (59.25pt too wide) in paragraph at lines 6084--6084
 []\TU/lmtt/m/n/10 ##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7
  7 8 8 8 8 8 8 8[] 
  []
@@ -2900,31 +2909,31 @@ Missing character: There is no т in font [lmmono10-regular]:!
 Missing character: There is no о in font [lmmono10-regular]:!
 Missing character: There is no р in font [lmmono10-regular]:!
 [134] [135]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6263--6263
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6269--6269
 []\TU/lmtt/m/n/10 ##  [1]  0  2  0  4  0  6  0  8  0 10  0 12  0 14  0 16  0 18
   0 20[] 
  []
 
 [136]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 6371--6371
+Overfull \hbox (59.25pt too wide) in paragraph at lines 6377--6377
 []\TU/lmtt/m/n/10 ##  [1]  9.000000  2.236068  4.000000  1.000000 64.000000  2.
 000000 81.000000[] 
  []
 
 [137]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6455--6455
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6461--6461
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
 
 [138]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6544--6544
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6550--6550
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6544--6544
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6550--6550
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
@@ -2934,68 +2943,68 @@ Missing character: There is no Е in font [lmmono10-italic]:!
 Missing character: There is no щ in font [lmmono10-italic]:!
 Missing character: There is no е in font [lmmono10-italic]:!
 [141]
-Underfull \hbox (badness 2384) in paragraph at lines 6771--6772
+Underfull \hbox (badness 2384) in paragraph at lines 6777--6778
 []\TU/brill(0)/m/n/10 Найдите имена всех персонажей из дома (\TU/lmtt/m/n/10 Al
 legiances\TU/brill(0)/m/n/10 ) \TU/lmtt/m/n/10 "Tyrell" \TU/brill(0)/m/n/10 и
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6824--6824
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6830--6830
 []\TU/lmtt/m/n/10 ##     Death.Chapter Book.Intro.Chapter Gender Nobility GoT C
 oK SoS FfC DwD[] 
  []
 
 [142]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6824--6824
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6830--6830
 []\TU/lmtt/m/n/10 ## 58             NA                 11      0        1   0  
  1   0   1   1[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6824--6824
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6830--6830
 []\TU/lmtt/m/n/10 ## 248            NA                 29      0        0   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6824--6824
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6830--6830
 []\TU/lmtt/m/n/10 ## 313            NA                  1      0        1   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6824--6824
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6830--6830
 []\TU/lmtt/m/n/10 ## 319            NA                  1      0        1   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6824--6824
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6830--6830
 []\TU/lmtt/m/n/10 ## 806            NA                 11      0        0   0  
  0   0   1   0[] 
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 6861--6862
+Underfull \hbox (badness 2065) in paragraph at lines 6867--6868
 []\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
 онажей
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 6877--6878
+Underfull \hbox (badness 2065) in paragraph at lines 6883--6884
 []\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
 онажей
  []
 
 [143] (./DS_for_DH.bbl [144])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6915.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6921.
 [145
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 6915.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 6921.
 (./DS_for_DH.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 6915.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6915.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 6921.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6921.
 
 Package rerunfilecheck Info: File `DS_for_DH.out' has not changed.
 (rerunfilecheck)             Checksum: 9A72B7972D31E6D0E4771DC1D4F2D44E.
