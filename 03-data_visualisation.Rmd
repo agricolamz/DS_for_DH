@@ -79,13 +79,13 @@ datasaurus %>%
 ### Диаграмма рассеяния (Scaterplot)
 
 * ggplot2
-```{r}
+```{r, cache=TRUE}
 ggplot(data = diamonds, aes(carat, price)) +
   geom_point()
 ```
 
 * dplyr, ggplot2
-```{r}
+```{r, cache=TRUE}
 diamonds %>%
   ggplot(aes(carat, price))+
   geom_point()
@@ -93,14 +93,14 @@ diamonds %>%
 
 ### Слои
 
-```{r}
+```{r, cache=TRUE}
 diamonds %>%
   ggplot(aes(carat, price))+
   geom_point()+
   geom_smooth()
 ```
 
-```{r}
+```{r, cache=TRUE}
 diamonds %>%
   ggplot(aes(carat, price))+
   geom_smooth()+
@@ -110,31 +110,31 @@ diamonds %>%
 
 ### `aes()`
 
-```{r}
+```{r, cache=TRUE}
 diamonds %>%
   ggplot(aes(carat, price, color = cut))+
   geom_point()
 ```
 
-```{r}
+```{r, cache=TRUE}
 diamonds %>%
   ggplot(aes(carat, price))+
   geom_point(color = "green")
 ```
 
-```{r}
+```{r, cache=TRUE}
 diamonds %>%
   ggplot(aes(carat, price))+
   geom_point(aes(color = cut))
 ```
 
-```{r}
+```{r, cache=TRUE}
 diamonds %>%
   ggplot(aes(carat, price, shape = cut))+
   geom_point()
 ```
 
-```{r}
+```{r, cache=TRUE}
 diamonds %>%
   ggplot(aes(carat, price, label = color))+
   geom_text()
@@ -175,7 +175,7 @@ diamonds %>%
 
 ### Оформление
 
-```{r}
+```{r, cache=TRUE}
 diamonds %>%
   ggplot(aes(carat, price, color = cut))+
   geom_point() + 
@@ -215,7 +215,7 @@ freqdict %>%
 
 ### `annotate()`
 Функция `annotate` добавляет `geom` к графику.
-```{r}
+```{r, cache=TRUE}
 diamonds %>%
   ggplot(aes(carat, price, color = cut))+
   geom_point()+
@@ -517,13 +517,12 @@ iris %>%
   geom_density_ridges(alpha = 0.6) # значение прозрачности изменяется от 0 до 1
 ```
 
-
 ```{block, type = "rmdtask"}
-В длинный список "2015 Kantar Information is Beautiful Awards" попала [визуализация Perceptions of Probability](https://www.informationisbeautifulawards.com/showcase/818-perceptions-of-probability), сделанная пользователем [zonination](https://github.com/zonination) в `ggplot2`. Попробуйте воспроизвести ее с этими данными.
+В длинный список "2015 Kantar Information is Beautiful Awards" попала [визуализация Perceptions of Probability](https://www.informationisbeautifulawards.com/showcase/818-perceptions-of-probability), сделанная пользователем [zonination](https://github.com/zonination) в `ggplot2`. Попробуйте воспроизвести ее [с этими данными](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/perceptions_of_probability.csv).
 ```
 
-```{r, echo=FALSE}
-df %>% 
+```{r, echo=FALSE, message=FALSE}
+read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/perceptions_of_probability.csv") %>% 
   pivot_longer(names_to = "word", values_to = "assigned probability", `Almost Certainly`:`Chances Are Slight`) %>% 
   group_by(word) %>% 
   mutate(mean = mean(`assigned probability`)) %>% 
@@ -534,54 +533,109 @@ df %>%
   labs(y = "")
 ```
 
-<details> <summary> подсказки </summary>
+<details> <summary> 📋 список подсказок ➡ </summary> 
 
-<details> <summary> как преобразовать в нужный формат? </summary>
-Я делал это при помощи функции `pivot_longer()`.
+<details> <summary> 👁 как преобразовать в нужный формат? ➡ </summary>
+Я делал это при помощи функции `pivot_longer()`. <br>
 </details>
 
-<details> <summary> не получается обратиться к колонкам </summary>
-Да, если в названиях столбцов есть пробел или цифры, то к ним можно обратиться, воспользовавшись обратынми ковычками **`**. Например:
-```
-`Chances Are Slight`
-```
-</details>
+<details> <summary> 👁 не получается обратиться к колонкам ➡ </summary>
+Да, если в названиях столбцов есть пробел или цифры, то к ним можно обратиться, воспользовавшись обратынми ковычками **`**. <br>
+</details> 
 
-<details> <summary> получается, но порядок неправильный... </summary>
-Ага, мы обсуждали факторы. Придется создать переменную, которая посчитает среднее или медиану по каждому из слов, а дальше воспользуйтесь функцией `reorder()`.
-</details>
+<details> <summary> 👁 получается, но порядок неправильный... ➡ </summary>
+Ага, мы обсуждали факторы. Придется создать переменную, которая посчитает среднее или медиану по каждому из слов, а дальше воспользуйтесь функцией `reorder()`. <br>
+</details> 
 
-<details> <summary> R не дает изменить группирующую переменную </summary>
+<details> <summary> 👁 R не дает изменить группирующую переменную ➡ </summary>
 Да, группирующие переменные изменять нельзя. Но можно использовать функцию `ungroup()`, которая снимает все группировки.
-</details>
+<br></details>
 
-<details> <summary> а как убрать легенду? </summary>
+<details> <summary> 👁 а как убрать легенду? ➡ </summary>
 Легенду можно убрать добавив `show.legend = FALSE` в соответствующий `geom_...`.
+<br>
+</details>
 </details>
 
-</details>
+## Точки, джиттер (jitter), вайолинплот (violinplot), ящики с усами (boxplot),
 
-## Точки, джиттер (jitter), ящики с усами (boxplot), (violinplot)
+Вот другие способы показать распределение числовой переменной:
 
 ```{r, cache=TRUE}
-diamonds %>% 
-  ggplot(aes(cut, price))+
+iris %>% 
+  ggplot(aes(Species, Petal.Length))+
   geom_point()
 
-diamonds %>% 
-  ggplot(aes(cut, price))+
+iris %>% 
+  ggplot(aes(Species, Petal.Length))+
   geom_jitter()
 
-diamonds %>% 
-  ggplot(aes(cut, price))+
-  geom_boxplot()
+iris %>% 
+  ggplot(aes(Species, Petal.Length))+
+  geom_jitter(width = 0.3)
+
+library("ggbeeswarm")
+iris %>% 
+  ggplot(aes(Species, Petal.Length))+
+  geom_quasirandom()
 
 diamonds %>% 
   ggplot(aes(cut, price))+
   geom_violin()
+
+diamonds %>% 
+  ggplot(aes(cut, price))+
+  geom_boxplot()
 ```
 
+![](images/boxplot.png)
+
 ## Фасетизация
+Достаточно мощным инструментом анализа данных является фасетизация, которая позволяет разбивать графики на основе какой-то переменной.
+
+```{r, cache=TRUE}
+diamonds %>% 
+  ggplot(aes(carat, price))+
+  geom_point(size = 0.3)+
+  facet_wrap(~cut)
+```
+При этом иногда так бывает, что наличие какой-то одного значение в одном из фасетов, заставляет иметь одну и ту же шкалу для всех остальных. Это можно изменить при помощи аргумента `scales`:
+
+```{r, cache=TRUE}
+diamonds %>% 
+  ggplot(aes(carat, price))+
+  geom_point(size = 0.3)+
+  facet_wrap(~cut, scales = "free")
+```
+
+Кроме того, можно добавлять еще аргументы:
+
+```{r, cache=TRUE}
+diamonds %>% 
+  ggplot(aes(carat, price))+
+  geom_point(size = 0.3)+
+  facet_wrap(~cut+color, scales = "free")
+```
+
+Кроме того можно создавать сетки переменных используя geom_grid(), они занимают меньше места, чем `facet_wrap()`:
+
+```{r, cache=TRUE}
+diamonds %>% 
+  ggplot(aes(carat, price))+
+  geom_point(size = 0.3)+
+  facet_grid(cut~color, scales = "free")
+```
+
+Кроме того `facet_grid()` позволяет делать обощающие поля, где представлены все данные по какой-то строчке или столбцу:
+
+
+```{r, cache=TRUE}
+diamonds %>% 
+  ggplot(aes(carat, price))+
+  geom_point(size = 0.3)+
+  facet_grid(cut~color, scales = "free", margins = TRUE)
+```
+
 
 ## Визуализация комбинаций признаков
 ### Потоковая Диаграмма (Sankey diagram)

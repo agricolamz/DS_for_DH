@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  11 OCT 2019 13:17
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  17 OCT 2019 17:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -921,15 +921,15 @@ LaTeX Font Info:    Font shape `TU/brill(0)/bx/n' will be
 (Font)              scaled to size 15.28658pt on input line 226.
 [7]
 LaTeX Font Info:    Font shape `TU/brill(0)/m/n' will be
-(Font)              scaled to size 7.44936pt on input line 291.
+(Font)              scaled to size 7.44936pt on input line 295.
 LaTeX Font Info:    Font shape `TU/brill(0)/m/n' will be
-(Font)              scaled to size 8.51355pt on input line 291.
+(Font)              scaled to size 8.51355pt on input line 295.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 291.
+(Font)              <8> on input line 295.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 291.
+(Font)              <6> on input line 295.
 LaTeX Font Info:    Font shape `TU/brill(0)/m/n' will be
-(Font)              scaled to size 6.38516pt on input line 291.
+(Font)              scaled to size 6.38516pt on input line 295.
 [8]
 File: images/01_01_rstudio.png Graphic file (type bmp)
 <images/01_01_rstudio.png>
@@ -938,7 +938,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [9]
 LaTeX Font Info:    Font shape `TU/brill(0)/bx/n' will be
-(Font)              scaled to size 12.73883pt on input line 378.
+(Font)              scaled to size 12.73883pt on input line 382.
 [10]
 File: images/ThePracticalDev_2016-Apr-13.jpg Graphic file (type bmp)
 <images/ThePracticalDev_2016-Apr-13.jpg>
@@ -958,7 +958,7 @@ Underfull \vbox (badness 2096) has occurred while \output is active []
 File: images/WaCM5x3mvQM.jpg Graphic file (type bmp)
 <images/WaCM5x3mvQM.jpg>
 [17]
-Overfull \hbox (142.60452pt too wide) in paragraph at lines 768--768
+Overfull \hbox (142.60452pt too wide) in paragraph at lines 772--772
 [][][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][]
 [][][][] [] [][][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -986,7 +986,7 @@ Missing character: There is no в in font [lmmono10-regular]:!
 Missing character: There is no е in font [lmmono10-regular]:!
 Missing character: There is no т in font [lmmono10-regular]:!
 [18]
-Overfull \hbox (33.0pt too wide) in paragraph at lines 850--850
+Overfull \hbox (33.0pt too wide) in paragraph at lines 854--854
 []\TU/lmtt/m/n/10 ## Error in TRUE <- FALSE: invalid (do_set) left-hand side to
  assignment[] 
  []
@@ -1062,32 +1062,32 @@ Missing character: There is no т in font [lmmono10-regular]:!
 Missing character: There is no р in font [lmmono10-regular]:!
 Missing character: There is no и in font [lmmono10-regular]:!
 [24]
-Overfull \hbox (22.5pt too wide) in paragraph at lines 1282--1282
+Overfull \hbox (22.5pt too wide) in paragraph at lines 1286--1286
 []\TU/lmtt/m/n/10 ##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490
  2.645751[] 
  []
 
 [25]
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1325--1325
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1329--1329
 []\TU/lmtt/m/n/10 ## Warning in n + c(3, 4, 5): longer object length is not a m
 ultiple of[] 
  []
 
 
-Overfull \hbox (25.4085pt too wide) in paragraph at lines 1331--1331
+Overfull \hbox (25.4085pt too wide) in paragraph at lines 1335--1335
 [][][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][]
 [][][][] [] [][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][]$[]| 
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 1338--1339
+Underfull \hbox (badness 3148) in paragraph at lines 1342--1343
 []\TU/brill(0)/m/n/10 Речь пойдет об \TU/brill(0)/bx/n/10 индексировании \TU/br
 ill(0)/m/n/10 векторов. Задача, которую Вам придется
  []
 
 
-Underfull \hbox (badness 7869) in paragraph at lines 1364--1365
+Underfull \hbox (badness 7869) in paragraph at lines 1368--1369
 []\TU/brill(0)/m/n/10 Если вы знакомы с другими языками программирования (не
  []
 
@@ -1102,19 +1102,19 @@ Missing character: There is no м in font [lmmono10-italic]:!
 Missing character: There is no о in font [lmmono10-italic]:!
 Missing character: There is no е in font [lmmono10-italic]:!
 [27]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 1506--1506
+Overfull \hbox (6.75pt too wide) in paragraph at lines 1510--1510
 []\TU/lmtt/m/n/10 ##  [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE
   TRUE[] 
  []
 
 [28] [29]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 1621--1621
+Overfull \hbox (6.75pt too wide) in paragraph at lines 1625--1625
 []\TU/lmtt/m/n/10 ##  [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
  FALSE[] 
  []
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 1672--1673
+Underfull \hbox (badness 1472) in paragraph at lines 1676--1677
 \TU/brill(0)/m/n/10 еще \TU/lmtt/m/n/10 NaN \TU/brill(0)/m/n/10 — это разные ве
 щи. \TU/lmtt/m/n/10 NaN \TU/brill(0)/m/n/10 расшифровывается как Not a
  []
@@ -1133,7 +1133,7 @@ FLT;mapping=tex-text;!
 Missing character: There is no ⚒ in font [font/brill]/OT:script=latn;language=D
 FLT;mapping=tex-text;!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1694--1695
+Underfull \hbox (badness 10000) in paragraph at lines 1698--1699
 []\TU/brill(0)/m/n/10 — 🔬🖤Lauren M. Seyler, Ph.D.❤️⚒ href=“[]$[][][][][] [] [] 
 [] [][][][][][][] [] [][][] [] [][][][][][][][][][][] []
  []
@@ -1171,13 +1171,13 @@ Missing character: There is no п in font [lmmono10-regular]:!
 Missing character: There is no а in font [lmmono10-regular]:!
 Missing character: There is no м in font [lmmono10-regular]:!
 [36]
-Overfull \hbox (4.18764pt too wide) in paragraph at lines 1997--1998
+Overfull \hbox (4.18764pt too wide) in paragraph at lines 2001--2002
 \TU/brill(0)/m/n/10 Итак, мы перешли к самому главному. Самому-самому. Датафрей
 мы (\TU/brill(0)/bx/n/10 data.frames\TU/brill(0)/m/n/10 ).
  []
 
 [37]
-Underfull \hbox (badness 7221) in paragraph at lines 2047--2048
+Underfull \hbox (badness 7221) in paragraph at lines 2051--2052
 []\TU/brill(0)/m/n/10 Используя оператор \TU/lmtt/m/n/10 $ \TU/brill(0)/m/n/10 
 и присваивание можно создавать новые колонки
  []
@@ -1196,217 +1196,217 @@ Missing character: There is no а in font [lmmono10-italic]:!
 Missing character: There is no л in font [lmmono10-italic]:!
 Missing character: There is no и in font [lmmono10-italic]:!
 [38] [39]
-Underfull \hbox (badness 10000) in paragraph at lines 2142--2142
+Underfull \hbox (badness 10000) in paragraph at lines 2146--2146
 [][][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][][][][] [] []
 [][] [] [][][][][][][][][][] [] [][][][][] [] [][][][][][] [] [][][][] []
  []
 
 [40]
-Underfull \hbox (badness 2495) in paragraph at lines 2228--2229
+Underfull \hbox (badness 2495) in paragraph at lines 2232--2233
 []\TU/brill(0)/m/n/10 Каждый Магомет получает по своей горе: использование прое
 ктов в
  []
 
 [41]
-Underfull \hbox (badness 3579) in paragraph at lines 2242--2243
+Underfull \hbox (badness 3579) in paragraph at lines 2246--2247
 []\TU/brill(0)/m/n/10 Для чтения данных из текстового файла есть довольно удобн
 ая функция
  []
 
 
-Underfull \hbox (badness 1400) in paragraph at lines 2242--2243
+Underfull \hbox (badness 1400) in paragraph at lines 2246--2247
 \TU/lmtt/m/n/10 read.table()\TU/brill(0)/m/n/10 . Почитайте хэлп по ней и ужасн
 итесь: столько разных пара-
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 2242--2243
+Underfull \hbox (badness 1038) in paragraph at lines 2246--2247
 \TU/brill(0)/m/n/10 (Значения, Разделенные Запятыми). Это просто текстовый файл
 , в котором
  []
 
 [42] [43]
-Overfull \hbox (237.75pt too wide) in paragraph at lines 2310--2310
+Overfull \hbox (237.75pt too wide) in paragraph at lines 2314--2314
 []\TU/lmtt/m/n/10 ##  $ Name              : chr  "Addam Marbrand" "Aegon Frey (
 Jinglebell)" "Aegon Targaryen" "Adrack Humble" ...[] 
  []
 
 
-Overfull \hbox (111.75pt too wide) in paragraph at lines 2310--2310
+Overfull \hbox (111.75pt too wide) in paragraph at lines 2314--2314
 []\TU/lmtt/m/n/10 ##  $ Allegiances       : chr  "Lannister" "None" "House Targ
 aryen" "House Greyjoy" ...[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 2310--2310
+Overfull \hbox (12.0pt too wide) in paragraph at lines 2314--2314
 []\TU/lmtt/m/n/10 ##  $ Death.Year        : int  NA 299 NA 300 NA NA 300 300 NA
  NA ...[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ##                      Name     Allegiances Death.Year Book.
 of.Death[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ## 1          Addam Marbrand       Lannister         NA      
       NA[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ## 2 Aegon Frey (Jinglebell)            None        299      
        3[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ## 3         Aegon Targaryen House Targaryen         NA      
       NA[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ## 4           Adrack Humble   House Greyjoy        300      
        5[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ## 5          Aemon Costayne       Lannister         NA      
       NA[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ## 6         Aemon Estermont       Baratheon         NA      
       NA[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ##   Death.Chapter Book.Intro.Chapter Gender Nobility GoT CoK
  SoS FfC DwD[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ## 1            NA                 56      1        1   1   1
    1   1   0[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ## 2            51                 49      1        1   0   0
    1   0   0[] 
  []
 
 [44]
-Overfull \hbox (38.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ## 3            NA                  5      1        1   0   0
    0   0   1[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ## 4            20                 20      1        1   0   0
    0   0   1[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ## 5            NA                 NA      1        1   0   0
    1   0   0[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2343--2343
 []\TU/lmtt/m/n/10 ## 6            NA                 NA      1        1   0   1
    1   0   0[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2365--2365
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2369--2369
 []\TU/lmtt/m/n/10 ##           Arryn       Baratheon         Greyjoy     House 
 Arryn[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2365--2365
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2369--2369
 []\TU/lmtt/m/n/10 ##              23              56              51           
     7[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2365--2365
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2369--2369
 []\TU/lmtt/m/n/10 ## House Baratheon   House Greyjoy House Lannister   House Ma
 rtell[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2365--2365
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2369--2369
 []\TU/lmtt/m/n/10 ##               8              24              21           
    12[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2365--2365
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2369--2369
 []\TU/lmtt/m/n/10 ##     House Stark House Targaryen     House Tully    House T
 yrell[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2365--2365
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2369--2369
 []\TU/lmtt/m/n/10 ##              35              19               8           
    11[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2365--2365
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2369--2369
 []\TU/lmtt/m/n/10 ##       Lannister         Martell   Night[]s Watch          
   None[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2365--2365
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2369--2369
 []\TU/lmtt/m/n/10 ##              81              25             116           
   253[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2365--2365
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2369--2369
 []\TU/lmtt/m/n/10 ##           Stark       Targaryen           Tully          T
 yrell[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2365--2365
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2369--2369
 []\TU/lmtt/m/n/10 ##              73              17              22           
    15[] 
  []
 
 [45]
-Underfull \hbox (badness 2903) in paragraph at lines 2404--2405
+Underfull \hbox (badness 2903) in paragraph at lines 2408--2409
 \TU/brill(0)/m/n/10 Как мы обсуждали на прошлом занятии, мы можем сабсеттить (в
 ыделять
  []
 
 
-Underfull \hbox (badness 3118) in paragraph at lines 2404--2405
+Underfull \hbox (badness 3118) in paragraph at lines 2408--2409
 \TU/brill(0)/m/n/10 часть датафрейма) датафрейм, обращаясь к нему и как к матри
 це: \TU/brill(0)/m/it/10 дата-
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 2443--2443
+Overfull \hbox (12.0pt too wide) in paragraph at lines 2447--2447
 []\TU/lmtt/m/n/10 ## [1] "Mance Rayder"    "Mandon Moore"    "Maric Seaworth"  
 "Marei"[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 2443--2443
+Overfull \hbox (48.75pt too wide) in paragraph at lines 2447--2447
 []\TU/lmtt/m/n/10 ## [5] "Margaery Tyrell" "Marillion"       "Maris"           
 "Marissa Frey"[] 
  []
@@ -1460,151 +1460,151 @@ Missing character: There is no щ in font [lmmono10-italic]:!
 Missing character: There is no ь in font [lmmono10-italic]:!
 Missing character: There is no ю in font [lmmono10-italic]:!
 [47]
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2529--2529
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2533--2533
 []\TU/lmtt/m/n/10 ##    Book.of.Death Death.Chapter Book.Intro.Chapter Gender N
 obility GoT CoK[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2529--2529
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2533--2533
 []\TU/lmtt/m/n/10 ## 7              4            35                 21      1  
       1   1   0[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2529--2529
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2533--2533
 []\TU/lmtt/m/n/10 ## 10            NA            NA                  0      1  
       0   0   0[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2529--2529
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2533--2533
 []\TU/lmtt/m/n/10 ## 13             5             4                 18      1  
       1   0   1[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2529--2529
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2533--2533
 []\TU/lmtt/m/n/10 ## 16            NA            NA                 26      1  
       0   1   0[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2529--2529
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2533--2533
 []\TU/lmtt/m/n/10 ## 24            NA            NA                 19      1  
       0   1   1[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2529--2529
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2533--2533
 []\TU/lmtt/m/n/10 ## 49            NA            NA                 75      1  
       0   0   0[] 
  []
 
 
-Underfull \hbox (badness 1259) in paragraph at lines 2542--2543
+Underfull \hbox (badness 1259) in paragraph at lines 2546--2547
 \TU/brill(0)/m/n/10 представителей Ночного Дозора. Это можно сделать, используя
  оператор \TU/lmtt/m/n/10 |
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2573--2573
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2577--2577
 []\TU/lmtt/m/n/10 ##    Book.of.Death Death.Chapter Book.Intro.Chapter Gender N
 obility GoT CoK[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2573--2573
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2577--2577
 []\TU/lmtt/m/n/10 ## 7              4            35                 21      1  
       1   1   0[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2573--2573
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2577--2577
 []\TU/lmtt/m/n/10 ## 10            NA            NA                  0      1  
       0   0   0[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2573--2573
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2577--2577
 []\TU/lmtt/m/n/10 ## 13             5             4                 18      1  
       1   0   1[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2573--2573
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2577--2577
 []\TU/lmtt/m/n/10 ## 16            NA            NA                 26      1  
       0   1   0[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2573--2573
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2577--2577
 []\TU/lmtt/m/n/10 ## 24            NA            NA                 19      1  
       0   1   1[] 
  []
 
 [48]
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2573--2573
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2577--2577
 []\TU/lmtt/m/n/10 ## 49            NA            NA                 75      1  
       0   0   0[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2620--2620
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2624--2624
 []\TU/lmtt/m/n/10 ##    Book.of.Death Death.Chapter Book.Intro.Chapter Gender N
 obility GoT CoK[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2620--2620
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2624--2624
 []\TU/lmtt/m/n/10 ## 7              4            35                 21      1  
       1   1   0[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2620--2620
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2624--2624
 []\TU/lmtt/m/n/10 ## 10            NA            NA                  0      1  
       0   0   0[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2620--2620
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2624--2624
 []\TU/lmtt/m/n/10 ## 13             5             4                 18      1  
       1   0   1[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2620--2620
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2624--2624
 []\TU/lmtt/m/n/10 ## 16            NA            NA                 26      1  
       0   1   0[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2620--2620
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2624--2624
 []\TU/lmtt/m/n/10 ## 24            NA            NA                 19      1  
       0   1   1[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2620--2620
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2624--2624
 []\TU/lmtt/m/n/10 ## 49            NA            NA                 75      1  
       0   0   0[] 
  []
 
 [49]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 2639--2639
+Overfull \hbox (6.75pt too wide) in paragraph at lines 2643--2643
 []\TU/lmtt/m/n/10 ##          Name Allegiances Death.Year Book.of.Death Death.C
 hapter[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 2639--2639
+Overfull \hbox (6.75pt too wide) in paragraph at lines 2643--2643
 []\TU/lmtt/m/n/10 ## 56 Arya Stark       Stark         NA            NA        
     NA[] 
  []
 
 [50]
-Overfull \hbox (187.08453pt too wide) in paragraph at lines 2660--2660
+Overfull \hbox (187.08453pt too wide) in paragraph at lines 2664--2664
 [][][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][]
 [][][][] [] [][][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -1618,9 +1618,9 @@ File: images/New-Mind-Map.jpg Graphic file (type bmp)
 ]
 Глава 3.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <24.88> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2665.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2669.
 
-Underfull \hbox (badness 1838) in paragraph at lines 2719--2720
+Underfull \hbox (badness 1838) in paragraph at lines 2723--2724
 \TU/brill(0)/m/n/10 Все в R происходит где-то. Нужно загружать файлы с данными,
  нужно их
  []
@@ -1630,9 +1630,9 @@ Underfull \vbox (badness 3815) has occurred while \output is active []
 
 [53]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2722.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2726.
 
-Overfull \hbox (109.12051pt too wide) in paragraph at lines 2726--2726
+Overfull \hbox (109.12051pt too wide) in paragraph at lines 2730--2730
 [][][][]$[][][][][] [] [] [] [][][][][][][][][] [] [][][] [] [][][][][][][][][]
  [] [][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -1640,13 +1640,13 @@ Overfull \hbox (109.12051pt too wide) in paragraph at lines 2726--2726
  []
 
 
-Underfull \hbox (badness 7814) in paragraph at lines 2731--2732
+Underfull \hbox (badness 7814) in paragraph at lines 2735--2736
 \TU/brill(0)/m/n/10 Стандартной функцией для чтения \TU/lmtt/m/n/10 .csv \TU/br
 ill(0)/m/n/10 файлов в R является функция
  []
 
 
-Underfull \hbox (badness 6032) in paragraph at lines 2731--2732
+Underfull \hbox (badness 6032) in paragraph at lines 2735--2736
 \TU/lmtt/m/n/10 read.csv()\TU/brill(0)/m/n/10 , но мы будем использовать функци
 ю \TU/lmtt/m/n/10 read_csv() \TU/brill(0)/m/n/10 из пакета
  []
@@ -1655,7 +1655,7 @@ Underfull \hbox (badness 6032) in paragraph at lines 2731--2732
 File: images/task.png Graphic file (type bmp)
 <images/task.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 2808--2808
+Underfull \hbox (badness 10000) in paragraph at lines 2812--2812
 [][][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][][][][] [] []
 [][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] [] [][][
 ][] []
@@ -1671,96 +1671,96 @@ Missing character: There is no в in font [lmmono10-regular]:!
 Missing character: There is no ʃ in font [lmmono10-regular]:!
 Missing character: There is no γ in font [lmmono10-regular]:!
 [55]
-Underfull \hbox (badness 1122) in paragraph at lines 2884--2885
+Underfull \hbox (badness 1122) in paragraph at lines 2888--2889
 \TU/brill(0)/m/n/10 издания pudding[][][]. Они анализировали ошибки в правописа
 нии при поиске
  []
 
 [56]
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2960--2960
+Overfull \hbox (27.75pt too wide) in paragraph at lines 2964--2964
 []\TU/lmtt/m/n/10 ##    carat cut       color clarity depth table price     x  
    y     z[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2960--2960
+Overfull \hbox (27.75pt too wide) in paragraph at lines 2964--2964
 []\TU/lmtt/m/n/10 ##    <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <
 dbl> <dbl>[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2960--2960
+Overfull \hbox (27.75pt too wide) in paragraph at lines 2964--2964
 []\TU/lmtt/m/n/10 ##  1 0.23  Ideal     E     SI2      61.5    55   326  3.95  
 3.98  2.43[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2960--2960
+Overfull \hbox (27.75pt too wide) in paragraph at lines 2964--2964
 []\TU/lmtt/m/n/10 ##  2 0.21  Premium   E     SI1      59.8    61   326  3.89  
 3.84  2.31[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2960--2960
+Overfull \hbox (27.75pt too wide) in paragraph at lines 2964--2964
 []\TU/lmtt/m/n/10 ##  3 0.23  Good      E     VS1      56.9    65   327  4.05  
 4.07  2.31[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2960--2960
+Overfull \hbox (27.75pt too wide) in paragraph at lines 2964--2964
 []\TU/lmtt/m/n/10 ##  4 0.290 Premium   I     VS2      62.4    58   334  4.2   
 4.23  2.63[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2960--2960
+Overfull \hbox (27.75pt too wide) in paragraph at lines 2964--2964
 []\TU/lmtt/m/n/10 ##  5 0.31  Good      J     SI2      63.3    58   335  4.34  
 4.35  2.75[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2960--2960
+Overfull \hbox (27.75pt too wide) in paragraph at lines 2964--2964
 []\TU/lmtt/m/n/10 ##  6 0.24  Very Good J     VVS2     62.8    57   336  3.94  
 3.96  2.48[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2960--2960
+Overfull \hbox (27.75pt too wide) in paragraph at lines 2964--2964
 []\TU/lmtt/m/n/10 ##  7 0.24  Very Good I     VVS1     62.3    57   336  3.95  
 3.98  2.47[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2960--2960
+Overfull \hbox (27.75pt too wide) in paragraph at lines 2964--2964
 []\TU/lmtt/m/n/10 ##  8 0.26  Very Good H     SI1      61.9    55   337  4.07  
 4.11  2.53[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2960--2960
+Overfull \hbox (27.75pt too wide) in paragraph at lines 2964--2964
 []\TU/lmtt/m/n/10 ##  9 0.22  Fair      E     VS2      65.1    61   337  3.87  
 3.78  2.49[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2960--2960
+Overfull \hbox (27.75pt too wide) in paragraph at lines 2964--2964
 []\TU/lmtt/m/n/10 ## 10 0.23  Very Good H     VS1      59.4    61   338  4     
 4.05  2.39[] 
  []
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2969.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2973.
 
 Underfull \vbox (badness 4556) has occurred while \output is active []
 
 [57]
-Overfull \hbox (101.25pt too wide) in paragraph at lines 2997--2997
+Overfull \hbox (101.25pt too wide) in paragraph at lines 3001--3001
 []\TU/lmtt/m/n/10 ## Error in nchar(months): cannot coerce type []closure[] to 
 vector of type []character[][] 
  []
 
 [58] [59]
-Underfull \hbox (badness 10000) in paragraph at lines 3109--3109
+Underfull \hbox (badness 10000) in paragraph at lines 3113--3113
 [][][][]$[][][][][] [] [] [] [][][] [] [][][][][][][] [] [][][] [] [][][][][][]
 [][][][][] [] [][][][][][][] [] [][][][] [] [][] [] [][][][][][][][][][][][][][
 ][][][][][][][][][][][][][] []
@@ -1769,19 +1769,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 3109--3109
 File: images/filter.png Graphic file (type bmp)
 <images/filter.png>
 [60]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 3161--3161
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3165--3165
 []\TU/lmtt/m/n/10 ##  [1] 0.9999951 0.9952926 0.9946649 0.9805088 0.9792468 0.9
 554817 0.9535709[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 3161--3161
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3165--3165
 []\TU/lmtt/m/n/10 ##  [8] 0.9173173 0.9146888 0.8699440 0.8665952 0.8105471 0.8
 064043 0.7375779[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 3161--3161
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3165--3165
 []\TU/lmtt/m/n/10 ## [15] 0.7325114 0.6482029 0.6419646 0.5365662 0.5285977 0.3
 871398 0.3756594[] 
  []
@@ -1802,19 +1802,19 @@ Missing character: There is no ч in font [lmmono10-italic]:!
 Missing character: There is no к in font [lmmono10-italic]:!
 Missing character: There is no а in font [lmmono10-italic]:!
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 3178--3178
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3182--3182
 []\TU/lmtt/m/n/10 ##  [1] 0.9999951 0.9952926 0.9946649 0.9805088 0.9792468 0.9
 554817 0.9535709[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 3178--3178
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3182--3182
 []\TU/lmtt/m/n/10 ##  [8] 0.9173173 0.9146888 0.8699440 0.8665952 0.8105471 0.8
 064043 0.7375779[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 3178--3178
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3182--3182
 []\TU/lmtt/m/n/10 ## [15] 0.7325114 0.6482029 0.6419646 0.5365662 0.5285977 0.3
 871398 0.3756594[] 
  []
@@ -1833,89 +1833,89 @@ File: images/select.png Graphic file (type bmp)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [62]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 3225--3225
+Overfull \hbox (17.25pt too wide) in paragraph at lines 3229--3229
 []\TU/lmtt/m/n/10 ## select: dropped 7 variables (carat, cut, color, clarity, d
 epth, …)[] 
  []
 
 [63] [64]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 3337--3337
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3341--3341
 []\TU/lmtt/m/n/10 ## select: dropped 7 variables (carat, color, clarity, table,
  x, …)[] 
  []
 
 
-Overfull \vbox (1.10423pt too high) detected at line 3390
+Overfull \vbox (1.10423pt too high) detected at line 3394
  []
 
 [65]
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3407--3407
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3411--3411
 []\TU/lmtt/m/n/10 ##    carat cut       color clarity depth table price     x  
    y     z[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3407--3407
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3411--3411
 []\TU/lmtt/m/n/10 ##    <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <
 dbl> <dbl>[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3407--3407
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3411--3411
 []\TU/lmtt/m/n/10 ##  1  5.01 Fair      J     I1       65.5    59 18018 10.7  1
 0.5   6.98[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3407--3407
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3411--3411
 []\TU/lmtt/m/n/10 ##  2  4.5  Fair      J     I1       65.8    58 18531 10.2  1
 0.2   6.72[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3407--3407
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3411--3411
 []\TU/lmtt/m/n/10 ##  3  4.13 Fair      H     I1       64.8    61 17329 10     
 9.85  6.43[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3407--3407
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3411--3411
 []\TU/lmtt/m/n/10 ##  4  4.01 Premium   I     I1       61      61 15223 10.1  1
 0.1   6.17[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3407--3407
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3411--3411
 []\TU/lmtt/m/n/10 ##  5  4.01 Premium   J     I1       62.5    62 15223 10.0   
 9.94  6.24[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3407--3407
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3411--3411
 []\TU/lmtt/m/n/10 ##  6  4    Very Good I     I1       63.3    58 15984 10.0   
 9.94  6.31[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3407--3407
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3411--3411
 []\TU/lmtt/m/n/10 ##  7  3.67 Premium   I     I1       62.4    56 16193  9.86  
 9.81  6.13[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3407--3407
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3411--3411
 []\TU/lmtt/m/n/10 ##  8  3.65 Fair      H     I1       67.1    53 11668  9.53  
 9.48  6.38[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3407--3407
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3411--3411
 []\TU/lmtt/m/n/10 ##  9  3.51 Premium   J     VS2      62.5    59 18701  9.66  
 9.63  6.03[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3407--3407
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3411--3411
 []\TU/lmtt/m/n/10 ## 10  3.5  Ideal     H     I1       62.8    57 12587  9.65  
 9.59  6.03[] 
  []
@@ -1927,7 +1927,7 @@ File: images/task.png Graphic file (type bmp)
 File: images/mutate.png Graphic file (type bmp)
 <images/mutate.png>
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 3526--3526
+Overfull \hbox (54.0pt too wide) in paragraph at lines 3530--3530
 []\TU/lmtt/m/n/10 ## mutate: new variable []misspelling_length[] with 15 unique
  values and 0% NA[] 
  []
@@ -1935,7 +1935,7 @@ Overfull \hbox (54.0pt too wide) in paragraph at lines 3526--3526
 File: images/task.png Graphic file (type bmp)
 <images/task.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 3550--3550
+Underfull \hbox (badness 10000) in paragraph at lines 3554--3554
 [][][][]$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][] [] [][][][] [
 ] [][][] [] [][] [] [][] [] [][] [] [][] [] [][] [] [][] [] [][] [] [][] [] [][
 ] [] [][] [] [][] [] [][][] []
@@ -1947,7 +1947,7 @@ File: images/group_by_s.png Graphic file (type bmp)
 File: images/task.png Graphic file (type bmp)
 <images/task.png>
 [71]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 3776--3776
+Overfull \hbox (48.75pt too wide) in paragraph at lines 3780--3780
 []\TU/lmtt/m/n/10 ## mutate (grouped): new variable []my_mean[] with 15 unique 
 values and 0% NA[] 
  []
@@ -1981,20 +1981,20 @@ File: images/joins.png Graphic file (type bmp)
 File: images/task.png Graphic file (type bmp)
 <images/task.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 4340--4340
+Underfull \hbox (badness 10000) in paragraph at lines 4344--4344
 [][][][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][][][][][][][][][] [] 
 [][] [] [][][] [] [][] [] [][][][] [] [][][][][][] [] [][][][] [] [][][][][][][
 ][][] []
  []
 
 [80]
-Overfull \hbox (54.0pt too wide) in paragraph at lines 4398--4398
+Overfull \hbox (54.0pt too wide) in paragraph at lines 4402--4402
 []\TU/lmtt/m/n/10 ##   id_s1 name_1885 census_1885 name_1895 census_1895 name_1
 926 language_s1[] 
  []
 
 
-Overfull \hbox (22.5pt too wide) in paragraph at lines 4398--4398
+Overfull \hbox (22.5pt too wide) in paragraph at lines 4402--4402
 []\TU/lmtt/m/n/10 ##   <dbl> <chr>           <dbl> <chr>           <dbl> <chr> 
     <chr>[] 
  []
@@ -2122,13 +2122,13 @@ Missing character: There is no д in font [lmmono10-regular]:!
 Missing character: There is no ы in font [lmmono10-regular]:!
 Missing character: There is no х in font [lmmono10-regular]:!
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 4398--4398
+Overfull \hbox (6.75pt too wide) in paragraph at lines 4402--4402
 []\TU/lmtt/m/n/10 ## # ... with 8 more variables: census_1926 <dbl>, name_2010 
 <chr>,[] 
  []
 
 
-Overfull \hbox (22.5pt too wide) in paragraph at lines 4398--4398
+Overfull \hbox (22.5pt too wide) in paragraph at lines 4402--4402
 []\TU/lmtt/m/n/10 ## #   census_2010 <dbl>, name_s2 <chr>, language_s2 <chr>, L
 at <dbl>,[] 
  []
@@ -2140,79 +2140,79 @@ File: images/task.png Graphic file (type bmp)
 File: images/task.png Graphic file (type bmp)
 <images/task.png>
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4432--4432
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4436--4436
 []\TU/lmtt/m/n/10 ##    language_s2 []s_1885 <- sum(~ []s_1895 <- sum(~ []s_192
 6 <- sum(~[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4432--4432
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4436--4436
 []\TU/lmtt/m/n/10 ##    <chr>                  <dbl>            <dbl>          
   <dbl>[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4432--4432
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4436--4436
 []\TU/lmtt/m/n/10 ##  1 Aghul                   6577             6813          
    7886[] 
  []
 
 [81]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4432--4432
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4436--4436
 []\TU/lmtt/m/n/10 ##  2 Akhvakh                 3535             3229          
    2697[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4432--4432
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4436--4436
 []\TU/lmtt/m/n/10 ##  3 Andi                    4600             4543          
    4583[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4432--4432
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4436--4436
 []\TU/lmtt/m/n/10 ##  4 Archi                    804              765          
     126[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4432--4432
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4436--4436
 []\TU/lmtt/m/n/10 ##  5 Avar                  110191           123363          
  103565[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4432--4432
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4436--4436
 []\TU/lmtt/m/n/10 ##  6 Bagvalal                2807             2625          
    3049[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4432--4432
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4436--4436
 []\TU/lmtt/m/n/10 ##  7 Bezhta                  2330             2546          
    1270[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4432--4432
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4436--4436
 []\TU/lmtt/m/n/10 ##  8 Botlikh                 1383             1323          
    1346[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4432--4432
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4436--4436
 []\TU/lmtt/m/n/10 ##  9 Chamalal                3731             3742          
    2714[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4432--4432
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4436--4436
 []\TU/lmtt/m/n/10 ## 10 Chechen                  396              344          
     524[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 4461--4461
+Overfull \hbox (43.5pt too wide) in paragraph at lines 4465--4465
 []\TU/lmtt/m/n/10 ## summarise: now 8 rows and 3 columns, one group variable re
 maining (cyl)[] 
  []
@@ -2226,7 +2226,7 @@ File: DS_for_DH_files/figure-latex/unnamed-chunk-167-1.pdf Graphic file (type p
 df)
 <use DS_for_DH_files/figure-latex/unnamed-chunk-167-1.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 4553--4553
+Underfull \hbox (badness 10000) in paragraph at lines 4557--4557
 [][][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][][][] [] [][]
 [] [] [][][][][] [] [][][][][][][] [] [][][][][] []
  []
@@ -2250,7 +2250,7 @@ df)
 Underfull \vbox (badness 3579) has occurred while \output is active []
 
 [87]
-Overfull \hbox (38.25pt too wide) in paragraph at lines 4668--4668
+Overfull \hbox (38.25pt too wide) in paragraph at lines 4672--4672
 []\TU/lmtt/m/n/10 ## []geom_smooth()[] using method = []gam[] and formula []y ~
  s(x, bs = "cs")[][] 
  []
@@ -2259,7 +2259,7 @@ File: DS_for_DH_files/figure-latex/unnamed-chunk-173-1.pdf Graphic file (type p
 df)
 <use DS_for_DH_files/figure-latex/unnamed-chunk-173-1.pdf>
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 4683--4683
+Overfull \hbox (38.25pt too wide) in paragraph at lines 4687--4687
 []\TU/lmtt/m/n/10 ## []geom_smooth()[] using method = []gam[] and formula []y ~
  s(x, bs = "cs")[][] 
  []
@@ -2532,7 +2532,7 @@ df)
 File: images/task.png Graphic file (type bmp)
 <images/task.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 4880--4880
+Underfull \hbox (badness 10000) in paragraph at lines 4884--4884
 [][][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][][][][] [] []
 [][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] [] [][][
 ][] []
@@ -2560,34 +2560,41 @@ File: DS_for_DH_files/figure-latex/unnamed-chunk-192-1.pdf Graphic file (type p
 df)
 <use DS_for_DH_files/figure-latex/unnamed-chunk-192-1.pdf>
 [100]
-Overfull \hbox (1.5pt too wide) in paragraph at lines 5001--5001
+Overfull \hbox (1.5pt too wide) in paragraph at lines 5005--5005
 []\TU/lmtt/m/n/10 ## [1] deschanel deschanel deschanel deschanel deschanel desc
 hanel[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 5001--5001
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5005--5005
 []\TU/lmtt/m/n/10 ## 15 Levels: deschanel galifianakis johansson kaepernick ...
  shyamalan[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 5026--5026
+Overfull \hbox (1.5pt too wide) in paragraph at lines 5030--5030
 []\TU/lmtt/m/n/10 ## [1] shyamalan shyamalan shyamalan shyamalan shyamalan shya
 malan[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 5026--5026
+Overfull \hbox (38.25pt too wide) in paragraph at lines 5030--5030
 []\TU/lmtt/m/n/10 ## 15 Levels: shyamalan poehler picabo palahniuk morissette .
 .. deschanel[] 
  []
 
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 5058--5058
+[]\TU/lmtt/m/n/10 ## mutate: converted []correct[] from character to factor (0 
+new NA)[] 
+ []
+
+[101]
 File: DS_for_DH_files/figure-latex/unnamed-chunk-193-1.pdf Graphic file (type p
 df)
 <use DS_for_DH_files/figure-latex/unnamed-chunk-193-1.pdf>
-[101]
-Underfull \hbox (badness 6284) in paragraph at lines 5054--5055
+
+Underfull \hbox (badness 6284) in paragraph at lines 5062--5063
 []\TU/brill(0)/m/n/10 Для работы с факторами удобно использовать пакет \TU/lmtt
 /m/n/10 forcats \TU/brill(0)/m/n/10 (входит в
  []
@@ -2606,7 +2613,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/task.png Graphic file (type bmp)
 <images/task.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 5116--5116
+Underfull \hbox (badness 10000) in paragraph at lines 5136--5136
 [][][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][][][][] [] []
 [][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] [] [][][
 ][] [] [][] []
@@ -2618,7 +2625,7 @@ df)
 File: images/task.png Graphic file (type bmp)
 <images/task.png>
 
-Overfull \hbox (193.59253pt too wide) in paragraph at lines 5126--5126
+Overfull \hbox (193.59253pt too wide) in paragraph at lines 5146--5146
 [][][][]$[][][][][] [] [] [] [][][][][][] [] [][] [] [][][][][] [] [][][][] [] 
 [][] [] [][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -2635,108 +2642,412 @@ df)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [105]
+Overfull \hbox (33.0pt too wide) in paragraph at lines 5173--5173
+[]\TU/lmtt/m/n/10 ## []stat_bindot()[] using []bins = 30[]. Pick better value w
+ith []binwidth[].[] 
+ []
+
 File: DS_for_DH_files/figure-latex/unnamed-chunk-200-1.pdf Graphic file (type p
 df)
 <use DS_for_DH_files/figure-latex/unnamed-chunk-200-1.pdf>
 
-Underfull \vbox (badness 1946) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [106]
-File: DS_for_DH_files/figure-latex/unnamed-chunk-200-2.pdf Graphic file (type p
-df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-200-2.pdf>
-File: DS_for_DH_files/figure-latex/unnamed-chunk-200-3.pdf Graphic file (type p
-df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-200-3.pdf>
-[107]
-File: DS_for_DH_files/figure-latex/unnamed-chunk-200-4.pdf Graphic file (type p
-df)
-<use DS_for_DH_files/figure-latex/unnamed-chunk-200-4.pdf>
-[108]
+Overfull \hbox (33.0pt too wide) in paragraph at lines 5190--5190
+[]\TU/lmtt/m/n/10 ## []stat_bindot()[] using []bins = 30[]. Pick better value w
+ith []binwidth[].[] 
+ []
+
 File: DS_for_DH_files/figure-latex/unnamed-chunk-201-1.pdf Graphic file (type p
 df)
 <use DS_for_DH_files/figure-latex/unnamed-chunk-201-1.pdf>
+[107]
+Missing character: There is no ч in font [lmmono10-italic]:!
+Missing character: There is no т in font [lmmono10-italic]:!
+Missing character: There is no о in font [lmmono10-italic]:!
+Missing character: There is no б in font [lmmono10-italic]:!
+Missing character: There is no ы in font [lmmono10-italic]:!
+Missing character: There is no у in font [lmmono10-italic]:!
+Missing character: There is no б in font [lmmono10-italic]:!
+Missing character: There is no р in font [lmmono10-italic]:!
+Missing character: There is no а in font [lmmono10-italic]:!
+Missing character: There is no т in font [lmmono10-italic]:!
+Missing character: There is no ь in font [lmmono10-italic]:!
+Missing character: There is no о in font [lmmono10-italic]:!
+Missing character: There is no с in font [lmmono10-italic]:!
+Missing character: There is no ь in font [lmmono10-italic]:!
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 5213--5213
+[]\TU/lmtt/m/n/10 ## []stat_bindot()[] using []bins = 30[]. Pick better value w
+ith []binwidth[].[] 
+ []
+
 File: DS_for_DH_files/figure-latex/unnamed-chunk-202-1.pdf Graphic file (type p
 df)
 <use DS_for_DH_files/figure-latex/unnamed-chunk-202-1.pdf>
-[109]
-Overfull \hbox (337.5pt too wide) in paragraph at lines 5291--5291
-[]\TU/lmtt/m/n/10 ##  $ Name       : Factor w/ 3883 levels "...And Justice for 
-All (1979)",..: 3576 1860 1485 3718 1179 1564 3012 3551 3364 1426 ...[] 
- []
+Missing character: There is no ч in font [lmmono10-italic]:!
+Missing character: There is no т in font [lmmono10-italic]:!
+Missing character: There is no о in font [lmmono10-italic]:!
+Missing character: There is no б in font [lmmono10-italic]:!
+Missing character: There is no ы in font [lmmono10-italic]:!
+Missing character: There is no у in font [lmmono10-italic]:!
+Missing character: There is no б in font [lmmono10-italic]:!
+Missing character: There is no р in font [lmmono10-italic]:!
+Missing character: There is no а in font [lmmono10-italic]:!
+Missing character: There is no т in font [lmmono10-italic]:!
+Missing character: There is no ь in font [lmmono10-italic]:!
+Missing character: There is no о in font [lmmono10-italic]:!
+Missing character: There is no с in font [lmmono10-italic]:!
+Missing character: There is no ь in font [lmmono10-italic]:!
 
-
-Overfull \hbox (59.25pt too wide) in paragraph at lines 5291--5291
-[]\TU/lmtt/m/n/10 ##  $ ReleaseDate: int  1995 1995 1995 1995 1995 1995 1995 19
-95 1995 1995 ...[] 
- []
-
-[110]
-Overfull \hbox (54.0pt too wide) in paragraph at lines 5291--5291
-[]\TU/lmtt/m/n/10 ##  $ AvgRating  : num  4.15 3.2 3.02 2.73 3.01 3.88 3.41 3.0
-1 2.66 3.54 ...[] 
- []
-
-
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5291--5291
-[]\TU/lmtt/m/n/10 ##  $ Watches    : int  2077 701 478 170 296 940 458 68 102 8
-88 ...[] 
+Overfull \hbox (33.0pt too wide) in paragraph at lines 5234--5234
+[]\TU/lmtt/m/n/10 ## []stat_bindot()[] using []bins = 30[]. Pick better value w
+ith []binwidth[].[] 
  []
 
 File: DS_for_DH_files/figure-latex/unnamed-chunk-203-1.pdf Graphic file (type p
 df)
 <use DS_for_DH_files/figure-latex/unnamed-chunk-203-1.pdf>
+[108]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5248--5248
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
+
+File: DS_for_DH_files/figure-latex/unnamed-chunk-203-2.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-203-2.pdf>
+[109]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5265--5265
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
+
+File: DS_for_DH_files/figure-latex/unnamed-chunk-204-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-204-1.pdf>
+File: DS_for_DH_files/figure-latex/unnamed-chunk-205-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-205-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[111] [112]
-Глава 5.
-[113
+[110]
+File: DS_for_DH_files/figure-latex/unnamed-chunk-205-2.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-205-2.pdf>
+[111]
+File: DS_for_DH_files/figure-latex/unnamed-chunk-206-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-206-1.pdf>
+File: images/task.png Graphic file (type bmp)
+<images/task.png>
+File: DS_for_DH_files/figure-latex/unnamed-chunk-208-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-208-1.pdf>
+[112]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5335--5335
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
 
-] [114
+File: DS_for_DH_files/figure-latex/unnamed-chunk-209-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-209-1.pdf>
+File: DS_for_DH_files/figure-latex/unnamed-chunk-210-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-210-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[113]
+File: DS_for_DH_files/figure-latex/unnamed-chunk-211-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-211-1.pdf>
+[114]
+Missing character: There is no з in font [lmmono10-italic]:!
+Missing character: There is no н in font [lmmono10-italic]:!
+Missing character: There is no а in font [lmmono10-italic]:!
+Missing character: There is no ч in font [lmmono10-italic]:!
+Missing character: There is no е in font [lmmono10-italic]:!
+Missing character: There is no н in font [lmmono10-italic]:!
+Missing character: There is no и in font [lmmono10-italic]:!
+Missing character: There is no е in font [lmmono10-italic]:!
+Missing character: There is no п in font [lmmono10-italic]:!
+Missing character: There is no р in font [lmmono10-italic]:!
+Missing character: There is no о in font [lmmono10-italic]:!
+Missing character: There is no з in font [lmmono10-italic]:!
+Missing character: There is no р in font [lmmono10-italic]:!
+Missing character: There is no а in font [lmmono10-italic]:!
+Missing character: There is no ч in font [lmmono10-italic]:!
+Missing character: There is no н in font [lmmono10-italic]:!
+Missing character: There is no о in font [lmmono10-italic]:!
+Missing character: There is no с in font [lmmono10-italic]:!
+Missing character: There is no т in font [lmmono10-italic]:!
+Missing character: There is no и in font [lmmono10-italic]:!
+Missing character: There is no и in font [lmmono10-italic]:!
+Missing character: There is no з in font [lmmono10-italic]:!
+Missing character: There is no м in font [lmmono10-italic]:!
+Missing character: There is no е in font [lmmono10-italic]:!
+Missing character: There is no н in font [lmmono10-italic]:!
+Missing character: There is no я in font [lmmono10-italic]:!
+Missing character: There is no е in font [lmmono10-italic]:!
+Missing character: There is no т in font [lmmono10-italic]:!
+Missing character: There is no с in font [lmmono10-italic]:!
+Missing character: There is no я in font [lmmono10-italic]:!
+Missing character: There is no о in font [lmmono10-italic]:!
+Missing character: There is no т in font [lmmono10-italic]:!
+Missing character: There is no д in font [lmmono10-italic]:!
+Missing character: There is no о in font [lmmono10-italic]:!
+File: DS_for_DH_files/figure-latex/unnamed-chunk-212-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-212-1.pdf>
+Missing character: There is no з in font [lmmono10-italic]:!
+Missing character: There is no н in font [lmmono10-italic]:!
+Missing character: There is no а in font [lmmono10-italic]:!
+Missing character: There is no ч in font [lmmono10-italic]:!
+Missing character: There is no е in font [lmmono10-italic]:!
+Missing character: There is no н in font [lmmono10-italic]:!
+Missing character: There is no и in font [lmmono10-italic]:!
+Missing character: There is no е in font [lmmono10-italic]:!
+Missing character: There is no п in font [lmmono10-italic]:!
+Missing character: There is no р in font [lmmono10-italic]:!
+Missing character: There is no о in font [lmmono10-italic]:!
+Missing character: There is no з in font [lmmono10-italic]:!
+Missing character: There is no р in font [lmmono10-italic]:!
+Missing character: There is no а in font [lmmono10-italic]:!
+Missing character: There is no ч in font [lmmono10-italic]:!
+Missing character: There is no н in font [lmmono10-italic]:!
+Missing character: There is no о in font [lmmono10-italic]:!
+Missing character: There is no с in font [lmmono10-italic]:!
+Missing character: There is no т in font [lmmono10-italic]:!
+Missing character: There is no и in font [lmmono10-italic]:!
+Missing character: There is no и in font [lmmono10-italic]:!
+Missing character: There is no з in font [lmmono10-italic]:!
+Missing character: There is no м in font [lmmono10-italic]:!
+Missing character: There is no е in font [lmmono10-italic]:!
+Missing character: There is no н in font [lmmono10-italic]:!
+Missing character: There is no я in font [lmmono10-italic]:!
+Missing character: There is no е in font [lmmono10-italic]:!
+Missing character: There is no т in font [lmmono10-italic]:!
+Missing character: There is no с in font [lmmono10-italic]:!
+Missing character: There is no я in font [lmmono10-italic]:!
+Missing character: There is no о in font [lmmono10-italic]:!
+Missing character: There is no т in font [lmmono10-italic]:!
+Missing character: There is no д in font [lmmono10-italic]:!
+Missing character: There is no о in font [lmmono10-italic]:!
+File: DS_for_DH_files/figure-latex/unnamed-chunk-213-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-213-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[115]
+File: images/task.png Graphic file (type bmp)
+<images/task.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 5401--5401
+[][][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][] [] [][][] [] [][][][][][][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5405--5405
+[][][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][][][][] [] []
+[][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] [] [][][
+][] []
+ []
+
+File: DS_for_DH_files/figure-latex/unnamed-chunk-215-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-215-1.pdf>
+Missing character: There is no 📋 in font [font/brill]/OT:script=latn;language=D
+FLT;mapping=tex-text;!
+Missing character: There is no ➡ in font [font/brill]/OT:script=latn;language=D
+FLT;mapping=tex-text;!
+Missing character: There is no 👁 in font [font/brill]/OT:script=latn;language=D
+FLT;mapping=tex-text;!
+Missing character: There is no ➡ in font [font/brill]/OT:script=latn;language=D
+FLT;mapping=tex-text;!
+Missing character: There is no 👁 in font [font/brill]/OT:script=latn;language=D
+FLT;mapping=tex-text;!
+Missing character: There is no ➡ in font [font/brill]/OT:script=latn;language=D
+FLT;mapping=tex-text;!
+[116]
+Missing character: There is no 👁 in font [font/brill]/OT:script=latn;language=D
+FLT;mapping=tex-text;!
+Missing character: There is no ➡ in font [font/brill]/OT:script=latn;language=D
+FLT;mapping=tex-text;!
+Missing character: There is no 👁 in font [font/brill]/OT:script=latn;language=D
+FLT;mapping=tex-text;!
+Missing character: There is no ➡ in font [font/brill]/OT:script=latn;language=D
+FLT;mapping=tex-text;!
+Missing character: There is no 👁 in font [font/brill]/OT:script=latn;language=D
+FLT;mapping=tex-text;!
+Missing character: There is no ➡ in font [font/brill]/OT:script=latn;language=D
+FLT;mapping=tex-text;!
+File: DS_for_DH_files/figure-latex/unnamed-chunk-216-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-216-1.pdf>
+File: DS_for_DH_files/figure-latex/unnamed-chunk-216-2.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-216-2.pdf>
+
+Overfull \hbox (64.00229pt too wide) has occurred while \output is active
+\TU/brill(0)/m/it/10 4.8.  ТОЧКИ, ДЖИТТЕР (JITTER), ВАЙОЛИНПЛОТ (VIOLINPLOT), Я
+ЩИКИ С УСАМИ (BOXPLOT), \TU/brill(0)/m/n/10 117
+ []
+
+[117]
+File: DS_for_DH_files/figure-latex/unnamed-chunk-216-3.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-216-3.pdf>
+File: DS_for_DH_files/figure-latex/unnamed-chunk-216-4.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-216-4.pdf>
+
+Underfull \vbox (badness 2846) has occurred while \output is active []
+
+[118]
+File: DS_for_DH_files/figure-latex/unnamed-chunk-216-5.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-216-5.pdf>
+File: DS_for_DH_files/figure-latex/unnamed-chunk-216-6.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-216-6.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (64.41733pt too wide) has occurred while \output is active
+\TU/brill(0)/m/it/10 4.8.  ТОЧКИ, ДЖИТТЕР (JITTER), ВАЙОЛИНПЛОТ (VIOLINPLOT), Я
+ЩИКИ С УСАМИ (BOXPLOT), \TU/brill(0)/m/n/10 119
+ []
+
+[119]
+File: images/boxplot.png Graphic file (type bmp)
+<images/boxplot.png>
+
+Underfull \vbox (badness 1796) has occurred while \output is active []
+
+[120]
+File: DS_for_DH_files/figure-latex/unnamed-chunk-217-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-217-1.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 5509--5511
+[][]
+ []
+
+File: DS_for_DH_files/figure-latex/unnamed-chunk-218-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-218-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[121]
+File: DS_for_DH_files/figure-latex/unnamed-chunk-219-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-219-1.pdf>
+[122]
+File: DS_for_DH_files/figure-latex/unnamed-chunk-220-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-220-1.pdf>
+File: DS_for_DH_files/figure-latex/unnamed-chunk-221-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-221-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[123] [124]
+File: DS_for_DH_files/figure-latex/unnamed-chunk-222-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-222-1.pdf>
+File: DS_for_DH_files/figure-latex/unnamed-chunk-223-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-223-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[125]
+Overfull \hbox (337.5pt too wide) in paragraph at lines 5663--5663
+[]\TU/lmtt/m/n/10 ##  $ Name       : Factor w/ 3883 levels "...And Justice for 
+All (1979)",..: 3576 1860 1485 3718 1179 1564 3012 3551 3364 1426 ...[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 5663--5663
+[]\TU/lmtt/m/n/10 ##  $ ReleaseDate: int  1995 1995 1995 1995 1995 1995 1995 19
+95 1995 1995 ...[] 
+ []
+
+[126]
+Overfull \hbox (54.0pt too wide) in paragraph at lines 5663--5663
+[]\TU/lmtt/m/n/10 ##  $ AvgRating  : num  4.15 3.2 3.02 2.73 3.01 3.88 3.41 3.0
+1 2.66 3.54 ...[] 
+ []
+
+
+Overfull \hbox (6.75pt too wide) in paragraph at lines 5663--5663
+[]\TU/lmtt/m/n/10 ##  $ Watches    : int  2077 701 478 170 296 940 458 68 102 8
+88 ...[] 
+ []
+
+File: DS_for_DH_files/figure-latex/unnamed-chunk-224-1.pdf Graphic file (type p
+df)
+<use DS_for_DH_files/figure-latex/unnamed-chunk-224-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[127] [128]
+Глава 5.
+[129
+
+] [130
 
 ]
 Глава 6.
-[115] [116
+[131] [132
 
 ]
 Глава 7.
-[117] [118
+[133] [134
 
 ]
 Глава 8.
-[119] [120
+[135] [136
 
 ]
 Глава 9.
-[121] [122
+[137] [138
 
 ]
 Глава 10.
-[123] [124
+[139] [140
 
 ]
 Глава 11.
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5353--5353
+Overfull \hbox (6.75pt too wide) in paragraph at lines 5725--5725
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5363--5363
+Overfull \hbox (6.75pt too wide) in paragraph at lines 5735--5735
 []\TU/lmtt/m/n/10 ##  [1] 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3
   2  1[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 5374--5374
+Overfull \hbox (54.0pt too wide) in paragraph at lines 5746--5746
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20 19 18 17[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 5395--5395
+Overfull \hbox (59.25pt too wide) in paragraph at lines 5767--5767
 []\TU/lmtt/m/n/10 ##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7
  7 8 8 8 8 8 8 8[] 
  []
@@ -2759,256 +3070,256 @@ Missing character: There is no к in font [lmmono10-regular]:!
 Missing character: There is no т in font [lmmono10-regular]:!
 Missing character: There is no о in font [lmmono10-regular]:!
 Missing character: There is no р in font [lmmono10-regular]:!
-[125]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5498--5498
-[]\TU/lmtt/m/n/10 ##  [1]  0  2  0  4  0  6  0  8  0 10  0 12  0 14  0 16  0 18
-  0 20[] 
- []
-
-[126]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 5570--5570
-[]\TU/lmtt/m/n/10 ##  [1]  9.000000  2.236068  4.000000  1.000000 64.000000  2.
-000000 81.000000[] 
- []
-
-[127]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5628--5628
-[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
-n" "o" "p" "q"[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5686--5686
-[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
-n" "o" "p" "q"[] 
- []
-
-[128]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5686--5686
-[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
-n" "o" "p" "q"[] 
- []
-
-[129]
-Underfull \vbox (badness 5302) has occurred while \output is active []
-
-[130]
-Underfull \hbox (badness 2384) in paragraph at lines 5840--5841
-[]\TU/brill(0)/m/n/10 Найдите имена всех персонажей из дома (\TU/lmtt/m/n/10 Al
-legiances\TU/brill(0)/m/n/10 ) \TU/lmtt/m/n/10 "Tyrell" \TU/brill(0)/m/n/10 и
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5880--5880
-[]\TU/lmtt/m/n/10 ##     Death.Chapter Book.Intro.Chapter Gender Nobility GoT C
-oK SoS FfC DwD[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5880--5880
-[]\TU/lmtt/m/n/10 ## 58             NA                 11      0        1   0  
- 1   0   1   1[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5880--5880
-[]\TU/lmtt/m/n/10 ## 248            NA                 29      0        0   0  
- 0   0   1   0[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5880--5880
-[]\TU/lmtt/m/n/10 ## 313            NA                  1      0        1   0  
- 0   0   1   0[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5880--5880
-[]\TU/lmtt/m/n/10 ## 319            NA                  1      0        1   0  
- 0   0   1   0[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5880--5880
-[]\TU/lmtt/m/n/10 ## 806            NA                 11      0        0   0  
- 0   0   1   0[] 
- []
-
-
-Underfull \hbox (badness 2065) in paragraph at lines 5905--5906
-[]\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
-онажей
- []
-
-[131]
-Underfull \hbox (badness 2065) in paragraph at lines 5915--5916
-[]\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
-онажей
- []
-
-[132]
-Глава 12.
-
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5990--5990
-[]\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
- 19 20[] 
- []
-
-
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6006--6006
-[]\TU/lmtt/m/n/10 ##  [1] 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3
-  2  1[] 
- []
-
-[133
-
-]
-Overfull \hbox (54.0pt too wide) in paragraph at lines 6023--6023
-[]\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
- 19 20 19 18 17[] 
- []
-
-
-Overfull \hbox (59.25pt too wide) in paragraph at lines 6056--6056
-[]\TU/lmtt/m/n/10 ##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7
- 7 8 8 8 8 8 8 8[] 
- []
-
-Missing character: There is no М in font [lmmono10-regular]:!
-Missing character: There is no о in font [lmmono10-regular]:!
-Missing character: There is no й in font [lmmono10-regular]:!
-Missing character: There is no в in font [lmmono10-regular]:!
-Missing character: There is no е in font [lmmono10-regular]:!
-Missing character: There is no к in font [lmmono10-regular]:!
-Missing character: There is no т in font [lmmono10-regular]:!
-Missing character: There is no о in font [lmmono10-regular]:!
-Missing character: There is no р in font [lmmono10-regular]:!
-Missing character: There is no М in font [lmmono10-regular]:!
-Missing character: There is no о in font [lmmono10-regular]:!
-Missing character: There is no й in font [lmmono10-regular]:!
-Missing character: There is no в in font [lmmono10-regular]:!
-Missing character: There is no е in font [lmmono10-regular]:!
-Missing character: There is no к in font [lmmono10-regular]:!
-Missing character: There is no т in font [lmmono10-regular]:!
-Missing character: There is no о in font [lmmono10-regular]:!
-Missing character: There is no р in font [lmmono10-regular]:!
-Missing character: There is no М in font [lmmono10-regular]:!
-Missing character: There is no о in font [lmmono10-regular]:!
-Missing character: There is no й in font [lmmono10-regular]:!
-Missing character: There is no в in font [lmmono10-regular]:!
-Missing character: There is no е in font [lmmono10-regular]:!
-Missing character: There is no к in font [lmmono10-regular]:!
-Missing character: There is no т in font [lmmono10-regular]:!
-Missing character: There is no о in font [lmmono10-regular]:!
-Missing character: There is no р in font [lmmono10-regular]:!
-[134] [135]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6241--6241
-[]\TU/lmtt/m/n/10 ##  [1]  0  2  0  4  0  6  0  8  0 10  0 12  0 14  0 16  0 18
-  0 20[] 
- []
-
-[136]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 6349--6349
-[]\TU/lmtt/m/n/10 ##  [1]  9.000000  2.236068  4.000000  1.000000 64.000000  2.
-000000 81.000000[] 
- []
-
-[137]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6433--6433
-[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
-n" "o" "p" "q"[] 
- []
-
-[138]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6522--6522
-[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
-n" "o" "p" "q"[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6522--6522
-[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
-n" "o" "p" "q"[] 
- []
-
-[139] [140]
-Missing character: There is no Е in font [lmmono10-italic]:!
-Missing character: There is no щ in font [lmmono10-italic]:!
-Missing character: There is no е in font [lmmono10-italic]:!
 [141]
-Underfull \hbox (badness 2384) in paragraph at lines 6749--6750
-[]\TU/brill(0)/m/n/10 Найдите имена всех персонажей из дома (\TU/lmtt/m/n/10 Al
-legiances\TU/brill(0)/m/n/10 ) \TU/lmtt/m/n/10 "Tyrell" \TU/brill(0)/m/n/10 и
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6802--6802
-[]\TU/lmtt/m/n/10 ##     Death.Chapter Book.Intro.Chapter Gender Nobility GoT C
-oK SoS FfC DwD[] 
+Overfull \hbox (6.75pt too wide) in paragraph at lines 5870--5870
+[]\TU/lmtt/m/n/10 ##  [1]  0  2  0  4  0  6  0  8  0 10  0 12  0 14  0 16  0 18
+  0 20[] 
  []
 
 [142]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6802--6802
+Overfull \hbox (59.25pt too wide) in paragraph at lines 5942--5942
+[]\TU/lmtt/m/n/10 ##  [1]  9.000000  2.236068  4.000000  1.000000 64.000000  2.
+000000 81.000000[] 
+ []
+
+[143]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6000--6000
+[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
+n" "o" "p" "q"[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6058--6058
+[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
+n" "o" "p" "q"[] 
+ []
+
+[144]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6058--6058
+[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
+n" "o" "p" "q"[] 
+ []
+
+[145]
+Underfull \vbox (badness 5302) has occurred while \output is active []
+
+[146]
+Underfull \hbox (badness 2384) in paragraph at lines 6212--6213
+[]\TU/brill(0)/m/n/10 Найдите имена всех персонажей из дома (\TU/lmtt/m/n/10 Al
+legiances\TU/brill(0)/m/n/10 ) \TU/lmtt/m/n/10 "Tyrell" \TU/brill(0)/m/n/10 и
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6252--6252
+[]\TU/lmtt/m/n/10 ##     Death.Chapter Book.Intro.Chapter Gender Nobility GoT C
+oK SoS FfC DwD[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6252--6252
 []\TU/lmtt/m/n/10 ## 58             NA                 11      0        1   0  
  1   0   1   1[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6802--6802
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6252--6252
 []\TU/lmtt/m/n/10 ## 248            NA                 29      0        0   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6802--6802
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6252--6252
 []\TU/lmtt/m/n/10 ## 313            NA                  1      0        1   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6802--6802
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6252--6252
 []\TU/lmtt/m/n/10 ## 319            NA                  1      0        1   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6802--6802
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6252--6252
 []\TU/lmtt/m/n/10 ## 806            NA                 11      0        0   0  
  0   0   1   0[] 
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 6839--6840
+Underfull \hbox (badness 2065) in paragraph at lines 6277--6278
 []\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
 онажей
  []
 
-
-Underfull \hbox (badness 2065) in paragraph at lines 6855--6856
+[147]
+Underfull \hbox (badness 2065) in paragraph at lines 6287--6288
 []\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
 онажей
  []
 
-[143] (./DS_for_DH.bbl [144])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6893.
-[145
+[148]
+Глава 12.
+
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6362--6362
+[]\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
+ 19 20[] 
+ []
+
+
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6378--6378
+[]\TU/lmtt/m/n/10 ##  [1] 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3
+  2  1[] 
+ []
+
+[149
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 6893.
+Overfull \hbox (54.0pt too wide) in paragraph at lines 6395--6395
+[]\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
+ 19 20 19 18 17[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 6428--6428
+[]\TU/lmtt/m/n/10 ##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7
+ 7 8 8 8 8 8 8 8[] 
+ []
+
+Missing character: There is no М in font [lmmono10-regular]:!
+Missing character: There is no о in font [lmmono10-regular]:!
+Missing character: There is no й in font [lmmono10-regular]:!
+Missing character: There is no в in font [lmmono10-regular]:!
+Missing character: There is no е in font [lmmono10-regular]:!
+Missing character: There is no к in font [lmmono10-regular]:!
+Missing character: There is no т in font [lmmono10-regular]:!
+Missing character: There is no о in font [lmmono10-regular]:!
+Missing character: There is no р in font [lmmono10-regular]:!
+Missing character: There is no М in font [lmmono10-regular]:!
+Missing character: There is no о in font [lmmono10-regular]:!
+Missing character: There is no й in font [lmmono10-regular]:!
+Missing character: There is no в in font [lmmono10-regular]:!
+Missing character: There is no е in font [lmmono10-regular]:!
+Missing character: There is no к in font [lmmono10-regular]:!
+Missing character: There is no т in font [lmmono10-regular]:!
+Missing character: There is no о in font [lmmono10-regular]:!
+Missing character: There is no р in font [lmmono10-regular]:!
+Missing character: There is no М in font [lmmono10-regular]:!
+Missing character: There is no о in font [lmmono10-regular]:!
+Missing character: There is no й in font [lmmono10-regular]:!
+Missing character: There is no в in font [lmmono10-regular]:!
+Missing character: There is no е in font [lmmono10-regular]:!
+Missing character: There is no к in font [lmmono10-regular]:!
+Missing character: There is no т in font [lmmono10-regular]:!
+Missing character: There is no о in font [lmmono10-regular]:!
+Missing character: There is no р in font [lmmono10-regular]:!
+[150] [151]
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6613--6613
+[]\TU/lmtt/m/n/10 ##  [1]  0  2  0  4  0  6  0  8  0 10  0 12  0 14  0 16  0 18
+  0 20[] 
+ []
+
+[152]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 6721--6721
+[]\TU/lmtt/m/n/10 ##  [1]  9.000000  2.236068  4.000000  1.000000 64.000000  2.
+000000 81.000000[] 
+ []
+
+[153]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6805--6805
+[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
+n" "o" "p" "q"[] 
+ []
+
+[154]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6894--6894
+[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
+n" "o" "p" "q"[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6894--6894
+[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
+n" "o" "p" "q"[] 
+ []
+
+[155] [156]
+Missing character: There is no Е in font [lmmono10-italic]:!
+Missing character: There is no щ in font [lmmono10-italic]:!
+Missing character: There is no е in font [lmmono10-italic]:!
+[157]
+Underfull \hbox (badness 2384) in paragraph at lines 7121--7122
+[]\TU/brill(0)/m/n/10 Найдите имена всех персонажей из дома (\TU/lmtt/m/n/10 Al
+legiances\TU/brill(0)/m/n/10 ) \TU/lmtt/m/n/10 "Tyrell" \TU/brill(0)/m/n/10 и
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7174--7174
+[]\TU/lmtt/m/n/10 ##     Death.Chapter Book.Intro.Chapter Gender Nobility GoT C
+oK SoS FfC DwD[] 
+ []
+
+[158]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7174--7174
+[]\TU/lmtt/m/n/10 ## 58             NA                 11      0        1   0  
+ 1   0   1   1[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7174--7174
+[]\TU/lmtt/m/n/10 ## 248            NA                 29      0        0   0  
+ 0   0   1   0[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7174--7174
+[]\TU/lmtt/m/n/10 ## 313            NA                  1      0        1   0  
+ 0   0   1   0[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7174--7174
+[]\TU/lmtt/m/n/10 ## 319            NA                  1      0        1   0  
+ 0   0   1   0[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7174--7174
+[]\TU/lmtt/m/n/10 ## 806            NA                 11      0        0   0  
+ 0   0   1   0[] 
+ []
+
+
+Underfull \hbox (badness 2065) in paragraph at lines 7211--7212
+[]\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
+онажей
+ []
+
+
+Underfull \hbox (badness 2065) in paragraph at lines 7227--7228
+[]\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
+онажей
+ []
+
+[159] (./DS_for_DH.bbl [160])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7265.
+[161
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 7265.
 (./DS_for_DH.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 6893.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6893.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7265.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 7265.
 
 Package rerunfilecheck Info: File `DS_for_DH.out' has not changed.
-(rerunfilecheck)             Checksum: 9A72B7972D31E6D0E4771DC1D4F2D44E.
+(rerunfilecheck)             Checksum: 242E336545E3BE9B8B7C313BA550423F.
  ) 
 Here is how much of TeX's memory you used:
- 26753 strings out of 492909
- 502934 string characters out of 6132923
- 639220 words of memory out of 5000000
- 30467 multiletter control sequences out of 15000+600000
+ 26850 strings out of 492909
+ 509740 string characters out of 6132923
+ 639363 words of memory out of 5000000
+ 30540 multiletter control sequences out of 15000+600000
  553220 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 53i,9n,116p,1180b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,9n,116p,1180b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on DS_for_DH.pdf (145 pages).
+Output written on DS_for_DH.pdf (161 pages).

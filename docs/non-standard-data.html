@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10 Нестандартные данные: время, OCR, карты | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
   <meta name="description" content="10 Нестандартные данные: время, OCR, карты | Наука о данных в R для программы Цифровых гуманитарных исследований" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10 Нестандартные данные: время, OCR, карты | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta property="og:type" content="book" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -131,11 +134,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> О курсе</a></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Введение в R</a><ul>
-<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#section-1"><i class="fa fa-check"></i><b>2.1</b> Наука о данных</a></li>
-<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r--rstudio"><i class="fa fa-check"></i><b>2.2</b> Установка R и RStudio</a></li>
-<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#section-2"><i class="fa fa-check"></i><b>2.3</b> Полезные ссылки</a></li>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#наука-о-данных"><i class="fa fa-check"></i><b>2.1</b> Наука о данных</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#установка-r-и-rstudio"><i class="fa fa-check"></i><b>2.2</b> Установка R и RStudio</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#полезные-ссылки"><i class="fa fa-check"></i><b>2.3</b> Полезные ссылки</a></li>
 <li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#rstudio"><i class="fa fa-check"></i><b>2.4</b> Rstudio</a></li>
-<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#r"><i class="fa fa-check"></i><b>2.5</b> Введение в R</a><ul>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#введение-в-r"><i class="fa fa-check"></i><b>2.5</b> Введение в R</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="intro.html"><a href="intro.html#calc"><i class="fa fa-check"></i><b>2.5.1</b> R как калькулятор</a></li>
 <li class="chapter" data-level="2.5.2" data-path="intro.html"><a href="intro.html#func"><i class="fa fa-check"></i><b>2.5.2</b> Функции</a></li>
 <li class="chapter" data-level="2.5.3" data-path="intro.html"><a href="intro.html#variables"><i class="fa fa-check"></i><b>2.5.3</b> Переменные</a></li>
@@ -164,10 +167,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html"><i class="fa fa-check"></i><b>3</b> <code>tidyverse</code>: Загрузка и трансформация данных</a><ul>
-<li class="chapter" data-level="3.1" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#section-3"><i class="fa fa-check"></i><b>3.1</b> Загрузка данных</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#section-4"><i class="fa fa-check"></i><b>3.1.1</b> Рабочая директория</a></li>
-<li class="chapter" data-level="3.1.2" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#csv"><i class="fa fa-check"></i><b>3.1.2</b> Форматы данных: <code>.csv</code></a></li>
-<li class="chapter" data-level="3.1.3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#readr-readxl"><i class="fa fa-check"></i><b>3.1.3</b> Загрузка данных: readr, readxl</a></li>
+<li class="chapter" data-level="3.1" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#загрузка-данных"><i class="fa fa-check"></i><b>3.1</b> Загрузка данных</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#рабочая-директория"><i class="fa fa-check"></i><b>3.1.1</b> Рабочая директория</a></li>
+<li class="chapter" data-level="3.1.2" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#форматы-данных-.csv"><i class="fa fa-check"></i><b>3.1.2</b> Форматы данных: <code>.csv</code></a></li>
+<li class="chapter" data-level="3.1.3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#загрузка-данных-readr-readxl"><i class="fa fa-check"></i><b>3.1.3</b> Загрузка данных: readr, readxl</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#tibble"><i class="fa fa-check"></i><b>3.2</b> <code>tibble</code></a></li>
 <li class="chapter" data-level="3.3" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyr"><i class="fa fa-check"></i><b>3.3</b> <code>dplyr</code></a><ul>
@@ -179,35 +182,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.6" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrmutate"><i class="fa fa-check"></i><b>3.3.6</b> <code>dplyr::mutate()</code></a></li>
 <li class="chapter" data-level="3.3.7" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyrgroup_by...-summarise..."><i class="fa fa-check"></i><b>3.3.7</b> <code>dplyr::group_by(...) %&gt;% summarise(...)</code></a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#section-5"><i class="fa fa-check"></i><b>3.4</b> Соединение датафреймов</a><ul>
+<li class="chapter" data-level="3.4" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#соединение-датафреймов"><i class="fa fa-check"></i><b>3.4</b> Соединение датафреймов</a><ul>
 <li class="chapter" data-level="3.4.1" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#bind_..."><i class="fa fa-check"></i><b>3.4.1</b> <code>bind_...</code></a></li>
 <li class="chapter" data-level="3.4.2" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#dplyr.._join"><i class="fa fa-check"></i><b>3.4.2</b> <code>dplyr::.._join()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#tidyr-package"><i class="fa fa-check"></i><b>3.5</b> <code>tidyr</code> package</a></li>
-<li class="chapter" data-level="3.6" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#section-6"><i class="fa fa-check"></i><b>3.6</b> Полезные надстройки</a></li>
+<li class="chapter" data-level="3.6" data-path="tidy-dplyr.html"><a href="tidy-dplyr.html#полезные-надстройки"><i class="fa fa-check"></i><b>3.6</b> Полезные надстройки</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="viz-1.html"><a href="viz-1.html"><i class="fa fa-check"></i><b>4</b> Визуализация данных</a><ul>
-<li class="chapter" data-level="4.1" data-path="viz-1.html"><a href="viz-1.html#section-7"><i class="fa fa-check"></i><b>4.1</b> Зачем визуализировать данные?</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="viz-1.html"><a href="viz-1.html#section-8"><i class="fa fa-check"></i><b>4.1.1</b> Квартет Анскомба</a></li>
-<li class="chapter" data-level="4.1.2" data-path="viz-1.html"><a href="viz-1.html#section-9"><i class="fa fa-check"></i><b>4.1.2</b> Датазаурус</a></li>
+<li class="chapter" data-level="4.1" data-path="viz-1.html"><a href="viz-1.html#зачем-визуализировать-данные"><i class="fa fa-check"></i><b>4.1</b> Зачем визуализировать данные?</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="viz-1.html"><a href="viz-1.html#квартет-анскомба"><i class="fa fa-check"></i><b>4.1.1</b> Квартет Анскомба</a></li>
+<li class="chapter" data-level="4.1.2" data-path="viz-1.html"><a href="viz-1.html#датазаурус"><i class="fa fa-check"></i><b>4.1.2</b> Датазаурус</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="viz-1.html"><a href="viz-1.html#ggplot2"><i class="fa fa-check"></i><b>4.2</b> Основы <code>ggplot2</code></a><ul>
-<li class="chapter" data-level="4.2.1" data-path="viz-1.html"><a href="viz-1.html#scaterplot"><i class="fa fa-check"></i><b>4.2.1</b> Диаграмма рассеяния (Scaterplot)</a></li>
-<li class="chapter" data-level="4.2.2" data-path="viz-1.html"><a href="viz-1.html#section-10"><i class="fa fa-check"></i><b>4.2.2</b> Слои</a></li>
+<li class="chapter" data-level="4.2" data-path="viz-1.html"><a href="viz-1.html#основы-ggplot2"><i class="fa fa-check"></i><b>4.2</b> Основы <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="4.2.1" data-path="viz-1.html"><a href="viz-1.html#диаграмма-рассеяния-scaterplot"><i class="fa fa-check"></i><b>4.2.1</b> Диаграмма рассеяния (Scaterplot)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="viz-1.html"><a href="viz-1.html#слои"><i class="fa fa-check"></i><b>4.2.2</b> Слои</a></li>
 <li class="chapter" data-level="4.2.3" data-path="viz-1.html"><a href="viz-1.html#aes"><i class="fa fa-check"></i><b>4.2.3</b> <code>aes()</code></a></li>
-<li class="chapter" data-level="4.2.4" data-path="viz-1.html"><a href="viz-1.html#section-11"><i class="fa fa-check"></i><b>4.2.4</b> Оформление</a></li>
-<li class="chapter" data-level="4.2.5" data-path="viz-1.html"><a href="viz-1.html#section-12"><i class="fa fa-check"></i><b>4.2.5</b> Логарифмические шкалы</a></li>
+<li class="chapter" data-level="4.2.4" data-path="viz-1.html"><a href="viz-1.html#оформление"><i class="fa fa-check"></i><b>4.2.4</b> Оформление</a></li>
+<li class="chapter" data-level="4.2.5" data-path="viz-1.html"><a href="viz-1.html#логарифмические-шкалы"><i class="fa fa-check"></i><b>4.2.5</b> Логарифмические шкалы</a></li>
 <li class="chapter" data-level="4.2.6" data-path="viz-1.html"><a href="viz-1.html#annotate"><i class="fa fa-check"></i><b>4.2.6</b> <code>annotate()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="viz-1.html"><a href="viz-1.html#barplots"><i class="fa fa-check"></i><b>4.3</b> Столбчатые диаграммы (barplots)</a></li>
-<li class="chapter" data-level="4.4" data-path="viz-1.html"><a href="viz-1.html#section-13"><i class="fa fa-check"></i><b>4.4</b> Факторы</a></li>
-<li class="chapter" data-level="4.5" data-path="viz-1.html"><a href="viz-1.html#jitter----boxplot-violinplot"><i class="fa fa-check"></i><b>4.5</b> Точки, джиттер (jitter), ящики с усами (boxplot), (violinplot)</a></li>
-<li class="chapter" data-level="4.6" data-path="viz-1.html"><a href="viz-1.html#section-14"><i class="fa fa-check"></i><b>4.6</b> Гистограммы</a></li>
-<li class="chapter" data-level="4.7" data-path="viz-1.html"><a href="viz-1.html#section-15"><i class="fa fa-check"></i><b>4.7</b> Функции плотности</a></li>
-<li class="chapter" data-level="4.8" data-path="viz-1.html"><a href="viz-1.html#section-16"><i class="fa fa-check"></i><b>4.8</b> Фасетизация</a></li>
-<li class="chapter" data-level="4.9" data-path="viz-1.html"><a href="viz-1.html#section-17"><i class="fa fa-check"></i><b>4.9</b> Визуализация комбинаций признаков</a><ul>
-<li class="chapter" data-level="4.9.1" data-path="viz-1.html"><a href="viz-1.html#sankey-diagram"><i class="fa fa-check"></i><b>4.9.1</b> Потоковая Диаграмма (Sankey diagram)</a></li>
-<li class="chapter" data-level="4.9.2" data-path="viz-1.html"><a href="viz-1.html#upset-plot"><i class="fa fa-check"></i><b>4.9.2</b> UpSet Plot</a></li>
+<li class="chapter" data-level="4.3" data-path="viz-1.html"><a href="viz-1.html#столбчатые-диаграммы-barplots"><i class="fa fa-check"></i><b>4.3</b> Столбчатые диаграммы (barplots)</a></li>
+<li class="chapter" data-level="4.4" data-path="viz-1.html"><a href="viz-1.html#факторы"><i class="fa fa-check"></i><b>4.4</b> Факторы</a></li>
+<li class="chapter" data-level="4.5" data-path="viz-1.html"><a href="viz-1.html#гистограммы"><i class="fa fa-check"></i><b>4.5</b> Гистограммы</a></li>
+<li class="chapter" data-level="4.6" data-path="viz-1.html"><a href="viz-1.html#гистограммы-1"><i class="fa fa-check"></i><b>4.6</b> Гистограммы</a></li>
+<li class="chapter" data-level="4.7" data-path="viz-1.html"><a href="viz-1.html#функции-плотности"><i class="fa fa-check"></i><b>4.7</b> Функции плотности</a></li>
+<li class="chapter" data-level="4.8" data-path="viz-1.html"><a href="viz-1.html#точки-джиттер-jitter-вайолинплот-violinplot-ящики-с-усами-boxplot"><i class="fa fa-check"></i><b>4.8</b> Точки, джиттер (jitter), вайолинплот (violinplot), ящики с усами (boxplot),</a></li>
+<li class="chapter" data-level="4.9" data-path="viz-1.html"><a href="viz-1.html#фасетизация"><i class="fa fa-check"></i><b>4.9</b> Фасетизация</a></li>
+<li class="chapter" data-level="4.10" data-path="viz-1.html"><a href="viz-1.html#визуализация-комбинаций-признаков"><i class="fa fa-check"></i><b>4.10</b> Визуализация комбинаций признаков</a><ul>
+<li class="chapter" data-level="4.10.1" data-path="viz-1.html"><a href="viz-1.html#потоковая-диаграмма-sankey-diagram"><i class="fa fa-check"></i><b>4.10.1</b> Потоковая Диаграмма (Sankey diagram)</a></li>
+<li class="chapter" data-level="4.10.2" data-path="viz-1.html"><a href="viz-1.html#upset-plot"><i class="fa fa-check"></i><b>4.10.2</b> UpSet Plot</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="purr.html"><a href="purr.html"><i class="fa fa-check"></i><b>5</b> Условия и работа со списками</a></li>
@@ -232,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.5" data-path="solutions.html"><a href="solutions.html#solvt"><i class="fa fa-check"></i><b>12.5</b> Матрицы</a></li>
 <li class="chapter" data-level="12.6" data-path="solutions.html"><a href="solutions.html#solvdf_task"><i class="fa fa-check"></i><b>12.6</b> Датафрейм</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="section-18.html"><a href="section-18.html"><i class="fa fa-check"></i>Ссылки на литературу</a></li>
+<li class="chapter" data-level="" data-path="ссылки-на-литературу.html"><a href="ссылки-на-литературу.html"><i class="fa fa-check"></i>Ссылки на литературу</a></li>
 </ul>
 
       </nav>
@@ -265,11 +269,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
