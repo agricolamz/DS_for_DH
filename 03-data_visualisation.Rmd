@@ -385,6 +385,181 @@ tibble(words = c("Путин", "общество", "губернаторы", "с
 plot(gridExtra::arrangeGrob(p1, p2, nrow = 2))
 ```
 
+## Гистограммы
+Иногда для случаев, когда мы исследуем числовую переменную подходит простой график, который отображает распределение наших наблюдений на одной соответствующей числовой шкале.
+
+```{r}
+mtcars %>% 
+  ggplot(aes(mpg)) +
+  geom_dotplot(method = "histodot")
+```
+
+По оси x отложена наша переменная, каждая точка -- одно наблюдение, а отложенное по оси y стоит игнорировать -- оно появляется из-за ограничений пакета `ggplot2`. Возможно чуть понятнее будет, если добавить `geom_rug()`, который непосредственно отображает **каждое** наблюдение.
+
+```{r}
+mtcars %>% 
+  ggplot(aes(mpg)) +
+  geom_rug()+
+  geom_dotplot(method = "histodot")
+```
+
+
+Больший смысл имеет раскрашенный вариант:
+
+```{r}
+mtcars %>% 
+  mutate(cyl = factor(cyl)) %>% 
+  ggplot(aes(mpg, fill = cyl)) +
+  geom_rug()+
+  geom_dotplot(method = "histodot")+
+  scale_y_continuous(NULL, breaks = NULL) # чтобы убрать ось y
+```
+Как видно, на графике, одна синяя точка попала под одну зеленую: значит они имеют общее наблюдение.
+
+## Гистограммы
+Если наблюдений слишком много, дотплот не имеем много смысла:
+
+```{r}
+diamonds %>% 
+  ggplot(aes(price)) +
+  geom_dotplot(method = "histodot")+
+  scale_y_continuous(NULL, breaks = NULL) # чтобы убрать ось y
+
+diamonds %>% 
+  ggplot(aes(price)) +
+  geom_histogram()
+```
+
+Обсудим на предыдущем примере
+
+```{r}
+mtcars %>% 
+  ggplot(aes(mpg))+
+  geom_rug()+
+  geom_histogram()
+```
+
+По оси x отложена наша переменная, а высота столбца говорит, сколько наблюдений имеют такое же наблюдение. Однако многое зависит от того, что мы считаем одинаковым значением:
+
+```{r}
+mtcars %>% 
+  ggplot(aes(mpg)) +
+  geom_rug()+
+  geom_histogram(bins = 100)
+mtcars %>% 
+  ggplot(aes(mpg)) +
+  geom_rug()+
+  geom_histogram(bins = 5)
+```
+
+Существует три алгоритма встроенные в R, которые можно использовать и снимать с себя ответственность:
+
+* [Sturgers 1926] `nclass.Sturges(mtcars$mpg)`
+* [Scott 1979] `nclass.scott(mtcars$mpg)`
+* [Freedman, Diaconis 1981] `nclass.FD(mtcars$mpg)`
+
+```{r}
+mtcars %>% 
+  ggplot(aes(mpg)) +
+  geom_histogram(bins = nclass.FD(mtcars$mpg))
+```
+
+```{block, type = "rmdtask"}
+Какой из методов использовался при создании следующего графика на основе встроенного датасета `iris`?
+```
+
+```{r, echo = FALSE}
+iris %>% 
+  ggplot(aes(Petal.Length)) +
+  geom_histogram(bins = nclass.scott(iris$Petal.Length))
+```
+
+В этом типе графика точно так же можно раскрашивать на основании другой переменной:
+```{r}
+iris %>% 
+  ggplot(aes(Petal.Length, fill = Species)) +
+  geom_rug()+
+  geom_histogram()
+```
+
+## Функции плотности
+
+Кроме того, существует способ использовать не такой рубленный график, а его сглаженную вариант, который строиться при помощи функции плотности. Важное свойство, которое стоит понимать про функцию плотности --- что кривая, получаемая 
+```{r}
+iris %>% 
+  ggplot(aes(Petal.Length)) +
+  geom_rug()+
+  geom_density()
+```
+
+Таким образом мы можем сравнивать распределения:
+```{r}
+iris %>% 
+  ggplot(aes(Petal.Length, fill = Species)) +
+  geom_rug()+
+  geom_density()
+```
+
+Часто имеет смысл настроить прозрачность:
+```{r}
+iris %>% 
+  ggplot(aes(Petal.Length, fill = Species)) +
+  geom_rug()+
+  geom_density(alpha = 0.6) # значение прозрачности изменяется от 0 до 1
+```
+
+Кроме того, иногда удобно разделять группы на разные уровни:
+
+```{r}
+library(ggridges)
+iris %>% 
+  ggplot(aes(Petal.Length, Species, fill = Species)) +
+  geom_density_ridges(alpha = 0.6) # значение прозрачности изменяется от 0 до 1
+```
+
+
+```{block, type = "rmdtask"}
+В длинный список "2015 Kantar Information is Beautiful Awards" попала [визуализация Perceptions of Probability](https://www.informationisbeautifulawards.com/showcase/818-perceptions-of-probability), сделанная пользователем [zonination](https://github.com/zonination) в `ggplot2`. Попробуйте воспроизвести ее с этими данными.
+```
+
+```{r, echo=FALSE}
+df %>% 
+  pivot_longer(names_to = "word", values_to = "assigned probability", `Almost Certainly`:`Chances Are Slight`) %>% 
+  group_by(word) %>% 
+  mutate(mean = mean(`assigned probability`)) %>% 
+  ungroup() %>% 
+  mutate(word = reorder(word, mean)) %>% 
+  ggplot(aes(`assigned probability`, word, fill = word))+
+  geom_density_ridges_gradient(show.legend = FALSE)+
+  labs(y = "")
+```
+
+<details> <summary> подсказки </summary>
+
+<details> <summary> как преобразовать в нужный формат? </summary>
+Я делал это при помощи функции `pivot_longer()`.
+</details>
+
+<details> <summary> не получается обратиться к колонкам </summary>
+Да, если в названиях столбцов есть пробел или цифры, то к ним можно обратиться, воспользовавшись обратынми ковычками **`**. Например:
+```
+`Chances Are Slight`
+```
+</details>
+
+<details> <summary> получается, но порядок неправильный... </summary>
+Ага, мы обсуждали факторы. Придется создать переменную, которая посчитает среднее или медиану по каждому из слов, а дальше воспользуйтесь функцией `reorder()`.
+</details>
+
+<details> <summary> R не дает изменить группирующую переменную </summary>
+Да, группирующие переменные изменять нельзя. Но можно использовать функцию `ungroup()`, которая снимает все группировки.
+</details>
+
+<details> <summary> а как убрать легенду? </summary>
+Легенду можно убрать добавив `show.legend = FALSE` в соответствующий `geom_...`.
+</details>
+
+</details>
 
 ## Точки, джиттер (jitter), ящики с усами (boxplot), (violinplot)
 
@@ -406,8 +581,6 @@ diamonds %>%
   geom_violin()
 ```
 
-## Гистограммы
-## Функции плотности
 ## Фасетизация
 
 ## Визуализация комбинаций признаков
