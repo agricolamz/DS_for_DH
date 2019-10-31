@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  18 OCT 2019 11:28
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.10)  31 OCT 2019 10:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1632,6 +1632,9 @@ Underfull \vbox (badness 3815) has occurred while \output is active []
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2726.
 
+LaTeX Warning: Reference `purr' on page 54 undefined on input line 2728.
+
+
 Overfull \hbox (109.12051pt too wide) in paragraph at lines 2730--2730
 [][][][]$[][][][][] [] [] [] [][][][][][][][][] [] [][][] [] [][][][][][][][][]
  [] [][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
@@ -3051,50 +3054,328 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Глава 5.
 [133
 
-] [134
-
 ]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5703--5703
+[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
+n" "o" "p" "q"[] 
+ []
+
+[134]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 5714--5714
+[]\TU/lmtt/m/n/10 ##  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "
+N" "O" "P" "Q"[] 
+ []
+
+
+Overfull \hbox (24.4085pt too wide) in paragraph at lines 5731--5731
+[][][][]$[][][][][] [] [] [] [][][][][][][][][][][][][][][][] [] [][][] [] [][]
+[][] [] [][] [] [][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][]$[]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5731--5732
+[]\TU/brill(0)/m/n/10 помните, что функции \TU/lmtt/m/n/10 data.frame()\TU/bril
+l(0)/m/n/10 , \TU/lmtt/m/n/10 read.csv()\TU/brill(0)/m/n/10 , \TU/lmtt/m/n/10 r
+ead.csv2()\TU/brill(0)/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 5731--5732
+\TU/lmtt/m/n/10 read.table() \TU/brill(0)/m/n/10 из базового R всегда по-умолча
+нию преобразуют стро-
+ []
+
+
+Underfull \hbox (badness 6078) in paragraph at lines 5731--5732
+\TU/lmtt/m/n/10 stringsAsFactors\TU/brill(0)/m/n/10 . Это много обсуждалось в с
+ообществе R, можно,
+ []
+
+
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5744--5744
+[]\TU/lmtt/m/n/10 ##  $ letters.6.10.: Factor w/ 5 levels "f","g","h","i",..: 1
+ 2 3 4 5[] 
+ []
+
+
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5744--5744
+[]\TU/lmtt/m/n/10 ##  $ LETTERS.4.8. : Factor w/ 5 levels "D","E","F","G",..: 1
+ 2 3 4 5[] 
+ []
+
+
+Overfull \hbox (17.25pt too wide) in paragraph at lines 5777--5777
+[]\TU/lmtt/m/n/10 ##  [1] "uwHpd"          "Wj8ehS"         "ivFSwy7"        "T
+Yu8zw5V"[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 5777--5777
+[]\TU/lmtt/m/n/10 ##  [5] "OuRpjoOg0"      "p0CubNR2yQ"     "xtdycKLOm2k"    "f
+AGVfylZqBGp"[] 
+ []
+
+[135]
+Missing character: There is no л in font [lmmono10-regular]:!
+Missing character: There is no ю in font [lmmono10-regular]:!
+Missing character: There is no б in font [lmmono10-regular]:!
+Missing character: There is no я in font [lmmono10-regular]:!
+Missing character: There is no с in font [lmmono10-regular]:!
+Missing character: There is no ъ in font [lmmono10-regular]:!
+Missing character: There is no е in font [lmmono10-regular]:!
+Missing character: There is no ш in font [lmmono10-regular]:!
+Missing character: There is no ь in font [lmmono10-regular]:!
+Missing character: There is no щ in font [lmmono10-regular]:!
+Missing character: There is no и in font [lmmono10-regular]:!
+Missing character: There is no п in font [lmmono10-regular]:!
+Missing character: There is no ц in font [lmmono10-regular]:!
+Missing character: There is no ы in font [lmmono10-regular]:!
+Missing character: There is no в in font [lmmono10-regular]:!
+Missing character: There is no з in font [lmmono10-regular]:!
+Missing character: There is no д in font [lmmono10-regular]:!
+Missing character: There is no о in font [lmmono10-regular]:!
+Missing character: There is no х in font [lmmono10-regular]:!
+Missing character: There is no н in font [lmmono10-regular]:!
+Missing character: There is no ё in font [lmmono10-regular]:!
+Missing character: There is no т in font [lmmono10-regular]:!
+Missing character: There is no м in font [lmmono10-regular]:!
+Missing character: There is no э in font [lmmono10-regular]:!
+Missing character: There is no р in font [lmmono10-regular]:!
+Missing character: There is no к in font [lmmono10-regular]:!
+Missing character: There is no а in font [lmmono10-regular]:!
+Missing character: There is no й in font [lmmono10-regular]:!
+Missing character: There is no ф in font [lmmono10-regular]:!
+Missing character: There is no ж in font [lmmono10-regular]:!
+Missing character: There is no г in font [lmmono10-regular]:!
+Missing character: There is no у in font [lmmono10-regular]:!
+Missing character: There is no ч in font [lmmono10-regular]:!
+Missing character: There is no ц in font [lmmono10-regular]:!
+Missing character: There is no о in font [lmmono10-regular]:!
+Missing character: There is no м in font [lmmono10-regular]:!
+Missing character: There is no п in font [lmmono10-regular]:!
+Missing character: There is no ю in font [lmmono10-regular]:!
+Missing character: There is no з in font [lmmono10-regular]:!
+Missing character: There is no г in font [lmmono10-regular]:!
+Missing character: There is no у in font [lmmono10-regular]:!
+Missing character: There is no с in font [lmmono10-regular]:!
+Missing character: There is no л in font [lmmono10-regular]:!
+Missing character: There is no а in font [lmmono10-regular]:!
+Missing character: There is no и in font [lmmono10-regular]:!
+Missing character: There is no ъ in font [lmmono10-regular]:!
+Missing character: There is no в in font [lmmono10-regular]:!
+Missing character: There is no к in font [lmmono10-regular]:!
+Missing character: There is no ж in font [lmmono10-regular]:!
+Missing character: There is no р in font [lmmono10-regular]:!
+Missing character: There is no я in font [lmmono10-regular]:!
+Missing character: There is no д in font [lmmono10-regular]:!
+Missing character: There is no ы in font [lmmono10-regular]:!
+Missing character: There is no щ in font [lmmono10-regular]:!
+Missing character: There is no ь in font [lmmono10-regular]:!
+Missing character: There is no ч in font [lmmono10-regular]:!
+Missing character: There is no е in font [lmmono10-regular]:!
+Missing character: There is no б in font [lmmono10-regular]:!
+Missing character: There is no э in font [lmmono10-regular]:!
+Missing character: There is no н in font [lmmono10-regular]:!
+Missing character: There is no х in font [lmmono10-regular]:!
+Missing character: There is no ш in font [lmmono10-regular]:!
+Missing character: There is no т in font [lmmono10-regular]:!
+Missing character: There is no ё in font [lmmono10-regular]:!
+Missing character: There is no ф in font [lmmono10-regular]:!
+Missing character: There is no й in font [lmmono10-regular]:!
+
+Overfull \hbox (3498.0pt too wide) in paragraph at lines 5822--5822
+[]\TU/lmtt/m/n/10 ## [1] "Lorem ipsum dolor sit amet, donec sit nunc urna sed u
+ltricies ac pharetra orci luctus iaculis, ac tincidunt cum. Neque eu semper at 
+sociosqu hendrerit. Eu aliquet lacus, eu hendrerit donec aliquam eros. Risus ni
+bh, quam in sit facilisi ipsum. Amet sem sed donec sed molestie scelerisque tin
+cidunt. Nisl donec et facilisis interdum non sed dolor purus. In ipsum dignissi
+m torquent velit nec aliquam pellentesque. Ac, adipiscing, neque et at torquent
+, vestibulum ullamcorper. Ad dictumst enim velit non nulla felis habitant. Eges
+tas placerat consectetur, dictum nostra sed nec. Erat phasellus dolor libero al
+iquam viverra. Vestibulum leo et. Suscipit egestas in in montes, sapien gravida
+? Conubia purus varius ut nec feugiat."[] 
+ []
+
+
+Overfull \hbox (1723.5pt too wide) in paragraph at lines 5822--5822
+[]\TU/lmtt/m/n/10 ## [2] "Risus eleifend magnis neque diam, suspendisse ullamco
+rper nulla adipiscing malesuada massa, nisi sociosqu velit id et. Aliquam facil
+isis et aenean. Parturient vel ac in convallis, massa diam nibh. Nulla interdum
+ cursus et. Natoque amet, ut praesent. Tortor ultrices a consectetur, augue nat
+oque class faucibus? Ut sed arcu elementum magna. Dignissim ac facilisi quis ut
+ nisl eu, massa."[] 
+ []
+
+Missing character: There is no л in font [lmmono10-regular]:!
+Missing character: There is no Ю in font [lmmono10-regular]:!
+Missing character: There is no б in font [lmmono10-regular]:!
+Missing character: There is no Я in font [lmmono10-regular]:!
+Missing character: There is no с in font [lmmono10-regular]:!
+Missing character: There is no Ъ in font [lmmono10-regular]:!
+Missing character: There is no е in font [lmmono10-regular]:!
+Missing character: There is no Ш in font [lmmono10-regular]:!
+Missing character: There is no ь in font [lmmono10-regular]:!
+Missing character: There is no Щ in font [lmmono10-regular]:!
+Missing character: There is no и in font [lmmono10-regular]:!
+Missing character: There is no П in font [lmmono10-regular]:!
+Missing character: There is no ц in font [lmmono10-regular]:!
+Missing character: There is no Ы in font [lmmono10-regular]:!
+Missing character: There is no в in font [lmmono10-regular]:!
+Missing character: There is no З in font [lmmono10-regular]:!
+Missing character: There is no д in font [lmmono10-regular]:!
+Missing character: There is no О in font [lmmono10-regular]:!
+Missing character: There is no х in font [lmmono10-regular]:!
+Missing character: There is no Н in font [lmmono10-regular]:!
+Missing character: There is no ё in font [lmmono10-regular]:!
+Missing character: There is no Т in font [lmmono10-regular]:!
+Missing character: There is no м in font [lmmono10-regular]:!
+Missing character: There is no Э in font [lmmono10-regular]:!
+Missing character: There is no р in font [lmmono10-regular]:!
+Missing character: There is no к in font [lmmono10-regular]:!
+Missing character: There is no А in font [lmmono10-regular]:!
+Missing character: There is no й in font [lmmono10-regular]:!
+Missing character: There is no Ф in font [lmmono10-regular]:!
+Missing character: There is no ж in font [lmmono10-regular]:!
+Missing character: There is no Г in font [lmmono10-regular]:!
+Missing character: There is no у in font [lmmono10-regular]:!
+Missing character: There is no Ч in font [lmmono10-regular]:!
+File: images/5.01_str_length.png Graphic file (type bmp)
+<images/5.01_str_length.png>
+[136]
+File: images/5_02_str_trunc.png Graphic file (type bmp)
+<images/5_02_str_trunc.png>
+
+Overfull \hbox (103.61801pt too wide) in paragraph at lines 5864--5866
+\TU/brill(0)/m/n/10 Можно обрезать строки, используя функцию \TU/lmtt/m/n/10 st
+r_trunc()\TU/brill(0)/m/n/10 : [] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 5876--5876
+[]\TU/lmtt/m/n/10 ##  [1] "Jan..." "Feb..." "March"  "April"  "May"    "June"  
+ "July"[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 5889--5889
+[]\TU/lmtt/m/n/10 ##  [1] "...ary" "...ary" "March"  "April"  "May"    "June"  
+ "July"[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 5900--5900
+[]\TU/lmtt/m/n/10 ##  [1] "Ja...y" "Fe...y" "March"  "April"  "May"    "June"  
+ "July"[] 
+ []
+
+[137]
+Overfull \hbox (38.25pt too wide) in paragraph at lines 5913--5913
+[]\TU/lmtt/m/n/10 ##  [1] "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep"
+ "Oct" "Nov"[] 
+ []
+
+Missing character: There is no л in font [lmmono10-regular]:!
+Missing character: There is no ю in font [lmmono10-regular]:!
+Missing character: There is no б in font [lmmono10-regular]:!
+Missing character: There is no я in font [lmmono10-regular]:!
+Missing character: There is no с in font [lmmono10-regular]:!
+Missing character: There is no ъ in font [lmmono10-regular]:!
+Missing character: There is no е in font [lmmono10-regular]:!
+Missing character: There is no ш in font [lmmono10-regular]:!
+Missing character: There is no ь in font [lmmono10-regular]:!
+Missing character: There is no щ in font [lmmono10-regular]:!
+Missing character: There is no и in font [lmmono10-regular]:!
+Missing character: There is no п in font [lmmono10-regular]:!
+Missing character: There is no ц in font [lmmono10-regular]:!
+Missing character: There is no ы in font [lmmono10-regular]:!
+Missing character: There is no в in font [lmmono10-regular]:!
+Missing character: There is no з in font [lmmono10-regular]:!
+Missing character: There is no д in font [lmmono10-regular]:!
+Missing character: There is no о in font [lmmono10-regular]:!
+Missing character: There is no х in font [lmmono10-regular]:!
+Missing character: There is no н in font [lmmono10-regular]:!
+Missing character: There is no ё in font [lmmono10-regular]:!
+Missing character: There is no т in font [lmmono10-regular]:!
+Missing character: There is no м in font [lmmono10-regular]:!
+Missing character: There is no э in font [lmmono10-regular]:!
+Missing character: There is no р in font [lmmono10-regular]:!
+Missing character: There is no к in font [lmmono10-regular]:!
+Missing character: There is no а in font [lmmono10-regular]:!
+Missing character: There is no й in font [lmmono10-regular]:!
+Missing character: There is no ф in font [lmmono10-regular]:!
+Missing character: There is no ж in font [lmmono10-regular]:!
+Missing character: There is no г in font [lmmono10-regular]:!
+Missing character: There is no у in font [lmmono10-regular]:!
+Missing character: There is no ч in font [lmmono10-regular]:!
+Missing character: There is no ♥ in font [lmmono10-regular]:!
+Missing character: There is no ♥ in font [lmmono10-regular]:!
+Missing character: There is no ♥ in font [lmmono10-regular]:!
+Missing character: There is no ♥ in font [lmmono10-regular]:!
+[138]
+Missing character: There is no я in font [lmmono10-regular]:!
+Missing character: There is no ж in font [lmmono10-regular]:!
+Missing character: There is no ж in font [lmmono10-regular]:!
+Missing character: There is no я in font [lmmono10-regular]:!
+Missing character: There is no ж in font [lmmono10-regular]:!
+Missing character: There is no я in font [lmmono10-regular]:!
+
+Overfull \hbox (26.0783pt too wide) in paragraph at lines 6007--6008
+\TU/brill(0)/m/n/10 Еще полезные команды: \TU/lmtt/m/n/10 stringi::stri_locale_
+info \TU/brill(0)/m/n/10 и \TU/lmtt/m/n/10 stringi::stri_locale_set\TU/brill(0)
+/m/n/10 . 
+ []
+
+[139]
+Underfull \hbox (badness 10000) in paragraph at lines 6077--6078
+[]\TU/brill(0)/m/n/10 Предварительный вывод: для больших данных – \TU/lmtt/m/n/
+10 sort(..., method =
+ []
+
+[140]
 Глава 6.
-[135] [136
+[141
+
+] [142
 
 ]
 Глава 7.
-[137] [138
+[143] [144
 
 ]
 Глава 8.
-[139] [140
+[145] [146
 
 ]
 Глава 9.
-[141] [142
+[147] [148
 
 ]
 Глава 10.
-[143] [144
+[149] [150
 
 ]
 Глава 11.
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5599--5599
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6132--6132
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5609--5609
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6142--6142
 []\TU/lmtt/m/n/10 ##  [1] 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3
   2  1[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 5620--5620
+Overfull \hbox (54.0pt too wide) in paragraph at lines 6153--6153
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20 19 18 17[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 5641--5641
+Overfull \hbox (59.25pt too wide) in paragraph at lines 6174--6174
 []\TU/lmtt/m/n/10 ##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7
  7 8 8 8 8 8 8 8[] 
  []
@@ -3117,117 +3398,117 @@ Missing character: There is no к in font [lmmono10-regular]:!
 Missing character: There is no т in font [lmmono10-regular]:!
 Missing character: There is no о in font [lmmono10-regular]:!
 Missing character: There is no р in font [lmmono10-regular]:!
-[145]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 5744--5744
+[151]
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6277--6277
 []\TU/lmtt/m/n/10 ##  [1]  0  2  0  4  0  6  0  8  0 10  0 12  0 14  0 16  0 18
   0 20[] 
- []
-
-[146]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 5816--5816
-[]\TU/lmtt/m/n/10 ##  [1]  9.000000  2.236068  4.000000  1.000000 64.000000  2.
-000000 81.000000[] 
- []
-
-[147]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5874--5874
-[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
-n" "o" "p" "q"[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5932--5932
-[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
-n" "o" "p" "q"[] 
- []
-
-[148]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 5932--5932
-[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
-n" "o" "p" "q"[] 
- []
-
-[149]
-Underfull \vbox (badness 5302) has occurred while \output is active []
-
-[150]
-Underfull \hbox (badness 2384) in paragraph at lines 6086--6087
-[]\TU/brill(0)/m/n/10 Найдите имена всех персонажей из дома (\TU/lmtt/m/n/10 Al
-legiances\TU/brill(0)/m/n/10 ) \TU/lmtt/m/n/10 "Tyrell" \TU/brill(0)/m/n/10 и
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6126--6126
-[]\TU/lmtt/m/n/10 ##     Death.Chapter Book.Intro.Chapter Gender Nobility GoT C
-oK SoS FfC DwD[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6126--6126
-[]\TU/lmtt/m/n/10 ## 58             NA                 11      0        1   0  
- 1   0   1   1[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6126--6126
-[]\TU/lmtt/m/n/10 ## 248            NA                 29      0        0   0  
- 0   0   1   0[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6126--6126
-[]\TU/lmtt/m/n/10 ## 313            NA                  1      0        1   0  
- 0   0   1   0[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6126--6126
-[]\TU/lmtt/m/n/10 ## 319            NA                  1      0        1   0  
- 0   0   1   0[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6126--6126
-[]\TU/lmtt/m/n/10 ## 806            NA                 11      0        0   0  
- 0   0   1   0[] 
- []
-
-
-Underfull \hbox (badness 2065) in paragraph at lines 6151--6152
-[]\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
-онажей
- []
-
-[151]
-Underfull \hbox (badness 2065) in paragraph at lines 6161--6162
-[]\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
-онажей
  []
 
 [152]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 6349--6349
+[]\TU/lmtt/m/n/10 ##  [1]  9.000000  2.236068  4.000000  1.000000 64.000000  2.
+000000 81.000000[] 
+ []
+
+[153]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6407--6407
+[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
+n" "o" "p" "q"[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6465--6465
+[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
+n" "o" "p" "q"[] 
+ []
+
+[154]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6465--6465
+[]\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
+n" "o" "p" "q"[] 
+ []
+
+[155]
+Underfull \vbox (badness 5302) has occurred while \output is active []
+
+[156]
+Underfull \hbox (badness 2384) in paragraph at lines 6619--6620
+[]\TU/brill(0)/m/n/10 Найдите имена всех персонажей из дома (\TU/lmtt/m/n/10 Al
+legiances\TU/brill(0)/m/n/10 ) \TU/lmtt/m/n/10 "Tyrell" \TU/brill(0)/m/n/10 и
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6659--6659
+[]\TU/lmtt/m/n/10 ##     Death.Chapter Book.Intro.Chapter Gender Nobility GoT C
+oK SoS FfC DwD[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6659--6659
+[]\TU/lmtt/m/n/10 ## 58             NA                 11      0        1   0  
+ 1   0   1   1[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6659--6659
+[]\TU/lmtt/m/n/10 ## 248            NA                 29      0        0   0  
+ 0   0   1   0[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6659--6659
+[]\TU/lmtt/m/n/10 ## 313            NA                  1      0        1   0  
+ 0   0   1   0[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6659--6659
+[]\TU/lmtt/m/n/10 ## 319            NA                  1      0        1   0  
+ 0   0   1   0[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 6659--6659
+[]\TU/lmtt/m/n/10 ## 806            NA                 11      0        0   0  
+ 0   0   1   0[] 
+ []
+
+
+Underfull \hbox (badness 2065) in paragraph at lines 6684--6685
+[]\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
+онажей
+ []
+
+[157]
+Underfull \hbox (badness 2065) in paragraph at lines 6694--6695
+[]\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
+онажей
+ []
+
+[158]
 Глава 12.
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6236--6236
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6769--6769
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6252--6252
+Overfull \hbox (6.75pt too wide) in paragraph at lines 6785--6785
 []\TU/lmtt/m/n/10 ##  [1] 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3
   2  1[] 
  []
 
-[153
+[159
 
 ]
-Overfull \hbox (54.0pt too wide) in paragraph at lines 6269--6269
+Overfull \hbox (54.0pt too wide) in paragraph at lines 6802--6802
 []\TU/lmtt/m/n/10 ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
  19 20 19 18 17[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 6302--6302
+Overfull \hbox (59.25pt too wide) in paragraph at lines 6835--6835
 []\TU/lmtt/m/n/10 ##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7
  7 8 8 8 8 8 8 8[] 
  []
@@ -3259,114 +3540,117 @@ Missing character: There is no к in font [lmmono10-regular]:!
 Missing character: There is no т in font [lmmono10-regular]:!
 Missing character: There is no о in font [lmmono10-regular]:!
 Missing character: There is no р in font [lmmono10-regular]:!
-[154] [155]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 6487--6487
+[160] [161]
+Overfull \hbox (6.75pt too wide) in paragraph at lines 7020--7020
 []\TU/lmtt/m/n/10 ##  [1]  0  2  0  4  0  6  0  8  0 10  0 12  0 14  0 16  0 18
   0 20[] 
  []
 
-[156]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 6595--6595
+[162]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 7128--7128
 []\TU/lmtt/m/n/10 ##  [1]  9.000000  2.236068  4.000000  1.000000 64.000000  2.
 000000 81.000000[] 
  []
 
-[157]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6679--6679
+[163]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7212--7212
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
 
-[158]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6768--6768
+[164]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7301--7301
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 6768--6768
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7301--7301
 []\TU/lmtt/m/n/10 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "
 n" "o" "p" "q"[] 
  []
 
-[159] [160]
+[165] [166]
 Missing character: There is no Е in font [lmmono10-italic]:!
 Missing character: There is no щ in font [lmmono10-italic]:!
 Missing character: There is no е in font [lmmono10-italic]:!
-[161]
-Underfull \hbox (badness 2384) in paragraph at lines 6995--6996
+[167]
+Underfull \hbox (badness 2384) in paragraph at lines 7528--7529
 []\TU/brill(0)/m/n/10 Найдите имена всех персонажей из дома (\TU/lmtt/m/n/10 Al
 legiances\TU/brill(0)/m/n/10 ) \TU/lmtt/m/n/10 "Tyrell" \TU/brill(0)/m/n/10 и
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 7048--7048
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7581--7581
 []\TU/lmtt/m/n/10 ##     Death.Chapter Book.Intro.Chapter Gender Nobility GoT C
 oK SoS FfC DwD[] 
  []
 
-[162]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 7048--7048
+[168]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7581--7581
 []\TU/lmtt/m/n/10 ## 58             NA                 11      0        1   0  
  1   0   1   1[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 7048--7048
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7581--7581
 []\TU/lmtt/m/n/10 ## 248            NA                 29      0        0   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 7048--7048
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7581--7581
 []\TU/lmtt/m/n/10 ## 313            NA                  1      0        1   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 7048--7048
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7581--7581
 []\TU/lmtt/m/n/10 ## 319            NA                  1      0        1   0  
  0   0   1   0[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 7048--7048
+Overfull \hbox (48.75pt too wide) in paragraph at lines 7581--7581
 []\TU/lmtt/m/n/10 ## 806            NA                 11      0        0   0  
  0   0   1   0[] 
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 7085--7086
+Underfull \hbox (badness 2065) in paragraph at lines 7618--7619
 []\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
 онажей
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 7101--7102
+Underfull \hbox (badness 2065) in paragraph at lines 7634--7635
 []\TU/brill(0)/m/n/10 Поcчитатйе процентную (!) долю знати от общего числа перс
 онажей
  []
 
-[163] (./DS_for_DH.bbl [164])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7139.
-[165
+[169] (./DS_for_DH.bbl [170])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7672.
+[171
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 7139.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 7672.
 (./DS_for_DH.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7139.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 7139.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7672.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 7672.
 
 Package rerunfilecheck Info: File `DS_for_DH.out' has not changed.
-(rerunfilecheck)             Checksum: 93E0B44F9791EC15AFA12ADC1E3CB71F.
+(rerunfilecheck)             Checksum: FAA066CF8490455CC3849DF7FD3E0FC2.
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 26854 strings out of 492909
- 509926 string characters out of 6132923
- 639355 words of memory out of 5000000
- 30543 multiletter control sequences out of 15000+600000
+ 26872 strings out of 492909
+ 510872 string characters out of 6132923
+ 640068 words of memory out of 5000000
+ 30559 multiletter control sequences out of 15000+600000
  553220 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  53i,9n,116p,1180b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on DS_for_DH.pdf (165 pages).
+Output written on DS_for_DH.pdf (171 pages).

@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="tidy-dplyr.html"/>
-<link rel="next" href="purr.html"/>
+<link rel="next" href="strings.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -214,12 +214,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.10.2" data-path="viz-1.html"><a href="viz-1.html#upset-plot"><i class="fa fa-check"></i><b>4.10.2</b> UpSet Plot</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="purr.html"><a href="purr.html"><i class="fa fa-check"></i><b>5</b> Условия и работа со списками</a></li>
+<li class="chapter" data-level="5" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>5</b> Работа со строками</a><ul>
+<li class="chapter" data-level="5.1" data-path="strings.html"><a href="strings.html#работа-со-строками-в-r"><i class="fa fa-check"></i><b>5.1</b> Работа со строками в R</a></li>
+<li class="chapter" data-level="5.2" data-path="strings.html"><a href="strings.html#как-получить-строку"><i class="fa fa-check"></i><b>5.2</b> Как получить строку?</a></li>
+<li class="chapter" data-level="5.3" data-path="strings.html"><a href="strings.html#количества-символов"><i class="fa fa-check"></i><b>5.3</b> Количества символов</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="strings.html"><a href="strings.html#подсчет-количества-символов"><i class="fa fa-check"></i><b>5.3.1</b> Подсчет количества символов</a></li>
+<li class="chapter" data-level="5.3.2" data-path="strings.html"><a href="strings.html#подгонка-количества-символов"><i class="fa fa-check"></i><b>5.3.2</b> Подгонка количества символов</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="strings.html"><a href="strings.html#изменение-регистра"><i class="fa fa-check"></i><b>5.4</b> Изменение регистра</a></li>
+<li class="chapter" data-level="5.5" data-path="strings.html"><a href="strings.html#сортировка"><i class="fa fa-check"></i><b>5.5</b> Сортировка</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="data-presentation.html"><a href="data-presentation.html"><i class="fa fa-check"></i><b>6</b> Представление данных: rmarkdown, github, shiny</a></li>
-<li class="chapter" data-level="7" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>7</b> Работа со строками</a></li>
-<li class="chapter" data-level="8" data-path="tidytext.html"><a href="tidytext.html"><i class="fa fa-check"></i><b>8</b> Работа с текстами: tidytext, udpipe</a></li>
-<li class="chapter" data-level="9" data-path="rvest.html"><a href="rvest.html"><i class="fa fa-check"></i><b>9</b> Сбор данных из интернета: rvest</a></li>
-<li class="chapter" data-level="10" data-path="non-standard-data.html"><a href="non-standard-data.html"><i class="fa fa-check"></i><b>10</b> Нестандартные данные: время, OCR, карты</a></li>
+<li class="chapter" data-level="7" data-path="tidytext.html"><a href="tidytext.html"><i class="fa fa-check"></i><b>7</b> Работа с текстами: tidytext, udpipe</a></li>
+<li class="chapter" data-level="8" data-path="rvest.html"><a href="rvest.html"><i class="fa fa-check"></i><b>8</b> Сбор данных из интернета: rvest</a></li>
+<li class="chapter" data-level="9" data-path="non-standard-data.html"><a href="non-standard-data.html"><i class="fa fa-check"></i><b>9</b> Нестандартные данные: время, OCR, карты</a></li>
+<li class="chapter" data-level="10" data-path="distributions.html"><a href="distributions.html"><i class="fa fa-check"></i><b>10</b> Distributions</a></li>
 <li class="chapter" data-level="11" data-path="tasks.html"><a href="tasks.html"><i class="fa fa-check"></i><b>11</b> Задания</a><ul>
 <li class="chapter" data-level="11.1" data-path="tasks.html"><a href="tasks.html#vec_task_1"><i class="fa fa-check"></i><b>11.1</b> Вектор</a></li>
 <li class="chapter" data-level="11.2" data-path="tasks.html"><a href="tasks.html#vec_op"><i class="fa fa-check"></i><b>11.2</b> Вектор. Операции с векторами</a></li>
@@ -993,7 +1002,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="tidy-dplyr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="purr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="strings.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
