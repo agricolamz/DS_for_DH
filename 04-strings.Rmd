@@ -156,20 +156,20 @@ tibble(mn = month.name) %>%
 ```
 
 ```{block, type = "rmdtask"}
-На Pudding вышла [статья про английские пабы](https://pudding.cool/2019/10/pubs/). [Здесь](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/UK_pubs.csv) лежит немного обработанный датасет, которые они использовали. Визуализируйте 50 самых частотоных названий пабов в Великобритании, отложив по оси x количество символов, а по оси y -- количество баров с таким названием.
+На Pudding вышла [статья про английские пабы](https://pudding.cool/2019/10/pubs/). [Здесь](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/UK_pubs.csv) лежит немного обработанный датасет, которые они использовали. Визуализируйте 40 самых частотоных названий пабов в Великобритании, отложив по оси x количество символов, а по оси y -- количество баров с таким названием.
 ```
 
 ```{r, echo=FALSE, message = FALSE}
 read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/UK_pubs.csv") %>% 
   count(pub_name, sort = TRUE) %>% 
   mutate(nchar = str_length(pub_name)) %>% 
-  filter(n>50) %>% 
+  slice(1:40) %>% 
   ggplot(aes(nchar, n, label = pub_name))+
   geom_point()+
   ggrepel::geom_text_repel()+
   labs(x = "number of symbols",
        y = "number of bars",
-       titles = "50 most popular bar names in UK",
+       titles = "40 most popular bar names in UK",
        caption = "data from https://pudding.cool/2019/10/pubs/")
 ```
 
