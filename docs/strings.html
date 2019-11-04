@@ -1216,6 +1216,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <br>
 </details>
 </details>
+<div class="rmdtask">
+<p>
+В ходе анализа данных чаще всего бороться со строками и регулярными выражениями приходится в процессе обработки неаккуратно собранных анкет. Предлагаю обработать переменные <code>sex</code> и <code>age</code> <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/mad_questionary.csv">такой вот неудачно собранной анкеты</a> и построить следующий график:
+</p>
+</div>
+<p><img src="images/mad_questionary_task.png" /></p>
+<p><code>{r, cache=TRUE, include=FALcache=TRUE, ("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/mad_questionary.csv") %&gt;%    mutate(sex = str_replace_all(sex, "^[Жж].*", "женский"),          sex = str_replace_all(sex, "^[Мм].*", "мужской"),          age = str_remove_all(age, " лет"),          age = as.integer(age)) %&gt;%   ggplot(aes(age, fill = sex))+   geom_dotplot(method = "histodot")+   scale_y_continuous(NULL, breaks = NULL) # чтобы убрать ось y</code></p>
+<details>
+<p><summary> 📋 список подсказок ➡ </summary></p>
+<details>
+<summary> 👁 А что это за <code>geom_...()</code>? ➡ </summary>
+Это <a href="https://agricolamz.github.io/DS_for_DH/viz-1.html#%D0%B4%D0%BE%D1%82%D0%BF%D0%BB%D0%BE%D1%82"><code>geom_dotplot()</code></a> с аргументом <code>method = "histodot"</code> и с удаленной осью y при помощи команды <code>scale_y_continuous(NULL, breaks = NULL)</code>
+<br>
+</details>
+<details>
+<summary> 👁 Почему на графике рисутеся каждое значение возраста? ➡ </summary>
+Если Вы все правильно преобразовали, должно помочь преобразование строковой переменной age в числовую при помощи функции as.integer().
+<br>
+</details>
+</details>
 </div>
 </div>
 <div id="определение-языка" class="section level2">
