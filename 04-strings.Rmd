@@ -649,7 +649,9 @@ tibble(text = text) %>%
 
 ![](images/mad_questionary_task.png)
 
-```{r, cache=TRUE, include=FALcache=TRUE, ("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/mad_questionary.csv") %>% 
+
+```{r cache=TRUE, include=FALSE}
+read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/mad_questionary.csv") %>% 
   mutate(sex = str_replace_all(sex, "^[Жж].*", "женский"),
          sex = str_replace_all(sex, "^[Мм].*", "мужской"),
          age = str_remove_all(age, " лет"),
@@ -658,6 +660,8 @@ tibble(text = text) %>%
   geom_dotplot(method = "histodot")+
   scale_y_continuous(NULL, breaks = NULL) # чтобы убрать ось y
 ```
+
+
 
 <details> <summary> 📋 список подсказок ➡ </summary> 
 

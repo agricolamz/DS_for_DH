@@ -1222,7 +1222,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 <p><img src="images/mad_questionary_task.png" /></p>
-<p><code>{r, cache=TRUE, include=FALcache=TRUE, ("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/mad_questionary.csv") %&gt;%    mutate(sex = str_replace_all(sex, "^[Жж].*", "женский"),          sex = str_replace_all(sex, "^[Мм].*", "мужской"),          age = str_remove_all(age, " лет"),          age = as.integer(age)) %&gt;%   ggplot(aes(age, fill = sex))+   geom_dotplot(method = "histodot")+   scale_y_continuous(NULL, breaks = NULL) # чтобы убрать ось y</code></p>
 <details>
 <p><summary> 📋 список подсказок ➡ </summary></p>
 <details>
