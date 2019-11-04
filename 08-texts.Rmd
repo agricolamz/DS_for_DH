@@ -1,1 +1,34 @@
-# Работа с текстами: tidytext, udpipe {#tidytext}
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Работа с текстами: guttenbergr, tidytext, udpipe, corpus {#tidytext}
+```{r}
+library(tidyverse)
+library(udpipe)
+dl <- udpipe_download_model(language = "russian")
+udmodel_ru <- udpipe_load_model(file = dl$file_model)
+
+txt <- read_lines("/home/agricolamz/Desktop/kolobok")
+txt <- str_c(txt, collapse = " ")
+
+x <- udpipe_annotate(udmodel_ru, x = txt)
+x <- as.data.frame(x)
+
+sentiment <- read_csv("https://raw.githubusercontent.com/text-machine-lab/sentimental/master/sentimental/word_list/russian.csv")
+
+x %>% 
+  left_join(sentiment, by = c("lemma" = "word")) ->
+  x
+
+x %>% 
+  select(score) %>% 
+  as.data.frame()
+  group_by(sentence_id) %>% 
+  summarise(sentiment = sum(score, na.rm = TRUE)) 
+  mutate(sentiment_type = ifelse(sentiment>= 0, "positive", "negative")) %>% 
+  ggplot(aes(sentence_id, sentiment, fill = sentiment_type))+
+  geom_col()
+```
+
