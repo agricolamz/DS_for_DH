@@ -1142,24 +1142,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="позиционная-проверка-look-arounds" class="section level3">
 <h3><span class="header-section-number">5.8.4</span> Позиционная проверка (look arounds)</h3>
-<p>Апофеоз некомпозициональных конвенций в регулярных строках — это позиционная проверка.</p>
+<p>Позиционная проверка – выглядит достаточно непоследовательно даже в свете остальных регулярных выражений.</p>
+<p>Давайте найдем все <em>а</em> <strong>перед</strong> <em>р</em>:</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="strings.html#cb158-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;а(?=р)&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-36e5f12aa8f7514944b3" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-36e5f12aa8f7514944b3">{"x":{"html":"<ul>\n  <li>К<span class='match'>а<\/span>рл у Кл<span class='match'>а<\/span>ры украл кораллы, а Кл<span class='match'>а<\/span>ра у К<span class='match'>а<\/span>рла украла кл<span class='match'>а<\/span>рнет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>А теперь все <em>а</em> <strong>перед</strong> <em>р</em> или <em>л</em>:</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="strings.html#cb159-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;а(?=[рл])&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-aacebf2b5d66a77c447b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aacebf2b5d66a77c447b">{"x":{"html":"<ul>\n  <li>К<span class='match'>а<\/span>рл у Кл<span class='match'>а<\/span>ры укр<span class='match'>а<\/span>л кор<span class='match'>а<\/span>ллы, а Кл<span class='match'>а<\/span>ра у К<span class='match'>а<\/span>рла укр<span class='match'>а<\/span>ла кл<span class='match'>а<\/span>рнет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Давайте найдем все а <strong>после</strong> <em>р</em></p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="strings.html#cb160-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;(?&lt;=р)а&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-fdba825c805e818be138" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fdba825c805e818be138">{"x":{"html":"<ul>\n  <li>Карл у Клары укр<span class='match'>а<\/span>л кор<span class='match'>а<\/span>ллы, а Клар<span class='match'>а<\/span> у Карла укр<span class='match'>а<\/span>ла кларнет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>А теперь все <em>а</em> <strong>после</strong> <em>р</em> или <em>л</em>:</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="strings.html#cb161-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;(?&lt;=[рл])а&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-99c0e72f9cc113ccb994" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-99c0e72f9cc113ccb994">{"x":{"html":"<ul>\n  <li>Карл у Кл<span class='match'>а<\/span>ры укр<span class='match'>а<\/span>л кор<span class='match'>а<\/span>ллы, а Кл<span class='match'>а<\/span>р<span class='match'>а<\/span> у Карл<span class='match'>а<\/span> укр<span class='match'>а<\/span>л<span class='match'>а<\/span> кл<span class='match'>а<\/span>рнет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Также у этих выражений есть формы с отрицанием. Давайте найдем все <em>р</em> <strong>не перед</strong> <em>а</em>:</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="strings.html#cb162-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;р(?!а)&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-1eedae62bd71d212e341" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1eedae62bd71d212e341">{"x":{"html":"<ul>\n  <li>Ка<span class='match'>р<\/span>л у Кла<span class='match'>р<\/span>ы украл кораллы, а Клара у Ка<span class='match'>р<\/span>ла украла кла<span class='match'>р<\/span>нет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>А теперь все <em>р</em> <strong>не после</strong> <em>а</em>:</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="strings.html#cb163-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;(?&lt;!а)р&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-8a18dbb9ec73b2217f3a" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8a18dbb9ec73b2217f3a">{"x":{"html":"<ul>\n  <li>Карл у Клары ук<span class='match'>р<\/span>ал ко<span class='match'>р<\/span>аллы, а Клара у Карла ук<span class='match'>р<\/span>ала кларнет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Запомнить с ходу это достаточно сложно, так что подсматривайте сюда:</p>
 <p><img src="images/5.16_lookarounds.png" /></p>
 <div class="rmdtask">
 <p>
-А здесь должны быть задания на регулряные выражения
+<a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/zabolockiy_merknut_znaki_zodiaka.txt">Вот отсюда</a> можно скачать файл с текстом стихотворения Н. Заболоцкого “Меркнут знаки задиака”. Посчитайте долю женских (ударение падает на <strong>предпоследний</strong> слог рифмующихся слов) и мужских (ударение падает на <strong>последний</strong> слог рифмующихся слов) рифм в стихотворении.
 </p>
 </div>
+<details>
+<p><summary> 📋 список подсказок ➡ </summary></p>
+<details>
+<summary> 👁 Датасеты скачивается с ошибкой, почему? ➡ </summary>
+Дело в том, что исходный файл в формате <code>.txt</code>, а не <code>.csv</code>. Его нужно скачивать, например, командой <code>read_lines()</code> <br>
+</details>
+<details>
+<summary> 👁 Ошибка: <code>...applied to an object of class "character"</code> ➡ </summary><br />
+Скачав файл Вы получили вектор со строками, где каждая элимент вектора – строка стихотворения. Создайте <code>tibble()</code>, тогда можно будет применять стандартные инструменты <code>tidyverse</code>.
+<br>
+</details>
+<details>
+<summary> 👁 Хорошо, <code>tibble()</code> создан, что дальше? ➡ </summary>
+Дальше нужно создать переменную, из которой будет понятно, мужская в каждой строке рифма, или женская.
+<br>
+</details>
+<details>
+<summary> 👁 А как определить, какая рифма? Нужно с словарем сравнивать? ➡ </summary>
+Формально говоря, определять рифму можно по косвенным признакам. Все стихотворение написано четырехстопным хореем, значит в нем либо 7, либо 8 слогов. Значит, посчитав количество слогов, мы поймем, какая перед нами рифма.
+<br>
+</details>
+<details>
+<summary> 👁 А как посчитать гласные? ➡ </summary>
+Нужно написать регулярное выражение… вроде бы это тема нашего занятия…
+<br>
+</details>
+<details>
+<summary> 👁 Гласные посчитаны. А что дальше? ➡ </summary>
+Ну теперь нужно посчитать, сколько каких длин (в количестве слогов) бывает в стихотворении. Это можно сделать при помощи функции <code>count()</code>.
+<br>
+</details>
+<details>
+<summary> 👁 А почему у меня есть строки длины 0 слогов ➡ </summary>
+Ну, видимо, в стихотворении были пустые строки. Они использовались для разделения строф.
+<br>
+</details>
+<details>
+<summary> 👁 А почему у меня есть строки длины 6 слогов ➡ </summary>
+Ну, видимо, Вы написали регулярное выражение, которое не учитывает, что гласные буквы могут быть еще и в начале строки, а значит написаны с большой буквы.
+<br>
+</details>
+</details>
 </div>
 </div>
 <div id="определение-языка" class="section level2">
 <h2><span class="header-section-number">5.9</span> Определение языка</h2>
 <p>Для определения языка существует два пакета <code>cld2</code> (вероятностный) и <code>cld3</code> (нейросеть).</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="strings.html#cb158-1"></a>udhr_<span class="dv">24</span> &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/article_24_from_UDHR.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="strings.html#cb164-1"></a>udhr_<span class="dv">24</span> &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/article_24_from_UDHR.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   article_text = col_character()
 ## )</code></pre>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="strings.html#cb160-1"></a>udhr_<span class="dv">24</span></span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="strings.html#cb166-1"></a>udhr_<span class="dv">24</span></span></code></pre></div>
 <pre><code>## # A tibble: 6 x 1
 ##   article_text                                                             
 ##   &lt;chr&gt;                                                                    
@@ -1169,25 +1236,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 Toda persona tiene derecho al descanso, al disfrute del tiempo libre, a …
 ## 5 لكلِّ شخص حقٌّ في الراحة وأوقات الفراغ، وخصوصًا في تحديد معقول لساعات ال…     
 ## 6 人人有享有休息和闲暇的权利，包括工作时间有合理限制和定期给薪休假的权利。</code></pre>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="strings.html#cb162-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text)</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="strings.html#cb168-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text)</span></code></pre></div>
 <pre><code>## [1] &quot;ru&quot; &quot;en&quot; &quot;fr&quot; &quot;es&quot; &quot;ar&quot; &quot;zh&quot;</code></pre>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="strings.html#cb164-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text, <span class="dt">lang_code =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="strings.html#cb170-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text, <span class="dt">lang_code =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;RUSSIAN&quot; &quot;ENGLISH&quot; &quot;FRENCH&quot;  &quot;SPANISH&quot; &quot;ARABIC&quot;  &quot;CHINESE&quot;</code></pre>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="strings.html#cb166-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text)</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="strings.html#cb172-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text)</span></code></pre></div>
 <pre><code>## [1] &quot;ru&quot; &quot;en&quot; &quot;fr&quot; &quot;es&quot; &quot;ar&quot; &quot;zh&quot;</code></pre>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="strings.html#cb168-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Ты женат? Говорите ли по-английски?&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="strings.html#cb174-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Ты женат? Говорите ли по-английски?&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;bg&quot;</code></pre>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="strings.html#cb170-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Ты женат? Говорите ли по-английски?&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="strings.html#cb176-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Ты женат? Говорите ли по-английски?&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="strings.html#cb172-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варкалось. Хливкие шорьки пырялись по наве, и хрюкотали зелюки, как мюмзики в мове.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="strings.html#cb178-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варкалось. Хливкие шорьки пырялись по наве, и хрюкотали зелюки, как мюмзики в мове.&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;ru&quot;</code></pre>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="strings.html#cb174-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варкалось. Хливкие шорьки пырялись по наве, и хрюкотали зелюки, как мюмзики в мове.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="strings.html#cb180-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варкалось. Хливкие шорьки пырялись по наве, и хрюкотали зелюки, как мюмзики в мове.&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;ru&quot;</code></pre>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="strings.html#cb176-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варчилось… Хлив&#39;язкі тхурки викрули, свербчись навкрузі, жасумновілі худоки гривіли зехряки в чузі.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="strings.html#cb182-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варчилось… Хлив&#39;язкі тхурки викрули, свербчись навкрузі, жасумновілі худоки гривіли зехряки в чузі.&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;uk&quot;</code></pre>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="strings.html#cb178-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варчилось… Хлив&#39;язкі тхурки викрули, свербчись навкрузі, жасумновілі худоки гривіли зехряки в чузі.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="strings.html#cb184-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варчилось… Хлив&#39;язкі тхурки викрули, свербчись навкрузі, жасумновілі худоки гривіли зехряки в чузі.&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;uk&quot;</code></pre>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="strings.html#cb180-1"></a>cld2<span class="op">::</span><span class="kw">detect_language_mixed</span>(<span class="st">&quot;Многие в нашей команде OpenDataScience занимаются state-of-the-art технологиями машинного обучения: DL-фреймворками, байесовскими методами машинного обучения, вероятностным программированием и не только.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="strings.html#cb186-1"></a>cld2<span class="op">::</span><span class="kw">detect_language_mixed</span>(<span class="st">&quot;Многие в нашей команде OpenDataScience занимаются state-of-the-art технологиями машинного обучения: DL-фреймворками, байесовскими методами машинного обучения, вероятностным программированием и не только.&quot;</span>)</span></code></pre></div>
 <pre><code>## $classificaton
 ##   language code latin proportion
 ## 1  RUSSIAN   ru FALSE       0.87
@@ -1199,7 +1266,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## $reliabale
 ## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="strings.html#cb182-1"></a>cld3<span class="op">::</span><span class="kw">detect_language_mixed</span>(<span class="st">&quot;Многие в нашей команде OpenDataScience занимаются state-of-the-art технологиями машинного обучения: DL-фреймворками, байесовскими методами машинного обучения, вероятностным программированием и не только.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="strings.html#cb188-1"></a>cld3<span class="op">::</span><span class="kw">detect_language_mixed</span>(<span class="st">&quot;Многие в нашей команде OpenDataScience занимаются state-of-the-art технологиями машинного обучения: DL-фреймворками, байесовскими методами машинного обучения, вероятностным программированием и не только.&quot;</span>)</span></code></pre></div>
 <pre><code>##   language probability reliable proportion
 ## 1       ru   0.9983915     TRUE 0.88951844
 ## 2       en   0.9992564     TRUE 0.05099150
@@ -1214,12 +1281,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>замена символа aOb → aNb</li>
 <li>перестановка символов ab → ba</li>
 </ul>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="strings.html#cb184-1"></a><span class="kw">library</span>(stringdist)</span>
-<span id="cb184-2"><a href="strings.html#cb184-2"></a><span class="kw">stringdist</span>(<span class="st">&quot;корова&quot;</span>,<span class="st">&quot;корова&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="strings.html#cb190-1"></a><span class="kw">library</span>(stringdist)</span>
+<span id="cb190-2"><a href="strings.html#cb190-2"></a><span class="kw">stringdist</span>(<span class="st">&quot;корова&quot;</span>,<span class="st">&quot;корова&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="strings.html#cb186-1"></a><span class="kw">stringdist</span>(<span class="st">&quot;коровы&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;курица&quot;</span>, <span class="st">&quot;бык&quot;</span>, <span class="st">&quot;утка&quot;</span>, <span class="st">&quot;корова&quot;</span>, <span class="st">&quot;осел&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="strings.html#cb192-1"></a><span class="kw">stringdist</span>(<span class="st">&quot;коровы&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;курица&quot;</span>, <span class="st">&quot;бык&quot;</span>, <span class="st">&quot;утка&quot;</span>, <span class="st">&quot;корова&quot;</span>, <span class="st">&quot;осел&quot;</span>))</span></code></pre></div>
 <pre><code>## [1] 4 6 6 1 5</code></pre>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="strings.html#cb188-1"></a><span class="kw">amatch</span>(<span class="kw">c</span>(<span class="st">&quot;быки&quot;</span>, <span class="st">&quot;коровы&quot;</span>), <span class="kw">c</span>(<span class="st">&quot;курица&quot;</span>, <span class="st">&quot;бык&quot;</span>, <span class="st">&quot;утка&quot;</span>, <span class="st">&quot;корова&quot;</span>, <span class="st">&quot;осел&quot;</span>), <span class="dt">maxDist =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="strings.html#cb194-1"></a><span class="kw">amatch</span>(<span class="kw">c</span>(<span class="st">&quot;быки&quot;</span>, <span class="st">&quot;коровы&quot;</span>), <span class="kw">c</span>(<span class="st">&quot;курица&quot;</span>, <span class="st">&quot;бык&quot;</span>, <span class="st">&quot;утка&quot;</span>, <span class="st">&quot;корова&quot;</span>, <span class="st">&quot;осел&quot;</span>), <span class="dt">maxDist =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 2 4</code></pre>
 
 </div>
