@@ -242,6 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>6</b> Работа со списками</a><ul>
 <li class="chapter" data-level="6.1" data-path="lists.html"><a href="lists.html#что-такое-списки"><i class="fa fa-check"></i><b>6.1</b> Что такое списки?</a></li>
+<li class="chapter" data-level="6.2" data-path="lists.html"><a href="lists.html#пакет-purrr"><i class="fa fa-check"></i><b>6.2</b> Пакет <code>purrr</code></a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-presentation.html"><a href="data-presentation.html"><i class="fa fa-check"></i><b>7</b> Представление данных: rmarkdown, github, shiny</a></li>
 <li class="chapter" data-level="8" data-path="tidytext.html"><a href="tidytext.html"><i class="fa fa-check"></i><b>8</b> Работа с текстами: guttenbergr, tidytext, udpipe, corpus</a></li>
@@ -306,24 +307,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] 2 4</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="lists.html#cb9-1"></a>x[[<span class="dv">2</span>]][<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<blockquote class="twitter-tweet" data-lang="en">
-<p lang="en" dir="ltr">
-Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a>. Inspired by the Residence Inn <a href="http://t.co/YQ6axb2w7t">pic.twitter.com/YQ6axb2w7t</a>
-</p>
-— Hadley Wickham (@ href=“<a href="https://twitter.com/hadleywickham/status/643381054758363136?ref_src=twsrc%5Etfw" class="uri">https://twitter.com/hadleywickham/status/643381054758363136?ref_src=twsrc%5Etfw</a>”&gt;September 14, 2015</a>
-</blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
-
-</script>
-<p>Списки вне R обычно хранят в файлах типа <code>.json</code> (по-английски говорят с ударением на первый слог, а вот по-русски прижился вариант с ударением на второй слог: джейсо́н). Джейсоны</p>
-<p>Достаточно удобно использовать пакет <code>listviewer</code> для просмотра списков:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="lists.html#cb11-1"></a><span class="kw">library</span>(listviewer)</span>
-<span id="cb11-2"><a href="lists.html#cb11-2"></a><span class="kw">View</span>(x)</span>
-<span id="cb11-3"><a href="lists.html#cb11-3"></a></span>
-<span id="cb11-4"><a href="lists.html#cb11-4"></a>got_chars &lt;-<span class="st"> </span>repurrrsive<span class="op">::</span>got_chars</span>
-<span id="cb11-5"><a href="lists.html#cb11-5"></a>listviewer<span class="op">::</span><span class="kw">jsonedit</span>(got_chars, <span class="dt">mode =</span> <span class="st">&quot;view&quot;</span>)</span>
-<span id="cb11-6"><a href="lists.html#cb11-6"></a></span>
-<span id="cb11-7"><a href="lists.html#cb11-7"></a><span class="kw">write_json</span>(got_chars, <span class="st">&quot;data/got_chars.json&quot;</span>)</span></code></pre></div>
+<p><img src="images/lists.png" /></p>
+<p>Списки вне R обычно хранят в файлах типа <code>.json</code> (по-английски говорят с ударением на первый слог, а вот по-русски прижился вариант с ударением на второй слог: джейсо́н). Самое важное, что нужно знать, про .json, это то, что там могут хранится:</p>
+<ul>
+<li>пары ключ и значение, заключенные в фигурные скобки <code>{"ключ":"значение"}</code></li>
+<li>упорядочные множества значений, заключенные в квадратные скобки <code>["значение_1","значение_2",...]</code></li>
+<li>некоторые другие типы данных</li>
+</ul>
+<p>Чтение и запись <code>.json</code> файлов осуществляется при помощи пакета <code>jsonlite</code> (не входит в <code>tidyverse</code>). Для примера скачаем датасет 30 героев Игры престолов, который Дж. Р. Р. Мартин достал с ресурса <a href="https://anapioficeandfire.com/">An API of Ice And Fire</a>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="lists.html#cb11-1"></a><span class="kw">library</span>(jsonlite)</span>
+<span id="cb11-2"><a href="lists.html#cb11-2"></a>got_chars &lt;-<span class="st"> </span><span class="kw">read_json</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/got_chars.json&quot;</span>)</span></code></pre></div>
+<p>По аналогии с другими функциями в R, пакет <code>jsonlite</code> позволяет записывать <code>.json</code> файлы:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="lists.html#cb12-1"></a><span class="kw">write_json</span>(got_chars, <span class="st">&quot;got_chars.json&quot;</span>)</span></code></pre></div>
+<p>Просмоторщик списков встроен в RStudio. Его можно увидеть, если ткнуть в объект в R или написать команду <code>View(got_chars)</code>. Альтернативой может стать функция <code>jsonedit()</code> из пакета <code>listviewer</code>.</p>
+</div>
+<div id="пакет-purrr" class="section level2">
+<h2><span class="header-section-number">6.2</span> Пакет <code>purrr</code></h2>
+<p>В <code>tidyverse</code> встроен пакет <code>purrr</code>, который среди прочего позволяет работать со списками.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="lists.html#cb13-1"></a><span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="lists.html#cb14-1"></a>got_chars[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>] <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb14-2"><a href="lists.html#cb14-2"></a><span class="st">  </span><span class="kw">map</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
+<pre><code>## [[1]]
+## [[1]][[1]]
+## [1] &quot;Theon Greyjoy&quot;
+## 
+## 
+## [[2]]
+## [[2]][[1]]
+## [1] &quot;Tyrion Lannister&quot;
+## 
+## 
+## [[3]]
+## [[3]][[1]]
+## [1] &quot;Victarion Greyjoy&quot;
+## 
+## 
+## [[4]]
+## [[4]][[1]]
+## [1] &quot;Will&quot;
+## 
+## 
+## [[5]]
+## [[5]][[1]]
+## [1] &quot;Areo Hotah&quot;
+## 
+## 
+## [[6]]
+## [[6]][[1]]
+## [1] &quot;Chett&quot;
+## 
+## 
+## [[7]]
+## [[7]][[1]]
+## [1] &quot;Cressen&quot;
+## 
+## 
+## [[8]]
+## [[8]][[1]]
+## [1] &quot;Arianne Martell&quot;
+## 
+## 
+## [[9]]
+## [[9]][[1]]
+## [1] &quot;Daenerys Targaryen&quot;
+## 
+## 
+## [[10]]
+## [[10]][[1]]
+## [1] &quot;Davos Seaworth&quot;</code></pre>
 
 </div>
 </div>

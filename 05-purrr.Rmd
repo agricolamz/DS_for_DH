@@ -23,29 +23,37 @@ x[[2]][2]
 
 * пары ключ и значение, заключенные в фигурные скобки `{"ключ":"значение"}`
 * упорядочные множества значений, заключенные в квадратные скобки `["значение_1","значение_2",...]`
+* некоторые другие типы данных
 
-Чтение и запись `.json` файлов осуществляется при помощи пакета `jsonlite` (не входит в `tidyverse`):
+Чтение и запись `.json` файлов осуществляется при помощи пакета `jsonlite` (не входит в `tidyverse`). Для примера скачаем датасет 30 героев Игры престолов, который  Дж. Р. Р. Мартин достал с ресурса [An API of Ice And Fire](https://anapioficeandfire.com/).
+
 ```{r}
 library(jsonlite)
 got_chars <- read_json("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/got_chars.json")
 ```
 
+По аналогии с другими функциями в R, пакет `jsonlite` позволяет записывать `.json` файлы:
+```{r, eval=FALSE}
+write_json(got_chars, "got_chars.json")
+```
 
+Просмоторщик списков встроен в RStudio. Его можно увидеть, если ткнуть в объект в R или написать команду `View(got_chars)`. Альтернативой может стать функция `jsonedit()` из пакета `listviewer`.
 
+## Пакет `purrr`
 
+В `tidyverse` встроен пакет `purrr`, который среди прочего позволяет работать со списками.
 
-Достаточно удобно использовать пакет `listviewer` для просмотра списков:
-
-```{r, eval = FALSE}
-library(listviewer)
-View(x)
-
-got_chars <- repurrrsive::got_chars
-listviewer::jsonedit(got_chars, mode = "view")
-
-write_json(got_chars, "data/got_chars.json")
-
+```{r, message=FALSE}
+library("tidyverse")
 ```
 
 
+```{r}
+got_chars[1:3] %>% 
+  map("name")
+```
 
+```{r}
+got_chars[1:3] %>% 
+  map(1)
+```
