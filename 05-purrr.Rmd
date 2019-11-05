@@ -1,0 +1,51 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Работа со списками {#lists}
+
+## Что такое списки?
+Мы обсуждали в разделе \@ref{list} тип данных *список*, и все особенности их синтаксиса:
+
+```{r}
+x <- list(l = "a", m = c(2, 4), n = c("blue", "green", "red"))
+x
+x$l
+x[1]
+x[[2]]
+x[[2]][2]
+```
+
+![](images/lists.png)
+
+Списки вне R обычно хранят в файлах типа `.json` (по-английски говорят с ударением на первый слог, а вот по-русски прижился вариант с ударением на второй слог: джейсо́н). Самое важное, что нужно знать, про .json, это то, что там могут хранится:
+
+* пары ключ и значение, заключенные в фигурные скобки `{"ключ":"значение"}`
+* упорядочные множества значений, заключенные в квадратные скобки `["значение_1","значение_2",...]`
+
+Чтение и запись `.json` файлов осуществляется при помощи пакета `jsonlite` (не входит в `tidyverse`):
+```{r}
+library(jsonlite)
+got_chars <- read_json("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/got_chars.json")
+```
+
+
+
+
+
+Достаточно удобно использовать пакет `listviewer` для просмотра списков:
+
+```{r, eval = FALSE}
+library(listviewer)
+View(x)
+
+got_chars <- repurrrsive::got_chars
+listviewer::jsonedit(got_chars, mode = "view")
+
+write_json(got_chars, "data/got_chars.json")
+
+```
+
+
+
