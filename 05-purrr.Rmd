@@ -30,6 +30,13 @@ x[[2]][2]
 ```{r}
 library(jsonlite)
 got_chars <- read_json("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/got_chars.json")
+library("rjson")
+got_chars <- repurrrsive::got_chars
+
+
+rjson::toJSON(got_chars)
+write_json(got_chars, "data/got_chars.json", auto_unbox=TRUE)
+got_chars2 <- fromJSON("data/got_chars.json", simplifyVector = FALSE)
 ```
 
 По аналогии с другими функциями в R, пакет `jsonlite` позволяет записывать `.json` файлы:
@@ -37,7 +44,11 @@ got_chars <- read_json("https://raw.githubusercontent.com/agricolamz/DS_for_DH/m
 write_json(got_chars, "got_chars.json")
 ```
 
-Просмоторщик списков встроен в RStudio. Его можно увидеть, если ткнуть в объект в R или написать команду `View(got_chars)`. Альтернативой может стать функция `jsonedit()` из пакета `listviewer`.
+Просмоторщик списков встроен в RStudio. Его можно увидеть, если ткнуть в объект в R или написать команду `View(got_chars)`. Альтернативой может стать функция `jsonedit()` из пакета `listviewer`. Кроме того, что-то можно попробовать выяснить, используя функцию `str()`.
+
+```{r}
+str(got_chars[1])
+```
 
 ## Пакет `purrr`
 
@@ -47,13 +58,24 @@ write_json(got_chars, "got_chars.json")
 library("tidyverse")
 ```
 
+Можно выводить значения в списке на основе имени:
 
 ```{r}
-got_chars[1:3] %>% 
+got_chars[1:4] %>% 
   map("name")
 ```
+
+Можно выводить значения в списке на основе индекса:
 
 ```{r}
 got_chars[1:3] %>% 
   map(1)
 ```
+
+Достаточно полезно знать о функции `unlist()`, которая "убивает" все сложную структуру:
+
+```{r}
+got_chars2 %>% 
+  map("name")
+```
+
