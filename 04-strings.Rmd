@@ -105,6 +105,13 @@ tibble(upper = rev(LETTERS), smaller = letters) %>%
   separate(col = merge, into = c("column_1", "column_2"), sep = "_")
 ```
 
+Кроме того, есть инструмент `str_split()`, которая позволяет разбивать строки на подстроки, но возвращает *список*.
+
+```{r}
+str_split(month.name, "r")
+```
+
+
 ## Количество символов
 
 ### Подсчет количества символов
