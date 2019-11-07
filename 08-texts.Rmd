@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 # Работа с текстами: guttenbergr, tidytext, udpipe, corpus {#tidytext}
-```{r}
+```{r, eval = FALSE, include=FALSE}
 library(tidyverse)
 library(udpipe)
 dl <- udpipe_download_model(language = "russian")
