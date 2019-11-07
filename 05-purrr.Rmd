@@ -286,7 +286,7 @@ list("a", "b") %>%
 ```
 
 ```{block, type = "rmdtask"}
-[Скачайте пьесу "Ревизор"](https://raw.githubusercontent.com/dracor-org/rusdracor/master/tei/gogol-revizor.xml), размеченную в [TEI формате](https://tei-c.org/Guidelines/P5/) и постройте представленный ниже график. Превратив данные в список, лушче начинать работать с переменной `revizor\$TEI\$text\$body`:
+[Скачайте пьесу "Ревизор"](https://raw.githubusercontent.com/dracor-org/rusdracor/master/tei/gogol-revizor.xml), размеченную в [TEI формате](https://tei-c.org/Guidelines/P5/) и постройте представленный ниже график, на котором изображено количество реплик для каждого персонажа. Превратив данные в список, лушче начинать работать с переменной `revizor\$TEI\$text\$body`:
 ```
 
 ```{r cache=TRUE, echo=FALSE}
