@@ -279,7 +279,8 @@ tibble(mn = month.name) %>%
 ![](images/5.05_str_which.png)
 
 ```{r}
-str_which(month.name, "r")
+tibble(mn = month.name) %>% 
+  slice(str_which(month.name, "r"))
 ```
 
 Также можно посчитать количество вхождений какой-то подстроки:
