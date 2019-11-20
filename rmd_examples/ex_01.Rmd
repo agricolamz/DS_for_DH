@@ -1,0 +1,20 @@
+---
+output: html_document
+---
+
+## Данные
+В документе можно вставлять R код
+
+```{r}
+summary(iris)
+```
+
+## График
+И строить графики
+
+```{r}
+library(tidyverse)
+iris %>% 
+  ggplot(aes(Sepal.Length, Sepal.Width))+
+  geom_point()
+```

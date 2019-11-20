@@ -1,0 +1,7 @@
+```{r my_beautiful_graph, eval = FALSE}
+library(tidyverse)
+diamonds %>% 
+  count(carat, color) %>%
+  ggplot(aes(carat, n, color = color))+
+  geom_point()
+```

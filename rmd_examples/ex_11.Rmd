@@ -1,0 +1,83 @@
+---
+title: "Презентация slidy"
+output: slidy_presentation
+bibliography: bibliography.bib
+---
+## Markdown: базовое
+### Подраздел на слайде...
+Давайте попробуем разное форматирование: _италик_, __жирный__, ~~зачеркивание~~
+
+* список
+* список
+    * список
+
+### Ссылки
+
+[Ссылка 1](https://agricolamz.github.io/2018_ANDAN_course_winter/), <https://agricolamz.github.io/2018_ANDAN_course_winter/>
+
+> Цитата...
+
+## Markdown: код
+
+Бывает такой датасет `cars`:
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Markdown: график
+
+```{r pressure}
+plot(pressure)
+```
+
+## html код
+```
+<dl>
+  <dt>Чистый HTML</dt>
+  <dd>Еще можно писать в HTML.</dd>
+
+  <dt>и Markdown в  HTML </dt>
+  <dd> даже работает **правильно**. Но можно использовать и <em>теги</em>.</dd>
+</dl>
+```
+<dl>
+  <dt>Чистый HTML</dt>
+  <dd>Еще можно писать в HTML.</dd>
+
+  <dt>и Markdown в  HTML </dt>
+  <dd> даже работает **правильно**. Но можно использовать и <em>теги</em>.</dd>
+</dl>
+
+## Pandoc
+
+2^10^ C~k~ $\frac{\pi}{\sum{n+1}}$
+
+Вот и сноска[^1]
+
+[^1]: Сноска, сноска, сноска
+
+(@) Славный пример номер раз.
+(@two) Славный пример номер два, у которого есть *имя*.
+
+Я могу сослаться на пример (@two)!
+
+Ссылка на библиографию @gordon02...
+
+## Javascript: DT
+
+```{r}
+library(DT)
+datatable(mtcars)
+```
+
+## Javascript: leaflet
+
+```{r, echo=FALSE}
+library(leaflet)
+leaflet() %>% 
+  addTiles() %>%
+  addPopups(37.168254, 55.408408, 'Мы возможно <b>здесь</b>')
+```
+
+## Список литературы

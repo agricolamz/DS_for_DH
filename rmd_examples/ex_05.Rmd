@@ -1,0 +1,22 @@
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, fig.height = 3)
+```
+
+Первый фрагмент
+
+```{r}
+library(tidyverse)
+diamonds %>% 
+  count(carat, color) %>%
+  ggplot(aes(carat, n, color = color))+
+  geom_point()
+```
+
+Второй фрагмент
+
+```{r}
+diamonds %>% 
+  count(cut, color) %>%
+  ggplot(aes(cut, n, color = color))+
+  geom_point()
+```

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 Представление данных: rmarkdown, github, shiny | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
-  <meta name="description" content="7 Представление данных: rmarkdown, github, shiny | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+  <title>7 Представление данных: rmarkdown, shiny | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
+  <meta name="description" content="7 Представление данных: rmarkdown, shiny | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 Представление данных: rmarkdown, github, shiny | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+  <meta property="og:title" content="7 Представление данных: rmarkdown, shiny | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 Представление данных: rmarkdown, github, shiny | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+  <meta name="twitter:title" content="7 Представление данных: rmarkdown, shiny | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   
   
   
@@ -233,15 +233,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.7.3" data-path="strings.html"><a href="strings.html#замена-подстроки"><i class="fa fa-check"></i><b>5.7.3</b> Замена подстроки</a></li>
 <li class="chapter" data-level="5.7.4" data-path="strings.html"><a href="strings.html#удаление-подстроки"><i class="fa fa-check"></i><b>5.7.4</b> Удаление подстроки</a></li>
 <li class="chapter" data-level="5.7.5" data-path="strings.html"><a href="strings.html#транслитерация-строк"><i class="fa fa-check"></i><b>5.7.5</b> Транслитерация строк</a></li>
+<li class="chapter" data-level="5.7.6" data-path="strings.html"><a href="strings.html#экранирование-метасимволов"><i class="fa fa-check"></i><b>5.7.6</b> Экранирование метасимволов</a></li>
+<li class="chapter" data-level="5.7.7" data-path="strings.html"><a href="strings.html#классы-знаков"><i class="fa fa-check"></i><b>5.7.7</b> Классы знаков</a></li>
+<li class="chapter" data-level="5.7.8" data-path="strings.html"><a href="strings.html#квантификация"><i class="fa fa-check"></i><b>5.7.8</b> Квантификация</a></li>
+<li class="chapter" data-level="5.7.9" data-path="strings.html"><a href="strings.html#позиционная-проверка-look-arounds"><i class="fa fa-check"></i><b>5.7.9</b> Позиционная проверка (look arounds)</a></li>
 </ul></li>
-<li class="chapter" data-level="5.8" data-path="strings.html"><a href="strings.html#регулярные-выражения"><i class="fa fa-check"></i><b>5.8</b> Регулярные выражения</a><ul>
-<li class="chapter" data-level="5.8.1" data-path="strings.html"><a href="strings.html#экранирование-метасимволов"><i class="fa fa-check"></i><b>5.8.1</b> Экранирование метасимволов</a></li>
-<li class="chapter" data-level="5.8.2" data-path="strings.html"><a href="strings.html#классы-знаков"><i class="fa fa-check"></i><b>5.8.2</b> Классы знаков</a></li>
-<li class="chapter" data-level="5.8.3" data-path="strings.html"><a href="strings.html#квантификация"><i class="fa fa-check"></i><b>5.8.3</b> Квантификация</a></li>
-<li class="chapter" data-level="5.8.4" data-path="strings.html"><a href="strings.html#позиционная-проверка-look-arounds"><i class="fa fa-check"></i><b>5.8.4</b> Позиционная проверка (look arounds)</a></li>
-</ul></li>
-<li class="chapter" data-level="5.9" data-path="strings.html"><a href="strings.html#определение-языка"><i class="fa fa-check"></i><b>5.9</b> Определение языка</a></li>
-<li class="chapter" data-level="5.10" data-path="strings.html"><a href="strings.html#расстояния-между-строками"><i class="fa fa-check"></i><b>5.10</b> Расстояния между строками</a></li>
+<li class="chapter" data-level="5.8" data-path="strings.html"><a href="strings.html#определение-языка"><i class="fa fa-check"></i><b>5.8</b> Определение языка</a></li>
+<li class="chapter" data-level="5.9" data-path="strings.html"><a href="strings.html#расстояния-между-строками"><i class="fa fa-check"></i><b>5.9</b> Расстояния между строками</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>6</b> Работа со списками</a><ul>
 <li class="chapter" data-level="6.1" data-path="lists.html"><a href="lists.html#что-такое-списки"><i class="fa fa-check"></i><b>6.1</b> Что такое списки?</a><ul>
@@ -255,7 +253,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.3" data-path="lists.html"><a href="lists.html#операции-со-списками"><i class="fa fa-check"></i><b>6.2.3</b> Операции со списками</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-presentation.html"><a href="data-presentation.html"><i class="fa fa-check"></i><b>7</b> Представление данных: rmarkdown, github, shiny</a></li>
+<li class="chapter" data-level="7" data-path="data-presentation.html"><a href="data-presentation.html"><i class="fa fa-check"></i><b>7</b> Представление данных: rmarkdown, shiny</a><ul>
+<li class="chapter" data-level="7.1" data-path="data-presentation.html"><a href="data-presentation.html#rmarkdown"><i class="fa fa-check"></i><b>7.1</b> <code>rmarkdown</code></a><ul>
+<li class="chapter" data-level="7.1.1" data-path="data-presentation.html"><a href="data-presentation.html#установка"><i class="fa fa-check"></i><b>7.1.1</b> Установка</a></li>
+<li class="chapter" data-level="7.1.2" data-path="data-presentation.html"><a href="data-presentation.html#составляющие-rmarkdown-документа"><i class="fa fa-check"></i><b>7.1.2</b> Составляющие <code>rmarkdown</code>-документа</a></li>
+<li class="chapter" data-level="7.1.3" data-path="data-presentation.html"><a href="data-presentation.html#пример-rmarkdown-документа"><i class="fa fa-check"></i><b>7.1.3</b> Пример <code>rmarkdown</code>-документа</a></li>
+<li class="chapter" data-level="7.1.4" data-path="data-presentation.html"><a href="data-presentation.html#markdown"><i class="fa fa-check"></i><b>7.1.4</b> <code>Markdown</code></a></li>
+<li class="chapter" data-level="7.1.5" data-path="data-presentation.html"><a href="data-presentation.html#pandoc"><i class="fa fa-check"></i><b>7.1.5</b> <code>Pandoc</code></a></li>
+<li class="chapter" data-level="7.1.6" data-path="data-presentation.html"><a href="data-presentation.html#code-chunks"><i class="fa fa-check"></i><b>7.1.6</b> Code chunks</a></li>
+<li class="chapter" data-level="7.1.7" data-path="data-presentation.html"><a href="data-presentation.html#yaml-шапка"><i class="fa fa-check"></i><b>7.1.7</b> YAML шапка</a></li>
+<li class="chapter" data-level="7.1.8" data-path="data-presentation.html"><a href="data-presentation.html#где-хостить-.html"><i class="fa fa-check"></i><b>7.1.8</b> Где хостить <code>.html</code>?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="data-presentation.html"><a href="data-presentation.html#бывают-и-другие-способы-представления-данных"><i class="fa fa-check"></i><b>7.2</b> Бывают и другие способы представления данных</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="tidytext.html"><a href="tidytext.html"><i class="fa fa-check"></i><b>8</b> Работа с текстами: guttenbergr, tidytext, udpipe, corpus</a></li>
 <li class="chapter" data-level="9" data-path="rvest.html"><a href="rvest.html"><i class="fa fa-check"></i><b>9</b> Сбор данных из интернета: rvest</a></li>
 <li class="chapter" data-level="10" data-path="non-standard-data.html"><a href="non-standard-data.html"><i class="fa fa-check"></i><b>10</b> Нестандартные данные: время, OCR, карты</a></li>
@@ -295,8 +305,453 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="data_presentation" class="section level1">
-<h1><span class="header-section-number">7</span> Представление данных: rmarkdown, github, shiny</h1>
+<h1><span class="header-section-number">7</span> Представление данных: rmarkdown, shiny</h1>
+<p>Достаточно важной частью работы с данными является их представление. Мы рассмотрим наиболее распространенный варианты: <code>rmarkdown</code>, <code>flexdashboard</code> и <code>shiny</code>.</p>
+<div id="rmarkdown" class="section level2">
+<h2><span class="header-section-number">7.1</span> <code>rmarkdown</code></h2>
+<p><code>rmarkdown</code> – это пакет, который позволяет соединять R команды и их исполнения в один документ. В результате можно комбинировать текст и исполняемый код, что в свою очередь позволяет делать:
+* докумунты в формате <code>.html</code>, <code>.pdf</code> (используя , мы почти не будем это обсуждать), <code>.docx</code>
+* презентации в формате <code>.html</code>, <code>.pdf</code> (используя пакет <code>beamer</code>) <code>.pptx</code>-презентации
+* набор связанных <code>.html</code> документов (полноценный сайт или книга)</p>
+<div id="установка" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Установка</h3>
+<p>Как и все пакеты <code>rmarkdown</code> можно установить из CRAN</p>
+<div class="sourceCode" id="cb792"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb792-1"><a href="data-presentation.html#cb792-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span></code></pre></div>
+</div>
+<div id="составляющие-rmarkdown-документа" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> Составляющие <code>rmarkdown</code>-документа</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/YAML">yaml</a> шапка (факультативна)</li>
+<li>обычный текст с <a href="https://en.wikipedia.org/wiki/Markdown">markdown</a> форматированием (расширенный при помощи <a href="https://en.wikipedia.org/wiki/Pandoc">Pandoc</a>)</li>
+<li>блоки кода (не обязательно на языке R), оформленные с двух сторон тройным бэктиком ``` (у меня на клавиатуре этот знак на букве ё).</li>
+</ul>
+</div>
+<div id="пример-rmarkdown-документа" class="section level3">
+<h3><span class="header-section-number">7.1.3</span> Пример <code>rmarkdown</code>-документа</h3>
+<p>Создайте файл .Rmd в какой-нибудь папке (в RStudio, это можно сделать <code>File &gt; New file &gt; R Markdown</code>). Скомпелировать файл можно командой:</p>
+<div class="sourceCode" id="cb793"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb793-1"><a href="data-presentation.html#cb793-1"></a>rmarkdown<span class="op">::</span><span class="kw">render</span>(<span class="st">&quot;ваш_файл.Rmd&quot;</span>)</span></code></pre></div>
+<p>или кнопкой <img src="images/7.01_knit.png" />. Вот пример кода:</p>
+<pre><code>---
+output: html_document
+---
 
+## Данные
+В документе можно вставлять R код
+
+```{r}
+summary(iris)
+```
+
+## График
+И строить графики
+
+```{r}
+library(tidyverse)
+iris %&gt;% 
+  ggplot(aes(Sepal.Length, Sepal.Width))+
+  geom_point()
+```</code></pre>
+<p><a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/rmd_examples/ex_01.html">Результат</a>.</p>
+<div class="rmdtask">
+<p>
+Создайте и скомпелируйте свой <code>rmarkdown</code>-документ с заголовком, текстом и кодом.
+</p>
+</div>
+</div>
+<div id="markdown" class="section level3">
+<h3><span class="header-section-number">7.1.4</span> <code>Markdown</code></h3>
+<p>Универсальны язык разметки, работает во многих современных он-лайн системах создания текста.</p>
+<div id="заголовки" class="section level4">
+<h4><span class="header-section-number">7.1.4.1</span> Заголовки</h4>
+<pre><code>## Заголовок уровня 2
+#### Заголовок уровня 4</code></pre>
+</div>
+<div id="форматирование" class="section level4">
+<h4><span class="header-section-number">7.1.4.2</span> Форматирование</h4>
+<pre><code>_италик_ или *другой италик*
+
+__жирный__ или **другой жирный**
+
+~~зачеркивание~~</code></pre>
+<p><em>италик</em> или <em>другой италик</em></p>
+<p><strong>жирный</strong> или <strong>другой жирный</strong></p>
+<p><del>зачеркивание</del></p>
+</div>
+<div id="списки" class="section level4">
+<h4><span class="header-section-number">7.1.4.3</span> Списки</h4>
+<pre><code>* кролик
+* заяц
+    * заяц серый
+
+1. машины
+    1. автобус
+2. самолеты
+
++ можно еще ставить плюс
+- и минус</code></pre>
+<ul>
+<li>кролик</li>
+<li>заяц
+<ul>
+<li>заяц серый</li>
+</ul></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>машины
+<ol style="list-style-type: decimal">
+<li>автобус</li>
+</ol></li>
+<li>самолеты</li>
+</ol>
+<ul>
+<li>можно еще ставить плюс</li>
+<li>и минус</li>
+</ul>
+</div>
+<div id="ссылки-и-картинки" class="section level4">
+<h4><span class="header-section-number">7.1.4.4</span> Ссылки и картинки</h4>
+<pre><code>[Ссылка 1](https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html)
+
+&lt;https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html&gt;
+
+[Можно вставить ссылку потом, а пока отсавить метку][1]
+
+Или даже просто голую [метку].
+
+![](https://raw.githubusercontent.com/agricolamz/2018_ANDAN_course_winter/master/rmarkdown.png)
+
+Опять же можно вставить только метку ![][2]
+
+[1]: https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html
+[метку]: https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html
+[2]: https://raw.githubusercontent.com/agricolamz/2018_ANDAN_course_winter/master/rmarkdown.png</code></pre>
+<p><a href="https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html">Ссылка 1</a></p>
+<p><a href="https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html" class="uri">https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html</a></p>
+<p><a href="https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html">Можно вставить ссылку потом, а пока отсавить метку</a></p>
+<p>Или даже просто голую <a href="https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html">метку</a>.</p>
+<p><img src="https://raw.githubusercontent.com/agricolamz/2018_ANDAN_course_winter/master/rmarkdown.png" /></p>
+<p>Опять же можно вставить только метку <img src="https://raw.githubusercontent.com/agricolamz/2018_ANDAN_course_winter/master/rmarkdown.png" /></p>
+</div>
+<div id="код" class="section level4">
+<h4><span class="header-section-number">7.1.4.5</span> Код</h4>
+<pre><code>Код нужно оформалять вот так `rmarkdown::render()`</code></pre>
+<p>Код нужно оформалять вот так <code>rmarkdown::render()</code></p>
+<pre><code>```{python}
+friends = [&#39;john&#39;, &#39;pat&#39;, &#39;gary&#39;, &#39;michael&#39;]
+for i, name in enumerate(friends):
+    print &quot;iteration {iteration} is {name}&quot;.format(iteration=i, name=name)
+```</code></pre>
+<div class="sourceCode" id="cb801"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb801-1"><a href="data-presentation.html#cb801-1"></a>friends <span class="op">=</span> [<span class="st">&#39;john&#39;</span>, <span class="st">&#39;pat&#39;</span>, <span class="st">&#39;gary&#39;</span>, <span class="st">&#39;michael&#39;</span>]</span>
+<span id="cb801-2"><a href="data-presentation.html#cb801-2"></a><span class="cf">for</span> i, name <span class="kw">in</span> <span class="bu">enumerate</span>(friends):</span>
+<span id="cb801-3"><a href="data-presentation.html#cb801-3"></a>    <span class="bu">print</span> <span class="st">&quot;iteration </span><span class="sc">{iteration}</span><span class="st"> is </span><span class="sc">{name}</span><span class="st">&quot;</span>.<span class="bu">format</span>(iteration<span class="op">=</span>i, name<span class="op">=</span>name)</span></code></pre></div>
+<pre><code>iteration 0 is john
+iteration 1 is pat
+iteration 2 is gary
+iteration 3 is michael</code></pre>
+<p>Фигурные скобки не обязательны, но тогда RStudio подсветит.</p>
+</div>
+<div id="цитаты" class="section level4">
+<h4><span class="header-section-number">7.1.4.6</span> Цитаты</h4>
+<pre><code>&gt; Цитаты нужно офрмлять так.
+&gt; Это попадет в тот же фрагмент.
+
+&gt; А вот тут произошел разрыв. Кстати, здесь тоже можно использовать *markdown*.</code></pre>
+<blockquote>
+<p>Цитаты нужно офрмлять так.
+Это попадет в тот же фрагмент.</p>
+</blockquote>
+<blockquote>
+<p>А вот тут произошел разрыв. Кстати, здесь тоже можно использовать <em>markdown</em>.</p>
+</blockquote>
+</div>
+<div id="разрыв-страницы" class="section level4">
+<h4><span class="header-section-number">7.1.4.7</span> Разрыв страницы</h4>
+<pre><code>***</code></pre>
+<hr />
+</div>
+<div id="html" class="section level4">
+<h4><span class="header-section-number">7.1.4.8</span> HTML</h4>
+<pre><code>&lt;dl&gt;
+  &lt;dt&gt;Чистый HTML&lt;/dt&gt;
+  &lt;dd&gt;Еще можно писать в HTML.&lt;/dd&gt;
+
+  &lt;dt&gt;и Markdown в  HTML &lt;/dt&gt;
+  &lt;dd&gt; даже работает **правильно**. Но можно использовать и &lt;em&gt;теги&lt;/em&gt;.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+<dl>
+<dt>
+Чистый HTML
+</dt>
+<dd>
+Еще можно писать в HTML.
+</dd>
+<dt>
+и Markdown в HTML
+</dt>
+<dd>
+даже работает <strong>правильно</strong>. Но можно использовать и <em>теги</em>.
+</dd>
+</dl>
+</div>
+<div id="таблицы" class="section level4">
+<h4><span class="header-section-number">7.1.4.9</span> Таблицы</h4>
+<p>Еще есть целая наука как делать таблицы в Markdown, но я предпочитаю использовать <a href="http://www.tablesgenerator.com/markdown_tables">он-лайн генератор</a>.</p>
+</div>
+</div>
+<div id="pandoc" class="section level3">
+<h3><span class="header-section-number">7.1.5</span> <code>Pandoc</code></h3>
+<p><a href="https://pandoc.org/"><code>Pandoc</code></a> это программа, созданная <a href="johnmacfarlane.net">Дж. МакФарлэйном (J. MacFarlane)</a>, которая позволяет переходить из разных текстовых форматов в другие, а также смешивать их. Я покожу лишь несколько полезных расширений.</p>
+<div id="верхние-и-нижние-индексы" class="section level4">
+<h4><span class="header-section-number">7.1.5.1</span> Верхние и нижние индексы</h4>
+<pre><code>2^10^ C~n~^k^</code></pre>
+<p>2<sup>10</sup> C<sub>n</sub><sup>k</sup></p>
+</div>
+<div id="нумерованные-примеры" class="section level4">
+<h4><span class="header-section-number">7.1.5.2</span> Нумерованные примеры</h4>
+<pre><code>(@) Славный пример номер раз.
+(@) Славный пример номер два.
+(@three) Славный пример номер три, у которого есть *имя*.
+
+Я могу сослаться на пример (@three)!</code></pre>
+<ol class="example" style="list-style-type: decimal">
+<li>Славный пример номер раз.</li>
+<li>Славный пример номер два.</li>
+<li>Славный пример номер три, у которого есть <em>имя</em>.</li>
+</ol>
+<p>Я могу сослаться на пример (3)!</p>
+</div>
+<div id="сноски" class="section level4">
+<h4><span class="header-section-number">7.1.5.3</span> Сноски</h4>
+<pre><code>Вот и сноска[^1]
+
+[^1]: Сноска, сноска, сноска.</code></pre>
+<p>Вот и сноска<a href="ссылки-на-литературу.html#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+</div>
+<div id="математика-latex" class="section level4">
+<h4><span class="header-section-number">7.1.5.4</span> Математика: <span class="math inline">\(\LaTeX\)</span></h4>
+<pre><code>$\LaTeX$  код может быть в тексте $\frac{\pi}{\sum{n+1}}$ или отдельной строчкой:
+
+$$\frac{\pi}{\sum{n+1}}$$</code></pre>
+<p><span class="math inline">\(\LaTeX\)</span> код может быть в тексте <span class="math inline">\(\frac{\pi}{\sum{n+1}}\)</span> или отдельной строчкой:</p>
+<p><span class="math display">\[\frac{\pi}{\sum{n+1}}\]</span></p>
+</div>
+</div>
+<div id="code-chunks" class="section level3">
+<h3><span class="header-section-number">7.1.6</span> Code chunks</h3>
+<p>Фрагменты кода имеют свои наборы свойств, который можно записывать в фигурных скобках.</p>
+<div id="язык-программирования" class="section level4">
+<h4><span class="header-section-number">7.1.6.1</span> Язык программирования</h4>
+<pre><code>```{r}
+summary(cars)
+```
+
+```{python}
+x = &quot;my string&quot;
+print(x.split(&quot; &quot;))
+```</code></pre>
+<div class="sourceCode" id="cb811"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb811-1"><a href="data-presentation.html#cb811-1"></a><span class="kw">summary</span>(cars)</span></code></pre></div>
+<pre><code>     speed           dist       
+ Min.   : 4.0   Min.   :  2.00  
+ 1st Qu.:12.0   1st Qu.: 26.00  
+ Median :15.0   Median : 36.00  
+ Mean   :15.4   Mean   : 42.98  
+ 3rd Qu.:19.0   3rd Qu.: 56.00  
+ Max.   :25.0   Max.   :120.00  </code></pre>
+<div class="sourceCode" id="cb813"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb813-1"><a href="data-presentation.html#cb813-1"></a>x <span class="op">=</span> <span class="st">&quot;my string&quot;</span></span>
+<span id="cb813-2"><a href="data-presentation.html#cb813-2"></a><span class="bu">print</span>(x.split(<span class="st">&quot; &quot;</span>))</span></code></pre></div>
+<pre><code>[&#39;my&#39;, &#39;string&#39;]</code></pre>
+</div>
+<div id="появление-и-исполнение-кода" class="section level4">
+<h4><span class="header-section-number">7.1.6.2</span> Появление и исполнение кода</h4>
+<pre><code>И код, и результат
+```{r}
+plot(mtcars$mpg)
+```
+
+Только результат
+```{r, echo = FALSE}
+plot(mtcars$mpg)
+```
+
+Только код
+```{r, eval = FALSE}
+plot(mtcars$mpg)
+```
+
+Исполняется, но не показывается ни код, ни результат
+```{r, include = FALSE}
+a &lt;- mtcars$mpg
+```
+
+Обратимся к переменной, созданной в фрагменте с аргументом `include = FALSE`
+```{r}
+a
+```</code></pre>
+</div>
+<div id="другие-полезные-аргументы" class="section level4">
+<h4><span class="header-section-number">7.1.6.3</span> Другие полезные аргументы</h4>
+<p>Существует достаточно <a href="https://yihui.name/knitr/options/#chunk_options">много аргументов</a>, которые можно перечислить в фигурных скобках в фрагменте кода, вот некоторые из них:</p>
+<ul>
+<li><code>error</code>: показывать ли ошибки.</li>
+<li><code>warning</code>: показывать ли предупреждения.</li>
+<li><code>message</code>: показывать ли сообщения (например, при подключении пакетов).</li>
+<li><code>comment</code>: по умолчанию, результат работы кода предваряется знаком <code>##</code>, используйте <code>NA</code>, чтобы их не было, или любую другую строку.</li>
+<li><code>cache</code>: сохранить ли результат работы фрагмента кода. Очень полезно, если происходят какие-то операции, занимающая много времени. Сохранив результат, не нужно будет тратить время, на пересчет, при каждой новой компиляции.</li>
+<li><code>fig.width</code>, <code>fig.height</code> (по умолчанию, 7)</li>
+</ul>
+<p>Все эти аргументы можно перечислить в функции <code>knitr::opts_chunk$set(...)</code>:</p>
+</div>
+<div id="pets-or-livestock" class="section level4">
+<h4><span class="header-section-number">7.1.6.4</span> Pets or livestock?</h4>
+<p>В RMarkdown каждому фрагменту кода можно дать имя (но избегайте пробелов и точек):</p>
+<pre><code>```{r my_beautiful_graph, eval = FALSE}
+library(tidyverse)
+diamonds %&gt;% 
+  count(carat, color) %&gt;%
+  ggplot(aes(carat, n, color = color))+
+  geom_point()
+```</code></pre>
+<p>Maëlle Salmon написал <a href="http://www.masalmon.eu/2017/08/08/chunkpets/">отличный пост</a>, почему полезно именовать фрагменты кода:</p>
+<ul>
+<li>проще ориентироваться</li>
+<li>код более читаемый</li>
+<li>ошибки при компеляции показывают имя, а не номер</li>
+<li>если фрагмент кэшировался, то добавление одного фрагменты перед ним, не заставит все пересчитываться</li>
+<li>в <code>blogdown</code> можно ссылаться</li>
+</ul>
+</div>
+</div>
+<div id="yaml-шапка" class="section level3">
+<h3><span class="header-section-number">7.1.7</span> YAML шапка</h3>
+<p>Факультативная YAML шапка обычно содержит метаданные документа, и аргументы, необходимые для работы некоторых дополнений.</p>
+<pre><code>---
+title: &quot;Мой RMarkdown&quot;
+author: Славный Автор
+date: 20 ноября 2019
+---</code></pre>
+<div id="тип-получившегося-файла" class="section level4">
+<h4><span class="header-section-number">7.1.7.1</span> Тип получившегося файла</h4>
+<ul>
+<li><code>output: html_document</code> (по умолчанию)</li>
+<li><code>output: word_document</code></li>
+<li><code>output: pdf_document</code> (но нужно договориться с <span class="math inline">\(\LaTeX\)</span>ом на вашем компьютере)</li>
+<li><code>output: ioslides_presentation</code></li>
+<li><code>output: slidy_presentation</code></li>
+<li><code>output: slidy_presentation</code></li>
+<li><code>output: beamer_presentation</code></li>
+</ul>
+<p>и др.</p>
+</div>
+<div id="библиография" class="section level4">
+<h4><span class="header-section-number">7.1.7.2</span> Библиография</h4>
+<p>Существует <a href="http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#citations">несколько сопособов</a> вставлять библиографию в RMarkdown. Я раскажу, как использовать пакет <code>Bibtex</code> (как видно из названия, сделанный для <span class="math inline">\(\LaTeX\)</span>). Для начала нужно создать файл с раширением .bib, в который записать все источники, которые будут использоваться (библиографию в формате <code>BibTeX</code> выдает, например, <a href="https://scholar.google.ru">GoogleScholar</a>):</p>
+<pre><code>@book{ladefoged96,
+  title={The sounds of the world&#39;s languages},
+  author={Ladefoged, P. and Maddieson, I.},
+  year={1996},
+  publisher={Oxford Publishers}
+}
+
+@article{gordon02,
+  title={A cross-linguistic acoustic study of voiceless fricatives},
+  author={Gordon, M. and Barthmaier, P. and Sands, K.},
+  journal={Journal of the International Phonetic Association},
+  volume={32},
+  number={2},
+  pages={141--174},
+  year={2002},
+  publisher={Cambridge University Press}
+}</code></pre>
+<p>На следующем шаге нужно добавить название файла с раширением .bib в YAML шапку:</p>
+<pre><code>---
+bibliography: bibliography.bib
+---</code></pre>
+<p>После этого, можно использовать сслыки в тексте</p>
+<pre><code>В своей работе @gordon02 раскрыл...</code></pre>
+<p>В своей работе <span class="citation">Gordon, Barthmaier, and Sands (<a href="#ref-gordon02" role="doc-biblioref">2002</a>)</span> раскрыл…</p>
+<pre><code>Об этом можно узнать из [@ladefoged96; @gordon02], но ...</code></pre>
+<p>Об этом можно узнать из <span class="citation">(Ladefoged and Maddieson <a href="#ref-ladefoged96" role="doc-biblioref">1996</a>; Gordon, Barthmaier, and Sands <a href="#ref-gordon02" role="doc-biblioref">2002</a>)</span>, но …</p>
+<pre><code>В своей работе [@gordon02] раскрыл...</code></pre>
+<p>В своей работе <span class="citation">(Gordon, Barthmaier, and Sands <a href="#ref-gordon02" role="doc-biblioref">2002</a>)</span> раскрыл…</p>
+<pre><code>Об этом можно узнать из [см. @gordon02, с. 33--35; а также @ladefoged96, гл. 1]...</code></pre>
+<p>Об этом можно узнать из <span class="citation">(см. Gordon, Barthmaier, and Sands <a href="#ref-gordon02" role="doc-biblioref">2002</a>, с. 33–35; а также Ladefoged and Maddieson <a href="#ref-ladefoged96" role="doc-biblioref">1996</a>, гл. 1)</span>…</p>
+<p>Список литературы автоматически появляется в конце.</p>
+</div>
+<div id="оглавление-и-пр." class="section level4">
+<h4><span class="header-section-number">7.1.7.3</span> Оглавление и пр.</h4>
+<p>Существует сразу несколько аргументов, отвечающих за оглавление.</p>
+<ul>
+<li><code>toc</code> вставлять ли оглавление</li>
+<li><code>toc_depth</code> глубина иерархии, которую отражать в огловлении</li>
+<li><code>toc_float</code> должно ли оглавление все время следовать за текстом</li>
+<li><code>collapsed</code> должно ли оглавление быть все время полностью раскрыто</li>
+<li><code>collapsed</code> должно ли оглавление быть все время полностью раскрыто</li>
+<li><code>number_sections</code> автоматическая нумерация секций</li>
+<li><code>code_folding</code> (hide) — делать ли кнопочку, показывающую/скрывающую весь код</li>
+<li><code>theme</code> одна из <a href="https://bootswatch.com/">Bootstrap тем</a></li>
+<li><code>highlight</code>: “default”, “tango”, “pygments”, “kate”, “monochrome”, “espresso”, “zenburn”, “haddock” или “textmate”</li>
+</ul>
+<pre><code>---
+html_document:
+    theme: spacelab
+    highlight: pygments
+    toc: yes
+    toc_position: right
+    toc_depth: 3
+    toc_float: yes
+    smooth_scroll: false
+---</code></pre>
+</div>
+<div id="отображение-датафреймов" class="section level4">
+<h4><span class="header-section-number">7.1.7.4</span> Отображение датафреймов</h4>
+<ul>
+<li><code>df_print: default</code></li>
+<li><code>df_print: kable</code></li>
+<li><code>df_print: tibble</code></li>
+<li><code>df_print: paged</code></li>
+</ul>
+<pre><code>---
+output:
+  html_document:
+    df_print: paged
+---</code></pre>
+</div>
+</div>
+<div id="где-хостить-.html" class="section level3">
+<h3><span class="header-section-number">7.1.8</span> Где хостить <code>.html</code>?</h3>
+<p>Полученные <code>.html</code> можно разместить в интернете:</p>
+<ul>
+<li><p>на каком-то вашем хосте</p></li>
+<li><p>опубликовать на бесплатном хостинке Rpubs</p></li>
+</ul>
+<p><img src="images/7.02_publish_rpubs.png" /></p>
+<ul>
+<li>опубликовать на гитхабе и включить Github Pages</li>
+</ul>
+<div class="rmdtask">
+<p>
+Теперь создайте документ index.Rmd, в котором напишите код на R и на Python, вставьте картинку, сноску, ссылку на литературу, таблицу и оглавление и опубликуйте его на Github, пройдя <a href="https://classroom.github.com/a/ypZeK32c">по этой ссылке</a>.
+</p>
+</div>
+</div>
+</div>
+<div id="бывают-и-другие-способы-представления-данных" class="section level2">
+<h2><span class="header-section-number">7.2</span> Бывают и другие способы представления данных</h2>
+<ul>
+<li><a href="https://rmarkdown.rstudio.com/flexdashboard/examples.html"><code>flexdashboard</code></a> – динамические дэшборды</li>
+<li><a href="https://shiny.rstudio.com/gallery/"><code>shiny</code></a> – динамические сайты, которые позволяют взаимодействовать с пользователем</li>
+</ul>
+
+</div>
+</div>
+<h3>Ссылки на литературу</h3>
+<div id="refs" class="references">
+<div id="ref-gordon02">
+<p>Gordon, M., P. Barthmaier, and K. Sands. 2002. “A Cross-Linguistic Acoustic Study of Voiceless Fricatives.” <em>Journal of the International Phonetic Association</em> 32 (2): 141–74.</p>
+</div>
+<div id="ref-ladefoged96">
+<p>Ladefoged, P., and I. Maddieson. 1996. <em>The Sounds of the World’s Languages</em>. Oxford Publishers.</p>
+</div>
 </div>
             </section>
 

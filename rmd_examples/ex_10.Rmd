@@ -1,0 +1,24 @@
+---
+title: "Present mode"
+output: ioslides_presentation
+---
+
+## Вот мой первый слайд {.build}
+
+* Это все увидят
+* и это
+
+<div class="notes">
+А это моя *заметка*.
+
+- И она тоже понимает Markdown
+- $\frac{\pi}{\sum_i^n i + \sin(i)}$
+</div>
+
+## Вот мой второй слайд
+
+А это мой второй слайд
+
+<div class="notes">
+И моя новая заметка!
+</div>

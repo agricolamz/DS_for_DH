@@ -1,0 +1,21 @@
+---
+title: "Задержка на слайде"
+output: slidy_presentation
+---
+  
+## Список
+  
+> - Eat eggs
+> - Drink coffee
+
+## Текст {.build}
+
+А вот аргумент `{.build}` не работает...
+
+```{r}
+x <- 1:10
+```
+
+```{r}
+x
+```

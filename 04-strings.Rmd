@@ -1,5 +1,4 @@
 ---
-output: html_document
 editor_options: 
   chunk_output_type: console
 ---
@@ -375,8 +374,7 @@ stri_trans_general("stringi", "latin-armenian")
 Определите сколько городов называется обычным словом русского языка (например, город Орёл)? Не забудьте поменять ё на е.
 ```
 
-```{r, cache=TRUE, include=FALSE}
-read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/cities_of_russia.csv") %>% 
+```{r, cache=TRUE, include=Feval=FALSE, echoead_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/cities_of_russia.csv") %>% 
   mutate(city = str_to_lower(city),
          city = str_replace_all(city, "ё", "е")) ->
   cities
