@@ -292,10 +292,12 @@ list("a", "b") %>%
 ```
 
 ```{block, type = "rmdtask"}
-[Скачайте пьесу "Ревизор"](https://raw.githubusercontent.com/dracor-org/rusdracor/master/tei/gogol-revizor.xml), размеченную в [TEI формате](https://tei-c.org/Guidelines/P5/) и постройте представленный ниже график, на котором изображено количество реплик для каждого персонажа. Превратив данные в список, лушче начинать работать с переменной `revizor\$TEI\$text\$body`:
+[Скачайте пьесу "Ревизор"](https://raw.githubusercontent.com/dracor-org/rusdracor/master/tei/gogol-revizor.xml), размеченную в [TEI формате](https://tei-c.org/Guidelines/P5/) и постройте представленный ниже график, на котором изображено количество реплик для каждого персонажа. Превратив данные в список, лучше начинать работать с переменной `revizor\$TEI\$text\$body`:
 ```
 
 ```{r cache=TRUE, echo=FALSE}
+library(tidyverse)
+library(xml2)
 revizor <- read_xml("https://raw.githubusercontent.com/dracor-org/rusdracor/master/tei/gogol-revizor.xml")
 revizor <- as_list(revizor)
 
@@ -304,10 +306,10 @@ revizor$TEI$text$body %>%
   flatten() %>% 
   map(attr_getter("who")) %>% 
   unlist() %>% 
-  enframe()  %>% 
-  mutate(value = str_remove_all(value, "\\.")) %>% 
+  str_split(" ") %>% 
+  unlist() %>% 
+  enframe() %>% 
   count(value, sort = TRUE) %>% 
-  filter(!str_detect(value, " ")) %>% 
   ggplot(aes(fct_reorder(value, n), n))+
   geom_col()+
   coord_flip()+

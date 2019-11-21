@@ -150,6 +150,8 @@ for i, name in enumerate(friends):
     print "iteration {iteration} is {name}".format(iteration=i, name=name)
 ```
 
+Если хочется использовать результат работы кода в тексте, нужно в начале поставить язык, который будет исполнять код, например, в 
+
 Фигурные скобки не обязательны, но тогда RStudio подсветит.
 
 #### Цитаты
@@ -400,10 +402,12 @@ output:
 * опубликовать на гитхабе и включить Github Pages
 
 ```{block, type = "rmdtask"}
-Теперь создайте документ index.Rmd, в котором напишите код на R и на Python, вставьте картинку, сноску, ссылку на литературу, таблицу и оглавление и опубликуйте его на Github,  пройдя [по этой ссылке](https://classroom.github.com/a/ypZeK32c).
+Теперь создайте документ index.Rmd, в котором напишите код на R и на Python, вставьте картинку, сноску, ссылку на литературу, таблицу и оглавление. Скомпелируйте `.html` документ и опубликуйте его на Github, пройдя [по этой ссылке](https://classroom.github.com/a/ypZeK32c).
 ```
 
 ## Бывают и другие способы представления данных
 
 * [`flexdashboard`](https://rmarkdown.rstudio.com/flexdashboard/examples.html) -- динамические дэшборды
 * [`shiny`](https://shiny.rstudio.com/gallery/) -- динамические сайты, которые позволяют взаимодействовать с пользователем
+* [`posterdown`](https://brentthorne.github.io/posterdown_html_showcase/) -- постеры в RMarkdown
+* [`pagedown`](https://pagedown.rbind.io/) -- содержит много шаблонов: для книги, статьи, постера, резюме, визитки... да хоть приглашение на свадьбу можно сделать.
