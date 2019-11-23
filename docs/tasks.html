@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>12 Задания | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
   <meta name="description" content="12 Задания | Наука о данных в R для программы Цифровых гуманитарных исследований" />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="12 Задания | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta property="og:type" content="book" />
@@ -327,8 +327,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Создайте вектор от 1 до 20 и снова до 1. Число 20 должно присутствовать только один раз!</li>
 </ul>
-<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 19 18 17
-[24] 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 19 18 17 16 15
+[26] 14 13 12 11 10  9  8  7  6  5  4  3  2  1</code></pre>
 <ul>
 <li>Создайте вектор 2, 4, 6, … , 18, 20</li>
 </ul>
@@ -336,8 +336,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Создайте вектор из одной единицы, двух двоек, трех троек, …. , девяти девяток</li>
 </ul>
-<pre><code> [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8
-[36] 8 9 9 9 9 9 9 9 9 9</code></pre>
+<pre><code> [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9
+[39] 9 9 9 9 9 9 9</code></pre>
 <ul>
 <li>Сделайте вектор vec, в котором соедините <code>3</code>, а также значения <code>"Мой"</code> и <code>"вектор"</code>.</li>
 </ul>
@@ -383,7 +383,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="vec_task_2" class="section level2">
 <h2><span class="header-section-number">12.3</span> Вектор. Индексирование</h2>
 <p>Создайте вектор <code>vec1</code>:</p>
-<div class="sourceCode" id="cb846"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb846-1"><a href="tasks.html#cb846-1"></a>vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">15</span>, <span class="dv">1</span>, <span class="dv">11</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb843"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb843-1"><a href="tasks.html#cb843-1"></a>vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">15</span>, <span class="dv">1</span>, <span class="dv">11</span>)</span></code></pre></div>
 <ul>
 <li>Найдите второй элемент вектора <code>vec1</code>:</li>
 </ul>
@@ -428,14 +428,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="list_ta" class="section level2">
 <h2><span class="header-section-number">12.4</span> Списки</h2>
 <p>Дан список <code>list_1</code>:</p>
-<div class="sourceCode" id="cb856"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb856-1"><a href="tasks.html#cb856-1"></a>list_<span class="dv">1</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">numbers =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letters =</span> letters, <span class="dt">logic =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb856-2"><a href="tasks.html#cb856-2"></a>list_<span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb853"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb853-1"><a href="tasks.html#cb853-1"></a>list_<span class="dv">1</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">numbers =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letters =</span> letters, <span class="dt">logic =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb853-2"><a href="tasks.html#cb853-2"></a>list_<span class="dv">1</span></span></code></pre></div>
 <pre><code>$numbers
 [1] 1 2 3 4 5
 
 $letters
- [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot;
-[18] &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+ [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot;
+[20] &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
 
 $logic
 [1] TRUE</code></pre>
@@ -457,8 +457,8 @@ $pupa$numbers
 [1] 1 2 3 4 5
 
 $pupa$letters
- [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot;
-[18] &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+ [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot;
+[20] &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
 
 $pupa$logic
 [1] TRUE
@@ -469,8 +469,8 @@ $lupa$numbers
 [1] 1 2 3 4 5
 
 $lupa$letters
- [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot;
-[18] &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+ [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot;
+[20] &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
 
 $lupa$logic
 [1] TRUE</code></pre>
@@ -579,24 +579,18 @@ $lupa$logic
 <ul>
 <li>Создайте новый датафрейм <code>greyjoy_women</code>, который будет включать в себя только женщин Грейджоев (<code>"Greyjoy"</code>, <code>"House Greyjoy"</code>)</li>
 </ul>
-<pre><code>                   Name   Allegiances Death.Year Book.of.Death
-58         Asha Greyjoy House Greyjoy         NA            NA
-248       Falia Flowers       Greyjoy         NA            NA
-313    Gwin Goodbrother       Greyjoy         NA            NA
-319 Gysella Goodbrother       Greyjoy         NA            NA
-806         Three-Tooth       Greyjoy         NA            NA
-    Death.Chapter Book.Intro.Chapter Gender Nobility GoT CoK SoS FfC DwD
-58             NA                 11      0        1   0   1   0   1   1
-248            NA                 29      0        0   0   0   0   1   0
-313            NA                  1      0        1   0   0   0   1   0
-319            NA                  1      0        1   0   0   0   1   0
-806            NA                 11      0        0   0   0   0   1   0
-    Is.Alive
-58      TRUE
-248     TRUE
-313     TRUE
-319     TRUE
-806     TRUE</code></pre>
+<pre><code>                   Name   Allegiances Death.Year Book.of.Death Death.Chapter
+58         Asha Greyjoy House Greyjoy         NA            NA            NA
+248       Falia Flowers       Greyjoy         NA            NA            NA
+313    Gwin Goodbrother       Greyjoy         NA            NA            NA
+319 Gysella Goodbrother       Greyjoy         NA            NA            NA
+806         Three-Tooth       Greyjoy         NA            NA            NA
+    Book.Intro.Chapter Gender Nobility GoT CoK SoS FfC DwD Is.Alive
+58                  11      0        1   0   1   0   1   1     TRUE
+248                 29      0        0   0   0   0   1   0     TRUE
+313                  1      0        1   0   0   0   1   0     TRUE
+319                  1      0        1   0   0   0   1   0     TRUE
+806                 11      0        0   0   0   0   1   0     TRUE</code></pre>
 <ul>
 <li>Сколько всего женских персонажей в книгах “Песни льда и пламени”?</li>
 </ul>
@@ -657,6 +651,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Введение в R | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
   <meta name="description" content="2 Введение в R | Наука о данных в R для программы Цифровых гуманитарных исследований" />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Введение в R | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta property="og:type" content="book" />
@@ -666,8 +666,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <p>В принципе, большинство функций в R, которые работают с отдельными значениями, так же хорошо работают и с целыми векторами. Скажем, Вы хотите извлечь корень из нескольких чисел, для этого не нужны никакие циклы (как это обычно делается в других языках программирования). Можно просто “скормить” вектор функции и получить результат применения функции к каждому элементу вектора:</p>
 <div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="intro.html#cb137-1"></a><span class="kw">sqrt</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
-<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751
-##  [8] 2.828427 3.000000 3.162278</code></pre>
+<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751 2.828427
+##  [9] 3.000000 3.162278</code></pre>
 </div>
 <div id="recycling" class="section level3">
 <h3><span class="header-section-number">2.7.3</span> Recycling</h3>
@@ -682,8 +682,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] 2 4 6 8</code></pre>
 <p>Если же меньший вектор не кратен большему (например, один из них длиной 3, а другой длиной 4), то R посчитает результат, но выдаст предупреждение.</p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="intro.html#cb143-1"></a>n <span class="op">+</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## Warning in n + c(3, 4, 5): longer object length is not a multiple of
-## shorter object length</code></pre>
+<pre><code>## Warning in n + c(3, 4, 5): longer object length is not a multiple of shorter
+## object length</code></pre>
 <pre><code>## [1] 4 6 8 7</code></pre>
 <p>Проблема в том, что эти предупреждения могут в неожиданный момент стать причиной ошибок. Поэтому не стоит полагаться на ресайклинг некратных по длине векторов. <a href="https://stackoverflow.com/questions/6555651/under-what-circumstances-does-r-recycle">См. здесь</a>. А вот ресайклинг кратных по длине векторов — это очень удобная штука, которая используется очень часто.</p>
 </div>
@@ -1125,16 +1125,14 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 <p>Для некоторых переменных полезно посмотреть таблицы частотности с помощью функции table():</p>
 <div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="intro.html#cb261-1"></a><span class="kw">table</span>(got<span class="op">$</span>Allegiances)</span></code></pre></div>
 <pre><code>## 
-##           Arryn       Baratheon         Greyjoy     House Arryn 
-##              23              56              51               7 
-## House Baratheon   House Greyjoy House Lannister   House Martell 
-##               8              24              21              12 
-##     House Stark House Targaryen     House Tully    House Tyrell 
-##              35              19               8              11 
-##       Lannister         Martell   Night&#39;s Watch            None 
-##              81              25             116             253 
-##           Stark       Targaryen           Tully          Tyrell 
-##              73              17              22              15 
+##           Arryn       Baratheon         Greyjoy     House Arryn House Baratheon 
+##              23              56              51               7               8 
+##   House Greyjoy House Lannister   House Martell     House Stark House Targaryen 
+##              24              21              12              35              19 
+##     House Tully    House Tyrell       Lannister         Martell   Night&#39;s Watch 
+##               8              11              81              25             116 
+##            None           Stark       Targaryen           Tully          Tyrell 
+##             253              73              17              22              15 
 ##        Wildling 
 ##              40</code></pre>
 <p>Уау! Очень просто и удобно, не так ли? Функция <code>table()</code> может принимать сразу несколько столбцов. Это удобно для получения <em>таблиц сопряженности</em>:</p>
@@ -1202,13 +1200,12 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 <p>Мы можем вытаскивать отдельные колонки как векторы:</p>
 <div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="intro.html#cb271-1"></a>houses &lt;-<span class="st"> </span>got<span class="op">$</span>Allegiances</span>
 <span id="cb271-2"><a href="intro.html#cb271-2"></a><span class="kw">unique</span>(houses) <span class="co">#посмотреть все уникальные значения --- почти как с помощью table()</span></span></code></pre></div>
-<pre><code>##  [1] &quot;Lannister&quot;       &quot;None&quot;            &quot;House Targaryen&quot;
-##  [4] &quot;House Greyjoy&quot;   &quot;Baratheon&quot;       &quot;Night&#39;s Watch&quot;  
-##  [7] &quot;Arryn&quot;           &quot;House Stark&quot;     &quot;House Tyrell&quot;   
-## [10] &quot;Tyrell&quot;          &quot;Stark&quot;           &quot;Greyjoy&quot;        
-## [13] &quot;House Lannister&quot; &quot;Martell&quot;         &quot;House Martell&quot;  
-## [16] &quot;Wildling&quot;        &quot;Targaryen&quot;       &quot;House Arryn&quot;    
-## [19] &quot;House Tully&quot;     &quot;Tully&quot;           &quot;House Baratheon&quot;</code></pre>
+<pre><code>##  [1] &quot;Lannister&quot;       &quot;None&quot;            &quot;House Targaryen&quot; &quot;House Greyjoy&quot;  
+##  [5] &quot;Baratheon&quot;       &quot;Night&#39;s Watch&quot;   &quot;Arryn&quot;           &quot;House Stark&quot;    
+##  [9] &quot;House Tyrell&quot;    &quot;Tyrell&quot;          &quot;Stark&quot;           &quot;Greyjoy&quot;        
+## [13] &quot;House Lannister&quot; &quot;Martell&quot;         &quot;House Martell&quot;   &quot;Wildling&quot;       
+## [17] &quot;Targaryen&quot;       &quot;House Arryn&quot;     &quot;House Tully&quot;     &quot;Tully&quot;          
+## [21] &quot;House Baratheon&quot;</code></pre>
 <p>Итак, давайте решим нашу первую задачу — вытащим в отдельный датасет всех представителей Ночного Дозора.
 Для этого нам нужно создать вектор логических значений — результат сравнений колонки <code>Allegiances</code> со значением <code>"Night's Watch"</code> и использовать его как вектор индексов для датафрейма.</p>
 <div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="intro.html#cb273-1"></a>vectornight &lt;-<span class="st"> </span>got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span></span>
@@ -1217,27 +1214,20 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 <p>Теперь этот вектор с <code>TRUE</code> и <code>FALSE</code> нам надо использовать для индексирования строк. Но что со столбцами? Если мы хотем сохранить все столбцы, то после запятой внутри квадратных скобок нам не нужно ничего указывать:</p>
 <div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="intro.html#cb275-1"></a>nightswatch &lt;-<span class="st"> </span>got[vectornight,]</span>
 <span id="cb275-2"><a href="intro.html#cb275-2"></a><span class="kw">head</span>(nightswatch)</span></code></pre></div>
-<pre><code>##                                 Name   Allegiances Death.Year
-## 7  Aemon Targaryen (son of Maekar I) Night&#39;s Watch        300
-## 10                            Aethan Night&#39;s Watch         NA
-## 13                     Alan of Rosby Night&#39;s Watch        300
-## 16                            Albett Night&#39;s Watch         NA
-## 24                    Alliser Thorne Night&#39;s Watch         NA
-## 49                             Arron Night&#39;s Watch         NA
-##    Book.of.Death Death.Chapter Book.Intro.Chapter Gender Nobility GoT CoK
-## 7              4            35                 21      1        1   1   0
-## 10            NA            NA                  0      1        0   0   0
-## 13             5             4                 18      1        1   0   1
-## 16            NA            NA                 26      1        0   1   0
-## 24            NA            NA                 19      1        0   1   1
-## 49            NA            NA                 75      1        0   0   0
-##    SoS FfC DwD
-## 7    1   1   0
-## 10   1   0   0
-## 13   1   0   1
-## 16   0   0   0
-## 24   1   0   1
-## 49   1   0   1</code></pre>
+<pre><code>##                                 Name   Allegiances Death.Year Book.of.Death
+## 7  Aemon Targaryen (son of Maekar I) Night&#39;s Watch        300             4
+## 10                            Aethan Night&#39;s Watch         NA            NA
+## 13                     Alan of Rosby Night&#39;s Watch        300             5
+## 16                            Albett Night&#39;s Watch         NA            NA
+## 24                    Alliser Thorne Night&#39;s Watch         NA            NA
+## 49                             Arron Night&#39;s Watch         NA            NA
+##    Death.Chapter Book.Intro.Chapter Gender Nobility GoT CoK SoS FfC DwD
+## 7             35                 21      1        1   1   0   1   1   0
+## 10            NA                  0      1        0   0   0   1   0   0
+## 13             4                 18      1        1   0   1   1   0   1
+## 16            NA                 26      1        0   1   0   0   0   0
+## 24            NA                 19      1        0   1   1   1   0   1
+## 49            NA                 75      1        0   0   0   1   0   1</code></pre>
 <p>Вуаля!
 Все это можно сделать проще и в одну строку:</p>
 <div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="intro.html#cb277-1"></a>nightswatch &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span>,]</span></code></pre></div>
@@ -1245,27 +1235,20 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 <p>Теперь попробуем вытащить одновременно всех Одичалых (<code>Wildling</code>) и всех представителей Ночного Дозора. Это можно сделать, используя оператор <code>|</code> (ИЛИ) при выборе колонок:</p>
 <div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="intro.html#cb278-1"></a>nightwatch_wildling &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span> <span class="op">|</span><span class="st"> </span>got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Wildling&quot;</span>,]</span>
 <span id="cb278-2"><a href="intro.html#cb278-2"></a><span class="kw">head</span>(nightwatch_wildling)</span></code></pre></div>
-<pre><code>##                                 Name   Allegiances Death.Year
-## 7  Aemon Targaryen (son of Maekar I) Night&#39;s Watch        300
-## 10                            Aethan Night&#39;s Watch         NA
-## 13                     Alan of Rosby Night&#39;s Watch        300
-## 16                            Albett Night&#39;s Watch         NA
-## 24                    Alliser Thorne Night&#39;s Watch         NA
-## 49                             Arron Night&#39;s Watch         NA
-##    Book.of.Death Death.Chapter Book.Intro.Chapter Gender Nobility GoT CoK
-## 7              4            35                 21      1        1   1   0
-## 10            NA            NA                  0      1        0   0   0
-## 13             5             4                 18      1        1   0   1
-## 16            NA            NA                 26      1        0   1   0
-## 24            NA            NA                 19      1        0   1   1
-## 49            NA            NA                 75      1        0   0   0
-##    SoS FfC DwD
-## 7    1   1   0
-## 10   1   0   0
-## 13   1   0   1
-## 16   0   0   0
-## 24   1   0   1
-## 49   1   0   1</code></pre>
+<pre><code>##                                 Name   Allegiances Death.Year Book.of.Death
+## 7  Aemon Targaryen (son of Maekar I) Night&#39;s Watch        300             4
+## 10                            Aethan Night&#39;s Watch         NA            NA
+## 13                     Alan of Rosby Night&#39;s Watch        300             5
+## 16                            Albett Night&#39;s Watch         NA            NA
+## 24                    Alliser Thorne Night&#39;s Watch         NA            NA
+## 49                             Arron Night&#39;s Watch         NA            NA
+##    Death.Chapter Book.Intro.Chapter Gender Nobility GoT CoK SoS FfC DwD
+## 7             35                 21      1        1   1   0   1   1   0
+## 10            NA                  0      1        0   0   0   1   0   0
+## 13             4                 18      1        1   0   1   1   0   1
+## 16            NA                 26      1        0   1   0   0   0   0
+## 24            NA                 19      1        0   1   1   1   0   1
+## 49            NA                 75      1        0   0   0   1   0   1</code></pre>
 <blockquote>
 <p>Кажется очевидным следующий вариант: <code>got[got$Allegiances == c("Night's Watch", "Wildling"),]</code>. Однако это выдаст не совсем то, что нужно, хотя результат может показаться верным на первый взгляд. Попробуйте самостоятельно ответить на вопрос, что происходит в данном случае и чем результат отличается от предполагаемого. Подсказка: вспомните правило recycling.</p>
 </blockquote>
@@ -1274,27 +1257,20 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 <pre><code>## [1]  TRUE FALSE FALSE  TRUE  TRUE FALSE</code></pre>
 <div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="intro.html#cb282-1"></a>nightwatch_wildling &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Night&#39;s Watch&quot;</span>, <span class="st">&quot;Wildling&quot;</span>),]</span>
 <span id="cb282-2"><a href="intro.html#cb282-2"></a><span class="kw">head</span>(nightwatch_wildling)</span></code></pre></div>
-<pre><code>##                                 Name   Allegiances Death.Year
-## 7  Aemon Targaryen (son of Maekar I) Night&#39;s Watch        300
-## 10                            Aethan Night&#39;s Watch         NA
-## 13                     Alan of Rosby Night&#39;s Watch        300
-## 16                            Albett Night&#39;s Watch         NA
-## 24                    Alliser Thorne Night&#39;s Watch         NA
-## 49                             Arron Night&#39;s Watch         NA
-##    Book.of.Death Death.Chapter Book.Intro.Chapter Gender Nobility GoT CoK
-## 7              4            35                 21      1        1   1   0
-## 10            NA            NA                  0      1        0   0   0
-## 13             5             4                 18      1        1   0   1
-## 16            NA            NA                 26      1        0   1   0
-## 24            NA            NA                 19      1        0   1   1
-## 49            NA            NA                 75      1        0   0   0
-##    SoS FfC DwD
-## 7    1   1   0
-## 10   1   0   0
-## 13   1   0   1
-## 16   0   0   0
-## 24   1   0   1
-## 49   1   0   1</code></pre>
+<pre><code>##                                 Name   Allegiances Death.Year Book.of.Death
+## 7  Aemon Targaryen (son of Maekar I) Night&#39;s Watch        300             4
+## 10                            Aethan Night&#39;s Watch         NA            NA
+## 13                     Alan of Rosby Night&#39;s Watch        300             5
+## 16                            Albett Night&#39;s Watch         NA            NA
+## 24                    Alliser Thorne Night&#39;s Watch         NA            NA
+## 49                             Arron Night&#39;s Watch         NA            NA
+##    Death.Chapter Book.Intro.Chapter Gender Nobility GoT CoK SoS FfC DwD
+## 7             35                 21      1        1   1   0   1   1   0
+## 10            NA                  0      1        0   0   0   1   0   0
+## 13             4                 18      1        1   0   1   1   0   1
+## 16            NA                 26      1        0   1   0   0   0   0
+## 24            NA                 19      1        0   1   1   1   0   1
+## 49            NA                 75      1        0   0   0   1   0   1</code></pre>
 </div>
 <div id="newcol" class="section level3">
 <h3><span class="header-section-number">2.12.3</span> Создание новых колонок</h3>
@@ -1379,6 +1355,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

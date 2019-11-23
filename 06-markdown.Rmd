@@ -1,6 +1,6 @@
 ---
 bibliography: bibliography.bib
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
 
@@ -10,7 +10,7 @@ knitr::opts_chunk$set(comment = NA)
   
 # Представление данных: rmarkdown, shiny {#data_presentation}
 
-Достаточно важной частью работы с данными является их представление. Мы рассмотрим наиболее распространенный варианты: `rmarkdown`, `flexdashboard` и `shiny`.
+Достаточно важной частью работы с данными является их представление. Мы рассмотрим наиболее распространенный варианты: `rmarkdown`, `flexdashboard` и `shiny`. Смотрите книжку [@xie19](https://bookdown.org/yihui/rmarkdown/) или [cheatsheet](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf).
 
 ## `rmarkdown`
 
