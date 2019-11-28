@@ -498,21 +498,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Постройте следующий график, на котором представлены самые частотные 20 слов каждого из произведений.
 </p>
 </div>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="tidytext.html#cb27-1"></a>books <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb27-2"><a href="tidytext.html#cb27-2"></a><span class="st">  </span><span class="kw">unnest_tokens</span>(word, text) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb27-3"><a href="tidytext.html#cb27-3"></a><span class="st">  </span><span class="kw">count</span>(title, word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb27-4"><a href="tidytext.html#cb27-4"></a><span class="st">  </span><span class="kw">anti_join</span>(stop_words) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb27-5"><a href="tidytext.html#cb27-5"></a><span class="st">  </span><span class="kw">group_by</span>(title) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb27-6"><a href="tidytext.html#cb27-6"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb27-7"><a href="tidytext.html#cb27-7"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n))<span class="op">+</span></span>
-<span id="cb27-8"><a href="tidytext.html#cb27-8"></a><span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span></span>
-<span id="cb27-9"><a href="tidytext.html#cb27-9"></a><span class="st">  </span><span class="kw">coord_flip</span>()<span class="op">+</span></span>
-<span id="cb27-10"><a href="tidytext.html#cb27-10"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>title, <span class="dt">scale =</span> <span class="st">&quot;free&quot;</span>)</span></code></pre></div>
 <pre><code>## Joining, by = &quot;word&quot;</code></pre>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>Функция <code>unnest_tokens()</code> позволяет работать не только со словами, но и, напрмиер, с биграммами:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="tidytext.html#cb29-1"></a>books <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb29-2"><a href="tidytext.html#cb29-2"></a><span class="st">  </span><span class="kw">unnest_tokens</span>(word, text, <span class="dt">token =</span> <span class="st">&quot;ngrams&quot;</span>, <span class="dt">n =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="tidytext.html#cb28-1"></a>books <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb28-2"><a href="tidytext.html#cb28-2"></a><span class="st">  </span><span class="kw">unnest_tokens</span>(word, text, <span class="dt">token =</span> <span class="st">&quot;ngrams&quot;</span>, <span class="dt">n =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 184,143 x 3
 ##    gutenberg_id title word              
 ##           &lt;int&gt; &lt;chr&gt; &lt;chr&gt;             
@@ -530,14 +520,203 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="пакет-udpipe" class="section level2">
 <h2><span class="header-section-number">9.3</span> Пакет udpipe</h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="tidytext.html#cb30-1"></a><span class="kw">library</span>(udpipe)</span></code></pre></div>
 <p>Модели качаются очень долго.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="tidytext.html#cb31-1"></a><span class="kw">library</span>(udpipe)</span>
-<span id="cb31-2"><a href="tidytext.html#cb31-2"></a>enmodel &lt;-<span class="st"> </span><span class="kw">udpipe_download_model</span>(<span class="dt">language =</span> <span class="st">&quot;english&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="tidytext.html#cb31-1"></a>enmodel &lt;-<span class="st"> </span><span class="kw">udpipe_download_model</span>(<span class="dt">language =</span> <span class="st">&quot;english&quot;</span>)</span></code></pre></div>
+<pre><code>## Downloading udpipe model from https://raw.githubusercontent.com/jwijffels/udpipe.models.ud.2.4/master/inst/udpipe-ud-2.4-190531/english-ewt-ud-2.4-190531.udpipe to /home/agricolamz/work/materials/2019_ds4dh/class_materials/english-ewt-ud-2.4-190531.udpipe</code></pre>
+<pre><code>## Visit https://github.com/jwijffels/udpipe.models.ud.2.4 for model license details</code></pre>
 <p>Теперь можно распарсить какое-нибудь предложение:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="tidytext.html#cb32-1"></a><span class="kw">udpipe</span>(<span class="st">&quot;The want of Miss Taylor would be felt every hour of every day.&quot;</span>, <span class="dt">object =</span> enmodel)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="tidytext.html#cb34-1"></a><span class="kw">udpipe</span>(<span class="st">&quot;The want of Miss Taylor would be felt every hour of every day.&quot;</span>, <span class="dt">object =</span> enmodel)</span></code></pre></div>
+<pre><code>##    doc_id paragraph_id sentence_id
+## 1    doc1            1           1
+## 2    doc1            1           1
+## 3    doc1            1           1
+## 4    doc1            1           1
+## 5    doc1            1           1
+## 6    doc1            1           1
+## 7    doc1            1           1
+## 8    doc1            1           1
+## 9    doc1            1           1
+## 10   doc1            1           1
+## 11   doc1            1           1
+## 12   doc1            1           1
+## 13   doc1            1           1
+## 14   doc1            1           1
+##                                                          sentence start end
+## 1  The want of Miss Taylor would be felt every hour of every day.     1   3
+## 2  The want of Miss Taylor would be felt every hour of every day.     5   8
+## 3  The want of Miss Taylor would be felt every hour of every day.    10  11
+## 4  The want of Miss Taylor would be felt every hour of every day.    13  16
+## 5  The want of Miss Taylor would be felt every hour of every day.    18  23
+## 6  The want of Miss Taylor would be felt every hour of every day.    25  29
+## 7  The want of Miss Taylor would be felt every hour of every day.    31  32
+## 8  The want of Miss Taylor would be felt every hour of every day.    34  37
+## 9  The want of Miss Taylor would be felt every hour of every day.    39  43
+## 10 The want of Miss Taylor would be felt every hour of every day.    45  48
+## 11 The want of Miss Taylor would be felt every hour of every day.    50  51
+## 12 The want of Miss Taylor would be felt every hour of every day.    53  57
+## 13 The want of Miss Taylor would be felt every hour of every day.    59  61
+## 14 The want of Miss Taylor would be felt every hour of every day.    62  62
+##    term_id token_id  token  lemma  upos xpos
+## 1        1        1    The    the   DET   DT
+## 2        2        2   want   want  NOUN   NN
+## 3        3        3     of     of   ADP   IN
+## 4        4        4   Miss   miss PROPN  NNP
+## 5        5        5 Taylor Taylor PROPN  NNP
+## 6        6        6  would  would   AUX   MD
+## 7        7        7     be     be   AUX   VB
+## 8        8        8   felt   feel  VERB  VBN
+## 9        9        9  every  every   DET   DT
+## 10      10       10   hour   hour  NOUN   NN
+## 11      11       11     of     of   ADP   IN
+## 12      12       12  every  every   DET   DT
+## 13      13       13    day    day  NOUN   NN
+## 14      14       14      .      . PUNCT    .
+##                                  feats head_token_id    dep_rel deps
+## 1            Definite=Def|PronType=Art             2        det &lt;NA&gt;
+## 2                          Number=Sing             8 nsubj:pass &lt;NA&gt;
+## 3                                 &lt;NA&gt;             4       case &lt;NA&gt;
+## 4                          Number=Sing             2       nmod &lt;NA&gt;
+## 5                          Number=Sing             4       flat &lt;NA&gt;
+## 6                         VerbForm=Fin             8        aux &lt;NA&gt;
+## 7                         VerbForm=Inf             8   aux:pass &lt;NA&gt;
+## 8  Tense=Past|VerbForm=Part|Voice=Pass             0       root &lt;NA&gt;
+## 9                                 &lt;NA&gt;            10        det &lt;NA&gt;
+## 10                         Number=Sing             8   obl:tmod &lt;NA&gt;
+## 11                                &lt;NA&gt;            13       case &lt;NA&gt;
+## 12                                &lt;NA&gt;            13        det &lt;NA&gt;
+## 13                         Number=Sing            10       nmod &lt;NA&gt;
+## 14                                &lt;NA&gt;             8      punct &lt;NA&gt;
+##               misc
+## 1             &lt;NA&gt;
+## 2             &lt;NA&gt;
+## 3             &lt;NA&gt;
+## 4             &lt;NA&gt;
+## 5             &lt;NA&gt;
+## 6             &lt;NA&gt;
+## 7             &lt;NA&gt;
+## 8             &lt;NA&gt;
+## 9             &lt;NA&gt;
+## 10            &lt;NA&gt;
+## 11            &lt;NA&gt;
+## 12            &lt;NA&gt;
+## 13   SpaceAfter=No
+## 14 SpacesAfter=\\n</code></pre>
 <p>Скачаем русскую модель:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="tidytext.html#cb33-1"></a>rumodel &lt;-<span class="st"> </span><span class="kw">udpipe_download_model</span>(<span class="dt">language =</span> <span class="st">&quot;russian-syntagrus&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="tidytext.html#cb34-1"></a><span class="kw">udpipe</span>(<span class="st">&quot;Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.&quot;</span>, <span class="dt">object =</span> rumodel)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="tidytext.html#cb36-1"></a>rumodel &lt;-<span class="st"> </span><span class="kw">udpipe_download_model</span>(<span class="dt">language =</span> <span class="st">&quot;russian-syntagrus&quot;</span>)</span></code></pre></div>
+<pre><code>## Downloading udpipe model from https://raw.githubusercontent.com/jwijffels/udpipe.models.ud.2.4/master/inst/udpipe-ud-2.4-190531/russian-syntagrus-ud-2.4-190531.udpipe to /home/agricolamz/work/materials/2019_ds4dh/class_materials/russian-syntagrus-ud-2.4-190531.udpipe</code></pre>
+<pre><code>## Visit https://github.com/jwijffels/udpipe.models.ud.2.4 for model license details</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="tidytext.html#cb39-1"></a><span class="kw">udpipe</span>(<span class="st">&quot;Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.&quot;</span>, <span class="dt">object =</span> rumodel)</span></code></pre></div>
+<pre><code>##    doc_id paragraph_id sentence_id
+## 1    doc1            1           1
+## 2    doc1            1           1
+## 3    doc1            1           1
+## 4    doc1            1           1
+## 5    doc1            1           1
+## 6    doc1            1           1
+## 7    doc1            1           1
+## 8    doc1            1           1
+## 9    doc1            1           1
+## 10   doc1            1           1
+## 11   doc1            1           1
+## 12   doc1            1           1
+## 13   doc1            1           1
+## 14   doc1            1           1
+## 15   doc1            1           1
+## 16   doc1            1           1
+## 17   doc1            1           1
+## 18   doc1            1           1
+## 19   doc1            1           1
+## 20   doc1            1           1
+## 21   doc1            1           1
+##                                                                                       sentence
+## 1  Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 2  Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 3  Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 4  Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 5  Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 6  Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 7  Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 8  Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 9  Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 10 Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 11 Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 12 Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 13 Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 14 Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 15 Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 16 Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 17 Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 18 Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 19 Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 20 Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+## 21 Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.
+##    start end term_id token_id       token       lemma  upos xpos
+## 1      1   4       1        1        Жила        жить  VERB &lt;NA&gt;
+## 2      5   5       2        2           -           - PUNCT &lt;NA&gt;
+## 3      6   9       3        3        была        быть   AUX &lt;NA&gt;
+## 4     11  12       4        4          на          на   ADP &lt;NA&gt;
+## 5     14  18       5        5       свете        свет  NOUN &lt;NA&gt;
+## 6     20  24       6        6       крыса       крыса  NOUN &lt;NA&gt;
+## 7     26  26       7        7           в           в   ADP &lt;NA&gt;
+## 8     28  34       8        8     морском     морской   ADJ &lt;NA&gt;
+## 9     36  40       9        9       порту        порт  NOUN &lt;NA&gt;
+## 10    42  52      10       10 Вальпараисо Вальпараисо   ADV &lt;NA&gt;
+## 11    53  53      11       11           ,           , PUNCT &lt;NA&gt;
+## 12    55  56      12       12          на          на   ADP &lt;NA&gt;
+## 13    58  63      13       13      складе       склад  NOUN &lt;NA&gt;
+## 14    65  68      14       14        мяса        мясо  NOUN &lt;NA&gt;
+## 15    70  70      15       15           и           и CCONJ &lt;NA&gt;
+## 16    72  76      16       16       маиса        маис  NOUN &lt;NA&gt;
+## 17    77  77      17       17           ,           , PUNCT &lt;NA&gt;
+## 18    79  83      18       18       какао       какао  NOUN &lt;NA&gt;
+## 19    85  85      19       19           и           и CCONJ &lt;NA&gt;
+## 20    87  90      20       20        вина        вино  NOUN &lt;NA&gt;
+## 21    91  91      21       21           .           . PUNCT &lt;NA&gt;
+##                                                                           feats
+## 1  Aspect=Imp|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act
+## 2                                                                          &lt;NA&gt;
+## 3  Aspect=Imp|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act
+## 4                                                                          &lt;NA&gt;
+## 5                                 Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing
+## 6                                 Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing
+## 7                                                                          &lt;NA&gt;
+## 8                                   Case=Loc|Degree=Pos|Gender=Masc|Number=Sing
+## 9                                 Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing
+## 10                                                                   Degree=Pos
+## 11                                                                         &lt;NA&gt;
+## 12                                                                         &lt;NA&gt;
+## 13                                Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing
+## 14                                Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing
+## 15                                                                         &lt;NA&gt;
+## 16                                Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing
+## 17                                                                         &lt;NA&gt;
+## 18                                Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing
+## 19                                                                         &lt;NA&gt;
+## 20                                Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing
+## 21                                                                         &lt;NA&gt;
+##    head_token_id dep_rel deps            misc
+## 1              5   nsubj &lt;NA&gt;   SpaceAfter=No
+## 2              1   punct &lt;NA&gt;   SpaceAfter=No
+## 3              5     cop &lt;NA&gt;            &lt;NA&gt;
+## 4              5    case &lt;NA&gt;            &lt;NA&gt;
+## 5              0    root &lt;NA&gt;            &lt;NA&gt;
+## 6              5    nmod &lt;NA&gt;            &lt;NA&gt;
+## 7              9    case &lt;NA&gt;            &lt;NA&gt;
+## 8              9    amod &lt;NA&gt;            &lt;NA&gt;
+## 9              6    nmod &lt;NA&gt;            &lt;NA&gt;
+## 10             6  advmod &lt;NA&gt;   SpaceAfter=No
+## 11            13   punct &lt;NA&gt;            &lt;NA&gt;
+## 12            13    case &lt;NA&gt;            &lt;NA&gt;
+## 13            10    conj &lt;NA&gt;            &lt;NA&gt;
+## 14            13    nmod &lt;NA&gt;            &lt;NA&gt;
+## 15            16      cc &lt;NA&gt;            &lt;NA&gt;
+## 16            14    conj &lt;NA&gt;   SpaceAfter=No
+## 17            18   punct &lt;NA&gt;            &lt;NA&gt;
+## 18            10    conj &lt;NA&gt;            &lt;NA&gt;
+## 19            20      cc &lt;NA&gt;            &lt;NA&gt;
+## 20            10    conj &lt;NA&gt;   SpaceAfter=No
+## 21             5   punct &lt;NA&gt; SpacesAfter=\\n</code></pre>
 
 </div>
 </div>

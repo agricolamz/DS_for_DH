@@ -104,7 +104,7 @@ books %>%
 Постройте следующий график, на котором представлены самые частотные 20 слов каждого из произведений.
 ```
 
-```{r}
+```{r, echo = FALSE}
 books %>% 
   unnest_tokens(word, text) %>% 
   count(title, word, sort = TRUE) %>% 
@@ -159,23 +159,27 @@ books %>%
 
 ## Пакет udpipe
 
-Модели качаются очень долго.
-```{r download_en_model, cache=TRUE, eval=FALSE}
+```{r}
 library(udpipe)
+```
+
+
+Модели качаются очень долго.
+```{r download_en_model, cache=TRUE}
 enmodel <- udpipe_download_model(language = "english")
 ```
 
 Теперь можно распарсить какое-нибудь предложение:
-```{r, eval=FALSE}
+```{r}
 udpipe("The want of Miss Taylor would be felt every hour of every day.", object = enmodel)
 ```
 
 Скачаем русскую модель:
-```{r  download_ru_model, cache=TRUE, eval=FALSE}
+```{r  download_ru_model, cache=TRUE}
 rumodel <- udpipe_download_model(language = "russian-syntagrus")
 ```
 
-```{r, eval=FALSE}
+```{r}
 udpipe("Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.", object = rumodel)
 ```
 
