@@ -313,7 +313,7 @@ iris %>%
 
 $$^0C = \frac{5}{9} \times (^0F-32)$$
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, message=FALSE}
 options(scipen = 999)
 uc_city <- read_csv("data/us_city_average_temperature.csv")
 uc_city %>% 
