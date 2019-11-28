@@ -50,11 +50,70 @@ TRUE | FALSE
 2 != c(2, 3)
 ```
 
+## Создание собственных функций
+
+Собственные функции можно сделать с помощью функции `function()`. Ее можно записать в переменную и использовать:
+
+```{r}
+n_syllables <- function(x){
+  str_count(x, "[АОУЁЕЭЯИЮаоуёеэяию]")
+}
+
+n_syllables("корова")
+n_syllables("слон")
+```
+
+Вообще, функции немного зависят от загруженных пакетов, так что безопаснее либо эксплицитно включать билиотеку внутри функции, или же говорить, из какой библиотеки функция:
+
+```{r}
+n_syllables <- function(x){
+  stringr::str_count(x, "[АОУЁЕЭЯИЮаоуёеэяию]")
+}
+```
+
+Функцию можно вызывать внутри себя самой (рекурсия), вот так будет выглядеть функция, которая считает факториал:
+
+```{r}
+factorial <- function(x){
+  if(x-1 > 0){
+    x*factorial(x-1)
+  } else {
+    1
+  }
+}
+
+factorial(3)
+factorial(4)
+factorial(8)
+factorial(0)
+```
+
+```{block, type = "rmdtask"}
+Напишите свою функцию, которая будет сравнивать, какое слово длиннее:
+```
+
+```{r, echo = FALSE}
+which_is_longer <- function(x, y){
+  if(nchar(x) > nchar(y)){
+    x
+  } else {
+    y
+  }
+}
+```
+
+```{r}
+which_is_longer("роза", "цветок")
+which_is_longer("олень", "животное")
+which_is_longer("воробей", "птица")
+```
+
+
 ## Использование условий в tidyverse
 
 ### Условия в строчках
 
-Мы уже визуализировали данные из [статьи на Pudding про английские пабы](https://pudding.cool/2019/10/pubs/). Часть названий этих пабов имеет слово `"Inn"`, давайте построим график распределения 30 самых популярных пабов с этим словом в названии и без него. Используя изветсные нам инструменты можно получить что-то в этом роде:
+Мы уже визуализировали данные из [статьи на Pudding про английские пабы](https://pudding.cool/2019/10/pubs/). Часть названий этих пабов имеет слово *Inn*, давайте построим график распределения 30 самых популярных пабов с этим словом в названии и без него. Используя известные нам инструменты можно получить что-то в этом роде:
 
 ```{r download_uk_pubs, cache=TRUE, message = FALSE}
 uk_pubs <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/UK_pubs.csv")
@@ -62,7 +121,7 @@ uk_pubs %>%
   count(pub_name, sort = TRUE) %>% 
   mutate(inn = str_detect(pub_name, "Inn")) %>% 
   group_by(inn) %>% 
-  slice(1:30) %>% 
+  slice(1:20) %>% 
   ggplot(aes(fct_reorder(pub_name, n), n))+
   geom_col()+
   coord_flip()+
@@ -90,7 +149,7 @@ uk_pubs %>%
                       "with 'inn'", 
                       "without 'inn'")) %>%
   group_by(inn) %>% 
-  slice(1:30) %>% 
+  slice(1:20) %>% 
   ggplot(aes(fct_reorder(pub_name, n), n))+
   geom_col()+
   coord_flip()+
@@ -98,7 +157,7 @@ uk_pubs %>%
   labs(x = "", y = "", caption = "https://pudding.cool/2019/10/pubs/")
 ```
 
-А что если условий больше? В целом выражение `ifelse()` можно вложить в выражение `ifelse()`, однако для таких случаев придумали функцию `case_when()`. У нее немного необычный синтаксис:
+А что если условий больше? В целом, выражение `ifelse()` можно вложить в выражение `ifelse()`, однако для таких случаев придумали функцию `case_when()`. У нее немного необычный синтаксис:
 
 ```
 case_when(
@@ -109,17 +168,166 @@ case_when(
 )
 ```
 
+Давайте в том же датасете посмотрим на названия со словами *Inn*, *Hotel*, *Bar*, *House* и *Tavern*:
+
+```{r}
+uk_pubs %>% 
+  count(pub_name, sort = TRUE) %>% 
+  mutate(place = case_when(
+    str_detect(pub_name, "Inn") ~ "inn",
+    str_detect(pub_name, "Hotel") ~ "hotel",
+    str_detect(pub_name, "Bar") ~ "bar",
+    str_detect(pub_name, "House") ~ "house",
+    str_detect(pub_name, "Tavern") ~ "tavern")) %>%
+  group_by(place) %>% 
+  slice(1:10) %>% 
+  ggplot(aes(fct_reorder(pub_name, n), n))+
+  geom_col()+
+  coord_flip()+
+  facet_wrap(~place, scale = "free")+
+  labs(x = "", y = "", caption = "https://pudding.cool/2019/10/pubs/")
+```
+
+Варинат `NA`, как видно из графика, соответствует всем оставшимся вариантам, которые не подпали ни под одно из наших условий. Чтобы учесть и этот случай, нужно добавить условие `TRUE`:
+
+```{r}
+uk_pubs %>% 
+  count(pub_name, sort = TRUE) %>% 
+  mutate(place = case_when(
+    str_detect(pub_name, "Inn") ~ "inn",
+    str_detect(pub_name, "Hotel") ~ "hotel",
+    str_detect(pub_name, "Bar") ~ "bar",
+    str_detect(pub_name, "House") ~ "house",
+    str_detect(pub_name, "Tavern") ~ "tavern",
+    TRUE ~ "other")) %>%
+  group_by(place) %>% 
+  slice(1:10) %>% 
+  ggplot(aes(fct_reorder(pub_name, n), n))+
+  geom_col()+
+  coord_flip()+
+  facet_wrap(~place, scale = "free")+
+  labs(x = "", y = "", caption = "https://pudding.cool/2019/10/pubs/")
+```
+
+```{block, type = "rmdtask"}
+Мы уже визуализировали данные из [статьи на Pudding  "Finding Forever Homes"](https://pudding.cool/2019/10/shelters/), заполните пропус, чтобы получить возростно-половую пирамиду собак в США. Когда построите приведенный график, раскомментируйте закомментированную строчку и посмотрите на результат.
+```
+```
+dogs <- read_csv("https://raw.githubusercontent.com/r-classes/2019_2020_ds4dh_hw_2_dplyr_tidyr_ggplot2/master/data/dog_names.csv")
+dogs %>% 
+  filter(sex != "Unknown") %>% 
+  count(sex, contact_state) %>% 
+  group_by(contact_state) %>% 
+  mutate(
+  ...
+  ) %>% 
+  ggplot(aes(fct_reorder(contact_state, sum), n, fill = sex))+
+  geom_col()+
+#  scale_y_continuous(breaks = -2:2*1000, labels = abs(-2:2)*1000)+
+  coord_flip()+
+  labs(x = "", y = "", caption = "data from https://pudding.cool/2019/10/shelters/")+
+  scale_fill_brewer(palette ="Dark2")
+```
+
+```{r download_dogs, echo = FALSE, cache = TRUE, fig.height=8, message = FALSE}
+dogs <- read_csv("https://raw.githubusercontent.com/r-classes/2019_2020_ds4dh_hw_2_dplyr_tidyr_ggplot2/master/data/dog_names.csv")
+dogs %>% 
+  filter(sex != "Unknown") %>% 
+  count(sex, contact_state) %>% 
+  group_by(contact_state) %>% 
+  mutate(sum = sum(n),
+         n = ifelse(sex == "Male", -n, n)) %>% 
+  ggplot(aes(fct_reorder(contact_state, sum), n, fill = sex))+
+  geom_col()+
+#  scale_y_continuous(breaks = -2:2*1000, labels = abs(-2:2)*1000)+
+  coord_flip()+
+  labs(x = "", y = "", caption = "data from https://pudding.cool/2019/10/shelters/")+
+  scale_fill_brewer(palette ="Dark2")
+```
+
+
+
 ### Условия в столбцах
 
-```
-mutate_at()
-summarise_at()
-mutate_if()
-summarise_if()
+Что если хочется применить `summarise()` или `mutate()` лишь к определенным колонкам? Для этого можно использовать функции `summarise_at()` или `mutate_at()`.Например, посчитать среднее во всех колонках датасета `iris`, которые начинаются со слова "Sepal".
+
+```{r}
+iris %>% 
+  head()
+
+iris %>% 
+  summarise_at(vars(starts_with("Sepal")), mean)
 ```
 
+На месте функции `starts_with()` могут быть и другие:
 
-## Создание собственных функций
+* `ends_with()` -- заканчивается
+
+```{r}
+iris %>% 
+  summarise_at(vars(ends_with("Width")), mean)
+```
+
+* `matches()` -- соответствует регулярному выражению
+
+```{r}
+iris %>% 
+  summarise_at(vars(matches("Sepal")), mean)
+```
+
+* `one_off()` -- из предложенного вектора значений
+
+```{r}
+diamonds %>% 
+  summarise_at(vars(one_of(c("depth", "price", "carat"))), mean)
+```
+
+Так же, используя функцию `summarise_if()`,  можно применять какую-то операцию к каждой колонке, если она соответствует какому-то условию (обычно это используют для проверки типов переменных):
+
+```{r}
+diamonds %>% 
+  summarise_if(is.numeric, mean)
+```
+
+Вот несколько примеров с `mutate_..()`:
+```{r}
+diamonds
+
+diamonds %>% 
+  mutate_at(vars(one_of(c("depth", "price", "carat"))), sqrt)
+
+diamonds %>% 
+  mutate_if(is.numeric, sqrt)
+```
+
+Вместо `mean` и `sqrt` может быть любая другая функция, в том числе созданная вами:
+
+```{r}
+iris %>% 
+  summarise_at(vars(matches("Sepal")), function(x){mean(x)*min(x)})
+```
+
+```{block, type = "rmdtask"}
+Вот здесь
+```
+
+```{r, echo = FALSE}
+options(scipen = 999)
+uc_city <- read_csv("data/us_city_average_temperature.csv")
+uc_city %>% 
+  mutate_at(vars(starts_with("m")), function(x){5 / 9 * (x - 32)}) %>% 
+  pivot_longer(names_to = "month", values_to = "value", min_january:max_december) %>% 
+  separate(month, into = c("range", "month")) %>% 
+  mutate(month = factor(month, levels = c(tolower(month.name)))) %>% 
+  ggplot(aes(population_2010/1000000, value, color = range))+
+  geom_point()+
+  facet_wrap(~month)+
+  labs(x = "population (mln persons)",
+       y = "temperature",
+       caption = "data from www.currentresults.com")
+```
+
 
 ## Reinvent the `map` function
 
+В разделе [про работу со списками](#lists) мы обсуждали функию `map()`.

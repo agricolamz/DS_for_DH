@@ -270,11 +270,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>8</b> Собственные функции и использование их в <code>tidyverse</code></a><ul>
 <li class="chapter" data-level="8.1" data-path="functions.html"><a href="functions.html#напоминание-логические-операции"><i class="fa fa-check"></i><b>8.1</b> Напоминание: логические операции</a></li>
-<li class="chapter" data-level="8.2" data-path="functions.html"><a href="functions.html#использование-условий-в-tidyverse"><i class="fa fa-check"></i><b>8.2</b> Использование условий в tidyverse</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="functions.html"><a href="functions.html#условия-в-строчках"><i class="fa fa-check"></i><b>8.2.1</b> Условия в строчках</a></li>
-<li class="chapter" data-level="8.2.2" data-path="functions.html"><a href="functions.html#условия-в-столбцах"><i class="fa fa-check"></i><b>8.2.2</b> Условия в столбцах</a></li>
+<li class="chapter" data-level="8.2" data-path="functions.html"><a href="functions.html#создание-собственных-функций"><i class="fa fa-check"></i><b>8.2</b> Создание собственных функций</a></li>
+<li class="chapter" data-level="8.3" data-path="functions.html"><a href="functions.html#использование-условий-в-tidyverse"><i class="fa fa-check"></i><b>8.3</b> Использование условий в tidyverse</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="functions.html"><a href="functions.html#условия-в-строчках"><i class="fa fa-check"></i><b>8.3.1</b> Условия в строчках</a></li>
+<li class="chapter" data-level="8.3.2" data-path="functions.html"><a href="functions.html#условия-в-столбцах"><i class="fa fa-check"></i><b>8.3.2</b> Условия в столбцах</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="functions.html"><a href="functions.html#создание-собственных-функций"><i class="fa fa-check"></i><b>8.3</b> Создание собственных функций</a></li>
 <li class="chapter" data-level="8.4" data-path="functions.html"><a href="functions.html#reinvent-the-map-function"><i class="fa fa-check"></i><b>8.4</b> Reinvent the <code>map</code> function</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="tidytext.html"><a href="tidytext.html"><i class="fa fa-check"></i><b>9</b> Работа с текстами: guttenbergr, tidytext, udpipe, corpus</a></li>
@@ -353,7 +353,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="форматы-данных-.csv" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> Форматы данных: <code>.csv</code></h3>
-<p>Существет много форматов данных, которые придумали люди. Большинство из них можно загрузить в R. Так как центральный объект в R – таблица <span class="math inline">\(n \times k\)</span>, то и работать мы большую часть времени будем с таблицами. Наиболее распространенные способы хранить данные сейчас это <code>.csv</code> (разберем в данном разделе) и <code>.json</code> (разберем в разделе @ref{lists}).</p>
+<p>Существет много форматов данных, которые придумали люди. Большинство из них можно загрузить в R. Так как центральный объект в R – таблица <span class="math inline">\(n \times k\)</span>, то и работать мы большую часть времени будем с таблицами. Наиболее распространенные способы хранить данные сейчас это <code>.csv</code> (разберем в данном разделе) и <code>.json</code> (разберем в разделе <span class="citation">(<span class="citeproc-not-found" data-reference-id="ref"><strong>???</strong></span>)</span>{lists}).</p>
 <p><code>.csv</code> (comma separated values) – является обычным текстовым файлом, в котором перечислены значения с некоторым фиксированным разделителем: запятой, табуляцией, точка с запятой, пробел и др. Такие файлы обычно легко открывает LibreOffice, а в <a href="https://superuser.com/questions/291445/how-do-you-change-default-delimiter-in-the-text-import-in-excel">Microsoft Excel нужны некоторые трюки</a>.</p>
 </div>
 <div id="загрузка-данных-readr-readxl" class="section level3">
