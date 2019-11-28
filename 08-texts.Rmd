@@ -101,7 +101,7 @@ books %>%
 ```
 
 ```{block, type = "rmdtask"}
-Постройте следующий график
+Постройте следующий график, на котором представлены самые частотные 20 слов каждого из произведений.
 ```
 
 ```{r}
@@ -116,6 +116,8 @@ books %>%
   coord_flip()+
   facet_wrap(~title, scale = "free")
 ```
+
+
 
 
 
@@ -145,5 +147,35 @@ x %>%
   mutate(sentiment_type = ifelse(sentiment>= 0, "positive", "negative")) %>% 
   ggplot(aes(sentence_id, sentiment, fill = sentiment_type))+
   geom_col()
+```
+
+Функция `unnest_tokens()` позволяет работать не только со словами, но и, напрмиер, с биграммами:
+
+```{r}
+books %>% 
+  unnest_tokens(word, text, token = "ngrams", n = 2)
+```
+
+
+## Пакет udpipe
+
+Модели качаются очень долго.
+```{r download_en_model, cache=TRUE, eval=FALSE}
+library(udpipe)
+enmodel <- udpipe_download_model(language = "english")
+```
+
+Теперь можно распарсить какое-нибудь предложение:
+```{r, eval=FALSE}
+udpipe("The want of Miss Taylor would be felt every hour of every day.", object = enmodel)
+```
+
+Скачаем русскую модель:
+```{r  download_ru_model, cache=TRUE, eval=FALSE}
+rumodel <- udpipe_download_model(language = "russian-syntagrus")
+```
+
+```{r, eval=FALSE}
+udpipe("Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.", object = rumodel)
 ```
 

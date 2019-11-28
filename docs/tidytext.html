@@ -277,6 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="tidytext.html"><a href="tidytext.html"><i class="fa fa-check"></i><b>9</b> Работа с текстами: gutenbergr, tidytext, udpipe</a><ul>
 <li class="chapter" data-level="9.1" data-path="tidytext.html"><a href="tidytext.html#пакет-gutenbergr"><i class="fa fa-check"></i><b>9.1</b> Пакет <code>gutenbergr</code></a></li>
 <li class="chapter" data-level="9.2" data-path="tidytext.html"><a href="tidytext.html#библиотека-tidytext"><i class="fa fa-check"></i><b>9.2</b> Библиотека <code>tidytext</code></a></li>
+<li class="chapter" data-level="9.3" data-path="tidytext.html"><a href="tidytext.html#пакет-udpipe"><i class="fa fa-check"></i><b>9.3</b> Пакет udpipe</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="non-standard-data.html"><a href="non-standard-data.html"><i class="fa fa-check"></i><b>10</b> Нестандартные данные: время, OCR, карты</a></li>
 <li class="chapter" data-level="11" data-path="distributions.html"><a href="distributions.html"><i class="fa fa-check"></i><b>11</b> Distributions</a></li>
@@ -494,7 +495,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 9,314 more rows</code></pre>
 <div class="rmdtask">
 <p>
-Постройте следующий график
+Постройте следующий график, на котором представлены самые частотные 20 слов каждого из произведений.
 </p>
 </div>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="tidytext.html#cb27-1"></a>books <span class="op">%&gt;%</span><span class="st"> </span></span>
@@ -509,6 +510,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb27-10"><a href="tidytext.html#cb27-10"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>title, <span class="dt">scale =</span> <span class="st">&quot;free&quot;</span>)</span></code></pre></div>
 <pre><code>## Joining, by = &quot;word&quot;</code></pre>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Функция <code>unnest_tokens()</code> позволяет работать не только со словами, но и, напрмиер, с биграммами:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="tidytext.html#cb29-1"></a>books <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb29-2"><a href="tidytext.html#cb29-2"></a><span class="st">  </span><span class="kw">unnest_tokens</span>(word, text, <span class="dt">token =</span> <span class="st">&quot;ngrams&quot;</span>, <span class="dt">n =</span> <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 184,143 x 3
+##    gutenberg_id title word              
+##           &lt;int&gt; &lt;chr&gt; &lt;chr&gt;             
+##  1          158 Emma  emma by           
+##  2          158 Emma  by jane           
+##  3          158 Emma  jane austen       
+##  4          158 Emma  austen volume     
+##  5          158 Emma  volume i          
+##  6          158 Emma  i chapter         
+##  7          158 Emma  chapter i         
+##  8          158 Emma  i emma            
+##  9          158 Emma  emma woodhouse    
+## 10          158 Emma  woodhouse handsome
+## # … with 184,133 more rows</code></pre>
+</div>
+<div id="пакет-udpipe" class="section level2">
+<h2><span class="header-section-number">9.3</span> Пакет udpipe</h2>
+<p>Модели качаются очень долго.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="tidytext.html#cb31-1"></a><span class="kw">library</span>(udpipe)</span>
+<span id="cb31-2"><a href="tidytext.html#cb31-2"></a>enmodel &lt;-<span class="st"> </span><span class="kw">udpipe_download_model</span>(<span class="dt">language =</span> <span class="st">&quot;english&quot;</span>)</span></code></pre></div>
+<p>Теперь можно распарсить какое-нибудь предложение:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="tidytext.html#cb32-1"></a><span class="kw">udpipe</span>(<span class="st">&quot;The want of Miss Taylor would be felt every hour of every day.&quot;</span>, <span class="dt">object =</span> enmodel)</span></code></pre></div>
+<p>Скачаем русскую модель:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="tidytext.html#cb33-1"></a>rumodel &lt;-<span class="st"> </span><span class="kw">udpipe_download_model</span>(<span class="dt">language =</span> <span class="st">&quot;russian-syntagrus&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="tidytext.html#cb34-1"></a><span class="kw">udpipe</span>(<span class="st">&quot;Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.&quot;</span>, <span class="dt">object =</span> rumodel)</span></code></pre></div>
 
 </div>
 </div>
