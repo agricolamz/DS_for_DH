@@ -640,7 +640,251 @@ dogs %&gt;%
 </div>
 <div id="reinvent-the-map-function" class="section level2">
 <h2><span class="header-section-number">8.4</span> Reinvent the <code>map</code> function</h2>
-<p>В разделе <a href="lists.html#lists">про работу со списками</a> мы обсуждали функию <code>map()</code>.</p>
+<p>В разделе <a href="lists.html#lists">про работу со списками</a> мы обсуждали функию <code>map()</code>, оказывается в нее можно вставлять любую функцию, например, пересчитаем все цены в датасете diamonds в рубли:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="functions.html#cb69-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb69-2"><a href="functions.html#cb69-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">price_rubl =</span> <span class="kw">map_dbl</span>(price, <span class="cf">function</span>(x){x<span class="op">*</span><span class="dv">64</span>}))</span></code></pre></div>
+<pre><code>## # A tibble: 53,940 x 11
+##    carat cut       color clarity depth table price     x     y     z price_rubl
+##    &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;
+##  1 0.23  Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43      20864
+##  2 0.21  Premium   E     SI1      59.8    61   326  3.89  3.84  2.31      20864
+##  3 0.23  Good      E     VS1      56.9    65   327  4.05  4.07  2.31      20928
+##  4 0.290 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63      21376
+##  5 0.31  Good      J     SI2      63.3    58   335  4.34  4.35  2.75      21440
+##  6 0.24  Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48      21504
+##  7 0.24  Very Good I     VVS1     62.3    57   336  3.95  3.98  2.47      21504
+##  8 0.26  Very Good H     SI1      61.9    55   337  4.07  4.11  2.53      21568
+##  9 0.22  Fair      E     VS2      65.1    61   337  3.87  3.78  2.49      21568
+## 10 0.23  Very Good H     VS1      59.4    61   338  4     4.05  2.39      21632
+## # … with 53,930 more rows</code></pre>
+<p>Можно прочитать все файлы в одной папке:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="functions.html#cb71-1"></a><span class="kw">list.files</span>(<span class="st">&quot;data/&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;anscombe.csv&quot;                         
+##  [2] &quot;article_24_from_UDHR.csv&quot;             
+##  [3] &quot;character-deaths.csv&quot;                 
+##  [4] &quot;cities_of_russia.csv&quot;                 
+##  [5] &quot;datasaurus.csv&quot;                       
+##  [6] &quot;first_scatterplot.csv&quot;                
+##  [7] &quot;freq_dict_2011.csv&quot;                   
+##  [8] &quot;languages_in_india.csv&quot;               
+##  [9] &quot;mad_questionary.csv&quot;                  
+## [10] &quot;misspelling_dataset.csv&quot;              
+## [11] &quot;perceptions_of_probability.csv&quot;       
+## [12] &quot;popovets_l_2019_colors_of_classic.csv&quot;
+## [13] &quot;russian_sentiment.csv&quot;                
+## [14] &quot;scary_letters.csv&quot;                    
+## [15] &quot;UK_pubs.csv&quot;                          
+## [16] &quot;us_city_average_temperature.csv&quot;      
+## [17] &quot;zhadina.csv&quot;</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="functions.html#cb73-1"></a>all_datasets &lt;-<span class="st"> </span><span class="kw">map</span>(<span class="kw">paste0</span>(<span class="st">&quot;data/&quot;</span>, <span class="kw">list.files</span>(<span class="st">&quot;data/&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;.csv&quot;</span>)), read_csv)</span>
+<span id="cb73-2"><a href="functions.html#cb73-2"></a><span class="kw">str</span>(all_datasets, <span class="dt">max.level =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## List of 17
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 44 obs. of  4 variables:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   id = col_double(),
+##   .. ..   dataset = col_double(),
+##   .. ..   x = col_double(),
+##   .. ..   y = col_double()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 6 obs. of  1 variable:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   article_text = col_character()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 917 obs. of  13 variables:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   Name = col_character(),
+##   .. ..   Allegiances = col_character(),
+##   .. ..   `Death Year` = col_double(),
+##   .. ..   `Book of Death` = col_double(),
+##   .. ..   `Death Chapter` = col_double(),
+##   .. ..   `Book Intro Chapter` = col_double(),
+##   .. ..   Gender = col_double(),
+##   .. ..   Nobility = col_double(),
+##   .. ..   GoT = col_double(),
+##   .. ..   CoK = col_double(),
+##   .. ..   SoS = col_double(),
+##   .. ..   FfC = col_double(),
+##   .. ..   DwD = col_double()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 1097 obs. of  1 variable:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   city = col_character()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 1846 obs. of  3 variables:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   dataset = col_character(),
+##   .. ..   x = col_double(),
+##   .. ..   y = col_double()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 464 obs. of  2 variables:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   x = col_double(),
+##   .. ..   y = col_double()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 52138 obs. of  1 variable:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   `lemma pos freq_ipm` = col_character()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 12 obs. of  5 variables:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   language = col_character(),
+##   .. ..   n_L1_sp = col_double(),
+##   .. ..   n_L2_sp = col_double(),
+##   .. ..   n_L3_sp = col_double(),
+##   .. ..   n_all_sp = col_double()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 106 obs. of  12 variables:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   name = col_character(),
+##   .. ..   age = col_character(),
+##   .. ..   sex = col_character(),
+##   .. ..   town_of_birth = col_character(),
+##   .. ..   phone = col_character(),
+##   .. ..   favourite_book = col_character(),
+##   .. ..   favourite_dish = col_character(),
+##   .. ..   favourite_drink = col_character(),
+##   .. ..   favourite_film = col_character(),
+##   .. ..   favourite_activity = col_character(),
+##   .. ..   frequency_be_in_the_fresh_air = col_character(),
+##   .. ..   fear_of_the_dark = col_character()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 15477 obs. of  3 variables:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   correct = col_character(),
+##   .. ..   spelling = col_character(),
+##   .. ..   count = col_double()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 46 obs. of  17 variables:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   `Almost Certainly` = col_double(),
+##   .. ..   `Highly Likely` = col_double(),
+##   .. ..   `Very Good Chance` = col_double(),
+##   .. ..   Probable = col_double(),
+##   .. ..   Likely = col_double(),
+##   .. ..   Probably = col_double(),
+##   .. ..   `We Believe` = col_double(),
+##   .. ..   `Better Than Even` = col_double(),
+##   .. ..   `About Even` = col_double(),
+##   .. ..   `We Doubt` = col_double(),
+##   .. ..   Improbable = col_double(),
+##   .. ..   Unlikely = col_double(),
+##   .. ..   `Probably Not` = col_double(),
+##   .. ..   `Little Chance` = col_double(),
+##   .. ..   `Almost No Chance` = col_double(),
+##   .. ..   `Highly Unlikely` = col_double(),
+##   .. ..   `Chances Are Slight` = col_double()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 235 obs. of  1 variable:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   `data from https://readymag.com/u94255285/colors-of-classics/;;` = col_character()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 7640 obs. of  2 variables:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   word = col_character(),
+##   .. ..   score = col_double()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 3 obs. of  1 variable:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   `cyrillic;ipa_symbols;greek` = col_character()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 41097 obs. of  3 variables:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   pub_ID = col_double(),
+##   .. ..   pub_name = col_character(),
+##   .. ..   pub_town = col_character()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 51 obs. of  26 variables:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   city = col_character(),
+##   .. ..   population_2010 = col_double(),
+##   .. ..   min_january = col_double(),
+##   .. ..   min_february = col_double(),
+##   .. ..   min_march = col_double(),
+##   .. ..   min_april = col_double(),
+##   .. ..   min_may = col_double(),
+##   .. ..   min_june = col_double(),
+##   .. ..   min_july = col_double(),
+##   .. ..   min_august = col_double(),
+##   .. ..   min_september = col_double(),
+##   .. ..   min_october = col_double(),
+##   .. ..   min_november = col_double(),
+##   .. ..   min_december = col_double(),
+##   .. ..   max_january = col_double(),
+##   .. ..   max_february = col_double(),
+##   .. ..   max_march = col_double(),
+##   .. ..   max_april = col_double(),
+##   .. ..   max_may = col_double(),
+##   .. ..   max_june = col_double(),
+##   .. ..   max_july = col_double(),
+##   .. ..   max_august = col_double(),
+##   .. ..   max_september = col_double(),
+##   .. ..   max_october = col_double(),
+##   .. ..   max_november = col_double(),
+##   .. ..   max_december = col_double()
+##   .. .. )
+##  $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 26 obs. of  5 variables:
+##   ..- attr(*, &quot;spec&quot;)=
+##   .. .. cols(
+##   .. ..   word_1 = col_character(),
+##   .. ..   word_2 = col_character(),
+##   .. ..   word_3 = col_character(),
+##   .. ..   type = col_character(),
+##   .. ..   n = col_double()
+##   .. .. )</code></pre>
+<p>Можно прочитать все листы из <code>.xlsx</code> файла:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="functions.html#cb75-1"></a><span class="kw">library</span>(readxl)</span>
+<span id="cb75-2"><a href="functions.html#cb75-2"></a><span class="kw">excel_sheets</span>(<span class="st">&quot;data/seattle_public_library_checkouts.xlsx&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;2005&quot; &quot;2006&quot; &quot;2007&quot; &quot;2008&quot; &quot;2009&quot; &quot;2010&quot; &quot;2011&quot; &quot;2012&quot; &quot;2013&quot; &quot;2014&quot;
+## [11] &quot;2015&quot; &quot;2016&quot; &quot;2017&quot; &quot;2018&quot; &quot;2019&quot;</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="functions.html#cb77-1"></a><span class="kw">excel_sheets</span>(<span class="st">&quot;data/seattle_public_library_checkouts.xlsx&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb77-2"><a href="functions.html#cb77-2"></a><span class="st">  </span><span class="kw">map</span>(<span class="op">~</span><span class="kw">read_xlsx</span>(<span class="st">&quot;data/seattle_public_library_checkouts.xlsx&quot;</span>, .)) -&gt;</span>
+<span id="cb77-3"><a href="functions.html#cb77-3"></a><span class="st">  </span>seatle</span>
+<span id="cb77-4"><a href="functions.html#cb77-4"></a></span>
+<span id="cb77-5"><a href="functions.html#cb77-5"></a><span class="kw">str</span>(seatle, <span class="dt">max.level =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## List of 15
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    3864 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    11197 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    12141 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    15526 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    16821 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    15046 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    13793 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    13091 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    15092 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    14197 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    12313 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    10705 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    10485 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    9593 obs. of  5 variables:
+##  $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    6631 obs. of  5 variables:</code></pre>
+<p>Получился список, можно использовать <code>map_df()</code>, которая еще и соединит все в один датафрейм.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="functions.html#cb79-1"></a><span class="kw">excel_sheets</span>(<span class="st">&quot;data/seattle_public_library_checkouts.xlsx&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb79-2"><a href="functions.html#cb79-2"></a><span class="st">  </span><span class="kw">map_df</span>(<span class="op">~</span><span class="kw">read_xlsx</span>(<span class="st">&quot;data/seattle_public_library_checkouts.xlsx&quot;</span>, .)) -&gt;</span>
+<span id="cb79-3"><a href="functions.html#cb79-3"></a><span class="st">  </span>seatle</span>
+<span id="cb79-4"><a href="functions.html#cb79-4"></a></span>
+<span id="cb79-5"><a href="functions.html#cb79-5"></a><span class="kw">str</span>(seatle, <span class="dt">max.level =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    180495 obs. of  5 variables:
+##  $ id  : num  759 3053 5674 6248 8262 ...
+##  $ type: chr  &quot;bk&quot; &quot;bk&quot; &quot;bk&quot; &quot;bk&quot; ...
+##  $ name: chr  &quot;best nest&quot; &quot;Lovable Lyle&quot; &quot;Whose mouse are you&quot; &quot;In the night kitchen&quot; ...
+##  $ n   : num  103 101 110 243 185 172 278 221 204 324 ...
+##  $ year: num  2005 2005 2005 2005 2005 ...</code></pre>
 
 </div>
 </div>

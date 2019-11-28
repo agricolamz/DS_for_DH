@@ -332,4 +332,37 @@ uc_city %>%
 
 ## Reinvent the `map` function
 
-В разделе [про работу со списками](#lists) мы обсуждали функию `map()`.
+В разделе [про работу со списками](#lists) мы обсуждали функию `map()`, оказывается в нее можно вставлять любую функцию, например, пересчитаем все цены в датасете diamonds в рубли:
+
+```{r}
+diamonds %>% 
+  mutate(price_rubl = map_dbl(price, function(x){x*64}))
+```
+
+Можно прочитать все файлы в одной папке:
+```{r, message=FALSE}
+list.files("data/", pattern = ".csv")
+all_datasets <- map(paste0("data/", list.files("data/", pattern = ".csv")), read_csv)
+str(all_datasets, max.level = 1)
+```
+
+Можно прочитать все листы из `.xlsx` файла:
+```{r, message=FALSE}
+library(readxl)
+excel_sheets("data/seattle_public_library_checkouts.xlsx")
+excel_sheets("data/seattle_public_library_checkouts.xlsx") %>%
+  map(~read_xlsx("data/seattle_public_library_checkouts.xlsx", .)) ->
+  seatle
+
+str(seatle, max.level = 1)
+```
+
+Получился список, можно использовать `map_df()`, которая еще и соединит все в один датафрейм.
+
+```{r}
+excel_sheets("data/seattle_public_library_checkouts.xlsx") %>%
+  map_df(~read_xlsx("data/seattle_public_library_checkouts.xlsx", .)) ->
+  seatle
+
+str(seatle, max.level = 1)
+```
