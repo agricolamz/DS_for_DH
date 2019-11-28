@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 Работа с текстами: guttenbergr, tidytext, udpipe, corpus | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
-  <meta name="description" content="9 Работа с текстами: guttenbergr, tidytext, udpipe, corpus | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+  <title>9 Работа с текстами: gutenbergr, tidytext, udpipe | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
+  <meta name="description" content="9 Работа с текстами: gutenbergr, tidytext, udpipe | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 Работа с текстами: guttenbergr, tidytext, udpipe, corpus | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+  <meta property="og:title" content="9 Работа с текстами: gutenbergr, tidytext, udpipe | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 Работа с текстами: guttenbergr, tidytext, udpipe, corpus | Наука о данных в R для программы Цифровых гуманитарных исследований" />
+  <meta name="twitter:title" content="9 Работа с текстами: gutenbergr, tidytext, udpipe | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   
   
   
@@ -49,9 +49,6 @@
 
 
 
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
 <style type="text/css">
@@ -277,7 +274,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="functions.html"><a href="functions.html#reinvent-the-map-function"><i class="fa fa-check"></i><b>8.4</b> Reinvent the <code>map</code> function</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="tidytext.html"><a href="tidytext.html"><i class="fa fa-check"></i><b>9</b> Работа с текстами: guttenbergr, tidytext, udpipe, corpus</a></li>
+<li class="chapter" data-level="9" data-path="tidytext.html"><a href="tidytext.html"><i class="fa fa-check"></i><b>9</b> Работа с текстами: gutenbergr, tidytext, udpipe</a><ul>
+<li class="chapter" data-level="9.1" data-path="tidytext.html"><a href="tidytext.html#пакет-gutenbergr"><i class="fa fa-check"></i><b>9.1</b> Пакет <code>gutenbergr</code></a></li>
+<li class="chapter" data-level="9.2" data-path="tidytext.html"><a href="tidytext.html#библиотека-tidytext"><i class="fa fa-check"></i><b>9.2</b> Библиотека <code>tidytext</code></a></li>
+</ul></li>
 <li class="chapter" data-level="10" data-path="non-standard-data.html"><a href="non-standard-data.html"><i class="fa fa-check"></i><b>10</b> Нестандартные данные: время, OCR, карты</a></li>
 <li class="chapter" data-level="11" data-path="distributions.html"><a href="distributions.html"><i class="fa fa-check"></i><b>11</b> Distributions</a></li>
 <li class="chapter" data-level="12" data-path="tasks.html"><a href="tasks.html"><i class="fa fa-check"></i><b>12</b> Задания</a><ul>
@@ -315,8 +315,202 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="tidytext" class="section level1">
-<h1><span class="header-section-number">9</span> Работа с текстами: guttenbergr, tidytext, udpipe, corpus</h1>
+<h1><span class="header-section-number">9</span> Работа с текстами: gutenbergr, tidytext, udpipe</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="tidytext.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div id="пакет-gutenbergr" class="section level2">
+<h2><span class="header-section-number">9.1</span> Пакет <code>gutenbergr</code></h2>
+<p>Пакет <code>gutenbergr</code> является API для очень старого <a href="http://www.gutenberg.org/">проекта Guttenberg</a>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="tidytext.html#cb2-1"></a><span class="kw">library</span>(gutenbergr)</span></code></pre></div>
+<p>Все самое важное в этом пакете хранится в датасете <code>gutenberg_metadata</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tidytext.html#cb3-1"></a><span class="kw">str</span>(gutenberg_metadata)</span></code></pre></div>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    51997 obs. of  8 variables:
+##  $ gutenberg_id       : int  0 1 2 3 4 5 6 7 8 9 ...
+##  $ title              : chr  NA &quot;The Declaration of Independence of the United States of America&quot; &quot;The United States Bill of Rights\r\nThe Ten Original Amendments to the Constitution of the United States&quot; &quot;John F. Kennedy&#39;s Inaugural Address&quot; ...
+##  $ author             : chr  NA &quot;Jefferson, Thomas&quot; &quot;United States&quot; &quot;Kennedy, John F. (John Fitzgerald)&quot; ...
+##  $ gutenberg_author_id: int  NA 1638 1 1666 3 1 4 NA 3 3 ...
+##  $ language           : chr  &quot;en&quot; &quot;en&quot; &quot;en&quot; &quot;en&quot; ...
+##  $ gutenberg_bookshelf: chr  NA &quot;United States Law/American Revolutionary War/Politics&quot; &quot;American Revolutionary War/Politics/United States Law&quot; NA ...
+##  $ rights             : chr  &quot;Public domain in the USA.&quot; &quot;Public domain in the USA.&quot; &quot;Public domain in the USA.&quot; &quot;Public domain in the USA.&quot; ...
+##  $ has_text           : logi  TRUE TRUE TRUE TRUE TRUE TRUE ...
+##  - attr(*, &quot;date_updated&quot;)= Date, format: &quot;2016-05-05&quot;</code></pre>
+<p>Например, сейчас мы можем понять, сколько книг на разных языках можно скачать из проекта:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tidytext.html#cb5-1"></a>gutenberg_metadata <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb5-2"><a href="tidytext.html#cb5-2"></a><span class="st">  </span><span class="kw">count</span>(language, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 103 x 2
+##    language     n
+##    &lt;chr&gt;    &lt;int&gt;
+##  1 en       42719
+##  2 fr        2658
+##  3 de        1387
+##  4 fi        1341
+##  5 nl         723
+##  6 it         672
+##  7 pt         537
+##  8 es         470
+##  9 zh         408
+## 10 el         216
+## # … with 93 more rows</code></pre>
+<p>Как видно, в основном это тексты на английском. Сколько авторов в датасете?</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tidytext.html#cb7-1"></a>gutenberg_metadata <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb7-2"><a href="tidytext.html#cb7-2"></a><span class="st">  </span><span class="kw">count</span>(author, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 16,190 x 2
+##    author                                  n
+##    &lt;chr&gt;                               &lt;int&gt;
+##  1 &lt;NA&gt;                                 3457
+##  2 Various                              3199
+##  3 Anonymous                             724
+##  4 Shakespeare, William                  317
+##  5 Lytton, Edward Bulwer Lytton, Baron   219
+##  6 Twain, Mark                           214
+##  7 Ebers, Georg                          171
+##  8 Dickens, Charles                      163
+##  9 Verne, Jules                          151
+## 10 Unknown                               141
+## # … with 16,180 more rows</code></pre>
+<p>Сколько произведений Джейн Остин (не перепутайте с другими Остин) есть в датасете?</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tidytext.html#cb9-1"></a>gutenberg_metadata <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb9-2"><a href="tidytext.html#cb9-2"></a><span class="st">  </span><span class="kw">filter</span>(author <span class="op">==</span><span class="st"> &quot;Austen, Jane&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb9-3"><a href="tidytext.html#cb9-3"></a><span class="st">  </span><span class="kw">distinct</span>(gutenberg_id, title)</span></code></pre></div>
+<pre><code>## # A tibble: 29 x 2
+##    gutenberg_id title                    
+##           &lt;int&gt; &lt;chr&gt;                    
+##  1          105 Persuasion               
+##  2          121 Northanger Abbey         
+##  3          141 Mansfield Park           
+##  4          158 Emma                     
+##  5          161 Sense and Sensibility    
+##  6          946 Lady Susan               
+##  7         1212 Love and Freindship [sic]
+##  8         1342 Pride and Prejudice      
+##  9        19839 Emma                     
+## 10        20682 Northanger Abbey         
+## # … with 19 more rows</code></pre>
+<p>Давайте скачаем “Эмму”:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tidytext.html#cb11-1"></a>emma &lt;-<span class="st"> </span><span class="kw">gutenberg_download</span>(<span class="dv">158</span>)</span></code></pre></div>
+<pre><code>## Determining mirror for Project Gutenberg from http://www.gutenberg.org/robot/harvest</code></pre>
+<pre><code>## Using mirror http://aleph.gutenberg.org</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="tidytext.html#cb14-1"></a>emma</span></code></pre></div>
+<pre><code>## # A tibble: 16,235 x 2
+##    gutenberg_id text          
+##           &lt;int&gt; &lt;chr&gt;         
+##  1          158 EMMA          
+##  2          158 &quot;&quot;            
+##  3          158 By Jane Austen
+##  4          158 &quot;&quot;            
+##  5          158 &quot;&quot;            
+##  6          158 &quot;&quot;            
+##  7          158 &quot;&quot;            
+##  8          158 VOLUME I      
+##  9          158 &quot;&quot;            
+## 10          158 &quot;&quot;            
+## # … with 16,225 more rows</code></pre>
+<p>Можно скачивать сразу несколько книг. Давайте добавим еще “Леди Сьюзен”:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="tidytext.html#cb16-1"></a>books &lt;-<span class="st"> </span><span class="kw">gutenberg_download</span>(<span class="kw">c</span>(<span class="dv">158</span>, <span class="dv">946</span>), <span class="dt">meta_fields =</span> <span class="st">&quot;title&quot;</span>)</span>
+<span id="cb16-2"><a href="tidytext.html#cb16-2"></a>books</span></code></pre></div>
+<pre><code>## # A tibble: 18,760 x 3
+##    gutenberg_id text           title
+##           &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;
+##  1          158 EMMA           Emma 
+##  2          158 &quot;&quot;             Emma 
+##  3          158 By Jane Austen Emma 
+##  4          158 &quot;&quot;             Emma 
+##  5          158 &quot;&quot;             Emma 
+##  6          158 &quot;&quot;             Emma 
+##  7          158 &quot;&quot;             Emma 
+##  8          158 VOLUME I       Emma 
+##  9          158 &quot;&quot;             Emma 
+## 10          158 &quot;&quot;             Emma 
+## # … with 18,750 more rows</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="tidytext.html#cb18-1"></a>books <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb18-2"><a href="tidytext.html#cb18-2"></a><span class="st">  </span><span class="kw">count</span>(title)</span></code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##   title          n
+##   &lt;chr&gt;      &lt;int&gt;
+## 1 Emma       16235
+## 2 Lady Susan  2525</code></pre>
+<div class="rmdtask">
+<p>
+Сколько уникальных заголовков из базы данных содержит “Sherlock Holmes”?
+</p>
+</div>
+</div>
+<div id="библиотека-tidytext" class="section level2">
+<h2><span class="header-section-number">9.2</span> Библиотека <code>tidytext</code></h2>
+<p>Сейчас скачанные книги записаны в таблицу, где одна строка это один абзац. Хочется мочь посчитать слова. Для этого книги нужно привести в tidy формат и для этого написан пакет <code>tidytext</code>:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="tidytext.html#cb20-1"></a><span class="kw">library</span>(tidytext)</span>
+<span id="cb20-2"><a href="tidytext.html#cb20-2"></a>books <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-3"><a href="tidytext.html#cb20-3"></a><span class="st">  </span><span class="kw">unnest_tokens</span>(word, text)</span></code></pre></div>
+<pre><code>## # A tibble: 184,145 x 3
+##    gutenberg_id title word     
+##           &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    
+##  1          158 Emma  emma     
+##  2          158 Emma  by       
+##  3          158 Emma  jane     
+##  4          158 Emma  austen   
+##  5          158 Emma  volume   
+##  6          158 Emma  i        
+##  7          158 Emma  chapter  
+##  8          158 Emma  i        
+##  9          158 Emma  emma     
+## 10          158 Emma  woodhouse
+## # … with 184,135 more rows</code></pre>
+<p>Теперь можно посчитать самые частотные слова в обоих произведениях:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="tidytext.html#cb22-1"></a>books <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb22-2"><a href="tidytext.html#cb22-2"></a><span class="st">  </span><span class="kw">unnest_tokens</span>(word, text) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb22-3"><a href="tidytext.html#cb22-3"></a><span class="st">  </span><span class="kw">count</span>(title, word, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 10,285 x 3
+##    title word      n
+##    &lt;chr&gt; &lt;chr&gt; &lt;int&gt;
+##  1 Emma  to     5239
+##  2 Emma  the    5201
+##  3 Emma  and    4896
+##  4 Emma  of     4291
+##  5 Emma  i      3177
+##  6 Emma  a      3129
+##  7 Emma  it     2528
+##  8 Emma  her    2462
+##  9 Emma  was    2398
+## 10 Emma  she    2340
+## # … with 10,275 more rows</code></pre>
+<p>Ну… Это было ожидаемо. Нужно убрать стопслова. Английские стопслова встроены в пакет (переменная <code>stop_words</code>):</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="tidytext.html#cb24-1"></a>books <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb24-2"><a href="tidytext.html#cb24-2"></a><span class="st">  </span><span class="kw">unnest_tokens</span>(word, text) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb24-3"><a href="tidytext.html#cb24-3"></a><span class="st">  </span><span class="kw">count</span>(title, word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb24-4"><a href="tidytext.html#cb24-4"></a><span class="st">  </span><span class="kw">anti_join</span>(stop_words)</span></code></pre></div>
+<pre><code>## Joining, by = &quot;word&quot;</code></pre>
+<pre><code>## # A tibble: 9,324 x 3
+##    title word          n
+##    &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;
+##  1 Emma  emma        786
+##  2 Emma  miss        599
+##  3 Emma  harriet     415
+##  4 Emma  weston      389
+##  5 Emma  knightley   356
+##  6 Emma  elton       319
+##  7 Emma  jane        282
+##  8 Emma  time        279
+##  9 Emma  woodhouse   277
+## 10 Emma  dear        241
+## # … with 9,314 more rows</code></pre>
+<div class="rmdtask">
+<p>
+Постройте следующий график
+</p>
+</div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="tidytext.html#cb27-1"></a>books <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb27-2"><a href="tidytext.html#cb27-2"></a><span class="st">  </span><span class="kw">unnest_tokens</span>(word, text) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb27-3"><a href="tidytext.html#cb27-3"></a><span class="st">  </span><span class="kw">count</span>(title, word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb27-4"><a href="tidytext.html#cb27-4"></a><span class="st">  </span><span class="kw">anti_join</span>(stop_words) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb27-5"><a href="tidytext.html#cb27-5"></a><span class="st">  </span><span class="kw">group_by</span>(title) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb27-6"><a href="tidytext.html#cb27-6"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb27-7"><a href="tidytext.html#cb27-7"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n))<span class="op">+</span></span>
+<span id="cb27-8"><a href="tidytext.html#cb27-8"></a><span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span></span>
+<span id="cb27-9"><a href="tidytext.html#cb27-9"></a><span class="st">  </span><span class="kw">coord_flip</span>()<span class="op">+</span></span>
+<span id="cb27-10"><a href="tidytext.html#cb27-10"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>title, <span class="dt">scale =</span> <span class="st">&quot;free&quot;</span>)</span></code></pre></div>
+<pre><code>## Joining, by = &quot;word&quot;</code></pre>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 
+</div>
 </div>
             </section>
 

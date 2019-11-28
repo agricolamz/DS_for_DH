@@ -3,7 +3,122 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-# Работа с текстами: guttenbergr, tidytext, udpipe, corpus {#tidytext}
+# Работа с текстами: gutenbergr, tidytext, udpipe {#tidytext}
+
+```{r,message=FALSE}
+library(tidyverse)
+```
+
+
+## Пакет `gutenbergr`
+
+Пакет `gutenbergr` является API для очень старого [проекта Guttenberg](http://www.gutenberg.org/).
+
+```{r}
+library(gutenbergr)
+```
+
+Все самое важное в этом пакете хранится в датасете `gutenberg_metadata`
+
+```{r}
+str(gutenberg_metadata)
+```
+
+Например, сейчас мы можем понять, сколько книг на разных языках можно скачать из проекта:
+
+```{r}
+gutenberg_metadata %>% 
+  count(language, sort = TRUE)
+```
+
+Как видно, в основном это тексты на английском. Сколько авторов в датасете?
+
+```{r}
+gutenberg_metadata %>% 
+  count(author, sort = TRUE)
+```
+
+Сколько произведений Джейн Остин (не перепутайте с другими Остин) есть в датасете?
+
+```{r}
+gutenberg_metadata %>% 
+  filter(author == "Austen, Jane") %>% 
+  distinct(gutenberg_id, title)
+```
+
+Давайте скачаем "Эмму":
+
+```{r download_emma, cache=TRUE}
+emma <- gutenberg_download(158)
+emma
+```
+
+Можно скачивать сразу несколько книг. Давайте добавим еще "Леди Сьюзен":
+
+```{r download_books, cache=TRUE}
+books <- gutenberg_download(c(158, 946), meta_fields = "title")
+books
+books %>% 
+  count(title)
+```
+
+```{block, type = "rmdtask"}
+Сколько уникальных заголовков из базы данных содержит "Sherlock Holmes"?
+```
+
+```{r, include=FALSE}
+gutenberg_metadata %>% 
+  filter(str_detect(title, "Sherlock Holmes")) %>% 
+  distinct(title)
+# 9
+```
+
+## Библиотека `tidytext`
+
+Сейчас скачанные книги записаны в таблицу, где одна строка это один абзац. Хочется мочь посчитать слова. Для этого книги нужно привести в tidy формат и для этого написан пакет `tidytext`:
+
+```{r}
+library(tidytext)
+books %>% 
+  unnest_tokens(word, text)
+```
+
+Теперь можно посчитать самые частотные слова в обоих произведениях:
+
+```{r}
+books %>% 
+  unnest_tokens(word, text) %>% 
+  count(title, word, sort = TRUE)
+```
+
+Ну... Это было ожидаемо. Нужно убрать стопслова. Английские стопслова встроены в пакет (переменная `stop_words`):
+
+```{r}
+books %>% 
+  unnest_tokens(word, text) %>% 
+  count(title, word, sort = TRUE) %>% 
+  anti_join(stop_words)
+```
+
+```{block, type = "rmdtask"}
+Постройте следующий график
+```
+
+```{r}
+books %>% 
+  unnest_tokens(word, text) %>% 
+  count(title, word, sort = TRUE) %>% 
+  anti_join(stop_words) %>% 
+  group_by(title) %>% 
+  slice(1:20) %>% 
+  ggplot(aes(word, n))+
+  geom_col()+
+  coord_flip()+
+  facet_wrap(~title, scale = "free")
+```
+
+
+
 ```{r, eval = FALSE, include=FALSE}
 library(tidyverse)
 library(udpipe)
