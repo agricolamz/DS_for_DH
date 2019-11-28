@@ -49,6 +49,9 @@
 
 
 
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
 <style type="text/css">
@@ -313,7 +316,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="functions" class="section level1">
 <h1><span class="header-section-number">8</span> Собственные функции и использование их в <code>tidyverse</code></h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="functions.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb826"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb826-1"><a href="functions.html#cb826-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
 <div id="напоминание-логические-операции" class="section level2">
 <h2><span class="header-section-number">8.1</span> Напоминание: логические операции</h2>
 <p>Логическое “и”:</p>
@@ -338,10 +341,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="functions.html#cb2-1"></a><span class="ot">TRUE</span> <span class="op">&amp;</span><span class="st"> </span><span class="ot">TRUE</span></span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="functions.html#cb4-1"></a><span class="ot">TRUE</span> <span class="op">&amp;</span><span class="st"> </span><span class="ot">FALSE</span></span></code></pre></div>
-<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb827"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb827-1"><a href="functions.html#cb827-1"></a><span class="ot">TRUE</span> <span class="op">&amp;</span><span class="st"> </span><span class="ot">TRUE</span></span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb829"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb829-1"><a href="functions.html#cb829-1"></a><span class="ot">TRUE</span> <span class="op">&amp;</span><span class="st"> </span><span class="ot">FALSE</span></span></code></pre></div>
+<pre><code>[1] FALSE</code></pre>
 <p>Логическое “или”:</p>
 <table>
 <thead>
@@ -364,39 +367,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="functions.html#cb6-1"></a><span class="ot">TRUE</span> <span class="op">|</span><span class="st"> </span><span class="ot">TRUE</span></span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="functions.html#cb8-1"></a><span class="ot">TRUE</span> <span class="op">|</span><span class="st"> </span><span class="ot">FALSE</span></span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb831"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb831-1"><a href="functions.html#cb831-1"></a><span class="ot">TRUE</span> <span class="op">|</span><span class="st"> </span><span class="ot">TRUE</span></span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb833"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb833-1"><a href="functions.html#cb833-1"></a><span class="ot">TRUE</span> <span class="op">|</span><span class="st"> </span><span class="ot">FALSE</span></span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
 <p>Логическое “не”:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="functions.html#cb10-1"></a><span class="op">!</span><span class="ot">TRUE</span></span></code></pre></div>
-<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb835"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb835-1"><a href="functions.html#cb835-1"></a><span class="op">!</span><span class="ot">TRUE</span></span></code></pre></div>
+<pre><code>[1] FALSE</code></pre>
 <p>Сравнение:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="functions.html#cb12-1"></a><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="functions.html#cb14-1"></a><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">3</span></span></code></pre></div>
-<pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="functions.html#cb16-1"></a><span class="dv">2</span> <span class="op">!=</span><span class="st"> </span><span class="dv">3</span></span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="functions.html#cb18-1"></a><span class="dv">2</span> <span class="op">!=</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div>
-<pre><code>## [1] FALSE  TRUE</code></pre>
+<div class="sourceCode" id="cb837"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb837-1"><a href="functions.html#cb837-1"></a><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb839"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb839-1"><a href="functions.html#cb839-1"></a><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">3</span></span></code></pre></div>
+<pre><code>[1] FALSE</code></pre>
+<div class="sourceCode" id="cb841"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb841-1"><a href="functions.html#cb841-1"></a><span class="dv">2</span> <span class="op">!=</span><span class="st"> </span><span class="dv">3</span></span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb843"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb843-1"><a href="functions.html#cb843-1"></a><span class="dv">2</span> <span class="op">!=</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>[1] FALSE  TRUE</code></pre>
 </div>
 <div id="использование-условий-в-tidyverse" class="section level2">
 <h2><span class="header-section-number">8.2</span> Использование условий в tidyverse</h2>
 <div id="условия-в-строчках" class="section level3">
 <h3><span class="header-section-number">8.2.1</span> Условия в строчках</h3>
 <p>Мы уже визуализировали данные из <a href="https://pudding.cool/2019/10/pubs/">статьи на Pudding про английские пабы</a>. Часть названий этих пабов имеет слово <code>"Inn"</code>, давайте построим график распределения 30 самых популярных пабов с этим словом в названии и без него. Используя изветсные нам инструменты можно получить что-то в этом роде:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="functions.html#cb20-1"></a>uk_pubs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/UK_pubs.csv&quot;</span>)</span>
-<span id="cb20-2"><a href="functions.html#cb20-2"></a>uk_pubs <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb20-3"><a href="functions.html#cb20-3"></a><span class="st">  </span><span class="kw">count</span>(pub_name, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb20-4"><a href="functions.html#cb20-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">inn =</span> <span class="kw">str_detect</span>(pub_name, <span class="st">&quot;Inn&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb20-5"><a href="functions.html#cb20-5"></a><span class="st">  </span><span class="kw">group_by</span>(inn) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb20-6"><a href="functions.html#cb20-6"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb20-7"><a href="functions.html#cb20-7"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="kw">fct_reorder</span>(pub_name, n), n))<span class="op">+</span></span>
-<span id="cb20-8"><a href="functions.html#cb20-8"></a><span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span></span>
-<span id="cb20-9"><a href="functions.html#cb20-9"></a><span class="st">  </span><span class="kw">coord_flip</span>()<span class="op">+</span></span>
-<span id="cb20-10"><a href="functions.html#cb20-10"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>inn, <span class="dt">scale =</span> <span class="st">&quot;free&quot;</span>)<span class="op">+</span></span>
-<span id="cb20-11"><a href="functions.html#cb20-11"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;https://pudding.cool/2019/10/pubs/&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb845"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb845-1"><a href="functions.html#cb845-1"></a>uk_pubs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/UK_pubs.csv&quot;</span>)</span>
+<span id="cb845-2"><a href="functions.html#cb845-2"></a>uk_pubs <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb845-3"><a href="functions.html#cb845-3"></a><span class="st">  </span><span class="kw">count</span>(pub_name, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb845-4"><a href="functions.html#cb845-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">inn =</span> <span class="kw">str_detect</span>(pub_name, <span class="st">&quot;Inn&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb845-5"><a href="functions.html#cb845-5"></a><span class="st">  </span><span class="kw">group_by</span>(inn) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb845-6"><a href="functions.html#cb845-6"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb845-7"><a href="functions.html#cb845-7"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="kw">fct_reorder</span>(pub_name, n), n))<span class="op">+</span></span>
+<span id="cb845-8"><a href="functions.html#cb845-8"></a><span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span></span>
+<span id="cb845-9"><a href="functions.html#cb845-9"></a><span class="st">  </span><span class="kw">coord_flip</span>()<span class="op">+</span></span>
+<span id="cb845-10"><a href="functions.html#cb845-10"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>inn, <span class="dt">scale =</span> <span class="st">&quot;free&quot;</span>)<span class="op">+</span></span>
+<span id="cb845-11"><a href="functions.html#cb845-11"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;https://pudding.cool/2019/10/pubs/&quot;</span>)</span></code></pre></div>
 <p><img src="DS_for_DH_files/figure-html/download_uk_pubs-1.png" width="672" /></p>
 <p>Получилось в целом то, что мы хотели, однако названия <code>TRUE</code> и <code>FALSE</code> не самые удачные. Исправить положение можно при помощи функции <code>ifelse()</code>, у которой три аргумента:</p>
 <ul>
@@ -404,24 +407,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>значение, если условие принимает значение <code>TRUE</code>,</li>
 <li>значение, если условие принимает значение <code>FALSE</code>.</li>
 </ul>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="functions.html#cb21-1"></a><span class="kw">ifelse</span>(<span class="dv">2</span><span class="op">+</span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">4</span>, <span class="st">&quot;правильно&quot;</span>, <span class="st">&quot;неправильно&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;правильно&quot;</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="functions.html#cb23-1"></a><span class="kw">ifelse</span>(<span class="dv">2</span><span class="op">+</span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">5</span>, <span class="st">&quot;правильно&quot;</span>, <span class="st">&quot;неправильно&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;неправильно&quot;</code></pre>
+<div class="sourceCode" id="cb846"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb846-1"><a href="functions.html#cb846-1"></a><span class="kw">ifelse</span>(<span class="dv">2</span><span class="op">+</span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">4</span>, <span class="st">&quot;правильно&quot;</span>, <span class="st">&quot;неправильно&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;правильно&quot;</code></pre>
+<div class="sourceCode" id="cb848"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb848-1"><a href="functions.html#cb848-1"></a><span class="kw">ifelse</span>(<span class="dv">2</span><span class="op">+</span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">5</span>, <span class="st">&quot;правильно&quot;</span>, <span class="st">&quot;неправильно&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;неправильно&quot;</code></pre>
 <p>Вставим эту функцию в уже написанные код:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="functions.html#cb25-1"></a>uk_pubs <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb25-2"><a href="functions.html#cb25-2"></a><span class="st">  </span><span class="kw">count</span>(pub_name, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb25-3"><a href="functions.html#cb25-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">inn =</span> <span class="kw">ifelse</span>(<span class="kw">str_detect</span>(pub_name, <span class="st">&quot;Inn&quot;</span>), </span>
-<span id="cb25-4"><a href="functions.html#cb25-4"></a>                      <span class="st">&quot;with &#39;inn&#39;&quot;</span>, </span>
-<span id="cb25-5"><a href="functions.html#cb25-5"></a>                      <span class="st">&quot;without &#39;inn&#39;&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb25-6"><a href="functions.html#cb25-6"></a><span class="st">  </span><span class="kw">group_by</span>(inn) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb25-7"><a href="functions.html#cb25-7"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb25-8"><a href="functions.html#cb25-8"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="kw">fct_reorder</span>(pub_name, n), n))<span class="op">+</span></span>
-<span id="cb25-9"><a href="functions.html#cb25-9"></a><span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span></span>
-<span id="cb25-10"><a href="functions.html#cb25-10"></a><span class="st">  </span><span class="kw">coord_flip</span>()<span class="op">+</span></span>
-<span id="cb25-11"><a href="functions.html#cb25-11"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>inn, <span class="dt">scale =</span> <span class="st">&quot;free&quot;</span>)<span class="op">+</span></span>
-<span id="cb25-12"><a href="functions.html#cb25-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;https://pudding.cool/2019/10/pubs/&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<div class="sourceCode" id="cb850"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb850-1"><a href="functions.html#cb850-1"></a>uk_pubs <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb850-2"><a href="functions.html#cb850-2"></a><span class="st">  </span><span class="kw">count</span>(pub_name, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb850-3"><a href="functions.html#cb850-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">inn =</span> <span class="kw">ifelse</span>(<span class="kw">str_detect</span>(pub_name, <span class="st">&quot;Inn&quot;</span>), </span>
+<span id="cb850-4"><a href="functions.html#cb850-4"></a>                      <span class="st">&quot;with &#39;inn&#39;&quot;</span>, </span>
+<span id="cb850-5"><a href="functions.html#cb850-5"></a>                      <span class="st">&quot;without &#39;inn&#39;&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb850-6"><a href="functions.html#cb850-6"></a><span class="st">  </span><span class="kw">group_by</span>(inn) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb850-7"><a href="functions.html#cb850-7"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb850-8"><a href="functions.html#cb850-8"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="kw">fct_reorder</span>(pub_name, n), n))<span class="op">+</span></span>
+<span id="cb850-9"><a href="functions.html#cb850-9"></a><span class="st">  </span><span class="kw">geom_col</span>()<span class="op">+</span></span>
+<span id="cb850-10"><a href="functions.html#cb850-10"></a><span class="st">  </span><span class="kw">coord_flip</span>()<span class="op">+</span></span>
+<span id="cb850-11"><a href="functions.html#cb850-11"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>inn, <span class="dt">scale =</span> <span class="st">&quot;free&quot;</span>)<span class="op">+</span></span>
+<span id="cb850-12"><a href="functions.html#cb850-12"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;https://pudding.cool/2019/10/pubs/&quot;</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-350-1.png" width="672" /></p>
 <p>А что если условий больше? В целом выражение <code>ifelse()</code> можно вложить в выражение <code>ifelse()</code>, однако для таких случаев придумали функцию <code>case_when()</code>. У нее немного необычный синтаксис:</p>
 <pre><code>case_when(
   условие 1 ~ значение x,
@@ -433,7 +436,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="условия-в-столбцах" class="section level3">
 <h3><span class="header-section-number">8.2.2</span> Условия в столбцах</h3>
 <pre><code>mutate_at()
-mutate_if()</code></pre>
+summarise_at()
+mutate_if()
+summarise_if()</code></pre>
 </div>
 </div>
 <div id="создание-собственных-функций" class="section level2">
