@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="lists.html"/>
-<link rel="next" href="tidytext.html"/>
+<link rel="next" href="functions.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,9 +49,6 @@
 
 
 
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
 <style type="text/css">
@@ -233,13 +230,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.7.3" data-path="strings.html"><a href="strings.html#замена-подстроки"><i class="fa fa-check"></i><b>5.7.3</b> Замена подстроки</a></li>
 <li class="chapter" data-level="5.7.4" data-path="strings.html"><a href="strings.html#удаление-подстроки"><i class="fa fa-check"></i><b>5.7.4</b> Удаление подстроки</a></li>
 <li class="chapter" data-level="5.7.5" data-path="strings.html"><a href="strings.html#транслитерация-строк"><i class="fa fa-check"></i><b>5.7.5</b> Транслитерация строк</a></li>
-<li class="chapter" data-level="5.7.6" data-path="strings.html"><a href="strings.html#экранирование-метасимволов"><i class="fa fa-check"></i><b>5.7.6</b> Экранирование метасимволов</a></li>
-<li class="chapter" data-level="5.7.7" data-path="strings.html"><a href="strings.html#классы-знаков"><i class="fa fa-check"></i><b>5.7.7</b> Классы знаков</a></li>
-<li class="chapter" data-level="5.7.8" data-path="strings.html"><a href="strings.html#квантификация"><i class="fa fa-check"></i><b>5.7.8</b> Квантификация</a></li>
-<li class="chapter" data-level="5.7.9" data-path="strings.html"><a href="strings.html#позиционная-проверка-look-arounds"><i class="fa fa-check"></i><b>5.7.9</b> Позиционная проверка (look arounds)</a></li>
 </ul></li>
-<li class="chapter" data-level="5.8" data-path="strings.html"><a href="strings.html#определение-языка"><i class="fa fa-check"></i><b>5.8</b> Определение языка</a></li>
-<li class="chapter" data-level="5.9" data-path="strings.html"><a href="strings.html#расстояния-между-строками"><i class="fa fa-check"></i><b>5.9</b> Расстояния между строками</a></li>
+<li class="chapter" data-level="5.8" data-path="strings.html"><a href="strings.html#регулярные-выражения"><i class="fa fa-check"></i><b>5.8</b> Регулярные выражения</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="strings.html"><a href="strings.html#экранирование-метасимволов"><i class="fa fa-check"></i><b>5.8.1</b> Экранирование метасимволов</a></li>
+<li class="chapter" data-level="5.8.2" data-path="strings.html"><a href="strings.html#классы-знаков"><i class="fa fa-check"></i><b>5.8.2</b> Классы знаков</a></li>
+<li class="chapter" data-level="5.8.3" data-path="strings.html"><a href="strings.html#квантификация"><i class="fa fa-check"></i><b>5.8.3</b> Квантификация</a></li>
+<li class="chapter" data-level="5.8.4" data-path="strings.html"><a href="strings.html#позиционная-проверка-look-arounds"><i class="fa fa-check"></i><b>5.8.4</b> Позиционная проверка (look arounds)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="strings.html"><a href="strings.html#определение-языка"><i class="fa fa-check"></i><b>5.9</b> Определение языка</a></li>
+<li class="chapter" data-level="5.10" data-path="strings.html"><a href="strings.html#расстояния-между-строками"><i class="fa fa-check"></i><b>5.10</b> Расстояния между строками</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>6</b> Работа со списками</a><ul>
 <li class="chapter" data-level="6.1" data-path="lists.html"><a href="lists.html#что-такое-списки"><i class="fa fa-check"></i><b>6.1</b> Что такое списки?</a><ul>
@@ -266,8 +265,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="data-presentation.html"><a href="data-presentation.html#бывают-и-другие-способы-представления-данных"><i class="fa fa-check"></i><b>7.2</b> Бывают и другие способы представления данных</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="tidytext.html"><a href="tidytext.html"><i class="fa fa-check"></i><b>8</b> Работа с текстами: guttenbergr, tidytext, udpipe, corpus</a></li>
-<li class="chapter" data-level="9" data-path="rvest.html"><a href="rvest.html"><i class="fa fa-check"></i><b>9</b> Сбор данных из интернета: rvest</a></li>
+<li class="chapter" data-level="8" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>8</b> Собственные функции и использование их в <code>tidyverse</code></a><ul>
+<li class="chapter" data-level="8.1" data-path="functions.html"><a href="functions.html#напоминание-логические-операции"><i class="fa fa-check"></i><b>8.1</b> Напоминание: логические операции</a></li>
+<li class="chapter" data-level="8.2" data-path="functions.html"><a href="functions.html#использование-условий-в-tidyverse"><i class="fa fa-check"></i><b>8.2</b> Использование условий в tidyverse</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="functions.html"><a href="functions.html#условия-в-строчках"><i class="fa fa-check"></i><b>8.2.1</b> Условия в строчках</a></li>
+<li class="chapter" data-level="8.2.2" data-path="functions.html"><a href="functions.html#условия-в-столбцах"><i class="fa fa-check"></i><b>8.2.2</b> Условия в столбцах</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="functions.html"><a href="functions.html#создание-собственных-функций"><i class="fa fa-check"></i><b>8.3</b> Создание собственных функций</a></li>
+<li class="chapter" data-level="8.4" data-path="functions.html"><a href="functions.html#reinvent-the-map-function"><i class="fa fa-check"></i><b>8.4</b> Reinvent the <code>map</code> function</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="tidytext.html"><a href="tidytext.html"><i class="fa fa-check"></i><b>9</b> Работа с текстами: guttenbergr, tidytext, udpipe, corpus</a></li>
 <li class="chapter" data-level="10" data-path="non-standard-data.html"><a href="non-standard-data.html"><i class="fa fa-check"></i><b>10</b> Нестандартные данные: время, OCR, карты</a></li>
 <li class="chapter" data-level="11" data-path="distributions.html"><a href="distributions.html"><i class="fa fa-check"></i><b>11</b> Distributions</a></li>
 <li class="chapter" data-level="12" data-path="tasks.html"><a href="tasks.html"><i class="fa fa-check"></i><b>12</b> Задания</a><ul>
@@ -316,7 +323,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="установка" class="section level3">
 <h3><span class="header-section-number">7.1.1</span> Установка</h3>
 <p>Как и все пакеты <code>rmarkdown</code> можно установить из CRAN</p>
-<div class="sourceCode" id="cb789"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb789-1"><a href="data-presentation.html#cb789-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data-presentation.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span></code></pre></div>
 </div>
 <div id="составляющие-rmarkdown-документа" class="section level3">
 <h3><span class="header-section-number">7.1.2</span> Составляющие <code>rmarkdown</code>-документа</h3>
@@ -329,7 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="пример-rmarkdown-документа" class="section level3">
 <h3><span class="header-section-number">7.1.3</span> Пример <code>rmarkdown</code>-документа</h3>
 <p>Создайте файл .Rmd в какой-нибудь папке (в RStudio, это можно сделать <code>File &gt; New file &gt; R Markdown</code>). Скомпелировать файл можно командой:</p>
-<div class="sourceCode" id="cb790"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb790-1"><a href="data-presentation.html#cb790-1"></a>rmarkdown<span class="op">::</span><span class="kw">render</span>(<span class="st">&quot;ваш_файл.Rmd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-presentation.html#cb2-1"></a>rmarkdown<span class="op">::</span><span class="kw">render</span>(<span class="st">&quot;ваш_файл.Rmd&quot;</span>)</span></code></pre></div>
 <p>или кнопкой <img src="images/7.01_knit.png" />. Вот пример кода:</p>
 <pre><code>---
 output: html_document
@@ -441,9 +448,9 @@ friends = [&#39;john&#39;, &#39;pat&#39;, &#39;gary&#39;, &#39;michael&#39;]
 for i, name in enumerate(friends):
     print &quot;iteration {iteration} is {name}&quot;.format(iteration=i, name=name)
 ```</code></pre>
-<div class="sourceCode" id="cb798"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb798-1"><a href="data-presentation.html#cb798-1"></a>friends <span class="op">=</span> [<span class="st">&#39;john&#39;</span>, <span class="st">&#39;pat&#39;</span>, <span class="st">&#39;gary&#39;</span>, <span class="st">&#39;michael&#39;</span>]</span>
-<span id="cb798-2"><a href="data-presentation.html#cb798-2"></a><span class="cf">for</span> i, name <span class="kw">in</span> <span class="bu">enumerate</span>(friends):</span>
-<span id="cb798-3"><a href="data-presentation.html#cb798-3"></a>    <span class="bu">print</span> <span class="st">&quot;iteration </span><span class="sc">{iteration}</span><span class="st"> is </span><span class="sc">{name}</span><span class="st">&quot;</span>.<span class="bu">format</span>(iteration<span class="op">=</span>i, name<span class="op">=</span>name)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="data-presentation.html#cb10-1"></a>friends <span class="op">=</span> [<span class="st">&#39;john&#39;</span>, <span class="st">&#39;pat&#39;</span>, <span class="st">&#39;gary&#39;</span>, <span class="st">&#39;michael&#39;</span>]</span>
+<span id="cb10-2"><a href="data-presentation.html#cb10-2"></a><span class="cf">for</span> i, name <span class="kw">in</span> <span class="bu">enumerate</span>(friends):</span>
+<span id="cb10-3"><a href="data-presentation.html#cb10-3"></a>    <span class="bu">print</span> <span class="st">&quot;iteration </span><span class="sc">{iteration}</span><span class="st"> is </span><span class="sc">{name}</span><span class="st">&quot;</span>.<span class="bu">format</span>(iteration<span class="op">=</span>i, name<span class="op">=</span>name)</span></code></pre></div>
 <pre><code>iteration 0 is john
 iteration 1 is pat
 iteration 2 is gary
@@ -526,7 +533,7 @@ iteration 3 is michael</code></pre>
 <pre><code>Вот и сноска[^1]
 
 [^1]: Сноска, сноска, сноска.</code></pre>
-<p>Вот и сноска<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>Вот и сноска<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 </div>
 <div id="математика-latex" class="section level4">
 <h4><span class="header-section-number">7.1.5.4</span> Математика: <span class="math inline">\(\LaTeX\)</span></h4>
@@ -550,7 +557,7 @@ summary(cars)
 x = &quot;my string&quot;
 print(x.split(&quot; &quot;))
 ```</code></pre>
-<div class="sourceCode" id="cb808"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb808-1"><a href="data-presentation.html#cb808-1"></a><span class="kw">summary</span>(cars)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data-presentation.html#cb20-1"></a><span class="kw">summary</span>(cars)</span></code></pre></div>
 <pre><code>     speed           dist       
  Min.   : 4.0   Min.   :  2.00  
  1st Qu.:12.0   1st Qu.: 26.00  
@@ -558,8 +565,8 @@ print(x.split(&quot; &quot;))
  Mean   :15.4   Mean   : 42.98  
  3rd Qu.:19.0   3rd Qu.: 56.00  
  Max.   :25.0   Max.   :120.00  </code></pre>
-<div class="sourceCode" id="cb810"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb810-1"><a href="data-presentation.html#cb810-1"></a>x <span class="op">=</span> <span class="st">&quot;my string&quot;</span></span>
-<span id="cb810-2"><a href="data-presentation.html#cb810-2"></a><span class="bu">print</span>(x.split(<span class="st">&quot; &quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="data-presentation.html#cb22-1"></a>x <span class="op">=</span> <span class="st">&quot;my string&quot;</span></span>
+<span id="cb22-2"><a href="data-presentation.html#cb22-2"></a><span class="bu">print</span>(x.split(<span class="st">&quot; &quot;</span>))</span></code></pre></div>
 <pre><code>[&#39;my&#39;, &#39;string&#39;]</code></pre>
 </div>
 <div id="появление-и-исполнение-кода" class="section level4">
@@ -731,7 +738,7 @@ output:
 </ul>
 <div class="rmdtask">
 <p>
-Теперь создайте документ index.Rmd, в котором напишите код на R и на Python, вставьте картинку, сноску, ссылку на литературу, таблицу и оглавление. Скомпелируйте <code>.html</code> документ и опубликуйте его на Github, пройдя <a href="https://classroom.github.com/a/ypZeK32c">по этой ссылке</a>.
+Теперь создайте документ index.Rmd, в котором напишите код на R и на Python, вставьте картинку, сноску, ссылку на литературу, таблицу и оглавление. Скомпелируйте <code>.html</code> документ и опубликуйте его на Github, пройдя <a href="https://classroom.github.com/a/ypZeK32c">по этой ссылке</a>. Cделайте Github Pages и заполните <code>README.md</code> файл.
 </p>
 </div>
 </div>
@@ -761,8 +768,8 @@ output:
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>Сноска, сноска, сноска.<a href="data-presentation.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<ol start="1">
+<li id="fn1"><p>Сноска, сноска, сноска.<a href="data-presentation.html#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -771,7 +778,7 @@ output:
         </div>
       </div>
 <a href="lists.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tidytext.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
