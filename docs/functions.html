@@ -624,16 +624,24 @@ dogs %&gt;%
 ##  9 0.469 Fair      E     VS2      8.07  7.81  18.4  1.97  1.94  1.58
 ## 10 0.480 Very Good H     VS1      7.71  7.81  18.4  2     2.01  1.55
 ## # … with 53,930 more rows</code></pre>
-<p>Вместо <code>mean</code> и <code>sqrt</code> может быть любая другая функция:</p>
+<p>Вместо <code>mean</code> и <code>sqrt</code> может быть любая другая функция, в том числе созданная вами:</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="functions.html#cb67-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb67-2"><a href="functions.html#cb67-2"></a><span class="st">  </span><span class="kw">summarise_at</span>(<span class="kw">vars</span>(<span class="kw">matches</span>(<span class="st">&quot;Sepal&quot;</span>)), <span class="cf">function</span>(x){<span class="kw">mean</span>(x)<span class="op">*</span><span class="kw">min</span>(x)})</span></code></pre></div>
 <pre><code>##   Sepal.Length Sepal.Width
 ## 1     25.12633    6.114667</code></pre>
 <div class="rmdtask">
 <p>
-Здесь будет задание.
+Вот <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/us_city_average_temperature.csv">здесь</a> лежат данные по 51 американскому городу, количеству человек в них, а также ежемесячная средняя температура в Фаренгейтах. Преобразуйте фарингейты в цельсий и найдите значение минимальной температуры в датасете.
 </p>
 </div>
+<p><span class="math display">\[^0C = \frac{5}{9} \times (^0F-32)\]</span></p>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   city = col_character()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 </div>
 </div>
 <div id="reinvent-the-map-function" class="section level2">

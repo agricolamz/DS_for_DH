@@ -308,8 +308,10 @@ iris %>%
 ```
 
 ```{block, type = "rmdtask"}
-Вот здесь
+Вот [здесь](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/us_city_average_temperature.csv) лежат данные по 51 американскому городу, количеству человек в них, а также ежемесячная средняя температура в Фаренгейтах. Преобразуйте фарингейты в цельсий и найдите значение минимальной температуры в датасете.
 ```
+
+$$^0C = \frac{5}{9} \times (^0F-32)$$
 
 ```{r, echo = FALSE}
 options(scipen = 999)
