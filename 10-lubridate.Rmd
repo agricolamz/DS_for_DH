@@ -1,5 +1,61 @@
-# Работа со временем: lubridate
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Работа со временем: `lubridate`
 
-Задания можно брать с сайта [Левада центра](https://www.levada.ru/indikatory/odobrenie-organov-vlasti/)
+```{r, message=FALSE}
+library(tidyverse)
+```
 
 
+Мы обсуждали, что переменные бывают разные. О них, возможно, следует думать как о шкале:
+
+```{r,echo=FALSE}
+types <- c("категориальные", "порядковые", "время", "числовые")
+examples <- c("голубые глаза, карие глаза, зеленые глаза...", 
+              "младшая школа, средняя школа, техникум/колледж, бакалавриат...", 
+              "понедельник, вторник, среда...", 
+              "2, -3.2, pi")
+tibble(x = factor(types, levels = types),
+       caption = factor(examples, levels = examples),
+       y = 1.05) %>% 
+  ggplot(aes(x, y, label = caption))+
+  geom_text(hjust = 0)+
+  geom_segment(aes(x=1, xend=4, y=1, yend=1), arrow = arrow(type = "open", ends = "both", length = unit(0.1, "inches"))) +
+  ylim(1, 2)+
+  theme_minimal()+
+  coord_flip()+
+  labs(x = "", y = "")+
+  theme(axis.text.x = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+```
+
+
+# `lubridate`
+
+Для работы со временем в R написали пакет lubridate ([https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf](cheatsheet), туториал доступен [здесь](https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html) и по команде `vignette("lubridate")`)
+
+[Страница Левады центра](https://www.levada.ru/indikatory/otnoshenie-k-stranam/)
+
+```{r}
+library(lubridate)
+df <- read_csv("data/2019.01_levada_countries.csv")
+## Bad graph
+df %>% 
+  group_by(towards) %>% 
+  mutate(date = factor(date, levels = date)) %>% 
+  pivot_longer(names_to = "answer", values_to = "number", good:no_answer) %>% 
+  ggplot(aes(date, number, color = answer, group = answer))+
+  geom_line()+
+  facet_wrap(~towards, scales = "free")+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+# Good graph
+df %>% 
+  mutate(date = str_c("1-", date),
+         data = dmy(date)) %>% 
+  pivot_longer(names_to = "answer", values_to = "number", good:no_answer) %>% 
+  ggplot(aes(data, number, color = answer))+
+  geom_line()+
+  facet_wrap(~towards, scales = "free")
+```
