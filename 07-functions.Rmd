@@ -334,15 +334,11 @@ uc_city %>%
 
 В разделе [про работу со списками](#lists) мы обсуждали функию `map()`, оказывается в нее можно вставлять любую функцию, например, пересчитаем все цены в датасете diamonds в рубли:
 
-```{r}
-diamonds %>% 
-  mutate(price_rubl = map_dbl(price, function(x){x*64}))
-```
 
 Можно прочитать все файлы в одной папке:
 ```{r, message=FALSE}
 list.files("data/", pattern = ".csv")
-all_datasets <- map(paste0("data/", list.files("data/", pattern = ".csv")), read_csv)
+all_datasets <- map(str_c("data/", list.files("data/", pattern = ".csv")), read_csv)
 str(all_datasets, max.level = 1)
 ```
 

@@ -1,4 +1,4 @@
-# Нестандартные данные: время, OCR, карты {#non_standard_data}
+# Работа со временем: lubridate
 
 Задания можно брать с сайта [Левада центра](https://www.levada.ru/indikatory/odobrenie-organov-vlasti/)
 

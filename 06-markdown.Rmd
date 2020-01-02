@@ -145,9 +145,9 @@ cat ./rmd_examples/ex_02.Rmd
 ```
 
 ```{python}
-friends = ['john', 'pat', 'gary', 'michael']
-for i, name in enumerate(friends):
-    print "iteration {iteration} is {name}".format(iteration=i, name=name)
+collection = ['hey', 5, 'd']
+for x in collection:
+    print(x)
 ```
 
 Если хочется использовать результат работы кода в тексте, нужно в начале поставить язык, который будет исполнять код, например, в 
