@@ -16,7 +16,7 @@ library(tidyverse)
 types <- c("категориальные", "порядковые", "время", "числовые")
 examples <- c("голубые глаза, карие глаза, зеленые глаза...", 
               "младшая школа, средняя школа, техникум/колледж, бакалавриат...", 
-              "понедельник, вторник, среда...", 
+              "понедельник, вторник, среда...\n 21 декабря 2019, 12 января 2020...", 
               "2, -3.2, pi")
 tibble(x = factor(types, levels = types),
        caption = factor(examples, levels = examples),
@@ -32,14 +32,65 @@ tibble(x = factor(types, levels = types),
 ```
 
 
-# `lubridate`
+## `lubridate`
 
-Для работы со временем в R написали пакет lubridate ([https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf](cheatsheet), туториал доступен [здесь](https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html) и по команде `vignette("lubridate")`)
+Для работы со временем в R написали пакет lubridate ([https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf](cheatsheet), туториал доступен [здесь](https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html) и по команде `vignette("lubridate")`). Первые команды, которые нужно изучить:
+
+```{r}
+library(lubridate)
+today()
+now()
+```
+
+Как видно, из этих функций в R можно работать как с датами, так и с временем. В качестве иллюстрации мы будем использовать датасет `flights` из пакета `nycflights13`, в котором содержатся данные по полетам из Нью Йорка в 2013.
+
+```{r}
+library(nycflights13)
+flights
+```
+
+### Создание даты
+
+Самый простой способ получить дату --- это преобразовать строку в формат даты, для этого надо просто упорядочить `y` (year), `m` (month) и `d` (day) в команде:
+```{r}
+ymd("2020-01-21")
+ymd("20-01-21")
+ymd("20.01.21")
+ymd("20/01/21")
+ymd("200121")
+mdy("January 21st, 2020")
+dmy("21-Jan-2020")
+```
+
+Команды понимают не только английский (хоть и с трудом):
+```{r}
+dmy("21 янв 2020", locale = "ru_RU.UTF-8")
+dmy("21 янв. 2020", locale = "ru_RU.UTF-8")
+dmy("21 ян 2020", locale = "ru_RU.UTF-8")
+dmy("21 янва 2020", locale = "ru_RU.UTF-8")
+dmy("21 января 2020", locale = "ru_RU.UTF-8")
+dmy("21 январь 2020", locale = "ru_RU.UTF-8")
+dmy("21 Январь 2020", locale = "ru_RU.UTF-8")
+```
+
+Также существует команда `make_datetime()`, которая позволяет сделать дату из нескольких переменных:
+```{r}
+flights %>% 
+  mutate(departure = make_datetime(year, month, day, hour, minute)) %>% 
+  select(departure)
+```
+
+
+```{block, type = "rmdtask"}
+У меня есть шенгенская мультивиза на 90 дней. Я совершил несколько поездок в Европу и записал их в этот датасет. Определите, сколько дней я еще могу находиться в Евросоюзе?
+```
+
+
+
 
 [Страница Левады центра](https://www.levada.ru/indikatory/otnoshenie-k-stranam/)
 
 ```{r}
-library(lubridate)
 df <- read_csv("data/2019.01_levada_countries.csv")
 ## Bad graph
 df %>% 
@@ -51,11 +102,12 @@ df %>%
   facet_wrap(~towards, scales = "free")+
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 # Good graph
+
 df %>% 
   mutate(date = str_c("1-", date),
-         data = dmy(date)) %>% 
+         date = dmy(date)) %>% 
   pivot_longer(names_to = "answer", values_to = "number", good:no_answer) %>% 
-  ggplot(aes(data, number, color = answer))+
+  ggplot(aes(date, number, color = answer))+
   geom_line()+
   facet_wrap(~towards, scales = "free")
 ```
