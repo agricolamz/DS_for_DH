@@ -351,8 +351,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="работа-со-временем-lubridate.html#cb5-1"></a><span class="kw">today</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;2020-01-04&quot;</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="работа-со-временем-lubridate.html#cb7-1"></a><span class="kw">now</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;2020-01-04 13:41:16 MSK&quot;</code></pre>
-<p>Как видно, из этих функций в R можно работать как с датами, так и с временем. В качестве иллюстрации мы будем использовать датасет <code>flights</code> из пакета <code>nycflights13</code>, в котором содержатся данные по полетам из Нью Йорка в 2013 года.</p>
+<pre><code>## [1] &quot;2020-01-04 13:44:19 MSK&quot;</code></pre>
+<p>Как видно, из этих функций в R можно работать как с датами, так и с временем. В качестве иллюстрации мы будем использовать датасет <code>flights</code> из пакета <code>nycflights13</code>, в котором содержатся данные полетов из Нью Йорка в 2013 года.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="работа-со-временем-lubridate.html#cb9-1"></a><span class="kw">library</span>(nycflights13)</span>
 <span id="cb9-2"><a href="работа-со-временем-lubridate.html#cb9-2"></a>flights</span></code></pre></div>
 <div data-pagedtable="false">
@@ -460,7 +460,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] TRUE</code></pre>
 <div class="rmdtask">
 <p>
-Постройте график распределения полетов по дням недели из датасета <code>flights</code> пакета <code>nycflights13</code>:
+Постройте график распределения полетов по дням недели из датасета <code>flights</code> пакета <code>nycflights13</code>.
 </p>
 </div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
@@ -546,7 +546,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>На графике теперь видно, насколько регулярно проводились опросы: в начале 90-ых опросы проводились реже, потом часто, потом в районе 2010 года был перерыв. График Левада-центра можно оправдать тем, что они представляют данные от замера к замеру, так что по оси x находится как бы категориальная переменная со значениями <code>замер 05.2014</code>, <code>замер 07.2014</code>, <code>замер 11.2014</code> и т. д. Однако это совсем неочевидно из графика.</p>
 <div class="rmdtask">
 <p>
-Используя весь датасет Левада-центра постройте следующий график.
+Используя весь датасет Левада-центра, постройте следующий график.
 </p>
 </div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
