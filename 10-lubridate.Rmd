@@ -201,6 +201,22 @@ ymd_hms("2020-10-31 13:00:00", tz = "America/New_York") + days(1)
 ymd_hms("2020-10-31 13:00:00", tz = "America/New_York") + ddays(1)
 ```
 
+Последняя операция с датами, которую мы рассмотрим --- округление:
+
+* `floor_date()` --- округление в меньшую сторону
+* `round_date()` --- математическое округление
+* `ceiling_date()` --- округление в большую сторону
+
+![](images/11-rounding.png)
+
+```{r}
+floor_date(ymd("2020-01-16"), unit = "month")
+round_date(ymd("2020-01-16"), unit = "month")
+round_date(ymd("2020-01-17"), unit = "month")
+ceiling_date(ymd("2020-01-16"), unit = "month")
+ceiling_date(ymd("2020-01-16"), unit = "year")
+```
+
 ## Визуализация времени: данные Левада-центра
 
 Пакет `tidyverse` понимает переменные типа дата, и позволяет их фильтровать и визуализировать:

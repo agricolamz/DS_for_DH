@@ -351,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="работа-со-временем-lubridate.html#cb5-1"></a><span class="kw">today</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;2020-01-04&quot;</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="работа-со-временем-lubridate.html#cb7-1"></a><span class="kw">now</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;2020-01-04 13:44:19 MSK&quot;</code></pre>
+<pre><code>## [1] &quot;2020-01-04 13:55:56 MSK&quot;</code></pre>
 <p>Как видно, из этих функций в R можно работать как с датами, так и с временем. В качестве иллюстрации мы будем использовать датасет <code>flights</code> из пакета <code>nycflights13</code>, в котором содержатся данные полетов из Нью Йорка в 2013 года.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="работа-со-временем-lubridate.html#cb9-1"></a><span class="kw">library</span>(nycflights13)</span>
 <span id="cb9-2"><a href="работа-со-временем-lubridate.html#cb9-2"></a>flights</span></code></pre></div>
@@ -518,38 +518,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;2020-11-01 13:00:00 EST&quot;</code></pre>
 <div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="работа-со-временем-lubridate.html#cb107-1"></a><span class="kw">ymd_hms</span>(<span class="st">&quot;2020-10-31 13:00:00&quot;</span>, <span class="dt">tz =</span> <span class="st">&quot;America/New_York&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ddays</span>(<span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;2020-11-01 12:00:00 EST&quot;</code></pre>
+<p>Последняя операция с датами, которую мы рассмотрим — округление:</p>
+<ul>
+<li><code>floor_date()</code> — округление в меньшую сторону</li>
+<li><code>round_date()</code> — математическое округление</li>
+<li><code>ceiling_date()</code> — округление в большую сторону</li>
+</ul>
+<p><img src="images/11-rounding.png" /></p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="работа-со-временем-lubridate.html#cb109-1"></a><span class="kw">floor_date</span>(<span class="kw">ymd</span>(<span class="st">&quot;2020-01-16&quot;</span>), <span class="dt">unit =</span> <span class="st">&quot;month&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;2020-01-01&quot;</code></pre>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="работа-со-временем-lubridate.html#cb111-1"></a><span class="kw">round_date</span>(<span class="kw">ymd</span>(<span class="st">&quot;2020-01-16&quot;</span>), <span class="dt">unit =</span> <span class="st">&quot;month&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;2020-01-01&quot;</code></pre>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="работа-со-временем-lubridate.html#cb113-1"></a><span class="kw">round_date</span>(<span class="kw">ymd</span>(<span class="st">&quot;2020-01-17&quot;</span>), <span class="dt">unit =</span> <span class="st">&quot;month&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;2020-02-01&quot;</code></pre>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="работа-со-временем-lubridate.html#cb115-1"></a><span class="kw">ceiling_date</span>(<span class="kw">ymd</span>(<span class="st">&quot;2020-01-16&quot;</span>), <span class="dt">unit =</span> <span class="st">&quot;month&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;2020-02-01&quot;</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="работа-со-временем-lubridate.html#cb117-1"></a><span class="kw">ceiling_date</span>(<span class="kw">ymd</span>(<span class="st">&quot;2020-01-16&quot;</span>), <span class="dt">unit =</span> <span class="st">&quot;year&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;2021-01-01&quot;</code></pre>
 </div>
 <div id="визуализация-времени-данные-левада-центра" class="section level2">
 <h2><span class="header-section-number">11.4</span> Визуализация времени: данные Левада-центра</h2>
 <p>Пакет <code>tidyverse</code> понимает переменные типа дата, и позволяет их фильтровать и визуализировать:</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="работа-со-временем-lubridate.html#cb109-1"></a>flights <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb109-2"><a href="работа-со-временем-lubridate.html#cb109-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">end =</span> time_hour <span class="op">+</span><span class="st"> </span><span class="kw">dminutes</span>(air_time)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb109-3"><a href="работа-со-временем-lubridate.html#cb109-3"></a><span class="st">  </span><span class="kw">filter</span>(end <span class="op">&lt;</span><span class="st"> </span><span class="kw">ymd</span>(<span class="st">&quot;2013-01-02&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb109-4"><a href="работа-со-временем-lubridate.html#cb109-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(time_hour, end))<span class="op">+</span></span>
-<span id="cb109-5"><a href="работа-со-временем-lubridate.html#cb109-5"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.2</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="работа-со-временем-lubridate.html#cb119-1"></a>flights <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb119-2"><a href="работа-со-временем-lubridate.html#cb119-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">end =</span> time_hour <span class="op">+</span><span class="st"> </span><span class="kw">dminutes</span>(air_time)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb119-3"><a href="работа-со-временем-lubridate.html#cb119-3"></a><span class="st">  </span><span class="kw">filter</span>(end <span class="op">&lt;</span><span class="st"> </span><span class="kw">ymd</span>(<span class="st">&quot;2013-01-02&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb119-4"><a href="работа-со-временем-lubridate.html#cb119-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(time_hour, end))<span class="op">+</span></span>
+<span id="cb119-5"><a href="работа-со-временем-lubridate.html#cb119-5"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.2</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p>Однако ко переменным со врменем не всегда относятся аккуратно. Рассмотрим график с сайта Левада-центра — российской негосударственной исследовательской организации, которая проводит социологические и маркетинговые исследования (график взят <a href="https://www.levada.ru/indikatory/otnoshenie-k-stranam/">отсюда</a>):</p>
 <p><img src="images/11-levada.png" /></p>
 <p>На первый взгляд, в этом графике нет ничего странного, однако если присмотреться к динамической версии на сайте Левада-центра, можно обнаружить, что на идущие подряд измерения расположены на одинаковом расстоянии друг от друга, например, 05.2014, 07.2014, 11.2014. Вот <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/2019.01_levada_countries.csv">здесь</a> можно скачать данные, по которым строился этот график. Вот как он выглядит, если считать временную переменную как время</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="работа-со-временем-lubridate.html#cb110-1"></a>levada &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/2019.01_levada_countries.csv&quot;</span>)</span>
-<span id="cb110-2"><a href="работа-со-временем-lubridate.html#cb110-2"></a>levada <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb110-3"><a href="работа-со-временем-lubridate.html#cb110-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">str_c</span>(<span class="st">&quot;1-&quot;</span>, date),</span>
-<span id="cb110-4"><a href="работа-со-временем-lubridate.html#cb110-4"></a>         <span class="dt">date =</span> <span class="kw">dmy</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb110-5"><a href="работа-со-временем-lubridate.html#cb110-5"></a><span class="st">  </span><span class="kw">filter</span>(towards <span class="op">==</span><span class="st"> &quot;USA&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb110-6"><a href="работа-со-временем-lubridate.html#cb110-6"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;answer&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;number&quot;</span>, good<span class="op">:</span>bad) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb110-7"><a href="работа-со-временем-lubridate.html#cb110-7"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(date, number, <span class="dt">color =</span> answer))<span class="op">+</span></span>
-<span id="cb110-8"><a href="работа-со-временем-lubridate.html#cb110-8"></a><span class="st">  </span><span class="kw">geom_line</span>()<span class="op">+</span></span>
-<span id="cb110-9"><a href="работа-со-временем-lubridate.html#cb110-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;данные Левада-центра&quot;</span>)<span class="op">+</span></span>
-<span id="cb110-10"><a href="работа-со-временем-lubridate.html#cb110-10"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))<span class="op">+</span></span>
-<span id="cb110-11"><a href="работа-со-временем-lubridate.html#cb110-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.9</span>), <span class="dt">legend.title =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="работа-со-временем-lubridate.html#cb120-1"></a>levada &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/2019.01_levada_countries.csv&quot;</span>)</span>
+<span id="cb120-2"><a href="работа-со-временем-lubridate.html#cb120-2"></a>levada <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb120-3"><a href="работа-со-временем-lubridate.html#cb120-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">date =</span> <span class="kw">str_c</span>(<span class="st">&quot;1-&quot;</span>, date),</span>
+<span id="cb120-4"><a href="работа-со-временем-lubridate.html#cb120-4"></a>         <span class="dt">date =</span> <span class="kw">dmy</span>(date)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb120-5"><a href="работа-со-временем-lubridate.html#cb120-5"></a><span class="st">  </span><span class="kw">filter</span>(towards <span class="op">==</span><span class="st"> &quot;USA&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb120-6"><a href="работа-со-временем-lubridate.html#cb120-6"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;answer&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;number&quot;</span>, good<span class="op">:</span>bad) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb120-7"><a href="работа-со-временем-lubridate.html#cb120-7"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(date, number, <span class="dt">color =</span> answer))<span class="op">+</span></span>
+<span id="cb120-8"><a href="работа-со-временем-lubridate.html#cb120-8"></a><span class="st">  </span><span class="kw">geom_line</span>()<span class="op">+</span></span>
+<span id="cb120-9"><a href="работа-со-временем-lubridate.html#cb120-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;данные Левада-центра&quot;</span>)<span class="op">+</span></span>
+<span id="cb120-10"><a href="работа-со-временем-lubridate.html#cb120-10"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))<span class="op">+</span></span>
+<span id="cb120-11"><a href="работа-со-временем-lubridate.html#cb120-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.9</span>), <span class="dt">legend.title =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 <p>На графике теперь видно, насколько регулярно проводились опросы: в начале 90-ых опросы проводились реже, потом часто, потом в районе 2010 года был перерыв. График Левада-центра можно оправдать тем, что они представляют данные от замера к замеру, так что по оси x находится как бы категориальная переменная со значениями <code>замер 05.2014</code>, <code>замер 07.2014</code>, <code>замер 11.2014</code> и т. д. Однако это совсем неочевидно из графика.</p>
 <div class="rmdtask">
 <p>
 Используя весь датасет Левада-центра, постройте следующий график.
 </p>
 </div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 
 </div>
 </div>
