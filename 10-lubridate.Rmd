@@ -103,6 +103,8 @@ date_example <- flights$time_hour[1]
 date_example
 year(date_example)
 month(date_example)
+month(date_example, label = TRUE)
+month(date_example, label = TRUE, abbr = FALSE)
 week(date_example)
 mday(date_example)
 wday(date_example)

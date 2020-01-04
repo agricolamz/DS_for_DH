@@ -49,6 +49,8 @@
 
 
 
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
 <script src="libs/str_view-binding-1.4.0/str_view.js"></script>
@@ -283,7 +285,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="tidytext.html"><a href="tidytext.html#пакет-udpipe"><i class="fa fa-check"></i><b>9.3</b> Пакет udpipe</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html"><i class="fa fa-check"></i><b>10</b> Работа с геоданными: leaflet, geojson</a></li>
-<li class="chapter" data-level="11" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html"><i class="fa fa-check"></i><b>11</b> Работа со временем: lubridate</a></li>
+<li class="chapter" data-level="11" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html"><i class="fa fa-check"></i><b>11</b> Работа со временем: <code>lubridate</code></a><ul>
+<li class="chapter" data-level="11.1" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#создание-даты"><i class="fa fa-check"></i><b>11.1</b> Создание даты</a></li>
+<li class="chapter" data-level="11.2" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#извлечение-компонентов-даты"><i class="fa fa-check"></i><b>11.2</b> Извлечение компонентов даты</a></li>
+<li class="chapter" data-level="11.3" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#операции-с-датами"><i class="fa fa-check"></i><b>11.3</b> Операции с датами</a></li>
+<li class="chapter" data-level="11.4" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#визуализация-времени-данные-левада-центра"><i class="fa fa-check"></i><b>11.4</b> Визуализация времени: данные Левада-центра</a></li>
+</ul></li>
 <li class="chapter" data-level="12" data-path="сбор-данных-из-интернета-rvest.html"><a href="сбор-данных-из-интернета-rvest.html"><i class="fa fa-check"></i><b>12</b> Сбор данных из интернета: rvest</a></li>
 <li class="chapter" data-level="13" data-path="distributions.html"><a href="distributions.html"><i class="fa fa-check"></i><b>13</b> Distributions</a></li>
 <li class="chapter" data-level="14" data-path="центральная-предельная-теорема.html"><a href="центральная-предельная-теорема.html"><i class="fa fa-check"></i><b>14</b> Центральная предельная теорема</a></li>
@@ -987,47 +994,46 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 <span id="cb233-3"><a href="intro.html#cb233-3"></a>student &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>) </span>
 <span id="cb233-4"><a href="intro.html#cb233-4"></a>df =<span class="st"> </span><span class="kw">data.frame</span>(name, age, student)  </span>
 <span id="cb233-5"><a href="intro.html#cb233-5"></a>df</span></code></pre></div>
-<pre><code>##     name age student
-## 1   Ivan  26   FALSE
-## 2 Eugeny  34   FALSE
-## 3   Lena  23    TRUE
-## 4  Misha  27    TRUE
-## 5  Sasha  26    TRUE</code></pre>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="intro.html#cb235-1"></a><span class="kw">str</span>(df)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["student"],"name":[3],"type":["lgl"],"align":["right"]}],"data":[{"1":"Ivan","2":"26","3":"FALSE"},{"1":"Eugeny","2":"34","3":"FALSE"},{"1":"Lena","2":"23","3":"TRUE"},{"1":"Misha","2":"27","3":"TRUE"},{"1":"Sasha","2":"26","3":"TRUE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="intro.html#cb234-1"></a><span class="kw">str</span>(df)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    5 obs. of  3 variables:
 ##  $ name   : Factor w/ 5 levels &quot;Eugeny&quot;,&quot;Ivan&quot;,..: 2 1 3 4 5
 ##  $ age    : num  26 34 23 27 26
 ##  $ student: logi  FALSE FALSE TRUE TRUE TRUE</code></pre>
 <p>Вообще, очень похоже на список, не правда ли? Так и есть, датафрейм — это что-то вроде проименованного списка, каждый элемент которого является atomic вектором фиксированной длины. Скорее всего, список Вы представляли “горизонтально”. Если это так, то теперь “переверните” его у себя в голове. Так, чтоб названия векторов оказались сверху, а колонки стали столбцами. Поскольку длина всех этих векторов равна (обязательное условие!), то данные представляют собой табличку, похожую на матрицу. Но в отличие от матрицы, разные столбцы могут имет разные типы данных: первая колонка — character, вторая колонка — numeric, третья колонка — logical. Тем не менее, обращаться с датафреймом можно и как с проименованным списком, и как с матрицей:</p>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="intro.html#cb237-1"></a>df<span class="op">$</span>age[<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="intro.html#cb236-1"></a>df<span class="op">$</span>age[<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] 34 23</code></pre>
 <p>Здесь мы сначала вытащили колонку <code>age</code> с помощью оператора <code>$</code>. Результатом этой операции является числовой вектор, из которого мы вытащили кусок, выбрав индексы <code>2</code> и <code>3</code>.</p>
 <p>Используя оператор <code>$</code> и присваивание можно создавать новые колонки датафрейма:</p>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="intro.html#cb239-1"></a>df<span class="op">$</span>lovesR &lt;-<span class="st"> </span><span class="ot">TRUE</span> <span class="co">#правило recycling - узнали? </span></span>
-<span id="cb239-2"><a href="intro.html#cb239-2"></a>df</span></code></pre></div>
-<pre><code>##     name age student lovesR
-## 1   Ivan  26   FALSE   TRUE
-## 2 Eugeny  34   FALSE   TRUE
-## 3   Lena  23    TRUE   TRUE
-## 4  Misha  27    TRUE   TRUE
-## 5  Sasha  26    TRUE   TRUE</code></pre>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="intro.html#cb238-1"></a>df<span class="op">$</span>lovesR &lt;-<span class="st"> </span><span class="ot">TRUE</span> <span class="co">#правило recycling - узнали? </span></span>
+<span id="cb238-2"><a href="intro.html#cb238-2"></a>df</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["student"],"name":[3],"type":["lgl"],"align":["right"]},{"label":["lovesR"],"name":[4],"type":["lgl"],"align":["right"]}],"data":[{"1":"Ivan","2":"26","3":"FALSE","4":"TRUE"},{"1":"Eugeny","2":"34","3":"FALSE","4":"TRUE"},{"1":"Lena","2":"23","3":"TRUE","4":"TRUE"},{"1":"Misha","2":"27","3":"TRUE","4":"TRUE"},{"1":"Sasha","2":"26","3":"TRUE","4":"TRUE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <p>Ну а можно просто обращаться с помощью двух индексов через запятую, как мы это делали с матрицей:</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="intro.html#cb241-1"></a>df[<span class="dv">3</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>]</span></code></pre></div>
-<pre><code>##   age student
-## 3  23    TRUE
-## 4  27    TRUE
-## 5  26    TRUE</code></pre>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="intro.html#cb239-1"></a>df[<span class="dv">3</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>]</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["age"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["student"],"name":[2],"type":["lgl"],"align":["right"]}],"data":[{"1":"23","2":"TRUE","_rn_":"3"},{"1":"27","2":"TRUE","_rn_":"4"},{"1":"26","2":"TRUE","_rn_":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <p>Как и с матрицами, первый индекс означает строчки, а второй — столбцы.</p>
 <p>А еще можно использовать названия колонок внутри квадратных скобок:</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="intro.html#cb243-1"></a>df[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="st">&quot;age&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="intro.html#cb240-1"></a>df[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="st">&quot;age&quot;</span>]</span></code></pre></div>
 <pre><code>## [1] 26 34</code></pre>
 <p>И здесь перед нами открываются невообразимые возможности! Узнаем, любят ли R те, кто моложе среднего возраста в группе:</p>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="intro.html#cb245-1"></a>df[df<span class="op">$</span>age <span class="op">&lt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>age), <span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="intro.html#cb242-1"></a>df[df<span class="op">$</span>age <span class="op">&lt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>age), <span class="dv">4</span>]</span></code></pre></div>
 <pre><code>## [1] TRUE TRUE TRUE TRUE</code></pre>
 <p>Эту же задачу можно выполнить другими способами:</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="intro.html#cb247-1"></a>df<span class="op">$</span>lovesR[df<span class="op">$</span>age <span class="op">&lt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>age)]</span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="intro.html#cb244-1"></a>df<span class="op">$</span>lovesR[df<span class="op">$</span>age <span class="op">&lt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>age)]</span></code></pre></div>
 <pre><code>## [1] TRUE TRUE TRUE TRUE</code></pre>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="intro.html#cb249-1"></a>df[df<span class="op">$</span>age <span class="op">&lt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>age), <span class="st">&#39;lovesR&#39;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="intro.html#cb246-1"></a>df[df<span class="op">$</span>age <span class="op">&lt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>age), <span class="st">&#39;lovesR&#39;</span>]</span></code></pre></div>
 <pre><code>## [1] TRUE TRUE TRUE TRUE</code></pre>
 <p>В большинстве случаев подходят сразу несколько способов — тем не менее, стоит овладеть ими всеми.</p>
 <p>Датафреймы удобно просматривать в RStudio. Для это нужно написать команду <code>View(df)</code> или же просто нажать на названии нужной переменной из списка вверху справа (там где Environment). Тогда увидите табличку, очень похожую на Excel и тому подобные программы для работы с таблицами. Там же есть и всякие возможности для фильтрации, сортировки и поиска… Но, конечно, интереснее все эти вещи делать руками, т.е. с помощью написания кода.</p>
@@ -1051,17 +1057,17 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 <li>Магомет идет к горе: перемещение файлов в рабочую папку.</li>
 </ul>
 <p>Для этого нужно узнать, какая папка является рабочей с помощью функции <code>getwd()</code> (без аргументов), найти эту папку в проводнике и переместить туда файл. После этого можно использовать просто название файла с разрешением:</p>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="intro.html#cb251-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;character-deaths.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="intro.html#cb248-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;character-deaths.csv&quot;</span>)</span></code></pre></div>
 <ul>
 <li>Гора идет к Магомету: изменение рабочей папки.</li>
 </ul>
 <p>Можно просто сменить рабочую папку с помощью <code>setwd()</code> на ту, где сейчас лежит файл, прописав путь до этой папки. Теперь файл находится в рабочей папке:</p>
-<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="intro.html#cb252-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;character-deaths.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="intro.html#cb249-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;character-deaths.csv&quot;</span>)</span></code></pre></div>
 <p>Этот вариант использовать не рекомендуется. Как минимум, это сразу делает невозможным запустить скрипт на другом компьютере.</p>
 <ul>
 <li>Гора находит Магомета по месту прописки: указание полного пути файла.</li>
 </ul>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="intro.html#cb253-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;/Users/Username/Some_Folder/character-deaths.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="intro.html#cb250-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;/Users/Username/Some_Folder/character-deaths.csv&quot;</span>)</span></code></pre></div>
 <p>Этот вариант страдает теми же проблемами, что и предыдущий, поэтому тоже не рекомендуется.</p>
 <blockquote>
 <p>Для пользователей Windows есть дополнительная сложность: знак <code>/</code> является особым знаком для R, поэтому вместо него нужно использовать двойной <code>//</code>.</p>
@@ -1074,7 +1080,7 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 <li>Гора находит Магомета в интернете.</li>
 </ul>
 <p>Многие функции в R, предназначенные для чтения файлов, могут прочитать файл не только на Вашем компьютере, но и сразу из интернета. Для этого просто используйте ссылку вместо пути:</p>
-<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="intro.html#cb254-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Pozdniakov/stats/master/data/character-deaths.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="intro.html#cb251-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Pozdniakov/stats/master/data/character-deaths.csv&quot;</span>)</span></code></pre></div>
 <ul>
 <li>Каждый Магомет получает по своей горе: использование проектов в RStudio.</li>
 </ul>
@@ -1088,7 +1094,7 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 <p>Для чтения данных из текстового файла есть довольно удобная функция <code>read.table()</code>. Почитайте хэлп по ней и ужаснитесь: столько разных параметров на входе! Но там же вы увидете функции <code>read.csv()</code>, <code>read.csv2()</code> и некоторые другие — по сути, это тот же <code>read.table()</code>, но с другими дефолтными параметрами, соответствующие формату файла, который мы загружаем. В данном случае используется формат .csv, что означает Comma Separated Values (Значения, Разделенные Запятыми). Это просто текстовый файл, в котором “закодирована” таблица: разные строчки разделяют разные строчки таблицы, а столбцы отделяются запятыми. С этим связана одна проблема: в некоторых странах (в т.ч. и России) принято использовать запятую для разделения дробной части числа, а не точку, как это делается в большинстве стран мира. Поэтому есть “другой” формат .csv, где значения разделены точкой с запятой (<code>;</code>), а дробные значения - запятой (<code>,</code>). В этом и различие функций <code>read.csv()</code> и <code>read.csv2()</code> — первая функция предназначена для “международного” формата, вторая - для (условно) “Российского”.</p>
 <p>В первой строчке обычно содержатся названия столбцов - и это чертовски удобно, функции <code>read.csv()</code> и <code>read.csv2()</code> по дефолту считают первую строчку именно как название для колонок.</p>
 <p>Итак, прочитаем наш файл. Для этого используем только параметр <code>file =</code>, который идет первым, и для параметра <code>stringsAsFactors =</code> поставим значение <code>FALSE</code>:</p>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="intro.html#cb255-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/character-deaths.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="intro.html#cb252-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/character-deaths.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <blockquote>
 <p>По сути, факторы - это примерно то же самое, что и character, но закодированные числами. Когда-то это было придумано для экономии используемых времени и памяти, сейчас же обычно становится просто лишней морокой. Но некоторые функции требуют именно character, некоторые factor, в большинстве случаев это без разницы. Но иногда непонимание может привести к дурацким ошибкам. В данном случае мы просто пока обойдемся без факторов.</p>
 </blockquote>
@@ -1104,13 +1110,13 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 <div id="prep" class="section level2">
 <h2><span class="header-section-number">2.12</span> Препроцессинг данных в R</h2>
 <p>Вчера мы узнали про основы языка R, про то, как работать с векторами, списками, матрицами и, наконец, датафреймами. Мы закончили день на загрузке данных, с чего мы и начнем сегодня:</p>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="intro.html#cb256-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/character-deaths.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="intro.html#cb253-1"></a>got &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/character-deaths.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> F)</span></code></pre></div>
 <p>После загрузки данных стоит немного “осмотреть” получившийся датафрейм <code>got</code>.</p>
 <div id="explore" class="section level3">
 <h3><span class="header-section-number">2.12.1</span> Исследование данных</h3>
 <p>Ок, давайте немного поизучаем датасет. Обычно мы привыкли глазами пробегать по данным, листая строки и столбцы — и это вполне правильно и логично, от этого не нужно отучаться. Но мы можем дополнить наш базовый зрительнопоисковой инструментарий несколькими полезными командами.</p>
 <p>Во-первых, вспомним другую полезную функцию <code>str()</code>:</p>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="intro.html#cb257-1"></a><span class="kw">str</span>(got)</span></code></pre></div>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="intro.html#cb254-1"></a><span class="kw">str</span>(got)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    917 obs. of  13 variables:
 ##  $ Name              : chr  &quot;Addam Marbrand&quot; &quot;Aegon Frey (Jinglebell)&quot; &quot;Aegon Targaryen&quot; &quot;Adrack Humble&quot; ...
 ##  $ Allegiances       : chr  &quot;Lannister&quot; &quot;None&quot; &quot;House Targaryen&quot; &quot;House Greyjoy&quot; ...
@@ -1128,24 +1134,15 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 <p>Давайте разберемся с переменными в датафрейме:</p>
 <p>Колонка <code>Name</code> — здесь все понятно. Важно, что эти имена записаны абсолютно по-разному: где-то с фамилией, где-то без, где-то в скобочках есть пояснения. Колонка <code>Allegiances</code> — к какому дому принадлежит персонаж. С этим сложно, иногда они меняют дома, здесь путаются сами семьи и персонажи, лояльные им. Особой разницы между <code>Stark</code> и <code>House Stark</code> нет. Следующие колонки - <code>Death Year</code>, <code>Book.of.Death</code>, <code>Death.Chapter</code>, <code>Book.Intro.Chapter</code> — означают номер главы, в которой персонаж впервые появляется, а так же номер книги, глава и год (от завоевания Вестероса Эйгоном Таргариеном), в которой персонаж умирает. <code>Gender</code> — <code>1</code> для мужчин, <code>0</code> для женщин. <code>Nobility</code> — дворянское происхождение персонажа. Последние 5 столбцов содержат информацию, появлялся ли персонаж в книге (всего книг пока что 5).</p>
 <p>Другая полезная функция для больших таблиц — функция <code>head()</code>: она выведет первые несколько (по дефолту 6) строчек датафрейма.</p>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="intro.html#cb259-1"></a><span class="kw">head</span>(got)</span></code></pre></div>
-<pre><code>##                      Name     Allegiances Death.Year Book.of.Death
-## 1          Addam Marbrand       Lannister         NA            NA
-## 2 Aegon Frey (Jinglebell)            None        299             3
-## 3         Aegon Targaryen House Targaryen         NA            NA
-## 4           Adrack Humble   House Greyjoy        300             5
-## 5          Aemon Costayne       Lannister         NA            NA
-## 6         Aemon Estermont       Baratheon         NA            NA
-##   Death.Chapter Book.Intro.Chapter Gender Nobility GoT CoK SoS FfC DwD
-## 1            NA                 56      1        1   1   1   1   1   0
-## 2            51                 49      1        1   0   0   1   0   0
-## 3            NA                  5      1        1   0   0   0   0   1
-## 4            20                 20      1        1   0   0   0   0   1
-## 5            NA                 NA      1        1   0   0   1   0   0
-## 6            NA                 NA      1        1   0   1   1   0   0</code></pre>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="intro.html#cb256-1"></a><span class="kw">head</span>(got)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Death.Year"],"name":[3],"type":["int"],"align":["right"]},{"label":["Book.of.Death"],"name":[4],"type":["int"],"align":["right"]},{"label":["Death.Chapter"],"name":[5],"type":["int"],"align":["right"]},{"label":["Book.Intro.Chapter"],"name":[6],"type":["int"],"align":["right"]},{"label":["Gender"],"name":[7],"type":["int"],"align":["right"]},{"label":["Nobility"],"name":[8],"type":["int"],"align":["right"]},{"label":["GoT"],"name":[9],"type":["int"],"align":["right"]},{"label":["CoK"],"name":[10],"type":["int"],"align":["right"]},{"label":["SoS"],"name":[11],"type":["int"],"align":["right"]},{"label":["FfC"],"name":[12],"type":["int"],"align":["right"]},{"label":["DwD"],"name":[13],"type":["int"],"align":["right"]}],"data":[{"1":"Addam Marbrand","2":"Lannister","3":"NA","4":"NA","5":"NA","6":"56","7":"1","8":"1","9":"1","10":"1","11":"1","12":"1","13":"0","_rn_":"1"},{"1":"Aegon Frey (Jinglebell)","2":"None","3":"299","4":"3","5":"51","6":"49","7":"1","8":"1","9":"0","10":"0","11":"1","12":"0","13":"0","_rn_":"2"},{"1":"Aegon Targaryen","2":"House Targaryen","3":"NA","4":"NA","5":"NA","6":"5","7":"1","8":"1","9":"0","10":"0","11":"0","12":"0","13":"1","_rn_":"3"},{"1":"Adrack Humble","2":"House Greyjoy","3":"300","4":"5","5":"20","6":"20","7":"1","8":"1","9":"0","10":"0","11":"0","12":"0","13":"1","_rn_":"4"},{"1":"Aemon Costayne","2":"Lannister","3":"NA","4":"NA","5":"NA","6":"NA","7":"1","8":"1","9":"0","10":"0","11":"1","12":"0","13":"0","_rn_":"5"},{"1":"Aemon Estermont","2":"Baratheon","3":"NA","4":"NA","5":"NA","6":"NA","7":"1","8":"1","9":"0","10":"1","11":"1","12":"0","13":"0","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <p>Есть еще функция <code>tail()</code>. Догадайтесь сами, что она делает.</p>
 <p>Для некоторых переменных полезно посмотреть таблицы частотности с помощью функции table():</p>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="intro.html#cb261-1"></a><span class="kw">table</span>(got<span class="op">$</span>Allegiances)</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="intro.html#cb257-1"></a><span class="kw">table</span>(got<span class="op">$</span>Allegiances)</span></code></pre></div>
 <pre><code>## 
 ##           Arryn       Baratheon         Greyjoy     House Arryn House Baratheon 
 ##              23              56              51               7               8 
@@ -1158,7 +1155,7 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 ##        Wildling 
 ##              40</code></pre>
 <p>Уау! Очень просто и удобно, не так ли? Функция <code>table()</code> может принимать сразу несколько столбцов. Это удобно для получения <em>таблиц сопряженности</em>:</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="intro.html#cb263-1"></a><span class="kw">table</span>(got<span class="op">$</span>Allegiances, got<span class="op">$</span>Gender)</span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="intro.html#cb259-1"></a><span class="kw">table</span>(got<span class="op">$</span>Allegiances, got<span class="op">$</span>Gender)</span></code></pre></div>
 <pre><code>##                  
 ##                     0   1
 ##   Arryn             3  20
@@ -1186,42 +1183,26 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 <div id="subset" class="section level3">
 <h3><span class="header-section-number">2.12.2</span> Subsetting</h3>
 <p>Как мы обсуждали на прошлом занятии, мы можем сабсеттить (выделять часть датафрейма) датафрейм, обращаясь к нему и как к матрице: <em>датафрейм[вектор_с_номерами_строк, вектор_с_номерами_колонок]</em></p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="intro.html#cb265-1"></a>got[<span class="dv">100</span><span class="op">:</span><span class="dv">115</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span></code></pre></div>
-<pre><code>##                 Name   Allegiances
-## 100        Blue Bard  House Tyrell
-## 101    Bonifer Hasty     Lannister
-## 102           Borcas Night&#39;s Watch
-## 103  Boremund Harlaw       Greyjoy
-## 104     Boros Blount     Baratheon
-## 105           Borroq      Wildling
-## 106      Bowen Marsh Night&#39;s Watch
-## 107       Bran Stark   House Stark
-## 108   Brandon Norrey         Stark
-## 109          Brenett          None
-## 110 Brienne of Tarth         Stark
-## 111            Bronn     Lannister
-## 112    Brown Bernarr Night&#39;s Watch
-## 113           Brusco          None
-## 114   Bryan Fossoway     Baratheon
-## 115      Bryce Caron     Baratheon</code></pre>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="intro.html#cb261-1"></a>got[<span class="dv">100</span><span class="op">:</span><span class="dv">115</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"Blue Bard","2":"House Tyrell","_rn_":"100"},{"1":"Bonifer Hasty","2":"Lannister","_rn_":"101"},{"1":"Borcas","2":"Night's Watch","_rn_":"102"},{"1":"Boremund Harlaw","2":"Greyjoy","_rn_":"103"},{"1":"Boros Blount","2":"Baratheon","_rn_":"104"},{"1":"Borroq","2":"Wildling","_rn_":"105"},{"1":"Bowen Marsh","2":"Night's Watch","_rn_":"106"},{"1":"Bran Stark","2":"House Stark","_rn_":"107"},{"1":"Brandon Norrey","2":"Stark","_rn_":"108"},{"1":"Brenett","2":"None","_rn_":"109"},{"1":"Brienne of Tarth","2":"Stark","_rn_":"110"},{"1":"Bronn","2":"Lannister","_rn_":"111"},{"1":"Brown Bernarr","2":"Night's Watch","_rn_":"112"},{"1":"Brusco","2":"None","_rn_":"113"},{"1":"Bryan Fossoway","2":"Baratheon","_rn_":"114"},{"1":"Bryce Caron","2":"Baratheon","_rn_":"115"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <p>и используя имена колонок:</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="intro.html#cb267-1"></a>got[<span class="dv">508</span><span class="op">:</span><span class="dv">515</span>, <span class="st">&quot;Name&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="intro.html#cb262-1"></a>got[<span class="dv">508</span><span class="op">:</span><span class="dv">515</span>, <span class="st">&quot;Name&quot;</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;Mance Rayder&quot;    &quot;Mandon Moore&quot;    &quot;Maric Seaworth&quot;  &quot;Marei&quot;          
 ## [5] &quot;Margaery Tyrell&quot; &quot;Marillion&quot;       &quot;Maris&quot;           &quot;Marissa Frey&quot;</code></pre>
 <p>и даже используя вектора названий колонок!</p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="intro.html#cb269-1"></a>got[<span class="dv">508</span><span class="op">:</span><span class="dv">515</span>, <span class="kw">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Allegiances&quot;</span>, <span class="st">&quot;Gender&quot;</span>)]</span></code></pre></div>
-<pre><code>##                Name     Allegiances Gender
-## 508    Mance Rayder        Wildling      1
-## 509    Mandon Moore       Baratheon      1
-## 510  Maric Seaworth House Baratheon      1
-## 511           Marei            None      0
-## 512 Margaery Tyrell    House Tyrell      0
-## 513       Marillion           Arryn      1
-## 514           Maris        Wildling      0
-## 515    Marissa Frey            None      0</code></pre>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="intro.html#cb264-1"></a>got[<span class="dv">508</span><span class="op">:</span><span class="dv">515</span>, <span class="kw">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Allegiances&quot;</span>, <span class="st">&quot;Gender&quot;</span>)]</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Gender"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"Mance Rayder","2":"Wildling","3":"1","_rn_":"508"},{"1":"Mandon Moore","2":"Baratheon","3":"1","_rn_":"509"},{"1":"Maric Seaworth","2":"House Baratheon","3":"1","_rn_":"510"},{"1":"Marei","2":"None","3":"0","_rn_":"511"},{"1":"Margaery Tyrell","2":"House Tyrell","3":"0","_rn_":"512"},{"1":"Marillion","2":"Arryn","3":"1","_rn_":"513"},{"1":"Maris","2":"Wildling","3":"0","_rn_":"514"},{"1":"Marissa Frey","2":"None","3":"0","_rn_":"515"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <p>Мы можем вытаскивать отдельные колонки как векторы:</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="intro.html#cb271-1"></a>houses &lt;-<span class="st"> </span>got<span class="op">$</span>Allegiances</span>
-<span id="cb271-2"><a href="intro.html#cb271-2"></a><span class="kw">unique</span>(houses) <span class="co">#посмотреть все уникальные значения --- почти как с помощью table()</span></span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="intro.html#cb265-1"></a>houses &lt;-<span class="st"> </span>got<span class="op">$</span>Allegiances</span>
+<span id="cb265-2"><a href="intro.html#cb265-2"></a><span class="kw">unique</span>(houses) <span class="co">#посмотреть все уникальные значения --- почти как с помощью table()</span></span></code></pre></div>
 <pre><code>##  [1] &quot;Lannister&quot;       &quot;None&quot;            &quot;House Targaryen&quot; &quot;House Greyjoy&quot;  
 ##  [5] &quot;Baratheon&quot;       &quot;Night&#39;s Watch&quot;   &quot;Arryn&quot;           &quot;House Stark&quot;    
 ##  [9] &quot;House Tyrell&quot;    &quot;Tyrell&quot;          &quot;Stark&quot;           &quot;Greyjoy&quot;        
@@ -1230,82 +1211,56 @@ Indexing lists in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_s
 ## [21] &quot;House Baratheon&quot;</code></pre>
 <p>Итак, давайте решим нашу первую задачу — вытащим в отдельный датасет всех представителей Ночного Дозора.
 Для этого нам нужно создать вектор логических значений — результат сравнений колонки <code>Allegiances</code> со значением <code>"Night's Watch"</code> и использовать его как вектор индексов для датафрейма.</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="intro.html#cb273-1"></a>vectornight &lt;-<span class="st"> </span>got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span></span>
-<span id="cb273-2"><a href="intro.html#cb273-2"></a><span class="kw">head</span>(vectornight)</span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="intro.html#cb267-1"></a>vectornight &lt;-<span class="st"> </span>got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span></span>
+<span id="cb267-2"><a href="intro.html#cb267-2"></a><span class="kw">head</span>(vectornight)</span></code></pre></div>
 <pre><code>## [1] FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <p>Теперь этот вектор с <code>TRUE</code> и <code>FALSE</code> нам надо использовать для индексирования строк. Но что со столбцами? Если мы хотем сохранить все столбцы, то после запятой внутри квадратных скобок нам не нужно ничего указывать:</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="intro.html#cb275-1"></a>nightswatch &lt;-<span class="st"> </span>got[vectornight,]</span>
-<span id="cb275-2"><a href="intro.html#cb275-2"></a><span class="kw">head</span>(nightswatch)</span></code></pre></div>
-<pre><code>##                                 Name   Allegiances Death.Year Book.of.Death
-## 7  Aemon Targaryen (son of Maekar I) Night&#39;s Watch        300             4
-## 10                            Aethan Night&#39;s Watch         NA            NA
-## 13                     Alan of Rosby Night&#39;s Watch        300             5
-## 16                            Albett Night&#39;s Watch         NA            NA
-## 24                    Alliser Thorne Night&#39;s Watch         NA            NA
-## 49                             Arron Night&#39;s Watch         NA            NA
-##    Death.Chapter Book.Intro.Chapter Gender Nobility GoT CoK SoS FfC DwD
-## 7             35                 21      1        1   1   0   1   1   0
-## 10            NA                  0      1        0   0   0   1   0   0
-## 13             4                 18      1        1   0   1   1   0   1
-## 16            NA                 26      1        0   1   0   0   0   0
-## 24            NA                 19      1        0   1   1   1   0   1
-## 49            NA                 75      1        0   0   0   1   0   1</code></pre>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="intro.html#cb269-1"></a>nightswatch &lt;-<span class="st"> </span>got[vectornight,]</span>
+<span id="cb269-2"><a href="intro.html#cb269-2"></a><span class="kw">head</span>(nightswatch)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Death.Year"],"name":[3],"type":["int"],"align":["right"]},{"label":["Book.of.Death"],"name":[4],"type":["int"],"align":["right"]},{"label":["Death.Chapter"],"name":[5],"type":["int"],"align":["right"]},{"label":["Book.Intro.Chapter"],"name":[6],"type":["int"],"align":["right"]},{"label":["Gender"],"name":[7],"type":["int"],"align":["right"]},{"label":["Nobility"],"name":[8],"type":["int"],"align":["right"]},{"label":["GoT"],"name":[9],"type":["int"],"align":["right"]},{"label":["CoK"],"name":[10],"type":["int"],"align":["right"]},{"label":["SoS"],"name":[11],"type":["int"],"align":["right"]},{"label":["FfC"],"name":[12],"type":["int"],"align":["right"]},{"label":["DwD"],"name":[13],"type":["int"],"align":["right"]}],"data":[{"1":"Aemon Targaryen (son of Maekar I)","2":"Night's Watch","3":"300","4":"4","5":"35","6":"21","7":"1","8":"1","9":"1","10":"0","11":"1","12":"1","13":"0","_rn_":"7"},{"1":"Aethan","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"0","7":"1","8":"0","9":"0","10":"0","11":"1","12":"0","13":"0","_rn_":"10"},{"1":"Alan of Rosby","2":"Night's Watch","3":"300","4":"5","5":"4","6":"18","7":"1","8":"1","9":"0","10":"1","11":"1","12":"0","13":"1","_rn_":"13"},{"1":"Albett","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"26","7":"1","8":"0","9":"1","10":"0","11":"0","12":"0","13":"0","_rn_":"16"},{"1":"Alliser Thorne","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"19","7":"1","8":"0","9":"1","10":"1","11":"1","12":"0","13":"1","_rn_":"24"},{"1":"Arron","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"75","7":"1","8":"0","9":"0","10":"0","11":"1","12":"0","13":"1","_rn_":"49"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <p>Вуаля!
 Все это можно сделать проще и в одну строку:</p>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="intro.html#cb277-1"></a>nightswatch &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="intro.html#cb270-1"></a>nightswatch &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span>,]</span></code></pre></div>
 <p>И не забывайте про запятую!</p>
 <p>Теперь попробуем вытащить одновременно всех Одичалых (<code>Wildling</code>) и всех представителей Ночного Дозора. Это можно сделать, используя оператор <code>|</code> (ИЛИ) при выборе колонок:</p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="intro.html#cb278-1"></a>nightwatch_wildling &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span> <span class="op">|</span><span class="st"> </span>got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Wildling&quot;</span>,]</span>
-<span id="cb278-2"><a href="intro.html#cb278-2"></a><span class="kw">head</span>(nightwatch_wildling)</span></code></pre></div>
-<pre><code>##                                 Name   Allegiances Death.Year Book.of.Death
-## 7  Aemon Targaryen (son of Maekar I) Night&#39;s Watch        300             4
-## 10                            Aethan Night&#39;s Watch         NA            NA
-## 13                     Alan of Rosby Night&#39;s Watch        300             5
-## 16                            Albett Night&#39;s Watch         NA            NA
-## 24                    Alliser Thorne Night&#39;s Watch         NA            NA
-## 49                             Arron Night&#39;s Watch         NA            NA
-##    Death.Chapter Book.Intro.Chapter Gender Nobility GoT CoK SoS FfC DwD
-## 7             35                 21      1        1   1   0   1   1   0
-## 10            NA                  0      1        0   0   0   1   0   0
-## 13             4                 18      1        1   0   1   1   0   1
-## 16            NA                 26      1        0   1   0   0   0   0
-## 24            NA                 19      1        0   1   1   1   0   1
-## 49            NA                 75      1        0   0   0   1   0   1</code></pre>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="intro.html#cb271-1"></a>nightwatch_wildling &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Night&#39;s Watch&quot;</span> <span class="op">|</span><span class="st"> </span>got<span class="op">$</span>Allegiances <span class="op">==</span><span class="st"> &quot;Wildling&quot;</span>,]</span>
+<span id="cb271-2"><a href="intro.html#cb271-2"></a><span class="kw">head</span>(nightwatch_wildling)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Death.Year"],"name":[3],"type":["int"],"align":["right"]},{"label":["Book.of.Death"],"name":[4],"type":["int"],"align":["right"]},{"label":["Death.Chapter"],"name":[5],"type":["int"],"align":["right"]},{"label":["Book.Intro.Chapter"],"name":[6],"type":["int"],"align":["right"]},{"label":["Gender"],"name":[7],"type":["int"],"align":["right"]},{"label":["Nobility"],"name":[8],"type":["int"],"align":["right"]},{"label":["GoT"],"name":[9],"type":["int"],"align":["right"]},{"label":["CoK"],"name":[10],"type":["int"],"align":["right"]},{"label":["SoS"],"name":[11],"type":["int"],"align":["right"]},{"label":["FfC"],"name":[12],"type":["int"],"align":["right"]},{"label":["DwD"],"name":[13],"type":["int"],"align":["right"]}],"data":[{"1":"Aemon Targaryen (son of Maekar I)","2":"Night's Watch","3":"300","4":"4","5":"35","6":"21","7":"1","8":"1","9":"1","10":"0","11":"1","12":"1","13":"0","_rn_":"7"},{"1":"Aethan","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"0","7":"1","8":"0","9":"0","10":"0","11":"1","12":"0","13":"0","_rn_":"10"},{"1":"Alan of Rosby","2":"Night's Watch","3":"300","4":"5","5":"4","6":"18","7":"1","8":"1","9":"0","10":"1","11":"1","12":"0","13":"1","_rn_":"13"},{"1":"Albett","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"26","7":"1","8":"0","9":"1","10":"0","11":"0","12":"0","13":"0","_rn_":"16"},{"1":"Alliser Thorne","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"19","7":"1","8":"0","9":"1","10":"1","11":"1","12":"0","13":"1","_rn_":"24"},{"1":"Arron","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"75","7":"1","8":"0","9":"0","10":"0","11":"1","12":"0","13":"1","_rn_":"49"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <blockquote>
 <p>Кажется очевидным следующий вариант: <code>got[got$Allegiances == c("Night's Watch", "Wildling"),]</code>. Однако это выдаст не совсем то, что нужно, хотя результат может показаться верным на первый взгляд. Попробуйте самостоятельно ответить на вопрос, что происходит в данном случае и чем результат отличается от предполагаемого. Подсказка: вспомните правило recycling.</p>
 </blockquote>
 <p>Для таких случаев есть удобный оператор <code>%in%</code>, который позволяет сравнить каждое значение вектора с целым набором значений. Если значение вектора хотя бы один раз встречается в векторе справа от <code>%in%</code>, то результат — <code>TRUE</code>:</p>
-<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="intro.html#cb280-1"></a><span class="dv">1</span><span class="op">:</span><span class="dv">6</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="intro.html#cb272-1"></a><span class="dv">1</span><span class="op">:</span><span class="dv">6</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1]  TRUE FALSE FALSE  TRUE  TRUE FALSE</code></pre>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="intro.html#cb282-1"></a>nightwatch_wildling &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Night&#39;s Watch&quot;</span>, <span class="st">&quot;Wildling&quot;</span>),]</span>
-<span id="cb282-2"><a href="intro.html#cb282-2"></a><span class="kw">head</span>(nightwatch_wildling)</span></code></pre></div>
-<pre><code>##                                 Name   Allegiances Death.Year Book.of.Death
-## 7  Aemon Targaryen (son of Maekar I) Night&#39;s Watch        300             4
-## 10                            Aethan Night&#39;s Watch         NA            NA
-## 13                     Alan of Rosby Night&#39;s Watch        300             5
-## 16                            Albett Night&#39;s Watch         NA            NA
-## 24                    Alliser Thorne Night&#39;s Watch         NA            NA
-## 49                             Arron Night&#39;s Watch         NA            NA
-##    Death.Chapter Book.Intro.Chapter Gender Nobility GoT CoK SoS FfC DwD
-## 7             35                 21      1        1   1   0   1   1   0
-## 10            NA                  0      1        0   0   0   1   0   0
-## 13             4                 18      1        1   0   1   1   0   1
-## 16            NA                 26      1        0   1   0   0   0   0
-## 24            NA                 19      1        0   1   1   1   0   1
-## 49            NA                 75      1        0   0   0   1   0   1</code></pre>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="intro.html#cb274-1"></a>nightwatch_wildling &lt;-<span class="st"> </span>got[got<span class="op">$</span>Allegiances <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Night&#39;s Watch&quot;</span>, <span class="st">&quot;Wildling&quot;</span>),]</span>
+<span id="cb274-2"><a href="intro.html#cb274-2"></a><span class="kw">head</span>(nightwatch_wildling)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Death.Year"],"name":[3],"type":["int"],"align":["right"]},{"label":["Book.of.Death"],"name":[4],"type":["int"],"align":["right"]},{"label":["Death.Chapter"],"name":[5],"type":["int"],"align":["right"]},{"label":["Book.Intro.Chapter"],"name":[6],"type":["int"],"align":["right"]},{"label":["Gender"],"name":[7],"type":["int"],"align":["right"]},{"label":["Nobility"],"name":[8],"type":["int"],"align":["right"]},{"label":["GoT"],"name":[9],"type":["int"],"align":["right"]},{"label":["CoK"],"name":[10],"type":["int"],"align":["right"]},{"label":["SoS"],"name":[11],"type":["int"],"align":["right"]},{"label":["FfC"],"name":[12],"type":["int"],"align":["right"]},{"label":["DwD"],"name":[13],"type":["int"],"align":["right"]}],"data":[{"1":"Aemon Targaryen (son of Maekar I)","2":"Night's Watch","3":"300","4":"4","5":"35","6":"21","7":"1","8":"1","9":"1","10":"0","11":"1","12":"1","13":"0","_rn_":"7"},{"1":"Aethan","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"0","7":"1","8":"0","9":"0","10":"0","11":"1","12":"0","13":"0","_rn_":"10"},{"1":"Alan of Rosby","2":"Night's Watch","3":"300","4":"5","5":"4","6":"18","7":"1","8":"1","9":"0","10":"1","11":"1","12":"0","13":"1","_rn_":"13"},{"1":"Albett","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"26","7":"1","8":"0","9":"1","10":"0","11":"0","12":"0","13":"0","_rn_":"16"},{"1":"Alliser Thorne","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"19","7":"1","8":"0","9":"1","10":"1","11":"1","12":"0","13":"1","_rn_":"24"},{"1":"Arron","2":"Night's Watch","3":"NA","4":"NA","5":"NA","6":"75","7":"1","8":"0","9":"0","10":"0","11":"1","12":"0","13":"1","_rn_":"49"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 <div id="newcol" class="section level3">
 <h3><span class="header-section-number">2.12.3</span> Создание новых колонок</h3>
 <p>Давайте создадим новую колонку, которая будет означать, жив ли еще персонаж (по книгам).
 Заметьте, что в этом датасете, хоть он и посвящен смертям персонажей, нет нужной колонки. Мы можем попытаться “вытащить” эту информацию. В колонках <code>Death.Year</code>, <code>Death.Chapter</code> и <code>Book.of.Death</code> стоит <code>NA</code> у многих персонажей. Например, у <code>Arya Stark</code>, которая и по книгам, и по сериалу живее всех живых и мертвых:</p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="intro.html#cb284-1"></a>got[got<span class="op">$</span>Name <span class="op">==</span><span class="st"> &quot;Arya Stark&quot;</span>,]</span></code></pre></div>
-<pre><code>##          Name Allegiances Death.Year Book.of.Death Death.Chapter
-## 56 Arya Stark       Stark         NA            NA            NA
-##    Book.Intro.Chapter Gender Nobility GoT CoK SoS FfC DwD
-## 56                  2      0        1   1   1   1   1   1</code></pre>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="intro.html#cb275-1"></a>got[got<span class="op">$</span>Name <span class="op">==</span><span class="st"> &quot;Arya Stark&quot;</span>,]</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Allegiances"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Death.Year"],"name":[3],"type":["int"],"align":["right"]},{"label":["Book.of.Death"],"name":[4],"type":["int"],"align":["right"]},{"label":["Death.Chapter"],"name":[5],"type":["int"],"align":["right"]},{"label":["Book.Intro.Chapter"],"name":[6],"type":["int"],"align":["right"]},{"label":["Gender"],"name":[7],"type":["int"],"align":["right"]},{"label":["Nobility"],"name":[8],"type":["int"],"align":["right"]},{"label":["GoT"],"name":[9],"type":["int"],"align":["right"]},{"label":["CoK"],"name":[10],"type":["int"],"align":["right"]},{"label":["SoS"],"name":[11],"type":["int"],"align":["right"]},{"label":["FfC"],"name":[12],"type":["int"],"align":["right"]},{"label":["DwD"],"name":[13],"type":["int"],"align":["right"]}],"data":[{"1":"Arya Stark","2":"Stark","3":"NA","4":"NA","5":"NA","6":"2","7":"0","8":"1","9":"1","10":"1","11":"1","12":"1","13":"1","_rn_":"56"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <p>Следовательно, если в <code>Book.of.Death</code> стоит <code>NA</code>, мы можем предположить, что Джордж Мартин еще не занес своей карающей руки над этим героем.</p>
 <p>Мы можем создать новую колонку <code>Is.Alive</code>:</p>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="intro.html#cb286-1"></a>got<span class="op">$</span>Is.Alive &lt;-<span class="st"> </span><span class="kw">is.na</span>(got<span class="op">$</span>Book.of.Death)</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="intro.html#cb276-1"></a>got<span class="op">$</span>Is.Alive &lt;-<span class="st"> </span><span class="kw">is.na</span>(got<span class="op">$</span>Book.of.Death)</span></code></pre></div>
 </div>
 <div id="dtvstidy" class="section level3">
 <h3><span class="header-section-number">2.12.4</span> data.table vs. tidyverse</h3>
