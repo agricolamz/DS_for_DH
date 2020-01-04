@@ -337,7 +337,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Кажется, что время – просто обычная числовая переменная, на которой определены все обычные операции сложения вычитания и т. п. Однако стоит держать в голове несколько фактов:</p>
 <ul>
-<li>Не каждый год содержит 365 дней. Существуют высокосные года.</li>
+<li>Не каждый год содержит 365 дней. Существуют високосные года.</li>
 <li>Не каждый день содержит 24 часа. Во многих странах используют переход на летнее и зимнее время.</li>
 <li>Не в каждой минуте 60 секунд. Существуют дополнительная секунда, которую добавляют чтобы компенсировать замедление во вращении земли (тогда после секунды 23:59:59 идет секунда 23:59:60).</li>
 </ul>
@@ -351,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="работа-со-временем-lubridate.html#cb5-1"></a><span class="kw">today</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;2020-01-04&quot;</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="работа-со-временем-lubridate.html#cb7-1"></a><span class="kw">now</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;2020-01-04 13:39:05 MSK&quot;</code></pre>
+<pre><code>## [1] &quot;2020-01-04 13:41:16 MSK&quot;</code></pre>
 <p>Как видно, из этих функций в R можно работать как с датами, так и с временем. В качестве иллюстрации мы будем использовать датасет <code>flights</code> из пакета <code>nycflights13</code>, в котором содержатся данные по полетам из Нью Йорка в 2013 года.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="работа-со-временем-lubridate.html#cb9-1"></a><span class="kw">library</span>(nycflights13)</span>
 <span id="cb9-2"><a href="работа-со-временем-lubridate.html#cb9-2"></a>flights</span></code></pre></div>
