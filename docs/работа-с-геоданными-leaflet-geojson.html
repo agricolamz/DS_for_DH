@@ -51,9 +51,6 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
 <style type="text/css">
@@ -284,7 +281,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2" data-path="tidytext.html"><a href="tidytext.html#библиотека-tidytext"><i class="fa fa-check"></i><b>9.2</b> Библиотека <code>tidytext</code></a></li>
 <li class="chapter" data-level="9.3" data-path="tidytext.html"><a href="tidytext.html#пакет-udpipe"><i class="fa fa-check"></i><b>9.3</b> Пакет udpipe</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html"><i class="fa fa-check"></i><b>10</b> Работа с геоданными: leaflet, geojson</a></li>
+<li class="chapter" data-level="10" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html"><i class="fa fa-check"></i><b>10</b> Работа с геоданными: leaflet, geojson</a><ul>
+<li class="chapter" data-level="10.1" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#векторная-и-растровая-графика"><i class="fa fa-check"></i><b>10.1</b> Векторная и растровая графика</a></li>
+<li class="chapter" data-level="10.2" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#leaflet"><i class="fa fa-check"></i><b>10.2</b> <code>leaflet</code></a><ul>
+<li class="chapter" data-level="10.2.1" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#комбинация-карт-leafsync"><i class="fa fa-check"></i><b>10.2.1</b> Комбинация карт: <code>leafsync</code></a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="11" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html"><i class="fa fa-check"></i><b>11</b> Работа со временем: <code>lubridate</code></a><ul>
 <li class="chapter" data-level="11.1" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#создание-даты"><i class="fa fa-check"></i><b>11.1</b> Создание даты</a></li>
 <li class="chapter" data-level="11.2" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#извлечение-компонентов-даты"><i class="fa fa-check"></i><b>11.2</b> Извлечение компонентов даты</a></li>
@@ -335,7 +337,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="работа-с-геоданными-leaflet-geojson" class="section level1">
 <h1><span class="header-section-number">10</span> Работа с геоданными: leaflet, geojson</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="работа-с-геоданными-leaflet-geojson.html#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<div id="векторная-и-растровая-графика" class="section level2">
+<h2><span class="header-section-number">10.1</span> Векторная и растровая графика</h2>
+<p>Перед тем как обсуждать карты, следует сначала обсудить разницу между векторной и растровой графикой.</p>
+<ul>
+<li><strong>Растровые изображения</strong> представляют собой набор упорядоченных пикселей, про каждый из которых храниться информация о цвете. Векторное изображение нельзя бесконечно увеличивать — в какой-то момент станут видны пиксели, которые в каком-то смысле являются пределом увелечения. Наиболее популярные форматы растровых изображений: <code>JPEG</code>, <code>GIF</code>, <code>PNG</code>, <code>BMP</code>, <code>TIFF</code> и другие.</li>
+<li>В <strong>векторных изображениях</strong> инормация храниться как собрани точек, линий и полигонов в некоторой системе координат, что позволяет бесконечно увеличивать такие изображения не теряя в качестве. Наиболее популярные форматы векторных изображений: <code>PDF</code>, <code>SVG</code>, <code>EPS</code> и другие.</li>
+</ul>
+<p>Современные технологии позволяют соединять растровые и векторные изображения, а также трансформировать их друг в друга. Картографические данные могут попадать в разные типы: точки (столицы всех стран), линии (улицы в каком-нибудь городе), полигоны (границы стран и меньших регионов) обычно имеют некоторую геопривязку (для простоты давайте считать такими, все, что имеет широту и долготу), так что могут быть представлены векторно, однако существует достаточно много информации, которую невозможно представить никак подругому, кроме как векторно: спутниковые снимки, существующие физические/политические/климатические/исторические и т. п. карты, выдача картографических сервисов, таких как Google Maps. Кроме того, занимаясь любыми типами визуализации следует помнить о разнице <strong>статической визаулизации</strong>, которую после создания нельзя изменить, и <strong>динамической визуализации</strong>, которая позволяет пользователям изменять себя (увеличиваться и уменьшаться, кликать на собрание точек и видеть их значения и т. п.). В данной главе, в отличие от предыдущих мы сосредоточимся на пакете для динамичского картографирования <code>leaflet</code>. Достаточно много тем останется за пределами этой главы: изменение проекции, манипуляции с географическими данными, работа с растровыми изображениями и другие.</p>
+</div>
+<div id="leaflet" class="section level2">
+<h2><span class="header-section-number">10.2</span> <code>leaflet</code></h2>
+<p>Для начала включим библиотеку:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="работа-с-геоданными-leaflet-geojson.html#cb2-1"></a><span class="kw">library</span>(<span class="st">&quot;leaflet&quot;</span>)</span></code></pre></div>
+<div id="комбинация-карт-leafsync" class="section level3">
+<h3><span class="header-section-number">10.2.1</span> Комбинация карт: <code>leafsync</code></h3>
+<p>Включим библиотеку:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="работа-с-геоданными-leaflet-geojson.html#cb3-1"></a><span class="kw">library</span>(<span class="st">&quot;leafsync&quot;</span>)</span></code></pre></div>
 
+</div>
+</div>
 </div>
             </section>
 
