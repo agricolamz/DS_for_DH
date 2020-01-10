@@ -284,7 +284,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html"><i class="fa fa-check"></i><b>10</b> Работа с геоданными: leaflet, geojson</a><ul>
 <li class="chapter" data-level="10.1" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#векторная-и-растровая-графика"><i class="fa fa-check"></i><b>10.1</b> Векторная и растровая графика</a></li>
 <li class="chapter" data-level="10.2" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#картографические-примитивы"><i class="fa fa-check"></i><b>10.2</b> Картографические примитивы</a></li>
-<li class="chapter" data-level="10.3" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#geojson-файлы"><i class="fa fa-check"></i><b>10.3</b> geojson файлы</a></li>
+<li class="chapter" data-level="10.3" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#формат-данных"><i class="fa fa-check"></i><b>10.3</b> Формат данных</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#csv-файлы"><i class="fa fa-check"></i><b>10.3.1</b> csv файлы</a></li>
+<li class="chapter" data-level="10.3.2" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#geojson-файлы"><i class="fa fa-check"></i><b>10.3.2</b> geojson файлы</a></li>
+<li class="chapter" data-level="10.3.3" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#shp-файлы"><i class="fa fa-check"></i><b>10.3.3</b> .shp файлы</a></li>
+</ul></li>
 <li class="chapter" data-level="10.4" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#leaflet"><i class="fa fa-check"></i><b>10.4</b> <code>leaflet</code></a><ul>
 <li class="chapter" data-level="10.4.1" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#комбинация-карт-leafsync"><i class="fa fa-check"></i><b>10.4.1</b> Комбинация карт: <code>leafsync</code></a></li>
 </ul></li>
@@ -352,17 +356,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="картографические-примитивы" class="section level2">
 <h2><span class="header-section-number">10.2</span> Картографические примитивы</h2>
 </div>
-<div id="geojson-файлы" class="section level2">
-<h2><span class="header-section-number">10.3</span> geojson файлы</h2>
+<div id="формат-данных" class="section level2">
+<h2><span class="header-section-number">10.3</span> Формат данных</h2>
+<div id="csv-файлы" class="section level3">
+<h3><span class="header-section-number">10.3.1</span> csv файлы</h3>
+<p>Источником географических данных могут быть обычные привычные нам csv файлы. Например, вот <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/death_of_migrants_and_refugees_from_the_Unwelcomed_project.csv">здесь</a>, хранится датасет из проекта <a href="http://alhadaqa.com/2019/08/the_unwelcomed/">The Unwelcomed</a> Мохамада А. Вэйкда (Mohamad A. Waked), содержащий информацию о месте и причинах смерти мигрантов и беженцев по всему миру с января 2014 года по июнь 2019 года.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="работа-с-геоданными-leaflet-geojson.html#cb2-1"></a>unwelcomed &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/death_of_migrants_and_refugees_from_the_Unwelcomed_project.csv&quot;</span>)</span></code></pre></div>
+<ul>
+<li><code>id</code> — идентификационный номер;</li>
+<li><code>date</code> — дата происшедшего;</li>
+<li><code>total_death_missing</code> — количество погибших/пропавших;</li>
+<li><code>location</code> — место происшедшего;</li>
+<li><code>lat</code> — широта;</li>
+<li><code>lon</code> — долгота;</li>
+<li><code>collapsed_region</code> — обобщенная информация о регионе;</li>
+<li><code>region</code> — информация о регионе;</li>
+<li><code>collapsed_cause</code> — обобщенная информация о причине смерти;</li>
+<li><code>cause_of_death</code> — информация о причине смерти.</li>
+</ul>
+<p>Информация о широте и долготе может храниться …</p>
+</div>
+<div id="geojson-файлы" class="section level3">
+<h3><span class="header-section-number">10.3.2</span> geojson файлы</h3>
+</div>
+<div id="shp-файлы" class="section level3">
+<h3><span class="header-section-number">10.3.3</span> .shp файлы</h3>
+</div>
 </div>
 <div id="leaflet" class="section level2">
 <h2><span class="header-section-number">10.4</span> <code>leaflet</code></h2>
 <p>Для начала включим библиотеку:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="работа-с-геоданными-leaflet-geojson.html#cb2-1"></a><span class="kw">library</span>(<span class="st">&quot;leaflet&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="работа-с-геоданными-leaflet-geojson.html#cb3-1"></a><span class="kw">library</span>(<span class="st">&quot;leaflet&quot;</span>)</span></code></pre></div>
 <div id="комбинация-карт-leafsync" class="section level3">
 <h3><span class="header-section-number">10.4.1</span> Комбинация карт: <code>leafsync</code></h3>
 <p>Включим библиотеку:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="работа-с-геоданными-leaflet-geojson.html#cb3-1"></a><span class="kw">library</span>(<span class="st">&quot;leafsync&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="работа-с-геоданными-leaflet-geojson.html#cb4-1"></a><span class="kw">library</span>(<span class="st">&quot;leafsync&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>

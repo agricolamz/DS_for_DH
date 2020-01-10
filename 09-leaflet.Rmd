@@ -18,11 +18,24 @@ library("tidyverse")
 
 ## Формат данных
 ### csv файлы
-Источником географических данных могут быть обычные привычные нам csv файлы. Например, вот здесь, хранится датасет из проекта [The Unwelcomed](http://alhadaqa.com/2019/08/the_unwelcomed/), содержащий информацию о месте и причинах смерти мигрантов и беженцев по всему миру.
+Источником географических данных могут быть обычные привычные нам csv файлы. Например, вот [здесь](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/death_of_migrants_and_refugees_from_the_Unwelcomed_project.csv), хранится датасет из проекта [The Unwelcomed](http://alhadaqa.com/2019/08/the_unwelcomed/) Мохамада А. Вэйкда (Mohamad A. Waked), содержащий информацию о месте и причинах смерти мигрантов и беженцев по всему миру с января 2014 года по июнь 2019 года.
 
-```{r}
-unwelcomed <- read_csv("")
+```{r, message=FALSE}
+unwelcomed <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/death_of_migrants_and_refugees_from_the_Unwelcomed_project.csv")
 ```
+
+* `id` --- идентификационный номер;
+* `date` --- дата происшедшего;
+* `total_death_missing` --- количество погибших/пропавших;
+* `location` --- место происшедшего;
+* `lat` --- широта;
+* `lon` --- долгота;
+* `collapsed_region` --- обобщенная информация о регионе;
+* `region` --- информация о регионе;
+* `collapsed_cause` --- обобщенная информация о причине смерти;
+* `cause_of_death` --- информация о причине смерти.
+
+Информация о широте и долготе может храниться ...
 
 ### geojson файлы
 ### .shp файлы
