@@ -283,8 +283,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html"><i class="fa fa-check"></i><b>10</b> Работа с геоданными: leaflet, geojson</a><ul>
 <li class="chapter" data-level="10.1" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#векторная-и-растровая-графика"><i class="fa fa-check"></i><b>10.1</b> Векторная и растровая графика</a></li>
-<li class="chapter" data-level="10.2" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#leaflet"><i class="fa fa-check"></i><b>10.2</b> <code>leaflet</code></a><ul>
-<li class="chapter" data-level="10.2.1" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#комбинация-карт-leafsync"><i class="fa fa-check"></i><b>10.2.1</b> Комбинация карт: <code>leafsync</code></a></li>
+<li class="chapter" data-level="10.2" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#картографические-примитивы"><i class="fa fa-check"></i><b>10.2</b> Картографические примитивы</a></li>
+<li class="chapter" data-level="10.3" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#geojson-файлы"><i class="fa fa-check"></i><b>10.3</b> geojson файлы</a></li>
+<li class="chapter" data-level="10.4" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#leaflet"><i class="fa fa-check"></i><b>10.4</b> <code>leaflet</code></a><ul>
+<li class="chapter" data-level="10.4.1" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#комбинация-карт-leafsync"><i class="fa fa-check"></i><b>10.4.1</b> Комбинация карт: <code>leafsync</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html"><i class="fa fa-check"></i><b>11</b> Работа со временем: <code>lubridate</code></a><ul>
@@ -345,18 +347,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Растровые изображения</strong> представляют собой набор упорядоченных пикселей, про каждый из которых храниться информация о цвете. Векторное изображение нельзя бесконечно увеличивать — в какой-то момент станут видны пиксели, которые в каком-то смысле являются пределом увелечения. Наиболее популярные форматы растровых изображений: <code>JPEG</code>, <code>GIF</code>, <code>PNG</code>, <code>BMP</code>, <code>TIFF</code> и другие.</li>
 <li>В <strong>векторных изображениях</strong> инормация храниться как собрани точек, линий и полигонов в некоторой системе координат, что позволяет бесконечно увеличивать такие изображения не теряя в качестве. Наиболее популярные форматы векторных изображений: <code>PDF</code>, <code>SVG</code>, <code>EPS</code> и другие.</li>
 </ul>
-<p>Современные технологии позволяют соединять растровые и векторные изображения, а также трансформировать их друг в друга. Картографические данные могут попадать в разные типы: точки (столицы всех стран), линии (улицы в каком-нибудь городе), полигоны (границы стран и меньших регионов) обычно имеют некоторую геопривязку (для простоты давайте считать такими, все, что имеет широту и долготу), так что могут быть представлены векторно, однако существует достаточно много информации, которую невозможно представить никак подругому, кроме как векторно: спутниковые снимки, существующие физические/политические/климатические/исторические и т. п. карты, выдача картографических сервисов, таких как Google Maps. Кроме того, занимаясь любыми типами визуализации следует помнить о разнице <strong>статической визаулизации</strong>, которую после создания нельзя изменить, и <strong>динамической визуализации</strong>, которая позволяет пользователям изменять себя (увеличиваться и уменьшаться, кликать на собрание точек и видеть их значения и т. п.). В данной главе, в отличие от предыдущих мы сосредоточимся на пакете для динамичского картографирования <code>leaflet</code>. Достаточно много тем останется за пределами этой главы: изменение проекции, манипуляции с географическими данными, работа с растровыми изображениями и другие.</p>
+<p>Современные технологии позволяют соединять растровые и векторные изображения, а также трансформировать их друг в друга. Картографические данные могут попадать в разные типы: точки (столицы всех стран), линии (улицы в каком-нибудь городе), полигоны (границы стран и меньших регионов) обычно имеют некоторую геопривязку (для простоты давайте считать такими, все, что имеет широту и долготу), так что могут быть представлены векторно, однако существует достаточно много информации, которую невозможно представить никак подругому, кроме как векторно: спутниковые снимки, существующие физические/политические/климатические/исторические и т. п. карты, выдача картографических сервисов, таких как Google Maps. Кроме того, занимаясь любыми типами визуализации следует помнить о разнице <strong>статической визаулизации</strong>, которую после создания нельзя изменить, и <strong>динамической визуализации</strong>, которая позволяет пользователям изменять себя (увеличиваться и уменьшаться, кликать на собрание точек и видеть их значения и т. п.). В данной главе, в отличие от предыдущих мы сосредоточимся на пакете для динамичского картографирования <code>leaflet</code>. Достаточно много тем останется за пределами этой главы: изменение проекции, манипуляции с географическими данными, работа с растровыми изображениями и другие (см., например, <span class="citation">(Lovelace, Nowosad, and Muenchow <a href="#ref-lovelace19" role="doc-biblioref">2019</a>)</span>, доступная <a href="https://geocompr.robinlovelace.net/">здесь</a>).</p>
+</div>
+<div id="картографические-примитивы" class="section level2">
+<h2><span class="header-section-number">10.2</span> Картографические примитивы</h2>
+</div>
+<div id="geojson-файлы" class="section level2">
+<h2><span class="header-section-number">10.3</span> geojson файлы</h2>
 </div>
 <div id="leaflet" class="section level2">
-<h2><span class="header-section-number">10.2</span> <code>leaflet</code></h2>
+<h2><span class="header-section-number">10.4</span> <code>leaflet</code></h2>
 <p>Для начала включим библиотеку:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="работа-с-геоданными-leaflet-geojson.html#cb2-1"></a><span class="kw">library</span>(<span class="st">&quot;leaflet&quot;</span>)</span></code></pre></div>
 <div id="комбинация-карт-leafsync" class="section level3">
-<h3><span class="header-section-number">10.2.1</span> Комбинация карт: <code>leafsync</code></h3>
+<h3><span class="header-section-number">10.4.1</span> Комбинация карт: <code>leafsync</code></h3>
 <p>Включим библиотеку:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="работа-с-геоданными-leaflet-geojson.html#cb3-1"></a><span class="kw">library</span>(<span class="st">&quot;leafsync&quot;</span>)</span></code></pre></div>
 
 </div>
+</div>
+</div>
+<h3>Ссылки на литературу</h3>
+<div id="refs" class="references">
+<div id="ref-lovelace19">
+<p>Lovelace, R., J. Nowosad, and J. Muenchow. 2019. <em>Geocomputation with R</em>. CRC Press.</p>
 </div>
 </div>
             </section>
