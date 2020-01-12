@@ -80,7 +80,24 @@ country_features
 library("leaflet")
 ```
 
+### Комбинация карт: `leafsync`
+
+Включим библиотеку:
+```{r}
+library("leafsync")
+```
+
 ### Работа с `.geojson`
+
+Самый простой способ визуализировать `.geojson` это используя функцию `addGeoJSON()`, которая в качестве аргумента принимает `.geojson` файл.
+
+```{r}
+leaflet() %>% 
+  addGeoJSON(geojson = countries)
+```
+
+Проблема этого подхода заключается в том, что файл `.geojson` содержит в себе форматирование, поэтому если пользователь хочет поменять отображение объектов, необходимо добавить список `style` к каждому узлу. 
+Во-первых, нужно добавить список `style` в корень файла `.geojson`. В результате, это изменит отображение всех списков: 
 
 ```{r}
 countries$style = list(
@@ -90,27 +107,57 @@ countries$style = list(
   fillOpacity = 0.8
 )
 
+leaflet() %>% 
+  addGeoJSON(geojson = countries)
+```
+
+Во-вторых следует создать палитры для раскрашивания. Это делается при помощи функций `colorNumeric()`, `colorFactor()`, `colorBin()` или `colorQuantile()`.
+
+```{r}
 pal_num <- colorNumeric("Greens", domain = c(min(country_features$pop_est),
                                              max(country_features$pop_est)))
 pal_cat <- colorFactor("RdYlBu", domain = country_features$income)
+```
 
+Созданные переменные `pal_num()` и `pal_cat()` сами являются функциями и возвращают раскраску в зависимости от значения:
+
+```{r}
+pal_num(country_features$pop_est[1])
+pal_cat(country_features$income[1])
+```
+
+В-третьих нужно создать векторы с новыми цветами:
+
+```{r}
 country_features %>% 
   mutate(pop_est_color = pal_num(pop_est),
          income_color = pal_cat(income)) ->
   country_features
+country_features
+```
 
+В-четвертых нужно присвоить каждому узлу свой список `style`:
+
+```{r}
 map(seq_along(countries$features), function(x){
-  countries$features[[x]]$properties$style <- list(fillColor = country_features$income_color[x])
+  countries$features[[x]]$properties$style <- 
+    list(fillColor = country_features$income_color[x])
   countries$features[[x]]
 }) ->
   countries$features
+```
 
+И последний, пятый шаг, это нарисовать получивший `.geojson`:
+```{r}
 leaflet() %>% 
   addGeoJSON(geojson = countries) %>% 
   addLegend(pal = pal_cat, 
             values = country_features$income, 
             title = "Income")
+```
 
+Шаги 4 и 5 можно повторить и для числовой переменной:
+```{r}
 map(seq_along(countries$features), function(x){
   countries$features[[x]]$properties$style <- list(fillColor = country_features$pop_est_color[x])
   countries$features[[x]]
@@ -123,12 +170,3 @@ leaflet() %>%
             values = country_features$pop_est, 
             title = "Population")
 ```
-
-
-### Комбинация карт: `leafsync`
-
-Включим библиотеку:
-```{r}
-library("leafsync")
-```
-
