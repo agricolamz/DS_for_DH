@@ -16,8 +16,14 @@ library("tidyverse")
 
 ## Картографические примитивы
 
+В картографии существуют свои элементарные единицы:
+
+![](images/10-classes.png)
+
+Эти единицы поддерживают популярные пакеты для манипуляции с георграфическими объектами: `sp`, `sf` и другие. В данном разделе мы не будем учиться операциям с этими объектами (объединение, вычитание и т. п., подробности смотрите в документации к пакету `sp` или в уже упомянавшейся книжке [@lovelace19]).
+
 ## Формат данных
-### csv файлы
+### `.csv` файлы
 Источником географических данных могут быть обычные привычные нам csv файлы. Например, вот [здесь](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/death_of_migrants_and_refugees_from_the_Unwelcomed_project.csv), хранится датасет из проекта [The Unwelcomed](http://alhadaqa.com/2019/08/the_unwelcomed/) Мохамада А. Вэйкда (Mohamad A. Waked), содержащий информацию о месте и причинах смерти мигрантов и беженцев по всему миру с января 2014 года по июнь 2019 года.
 
 ```{r, message=FALSE}
@@ -35,10 +41,24 @@ unwelcomed <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/m
 * `collapsed_cause` --- обобщенная информация о причине смерти;
 * `cause_of_death` --- информация о причине смерти.
 
-Информация о широте и долготе может храниться ...
+Информация о широте и долготе иногда записывают в градусах, минутах и секундах, а иногда в десятичной записи, в R обычно используется десятичная запись. В интернете легко найти конвертеры из одного формата в другой и обратно.
 
-### geojson файлы
-### .shp файлы
+### `.geojson` файлы
+
+```{r}
+countries <- jsonlite::read_json("data/countries.geojson")
+countries$features %>% 
+  map("properties") %>% 
+  tibble(name = map_chr(., "name"),
+         pop_est = map_chr(., "pop_est"),
+         income = map_chr(., "income_grp")) %>% 
+  select(-1) %>% 
+  mutate(pop_est = as.double(pop_est),
+         income = as.factor(income)) ->
+  country_features
+```
+
+### `.shp` файлы
 
 ## `leaflet`
 
@@ -46,6 +66,8 @@ unwelcomed <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/m
 ```{r}
 library("leaflet")
 ```
+
+### Работа с `.geojson`
 
 
 

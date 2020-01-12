@@ -286,7 +286,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.2" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#картографические-примитивы"><i class="fa fa-check"></i><b>10.2</b> Картографические примитивы</a></li>
 <li class="chapter" data-level="10.3" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#формат-данных"><i class="fa fa-check"></i><b>10.3</b> Формат данных</a><ul>
 <li class="chapter" data-level="10.3.1" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#csv-файлы"><i class="fa fa-check"></i><b>10.3.1</b> csv файлы</a></li>
-<li class="chapter" data-level="10.3.2" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#geojson-файлы"><i class="fa fa-check"></i><b>10.3.2</b> geojson файлы</a></li>
+<li class="chapter" data-level="10.3.2" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#geojson-файлы"><i class="fa fa-check"></i><b>10.3.2</b> .geojson файлы</a></li>
 <li class="chapter" data-level="10.3.3" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#shp-файлы"><i class="fa fa-check"></i><b>10.3.3</b> .shp файлы</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html#leaflet"><i class="fa fa-check"></i><b>10.4</b> <code>leaflet</code></a><ul>
@@ -355,6 +355,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="картографические-примитивы" class="section level2">
 <h2><span class="header-section-number">10.2</span> Картографические примитивы</h2>
+<p>В картографии существуют свои элементарные единицы:</p>
+<p><img src="images/10-classes.png" /></p>
+<p>Эти единицы поддерживают популярные пакеты для манипуляции с георграфическими объектами: <code>sp</code>, <code>sf</code> и другие. В данном разделе мы не будем учиться операциям с этими объектами (объединение, вычитание и т. п., подробности смотрите в документации к пакету <code>sp</code> или в уже упомянавшейся книжке <span class="citation">(Lovelace, Nowosad, and Muenchow <a href="#ref-lovelace19" role="doc-biblioref">2019</a>)</span>).</p>
 </div>
 <div id="формат-данных" class="section level2">
 <h2><span class="header-section-number">10.3</span> Формат данных</h2>
@@ -374,10 +377,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>collapsed_cause</code> — обобщенная информация о причине смерти;</li>
 <li><code>cause_of_death</code> — информация о причине смерти.</li>
 </ul>
-<p>Информация о широте и долготе может храниться …</p>
+<p>Информация о широте и долготе иногда записывают в градусах, минутах и секундах, а иногда в десятичной записи, в R обычно используется десятичная запись. В интернете легко найти конвертеры из одного формата в другой и обратно.</p>
 </div>
 <div id="geojson-файлы" class="section level3">
-<h3><span class="header-section-number">10.3.2</span> geojson файлы</h3>
+<h3><span class="header-section-number">10.3.2</span> .geojson файлы</h3>
 </div>
 <div id="shp-файлы" class="section level3">
 <h3><span class="header-section-number">10.3.3</span> .shp файлы</h3>
