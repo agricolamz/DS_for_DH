@@ -1,4 +1,4 @@
-# Работа с геоданными: leaflet, geojson
+# Работа с геоданными: `leaflet`
 
 ```{r, message=FALSE}
 library("tidyverse")
@@ -43,6 +43,8 @@ unwelcomed <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/m
 
 Информация о широте и долготе иногда записывают в градусах, минутах и секундах, а иногда в десятичной записи, в R обычно используется десятичная запись. В интернете легко найти конвертеры из одного формата в другой и обратно.
 
+### `.shp` файлы
+
 ### `.geojson` файлы
 ...
 
@@ -52,7 +54,9 @@ unwelcomed <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/m
 countries <- jsonlite::read_json("https://github.com/agricolamz/DS_for_DH/raw/master/data/countries.geojson")
 ```
 
-В этом датасете достаточно много переменных, мы попробуем проанализировать количество населения и [уровень доходов](https://ru.wikipedia.org/wiki/Страна_с_высоким_уровнем_доходов).
+Обратите внимание, как уже говорилось в разделе \@ref{lists}, так как `jsonlite` конфликтует с одной из функций из `tidyverse`, я не загружаю библиотеку полностью при помощи команды `library(jsonlite)`, а обращаюсь к функциям пакета при помощи выражения `jsonlite::...()`. 
+
+В загруженном датасете достаточно много переменных, мы попробуем проанализировать количество населения и [уровень доходов](https://ru.wikipedia.org/wiki/Страна_с_высоким_уровнем_доходов).
 
 ```{r}
 countries$features %>% 
@@ -68,8 +72,6 @@ country_features
 ```
 
 Еще одно преимущество формата `.geojson` заключается в том, что его позволяет просматривать github (см. [пример](https://github.com/agricolamz/DS_for_DH/blob/master/data/countries.geojson)).
-
-### `.shp` файлы
 
 ## `leaflet`
 
