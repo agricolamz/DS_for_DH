@@ -44,9 +44,17 @@ unwelcomed <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/m
 Информация о широте и долготе иногда записывают в градусах, минутах и секундах, а иногда в десятичной записи, в R обычно используется десятичная запись. В интернете легко найти конвертеры из одного формата в другой и обратно.
 
 ### `.geojson` файлы
+...
+
+В данном разделе мы будем анализировать [датасет](https://github.com/agricolamz/DS_for_DH/raw/master/data/countries.geojson), содержащий данные по всем странам мира.
 
 ```{r}
-countries <- jsonlite::read_json("data/countries.geojson")
+countries <- jsonlite::read_json("https://github.com/agricolamz/DS_for_DH/raw/master/data/countries.geojson")
+```
+
+В этом датасете достаточно много переменных, мы попробуем проанализировать количество населения и [уровень доходов](https://ru.wikipedia.org/wiki/Страна_с_высоким_уровнем_доходов).
+
+```{r}
 countries$features %>% 
   map("properties") %>% 
   tibble(name = map_chr(., "name"),
@@ -56,7 +64,10 @@ countries$features %>%
   mutate(pop_est = as.double(pop_est),
          income = as.factor(income)) ->
   country_features
+country_features
 ```
+
+Еще одно преимущество формата `.geojson` заключается в том, что его позволяет просматривать github (см. [пример](https://github.com/agricolamz/DS_for_DH/blob/master/data/countries.geojson)).
 
 ### `.shp` файлы
 
@@ -69,6 +80,47 @@ library("leaflet")
 
 ### Работа с `.geojson`
 
+```{r}
+countries$style = list(
+  weight = 1,
+  color = "#555555",
+  opacity = 1,
+  fillOpacity = 0.8
+)
+
+pal_num <- colorNumeric("Greens", domain = c(min(country_features$pop_est),
+                                             max(country_features$pop_est)))
+pal_cat <- colorFactor("RdYlBu", domain = country_features$income)
+
+country_features %>% 
+  mutate(pop_est_color = pal_num(pop_est),
+         income_color = pal_cat(income)) ->
+  country_features
+
+map(seq_along(countries$features), function(x){
+  countries$features[[x]]$properties$style <- list(fillColor = country_features$income_color[x])
+  countries$features[[x]]
+}) ->
+  countries$features
+
+leaflet() %>% 
+  addGeoJSON(geojson = countries) %>% 
+  addLegend(pal = pal_cat, 
+            values = country_features$income, 
+            title = "Income")
+
+map(seq_along(countries$features), function(x){
+  countries$features[[x]]$properties$style <- list(fillColor = country_features$pop_est_color[x])
+  countries$features[[x]]
+}) ->
+  countries$features
+
+leaflet() %>% 
+  addGeoJSON(geojson = countries) %>% 
+  addLegend(pal = pal_num, 
+            values = country_features$pop_est, 
+            title = "Population")
+```
 
 
 ### Комбинация карт: `leafsync`
