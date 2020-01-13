@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Работа с геоданными: `leaflet`
 
 ```{r, message=FALSE}
@@ -22,7 +27,13 @@ library("tidyverse")
 
 Эти единицы поддерживают популярные пакеты для манипуляции с георграфическими объектами: `sp`, `sf` и другие. В данном разделе мы не будем учиться операциям с этими объектами (объединение, вычитание и т. п., подробности смотрите в документации к пакету `sp` или в уже упомянавшейся книжке [@lovelace19]).
 
-## Формат данных
+## `leaflet`
+
+Для начала включим библиотеку:
+```{r, message=FALSE}
+library("leaflet")
+```
+
 ### `.csv` файлы
 Источником географических данных могут быть обычные привычные нам csv файлы. Например, вот [здесь](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/death_of_migrants_and_refugees_from_the_Unwelcomed_project.csv), хранится датасет из проекта [The Unwelcomed](http://alhadaqa.com/2019/08/the_unwelcomed/) Мохамада А. Вэйкда (Mohamad A. Waked), содержащий информацию о месте и причинах смерти мигрантов и беженцев по всему миру с января 2014 года по июнь 2019 года.
 
@@ -43,10 +54,81 @@ unwelcomed <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/m
 
 Информация о широте и долготе иногда записывают в градусах, минутах и секундах, а иногда в десятичной записи, в R обычно используется десятичная запись. В интернете легко найти конвертеры из одного формата в другой и обратно.
 
+Самый простой способ нанести на карту координаты, это использовать комбинацию функций `leaflet() %>% addCircles()`:
+
+```{r}
+unwelcomed %>% 
+  leaflet() %>% 
+  addCircles(lng = ~lon, # обратите внимание на особый синтаксис с тильдой
+             lat = ~lat)
+```
+
+Чтобы точки не "висели в воздухе" можно добавить подложку:
+
+```{r}
+unwelcomed %>% 
+  leaflet() %>% 
+  addTiles() %>% 
+  addCircles(lng = ~lon,
+             lat = ~lat)
+```
+
+Функция `addCircles()` имеет массу аргументов, которая отвечает за отображение:
+
+* `radius`
+* `color`
+* `opacity`
+* `fill`
+* `fillColor`
+* `label`
+* `popup`
+
+К сожалению, в пакете `leaflet` нет такого удобного автоматического раскрашивания по некоторой переменной, поэтому для решения такой задачи нужно сначала создать свою функцию раскрашивания. Это делается при помощи функций `colorNumeric()`, `colorFactor()`, `colorBin()` или `colorQuantile()`.
+
+```{r}
+pal_cat <- colorFactor("Set3", domain = unwelcomed$collapsed_cause)
+pal_cat(unwelcomed$collapsed_cause[1])
+```
+
+Теперь в переменную `pal_cat` зdwаписана функция, которая возварщает цвета в зависимости от значения. В качестве первого аргумента в фукнций `colorNumeric()`, `colorFactor()`, `colorBin()` или `colorQuantile()` отправляется палитра, которую пользователь может задать сам или использовать уже имеющуюся (их можно посмотреть при помощи команды `RColorBrewer::display.brewer.all()`):
+
+```{r}
+RColorBrewer::display.brewer.all()
+```
+
+Теперь мы готовы сделать нашу первую достойную карту
+```{r}
+unwelcomed %>% 
+  filter(str_detect(date, "2014")) %>% 
+  leaflet() %>% 
+  addTiles() %>% 
+  addCircles(lng = ~lon,
+             lat = ~lat,
+             weight = ~total_death_missing/50,
+             label = ~total_death_missing, # пусть возникает подпись с количеством
+             color  = ~pal_cat(collapsed_cause), # это обобщенная причина
+             opacity = 0.9,
+             popup = ~cause_of_death) %>%  # а это конкретная причина, появляется при клике мышкой
+  addLegend(pal = pal_cat,
+            values = ~collapsed_cause,
+            title = "")
+```
+
+
+
+
+### Комбинация карт: `leafsync`
+
+Включим библиотеку:
+```{r}
+library("leafsync")
+```
+
+
+
 ### `.shp` файлы
 
-### `.geojson` файлы
-...
+### Работа с `.geojson`
 
 В данном разделе мы будем анализировать [датасет](https://github.com/agricolamz/DS_for_DH/raw/master/data/countries.geojson), содержащий данные по всем странам мира.
 
@@ -72,22 +154,6 @@ country_features
 ```
 
 Еще одно преимущество формата `.geojson` заключается в том, что его позволяет просматривать github (см. [пример](https://github.com/agricolamz/DS_for_DH/blob/master/data/countries.geojson)).
-
-## `leaflet`
-
-Для начала включим библиотеку:
-```{r}
-library("leaflet")
-```
-
-### Комбинация карт: `leafsync`
-
-Включим библиотеку:
-```{r}
-library("leafsync")
-```
-
-### Работа с `.geojson`
 
 Самый простой способ визуализировать `.geojson` это используя функцию `addGeoJSON()`, которая в качестве аргумента принимает `.geojson` файл.
 
