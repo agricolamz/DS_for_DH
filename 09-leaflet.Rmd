@@ -96,7 +96,7 @@ pal_cat(unwelcomed$collapsed_cause[1])
 RColorBrewer::display.brewer.all()
 ```
 
-Теперь мы готовы сделать нашу первую достойную карту
+Теперь мы готовы сделать нашу первую осмысленную карту
 ```{r}
 unwelcomed %>% 
   filter(str_detect(date, "2014")) %>% 
@@ -114,7 +114,18 @@ unwelcomed %>%
             title = "")
 ```
 
+```{block, type = "rmdtask"}
+Существует [проект Карта ДТП](https://github.com/tadata-ru/dtp-stat), в котором собран датасет c дорожными происшествиями в России. Визуализируйте все столкновения из датасета. Что можно увидеть на получившейся карте?
+```
 
+```{r}
+read_csv("") %>% 
+  mutate(longitude = ifelse(longitude < 0, longitude+360, longitude)) %>% 
+  leaflet() %>% 
+  addTiles() %>% 
+  addCircles(lat = ~latitude,
+             lng = ~longitude)
+```
 
 
 ### Комбинация карт: `leafsync`
