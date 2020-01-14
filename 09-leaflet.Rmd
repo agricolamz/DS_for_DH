@@ -307,8 +307,11 @@ leaflet() %>%
             title = "Income")
 ```
 
-Шаги 4 и 5 можно повторить и для числовой переменной:
-```{r}
+```{block, type = "rmdtask"}
+Повторите шаги 4 и 5 для числовой переменной (количество населения) из датасета.
+```
+
+```{r, eval = FALSE, echo=FALSE}
 map(seq_along(countries$features), function(x){
   countries$features[[x]]$properties$style <- list(fillColor = country_features$pop_est_color[x])
   countries$features[[x]]
