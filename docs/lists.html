@@ -54,6 +54,16 @@
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
 <script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
+<script src="libs/Leaflet.Sync-0.0.5/L.Map.Sync.js"></script>
 
 
 <style type="text/css">
@@ -284,7 +294,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2" data-path="tidytext.html"><a href="tidytext.html#библиотека-tidytext"><i class="fa fa-check"></i><b>9.2</b> Библиотека <code>tidytext</code></a></li>
 <li class="chapter" data-level="9.3" data-path="tidytext.html"><a href="tidytext.html#пакет-udpipe"><i class="fa fa-check"></i><b>9.3</b> Пакет udpipe</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html"><i class="fa fa-check"></i><b>10</b> Работа с геоданными: leaflet, geojson</a></li>
+<li class="chapter" data-level="10" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html"><i class="fa fa-check"></i><b>10</b> Работа с геоданными: <code>leaflet</code></a><ul>
+<li class="chapter" data-level="10.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#векторная-и-растровая-графика"><i class="fa fa-check"></i><b>10.1</b> Векторная и растровая графика</a></li>
+<li class="chapter" data-level="10.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#картографические-примитивы"><i class="fa fa-check"></i><b>10.2</b> Картографические примитивы</a></li>
+<li class="chapter" data-level="10.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#leaflet"><i class="fa fa-check"></i><b>10.3</b> <code>leaflet</code></a><ul>
+<li class="chapter" data-level="10.3.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#csv-файлы"><i class="fa fa-check"></i><b>10.3.1</b> <code>.csv</code> файлы</a></li>
+<li class="chapter" data-level="10.3.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#комбинация-карт-leafsync"><i class="fa fa-check"></i><b>10.3.2</b> Комбинация карт: <code>leafsync</code></a></li>
+<li class="chapter" data-level="10.3.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#работа-с-.geojson"><i class="fa fa-check"></i><b>10.3.3</b> Работа с <code>.geojson</code></a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="11" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html"><i class="fa fa-check"></i><b>11</b> Работа со временем: <code>lubridate</code></a><ul>
 <li class="chapter" data-level="11.1" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#создание-даты"><i class="fa fa-check"></i><b>11.1</b> Создание даты</a></li>
 <li class="chapter" data-level="11.2" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#извлечение-компонентов-даты"><i class="fa fa-check"></i><b>11.2</b> Извлечение компонентов даты</a></li>
@@ -335,12 +353,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="lists" class="section level1">
 <h1><span class="header-section-number">6</span> Работа со списками</h1>
-<div class="sourceCode" id="cb630"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb630-1"><a href="lists.html#cb630-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb625"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb625-1"><a href="lists.html#cb625-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
 <div id="что-такое-списки" class="section level2">
 <h2><span class="header-section-number">6.1</span> Что такое списки?</h2>
 <p>Мы обсуждали в разделе @ref{list} тип данных <em>список</em>, и все особенности их синтаксиса:</p>
-<div class="sourceCode" id="cb631"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb631-1"><a href="lists.html#cb631-1"></a>x &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">m =</span> <span class="st">&quot;a&quot;</span>, <span class="dt">n =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>), <span class="dt">o =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;red&quot;</span>))</span>
-<span id="cb631-2"><a href="lists.html#cb631-2"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb626"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb626-1"><a href="lists.html#cb626-1"></a>x &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">m =</span> <span class="st">&quot;a&quot;</span>, <span class="dt">n =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>), <span class="dt">o =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;red&quot;</span>))</span>
+<span id="cb626-2"><a href="lists.html#cb626-2"></a>x</span></code></pre></div>
 <pre><code>## $m
 ## [1] &quot;a&quot;
 ## 
@@ -349,14 +367,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## $o
 ## [1] &quot;blue&quot;  &quot;green&quot; &quot;red&quot;</code></pre>
-<div class="sourceCode" id="cb633"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb633-1"><a href="lists.html#cb633-1"></a>x<span class="op">$</span>m</span></code></pre></div>
+<div class="sourceCode" id="cb628"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb628-1"><a href="lists.html#cb628-1"></a>x<span class="op">$</span>m</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot;</code></pre>
-<div class="sourceCode" id="cb635"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb635-1"><a href="lists.html#cb635-1"></a>x[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb630"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb630-1"><a href="lists.html#cb630-1"></a>x[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## $m
 ## [1] &quot;a&quot;</code></pre>
-<div class="sourceCode" id="cb637"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb637-1"><a href="lists.html#cb637-1"></a>x[[<span class="dv">2</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb632"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb632-1"><a href="lists.html#cb632-1"></a>x[[<span class="dv">2</span>]]</span></code></pre></div>
 <pre><code>## [1] 2 4</code></pre>
-<div class="sourceCode" id="cb639"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb639-1"><a href="lists.html#cb639-1"></a>x[[<span class="dv">2</span>]][<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb634"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb634-1"><a href="lists.html#cb634-1"></a>x[[<span class="dv">2</span>]][<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <p><img src="images/6.01_lists.png" /></p>
 <p>Списки вне R обычно хранят в файлах типа <code>.json</code> (по-английски говорят с ударением на первый слог, а вот по-русски прижился вариант с ударением на второй слог: джейсо́н) или <code>.xml</code>.</p>
@@ -369,8 +387,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>некоторые другие типы данных</li>
 </ul>
 <p>Чтение и запись <code>.json</code> файлов осуществляется при помощи пакета <code>jsonlite</code> (не входит в <code>tidyverse</code>). Для примера скачаем датасет 30 героев Игры престолов, который Дж. Р. Р. Мартин достал с ресурса <a href="https://anapioficeandfire.com/">An API of Ice And Fire</a>.</p>
-<div class="sourceCode" id="cb641"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb641-1"><a href="lists.html#cb641-1"></a>got_chars &lt;-<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw">read_json</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/got_chars.json&quot;</span>)</span>
-<span id="cb641-2"><a href="lists.html#cb641-2"></a>got_chars[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb636"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb636-1"><a href="lists.html#cb636-1"></a>got_chars &lt;-<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw">read_json</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/got_chars.json&quot;</span>)</span>
+<span id="cb636-2"><a href="lists.html#cb636-2"></a>got_chars[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [[1]]
 ## [[1]]$url
 ## [1] &quot;https://www.anapioficeandfire.com/api/characters/1022&quot;
@@ -475,8 +493,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [[1]]$playedBy
 ## [1] &quot;Alfie Allen&quot;</code></pre>
 <p>Так как <code>jsonlite</code> конфликтует в одной функции с <code>tidyverse</code>, я не загружаю библиотеку полностью при помощи команды <code>library(jsonlite)</code>, а обращаюсь к функциям пакета при помощи выражения <code>jsonlite::...()</code>. Пакет <code>jsonlite</code> позволяет записывать <code>.json</code> файлы при помощи функции <code>write_json()</code>:</p>
-<div class="sourceCode" id="cb643"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb643-1"><a href="lists.html#cb643-1"></a>jsonlite<span class="op">::</span><span class="kw">write_json</span>(got_chars, <span class="st">&quot;got_chars.json&quot;</span>, <span class="dt">auto_unbox =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb643-2"><a href="lists.html#cb643-2"></a><span class="co"># аргумент auto_unbox позволяет сохранять структуру, которую мы видим в R</span></span></code></pre></div>
+<div class="sourceCode" id="cb638"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb638-1"><a href="lists.html#cb638-1"></a>jsonlite<span class="op">::</span><span class="kw">write_json</span>(got_chars, <span class="st">&quot;got_chars.json&quot;</span>, <span class="dt">auto_unbox =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb638-2"><a href="lists.html#cb638-2"></a><span class="co"># аргумент auto_unbox позволяет сохранять структуру, которую мы видим в R</span></span></code></pre></div>
 </div>
 <div id="превращение-.xml-в-список-и-обратно" class="section level3">
 <h3><span class="header-section-number">6.1.2</span> Превращение <code>.xml</code> в список и обратно</h3>
@@ -487,22 +505,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 &lt;ingredient amount=&quot;0.25&quot; unit=&quot;грамм&quot;&gt;Дрожжи&lt;/ingredient&gt;
 &lt;ingredient amount=&quot;1.5&quot; unit=&quot;стакан&quot;&gt;Тёплая вода&lt;/ingredient&gt;</code></pre>
 <p>Чтение и запись <code>.xml</code> файла осущетсвляется при помощи функций <code>read_xml()</code> и <code>write_xml()</code> из пакета <code>xml2</code>:</p>
-<div class="sourceCode" id="cb646"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb646-1"><a href="lists.html#cb646-1"></a><span class="kw">library</span>(<span class="st">&quot;xml2&quot;</span>)</span>
-<span id="cb646-2"><a href="lists.html#cb646-2"></a>xml_example &lt;-<span class="st"> </span><span class="kw">read_xml</span>(<span class="st">&#39;&lt;body&gt;</span></span>
-<span id="cb646-3"><a href="lists.html#cb646-3"></a><span class="st">&lt;ingredient amount=&quot;3&quot; unit=&quot;стакан&quot;&gt;Мука&lt;/ingredient&gt;</span></span>
-<span id="cb646-4"><a href="lists.html#cb646-4"></a><span class="st">&lt;ingredient amount=&quot;0.25&quot; unit=&quot;грамм&quot;&gt;Дрожжи&lt;/ingredient&gt;</span></span>
-<span id="cb646-5"><a href="lists.html#cb646-5"></a><span class="st">&lt;ingredient amount=&quot;1.5&quot; unit=&quot;стакан&quot;&gt;Тёплая вода&lt;/ingredient&gt;</span></span>
-<span id="cb646-6"><a href="lists.html#cb646-6"></a><span class="st">&lt;/body&gt;&#39;</span>)</span>
-<span id="cb646-7"><a href="lists.html#cb646-7"></a>xml_example</span></code></pre></div>
+<div class="sourceCode" id="cb641"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb641-1"><a href="lists.html#cb641-1"></a><span class="kw">library</span>(<span class="st">&quot;xml2&quot;</span>)</span>
+<span id="cb641-2"><a href="lists.html#cb641-2"></a>xml_example &lt;-<span class="st"> </span><span class="kw">read_xml</span>(<span class="st">&#39;&lt;body&gt;</span></span>
+<span id="cb641-3"><a href="lists.html#cb641-3"></a><span class="st">&lt;ingredient amount=&quot;3&quot; unit=&quot;стакан&quot;&gt;Мука&lt;/ingredient&gt;</span></span>
+<span id="cb641-4"><a href="lists.html#cb641-4"></a><span class="st">&lt;ingredient amount=&quot;0.25&quot; unit=&quot;грамм&quot;&gt;Дрожжи&lt;/ingredient&gt;</span></span>
+<span id="cb641-5"><a href="lists.html#cb641-5"></a><span class="st">&lt;ingredient amount=&quot;1.5&quot; unit=&quot;стакан&quot;&gt;Тёплая вода&lt;/ingredient&gt;</span></span>
+<span id="cb641-6"><a href="lists.html#cb641-6"></a><span class="st">&lt;/body&gt;&#39;</span>)</span>
+<span id="cb641-7"><a href="lists.html#cb641-7"></a>xml_example</span></code></pre></div>
 <pre><code>## {xml_document}
 ## &lt;body&gt;
-## [1] &lt;ingredient amount=&quot;3&quot; unit=&quot;стакан&quot;&gt;Мука&lt;/ingredient&gt;
-## [2] &lt;ingredient amount=&quot;0.25&quot; unit=&quot;грамм&quot;&gt;Дрожжи&lt;/ingredient&gt;
-## [3] &lt;ingredient amount=&quot;1.5&quot; unit=&quot;стакан&quot;&gt;Тёплая вода&lt;/ingredient&gt;</code></pre>
-<div class="sourceCode" id="cb648"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb648-1"><a href="lists.html#cb648-1"></a><span class="kw">write_xml</span>(xml_example, <span class="st">&quot;path/to/the/file.xml&quot;</span>)</span></code></pre></div>
+## [1] &lt;ingredient amount=&quot;3&quot; uni ...
+## [2] &lt;ingredient amount=&quot;0.25&quot;  ...
+## [3] &lt;ingredient amount=&quot;1.5&quot; u ...</code></pre>
+<div class="sourceCode" id="cb643"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb643-1"><a href="lists.html#cb643-1"></a><span class="kw">write_xml</span>(xml_example, <span class="st">&quot;path/to/the/file.xml&quot;</span>)</span></code></pre></div>
 <p>Чтобы избавиться от тегов и превратить прочитанное в список используется команда</p>
-<div class="sourceCode" id="cb649"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb649-1"><a href="lists.html#cb649-1"></a>xml_example &lt;-<span class="st"> </span><span class="kw">as_list</span>(xml_example)</span>
-<span id="cb649-2"><a href="lists.html#cb649-2"></a>xml_example</span></code></pre></div>
+<div class="sourceCode" id="cb644"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb644-1"><a href="lists.html#cb644-1"></a>xml_example &lt;-<span class="st"> </span><span class="kw">as_list</span>(xml_example)</span>
+<span id="cb644-2"><a href="lists.html#cb644-2"></a>xml_example</span></code></pre></div>
 <pre><code>## $body
 ## $body$ingredient
 ## $body$ingredient[[1]]
@@ -531,7 +549,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## attr(,&quot;unit&quot;)
 ## [1] &quot;стакан&quot;</code></pre>
 <p>Теперь полученная переменная уже является списком:</p>
-<div class="sourceCode" id="cb651"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb651-1"><a href="lists.html#cb651-1"></a>xml_example<span class="op">$</span>body[[<span class="dv">2</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb646"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb646-1"><a href="lists.html#cb646-1"></a>xml_example<span class="op">$</span>body[[<span class="dv">2</span>]]</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;Дрожжи&quot;
 ## 
@@ -540,23 +558,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## attr(,&quot;unit&quot;)
 ## [1] &quot;грамм&quot;</code></pre>
 <p>Здесь также нужно отметить, некоторое важное отличие <code>.xml</code> и <code>.json</code>, которое видно в рассматриваемом примере: атрибуты, которые прописываются в открывающем теге, передаются и в список в R. Функция <code>attributes()</code> возвращает список атрибутов и их значений:</p>
-<div class="sourceCode" id="cb653"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb653-1"><a href="lists.html#cb653-1"></a>xml_example<span class="op">$</span>body[[<span class="dv">2</span>]] <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb653-2"><a href="lists.html#cb653-2"></a><span class="st">  </span><span class="kw">attributes</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb648"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb648-1"><a href="lists.html#cb648-1"></a>xml_example<span class="op">$</span>body[[<span class="dv">2</span>]] <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb648-2"><a href="lists.html#cb648-2"></a><span class="st">  </span><span class="kw">attributes</span>()</span></code></pre></div>
 <pre><code>## $amount
 ## [1] &quot;0.25&quot;
 ## 
 ## $unit
 ## [1] &quot;грамм&quot;</code></pre>
 <p>Если нужен конкретный аттрибут, то нужно использовать функцию <code>attr()</code>:</p>
-<div class="sourceCode" id="cb655"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb655-1"><a href="lists.html#cb655-1"></a>xml_example<span class="op">$</span>body[[<span class="dv">2</span>]] <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb655-2"><a href="lists.html#cb655-2"></a><span class="st">  </span><span class="kw">attr</span>(<span class="st">&quot;amount&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb650"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb650-1"><a href="lists.html#cb650-1"></a>xml_example<span class="op">$</span>body[[<span class="dv">2</span>]] <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb650-2"><a href="lists.html#cb650-2"></a><span class="st">  </span><span class="kw">attr</span>(<span class="st">&quot;amount&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;0.25&quot;</code></pre>
 <p>Также на данном примере видна самая большая проблема при работе с <code>.xml</code>: в нашем списке есть три узла под названием <code>ingredient</code>, так что хоть эти узлы и имеют имя, к ним все равно нужно обращаться по индексу.</p>
 </div>
 <div id="просмотр-списков-в-r" class="section level3">
 <h3><span class="header-section-number">6.1.3</span> Просмотр списков в R</h3>
 <p>Просмоторщик списков встроен в RStudio. Его можно увидеть, если ткнуть в объект в R или написать команду <code>View(got_chars)</code>. Альтернативой может стать функция <code>jsonedit()</code> из пакета <code>listviewer</code>. Кроме того, что-то можно попробовать выяснить, используя функцию <code>str()</code>.</p>
-<div class="sourceCode" id="cb657"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb657-1"><a href="lists.html#cb657-1"></a><span class="kw">str</span>(got_chars[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb652"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb652-1"><a href="lists.html#cb652-1"></a><span class="kw">str</span>(got_chars[<span class="dv">1</span>])</span></code></pre></div>
 <pre><code>## List of 1
 ##  $ :List of 18
 ##   ..$ url        : chr &quot;https://www.anapioficeandfire.com/api/characters/1022&quot;
@@ -595,7 +613,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   .. ..$ : chr &quot;Season 5&quot;
 ##   .. ..$ : chr &quot;Season 6&quot;
 ##   ..$ playedBy   : chr &quot;Alfie Allen&quot;</code></pre>
-<div class="sourceCode" id="cb659"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb659-1"><a href="lists.html#cb659-1"></a><span class="kw">str</span>(got_chars[<span class="dv">1</span>], <span class="dt">max.level =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb654"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb654-1"><a href="lists.html#cb654-1"></a><span class="kw">str</span>(got_chars[<span class="dv">1</span>], <span class="dt">max.level =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## List of 1
 ##  $ :List of 18
 ##   ..$ url        : chr &quot;https://www.anapioficeandfire.com/api/characters/1022&quot;
@@ -616,7 +634,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   ..$ povBooks   :List of 2
 ##   ..$ tvSeries   :List of 6
 ##   ..$ playedBy   : chr &quot;Alfie Allen&quot;</code></pre>
-<div class="sourceCode" id="cb661"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb661-1"><a href="lists.html#cb661-1"></a><span class="kw">str</span>(xml_example)</span></code></pre></div>
+<div class="sourceCode" id="cb656"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb656-1"><a href="lists.html#cb656-1"></a><span class="kw">str</span>(xml_example)</span></code></pre></div>
 <pre><code>## List of 1
 ##  $ body:List of 3
 ##   ..$ ingredient:List of 1
@@ -639,8 +657,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="функция-map-и-map..." class="section level3">
 <h3><span class="header-section-number">6.2.1</span> Функция <code>map()</code> и <code>map...()</code></h3>
 <p>Можно выводить значения в списке на основе имени:</p>
-<div class="sourceCode" id="cb663"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb663-1"><a href="lists.html#cb663-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb663-2"><a href="lists.html#cb663-2"></a><span class="st">  </span><span class="kw">map</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb658"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb658-1"><a href="lists.html#cb658-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb658-2"><a href="lists.html#cb658-2"></a><span class="st">  </span><span class="kw">map</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;Theon Greyjoy&quot;
 ## 
@@ -731,8 +749,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [[30]]
 ## [1] &quot;Sansa Stark&quot;</code></pre>
 <p>Можно выводить значения в списке на основе индекса:</p>
-<div class="sourceCode" id="cb665"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb665-1"><a href="lists.html#cb665-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb665-2"><a href="lists.html#cb665-2"></a><span class="st">  </span><span class="kw">map</span>(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb660"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb660-1"><a href="lists.html#cb660-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb660-2"><a href="lists.html#cb660-2"></a><span class="st">  </span><span class="kw">map</span>(<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;Theon Greyjoy&quot;
 ## 
@@ -823,55 +841,104 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [[30]]
 ## [1] &quot;Sansa Stark&quot;</code></pre>
 <p>Достаточно полезно знать о функции <code>unlist()</code>, которая “убивает” все сложную структуру:</p>
-<div class="sourceCode" id="cb667"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb667-1"><a href="lists.html#cb667-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb667-2"><a href="lists.html#cb667-2"></a><span class="st">  </span><span class="kw">map</span>(<span class="st">&quot;name&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb667-3"><a href="lists.html#cb667-3"></a><span class="st">  </span><span class="kw">unlist</span>()</span></code></pre></div>
-<pre><code>##  [1] &quot;Theon Greyjoy&quot;      &quot;Tyrion Lannister&quot;   &quot;Victarion Greyjoy&quot; 
-##  [4] &quot;Will&quot;               &quot;Areo Hotah&quot;         &quot;Chett&quot;             
-##  [7] &quot;Cressen&quot;            &quot;Arianne Martell&quot;    &quot;Daenerys Targaryen&quot;
-## [10] &quot;Davos Seaworth&quot;     &quot;Arya Stark&quot;         &quot;Arys Oakheart&quot;     
-## [13] &quot;Asha Greyjoy&quot;       &quot;Barristan Selmy&quot;    &quot;Varamyr&quot;           
-## [16] &quot;Brandon Stark&quot;      &quot;Brienne of Tarth&quot;   &quot;Catelyn Stark&quot;     
-## [19] &quot;Cersei Lannister&quot;   &quot;Eddard Stark&quot;       &quot;Jaime Lannister&quot;   
-## [22] &quot;Jon Connington&quot;     &quot;Jon Snow&quot;           &quot;Aeron Greyjoy&quot;     
-## [25] &quot;Kevan Lannister&quot;    &quot;Melisandre&quot;         &quot;Merrett Frey&quot;      
-## [28] &quot;Quentyn Martell&quot;    &quot;Samwell Tarly&quot;      &quot;Sansa Stark&quot;</code></pre>
+<div class="sourceCode" id="cb662"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb662-1"><a href="lists.html#cb662-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb662-2"><a href="lists.html#cb662-2"></a><span class="st">  </span><span class="kw">map</span>(<span class="st">&quot;name&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb662-3"><a href="lists.html#cb662-3"></a><span class="st">  </span><span class="kw">unlist</span>()</span></code></pre></div>
+<pre><code>##  [1] &quot;Theon Greyjoy&quot;     
+##  [2] &quot;Tyrion Lannister&quot;  
+##  [3] &quot;Victarion Greyjoy&quot; 
+##  [4] &quot;Will&quot;              
+##  [5] &quot;Areo Hotah&quot;        
+##  [6] &quot;Chett&quot;             
+##  [7] &quot;Cressen&quot;           
+##  [8] &quot;Arianne Martell&quot;   
+##  [9] &quot;Daenerys Targaryen&quot;
+## [10] &quot;Davos Seaworth&quot;    
+## [11] &quot;Arya Stark&quot;        
+## [12] &quot;Arys Oakheart&quot;     
+## [13] &quot;Asha Greyjoy&quot;      
+## [14] &quot;Barristan Selmy&quot;   
+## [15] &quot;Varamyr&quot;           
+## [16] &quot;Brandon Stark&quot;     
+## [17] &quot;Brienne of Tarth&quot;  
+## [18] &quot;Catelyn Stark&quot;     
+## [19] &quot;Cersei Lannister&quot;  
+## [20] &quot;Eddard Stark&quot;      
+## [21] &quot;Jaime Lannister&quot;   
+## [22] &quot;Jon Connington&quot;    
+## [23] &quot;Jon Snow&quot;          
+## [24] &quot;Aeron Greyjoy&quot;     
+## [25] &quot;Kevan Lannister&quot;   
+## [26] &quot;Melisandre&quot;        
+## [27] &quot;Merrett Frey&quot;      
+## [28] &quot;Quentyn Martell&quot;   
+## [29] &quot;Samwell Tarly&quot;     
+## [30] &quot;Sansa Stark&quot;</code></pre>
 <p>Для этого есть и отдельные функции, которые позволяют превратить все в вектор заданного типа:</p>
-<div class="sourceCode" id="cb669"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb669-1"><a href="lists.html#cb669-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb669-2"><a href="lists.html#cb669-2"></a><span class="st">  </span><span class="kw">map_chr</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
-<pre><code>##  [1] &quot;Theon Greyjoy&quot;      &quot;Tyrion Lannister&quot;   &quot;Victarion Greyjoy&quot; 
-##  [4] &quot;Will&quot;               &quot;Areo Hotah&quot;         &quot;Chett&quot;             
-##  [7] &quot;Cressen&quot;            &quot;Arianne Martell&quot;    &quot;Daenerys Targaryen&quot;
-## [10] &quot;Davos Seaworth&quot;     &quot;Arya Stark&quot;         &quot;Arys Oakheart&quot;     
-## [13] &quot;Asha Greyjoy&quot;       &quot;Barristan Selmy&quot;    &quot;Varamyr&quot;           
-## [16] &quot;Brandon Stark&quot;      &quot;Brienne of Tarth&quot;   &quot;Catelyn Stark&quot;     
-## [19] &quot;Cersei Lannister&quot;   &quot;Eddard Stark&quot;       &quot;Jaime Lannister&quot;   
-## [22] &quot;Jon Connington&quot;     &quot;Jon Snow&quot;           &quot;Aeron Greyjoy&quot;     
-## [25] &quot;Kevan Lannister&quot;    &quot;Melisandre&quot;         &quot;Merrett Frey&quot;      
-## [28] &quot;Quentyn Martell&quot;    &quot;Samwell Tarly&quot;      &quot;Sansa Stark&quot;</code></pre>
-<div class="sourceCode" id="cb671"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb671-1"><a href="lists.html#cb671-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb671-2"><a href="lists.html#cb671-2"></a><span class="st">  </span><span class="kw">map_int</span>(<span class="st">&quot;id&quot;</span>)</span></code></pre></div>
-<pre><code>##  [1] 1022 1052 1074 1109 1166 1267 1295  130 1303 1319  148  149  150  168 2066
-## [16]  208  216  232  238  339  529  576  583   60  605  743  751  844  954  957</code></pre>
-<div class="sourceCode" id="cb673"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb673-1"><a href="lists.html#cb673-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb673-2"><a href="lists.html#cb673-2"></a><span class="st">  </span><span class="kw">map_lgl</span>(<span class="st">&quot;alive&quot;</span>)</span></code></pre></div>
-<pre><code>##  [1]  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
-## [13]  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE
-## [25] FALSE  TRUE FALSE FALSE  TRUE  TRUE</code></pre>
+<div class="sourceCode" id="cb664"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb664-1"><a href="lists.html#cb664-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb664-2"><a href="lists.html#cb664-2"></a><span class="st">  </span><span class="kw">map_chr</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;Theon Greyjoy&quot;     
+##  [2] &quot;Tyrion Lannister&quot;  
+##  [3] &quot;Victarion Greyjoy&quot; 
+##  [4] &quot;Will&quot;              
+##  [5] &quot;Areo Hotah&quot;        
+##  [6] &quot;Chett&quot;             
+##  [7] &quot;Cressen&quot;           
+##  [8] &quot;Arianne Martell&quot;   
+##  [9] &quot;Daenerys Targaryen&quot;
+## [10] &quot;Davos Seaworth&quot;    
+## [11] &quot;Arya Stark&quot;        
+## [12] &quot;Arys Oakheart&quot;     
+## [13] &quot;Asha Greyjoy&quot;      
+## [14] &quot;Barristan Selmy&quot;   
+## [15] &quot;Varamyr&quot;           
+## [16] &quot;Brandon Stark&quot;     
+## [17] &quot;Brienne of Tarth&quot;  
+## [18] &quot;Catelyn Stark&quot;     
+## [19] &quot;Cersei Lannister&quot;  
+## [20] &quot;Eddard Stark&quot;      
+## [21] &quot;Jaime Lannister&quot;   
+## [22] &quot;Jon Connington&quot;    
+## [23] &quot;Jon Snow&quot;          
+## [24] &quot;Aeron Greyjoy&quot;     
+## [25] &quot;Kevan Lannister&quot;   
+## [26] &quot;Melisandre&quot;        
+## [27] &quot;Merrett Frey&quot;      
+## [28] &quot;Quentyn Martell&quot;   
+## [29] &quot;Samwell Tarly&quot;     
+## [30] &quot;Sansa Stark&quot;</code></pre>
+<div class="sourceCode" id="cb666"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb666-1"><a href="lists.html#cb666-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb666-2"><a href="lists.html#cb666-2"></a><span class="st">  </span><span class="kw">map_int</span>(<span class="st">&quot;id&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] 1022 1052 1074 1109 1166
+##  [6] 1267 1295  130 1303 1319
+## [11]  148  149  150  168 2066
+## [16]  208  216  232  238  339
+## [21]  529  576  583   60  605
+## [26]  743  751  844  954  957</code></pre>
+<div class="sourceCode" id="cb668"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb668-1"><a href="lists.html#cb668-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb668-2"><a href="lists.html#cb668-2"></a><span class="st">  </span><span class="kw">map_lgl</span>(<span class="st">&quot;alive&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1]  TRUE  TRUE  TRUE FALSE
+##  [5]  TRUE FALSE FALSE  TRUE
+##  [9]  TRUE  TRUE  TRUE FALSE
+## [13]  TRUE  TRUE FALSE  TRUE
+## [17]  TRUE FALSE  TRUE FALSE
+## [21]  TRUE  TRUE  TRUE  TRUE
+## [25] FALSE  TRUE FALSE FALSE
+## [29]  TRUE  TRUE</code></pre>
 <p>Можно даже создать новый датафрейм:</p>
-<div class="sourceCode" id="cb675"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb675-1"><a href="lists.html#cb675-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb675-2"><a href="lists.html#cb675-2"></a><span class="st">  </span><span class="kw">tibble</span>(<span class="dt">name =</span> <span class="kw">map_chr</span>(., <span class="st">&quot;name&quot;</span>), <span class="co"># точка обозначает, в какой аргумент должно все пайпиться</span></span>
-<span id="cb675-3"><a href="lists.html#cb675-3"></a>         <span class="dt">id =</span> <span class="kw">map_dbl</span>(., <span class="st">&quot;id&quot;</span>),</span>
-<span id="cb675-4"><a href="lists.html#cb675-4"></a>         <span class="dt">alive =</span> <span class="kw">map_lgl</span>(., <span class="st">&quot;alive&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb670"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb670-1"><a href="lists.html#cb670-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb670-2"><a href="lists.html#cb670-2"></a><span class="st">  </span><span class="kw">tibble</span>(<span class="dt">name =</span> <span class="kw">map_chr</span>(., <span class="st">&quot;name&quot;</span>), <span class="co"># точка обозначает, в какой аргумент должно все пайпиться</span></span>
+<span id="cb670-3"><a href="lists.html#cb670-3"></a>         <span class="dt">id =</span> <span class="kw">map_dbl</span>(., <span class="st">&quot;id&quot;</span>),</span>
+<span id="cb670-4"><a href="lists.html#cb670-4"></a>         <span class="dt">alive =</span> <span class="kw">map_lgl</span>(., <span class="st">&quot;alive&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["."],"name":[1],"type":["list"],"align":["right"]},{"label":["name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["id"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["alive"],"name":[4],"type":["lgl"],"align":["right"]}],"data":[{"1":"<list [18]>","2":"Theon Greyjoy","3":"1022","4":"TRUE"},{"1":"<list [18]>","2":"Tyrion Lannister","3":"1052","4":"TRUE"},{"1":"<list [18]>","2":"Victarion Greyjoy","3":"1074","4":"TRUE"},{"1":"<list [18]>","2":"Will","3":"1109","4":"FALSE"},{"1":"<list [18]>","2":"Areo Hotah","3":"1166","4":"TRUE"},{"1":"<list [18]>","2":"Chett","3":"1267","4":"FALSE"},{"1":"<list [18]>","2":"Cressen","3":"1295","4":"FALSE"},{"1":"<list [18]>","2":"Arianne Martell","3":"130","4":"TRUE"},{"1":"<list [18]>","2":"Daenerys Targaryen","3":"1303","4":"TRUE"},{"1":"<list [18]>","2":"Davos Seaworth","3":"1319","4":"TRUE"},{"1":"<list [18]>","2":"Arya Stark","3":"148","4":"TRUE"},{"1":"<list [18]>","2":"Arys Oakheart","3":"149","4":"FALSE"},{"1":"<list [18]>","2":"Asha Greyjoy","3":"150","4":"TRUE"},{"1":"<list [18]>","2":"Barristan Selmy","3":"168","4":"TRUE"},{"1":"<list [18]>","2":"Varamyr","3":"2066","4":"FALSE"},{"1":"<list [18]>","2":"Brandon Stark","3":"208","4":"TRUE"},{"1":"<list [18]>","2":"Brienne of Tarth","3":"216","4":"TRUE"},{"1":"<list [18]>","2":"Catelyn Stark","3":"232","4":"FALSE"},{"1":"<list [18]>","2":"Cersei Lannister","3":"238","4":"TRUE"},{"1":"<list [18]>","2":"Eddard Stark","3":"339","4":"FALSE"},{"1":"<list [18]>","2":"Jaime Lannister","3":"529","4":"TRUE"},{"1":"<list [18]>","2":"Jon Connington","3":"576","4":"TRUE"},{"1":"<list [18]>","2":"Jon Snow","3":"583","4":"TRUE"},{"1":"<list [18]>","2":"Aeron Greyjoy","3":"60","4":"TRUE"},{"1":"<list [18]>","2":"Kevan Lannister","3":"605","4":"FALSE"},{"1":"<list [18]>","2":"Melisandre","3":"743","4":"TRUE"},{"1":"<list [18]>","2":"Merrett Frey","3":"751","4":"FALSE"},{"1":"<list [18]>","2":"Quentyn Martell","3":"844","4":"FALSE"},{"1":"<list [18]>","2":"Samwell Tarly","3":"954","4":"TRUE"},{"1":"<list [18]>","2":"Sansa Stark","3":"957","4":"TRUE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Также существует способ создание датафреймов на основе вектора значений при помощи функции <code>enframe()</code>:</p>
-<div class="sourceCode" id="cb676"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb676-1"><a href="lists.html#cb676-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb676-2"><a href="lists.html#cb676-2"></a><span class="st">  </span><span class="kw">map_chr</span>(<span class="st">&quot;name&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb676-3"><a href="lists.html#cb676-3"></a><span class="st">  </span><span class="kw">enframe</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb671"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb671-1"><a href="lists.html#cb671-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb671-2"><a href="lists.html#cb671-2"></a><span class="st">  </span><span class="kw">map_chr</span>(<span class="st">&quot;name&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb671-3"><a href="lists.html#cb671-3"></a><span class="st">  </span><span class="kw">enframe</span>()</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["name"],"name":[1],"type":["int"],"align":["right"]},{"label":["value"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"Theon Greyjoy"},{"1":"2","2":"Tyrion Lannister"},{"1":"3","2":"Victarion Greyjoy"},{"1":"4","2":"Will"},{"1":"5","2":"Areo Hotah"},{"1":"6","2":"Chett"},{"1":"7","2":"Cressen"},{"1":"8","2":"Arianne Martell"},{"1":"9","2":"Daenerys Targaryen"},{"1":"10","2":"Davos Seaworth"},{"1":"11","2":"Arya Stark"},{"1":"12","2":"Arys Oakheart"},{"1":"13","2":"Asha Greyjoy"},{"1":"14","2":"Barristan Selmy"},{"1":"15","2":"Varamyr"},{"1":"16","2":"Brandon Stark"},{"1":"17","2":"Brienne of Tarth"},{"1":"18","2":"Catelyn Stark"},{"1":"19","2":"Cersei Lannister"},{"1":"20","2":"Eddard Stark"},{"1":"21","2":"Jaime Lannister"},{"1":"22","2":"Jon Connington"},{"1":"23","2":"Jon Snow"},{"1":"24","2":"Aeron Greyjoy"},{"1":"25","2":"Kevan Lannister"},{"1":"26","2":"Melisandre"},{"1":"27","2":"Merrett Frey"},{"1":"28","2":"Quentyn Martell"},{"1":"29","2":"Samwell Tarly"},{"1":"30","2":"Sansa Stark"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -884,8 +951,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-314-1.png" width="672" /></p>
 <p>Также можно использовать комбинацию функции <code>map()</code> и <code>attr_getter()</code> чтобы доставать все значения аттрибутов:</p>
-<div class="sourceCode" id="cb677"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb677-1"><a href="lists.html#cb677-1"></a>xml_example<span class="op">$</span>body <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb677-2"><a href="lists.html#cb677-2"></a><span class="st">  </span><span class="kw">map</span>(<span class="kw">attr_getter</span>(<span class="st">&quot;amount&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb672"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb672-1"><a href="lists.html#cb672-1"></a>xml_example<span class="op">$</span>body <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb672-2"><a href="lists.html#cb672-2"></a><span class="st">  </span><span class="kw">map</span>(<span class="kw">attr_getter</span>(<span class="st">&quot;amount&quot;</span>))</span></code></pre></div>
 <pre><code>## $ingredient
 ## [1] &quot;3&quot;
 ## 
@@ -898,39 +965,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="фильтрация-списков" class="section level3">
 <h3><span class="header-section-number">6.2.2</span> Фильтрация списков</h3>
 <p>Если в списке есть логические выражения, их можно использовать как фильтры. Например, вот так мы оставим только живых героев:</p>
-<div class="sourceCode" id="cb679"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb679-1"><a href="lists.html#cb679-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb679-2"><a href="lists.html#cb679-2"></a><span class="st">  </span><span class="kw">keep</span>(<span class="st">&quot;alive&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb679-3"><a href="lists.html#cb679-3"></a><span class="st">  </span><span class="kw">map_chr</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
-<pre><code>##  [1] &quot;Theon Greyjoy&quot;      &quot;Tyrion Lannister&quot;   &quot;Victarion Greyjoy&quot; 
-##  [4] &quot;Areo Hotah&quot;         &quot;Arianne Martell&quot;    &quot;Daenerys Targaryen&quot;
-##  [7] &quot;Davos Seaworth&quot;     &quot;Arya Stark&quot;         &quot;Asha Greyjoy&quot;      
-## [10] &quot;Barristan Selmy&quot;    &quot;Brandon Stark&quot;      &quot;Brienne of Tarth&quot;  
-## [13] &quot;Cersei Lannister&quot;   &quot;Jaime Lannister&quot;    &quot;Jon Connington&quot;    
-## [16] &quot;Jon Snow&quot;           &quot;Aeron Greyjoy&quot;      &quot;Melisandre&quot;        
-## [19] &quot;Samwell Tarly&quot;      &quot;Sansa Stark&quot;</code></pre>
+<div class="sourceCode" id="cb674"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb674-1"><a href="lists.html#cb674-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb674-2"><a href="lists.html#cb674-2"></a><span class="st">  </span><span class="kw">keep</span>(<span class="st">&quot;alive&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb674-3"><a href="lists.html#cb674-3"></a><span class="st">  </span><span class="kw">map_chr</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;Theon Greyjoy&quot;     
+##  [2] &quot;Tyrion Lannister&quot;  
+##  [3] &quot;Victarion Greyjoy&quot; 
+##  [4] &quot;Areo Hotah&quot;        
+##  [5] &quot;Arianne Martell&quot;   
+##  [6] &quot;Daenerys Targaryen&quot;
+##  [7] &quot;Davos Seaworth&quot;    
+##  [8] &quot;Arya Stark&quot;        
+##  [9] &quot;Asha Greyjoy&quot;      
+## [10] &quot;Barristan Selmy&quot;   
+## [11] &quot;Brandon Stark&quot;     
+## [12] &quot;Brienne of Tarth&quot;  
+## [13] &quot;Cersei Lannister&quot;  
+## [14] &quot;Jaime Lannister&quot;   
+## [15] &quot;Jon Connington&quot;    
+## [16] &quot;Jon Snow&quot;          
+## [17] &quot;Aeron Greyjoy&quot;     
+## [18] &quot;Melisandre&quot;        
+## [19] &quot;Samwell Tarly&quot;     
+## [20] &quot;Sansa Stark&quot;</code></pre>
 <p><img src="images/6.02_keep.png" /></p>
 <p>А так – только мертвых:</p>
-<div class="sourceCode" id="cb681"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb681-1"><a href="lists.html#cb681-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb681-2"><a href="lists.html#cb681-2"></a><span class="st">  </span><span class="kw">discard</span>(<span class="st">&quot;alive&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb681-3"><a href="lists.html#cb681-3"></a><span class="st">  </span><span class="kw">map_chr</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
-<pre><code>##  [1] &quot;Will&quot;            &quot;Chett&quot;           &quot;Cressen&quot;         &quot;Arys Oakheart&quot;  
-##  [5] &quot;Varamyr&quot;         &quot;Catelyn Stark&quot;   &quot;Eddard Stark&quot;    &quot;Kevan Lannister&quot;
-##  [9] &quot;Merrett Frey&quot;    &quot;Quentyn Martell&quot;</code></pre>
+<div class="sourceCode" id="cb676"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb676-1"><a href="lists.html#cb676-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb676-2"><a href="lists.html#cb676-2"></a><span class="st">  </span><span class="kw">discard</span>(<span class="st">&quot;alive&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb676-3"><a href="lists.html#cb676-3"></a><span class="st">  </span><span class="kw">map_chr</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;Will&quot;           
+##  [2] &quot;Chett&quot;          
+##  [3] &quot;Cressen&quot;        
+##  [4] &quot;Arys Oakheart&quot;  
+##  [5] &quot;Varamyr&quot;        
+##  [6] &quot;Catelyn Stark&quot;  
+##  [7] &quot;Eddard Stark&quot;   
+##  [8] &quot;Kevan Lannister&quot;
+##  [9] &quot;Merrett Frey&quot;   
+## [10] &quot;Quentyn Martell&quot;</code></pre>
 <p><img src="images/6.03_discard.png" /></p>
 <p>Также есть особый фильтр <code>head_while()</code> и <code>tail_while()</code>, который выделяет единицы (с начала и конца) до первого <code>FALSE</code>.</p>
-<div class="sourceCode" id="cb683"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb683-1"><a href="lists.html#cb683-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb683-2"><a href="lists.html#cb683-2"></a><span class="st">  </span><span class="kw">head_while</span>(<span class="st">&quot;alive&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb683-3"><a href="lists.html#cb683-3"></a><span class="st">  </span><span class="kw">map_chr</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;Theon Greyjoy&quot;     &quot;Tyrion Lannister&quot;  &quot;Victarion Greyjoy&quot;</code></pre>
-<div class="sourceCode" id="cb685"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb685-1"><a href="lists.html#cb685-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb685-2"><a href="lists.html#cb685-2"></a><span class="st">  </span><span class="kw">tail_while</span>(<span class="st">&quot;alive&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb685-3"><a href="lists.html#cb685-3"></a><span class="st">  </span><span class="kw">map_chr</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;Samwell Tarly&quot; &quot;Sansa Stark&quot;</code></pre>
+<div class="sourceCode" id="cb678"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb678-1"><a href="lists.html#cb678-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb678-2"><a href="lists.html#cb678-2"></a><span class="st">  </span><span class="kw">head_while</span>(<span class="st">&quot;alive&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb678-3"><a href="lists.html#cb678-3"></a><span class="st">  </span><span class="kw">map_chr</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;Theon Greyjoy&quot;    
+## [2] &quot;Tyrion Lannister&quot; 
+## [3] &quot;Victarion Greyjoy&quot;</code></pre>
+<div class="sourceCode" id="cb680"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb680-1"><a href="lists.html#cb680-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb680-2"><a href="lists.html#cb680-2"></a><span class="st">  </span><span class="kw">tail_while</span>(<span class="st">&quot;alive&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb680-3"><a href="lists.html#cb680-3"></a><span class="st">  </span><span class="kw">map_chr</span>(<span class="st">&quot;name&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;Samwell Tarly&quot;
+## [2] &quot;Sansa Stark&quot;</code></pre>
 <p><img src="images/6.04_head_while.png" /></p>
 <p>Если все еще не понятно, взгляните на нашу таблицу:</p>
-<div class="sourceCode" id="cb687"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb687-1"><a href="lists.html#cb687-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb687-2"><a href="lists.html#cb687-2"></a><span class="st">  </span><span class="kw">tibble</span>(<span class="dt">name =</span> <span class="kw">map_chr</span>(., <span class="st">&quot;name&quot;</span>), <span class="co"># точка обозначает, в какой аргумент должно все пайпиться</span></span>
-<span id="cb687-3"><a href="lists.html#cb687-3"></a>         <span class="dt">alive =</span> <span class="kw">map_lgl</span>(., <span class="st">&quot;alive&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb682"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb682-1"><a href="lists.html#cb682-1"></a>got_chars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb682-2"><a href="lists.html#cb682-2"></a><span class="st">  </span><span class="kw">tibble</span>(<span class="dt">name =</span> <span class="kw">map_chr</span>(., <span class="st">&quot;name&quot;</span>), <span class="co"># точка обозначает, в какой аргумент должно все пайпиться</span></span>
+<span id="cb682-3"><a href="lists.html#cb682-3"></a>         <span class="dt">alive =</span> <span class="kw">map_lgl</span>(., <span class="st">&quot;alive&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["."],"name":[1],"type":["list"],"align":["right"]},{"label":["name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["alive"],"name":[3],"type":["lgl"],"align":["right"]}],"data":[{"1":"<list [18]>","2":"Theon Greyjoy","3":"TRUE"},{"1":"<list [18]>","2":"Tyrion Lannister","3":"TRUE"},{"1":"<list [18]>","2":"Victarion Greyjoy","3":"TRUE"},{"1":"<list [18]>","2":"Will","3":"FALSE"},{"1":"<list [18]>","2":"Areo Hotah","3":"TRUE"},{"1":"<list [18]>","2":"Chett","3":"FALSE"},{"1":"<list [18]>","2":"Cressen","3":"FALSE"},{"1":"<list [18]>","2":"Arianne Martell","3":"TRUE"},{"1":"<list [18]>","2":"Daenerys Targaryen","3":"TRUE"},{"1":"<list [18]>","2":"Davos Seaworth","3":"TRUE"},{"1":"<list [18]>","2":"Arya Stark","3":"TRUE"},{"1":"<list [18]>","2":"Arys Oakheart","3":"FALSE"},{"1":"<list [18]>","2":"Asha Greyjoy","3":"TRUE"},{"1":"<list [18]>","2":"Barristan Selmy","3":"TRUE"},{"1":"<list [18]>","2":"Varamyr","3":"FALSE"},{"1":"<list [18]>","2":"Brandon Stark","3":"TRUE"},{"1":"<list [18]>","2":"Brienne of Tarth","3":"TRUE"},{"1":"<list [18]>","2":"Catelyn Stark","3":"FALSE"},{"1":"<list [18]>","2":"Cersei Lannister","3":"TRUE"},{"1":"<list [18]>","2":"Eddard Stark","3":"FALSE"},{"1":"<list [18]>","2":"Jaime Lannister","3":"TRUE"},{"1":"<list [18]>","2":"Jon Connington","3":"TRUE"},{"1":"<list [18]>","2":"Jon Snow","3":"TRUE"},{"1":"<list [18]>","2":"Aeron Greyjoy","3":"TRUE"},{"1":"<list [18]>","2":"Kevan Lannister","3":"FALSE"},{"1":"<list [18]>","2":"Melisandre","3":"TRUE"},{"1":"<list [18]>","2":"Merrett Frey","3":"FALSE"},{"1":"<list [18]>","2":"Quentyn Martell","3":"FALSE"},{"1":"<list [18]>","2":"Samwell Tarly","3":"TRUE"},{"1":"<list [18]>","2":"Sansa Stark","3":"TRUE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -940,8 +1030,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="операции-со-списками" class="section level3">
 <h3><span class="header-section-number">6.2.3</span> Операции со списками</h3>
 <p>Рассмотрим простой пример:</p>
-<div class="sourceCode" id="cb688"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb688-1"><a href="lists.html#cb688-1"></a>my_l &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">a =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">b =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>), <span class="dt">c =</span> <span class="kw">list</span>(<span class="st">&quot;z&quot;</span>, <span class="kw">c</span>(<span class="dv">8</span>, <span class="dv">9</span>)))</span>
-<span id="cb688-2"><a href="lists.html#cb688-2"></a>my_l</span></code></pre></div>
+<div class="sourceCode" id="cb683"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb683-1"><a href="lists.html#cb683-1"></a>my_l &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">a =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">b =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>), <span class="dt">c =</span> <span class="kw">list</span>(<span class="st">&quot;z&quot;</span>, <span class="kw">c</span>(<span class="dv">8</span>, <span class="dv">9</span>)))</span>
+<span id="cb683-2"><a href="lists.html#cb683-2"></a>my_l</span></code></pre></div>
 <pre><code>## $a
 ## [1] 1 2 3
 ## 
@@ -955,18 +1045,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $c[[2]]
 ## [1] 8 9</code></pre>
 <p>Как уже говорилось выше, функция <code>unlist()</code> линеаризует списки, превращая их в векторы:</p>
-<div class="sourceCode" id="cb690"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb690-1"><a href="lists.html#cb690-1"></a>my_l <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb690-2"><a href="lists.html#cb690-2"></a><span class="st">  </span><span class="kw">unlist</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb685"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb685-1"><a href="lists.html#cb685-1"></a>my_l <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb685-2"><a href="lists.html#cb685-2"></a><span class="st">  </span><span class="kw">unlist</span>()</span></code></pre></div>
 <pre><code>##  a1  a2  a3  b1  b2  c1  c2  c3 
 ## &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;a&quot; &quot;b&quot; &quot;z&quot; &quot;8&quot; &quot;9&quot;</code></pre>
 <p>Получился поименнованный вектор, если этого недостаточно, можно уничтожить и имена при помощи функции <code>unname()</code>:</p>
-<div class="sourceCode" id="cb692"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb692-1"><a href="lists.html#cb692-1"></a>my_l <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb692-2"><a href="lists.html#cb692-2"></a><span class="st">  </span><span class="kw">unlist</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb692-3"><a href="lists.html#cb692-3"></a><span class="st">  </span><span class="kw">unname</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;a&quot; &quot;b&quot; &quot;z&quot; &quot;8&quot; &quot;9&quot;</code></pre>
+<div class="sourceCode" id="cb687"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb687-1"><a href="lists.html#cb687-1"></a>my_l <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb687-2"><a href="lists.html#cb687-2"></a><span class="st">  </span><span class="kw">unlist</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb687-3"><a href="lists.html#cb687-3"></a><span class="st">  </span><span class="kw">unname</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;a&quot; &quot;b&quot; &quot;z&quot; &quot;8&quot;
+## [8] &quot;9&quot;</code></pre>
 <p>Функция <code>flatten</code> позволяет уничтожить <strong>лишь один, верхний,</strong>, уровень иерархии:</p>
-<div class="sourceCode" id="cb694"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb694-1"><a href="lists.html#cb694-1"></a>my_l <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb694-2"><a href="lists.html#cb694-2"></a><span class="st">  </span><span class="kw">flatten</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb689"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb689-1"><a href="lists.html#cb689-1"></a>my_l <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb689-2"><a href="lists.html#cb689-2"></a><span class="st">  </span><span class="kw">flatten</span>()</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 1
 ## 
@@ -990,8 +1081,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/6.05_flatten.png" /></p>
 <p>Как видно из этого примера, первый элемент списка <code>my_l</code> превратился в три первых элемента списка, а вот подсписок <code>c = list("z", c(8, 9))</code> превратился в элемент <code>z</code> и вектор <code>c(8, 9)</code>.</p>
 <p>Существуют также функции <code>append()</code> и <code>prepend()</code>, которые позволяют добавлять новый посписок после (или до) старого:</p>
-<div class="sourceCode" id="cb696"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb696-1"><a href="lists.html#cb696-1"></a><span class="kw">list</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb696-2"><a href="lists.html#cb696-2"></a><span class="st">  </span><span class="kw">append</span>(<span class="kw">list</span>(<span class="dt">new =</span> <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb691"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb691-1"><a href="lists.html#cb691-1"></a><span class="kw">list</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb691-2"><a href="lists.html#cb691-2"></a><span class="st">  </span><span class="kw">append</span>(<span class="kw">list</span>(<span class="dt">new =</span> <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>)))</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 1 2
 ## 
@@ -1000,8 +1091,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## $new
 ## [1]  TRUE FALSE</code></pre>
-<div class="sourceCode" id="cb698"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb698-1"><a href="lists.html#cb698-1"></a><span class="kw">list</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb698-2"><a href="lists.html#cb698-2"></a><span class="st">  </span><span class="kw">prepend</span>(<span class="kw">list</span>(<span class="dt">new =</span> <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb693"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb693-1"><a href="lists.html#cb693-1"></a><span class="kw">list</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb693-2"><a href="lists.html#cb693-2"></a><span class="st">  </span><span class="kw">prepend</span>(<span class="kw">list</span>(<span class="dt">new =</span> <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>)))</span></code></pre></div>
 <pre><code>## $new
 ## [1]  TRUE FALSE
 ## 
@@ -1011,9 +1102,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [[3]]
 ## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
 <p>Существует также функции <code>cross()</code> и <code>cross2()</code>, которые позволяют получить уникальные комбинации объектов из двух списков:</p>
-<div class="sourceCode" id="cb700"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb700-1"><a href="lists.html#cb700-1"></a><span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>), <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb700-2"><a href="lists.html#cb700-2"></a><span class="st">  </span><span class="kw">cross</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb700-3"><a href="lists.html#cb700-3"></a><span class="st">  </span><span class="kw">str</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb695"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb695-1"><a href="lists.html#cb695-1"></a><span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>), <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb695-2"><a href="lists.html#cb695-2"></a><span class="st">  </span><span class="kw">cross</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb695-3"><a href="lists.html#cb695-3"></a><span class="st">  </span><span class="kw">str</span>()</span></code></pre></div>
 <pre><code>## List of 6
 ##  $ :List of 2
 ##   ..$ : chr &quot;a&quot;
@@ -1033,9 +1124,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  $ :List of 2
 ##   ..$ : chr &quot;b&quot;
 ##   ..$ : int 3</code></pre>
-<div class="sourceCode" id="cb702"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb702-1"><a href="lists.html#cb702-1"></a><span class="kw">list</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb702-2"><a href="lists.html#cb702-2"></a><span class="st">  </span><span class="kw">cross2</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb702-3"><a href="lists.html#cb702-3"></a><span class="st">  </span><span class="kw">str</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb697"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb697-1"><a href="lists.html#cb697-1"></a><span class="kw">list</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb697-2"><a href="lists.html#cb697-2"></a><span class="st">  </span><span class="kw">cross2</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb697-3"><a href="lists.html#cb697-3"></a><span class="st">  </span><span class="kw">str</span>()</span></code></pre></div>
 <pre><code>## List of 6
 ##  $ :List of 2
 ##   ..$ : chr &quot;a&quot;

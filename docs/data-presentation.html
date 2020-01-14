@@ -54,6 +54,16 @@
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
 <script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
+<script src="libs/Leaflet.Sync-0.0.5/L.Map.Sync.js"></script>
 
 
 <style type="text/css">
@@ -284,7 +294,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2" data-path="tidytext.html"><a href="tidytext.html#библиотека-tidytext"><i class="fa fa-check"></i><b>9.2</b> Библиотека <code>tidytext</code></a></li>
 <li class="chapter" data-level="9.3" data-path="tidytext.html"><a href="tidytext.html#пакет-udpipe"><i class="fa fa-check"></i><b>9.3</b> Пакет udpipe</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html"><i class="fa fa-check"></i><b>10</b> Работа с геоданными: leaflet, geojson</a></li>
+<li class="chapter" data-level="10" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html"><i class="fa fa-check"></i><b>10</b> Работа с геоданными: <code>leaflet</code></a><ul>
+<li class="chapter" data-level="10.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#векторная-и-растровая-графика"><i class="fa fa-check"></i><b>10.1</b> Векторная и растровая графика</a></li>
+<li class="chapter" data-level="10.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#картографические-примитивы"><i class="fa fa-check"></i><b>10.2</b> Картографические примитивы</a></li>
+<li class="chapter" data-level="10.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#leaflet"><i class="fa fa-check"></i><b>10.3</b> <code>leaflet</code></a><ul>
+<li class="chapter" data-level="10.3.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#csv-файлы"><i class="fa fa-check"></i><b>10.3.1</b> <code>.csv</code> файлы</a></li>
+<li class="chapter" data-level="10.3.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#комбинация-карт-leafsync"><i class="fa fa-check"></i><b>10.3.2</b> Комбинация карт: <code>leafsync</code></a></li>
+<li class="chapter" data-level="10.3.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#работа-с-.geojson"><i class="fa fa-check"></i><b>10.3.3</b> Работа с <code>.geojson</code></a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="11" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html"><i class="fa fa-check"></i><b>11</b> Работа со временем: <code>lubridate</code></a><ul>
 <li class="chapter" data-level="11.1" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#создание-даты"><i class="fa fa-check"></i><b>11.1</b> Создание даты</a></li>
 <li class="chapter" data-level="11.2" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#извлечение-компонентов-даты"><i class="fa fa-check"></i><b>11.2</b> Извлечение компонентов даты</a></li>
@@ -345,7 +363,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="установка" class="section level3">
 <h3><span class="header-section-number">7.1.1</span> Установка</h3>
 <p>Как и все пакеты <code>rmarkdown</code> можно установить из CRAN</p>
-<div class="sourceCode" id="cb704"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb704-1"><a href="data-presentation.html#cb704-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb699"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb699-1"><a href="data-presentation.html#cb699-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span></code></pre></div>
 </div>
 <div id="составляющие-rmarkdown-документа" class="section level3">
 <h3><span class="header-section-number">7.1.2</span> Составляющие <code>rmarkdown</code>-документа</h3>
@@ -358,7 +376,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="пример-rmarkdown-документа" class="section level3">
 <h3><span class="header-section-number">7.1.3</span> Пример <code>rmarkdown</code>-документа</h3>
 <p>Создайте файл .Rmd в какой-нибудь папке (в RStudio, это можно сделать <code>File &gt; New file &gt; R Markdown</code>). Скомпелировать файл можно командой:</p>
-<div class="sourceCode" id="cb705"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb705-1"><a href="data-presentation.html#cb705-1"></a>rmarkdown<span class="op">::</span><span class="kw">render</span>(<span class="st">&quot;ваш_файл.Rmd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb700"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb700-1"><a href="data-presentation.html#cb700-1"></a>rmarkdown<span class="op">::</span><span class="kw">render</span>(<span class="st">&quot;ваш_файл.Rmd&quot;</span>)</span></code></pre></div>
 <p>или кнопкой <img src="images/7.01_knit.png" />. Вот пример кода:</p>
 <pre><code>---
 output: html_document
@@ -470,9 +488,9 @@ friends = [&#39;john&#39;, &#39;pat&#39;, &#39;gary&#39;, &#39;michael&#39;]
 for i, name in enumerate(friends):
     print &quot;iteration {iteration} is {name}&quot;.format(iteration=i, name=name)
 ```</code></pre>
-<div class="sourceCode" id="cb713"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb713-1"><a href="data-presentation.html#cb713-1"></a>collection <span class="op">=</span> [<span class="st">&#39;hey&#39;</span>, <span class="dv">5</span>, <span class="st">&#39;d&#39;</span>]</span>
-<span id="cb713-2"><a href="data-presentation.html#cb713-2"></a><span class="cf">for</span> x <span class="kw">in</span> collection:</span>
-<span id="cb713-3"><a href="data-presentation.html#cb713-3"></a>    <span class="bu">print</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb708"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb708-1"><a href="data-presentation.html#cb708-1"></a>collection <span class="op">=</span> [<span class="st">&#39;hey&#39;</span>, <span class="dv">5</span>, <span class="st">&#39;d&#39;</span>]</span>
+<span id="cb708-2"><a href="data-presentation.html#cb708-2"></a><span class="cf">for</span> x <span class="kw">in</span> collection:</span>
+<span id="cb708-3"><a href="data-presentation.html#cb708-3"></a>    <span class="bu">print</span>(x)</span></code></pre></div>
 <pre><code>hey
 5
 d</code></pre>
@@ -578,7 +596,7 @@ summary(cars)
 x = &quot;my string&quot;
 print(x.split(&quot; &quot;))
 ```</code></pre>
-<div class="sourceCode" id="cb723"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb723-1"><a href="data-presentation.html#cb723-1"></a><span class="kw">summary</span>(cars)</span></code></pre></div>
+<div class="sourceCode" id="cb718"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb718-1"><a href="data-presentation.html#cb718-1"></a><span class="kw">summary</span>(cars)</span></code></pre></div>
 <pre><code>     speed           dist       
  Min.   : 4.0   Min.   :  2.00  
  1st Qu.:12.0   1st Qu.: 26.00  
@@ -586,8 +604,8 @@ print(x.split(&quot; &quot;))
  Mean   :15.4   Mean   : 42.98  
  3rd Qu.:19.0   3rd Qu.: 56.00  
  Max.   :25.0   Max.   :120.00  </code></pre>
-<div class="sourceCode" id="cb725"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb725-1"><a href="data-presentation.html#cb725-1"></a>x <span class="op">=</span> <span class="st">&quot;my string&quot;</span></span>
-<span id="cb725-2"><a href="data-presentation.html#cb725-2"></a><span class="bu">print</span>(x.split(<span class="st">&quot; &quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb720"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb720-1"><a href="data-presentation.html#cb720-1"></a>x <span class="op">=</span> <span class="st">&quot;my string&quot;</span></span>
+<span id="cb720-2"><a href="data-presentation.html#cb720-2"></a><span class="bu">print</span>(x.split(<span class="st">&quot; &quot;</span>))</span></code></pre></div>
 <pre><code>[&#39;my&#39;, &#39;string&#39;]</code></pre>
 </div>
 <div id="появление-и-исполнение-кода" class="section level4">

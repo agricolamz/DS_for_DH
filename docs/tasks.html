@@ -54,6 +54,16 @@
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
 <script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
+<script src="libs/Leaflet.Sync-0.0.5/L.Map.Sync.js"></script>
 
 
 <style type="text/css">
@@ -284,7 +294,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2" data-path="tidytext.html"><a href="tidytext.html#библиотека-tidytext"><i class="fa fa-check"></i><b>9.2</b> Библиотека <code>tidytext</code></a></li>
 <li class="chapter" data-level="9.3" data-path="tidytext.html"><a href="tidytext.html#пакет-udpipe"><i class="fa fa-check"></i><b>9.3</b> Пакет udpipe</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="работа-с-геоданными-leaflet-geojson.html"><a href="работа-с-геоданными-leaflet-geojson.html"><i class="fa fa-check"></i><b>10</b> Работа с геоданными: leaflet, geojson</a></li>
+<li class="chapter" data-level="10" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html"><i class="fa fa-check"></i><b>10</b> Работа с геоданными: <code>leaflet</code></a><ul>
+<li class="chapter" data-level="10.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#векторная-и-растровая-графика"><i class="fa fa-check"></i><b>10.1</b> Векторная и растровая графика</a></li>
+<li class="chapter" data-level="10.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#картографические-примитивы"><i class="fa fa-check"></i><b>10.2</b> Картографические примитивы</a></li>
+<li class="chapter" data-level="10.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#leaflet"><i class="fa fa-check"></i><b>10.3</b> <code>leaflet</code></a><ul>
+<li class="chapter" data-level="10.3.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#csv-файлы"><i class="fa fa-check"></i><b>10.3.1</b> <code>.csv</code> файлы</a></li>
+<li class="chapter" data-level="10.3.2" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#комбинация-карт-leafsync"><i class="fa fa-check"></i><b>10.3.2</b> Комбинация карт: <code>leafsync</code></a></li>
+<li class="chapter" data-level="10.3.3" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#работа-с-.geojson"><i class="fa fa-check"></i><b>10.3.3</b> Работа с <code>.geojson</code></a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="11" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html"><i class="fa fa-check"></i><b>11</b> Работа со временем: <code>lubridate</code></a><ul>
 <li class="chapter" data-level="11.1" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#создание-даты"><i class="fa fa-check"></i><b>11.1</b> Создание даты</a></li>
 <li class="chapter" data-level="11.2" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#извлечение-компонентов-даты"><i class="fa fa-check"></i><b>11.2</b> Извлечение компонентов даты</a></li>
@@ -348,25 +366,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Создайте вектор от 1 до 20</li>
 </ul>
-<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9
+[10] 10 11 12 13 14 15 16 17 18
+[19] 19 20</code></pre>
 <ul>
 <li>Создайте вектор от 20 до 1</li>
 </ul>
-<pre><code> [1] 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1</code></pre>
+<pre><code> [1] 20 19 18 17 16 15 14 13 12
+[10] 11 10  9  8  7  6  5  4  3
+[19]  2  1</code></pre>
 <ul>
 <li>Создайте вектор от 1 до 20 и снова до 1. Число 20 должно присутствовать только один раз!</li>
 </ul>
-<pre><code> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 19 18 17 16 15
-[26] 14 13 12 11 10  9  8  7  6  5  4  3  2  1</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9
+[10] 10 11 12 13 14 15 16 17 18
+[19] 19 20 19 18 17 16 15 14 13
+[28] 12 11 10  9  8  7  6  5  4
+[37]  3  2  1</code></pre>
 <ul>
 <li>Создайте вектор 2, 4, 6, … , 18, 20</li>
 </ul>
-<pre><code> [1]  2  4  6  8 10 12 14 16 18 20</code></pre>
+<pre><code> [1]  2  4  6  8 10 12 14 16 18
+[10] 20</code></pre>
 <ul>
 <li>Создайте вектор из одной единицы, двух двоек, трех троек, …. , девяти девяток</li>
 </ul>
-<pre><code> [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9
-[39] 9 9 9 9 9 9 9</code></pre>
+<pre><code> [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5
+[15] 5 6 6 6 6 6 6 7 7 7 7 7 7 7
+[29] 8 8 8 8 8 8 8 8 9 9 9 9 9 9
+[43] 9 9 9</code></pre>
 <ul>
 <li>Сделайте вектор vec, в котором соедините <code>3</code>, а также значения <code>"Мой"</code> и <code>"вектор"</code>.</li>
 </ul>
@@ -401,18 +429,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>О, да, Вам нужно делить на 0!</p>
 </blockquote>
-<pre><code>[1]      Inf 5.000000 3.000000 2.333333</code></pre>
+<pre><code>[1]      Inf 5.000000 3.000000
+[4] 2.333333</code></pre>
 <p>Возведите каждый элемент вектора <code>p</code> в степень соответствующего ему элемента вектора <code>q</code>:</p>
 <pre><code>[1]   1   5  36 343</code></pre>
 <p>Создайте вектор квадратов чисел от 1 до 10:</p>
-<pre><code> [1]   1   4   9  16  25  36  49  64  81 100</code></pre>
+<pre><code> [1]   1   4   9  16  25  36  49
+ [8]  64  81 100</code></pre>
 <p>Создайте вектор 0, 2, 0, 4, … , 18, 0, 20</p>
-<pre><code> [1]  0  2  0  4  0  6  0  8  0 10  0 12  0 14  0 16  0 18  0 20</code></pre>
+<pre><code> [1]  0  2  0  4  0  6  0  8  0
+[10] 10  0 12  0 14  0 16  0 18
+[19]  0 20</code></pre>
 </div>
 <div id="vec_task_2" class="section level2">
 <h2><span class="header-section-number">20.3</span> Вектор. Индексирование</h2>
 <p>Создайте вектор <code>vec1</code>:</p>
-<div class="sourceCode" id="cb960"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb960-1"><a href="tasks.html#cb960-1"></a>vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">15</span>, <span class="dv">1</span>, <span class="dv">11</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb994"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb994-1"><a href="tasks.html#cb994-1"></a>vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">15</span>, <span class="dv">1</span>, <span class="dv">11</span>)</span></code></pre></div>
 <ul>
 <li>Найдите второй элемент вектора <code>vec1</code>:</li>
 </ul>
@@ -432,16 +464,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Возведите в квадрат каждое значение вектора <code>vec1</code></li>
 </ul>
-<pre><code> [1]   9  25   4   1  64  16  81 100   9 225   1 121</code></pre>
+<pre><code> [1]   9  25   4   1  64  16  81
+ [8] 100   9 225   1 121</code></pre>
 <ul>
 <li>Возведите в квадрат каждое нечетное значение вектора и извлеките корень каждого четного значения <code>vec1</code></li>
 </ul>
-<pre><code> [1]  9.000000  2.236068  4.000000  1.000000 64.000000  2.000000 81.000000
- [8]  3.162278  9.000000  3.872983  1.000000  3.316625</code></pre>
+<pre><code> [1]  9.000000  2.236068
+ [3]  4.000000  1.000000
+ [5] 64.000000  2.000000
+ [7] 81.000000  3.162278
+ [9]  9.000000  3.872983
+[11]  1.000000  3.316625</code></pre>
 <ul>
 <li>Создайте вектор <code>vec2</code>, в котором будут значения все значения <code>vec1</code>, которые меньше 10 будут заменены на <code>NA</code>.</li>
 </ul>
-<pre><code> [1] NA NA NA NA NA NA NA 10 NA 15 NA 11</code></pre>
+<pre><code> [1] NA NA NA NA NA NA NA 10 NA
+[10] 15 NA 11</code></pre>
 <ul>
 <li>Посчитайте сумму <code>vec2</code> с помощью функции <code>sum()</code>. Ответ <code>NA</code> не считается!</li>
 </ul>
@@ -457,14 +495,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="list_ta" class="section level2">
 <h2><span class="header-section-number">20.4</span> Списки</h2>
 <p>Дан список <code>list_1</code>:</p>
-<div class="sourceCode" id="cb970"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb970-1"><a href="tasks.html#cb970-1"></a>list_<span class="dv">1</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">numbers =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letters =</span> letters, <span class="dt">logic =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb970-2"><a href="tasks.html#cb970-2"></a>list_<span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb1004"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1004-1"><a href="tasks.html#cb1004-1"></a>list_<span class="dv">1</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">numbers =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letters =</span> letters, <span class="dt">logic =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb1004-2"><a href="tasks.html#cb1004-2"></a>list_<span class="dv">1</span></span></code></pre></div>
 <pre><code>$numbers
 [1] 1 2 3 4 5
 
 $letters
- [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot;
-[20] &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+ [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot;
+ [8] &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot;
+[15] &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot;
+[22] &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
 
 $logic
 [1] TRUE</code></pre>
@@ -486,8 +526,10 @@ $pupa$numbers
 [1] 1 2 3 4 5
 
 $pupa$letters
- [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot;
-[20] &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+ [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot;
+ [8] &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot;
+[15] &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot;
+[22] &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
 
 $pupa$logic
 [1] TRUE
@@ -498,8 +540,10 @@ $lupa$numbers
 [1] 1 2 3 4 5
 
 $lupa$letters
- [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot;
-[20] &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+ [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot;
+ [8] &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot;
+[15] &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot;
+[22] &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
 
 $lupa$logic
 [1] TRUE</code></pre>
@@ -539,16 +583,26 @@ $lupa$logic
 <ul>
 <li>Создайте таблицу умножения (9х9) в виде матрицы. Сохраните ее в переменную <code>tab</code>:</li>
 </ul>
-<pre><code>      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
- [1,]    1    2    3    4    5    6    7    8    9
- [2,]    2    4    6    8   10   12   14   16   18
- [3,]    3    6    9   12   15   18   21   24   27
- [4,]    4    8   12   16   20   24   28   32   36
- [5,]    5   10   15   20   25   30   35   40   45
- [6,]    6   12   18   24   30   36   42   48   54
- [7,]    7   14   21   28   35   42   49   56   63
- [8,]    8   16   24   32   40   48   56   64   72
- [9,]    9   18   27   36   45   54   63   72   81</code></pre>
+<pre><code>      [,1] [,2] [,3] [,4] [,5]
+ [1,]    1    2    3    4    5
+ [2,]    2    4    6    8   10
+ [3,]    3    6    9   12   15
+ [4,]    4    8   12   16   20
+ [5,]    5   10   15   20   25
+ [6,]    6   12   18   24   30
+ [7,]    7   14   21   28   35
+ [8,]    8   16   24   32   40
+ [9,]    9   18   27   36   45
+      [,6] [,7] [,8] [,9]
+ [1,]    6    7    8    9
+ [2,]   12   14   16   18
+ [3,]   18   21   24   27
+ [4,]   24   28   32   36
+ [5,]   30   35   40   45
+ [6,]   36   42   48   54
+ [7,]   42   49   56   63
+ [8,]   48   56   64   72
+ [9,]   54   63   72   81</code></pre>
 <ul>
 <li>Из матрицы <code>tab</code> выделите подматрицу, включающую в себя только строчки с 6 по 8 и столбцы с 3 по 7.</li>
 </ul>
@@ -562,29 +616,59 @@ $lupa$logic
 <blockquote>
 <p>Матрица - это почти вектор. К нему можно обращаться с единственным индексом.</p>
 </blockquote>
-<pre><code>       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9]
- [1,] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
- [2,] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
- [3,] FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
- [4,] FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
- [5,] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
- [6,] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
- [7,] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
- [8,] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
- [9,] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<pre><code>       [,1]  [,2]  [,3]  [,4]
+ [1,] FALSE FALSE FALSE FALSE
+ [2,] FALSE FALSE FALSE FALSE
+ [3,] FALSE FALSE FALSE  TRUE
+ [4,] FALSE FALSE  TRUE  TRUE
+ [5,] FALSE  TRUE  TRUE  TRUE
+ [6,] FALSE  TRUE  TRUE  TRUE
+ [7,] FALSE  TRUE  TRUE  TRUE
+ [8,] FALSE  TRUE  TRUE  TRUE
+ [9,] FALSE  TRUE  TRUE  TRUE
+       [,5]  [,6]  [,7]  [,8]
+ [1,] FALSE FALSE FALSE FALSE
+ [2,]  TRUE  TRUE  TRUE  TRUE
+ [3,]  TRUE  TRUE  TRUE  TRUE
+ [4,]  TRUE  TRUE  TRUE  TRUE
+ [5,]  TRUE  TRUE  TRUE  TRUE
+ [6,]  TRUE  TRUE  TRUE  TRUE
+ [7,]  TRUE  TRUE  TRUE  TRUE
+ [8,]  TRUE  TRUE  TRUE  TRUE
+ [9,]  TRUE  TRUE  TRUE  TRUE
+       [,9]
+ [1,] FALSE
+ [2,]  TRUE
+ [3,]  TRUE
+ [4,]  TRUE
+ [5,]  TRUE
+ [6,]  TRUE
+ [7,]  TRUE
+ [8,]  TRUE
+ [9,]  TRUE</code></pre>
 <ul>
 <li>Создайте матрицу <code>tab2</code>, в которой все значения <code>tab</code> меньше 10 заменены на 0.</li>
 </ul>
-<pre><code>      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
- [1,]    0    0    0    0    0    0    0    0    0
- [2,]    0    0    0    0   10   12   14   16   18
- [3,]    0    0    0   12   15   18   21   24   27
- [4,]    0    0   12   16   20   24   28   32   36
- [5,]    0   10   15   20   25   30   35   40   45
- [6,]    0   12   18   24   30   36   42   48   54
- [7,]    0   14   21   28   35   42   49   56   63
- [8,]    0   16   24   32   40   48   56   64   72
- [9,]    0   18   27   36   45   54   63   72   81</code></pre>
+<pre><code>      [,1] [,2] [,3] [,4] [,5]
+ [1,]    0    0    0    0    0
+ [2,]    0    0    0    0   10
+ [3,]    0    0    0   12   15
+ [4,]    0    0   12   16   20
+ [5,]    0   10   15   20   25
+ [6,]    0   12   18   24   30
+ [7,]    0   14   21   28   35
+ [8,]    0   16   24   32   40
+ [9,]    0   18   27   36   45
+      [,6] [,7] [,8] [,9]
+ [1,]    0    0    0    0
+ [2,]   12   14   16   18
+ [3,]   18   21   24   27
+ [4,]   24   28   32   36
+ [5,]   30   35   40   45
+ [6,]   36   42   48   54
+ [7,]   42   49   56   63
+ [8,]   48   56   64   72
+ [9,]   54   63   72   81</code></pre>
 </div>
 <div id="df_task" class="section level2">
 <h2><span class="header-section-number">20.6</span> Датафрейм</h2>
@@ -599,15 +683,32 @@ $lupa$logic
 <ul>
 <li>Найдите имена всех персонажей из дома (<code>Allegiances</code>) <code>"Tyrell"</code> и <code>"House Tyrell"</code>.</li>
 </ul>
-<pre><code> [1] &quot;Alerie Hightower&quot;  &quot;Alla Tyrell&quot;       &quot;Alyn Ambrose&quot;     
- [4] &quot;Arryk (Guard)&quot;     &quot;Arwyn Oakheart&quot;    &quot;Bayard Norcross&quot;  
- [7] &quot;Blue Bard&quot;         &quot;Butterbumps&quot;       &quot;Elinor Tyrell&quot;    
-[10] &quot;Erryk (Guard)&quot;     &quot;Garlan Tyrell&quot;     &quot;Hobber Redwyne&quot;   
-[13] &quot;Horas Redwyne&quot;     &quot;Janna Tyrell&quot;      &quot;Kerwin&quot;           
-[16] &quot;Leo Tyrell&quot;        &quot;Leonette Fossoway&quot; &quot;Loras Tyrell&quot;     
-[19] &quot;Mace Tyrell&quot;       &quot;Margaery Tyrell&quot;   &quot;Megga Tyrell&quot;     
-[22] &quot;Meredyth Crane&quot;    &quot;Olenna Redwyne&quot;    &quot;Paxter Redwyne&quot;   
-[25] &quot;Randyll Tarly&quot;     &quot;Talbert Serry&quot;    </code></pre>
+<pre><code> [1] &quot;Alerie Hightower&quot; 
+ [2] &quot;Alla Tyrell&quot;      
+ [3] &quot;Alyn Ambrose&quot;     
+ [4] &quot;Arryk (Guard)&quot;    
+ [5] &quot;Arwyn Oakheart&quot;   
+ [6] &quot;Bayard Norcross&quot;  
+ [7] &quot;Blue Bard&quot;        
+ [8] &quot;Butterbumps&quot;      
+ [9] &quot;Elinor Tyrell&quot;    
+[10] &quot;Erryk (Guard)&quot;    
+[11] &quot;Garlan Tyrell&quot;    
+[12] &quot;Hobber Redwyne&quot;   
+[13] &quot;Horas Redwyne&quot;    
+[14] &quot;Janna Tyrell&quot;     
+[15] &quot;Kerwin&quot;           
+[16] &quot;Leo Tyrell&quot;       
+[17] &quot;Leonette Fossoway&quot;
+[18] &quot;Loras Tyrell&quot;     
+[19] &quot;Mace Tyrell&quot;      
+[20] &quot;Margaery Tyrell&quot;  
+[21] &quot;Megga Tyrell&quot;     
+[22] &quot;Meredyth Crane&quot;   
+[23] &quot;Olenna Redwyne&quot;   
+[24] &quot;Paxter Redwyne&quot;   
+[25] &quot;Randyll Tarly&quot;    
+[26] &quot;Talbert Serry&quot;    </code></pre>
 <ul>
 <li>Создайте новый датафрейм <code>greyjoy_women</code>, который будет включать в себя только женщин Грейджоев (<code>"Greyjoy"</code>, <code>"House Greyjoy"</code>)</li>
 </ul>
