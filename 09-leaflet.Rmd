@@ -34,6 +34,8 @@ library("tidyverse")
 library("leaflet")
 ```
 
+[Здесь доступен cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/leaflet.pdf), посвященный пакету `leaflet`.
+
 ### `.csv` файлы
 Источником географических данных могут быть обычные привычные нам csv файлы. Например, вот [здесь](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/death_of_migrants_and_refugees_from_the_Unwelcomed_project.csv), хранится датасет из проекта [The Unwelcomed](http://alhadaqa.com/2019/08/the_unwelcomed/) Мохамада А. Вэйкда (Mohamad A. Waked), содержащий информацию о месте и причинах смерти мигрантов и беженцев по всему миру с января 2014 года по июнь 2019 года.
 
