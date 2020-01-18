@@ -309,7 +309,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#операции-с-датами"><i class="fa fa-check"></i><b>11.3</b> Операции с датами</a></li>
 <li class="chapter" data-level="11.4" data-path="работа-со-временем-lubridate.html"><a href="работа-со-временем-lubridate.html#визуализация-времени-данные-левада-центра"><i class="fa fa-check"></i><b>11.4</b> Визуализация времени: данные Левада-центра</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="сбор-данных-из-интернета-rvest.html"><a href="сбор-данных-из-интернета-rvest.html"><i class="fa fa-check"></i><b>12</b> Сбор данных из интернета: rvest</a></li>
+<li class="chapter" data-level="12" data-path="сбор-данных-из-интернета-rvest.html"><a href="сбор-данных-из-интернета-rvest.html"><i class="fa fa-check"></i><b>12</b> Сбор данных из интернета: <code>rvest</code></a><ul>
+<li class="chapter" data-level="12.1" data-path="сбор-данных-из-интернета-rvest.html"><a href="сбор-данных-из-интернета-rvest.html#введение"><i class="fa fa-check"></i><b>12.1</b> Введение</a></li>
+<li class="chapter" data-level="12.2" data-path="сбор-данных-из-интернета-rvest.html"><a href="сбор-данных-из-интернета-rvest.html#работа-с-пакетом-rvest"><i class="fa fa-check"></i><b>12.2</b> Работа с пакетом <code>rvest</code></a><ul>
+<li class="chapter" data-level="12.2.1" data-path="сбор-данных-из-интернета-rvest.html"><a href="сбор-данных-из-интернета-rvest.html#простой-случай"><i class="fa fa-check"></i><b>12.2.1</b> Простой случай</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="сбор-данных-из-интернета-rvest.html"><a href="сбор-данных-из-интернета-rvest.html#использование-атрибута-class"><i class="fa fa-check"></i><b>12.3</b> Использование атрибута <code>class</code></a><ul>
+<li class="chapter" data-level="12.3.1" data-path="сбор-данных-из-интернета-rvest.html"><a href="сбор-данных-из-интернета-rvest.html#чтение-таблиц"><i class="fa fa-check"></i><b>12.3.1</b> Чтение таблиц</a></li>
+<li class="chapter" data-level="12.3.2" data-path="сбор-данных-из-интернета-rvest.html"><a href="сбор-данных-из-интернета-rvest.html#некоторые-советы"><i class="fa fa-check"></i><b>12.3.2</b> Некоторые советы</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="13" data-path="distributions.html"><a href="distributions.html"><i class="fa fa-check"></i><b>13</b> Distributions</a></li>
 <li class="chapter" data-level="14" data-path="центральная-предельная-теорема.html"><a href="центральная-предельная-теорема.html"><i class="fa fa-check"></i><b>14</b> Центральная предельная теорема</a></li>
 <li class="chapter" data-level="15" data-path="статистические-тесты-для-работы-с-категориальными-данными.html"><a href="статистические-тесты-для-работы-с-категориальными-данными.html"><i class="fa fa-check"></i><b>15</b> Статистические тесты для работы с категориальными данными</a></li>
@@ -400,22 +409,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>встроенные векторы</li>
 </ul>
 <div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="strings.html#cb469-1"></a>letters</span></code></pre></div>
-<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot;
-##  [8] &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot;
-## [15] &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot;
-## [22] &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot;
+## [20] &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
 <div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb471-1"><a href="strings.html#cb471-1"></a>LETTERS</span></code></pre></div>
-<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot;
-##  [8] &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot;
-## [15] &quot;O&quot; &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot; &quot;T&quot; &quot;U&quot;
-## [22] &quot;V&quot; &quot;W&quot; &quot;X&quot; &quot;Y&quot; &quot;Z&quot;</code></pre>
+<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot;
+## [20] &quot;T&quot; &quot;U&quot; &quot;V&quot; &quot;W&quot; &quot;X&quot; &quot;Y&quot; &quot;Z&quot;</code></pre>
 <div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="strings.html#cb473-1"></a>month.name</span></code></pre></div>
-<pre><code>##  [1] &quot;January&quot;   &quot;February&quot; 
-##  [3] &quot;March&quot;     &quot;April&quot;    
-##  [5] &quot;May&quot;       &quot;June&quot;     
-##  [7] &quot;July&quot;      &quot;August&quot;   
-##  [9] &quot;September&quot; &quot;October&quot;  
-## [11] &quot;November&quot;  &quot;December&quot;</code></pre>
+<pre><code>##  [1] &quot;January&quot;   &quot;February&quot;  &quot;March&quot;     &quot;April&quot;     &quot;May&quot;       &quot;June&quot;     
+##  [7] &quot;July&quot;      &quot;August&quot;    &quot;September&quot; &quot;October&quot;   &quot;November&quot;  &quot;December&quot;</code></pre>
 <ul>
 <li>помните, что функции <code>data.frame()</code>, <code>read.csv()</code>, <code>read.csv2()</code>, <code>read.table()</code> из базового R всегда по-умолчанию преобразуют строки в факторы, и чтобы это предотвратить нужно использовать аргумент <code>stringsAsFactors</code>. Это много обсуждалось в сообществе R, можно, например, почитать про это <a href="https://simplystatistics.org/2015/07/24/stringsasfactors-an-unauthorized-biography/">вот этот блог пост Роджера Пенга</a>.</li>
 </ul>
@@ -433,28 +434,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="strings.html#cb479-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
 <span id="cb479-2"><a href="strings.html#cb479-2"></a><span class="kw">stri_rand_strings</span>(<span class="dt">n =</span> <span class="dv">10</span>, <span class="dt">length =</span> <span class="dv">5</span><span class="op">:</span><span class="dv">14</span>)</span></code></pre></div>
-<pre><code>##  [1] &quot;uwHpd&quot;         
-##  [2] &quot;Wj8ehS&quot;        
-##  [3] &quot;ivFSwy7&quot;       
-##  [4] &quot;TYu8zw5V&quot;      
-##  [5] &quot;OuRpjoOg0&quot;     
-##  [6] &quot;p0CubNR2yQ&quot;    
-##  [7] &quot;xtdycKLOm2k&quot;   
-##  [8] &quot;fAGVfylZqBGp&quot;  
-##  [9] &quot;gE28DTCi0NV0a&quot; 
-## [10] &quot;9MemYE55If0Cvv&quot;</code></pre>
+<pre><code>##  [1] &quot;uwHpd&quot;          &quot;Wj8ehS&quot;         &quot;ivFSwy7&quot;        &quot;TYu8zw5V&quot;      
+##  [5] &quot;OuRpjoOg0&quot;      &quot;p0CubNR2yQ&quot;     &quot;xtdycKLOm2k&quot;    &quot;fAGVfylZqBGp&quot;  
+##  [9] &quot;gE28DTCi0NV0a&quot;  &quot;9MemYE55If0Cvv&quot;</code></pre>
 <ul>
 <li>Перемешивает символы внутри строки</li>
 </ul>
 <div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="strings.html#cb481-1"></a><span class="kw">stri_rand_shuffle</span>(<span class="st">&quot;любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;,цо м,пюзгу   сл аиъ—в кжряд,ыщьчебэн х—штё фй&quot;</code></pre>
 <div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="strings.html#cb483-1"></a><span class="kw">stri_rand_shuffle</span>(month.name)</span></code></pre></div>
-<pre><code>##  [1] &quot;aJayunr&quot;   &quot;eyrbraFu&quot; 
-##  [3] &quot;achMr&quot;     &quot;Aplri&quot;    
-##  [5] &quot;ayM&quot;       &quot;Jnue&quot;     
-##  [7] &quot;uJly&quot;      &quot;usuAgt&quot;   
-##  [9] &quot;tpebermSe&quot; &quot;tOecrbo&quot;  
-## [11] &quot;oeNembvr&quot;  &quot;Dmceerbe&quot;</code></pre>
+<pre><code>##  [1] &quot;aJayunr&quot;   &quot;eyrbraFu&quot;  &quot;achMr&quot;     &quot;Aplri&quot;     &quot;ayM&quot;       &quot;Jnue&quot;     
+##  [7] &quot;uJly&quot;      &quot;usuAgt&quot;    &quot;tpebermSe&quot; &quot;tOecrbo&quot;   &quot;oeNembvr&quot;  &quot;Dmceerbe&quot;</code></pre>
 <ul>
 <li>Генерирует псевдорандомный текст<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
 </ul>
@@ -667,24 +657,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb512-2"><a href="strings.html#cb512-2"></a>  <span class="kw">sort</span>(huge)</span>
 <span id="cb512-3"><a href="strings.html#cb512-3"></a>)</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##   6.535   0.000   6.533</code></pre>
+##   6.453   0.000   6.453</code></pre>
 <div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="strings.html#cb514-1"></a><span class="kw">system.time</span>(</span>
 <span id="cb514-2"><a href="strings.html#cb514-2"></a>  <span class="kw">sort</span>(huge, <span class="dt">method =</span> <span class="st">&quot;radix&quot;</span>)</span>
 <span id="cb514-3"><a href="strings.html#cb514-3"></a>)</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##   0.215   0.012   0.227</code></pre>
+##   0.234   0.012   0.246</code></pre>
 <div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="strings.html#cb516-1"></a><span class="kw">system.time</span>(</span>
 <span id="cb516-2"><a href="strings.html#cb516-2"></a>  <span class="kw">str_sort</span>(huge)</span>
 <span id="cb516-3"><a href="strings.html#cb516-3"></a>)</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##   5.521   0.006   5.526</code></pre>
+##   5.560   0.048   5.608</code></pre>
 <div class="sourceCode" id="cb518"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb518-1"><a href="strings.html#cb518-1"></a>huge_tbl &lt;-<span class="st"> </span><span class="kw">tibble</span>(huge)</span>
 <span id="cb518-2"><a href="strings.html#cb518-2"></a><span class="kw">system.time</span>(</span>
 <span id="cb518-3"><a href="strings.html#cb518-3"></a>  huge_tbl <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb518-4"><a href="strings.html#cb518-4"></a><span class="st">    </span><span class="kw">arrange</span>(huge)</span>
 <span id="cb518-5"><a href="strings.html#cb518-5"></a>)</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##   2.862   0.005   2.867</code></pre>
+##   2.972   0.040   3.012</code></pre>
 <p>Предварительный вывод: для больших данных – <code>sort(..., method = "radix")</code>.</p>
 </div>
 <div id="поиск-подстроки" class="section level2">
@@ -1195,8 +1185,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb598"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb598-1"><a href="strings.html#cb598-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text)</span></code></pre></div>
 <pre><code>## [1] &quot;ru&quot; &quot;en&quot; &quot;fr&quot; &quot;es&quot; &quot;ar&quot; &quot;zh&quot;</code></pre>
 <div class="sourceCode" id="cb600"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb600-1"><a href="strings.html#cb600-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text, <span class="dt">lang_code =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;RUSSIAN&quot; &quot;ENGLISH&quot; &quot;FRENCH&quot; 
-## [4] &quot;SPANISH&quot; &quot;ARABIC&quot;  &quot;CHINESE&quot;</code></pre>
+<pre><code>## [1] &quot;RUSSIAN&quot; &quot;ENGLISH&quot; &quot;FRENCH&quot;  &quot;SPANISH&quot; &quot;ARABIC&quot;  &quot;CHINESE&quot;</code></pre>
 <div class="sourceCode" id="cb602"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb602-1"><a href="strings.html#cb602-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text)</span></code></pre></div>
 <pre><code>## [1] &quot;ru&quot; &quot;en&quot; &quot;fr&quot; &quot;es&quot; &quot;ar&quot; &quot;zh&quot;</code></pre>
 <div class="sourceCode" id="cb604"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb604-1"><a href="strings.html#cb604-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Ты женат? Говорите ли по-английски?&quot;</span>)</span></code></pre></div>
