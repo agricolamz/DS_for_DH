@@ -90,7 +90,7 @@ pal_cat <- colorFactor("Set3", domain = unwelcomed$collapsed_cause)
 pal_cat(unwelcomed$collapsed_cause[1])
 ```
 
-Теперь в переменную `pal_cat` зdwаписана функция, которая возварщает цвета в зависимости от значения. В качестве первого аргумента в фукнций `colorNumeric()`, `colorFactor()`, `colorBin()` или `colorQuantile()` отправляется палитра, которую пользователь может задать сам или использовать уже имеющуюся (их можно посмотреть при помощи команды `RColorBrewer::display.brewer.all()`):
+Теперь в переменную `pal_cat` записана функция, которая возварщает цвета в зависимости от значения. В качестве первого аргумента в фукнций `colorNumeric()`, `colorFactor()`, `colorBin()` или `colorQuantile()` отправляется палитра, которую пользователь может задать сам или использовать уже имеющуюся (их можно посмотреть при помощи команды `RColorBrewer::display.brewer.all()`):
 
 ```{r, fig.height=9}
 RColorBrewer::display.brewer.all()
@@ -200,7 +200,7 @@ unwelcomed %>%
              popup = ~cause_of_death) %>%  # а это конкретная причина, появляется при клике мышкой
   addLegend(pal = pal_cat,
             values = ~collapsed_cause,
-            title = "2014") ->
+            title = "2015") ->
   m_2015
 ```
 
@@ -262,7 +262,7 @@ leaflet() %>%
   addGeoJSON(geojson = countries)
 ```
 
-Во-вторых следует создать палитры для раскрашивания. Это делается при помощи функций `colorNumeric()`, `colorFactor()`, `colorBin()` или `colorQuantile()`.
+Во-вторых, следует создать палитры для раскрашивания. Это делается при помощи функций `colorNumeric()`, `colorFactor()`, `colorBin()` или `colorQuantile()`.
 
 ```{r}
 pal_num <- colorNumeric("Greens", domain = c(min(country_features$pop_est),
@@ -277,7 +277,7 @@ pal_num(country_features$pop_est[1])
 pal_cat(country_features$income[1])
 ```
 
-В-третьих нужно создать векторы с новыми цветами:
+В-третьих, нужно создать векторы с новыми цветами:
 
 ```{r}
 country_features %>% 
@@ -287,7 +287,7 @@ country_features %>%
 country_features
 ```
 
-В-четвертых нужно присвоить каждому узлу свой список `style`:
+В-четвертых, нужно присвоить каждому узлу свой список `style`:
 
 ```{r}
 map(seq_along(countries$features), function(x){

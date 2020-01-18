@@ -219,14 +219,24 @@ ceiling_date(ymd("2020-01-16"), unit = "year")
 
 ## Визуализация времени: данные Левада-центра
 
-Пакет `tidyverse` понимает переменные типа дата, и позволяет их фильтровать и визуализировать:
+Пакет `tidyverse` понимает переменные типа дата, и позволяет их фильтровать и визуализировать. Возьмем для примера [датасет](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/death_of_migrants_and_refugees_from_the_Unwelcomed_project.csv) из проекта [The Unwelcomed](http://alhadaqa.com/2019/08/the_unwelcomed/) Мохамада А. Вэйкда (Mohamad A. Waked), содержащий информацию о месте и причинах смерти мигрантов и беженцев по всему миру с января 2014 года по июнь 2019 года.
 
-```{r}
-flights %>% 
-  mutate(end = time_hour + dminutes(air_time)) %>% 
-  filter(end < ymd("2013-01-02")) %>% 
-  ggplot(aes(time_hour, end))+
-  geom_point(alpha = 0.2)
+```{r, message=FALSE}
+unwelcomed <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/death_of_migrants_and_refugees_from_the_Unwelcomed_project.csv")
+unwelcomed %>% 
+  mutate(date = dmy(date)) %>% 
+  ggplot(aes(date, total_death_missing, color = collapsed_cause))+
+  geom_point()+
+  scale_y_log10()+
+  labs(y = "number of death/missing")
+
+unwelcomed %>% 
+  mutate(date = dmy(date)) %>% 
+  filter(date < dmy("1-1-2016")) %>% 
+  ggplot(aes(date, total_death_missing, color = collapsed_cause))+
+  geom_point()+
+  scale_y_log10()+
+  labs(y = "number of death/missing")
 ```
 
 Однако ко переменным со врменем не всегда относятся аккуратно. Рассмотрим график с сайта Левада-центра --- российской негосударственной исследовательской организации, которая проводит социологические и маркетинговые исследования (график взят [отсюда](https://www.levada.ru/indikatory/otnoshenie-k-stranam/)):
