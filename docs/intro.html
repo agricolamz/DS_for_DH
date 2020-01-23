@@ -51,19 +51,6 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
-<script src="libs/Leaflet.Sync-0.0.5/L.Map.Sync.js"></script>
 
 
 <style type="text/css">
@@ -364,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">2</span> Введение в R</h1>
 <div id="наука-о-данных" class="section level2">
 <h2><span class="header-section-number">2.1</span> Наука о данных</h2>
-<p>Наука о данных — это новая область знаний, которая активно развивается в последнее время. Она находиться на пересечении компьютерных наук, статистики и математики и трудно сказать, действительно ли это наука. При этом это движение развивается в самых разных научных направлениях, иногда даже оформляясь в отдельную отрасль:</p>
+<p>Наука о данных — это новая область знаний, которая активно развивается в последнее время. Она находиться на пересечении компьютерных наук, статистики и математики, и трудно сказать, действительно ли это наука. При этом это движение развивается в самых разных научных направлениях, иногда даже оформляясь в отдельную отрасль:</p>
 <ul>
 <li>биоинформатика</li>
 <li>вычислительная криминалистика</li>
@@ -372,11 +359,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>датажурналистика</li>
 <li>…</li>
 </ul>
-<p>Все больше книг “Data Scince for …”:</p>
+<p>Все больше книг “Data Science for …”:</p>
 <ul>
 <li>psychologists <span class="citation">(Hansjörg <a href="#ref-hansjoerg19" role="doc-biblioref">2019</a>)</span></li>
 <li>immunologists <span class="citation">(Thomas and Pallett <a href="#ref-thomas19" role="doc-biblioref">2019</a>)</span></li>
-<li>buisness <span class="citation">(Provost and Fawcett <a href="#ref-provost13" role="doc-biblioref">2013</a>)</span></li>
+<li>business <span class="citation">(Provost and Fawcett <a href="#ref-provost13" role="doc-biblioref">2013</a>)</span></li>
 <li>public policy <span class="citation">(Brooks and Cooper <a href="#ref-brooks13" role="doc-biblioref">2013</a>)</span></li>
 <li>fraud detection <span class="citation">(Baesens, Van Vlasselaer, and Verbeke <a href="#ref-baesens15" role="doc-biblioref">2015</a>)</span></li>
 <li>…</li>
@@ -408,7 +395,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>RStudio — IDE для R (<a href="https://www.rstudio.com/products/rstudio/download/">можно скачать здесь</a>)</li>
 <li>и некоторые пакеты на R</li>
 </ul>
-<p>Часто можно увидеть или услышать, что R — язык программирования для “статистической обработки данных”. Изначально это, конечно, было правдой, но уже давно R — это полноценный язык программирования, который при помощи своих пакетом позволяет решать огромный спектр задач. В данной книге используются следующая версия R:</p>
+<p>Часто можно увидеть или услышать, что R — язык программирования для “статистической обработки данных”. Изначально это, конечно, было правдой, но уже давно R — это полноценный язык программирования, который при помощи своих пакетов позволяет решать огромный спектр задач. В данной книге используется следующая версия R:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro.html#cb2-1"></a><span class="kw">sessionInfo</span>()<span class="op">$</span>R.version<span class="op">$</span>version.string</span></code></pre></div>
 <pre><code>## [1] &quot;R version 3.6.2 (2019-12-12)&quot;</code></pre>
 <p>Некоторые люди не любят устанавливать лишние программы себе на компьютер, несколько вариантов есть и для них:</p>
@@ -421,7 +408,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="полезные-ссылки" class="section level2">
 <h2><span class="header-section-number">2.3</span> Полезные ссылки</h2>
-<p>В интернете легко найти документацию и туториалы по самым разным вопросам в R, так что главный залог успеха — грамматно пользоваться поисковиком, и лучше на английском языке.</p>
+<p>В интернете легко найти документацию и туториалы по самым разным вопросам в R, так что главный залог успеха — грамотно пользоваться поисковиком, и лучше на английском языке.</p>
 <ul>
 <li><a href="https://r4ds.had.co.nz/">книга <span class="citation">(Wickham and Grolemund <a href="#ref-wickham16" role="doc-biblioref">2016</a>)</span></a> является достаточно сильной альтернативой всему курсу</li>
 <li><a href="https://stackoverflow.com">stackoverflow</a> — сервис, где достаточно быстро отвечают на любые вопросы (не обязательно по R)</li>
@@ -437,7 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.4</span> Rstudio</h2>
 <p>Когда вы откроете RStudio первый раз, вы увидите три панели: консоль, окружение и историю, а также панель для всего остального. Если ткнуть в консоли на значок уменьшения, то можно открыть дополнительную панель, где можно писать скрипт.</p>
 <p><img src="images/01_01_rstudio.png" width="250" /></p>
-<p>Существуют разные типы пользователей: одни любят работать в консоли (на картинке это <strong>2 — R Console</strong>), другие предпочитают скрипты (<strong>1 — Code Editor</strong>). Консоль позволяет иметь интерактивный режим команда-ответ, а скрипт является по сути текстовым документом, фрагменты которого можно для отладки запускать в консоли.</p>
+<p>Существуют разные типы пользователей: одни любят работать в консоли (на картинке это <strong>2 — R Console</strong>), другие предпочитают скрипты (<strong>1 — Code Editor</strong>). Консоль позволяет использовать интерактивный режим команда-ответ, а скрипт является по сути текстовым документом, фрагменты которого можно для отладки запускать в консоли.</p>
 <p><strong>3 — Workspace and History</strong>: Здесь можно увидеть переменные. Это поле будет автоматически обновляться по мере того, как Вы будете запускать строчки кода и создавать новые переменные. Еще там есть вкладка с историей последних команд, которые были запущены.</p>
 <p><strong>4 — Plots and files</strong>: Здесь есть очень много всего. Во-первых, небольшой файловый менеджер, во-вторых, там будут появляться графики, когда вы будете их рисовать. Там же есть вкладка с вашими пакетами (Packages) и Help по функциям. Но об этом потом.</p>
 </div>
@@ -471,7 +458,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Давайте теперь извлечем корень из какого-нибудь числа. В принципе, тем, кто помнит школьный курс математики, возведения в степень вполне достаточно:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="intro.html#cb16-1"></a><span class="dv">16</span><span class="op">^</span><span class="fl">0.5</span></span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<p>Ну а если нет, то можете воспользоваться специальной <strong>функцией</strong>: это обычно какие-то буквенные символы с круглыми скобками сразу после названия функции. Мы подаем на вход (внутрь скобочек) какие-то данные, внутри этих функций происходят какие-то вычисления, которые выдает в ответ какие-то другие данные (или же функция записывает файл, рисует график и т.д.).</p>
+<p>Ну а если нет, то можете воспользоваться специальной <strong>функцией</strong>: это обычно какие-то буквенные символы с круглыми скобками сразу после названия функции. Мы подаем на вход (внутрь скобочек) какие-то данные, внутри этих функций происходят какие-то вычисления, которые выдают в ответ какие-то другие данные (или же функция записывает файл, рисует график и т.д.).</p>
 <p>Вот, например, функция для корня:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="intro.html#cb18-1"></a><span class="kw">sqrt</span>(<span class="dv">16</span>)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
