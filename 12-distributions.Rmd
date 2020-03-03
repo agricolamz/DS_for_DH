@@ -1,3 +1,336 @@
-# Distributions
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Описательная статистика, распределения
 
-https://ben18785.shinyapps.io/distribution-zoo/
+```{r, message=FALSE}
+library(tidyverse)
+theme_set(theme_bw())
+```
+
+Мы обсуждали разные типы переменных:
+
+```{r,echo=FALSE}
+types <- c("категориальные", "порядковые", "время", "числовые")
+examples <- c("голубые глаза, карие глаза, зеленые глаза...", 
+              "младшая школа, средняя школа, техникум/колледж, бакалавриат...", 
+              "понедельник, вторник, среда...\n 21 декабря 2019, 12 января 2020...", 
+              "2, -3.2, pi")
+tibble(x = factor(types, levels = types),
+       caption = factor(examples, levels = examples),
+       y = 1.05) %>% 
+  ggplot(aes(x, y, label = caption))+
+  geom_text(hjust = 0)+
+  geom_segment(aes(x=1, xend=4, y=1, yend=1), arrow = arrow(type = "open", ends = "both", length = unit(0.1, "inches"))) +
+  ylim(1, 2)+
+  theme_minimal()+
+  coord_flip()+
+  labs(x = "", y = "")+
+  theme(axis.text.x = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+```
+
+В данном занятии мы сосредоточимся на категориальных и числовых переменных.
+
+## Описательная статистика
+
+Описательная статистика --- это общий термин, в который включают понятия позволяющие оценить тренд в данных.
+
+### Категориальные переменные
+
+Для категориальных переменных описательных статистик не так много:
+
+* количество
+* частоты
+* энтропия
+
+Возьмем для примера датасет `starwars`. Мы легко можем посчитать **количество** существо разных расс:
+
+```{r}
+starwars %>% 
+  count(species, sort = TRUE)
+```
+
+Мы также легко можем посчитать **долю** существо разных расс:
+
+```{r}
+starwars %>% 
+  count(species, sort = TRUE) %>% 
+  mutate(ratio = n/sum(n))
+```
+
+Долю легко перевести в **проценты**:
+
+```{r}
+starwars %>% 
+  count(species, sort = TRUE) %>% 
+  mutate(ratio = n/sum(n)*100)
+```
+
+Мы также легко можем посчитать **энтропию**. В том виде, как ее сформулировал Клод Шеннон, формула выглядит так:
+
+$$H_b = -\sum_{i=1}^n p_i\times\log_2(p_i),\ где$$
+
+* $H_b$ --- энтропия
+* $p_i$ --- доля $i$-того независимого исхода из всех независимых исходов
+
+```{r}
+starwars %>% 
+  count(species, sort = TRUE) %>% 
+  mutate(ratio = n/sum(n)) %>% 
+  summarise(entropy = -sum(ratio*log2(ratio)))
+```
+
+Что показывает эта мера? Рассмотрим следующий тиббл:
+
+```{r}
+tibble(x = c("a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "b", "a", "b", "b", "c", "a", "a"),
+       group = rep(c("first", "second", "third"), each = 6),
+       id = rep(1:6, 3)) %>% 
+  pivot_wider(names_from = group, values_from = x)
+```
+
+Давайте посчитаем энтропию для каждой группы:
+```{r}
+tibble(x = c("a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "b", "a", "b", "b", "c", "a", "a"),
+       group = rep(c("first", "second", "third"), each = 6)) %>% 
+  count(group, x, sort = TRUE) %>% 
+  group_by(group) %>% 
+  mutate(ratio = n/sum(n)) %>% 
+  summarise(entropy = -sum(ratio*log2(ratio)))
+```
+
+Как видно, чем более разнообразна группа, тем выше энтропия. Посмотрим еще на такой тибл:
+
+```{r}
+tibble(x = c("a", "a", "b", "a", "с", "a", "a", "b", "b", "c", "a", "a", "a", "b", "b", "c", "с", "a"),
+       group = rep(c("first", "second", "third"), each = 6),
+       id = rep(1:6, 3)) %>% 
+  pivot_wider(names_from = group, values_from = x)
+tibble(x = c("a", "a", "b", "a", "с", "a", "a", "b", "b", "c", "a", "a", "a", "b", "b", "c", "с", "a"),
+       group = rep(c("first", "second", "third"), each = 6)) %>% 
+  count(group, x, sort = TRUE) %>% 
+  group_by(group) %>% 
+  mutate(ratio = n/sum(n)) %>% 
+  summarise(entropy = -sum(ratio*log2(ratio)))
+```
+
+Как видно, чем "однороднее" группы, тем выше энтропия.
+
+```{block, type = "rmdtask"}
+Влияет ли порядок следования элементов в векторе на значение энтропии?
+```
+
+```{r, echo = FALSE, results='asis'}
+library(checkdown)
+autocheck_question(question_id = 12.1, 
+                   answer = "нет", 
+                   options = c("да", "нет"),
+                   right = "правильно", 
+                   wrong = "у меня другой ответ")
+```
+
+```{block, type = "rmdtask"}
+Посчитайте значение энтропии для переменных `clarity`, `color` и `cut` из датасета `diamonds`. У какой переменной значение энтропии наибольшее?
+```
+
+```{r, include = FALSE}
+diamonds %>% 
+  count(clarity, sort = TRUE) %>% 
+  mutate(ratio = n/sum(n)) %>% 
+  summarise(entropy = -sum(ratio*log2(ratio)))
+
+diamonds %>% 
+  count(color, sort = TRUE) %>% 
+  mutate(ratio = n/sum(n)) %>% 
+  summarise(entropy = -sum(ratio*log2(ratio)))
+
+diamonds %>% 
+  count(cut, sort = TRUE) %>% 
+  mutate(ratio = n/sum(n)) %>% 
+  summarise(entropy = -sum(ratio*log2(ratio)))
+```
+
+```{r, echo = FALSE, results='asis'}
+library(checkdown)
+autocheck_question(question_id = 12.2, 
+                   answer = "color", 
+                   options = c("clarity", "color", "cut"), 
+                   right = "правильно", 
+                   wrong = "у меня другой ответ")
+```
+
+### Числовые переменные
+
+Для числовых значений описательные статистики в целом предсказуемые:
+
+```{r}
+diamonds %>% 
+  summarise(mean = mean(price),
+            median = median(price),
+            quantile_0.5 = quantile(price, 0.5), # квантиль
+            quantile_0.25 = quantile(price, 0.25),
+            quantile_0.1 = quantile(price, 0.1),
+            min = min(price),
+            max = max(price),
+            var = var(price), # дисперсия
+            sd = sd(price)) # cреднеквадратическое отклонение
+```
+
+Смещенная оценка дисперсии выборки $X = {x_1, x_2, ..., x_n}$:
+
+$$\sigma^2 = \frac{1}{n}\sum_{i = 1}^n(x_i - \mu)^2,\ где$$
+
+* $x_i$ --- i-тый элемент выборки X
+* $\mu$ --- среднее
+
+Несмещенная оценка дисперсии выборки $X = {x_1, x_2, ..., x_n}$:
+
+$$Var = \frac{1}{n-1}\sum_{i = 1}^n(x_i - \mu)^2$$
+
+Вот [ссылка на видео](https://www.youtube.com/watch?v=Cn0skMJ2F3c&feature=youtu.be), в котором объясняется, почему первая оценка смещенная.
+
+## От частотности к вероятности
+
+### Категориальная переменная
+Возьмем какой-нибудь простой случай двух взаимоисключающих исходов.
+
+```{block, type = "rmdtask"}
+Какая доля имен героев начинается на букву `B`? Ответ округлите до 3 знаков после запятой
+```
+
+```{r, echo = FALSE, results='asis'}
+library(checkdown)
+autocheck_question(question_id = 12.3, 
+                   answer = 0.103, 
+                   right = "правильно", 
+                   wrong = "у меня другой ответ")
+```
+
+Мы получили такой результат на основании 9 успехов из 87 наблюдений. Но, что если они там еще чего-то наснимают? Какова вероятность, что в новом фильме будет герой на "B", если предположить, что создатели стараются держать равновесие? 0.103? Но если там будет еще 5 новых героев, то полученная нами доля не будет иметь смысла, ведь (87+5)*0.103 = `r (87+5)*0.103`. Для ответа на такие вопросы обычно используют биномиальное распределение.
+
+$$P(k | n, p) = \frac{n!}{k!(n-k)!} \times p^k \times (1-p)^{n-k} =  {n \choose k} \times p^k \times (1-p)^{n-k}$$ 
+
+$$ 0 \leq p \leq 1; n, k > 0,\ где$$
+
+* n --- общее число наблюдений
+* k --- число успехов
+* p --- предполагаемая исследователем вероятность успеха
+
+```{r, echo = FALSE}
+tibble(x = seq(0, 87+5),
+       y = dbinom(x, size = 87+5, 0.103)) %>% 
+  ggplot(aes(x, y))+
+  geom_col()+
+  scale_x_continuous(breaks = c(0:5*5, 50, 75))
+```
+
+Таким образом, если мы считаем вероятность 0.103 верной для данного процесса, то тогда вероятность увидеть 10 героев на букву "B" вероятнее, чем увидеть 5 или 17:
+
+```{r, echo = FALSE}
+tibble(x = seq(0, 87+5),
+       y = dbinom(x, size = 87+5, 0.103),
+       z = ifelse(x %in% c(5, 10, 17), TRUE, NA)) %>% 
+  ggplot(aes(x, y, fill = z))+
+  geom_col(show.legend = FALSE)+
+  scale_x_continuous(breaks = c(0:5*5, 50, 75))
+```
+
+Теперь мы сделали шаг в сторону вероятностной модели: все что нужно знать, что случаи двух взаимоисключающих исходов следует моделировать при помощи биномиального распределения.
+
+### Числовая переменная
+
+С числовой переменной все устроено похожим образом: дотплот, гистограмма, функция плотности.
+
+```{r, warning=FALSE}
+starwars %>% 
+  ggplot(aes(height))+
+  geom_dotplot(method="histodot")
+
+starwars %>% 
+  ggplot(aes(height))+
+  geom_histogram(alpha = 0.5)+
+  geom_dotplot(method="histodot")
+
+starwars %>% 
+  ggplot(aes(height))+
+  geom_histogram(alpha = 0.5, binwidth = 20)+
+  geom_dotplot(method="histodot")
+
+starwars %>% 
+  ggplot(aes(height))+
+  geom_histogram(alpha = 0.5, binwidth = 30)+
+  geom_dotplot(method="histodot")
+
+starwars %>% 
+  ggplot(aes(height, y =..density..))+
+  geom_histogram(alpha = 0.5, binwidth = 30)+
+  geom_density()
+```
+
+Мы можем предположить, что генеральная совокупность можно описать нормальным распределением.
+
+$$P(x) = \frac{1}{\sigma\sqrt{2\pi}}\times e^{-\frac{\left(x-\mu\right)^2}{2\sigma^2}}$$
+
+$$\mu \in \mathbb{R}; \sigma^2 > 0,\ где$$
+
+* \mu --- среднее
+* \sigma --- среднеквадратическое отклонение
+
+```{r, echo=FALSE, warning=FALSE}
+starwars %>% 
+  ggplot(aes(height))+
+  geom_density()+
+  stat_function(fun = dnorm, args = list(mean = 174, sd = 30), 
+                color = "red", linetype = 2)+
+  labs(title = "Нормальное распределение (μ = 174, σ = 30)")
+```
+
+### Распределения
+
+В R встроено какое-то количество известных распределений. Все они представлены четырьмя функциями: 
+
+* `d...` (функция плотности, probability density function),
+* `p...` (функция распределения, cumulative distribution function) --- интеграл площади под кривой от начала до указанной квантили
+* `q...` (обратная функции распределения, inverse cumulative distribution function) --- значение *p*-той квантили распределения
+* и `r...` (рандомные числа из заданного распределения).
+
+Рассмотрим все это на примере нормального распределения.
+
+
+```{r, message=FALSE}
+tibble(x = 1:100,
+       PDF = dnorm(x = x, mean = 50, sd = 10)) %>% 
+  ggplot(aes(x, PDF))+
+  geom_point()+
+  labs(title = "PDF нормального распределения (μ = 50, σ = 10)")
+
+tibble(x = 1:100,
+       CDF = pnorm(x, mean = 50, sd = 10)) %>% 
+  ggplot(aes(x, CDF))+
+  geom_point()+
+  labs(title = "CDF нормального распределения (μ = 50, σ = 10)")
+
+tibble(quantiles = seq(0, 1, by = 0.01),
+       value = qnorm(quantiles, mean = 50, sd = 10)) %>% 
+  ggplot(aes(quantiles, value))+
+  geom_point()+
+  labs(title = "inverse CDF нормального распределения (μ = 50, σ = 10)")
+
+tibble(sample = rnorm(100, mean = 50, sd = 10)) %>% 
+  ggplot(aes(sample))+
+  geom_histogram()+
+  labs(title = "выборка нормально распределенных чисел (μ = 50, σ = 10)")
+```
+
+Если не использовать `set.seed()`, то результат работы рандомизатора нельзя будет повторить.
+
+Аналогично можно использовать функции `dbinom()`, `pbinom()`, `qbinom()` и `rbinom()` для биномиального распределения, а также `..t()` для распределения Стьюдента, `...chisq()` для распределения хи-квадрат и т. п.
+
+Биномиальное и нормальное распределения не единственные распределения, которые придумали люди:
+
+* вот [ресурс](http://www.math.wm.edu/~leemis/chart/UDR/UDR.html), на котором сделана попытка собрать все распределения и визуализировать связи между ними;
+* вот [приложение](https://ben18785.shinyapps.io/distribution-zoo/), позволяющие исследовать разные распределения.
+
+### Свойства нормального распределения

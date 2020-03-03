@@ -304,7 +304,7 @@ str_to_title(latin)
 ### Выделение подстроки
 Подстроку в строке можно выделить двумя способами: по индексам функцией `str_sub()`, и по подстроке функцией `str_png()`.
 
-![](images/5.07_str_sub.png)
+extract(images/5.07_str_sub.png)
 
 ```{r}
 tibble(mn = month.name) %>% 
