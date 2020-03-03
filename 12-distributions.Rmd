@@ -341,7 +341,7 @@ tibble(sample = rnorm(100, mean = 50, sd = 10)) %>%
 ```
 
 ```{r, echo = FALSE, results='asis'}
-autocheck_question(question_id = 12.3, 
+autocheck_question(question_id = 12.4, 
                    answer = round(dbinom(x = 10, 87+5, prob = 0.103), 3), 
                    right = "правильно", 
                    wrong = "у меня другой ответ")
