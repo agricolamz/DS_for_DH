@@ -51,19 +51,6 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
-<script src="libs/Leaflet.Sync-0.0.5/L.Map.Sync.js"></script>
 
 
 <style type="text/css">
@@ -328,8 +315,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.1" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#категориальная-переменная"><i class="fa fa-check"></i><b>13.2.1</b> Категориальная переменная</a></li>
 <li class="chapter" data-level="13.2.2" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#числовая-переменная"><i class="fa fa-check"></i><b>13.2.2</b> Числовая переменная</a></li>
 <li class="chapter" data-level="13.2.3" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#распределения"><i class="fa fa-check"></i><b>13.2.3</b> Распределения</a></li>
-<li class="chapter" data-level="13.2.4" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#свойства-нормального-распределения"><i class="fa fa-check"></i><b>13.2.4</b> Свойства нормального распределения</a></li>
+<li class="chapter" data-level="13.2.4" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#давайте-посчитаем-вероятности"><i class="fa fa-check"></i><b>13.2.4</b> Давайте посчитаем вероятности</a></li>
 </ul></li>
+<li class="chapter" data-level="13.3" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#првоерка-нулевой-гипотезы"><i class="fa fa-check"></i><b>13.3</b> Првоерка нулевой гипотезы</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="центральная-предельная-теорема.html"><a href="центральная-предельная-теорема.html"><i class="fa fa-check"></i><b>14</b> Центральная предельная теорема</a></li>
 <li class="chapter" data-level="15" data-path="статистические-тесты-для-работы-с-категориальными-данными.html"><a href="статистические-тесты-для-работы-с-категориальными-данными.html"><i class="fa fa-check"></i><b>15</b> Статистические тесты для работы с категориальными данными</a></li>
@@ -373,10 +361,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="описательная-статистика-распределения" class="section level1">
 <h1><span class="header-section-number">13</span> Описательная статистика, распределения</h1>
-<div class="sourceCode" id="cb996"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb996-1"><a href="описательная-статистика-распределения.html#cb996-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb996-2"><a href="описательная-статистика-распределения.html#cb996-2"></a><span class="kw">theme_set</span>(<span class="kw">theme_bw</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="описательная-статистика-распределения.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
 <p>Мы обсуждали разные типы переменных:</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-463-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>В данном занятии мы сосредоточимся на категориальных и числовых переменных.</p>
 <div id="описательная-статистика" class="section level2">
 <h2><span class="header-section-number">13.1</span> Описательная статистика</h2>
@@ -390,26 +377,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>энтропия</li>
 </ul>
 <p>Возьмем для примера датасет <code>starwars</code>. Мы легко можем посчитать <strong>количество</strong> существо разных расс:</p>
-<div class="sourceCode" id="cb997"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb997-1"><a href="описательная-статистика-распределения.html#cb997-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb997-2"><a href="описательная-статистика-распределения.html#cb997-2"></a><span class="st">  </span><span class="kw">count</span>(species, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="описательная-статистика-распределения.html#cb2-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-2"><a href="описательная-статистика-распределения.html#cb2-2"></a><span class="st">  </span><span class="kw">count</span>(species, <span class="dt">sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["species"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Human","2":"35"},{"1":"Droid","2":"5"},{"1":"NA","2":"5"},{"1":"Gungan","2":"3"},{"1":"Kaminoan","2":"2"},{"1":"Mirialan","2":"2"},{"1":"Twi'lek","2":"2"},{"1":"Wookiee","2":"2"},{"1":"Zabrak","2":"2"},{"1":"Aleena","2":"1"},{"1":"Besalisk","2":"1"},{"1":"Cerean","2":"1"},{"1":"Chagrian","2":"1"},{"1":"Clawdite","2":"1"},{"1":"Dug","2":"1"},{"1":"Ewok","2":"1"},{"1":"Geonosian","2":"1"},{"1":"Hutt","2":"1"},{"1":"Iktotchi","2":"1"},{"1":"Kaleesh","2":"1"},{"1":"Kel Dor","2":"1"},{"1":"Mon Calamari","2":"1"},{"1":"Muun","2":"1"},{"1":"Nautolan","2":"1"},{"1":"Neimodian","2":"1"},{"1":"Pau'an","2":"1"},{"1":"Quermian","2":"1"},{"1":"Rodian","2":"1"},{"1":"Skakoan","2":"1"},{"1":"Sullustan","2":"1"},{"1":"Tholothian","2":"1"},{"1":"Togruta","2":"1"},{"1":"Toong","2":"1"},{"1":"Toydarian","2":"1"},{"1":"Trandoshan","2":"1"},{"1":"Vulptereen","2":"1"},{"1":"Xexto","2":"1"},{"1":"Yoda's species","2":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Мы также легко можем посчитать <strong>долю</strong> существо разных расс:</p>
-<div class="sourceCode" id="cb998"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb998-1"><a href="описательная-статистика-распределения.html#cb998-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb998-2"><a href="описательная-статистика-распределения.html#cb998-2"></a><span class="st">  </span><span class="kw">count</span>(species, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb998-3"><a href="описательная-статистика-распределения.html#cb998-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ratio =</span> n<span class="op">/</span><span class="kw">sum</span>(n))</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="описательная-статистика-распределения.html#cb3-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb3-2"><a href="описательная-статистика-распределения.html#cb3-2"></a><span class="st">  </span><span class="kw">count</span>(species, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb3-3"><a href="описательная-статистика-распределения.html#cb3-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ratio =</span> n<span class="op">/</span><span class="kw">sum</span>(n))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["species"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]},{"label":["ratio"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Human","2":"35","3":"0.40229885"},{"1":"Droid","2":"5","3":"0.05747126"},{"1":"NA","2":"5","3":"0.05747126"},{"1":"Gungan","2":"3","3":"0.03448276"},{"1":"Kaminoan","2":"2","3":"0.02298851"},{"1":"Mirialan","2":"2","3":"0.02298851"},{"1":"Twi'lek","2":"2","3":"0.02298851"},{"1":"Wookiee","2":"2","3":"0.02298851"},{"1":"Zabrak","2":"2","3":"0.02298851"},{"1":"Aleena","2":"1","3":"0.01149425"},{"1":"Besalisk","2":"1","3":"0.01149425"},{"1":"Cerean","2":"1","3":"0.01149425"},{"1":"Chagrian","2":"1","3":"0.01149425"},{"1":"Clawdite","2":"1","3":"0.01149425"},{"1":"Dug","2":"1","3":"0.01149425"},{"1":"Ewok","2":"1","3":"0.01149425"},{"1":"Geonosian","2":"1","3":"0.01149425"},{"1":"Hutt","2":"1","3":"0.01149425"},{"1":"Iktotchi","2":"1","3":"0.01149425"},{"1":"Kaleesh","2":"1","3":"0.01149425"},{"1":"Kel Dor","2":"1","3":"0.01149425"},{"1":"Mon Calamari","2":"1","3":"0.01149425"},{"1":"Muun","2":"1","3":"0.01149425"},{"1":"Nautolan","2":"1","3":"0.01149425"},{"1":"Neimodian","2":"1","3":"0.01149425"},{"1":"Pau'an","2":"1","3":"0.01149425"},{"1":"Quermian","2":"1","3":"0.01149425"},{"1":"Rodian","2":"1","3":"0.01149425"},{"1":"Skakoan","2":"1","3":"0.01149425"},{"1":"Sullustan","2":"1","3":"0.01149425"},{"1":"Tholothian","2":"1","3":"0.01149425"},{"1":"Togruta","2":"1","3":"0.01149425"},{"1":"Toong","2":"1","3":"0.01149425"},{"1":"Toydarian","2":"1","3":"0.01149425"},{"1":"Trandoshan","2":"1","3":"0.01149425"},{"1":"Vulptereen","2":"1","3":"0.01149425"},{"1":"Xexto","2":"1","3":"0.01149425"},{"1":"Yoda's species","2":"1","3":"0.01149425"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Долю легко перевести в <strong>проценты</strong>:</p>
-<div class="sourceCode" id="cb999"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb999-1"><a href="описательная-статистика-распределения.html#cb999-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb999-2"><a href="описательная-статистика-распределения.html#cb999-2"></a><span class="st">  </span><span class="kw">count</span>(species, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb999-3"><a href="описательная-статистика-распределения.html#cb999-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ratio =</span> n<span class="op">/</span><span class="kw">sum</span>(n)<span class="op">*</span><span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="описательная-статистика-распределения.html#cb4-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-2"><a href="описательная-статистика-распределения.html#cb4-2"></a><span class="st">  </span><span class="kw">count</span>(species, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-3"><a href="описательная-статистика-распределения.html#cb4-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ratio =</span> n<span class="op">/</span><span class="kw">sum</span>(n)<span class="op">*</span><span class="dv">100</span>)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["species"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]},{"label":["ratio"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Human","2":"35","3":"40.229885"},{"1":"Droid","2":"5","3":"5.747126"},{"1":"NA","2":"5","3":"5.747126"},{"1":"Gungan","2":"3","3":"3.448276"},{"1":"Kaminoan","2":"2","3":"2.298851"},{"1":"Mirialan","2":"2","3":"2.298851"},{"1":"Twi'lek","2":"2","3":"2.298851"},{"1":"Wookiee","2":"2","3":"2.298851"},{"1":"Zabrak","2":"2","3":"2.298851"},{"1":"Aleena","2":"1","3":"1.149425"},{"1":"Besalisk","2":"1","3":"1.149425"},{"1":"Cerean","2":"1","3":"1.149425"},{"1":"Chagrian","2":"1","3":"1.149425"},{"1":"Clawdite","2":"1","3":"1.149425"},{"1":"Dug","2":"1","3":"1.149425"},{"1":"Ewok","2":"1","3":"1.149425"},{"1":"Geonosian","2":"1","3":"1.149425"},{"1":"Hutt","2":"1","3":"1.149425"},{"1":"Iktotchi","2":"1","3":"1.149425"},{"1":"Kaleesh","2":"1","3":"1.149425"},{"1":"Kel Dor","2":"1","3":"1.149425"},{"1":"Mon Calamari","2":"1","3":"1.149425"},{"1":"Muun","2":"1","3":"1.149425"},{"1":"Nautolan","2":"1","3":"1.149425"},{"1":"Neimodian","2":"1","3":"1.149425"},{"1":"Pau'an","2":"1","3":"1.149425"},{"1":"Quermian","2":"1","3":"1.149425"},{"1":"Rodian","2":"1","3":"1.149425"},{"1":"Skakoan","2":"1","3":"1.149425"},{"1":"Sullustan","2":"1","3":"1.149425"},{"1":"Tholothian","2":"1","3":"1.149425"},{"1":"Togruta","2":"1","3":"1.149425"},{"1":"Toong","2":"1","3":"1.149425"},{"1":"Toydarian","2":"1","3":"1.149425"},{"1":"Trandoshan","2":"1","3":"1.149425"},{"1":"Vulptereen","2":"1","3":"1.149425"},{"1":"Xexto","2":"1","3":"1.149425"},{"1":"Yoda's species","2":"1","3":"1.149425"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -421,53 +408,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(H_b\)</span> — энтропия</li>
 <li><span class="math inline">\(p_i\)</span> — доля <span class="math inline">\(i\)</span>-того независимого исхода из всех независимых исходов</li>
 </ul>
-<div class="sourceCode" id="cb1000"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1000-1"><a href="описательная-статистика-распределения.html#cb1000-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1000-2"><a href="описательная-статистика-распределения.html#cb1000-2"></a><span class="st">  </span><span class="kw">count</span>(species, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1000-3"><a href="описательная-статистика-распределения.html#cb1000-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ratio =</span> n<span class="op">/</span><span class="kw">sum</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1000-4"><a href="описательная-статистика-распределения.html#cb1000-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">entropy =</span> <span class="op">-</span><span class="kw">sum</span>(ratio<span class="op">*</span><span class="kw">log2</span>(ratio)))</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="описательная-статистика-распределения.html#cb5-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb5-2"><a href="описательная-статистика-распределения.html#cb5-2"></a><span class="st">  </span><span class="kw">count</span>(species, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb5-3"><a href="описательная-статистика-распределения.html#cb5-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ratio =</span> n<span class="op">/</span><span class="kw">sum</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb5-4"><a href="описательная-статистика-распределения.html#cb5-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">entropy =</span> <span class="op">-</span><span class="kw">sum</span>(ratio<span class="op">*</span><span class="kw">log2</span>(ratio)))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["entropy"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"3.942954"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Что показывает эта мера? Рассмотрим следующий тиббл:</p>
-<div class="sourceCode" id="cb1001"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1001-1"><a href="описательная-статистика-распределения.html#cb1001-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>),</span>
-<span id="cb1001-2"><a href="описательная-статистика-распределения.html#cb1001-2"></a>       <span class="dt">group =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;first&quot;</span>, <span class="st">&quot;second&quot;</span>, <span class="st">&quot;third&quot;</span>), <span class="dt">each =</span> <span class="dv">6</span>),</span>
-<span id="cb1001-3"><a href="описательная-статистика-распределения.html#cb1001-3"></a>       <span class="dt">id =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dv">3</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1001-4"><a href="описательная-статистика-распределения.html#cb1001-4"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> group, <span class="dt">values_from =</span> x)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="описательная-статистика-распределения.html#cb6-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>),</span>
+<span id="cb6-2"><a href="описательная-статистика-распределения.html#cb6-2"></a>       <span class="dt">group =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;first&quot;</span>, <span class="st">&quot;second&quot;</span>, <span class="st">&quot;third&quot;</span>), <span class="dt">each =</span> <span class="dv">6</span>),</span>
+<span id="cb6-3"><a href="описательная-статистика-распределения.html#cb6-3"></a>       <span class="dt">id =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dv">3</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb6-4"><a href="описательная-статистика-распределения.html#cb6-4"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> group, <span class="dt">values_from =</span> x)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["id"],"name":[1],"type":["int"],"align":["right"]},{"label":["first"],"name":[2],"type":["chr"],"align":["left"]},{"label":["second"],"name":[3],"type":["chr"],"align":["left"]},{"label":["third"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"a","3":"a","4":"a"},{"1":"2","2":"a","3":"a","4":"b"},{"1":"3","2":"a","3":"a","4":"b"},{"1":"4","2":"a","3":"a","4":"c"},{"1":"5","2":"a","3":"a","4":"a"},{"1":"6","2":"a","3":"b","4":"a"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Давайте посчитаем энтропию для каждой группы:</p>
-<div class="sourceCode" id="cb1002"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1002-1"><a href="описательная-статистика-распределения.html#cb1002-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>),</span>
-<span id="cb1002-2"><a href="описательная-статистика-распределения.html#cb1002-2"></a>       <span class="dt">group =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;first&quot;</span>, <span class="st">&quot;second&quot;</span>, <span class="st">&quot;third&quot;</span>), <span class="dt">each =</span> <span class="dv">6</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1002-3"><a href="описательная-статистика-распределения.html#cb1002-3"></a><span class="st">  </span><span class="kw">count</span>(group, x, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1002-4"><a href="описательная-статистика-распределения.html#cb1002-4"></a><span class="st">  </span><span class="kw">group_by</span>(group) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1002-5"><a href="описательная-статистика-распределения.html#cb1002-5"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ratio =</span> n<span class="op">/</span><span class="kw">sum</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1002-6"><a href="описательная-статистика-распределения.html#cb1002-6"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">entropy =</span> <span class="op">-</span><span class="kw">sum</span>(ratio<span class="op">*</span><span class="kw">log2</span>(ratio)))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="описательная-статистика-распределения.html#cb7-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>),</span>
+<span id="cb7-2"><a href="описательная-статистика-распределения.html#cb7-2"></a>       <span class="dt">group =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;first&quot;</span>, <span class="st">&quot;second&quot;</span>, <span class="st">&quot;third&quot;</span>), <span class="dt">each =</span> <span class="dv">6</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb7-3"><a href="описательная-статистика-распределения.html#cb7-3"></a><span class="st">  </span><span class="kw">count</span>(group, x, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb7-4"><a href="описательная-статистика-распределения.html#cb7-4"></a><span class="st">  </span><span class="kw">group_by</span>(group) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb7-5"><a href="описательная-статистика-распределения.html#cb7-5"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ratio =</span> n<span class="op">/</span><span class="kw">sum</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb7-6"><a href="описательная-статистика-распределения.html#cb7-6"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">entropy =</span> <span class="op">-</span><span class="kw">sum</span>(ratio<span class="op">*</span><span class="kw">log2</span>(ratio)))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["group"],"name":[1],"type":["chr"],"align":["left"]},{"label":["entropy"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"first","2":"0.0000000"},{"1":"second","2":"0.6500224"},{"1":"third","2":"1.4591479"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Как видно, чем более разнообразна группа, тем выше энтропия. Посмотрим еще на такой тибл:</p>
-<div class="sourceCode" id="cb1003"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1003-1"><a href="описательная-статистика-распределения.html#cb1003-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;с&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;с&quot;</span>, <span class="st">&quot;a&quot;</span>),</span>
-<span id="cb1003-2"><a href="описательная-статистика-распределения.html#cb1003-2"></a>       <span class="dt">group =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;first&quot;</span>, <span class="st">&quot;second&quot;</span>, <span class="st">&quot;third&quot;</span>), <span class="dt">each =</span> <span class="dv">6</span>),</span>
-<span id="cb1003-3"><a href="описательная-статистика-распределения.html#cb1003-3"></a>       <span class="dt">id =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dv">3</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1003-4"><a href="описательная-статистика-распределения.html#cb1003-4"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> group, <span class="dt">values_from =</span> x)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="описательная-статистика-распределения.html#cb8-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;с&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;с&quot;</span>, <span class="st">&quot;a&quot;</span>),</span>
+<span id="cb8-2"><a href="описательная-статистика-распределения.html#cb8-2"></a>       <span class="dt">group =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;first&quot;</span>, <span class="st">&quot;second&quot;</span>, <span class="st">&quot;third&quot;</span>), <span class="dt">each =</span> <span class="dv">6</span>),</span>
+<span id="cb8-3"><a href="описательная-статистика-распределения.html#cb8-3"></a>       <span class="dt">id =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dv">3</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb8-4"><a href="описательная-статистика-распределения.html#cb8-4"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> group, <span class="dt">values_from =</span> x)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["id"],"name":[1],"type":["int"],"align":["right"]},{"label":["first"],"name":[2],"type":["chr"],"align":["left"]},{"label":["second"],"name":[3],"type":["chr"],"align":["left"]},{"label":["third"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"a","3":"a","4":"a"},{"1":"2","2":"a","3":"b","4":"b"},{"1":"3","2":"b","3":"b","4":"b"},{"1":"4","2":"a","3":"c","4":"c"},{"1":"5","2":"с","3":"a","4":"с"},{"1":"6","2":"a","3":"a","4":"a"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb1004"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1004-1"><a href="описательная-статистика-распределения.html#cb1004-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;с&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;с&quot;</span>, <span class="st">&quot;a&quot;</span>),</span>
-<span id="cb1004-2"><a href="описательная-статистика-распределения.html#cb1004-2"></a>       <span class="dt">group =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;first&quot;</span>, <span class="st">&quot;second&quot;</span>, <span class="st">&quot;third&quot;</span>), <span class="dt">each =</span> <span class="dv">6</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1004-3"><a href="описательная-статистика-распределения.html#cb1004-3"></a><span class="st">  </span><span class="kw">count</span>(group, x, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1004-4"><a href="описательная-статистика-распределения.html#cb1004-4"></a><span class="st">  </span><span class="kw">group_by</span>(group) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1004-5"><a href="описательная-статистика-распределения.html#cb1004-5"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ratio =</span> n<span class="op">/</span><span class="kw">sum</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1004-6"><a href="описательная-статистика-распределения.html#cb1004-6"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">entropy =</span> <span class="op">-</span><span class="kw">sum</span>(ratio<span class="op">*</span><span class="kw">log2</span>(ratio)))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="описательная-статистика-распределения.html#cb9-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;с&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;с&quot;</span>, <span class="st">&quot;a&quot;</span>),</span>
+<span id="cb9-2"><a href="описательная-статистика-распределения.html#cb9-2"></a>       <span class="dt">group =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;first&quot;</span>, <span class="st">&quot;second&quot;</span>, <span class="st">&quot;third&quot;</span>), <span class="dt">each =</span> <span class="dv">6</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb9-3"><a href="описательная-статистика-распределения.html#cb9-3"></a><span class="st">  </span><span class="kw">count</span>(group, x, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb9-4"><a href="описательная-статистика-распределения.html#cb9-4"></a><span class="st">  </span><span class="kw">group_by</span>(group) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb9-5"><a href="описательная-статистика-распределения.html#cb9-5"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ratio =</span> n<span class="op">/</span><span class="kw">sum</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb9-6"><a href="описательная-статистика-распределения.html#cb9-6"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">entropy =</span> <span class="op">-</span><span class="kw">sum</span>(ratio<span class="op">*</span><span class="kw">log2</span>(ratio)))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["group"],"name":[1],"type":["chr"],"align":["left"]},{"label":["entropy"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"first","2":"1.251629"},{"1":"second","2":"1.459148"},{"1":"third","2":"1.918296"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -498,16 +485,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="числовые-переменные" class="section level3">
 <h3><span class="header-section-number">13.1.2</span> Числовые переменные</h3>
 <p>Для числовых значений описательные статистики в целом предсказуемые:</p>
-<div class="sourceCode" id="cb1005"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1005-1"><a href="описательная-статистика-распределения.html#cb1005-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1005-2"><a href="описательная-статистика-распределения.html#cb1005-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(price),</span>
-<span id="cb1005-3"><a href="описательная-статистика-распределения.html#cb1005-3"></a>            <span class="dt">median =</span> <span class="kw">median</span>(price),</span>
-<span id="cb1005-4"><a href="описательная-статистика-распределения.html#cb1005-4"></a>            <span class="dt">quantile_0.5 =</span> <span class="kw">quantile</span>(price, <span class="fl">0.5</span>), <span class="co"># квантиль</span></span>
-<span id="cb1005-5"><a href="описательная-статистика-распределения.html#cb1005-5"></a>            <span class="dt">quantile_0.25 =</span> <span class="kw">quantile</span>(price, <span class="fl">0.25</span>),</span>
-<span id="cb1005-6"><a href="описательная-статистика-распределения.html#cb1005-6"></a>            <span class="dt">quantile_0.1 =</span> <span class="kw">quantile</span>(price, <span class="fl">0.1</span>),</span>
-<span id="cb1005-7"><a href="описательная-статистика-распределения.html#cb1005-7"></a>            <span class="dt">min =</span> <span class="kw">min</span>(price),</span>
-<span id="cb1005-8"><a href="описательная-статистика-распределения.html#cb1005-8"></a>            <span class="dt">max =</span> <span class="kw">max</span>(price),</span>
-<span id="cb1005-9"><a href="описательная-статистика-распределения.html#cb1005-9"></a>            <span class="dt">var =</span> <span class="kw">var</span>(price), <span class="co"># дисперсия</span></span>
-<span id="cb1005-10"><a href="описательная-статистика-распределения.html#cb1005-10"></a>            <span class="dt">sd =</span> <span class="kw">sd</span>(price)) <span class="co"># cреднеквадратическое отклонение</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="описательная-статистика-распределения.html#cb10-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb10-2"><a href="описательная-статистика-распределения.html#cb10-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(price),</span>
+<span id="cb10-3"><a href="описательная-статистика-распределения.html#cb10-3"></a>            <span class="dt">median =</span> <span class="kw">median</span>(price),</span>
+<span id="cb10-4"><a href="описательная-статистика-распределения.html#cb10-4"></a>            <span class="dt">quantile_0.5 =</span> <span class="kw">quantile</span>(price, <span class="fl">0.5</span>), <span class="co"># квантиль</span></span>
+<span id="cb10-5"><a href="описательная-статистика-распределения.html#cb10-5"></a>            <span class="dt">quantile_0.25 =</span> <span class="kw">quantile</span>(price, <span class="fl">0.25</span>),</span>
+<span id="cb10-6"><a href="описательная-статистика-распределения.html#cb10-6"></a>            <span class="dt">quantile_0.1 =</span> <span class="kw">quantile</span>(price, <span class="fl">0.1</span>),</span>
+<span id="cb10-7"><a href="описательная-статистика-распределения.html#cb10-7"></a>            <span class="dt">min =</span> <span class="kw">min</span>(price),</span>
+<span id="cb10-8"><a href="описательная-статистика-распределения.html#cb10-8"></a>            <span class="dt">max =</span> <span class="kw">max</span>(price),</span>
+<span id="cb10-9"><a href="описательная-статистика-распределения.html#cb10-9"></a>            <span class="dt">var =</span> <span class="kw">var</span>(price), <span class="co"># дисперсия</span></span>
+<span id="cb10-10"><a href="описательная-статистика-распределения.html#cb10-10"></a>            <span class="dt">sd =</span> <span class="kw">sd</span>(price)) <span class="co"># cреднеквадратическое отклонение</span></span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mean"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["median"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["quantile_0.5"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["quantile_0.25"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["quantile_0.1"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["min"],"name":[6],"type":["int"],"align":["right"]},{"label":["max"],"name":[7],"type":["int"],"align":["right"]},{"label":["var"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["sd"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"3932.8","2":"2401","3":"2401","4":"950","5":"646","6":"326","7":"18823","8":"15915629","9":"3989.44","_row":"50%"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -520,7 +507,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(\mu\)</span> — среднее</li>
 </ul>
 <p>Несмещенная оценка дисперсии выборки <span class="math inline">\(X = {x_1, x_2, ..., x_n}\)</span>:</p>
-<p><span class="math display">\[Var = \frac{1}{n-1}\sum_{i = 1}^n(x_i - \mu)^2\]</span></p>
+<p><span class="math display">\[\sigma^2 = \frac{1}{n-1}\sum_{i = 1}^n(x_i - \mu)^2\]</span></p>
 <p>Вот <a href="https://www.youtube.com/watch?v=Cn0skMJ2F3c&amp;feature=youtu.be">ссылка на видео</a>, в котором объясняется, почему первая оценка смещенная.</p>
 </div>
 </div>
@@ -531,7 +518,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Возьмем какой-нибудь простой случай двух взаимоисключающих исходов.</p>
 <div class="rmdtask">
 <p>
-Какая доля имен героев начинается на букву <code>B</code>? Ответ округлите до 3 знаков после запятой
+Какая доля имен героев из датасета <code>starwars</code> начинается на букву <code>B</code>? Ответ округлите до 3 знаков после запятой.
 </p>
 </div>
 <form name="form_12_3" onsubmit="return validate_form_12_3()" method="post">
@@ -539,7 +526,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </form>
 <br>
 <script> function validate_form_12_3() {var x = document.forms["form_12_3"]["answer_12_3"].value;if (x == "0.103"){alert("правильно");return false;} else {alert("у меня другой ответ");return false;}} </script>
-<p>Мы получили такой результат на основании 9 успехов из 87 наблюдений. Но, что если они там еще чего-то наснимают? Какова вероятность, что в новом фильме будет герой на “B”, если предположить, что создатели стараются держать равновесие? 0.103? Но если там будет еще 5 новых героев, то полученная нами доля не будет иметь смысла, ведь (87+5)*0.103 = 9.476. Для ответа на такие вопросы обычно используют биномиальное распределение.</p>
+<p>Мы получили такой результат на основании 9 успехов из 87 наблюдений. Но, что если они там еще чего-то наснимают? Какова вероятность, что в новом фильме будет герой на “B”, если предположить, что создатели стараются держать равновесие? 0.103? Но если там будет 13 новых героев, то полученная нами доля не будет иметь смысла, ведь 13*0.103 = 1.339. Для ответа на такие вопросы обычно используют биномиальное распределение.</p>
 <p><span class="math display">\[P(k | n, p) = \frac{n!}{k!(n-k)!} \times p^k \times (1-p)^{n-k} =  {n \choose k} \times p^k \times (1-p)^{n-k}\]</span></p>
 <p><span class="math display">\[ 0 \leq p \leq 1; n, k &gt; 0,\ где\]</span></p>
 <ul>
@@ -547,85 +534,85 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>k — число успехов</li>
 <li>p — предполагаемая исследователем вероятность успеха</li>
 </ul>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-479-1.png" width="672" /></p>
-<p>Таким образом, если мы считаем вероятность 0.103 верной для данного процесса, то тогда вероятность увидеть 10 героев на букву “B” вероятнее, чем увидеть 5 или 17:</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-480-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>Таким образом, если мы считаем вероятность 0.103 верной для данного процесса, то тогда вероятность не увидеть новых героев на букву “B” вероятнее, чем увидеть 3 или 5:</p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <p>Теперь мы сделали шаг в сторону вероятностной модели: все что нужно знать, что случаи двух взаимоисключающих исходов следует моделировать при помощи биномиального распределения.</p>
 </div>
 <div id="числовая-переменная" class="section level3">
 <h3><span class="header-section-number">13.2.2</span> Числовая переменная</h3>
 <p>С числовой переменной все устроено похожим образом: дотплот, гистограмма, функция плотности.</p>
-<div class="sourceCode" id="cb1006"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1006-1"><a href="описательная-статистика-распределения.html#cb1006-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1006-2"><a href="описательная-статистика-распределения.html#cb1006-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(height))<span class="op">+</span></span>
-<span id="cb1006-3"><a href="описательная-статистика-распределения.html#cb1006-3"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">method=</span><span class="st">&quot;histodot&quot;</span>)</span></code></pre></div>
-<pre><code>`stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-481-1.png" width="672" /></p>
-<div class="sourceCode" id="cb1008"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1008-1"><a href="описательная-статистика-распределения.html#cb1008-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1008-2"><a href="описательная-статистика-распределения.html#cb1008-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(height))<span class="op">+</span></span>
-<span id="cb1008-3"><a href="описательная-статистика-распределения.html#cb1008-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)<span class="op">+</span></span>
-<span id="cb1008-4"><a href="описательная-статистика-распределения.html#cb1008-4"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">method=</span><span class="st">&quot;histodot&quot;</span>)</span></code></pre></div>
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-`stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-481-2.png" width="672" /></p>
-<div class="sourceCode" id="cb1010"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1010-1"><a href="описательная-статистика-распределения.html#cb1010-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1010-2"><a href="описательная-статистика-распределения.html#cb1010-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(height))<span class="op">+</span></span>
-<span id="cb1010-3"><a href="описательная-статистика-распределения.html#cb1010-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">binwidth =</span> <span class="dv">20</span>)<span class="op">+</span></span>
-<span id="cb1010-4"><a href="описательная-статистика-распределения.html#cb1010-4"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">method=</span><span class="st">&quot;histodot&quot;</span>)</span></code></pre></div>
-<pre><code>`stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-481-3.png" width="672" /></p>
-<div class="sourceCode" id="cb1012"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1012-1"><a href="описательная-статистика-распределения.html#cb1012-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1012-2"><a href="описательная-статистика-распределения.html#cb1012-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(height))<span class="op">+</span></span>
-<span id="cb1012-3"><a href="описательная-статистика-распределения.html#cb1012-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">binwidth =</span> <span class="dv">30</span>)<span class="op">+</span></span>
-<span id="cb1012-4"><a href="описательная-статистика-распределения.html#cb1012-4"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">method=</span><span class="st">&quot;histodot&quot;</span>)</span></code></pre></div>
-<pre><code>`stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-481-4.png" width="672" /></p>
-<div class="sourceCode" id="cb1014"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1014-1"><a href="описательная-статистика-распределения.html#cb1014-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1014-2"><a href="описательная-статистика-распределения.html#cb1014-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(height, <span class="dt">y =</span>..density..))<span class="op">+</span></span>
-<span id="cb1014-3"><a href="описательная-статистика-распределения.html#cb1014-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">binwidth =</span> <span class="dv">30</span>)<span class="op">+</span></span>
-<span id="cb1014-4"><a href="описательная-статистика-распределения.html#cb1014-4"></a><span class="st">  </span><span class="kw">geom_density</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-481-5.png" width="672" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="описательная-статистика-распределения.html#cb11-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb11-2"><a href="описательная-статистика-распределения.html#cb11-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(height))<span class="op">+</span></span>
+<span id="cb11-3"><a href="описательная-статистика-распределения.html#cb11-3"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">method=</span><span class="st">&quot;histodot&quot;</span>)</span></code></pre></div>
+<pre><code>## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="описательная-статистика-распределения.html#cb13-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb13-2"><a href="описательная-статистика-распределения.html#cb13-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(height))<span class="op">+</span></span>
+<span id="cb13-3"><a href="описательная-статистика-распределения.html#cb13-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>)<span class="op">+</span></span>
+<span id="cb13-4"><a href="описательная-статистика-распределения.html#cb13-4"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">method=</span><span class="st">&quot;histodot&quot;</span>)</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-21-2.png" width="672" /></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="описательная-статистика-распределения.html#cb15-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb15-2"><a href="описательная-статистика-распределения.html#cb15-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(height))<span class="op">+</span></span>
+<span id="cb15-3"><a href="описательная-статистика-распределения.html#cb15-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">binwidth =</span> <span class="dv">20</span>)<span class="op">+</span></span>
+<span id="cb15-4"><a href="описательная-статистика-распределения.html#cb15-4"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">method=</span><span class="st">&quot;histodot&quot;</span>)</span></code></pre></div>
+<pre><code>## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-21-3.png" width="672" /></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="описательная-статистика-распределения.html#cb17-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb17-2"><a href="описательная-статистика-распределения.html#cb17-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(height))<span class="op">+</span></span>
+<span id="cb17-3"><a href="описательная-статистика-распределения.html#cb17-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">binwidth =</span> <span class="dv">30</span>)<span class="op">+</span></span>
+<span id="cb17-4"><a href="описательная-статистика-распределения.html#cb17-4"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">method=</span><span class="st">&quot;histodot&quot;</span>)</span></code></pre></div>
+<pre><code>## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-21-4.png" width="672" /></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="описательная-статистика-распределения.html#cb19-1"></a>starwars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb19-2"><a href="описательная-статистика-распределения.html#cb19-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(height, <span class="dt">y =</span>..density..))<span class="op">+</span></span>
+<span id="cb19-3"><a href="описательная-статистика-распределения.html#cb19-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">binwidth =</span> <span class="dv">30</span>)<span class="op">+</span></span>
+<span id="cb19-4"><a href="описательная-статистика-распределения.html#cb19-4"></a><span class="st">  </span><span class="kw">geom_density</span>()</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-21-5.png" width="672" /></p>
 <p>Мы можем предположить, что генеральная совокупность можно описать нормальным распределением.</p>
 <p><span class="math display">\[P(x) = \frac{1}{\sigma\sqrt{2\pi}}\times e^{-\frac{\left(x-\mu\right)^2}{2\sigma^2}}\]</span></p>
 <p><span class="math display">\[\mu \in \mathbb{R}; \sigma^2 &gt; 0,\ где\]</span></p>
 <ul>
-<li>— среднее</li>
-<li>— среднеквадратическое отклонение</li>
+<li><span class="math inline">\(\mu\)</span> — среднее</li>
+<li><span class="math inline">\(\sigma^2\)</span> — среднеквадратическое отклонение</li>
 </ul>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-482-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 </div>
 <div id="распределения" class="section level3">
 <h3><span class="header-section-number">13.2.3</span> Распределения</h3>
 <p>В R встроено какое-то количество известных распределений. Все они представлены четырьмя функциями:</p>
 <ul>
 <li><code>d...</code> (функция плотности, probability density function),</li>
-<li><code>p...</code> (функция распределения, cumulative distribution function) — интеграл площади под кривой от начала до указанной квантили</li>
+<li><code>p...</code> (функция распределения, cumulative distribution function) — [интеграл площади под кривой или сумма всех значений] от начала до указанной квантили</li>
 <li><code>q...</code> (обратная функции распределения, inverse cumulative distribution function) — значение <em>p</em>-той квантили распределения</li>
 <li>и <code>r...</code> (рандомные числа из заданного распределения).</li>
 </ul>
 <p>Рассмотрим все это на примере нормального распределения.</p>
-<div class="sourceCode" id="cb1015"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1015-1"><a href="описательная-статистика-распределения.html#cb1015-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>,</span>
-<span id="cb1015-2"><a href="описательная-статистика-распределения.html#cb1015-2"></a>       <span class="dt">PDF =</span> <span class="kw">dnorm</span>(<span class="dt">x =</span> x, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1015-3"><a href="описательная-статистика-распределения.html#cb1015-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(x, PDF))<span class="op">+</span></span>
-<span id="cb1015-4"><a href="описательная-статистика-распределения.html#cb1015-4"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
-<span id="cb1015-5"><a href="описательная-статистика-распределения.html#cb1015-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;PDF нормального распределения (μ = 50, σ = 10)&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-483-1.png" width="672" /></p>
-<div class="sourceCode" id="cb1016"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1016-1"><a href="описательная-статистика-распределения.html#cb1016-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>,</span>
-<span id="cb1016-2"><a href="описательная-статистика-распределения.html#cb1016-2"></a>       <span class="dt">CDF =</span> <span class="kw">pnorm</span>(x, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1016-3"><a href="описательная-статистика-распределения.html#cb1016-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(x, CDF))<span class="op">+</span></span>
-<span id="cb1016-4"><a href="описательная-статистика-распределения.html#cb1016-4"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
-<span id="cb1016-5"><a href="описательная-статистика-распределения.html#cb1016-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;CDF нормального распределения (μ = 50, σ = 10)&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-483-2.png" width="672" /></p>
-<div class="sourceCode" id="cb1017"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1017-1"><a href="описательная-статистика-распределения.html#cb1017-1"></a><span class="kw">tibble</span>(<span class="dt">quantiles =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.01</span>),</span>
-<span id="cb1017-2"><a href="описательная-статистика-распределения.html#cb1017-2"></a>       <span class="dt">value =</span> <span class="kw">qnorm</span>(quantiles, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1017-3"><a href="описательная-статистика-распределения.html#cb1017-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(quantiles, value))<span class="op">+</span></span>
-<span id="cb1017-4"><a href="описательная-статистика-распределения.html#cb1017-4"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
-<span id="cb1017-5"><a href="описательная-статистика-распределения.html#cb1017-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;inverse CDF нормального распределения (μ = 50, σ = 10)&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-483-3.png" width="672" /></p>
-<div class="sourceCode" id="cb1018"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1018-1"><a href="описательная-статистика-распределения.html#cb1018-1"></a><span class="kw">tibble</span>(<span class="dt">sample =</span> <span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1018-2"><a href="описательная-статистика-распределения.html#cb1018-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(sample))<span class="op">+</span></span>
-<span id="cb1018-3"><a href="описательная-статистика-распределения.html#cb1018-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>()<span class="op">+</span></span>
-<span id="cb1018-4"><a href="описательная-статистика-распределения.html#cb1018-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;выборка нормально распределенных чисел (μ = 50, σ = 10)&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-483-4.png" width="672" /></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="описательная-статистика-распределения.html#cb20-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>,</span>
+<span id="cb20-2"><a href="описательная-статистика-распределения.html#cb20-2"></a>       <span class="dt">PDF =</span> <span class="kw">dnorm</span>(<span class="dt">x =</span> x, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-3"><a href="описательная-статистика-распределения.html#cb20-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(x, PDF))<span class="op">+</span></span>
+<span id="cb20-4"><a href="описательная-статистика-распределения.html#cb20-4"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
+<span id="cb20-5"><a href="описательная-статистика-распределения.html#cb20-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;PDF нормального распределения (μ = 50, σ = 10)&quot;</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="описательная-статистика-распределения.html#cb21-1"></a><span class="kw">tibble</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>,</span>
+<span id="cb21-2"><a href="описательная-статистика-распределения.html#cb21-2"></a>       <span class="dt">CDF =</span> <span class="kw">pnorm</span>(x, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-3"><a href="описательная-статистика-распределения.html#cb21-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(x, CDF))<span class="op">+</span></span>
+<span id="cb21-4"><a href="описательная-статистика-распределения.html#cb21-4"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
+<span id="cb21-5"><a href="описательная-статистика-распределения.html#cb21-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;CDF нормального распределения (μ = 50, σ = 10)&quot;</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-23-2.png" width="672" /></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="описательная-статистика-распределения.html#cb22-1"></a><span class="kw">tibble</span>(<span class="dt">quantiles =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.01</span>),</span>
+<span id="cb22-2"><a href="описательная-статистика-распределения.html#cb22-2"></a>       <span class="dt">value =</span> <span class="kw">qnorm</span>(quantiles, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb22-3"><a href="описательная-статистика-распределения.html#cb22-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(quantiles, value))<span class="op">+</span></span>
+<span id="cb22-4"><a href="описательная-статистика-распределения.html#cb22-4"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
+<span id="cb22-5"><a href="описательная-статистика-распределения.html#cb22-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;inverse CDF нормального распределения (μ = 50, σ = 10)&quot;</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-23-3.png" width="672" /></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="описательная-статистика-распределения.html#cb23-1"></a><span class="kw">tibble</span>(<span class="dt">sample =</span> <span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb23-2"><a href="описательная-статистика-распределения.html#cb23-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(sample))<span class="op">+</span></span>
+<span id="cb23-3"><a href="описательная-статистика-распределения.html#cb23-3"></a><span class="st">  </span><span class="kw">geom_histogram</span>()<span class="op">+</span></span>
+<span id="cb23-4"><a href="описательная-статистика-распределения.html#cb23-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;выборка нормально распределенных чисел (μ = 50, σ = 10)&quot;</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-23-4.png" width="672" /></p>
 <p>Если не использовать <code>set.seed()</code>, то результат работы рандомизатора нельзя будет повторить.</p>
 <p>Аналогично можно использовать функции <code>dbinom()</code>, <code>pbinom()</code>, <code>qbinom()</code> и <code>rbinom()</code> для биномиального распределения, а также <code>..t()</code> для распределения Стьюдента, <code>...chisq()</code> для распределения хи-квадрат и т. п.</p>
 <p>Биномиальное и нормальное распределения не единственные распределения, которые придумали люди:</p>
@@ -633,11 +620,79 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>вот <a href="http://www.math.wm.edu/~leemis/chart/UDR/UDR.html">ресурс</a>, на котором сделана попытка собрать все распределения и визуализировать связи между ними;</li>
 <li>вот <a href="https://ben18785.shinyapps.io/distribution-zoo/">приложение</a>, позволяющие исследовать разные распределения.</li>
 </ul>
+<div class="rmdtask">
+<p>
+Рассмотрим задачу, которую обсуждали выше с именами героев из датасета <code>strawars</code>. Посчитайте значение функции плотности в точке 10 для биномиального распределения. (округление до 2 знаков после запятой).
+</p>
 </div>
-<div id="свойства-нормального-распределения" class="section level3">
-<h3><span class="header-section-number">13.2.4</span> Свойства нормального распределения</h3>
+<form name="form_12_3" onsubmit="return validate_form_12_3()" method="post">
+<input type="text" name="answer_12_3"><input type="submit" value="check">
+</form>
+<br>
+<script> function validate_form_12_3() {var x = document.forms["form_12_3"]["answer_12_3"].value;if (x == "0.13"){alert("правильно");return false;} else {alert("у меня другой ответ");return false;}} </script>
+</div>
+<div id="давайте-посчитаем-вероятности" class="section level3">
+<h3><span class="header-section-number">13.2.4</span> Давайте посчитаем вероятности</h3>
+<p>Какова вероятность, что мы в новом фильме будет 3 и более новых героев на “B”?</p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p>Это можно вычислить при помощи функции <code>dbinom()</code>, <code>pbinom()</code>:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="описательная-статистика-распределения.html#cb24-1"></a><span class="kw">sum</span>(<span class="kw">dbinom</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">13</span>, <span class="dt">size =</span> <span class="dv">13</span>, <span class="dt">prob =</span> <span class="fl">0.103</span>))</span></code></pre></div>
+<pre><code>## [1] 0.1429756</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="описательная-статистика-распределения.html#cb26-1"></a><span class="dv">1</span><span class="op">-</span><span class="kw">pbinom</span>(<span class="dv">2</span>, <span class="dt">size =</span> <span class="dv">13</span>, <span class="dt">prob =</span> <span class="fl">0.103</span>)</span></code></pre></div>
+<pre><code>## [1] 0.1429756</code></pre>
+<p>Если предположить, что рост героев Звездных войн постоянен и описывается нормальным распределением со средним 174 и стандартным откланением 30, какова вероятность что в новом фильме встретиться герой ростом между 200 и 230?</p>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>## Warning: Removed 6 rows containing non-finite values (stat_bin).</code></pre>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="описательная-статистика-распределения.html#cb30-1"></a><span class="kw">integrate</span>(<span class="cf">function</span>(x){<span class="kw">dnorm</span>(x, <span class="dt">mean =</span> <span class="dv">174</span>, <span class="dt">sd =</span> <span class="dv">30</span>)}, <span class="dt">lower =</span> <span class="dv">200</span>, <span class="dt">upper =</span> <span class="dv">230</span>)</span></code></pre></div>
+<pre><code>## 0.1620883 with absolute error &lt; 1.8e-15</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="описательная-статистика-распределения.html#cb32-1"></a><span class="kw">pnorm</span>(<span class="dv">230</span>, <span class="dt">mean =</span> <span class="dv">174</span>, <span class="dt">sd =</span> <span class="dv">30</span>) <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="dv">200</span>, <span class="dt">mean =</span> <span class="dv">174</span>, <span class="dt">sd =</span> <span class="dv">30</span>)</span></code></pre></div>
+<pre><code>## [1] 0.1620883</code></pre>
+</div>
+</div>
+<div id="првоерка-нулевой-гипотезы" class="section level2">
+<h2><span class="header-section-number">13.3</span> Првоерка нулевой гипотезы</h2>
+<p>Теперь мы обсудим стандартный трюк, который получил большую популярность в XX веке, и сейчас повсеместно используется. Этот трюк, к сожалению, помогает лишь показать, что что-то отличается, так что мы немножко переиначим наши задачи.</p>
+<p>Представим себе, что я исследую героев Звездных войн. Я верю, что герои с именем на “B” встречаются в Звездных войнах с вероятностью 0.103. В новом фильме из 13 новых персонажей 4 имеют имя на “B”. Является ли эта разница статистически значимой?</p>
+<p>Создадим две гипотезы:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span> — (нулевая гипотеза) наблюдаемый результаты происходят из того же распределения что и другие.</li>
+<li><span class="math inline">\(H_1\)</span> — (альтернативная гипотеза) наблюдаемый результаты происходят из разных распределений.</li>
+</ul>
+<p>Давайте посчитаем вероятность наблюдать такой или более экстремальный результат, если верна нулевая гипотеза (p-value, p-уровень значимости):</p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="описательная-статистика-распределения.html#cb34-1"></a><span class="kw">sum</span>(<span class="kw">dbinom</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">13</span>, <span class="dt">size =</span> <span class="dv">13</span>, <span class="dt">prob =</span> <span class="fl">0.103</span>))</span></code></pre></div>
+<pre><code>## [1] 0.03758494</code></pre>
+<p>Это можно сделать при помощи следующей функции:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="описательная-статистика-распределения.html#cb36-1"></a><span class="kw">binom.test</span>(<span class="dt">x =</span> <span class="dv">4</span>, <span class="dt">n =</span> <span class="dv">13</span>, <span class="dt">p =</span> <span class="fl">0.103</span>, <span class="dt">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  4 and 13
+## number of successes = 4, number of trials = 13, p-value = 0.03758
+## alternative hypothesis: true probability of success is greater than 0.103
+## 95 percent confidence interval:
+##  0.1126658 1.0000000
+## sample estimates:
+## probability of success 
+##              0.3076923</code></pre>
+<p>Дальше в разных науках принимают некоторое критическое значение (в большинстве случаев это 0.05), и если p-value меньше данного заветного значения, считается, что тогда разница является статистически значимой.</p>
+<p>Для аналогичной операции с числовыми данными обычно используют распределение Стьюдента (t-распределение), которое очень похожо на нормальное распределение, однако содержит еще один параметр</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="описательная-статистика-распределения.html#cb38-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb38-2"><a href="описательная-статистика-распределения.html#cb38-2"></a>new_height &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">rnorm</span>(<span class="dv">13</span>, <span class="dt">mean =</span> <span class="dv">175</span>, <span class="dt">sd =</span> <span class="dv">20</span>))</span>
+<span id="cb38-3"><a href="описательная-статистика-распределения.html#cb38-3"></a><span class="kw">t.test</span>(new_height, <span class="dt">mu =</span> <span class="dv">174</span>)</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  new_height
+## t = 2.1671, df = 12, p-value = 0.05106
+## alternative hypothesis: true mean is not equal to 174
+## 95 percent confidence interval:
+##  173.9309 199.6076
+## sample estimates:
+## mean of x 
+##  186.7692</code></pre>
 
-</div>
 </div>
 </div>
             </section>
