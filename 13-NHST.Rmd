@@ -70,6 +70,8 @@ binom.test(x = 4, n = 13, p = 0.103, alternative = "greater")
 
 ## Классификация статистических тестов
 
+### Количество выборок
+
 * Одновыборочные тесты (one-sample tests)
 
 ```{r, echo = FALSE, message=FALSE}
@@ -83,15 +85,241 @@ tibble(x = rnorm(100, mean = 80, sd = 10)) %>%
 ```
 
 
+* Двухвыборочные тесты (two-sample tests)
 
-Для аналогичной операции с числовыми данными обычно используют распределение Стьюдента (t-распределение), которое очень похожо на нормальное распределение, однако содержит еще один параметр 
+```{r, echo = FALSE, message=FALSE}
+set.seed(42)
+tibble(x = rnorm(100, mean = 80, sd = 10),
+       y = rnorm(100, mean = 65, sd = 10)) %>% 
+  pivot_longer(names_to = "dataset", values_to = "value", x:y) %>% 
+  group_by(dataset) %>% 
+  mutate(mean = mean(value)) %>% 
+  ggplot(aes(value, fill = dataset)) +
+  geom_dotplot(show.legend = FALSE, alpha = 0.8)+
+  geom_vline(aes(xintercept = mean, color = dataset), linetype = 2, size = 2, show.legend = FALSE)+
+  scale_y_continuous(breaks = c())+
+  labs(y = "")
+```
+
+* многовыборочные тесты (multiple-sample tests)
+
+```{r, echo = FALSE, message=FALSE}
+set.seed(42)
+tibble(x = rnorm(100, mean = 80, sd = 10),
+       y = rnorm(100, mean = 65, sd = 8),
+       z = rnorm(100, mean = 95, sd = 6)) %>% 
+  pivot_longer(names_to = "dataset", values_to = "value", x:z) %>% 
+  group_by(dataset) %>% 
+  mutate(mean = mean(value)) %>% 
+  ggplot(aes(value, fill = dataset)) +
+  geom_dotplot(show.legend = FALSE, alpha = 0.8)+
+  geom_vline(aes(xintercept = mean, color = dataset), linetype = 2, size = 2, show.legend = FALSE)+
+  scale_y_continuous(breaks = c())+
+  labs(y = "")
+```
+
+### Направление
+
+* односторонние
+```{r,echo=FALSE}
+tibble(x = -10:110) %>% 
+  ggplot(aes(x)) +
+  stat_function(fun = dnorm, args = c(mean = 60, sd = 10))+
+  stat_function(fun = dnorm, args = c(mean = 60, sd = 10), 
+                geom = 'area', xlim = c(qnorm(0.95, 60, 10), 110), fill = 'lightblue')
+
+tibble(x = -10:110) %>% 
+  ggplot(aes(x)) +
+  stat_function(fun = dnorm, args = c(mean = 60, sd = 10))+
+  stat_function(fun = dnorm, args = c(mean = 60, sd = 10), 
+                geom = 'area', xlim = c(-10, qnorm(0.05, 60, 10)), fill = 'lightblue')
+```
+
+* двусторонние
+
+```{r,echo=FALSE}
+tibble(x = -10:110) %>% 
+  ggplot(aes(x)) +
+  stat_function(fun = dnorm, args = c(mean = 60, sd = 10))+
+  stat_function(fun = dnorm, args = c(mean = 60, sd = 10), 
+                geom = 'area', xlim = c(-10, qnorm(0.025, 60, 10)), fill = 'lightblue') +
+  stat_function(fun = dnorm, args = c(mean = 60, sd = 10), 
+                geom = 'area', xlim = c(qnorm(0.975, 60, 10), 110), fill = 'lightblue') 
+```
+
+
+### Парные vs. непарные
+
+* непарные --- если наблюдения в одной группе независимы друг от друга (мужчины vs. женщины, пожилые vs. молодые? и т. д.)
+* парные --- если наблюдения имеют соответствия между собой (настроение до пары R и после, измерение температуры обычным и инфракрасным термометром, и т. п.)
+
+### Параметрические vs. непараметрические
+
+Некоторые тесты работают с предположениями об устройстве данных. В нашем случае данные предположения: нормальность распределения.
+
+### Классификация тестов
+
+| распределение  | тип группы           | # групп | тест                           |
+|----------------|----------------------|:-------:|--------------------------------|
+| категориальные | с заданным значением |    1    | биномиальный тест, χ²          |
+| категориальные | независимые          |    2    | χ², тест Фишера                |
+| категориальные | зависимые            |    2    | критерий Мак-Нимара            |
+| нормальное     | с заданным значением |    1    | одновыборочный t-test          |
+| нормальное     | независимые          |    2    | t-test для независимых выборок |
+| нормальное     | зависимые            |    2    | парный t-test                  |
+| не нормальное  | с заданным значением |    1    | критерий Уилкоксона            |
+| не нормальное  | независимые          |    2    | критерий Манна-Уитни           |
+| не нормальное  | зависимые            |    2    | критерий Уилкоксона            |
+
+## Одновыборочные тесты
+
+### Биномиальный тест
+
+Мы уже обсудили биномиальный тест выше. В частотном словаре [Ляшевская Шаров 2009], созданном на базе корпуса объемом 92 млн. словоупотреблений, существительное *кенгуру* имеет абсолютную частотность 0.0000021, а предлог *к* --- 0.005389 (его вариант *ко* в расчет не берется). В некотором тексте длиной 61981 слов существительное кенгуру встречается 58 раз, а предлог к --- 254. Можем ли мы считать, что это обычный ничем не примечательный результат?
 
 ```{r}
+# кенгуру
+binom.test(x = 58, n = 61981, p = 0.0000021)
+# к
+binom.test(x = 254, n = 61981, p = 0.005389)
+```
+
+
+```{block, type = "rmdtask"}
+Мы посчитали количество букв *а* в рассказе А. П. Чехова и получили 58 букв из рассказа длинной 699 букв (пробелы и латинские буквы выкинуты). Является ли этот результат неожиданным, если мы ожидали долю 0.08. Приведите значение p-value с точностью до 2 знаком после запятой.
+```
+
+```{r, echo = FALSE, results='asis'}
+library(checkdown)
+autocheck_question(question_id = 13.1, answer = round(binom.test(x = 58, n = 699, p = 0.08)$p.value, 2))
+```
+
+### Одновыборочный t-тест
+
+Из статьи С. Степановой 2011 мы знаем, что носители русского языка в среднем говорят 5.31 слога в секунду со стандартным отклонением 1,93 (мужчины 5.46 слога в секунду со средним отклонением 2.02, женщины 5.23 слога в секунду со средним отклонением 1.84, дети 3.86 слога в секунду со средним отклонением 1.67). Мы опросили 30 носителей деревни N и выяснили, что средняя равна 7, а стандартное отклонение равно 2. Является ли данная разницастатистически значимой?
+
+```{r, message=FALSE}
 set.seed(42)
-new_height <- round(rnorm(13, mean = 175, sd = 20))
-t.test(new_height, mu = 174)
+data <- rnorm(n = 30, mean = 7, sd = 2)
+tibble(data) %>% 
+  ggplot(aes(data))+
+  geom_dotplot()+
+  geom_vline(xintercept = mean(data), size = 2, linetype = 2)+
+  geom_vline(xintercept = 5.31, size = 2, linetype = 2, color = "red")+
+  annotate(geom = "text", x = 3, color = "red", y = 0.75, label = "среднее согласно\n[Степанова 2011]", size = 5)
+```
+
+```{r}
+t.test(data, mu = 5.31)
+```
+
+```{block, type = "rmdtask"}
+Создайте нормально распределенные данные со средним 6 и стандартным отклонением 2, используя `set.seed(42)` и сравните полученные данные с результатами Степановой. Является ли разница статистически значимой? Приведите значение p-value с точностью до 2 знаком после запятой.
+```
+
+```{r, echo = FALSE, results='asis'}
+set.seed(42)
+my_data <- rnorm(n = 30, mean = 6, sd = 2)
+autocheck_question(question_id = 13.2, answer = round(t.test(my_data, mu = 5.31)$p.value, 2))
+```
+
+T-тест имеет несколько предположений относительно структуры данных:
+
+* нормальность распределения данных 
+* гомоскедостичность (гомогенность) дисперсии
+
+### Тест Уилкоксона
+
+Если данные не нормально распределено, обычно используют критерий Уилкоксона
+
+```{r, message=FALSE}
+set.seed(42)
+data <- rlnorm(n = 30, mean = 1.8, sd = 0.1)
+tibble(data) %>% 
+  ggplot(aes(data))+
+  geom_dotplot()+
+  geom_vline(xintercept = mean(data), size = 2, linetype = 2)+
+  geom_vline(xintercept = 5.31, size = 2, linetype = 2, color = "red")+
+  annotate(geom = "text", x = 4.9, color = "red", y = 0.75, label = "среднее согласно\n[Степанова 2011]", size = 5)
+wilcox.test(data, mu = 5.31)
+```
+
+## Двухвыборочные тесты
+
+### Двухвыборочный t-тест
+
+Логика двухвыборочного теста такая же как одновыборочного:
+
+```{r, message=FALSE}
+set.seed(42)
+sample_1 <- rnorm(25, mean = 40, sd = 5)
+sample_2 <- rnorm(25, mean = 50, sd = 4.5)
+
+tibble(sample_1, sample_2) %>% 
+  pivot_longer(names_to = "dataset", values_to = "values", sample_1:sample_2) %>% 
+  group_by(dataset) %>% 
+  mutate(mean = mean(values)) %>% 
+  ggplot(aes(values, fill = dataset))+
+  geom_dotplot(show.legend = FALSE)+
+  geom_vline(aes(xintercept = mean, color = dataset), size = 2, linetype = 2, show.legend = FALSE)
+
+t.test(sample_1, sample_2)
 ```
 
 ```{block, type = "rmdtask"}
 В работе (Coretta 2017, https://goo.gl/NrfgJm) рассматривается отношения между длительностью гласного и придыхание согласного. Автор собрал данные 5 носителей исландского. Дальше он извлек длительность гласного, после которого были придыхательные и непридыхательные. Скачайте [данные](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/icelandic.csv) и Проверьте, правда ли, что гласные перед аспирированныем согласными статистикали значимо короче гласных после которых непридыхательные для носителя. В ответе приведите t-статистику c точностью до трех знаков после запятой.
 ```
+
+### Двухвыборочный парный t-тест
+
+### Критерий Манна-Уитни
+
+Если данные не распределены нормально, тогда используется критерий Манна-Уитни (по английски его тоже называют Wilcoxon test).
+
+```{r,  message=FALSE}
+set.seed(42)
+data_1 <- rlnorm(n = 30, mean = 1.8, sd = 0.1)
+data_2 <- rlnorm(n = 30, mean = 1.6, sd = 0.1)
+
+tibble(data_1, data_2) %>% 
+  pivot_longer(names_to = "dataset", values_to = "values", data_1:data_2) %>% 
+  group_by(dataset) %>% 
+  mutate(mean = mean(values)) %>% 
+  ggplot(aes(values, fill = dataset))+
+  geom_dotplot(show.legend = FALSE)+
+  geom_vline(aes(xintercept = mean, color = dataset), size = 2, linetype = 2, show.legend = FALSE)
+
+wilcox.test(data_1, data_2)
+```
+
+### χ², тест Фишера
+
+### Критерий Мак Немара
+
+
+## Об эффекте множественных сравнений
+
+
+## Велечина эффекта
+
+## Послесловие
+
+P-value очень много ругают
+
+* за то, что его очень часто понимают неправильно [Gigerenzer 2004], [Goodman 2008]
+* за то, что само по себе p-value < 0.05 слабый довод [Sterne, Smith 2001], [Nuzzo et al. 2014], [Wasserstein, Lazar 2016]
+
+> Q: Why do so many colleges and grad schools teach p = 0.05?
+
+> A: Because that's still what the scientific community and journal editors use.
+
+> Q: Why do so many people still use p = 0.05?
+
+> A: Because that's what they were taught in college or grad school
+
+[Wasserstein, Lazar 2016]
+
+В связи с этим, сейчас можно наблюдать
+
+* большое обсуждение p-value vs. доверительные интервалы
+* все нарастающую популярность Байесовской статистики
