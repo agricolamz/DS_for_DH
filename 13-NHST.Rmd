@@ -214,7 +214,7 @@ t.test(data, mu = 5.31)
 ```
 
 ```{block, type = "rmdtask"}
-Создайте нормально распределенные данные со средним 6 и стандартным отклонением 2, используя `set.seed(42)` и сравните полученные данные с результатами Степановой. Является ли разница статистически значимой? Приведите значение p-value с точностью до 2 знаком после запятой.
+Создайте 30 нормально распределенных наблюдений со средним 6 и стандартным отклонением 2, используя `set.seed(42)` и сравните полученные данные с результатами Степановой. Является ли разница статистически значимой? Приведите значение p-value с точностью до 2 знаком после запятой.
 ```
 
 ```{r, echo = FALSE, results='asis'}
@@ -223,7 +223,7 @@ my_data <- rnorm(n = 30, mean = 6, sd = 2)
 autocheck_question(question_id = 13.2, answer = round(t.test(my_data, mu = 5.31)$p.value, 2))
 ```
 
-T-тест имеет несколько предположений относительно структуры данных:
+t-тест имеет несколько предположений относительно структуры данных:
 
 * нормальность распределения данных 
 * гомоскедостичность (гомогенность) дисперсии
@@ -272,6 +272,23 @@ t.test(sample_1, sample_2)
 
 ### Двухвыборочный парный t-тест
 
+```{r, message=FALSE}
+set.seed(42)
+sample_1 <- rnorm(25, mean = 40, sd = 5)
+sample_2 <- sample_1 - rnorm(25, mean = 5)
+
+tibble(sample_1, sample_2) %>% 
+  pivot_longer(names_to = "dataset", values_to = "values", sample_1:sample_2) %>% 
+  group_by(dataset) %>% 
+  mutate(mean = mean(values)) %>% 
+  ggplot(aes(values, fill = dataset))+
+  geom_dotplot(show.legend = FALSE)+
+  geom_vline(aes(xintercept = mean, color = dataset), size = 2, linetype = 2, show.legend = FALSE)
+
+t.test(sample_1, sample_2, paired = TRUE)
+```
+
+
 ### Критерий Манна-Уитни
 
 Если данные не распределены нормально, тогда используется критерий Манна-Уитни (по английски его тоже называют Wilcoxon test).
@@ -317,7 +334,7 @@ P-value очень много ругают
 
 > A: Because that's what they were taught in college or grad school
 
-[Wasserstein, Lazar 2016]
+  [Wasserstein, Lazar 2016]
 
 В связи с этим, сейчас можно наблюдать
 
