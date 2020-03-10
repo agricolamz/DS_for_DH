@@ -317,7 +317,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.3" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#распределения"><i class="fa fa-check"></i><b>13.2.3</b> Распределения</a></li>
 <li class="chapter" data-level="13.2.4" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#давайте-посчитаем-вероятности"><i class="fa fa-check"></i><b>13.2.4</b> Давайте посчитаем вероятности</a></li>
 </ul></li>
-<li class="chapter" data-level="13.3" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#првоерка-нулевой-гипотезы"><i class="fa fa-check"></i><b>13.3</b> Првоерка нулевой гипотезы</a></li>
+<li class="chapter" data-level="13.3" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#проверка-нулевой-гипотезы"><i class="fa fa-check"></i><b>13.3</b> Проверка нулевой гипотезы</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="центральная-предельная-теорема.html"><a href="центральная-предельная-теорема.html"><i class="fa fa-check"></i><b>14</b> Центральная предельная теорема</a></li>
 <li class="chapter" data-level="15" data-path="статистические-тесты-для-работы-с-категориальными-данными.html"><a href="статистические-тесты-для-работы-с-категориальными-данными.html"><i class="fa fa-check"></i><b>15</b> Статистические тесты для работы с категориальными данными</a></li>
@@ -622,14 +622,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="rmdtask">
 <p>
-Рассмотрим задачу, которую обсуждали выше с именами героев из датасета <code>strawars</code>. Посчитайте значение функции плотности в точке 10 для биномиального распределения. (округление до 2 знаков после запятой).
+Рассмотрим задачу, которую обсуждали выше с именами героев из датасета <code>strawars</code>. Посчитайте значение функции плотности в точке 3 для биномиального распределения с вероятностью успеха 0.103. (округление до 3 знаков после запятой).
 </p>
 </div>
 <form name="form_12_4" onsubmit="return validate_form_12_4()" method="post">
 <input type="text" name="answer_12_4"><input type="submit" value="check">
 </form>
 <br>
-<script> function validate_form_12_4() {var x = document.forms["form_12_4"]["answer_12_4"].value;if (x == "0.13"){alert("правильно");return false;} else {alert("у меня другой ответ");return false;}} </script>
+<script> function validate_form_12_4() {var x = document.forms["form_12_4"]["answer_12_4"].value;if (x == "0.105"){alert("правильно");return false;} else {alert("у меня другой ответ");return false;}} </script>
 </div>
 <div id="давайте-посчитаем-вероятности" class="section level3">
 <h3><span class="header-section-number">13.2.4</span> Давайте посчитаем вероятности</h3>
@@ -650,8 +650,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] 0.1620883</code></pre>
 </div>
 </div>
-<div id="првоерка-нулевой-гипотезы" class="section level2">
-<h2><span class="header-section-number">13.3</span> Првоерка нулевой гипотезы</h2>
+<div id="проверка-нулевой-гипотезы" class="section level2">
+<h2><span class="header-section-number">13.3</span> Проверка нулевой гипотезы</h2>
 <p>Теперь мы обсудим стандартный трюк, который получил большую популярность в XX веке, и сейчас повсеместно используется. Этот трюк, к сожалению, помогает лишь показать, что что-то отличается, так что мы немножко переиначим наши задачи.</p>
 <p>Представим себе, что я исследую героев Звездных войн. Я верю, что герои с именем на “B” встречаются в Звездных войнах с вероятностью 0.103. В новом фильме из 13 новых персонажей 4 имеют имя на “B”. Является ли эта разница статистически значимой?</p>
 <p>Создадим две гипотезы:</p>
