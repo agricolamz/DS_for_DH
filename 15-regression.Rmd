@@ -1,3 +1,149 @@
-# Регрессия
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Корреляция и регрессия
+
+```{r, message=FALSE, echo = FALSE}
+library(tidyverse)
+theme_set(theme_bw())
+```
+
+## Дисперсия
+
+Дисперсия --- мера разброса значений наблюдений относительно среднего. 
+
+$$\sigma^2_X = \frac{\sum_{i = 1}^n(x_i - \bar{x})^2}{n - 1},$$
+
+где
+
+* $x_1, ..., x_n$ --- наблюдения;
+* $\bar{x}$ --- среднее всех наблюдений;
+* $X$ --- вектор всех наблюдений;
+* $n$ --- количество наблюдений.
+
+Представим, что у нас есть следующие данные:
+
+```{r, echo=FALSE}
+set.seed(42)
+df <- tibble(x = sort(rnorm(20, mean = 50, sd = 10)), 
+             y = seq_along(x))
+df %>% 
+  ggplot(aes(x))+
+  geom_point(y = 0)+
+  ggrepel::geom_text_repel(aes(label = y), y = 0)+
+  labs(x = "значение наблюдений x")
+```
+
+Тогда дисперсия --- это сумма квадратов расстояний от каждой точки до среднего выборки (пунктирная линия) разделенное на количество наблюдений - 1 (по духу эта мера --- обычное среднее, но если вас инетересует разница смещенной и несмещенной оценки дисперсии, см. [видео](https://youtu.be/Cn0skMJ2F3c)).
+
+```{r, echo = FALSE}
+df %>% 
+  mutate(positive_negative = x > mean(x)) %>% 
+  ggplot(aes(x, y))+
+  geom_vline(aes(xintercept = mean(x)), linetype = 2)+
+  geom_linerange(aes(xmin = x, 
+                     xmax = mean(x), 
+                     color = positive_negative),
+                 show.legend = FALSE) + 
+  geom_point()+
+  scale_y_continuous(breaks = df$y)+
+  labs(y = "номер наблюдений x",
+       x = "значение наблюдений x")
+```
+
+Для того, чтобы было понятнее, что такое дисперсия, давайте рассмотрим несколько расспределений с разными дисперсиями:
+
+```{r, echo=FALSE, message=FALSE}
+set.seed(42)
+map_dfr(1:5*5, function(x){
+  tibble(x = rnorm(20, mean = 50, sd = sqrt(x)),
+         var = round(var(x)))
+}) %>% 
+  group_by(var) %>% 
+  mutate(x = x - mean(x)+50) %>% 
+  ggplot(aes(x, factor(var)))+
+  geom_point()+
+  ggridges::geom_density_ridges(alpha = 0.2)+
+  geom_vline(aes(xintercept = mean(x)), linetype = 2)+
+  labs(x = "значение наблюдений",
+       y = "дисперсия наблюдений")
+```
+
+## Ковариация
+
+Ковариация --- эта мера ассоциации двух переменных.
+
+$$cov(X, Y) = \frac{\sum_{i = 1}^n(x_i - \bar{x})(y_i-\bar{y})}{n - 1},$$
+
+где
+
+* $(x_1, y_1), ..., (x_n, y_n)$ --- пары наблюдений;
+* $\bar{x}, \bar{y}$ --- средние наблюдений;
+* $X, Y$ --- векторы всех наблюдений;
+* $n$ --- количество наблюдений.
+
+Представим, что у нас есть следующие данные:
+
+```{r, echo=FALSE}
+set.seed(42)
+tibble(x = rnorm(25, mean = 50, sd = 10), 
+       y = x + rnorm(25, sd = 10)) %>% 
+  mutate(x = x - mean(x)+ 50,
+         y = y - mean(y)+ 55) ->
+  df
+
+df %>% 
+  ggplot(aes(x, y))+
+  geom_point()
+```
+
+Тогда, согласно формуле, для каждой точки вычисляется следующая площадь (пуктирными линиями обозначены средние):
+
+```{r, echo = FALSE}
+df %>% 
+  ggplot(aes(x, y))+
+  geom_hline(aes(yintercept = mean(y)), linetype = 2)+
+  geom_vline(aes(xintercept = mean(x)), linetype = 2)+
+  geom_rect(aes(ymin = mean(y), ymax = y[which.max(x)], 
+                xmin = mean(x), xmax = max(x), fill = TRUE),
+            show.legend = FALSE)+
+  geom_point()
+```
+
+Если значения $x_i$ и $y_i$ какой-то точки либо оба больше, либо оба меньше средних $\bar{x}$ и $\bar{y}$, то получившееся произведение будет иметь знак `+`, если же наоборот --- знак `-`. На графике это показано цветом.
+
+```{r, echo=FALSE}
+df %>% 
+  mutate(fill_color = (x > mean(x) & y > mean(y)) | (!x > mean(x) & !y > mean(y)),
+         fill_color = !fill_color) %>% 
+  ggplot(aes(x, y))+
+  geom_rect(aes(xmin = mean(x), xmax = x, 
+                ymin = mean(y), ymax = y, fill = fill_color, color = fill_color),
+            alpha = 0.1, show.legend = FALSE)+
+  geom_hline(aes(yintercept = mean(y)), linetype = 2)+
+  geom_vline(aes(xintercept = mean(x)), linetype = 2)+
+  geom_point()
+```
+
+Таким образом, если много красных прямоугольников, то значение суммы будет положительное и обозначать положительную связь (чем больше $x$, тем больше $y$), а если будет много синий прямоугольников, то значение суммы отрицательное и обозначать положительную связь (чем больше $x$, тем меньше $y$). Непосредственно значение ковариации не очень информативно, так как может достаточно сильно варьироваться от датасета к датасету.
+
+В R ковариацию можно посчитать при помощи функции `cov()`.
+
+```{r}
+set.seed(42)
+x <- rnorm(20, mean = 50, sd = 10)
+y <-  x + rnorm(20, sd = 10)
+cov(x, y)
+cov(x, -y*2)
+```
+
+Как видно, простое умножение на два удвоило значение ковариации, что показывает, что непосредственно ковариацию использовать для сравнения разных датасетов не стоит.
+
+## Корреляция
+
+## Регрессионный анализ
 
 https://antoinesoetewey.shinyapps.io/statistics-202/

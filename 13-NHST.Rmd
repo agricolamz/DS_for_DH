@@ -191,7 +191,7 @@ binom.test(x = 254, n = 61981, p = 0.005389)
 
 ```{r, echo = FALSE, results='asis'}
 library(checkdown)
-autocheck_question(question_id = 13.1, answer = round(binom.test(x = 58, n = 699, p = 0.08)$p.value, 2))
+check_question(answer = round(binom.test(x = 58, n = 699, p = 0.08)$p.value, 2))
 ```
 
 ### Одновыборочный t-тест
@@ -220,7 +220,7 @@ t.test(data, mu = 5.31)
 ```{r, echo = FALSE, results='asis'}
 set.seed(42)
 my_data <- rnorm(n = 30, mean = 6, sd = 2)
-autocheck_question(question_id = 13.2, answer = round(t.test(my_data, mu = 5.31)$p.value, 2))
+check_question(answer = round(t.test(my_data, mu = 5.31)$p.value, 2))
 ```
 
 t-тест имеет несколько предположений относительно структуры данных:

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>11 Работа со временем: lubridate | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
   <meta name="description" content="11 Работа со временем: lubridate | Наука о данных в R для программы Цифровых гуманитарных исследований" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="11 Работа со временем: lubridate | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta property="og:type" content="book" />
@@ -358,7 +358,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.8" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#послесловие"><i class="fa fa-check"></i><b>14.8</b> Послесловие</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="статистические-тесты-для-работы-с-категориальными-данными.html"><a href="статистические-тесты-для-работы-с-категориальными-данными.html"><i class="fa fa-check"></i><b>15</b> Статистические тесты для работы с категориальными данными</a></li>
-<li class="chapter" data-level="16" data-path="регрессия.html"><a href="регрессия.html"><i class="fa fa-check"></i><b>16</b> Регрессия</a></li>
+<li class="chapter" data-level="16" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html"><i class="fa fa-check"></i><b>16</b> Корреляция и регрессия</a><ul>
+<li class="chapter" data-level="16.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#дисперсия"><i class="fa fa-check"></i><b>16.1</b> Дисперсия</a></li>
+<li class="chapter" data-level="16.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#ковариация"><i class="fa fa-check"></i><b>16.2</b> Ковариация</a></li>
+<li class="chapter" data-level="16.3" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#корреляция"><i class="fa fa-check"></i><b>16.3</b> Корреляция</a></li>
+<li class="chapter" data-level="16.4" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#регрессионный-анализ"><i class="fa fa-check"></i><b>16.4</b> Регрессионный анализ</a></li>
+</ul></li>
 <li class="chapter" data-level="17" data-path="кластеризация.html"><a href="кластеризация.html"><i class="fa fa-check"></i><b>17</b> Кластеризация</a></li>
 <li class="chapter" data-level="18" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>18</b> Методы уменьшения размерностей</a></li>
 <li class="chapter" data-level="19" data-path="работа-с-сетями.html"><a href="работа-с-сетями.html"><i class="fa fa-check"></i><b>19</b> Работа с сетями</a></li>
@@ -415,9 +420,9 @@ Attaching package: &#39;lubridate&#39;</code></pre>
 
     date</code></pre>
 <div class="sourceCode" id="cb861"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb861-1"><a href="работа-со-временем-lubridate.html#cb861-1"></a><span class="kw">today</span>()</span></code></pre></div>
-<pre><code>[1] &quot;2020-03-10&quot;</code></pre>
+<pre><code>[1] &quot;2020-03-28&quot;</code></pre>
 <div class="sourceCode" id="cb863"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb863-1"><a href="работа-со-временем-lubridate.html#cb863-1"></a><span class="kw">now</span>()</span></code></pre></div>
-<pre><code>[1] &quot;2020-03-10 18:20:19 MSK&quot;</code></pre>
+<pre><code>[1] &quot;2020-03-28 23:47:08 MSK&quot;</code></pre>
 <p>Как видно, из этих функций в R можно работать как с датами, так и с временем. В качестве иллюстрации мы будем использовать датасет <code>flights</code> из пакета <code>nycflights13</code>, в котором содержатся данные полетов из Нью Йорка в 2013 года.</p>
 <div class="sourceCode" id="cb865"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb865-1"><a href="работа-со-временем-lubridate.html#cb865-1"></a><span class="kw">library</span>(nycflights13)</span>
 <span id="cb865-2"><a href="работа-со-временем-lubridate.html#cb865-2"></a>flights</span></code></pre></div>

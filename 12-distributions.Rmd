@@ -133,8 +133,7 @@ tibble(x = c("a", "a", "b", "a", "с", "a", "a", "b", "b", "c", "a", "a", "a", "
 
 ```{r, echo = FALSE, results='asis'}
 library(checkdown)
-autocheck_question(question_id = 12.1, 
-                   answer = "нет", 
+check_question(answer = "нет", 
                    options = c("да", "нет"),
                    right = "правильно", 
                    wrong = "у меня другой ответ")
@@ -162,9 +161,7 @@ diamonds %>%
 ```
 
 ```{r, echo = FALSE, results='asis'}
-library(checkdown)
-autocheck_question(question_id = 12.2, 
-                   answer = "color", 
+check_question(answer = "color", 
                    options = c("clarity", "color", "cut"), 
                    right = "правильно", 
                    wrong = "у меня другой ответ")
@@ -210,10 +207,9 @@ $$\sigma^2 = \frac{1}{n-1}\sum_{i = 1}^n(x_i - \mu)^2$$
 ```
 
 ```{r, echo = FALSE, results='asis'}
-autocheck_question(question_id = 12.3, 
-                   answer = 0.103, 
-                   right = "правильно", 
-                   wrong = "у меня другой ответ")
+check_question(answer = 0.103, 
+               right = "правильно", 
+               wrong = "у меня другой ответ")
 ```
 
 Мы получили такой результат на основании 9 успехов из 87 наблюдений. Но, что если они там еще чего-то наснимают? Какова вероятность, что в новом фильме будет герой на "B", если предположить, что создатели стараются держать равновесие? 0.103? Но если там будет 13 новых героев, то полученная нами доля не будет иметь смысла, ведь 13*0.103 = `r 13*0.103`. Для ответа на такие вопросы обычно используют биномиальное распределение.
@@ -344,10 +340,9 @@ tibble(sample = rnorm(100, mean = 50, sd = 10)) %>%
 ```
 
 ```{r, echo = FALSE, results='asis'}
-autocheck_question(question_id = 12.4, 
-                   answer = round(dbinom(x = 3, 13, prob = 0.103), 3), 
-                   right = "правильно", 
-                   wrong = "у меня другой ответ")
+check_question(answer = round(dbinom(x = 3, 13, prob = 0.103), 3), 
+               right = "правильно", 
+               wrong = "у меня другой ответ")
 ```
 
 ### Давайте посчитаем вероятности

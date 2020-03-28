@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>13 Описательная статистика, распределения | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
   <meta name="description" content="13 Описательная статистика, распределения | Наука о данных в R для программы Цифровых гуманитарных исследований" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="13 Описательная статистика, распределения | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta property="og:type" content="book" />
@@ -358,7 +358,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.8" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#послесловие"><i class="fa fa-check"></i><b>14.8</b> Послесловие</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="статистические-тесты-для-работы-с-категориальными-данными.html"><a href="статистические-тесты-для-работы-с-категориальными-данными.html"><i class="fa fa-check"></i><b>15</b> Статистические тесты для работы с категориальными данными</a></li>
-<li class="chapter" data-level="16" data-path="регрессия.html"><a href="регрессия.html"><i class="fa fa-check"></i><b>16</b> Регрессия</a></li>
+<li class="chapter" data-level="16" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html"><i class="fa fa-check"></i><b>16</b> Корреляция и регрессия</a><ul>
+<li class="chapter" data-level="16.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#дисперсия"><i class="fa fa-check"></i><b>16.1</b> Дисперсия</a></li>
+<li class="chapter" data-level="16.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#ковариация"><i class="fa fa-check"></i><b>16.2</b> Ковариация</a></li>
+<li class="chapter" data-level="16.3" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#корреляция"><i class="fa fa-check"></i><b>16.3</b> Корреляция</a></li>
+<li class="chapter" data-level="16.4" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#регрессионный-анализ"><i class="fa fa-check"></i><b>16.4</b> Регрессионный анализ</a></li>
+</ul></li>
 <li class="chapter" data-level="17" data-path="кластеризация.html"><a href="кластеризация.html"><i class="fa fa-check"></i><b>17</b> Кластеризация</a></li>
 <li class="chapter" data-level="18" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>18</b> Методы уменьшения размерностей</a></li>
 <li class="chapter" data-level="19" data-path="работа-с-сетями.html"><a href="работа-с-сетями.html"><i class="fa fa-check"></i><b>19</b> Работа с сетями</a></li>
@@ -503,21 +508,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Влияет ли порядок следования элементов в векторе на значение энтропии?
 </p>
 </div>
-<form name="form_12_1" onsubmit="return validate_form_12_1()" method="post">
-<select name="answer_12_1"><option> да </option><option> нет </option></select><input type="submit" value="check">
+<form name="form_34910" onsubmit="return validate_form_34910()" method="post">
+<select name="answer_34910"><option> да </option><option> нет </option></select><br><input type="submit" value="check">
 </form>
-<br>
-<script> function validate_form_12_1() {var x = document.forms["form_12_1"]["answer_12_1"].value;if (x == "нет"){alert("правильно");return false;} else {alert("у меня другой ответ");return false;}} </script>
+<p id="result_34910">
+</p>
+<script> function validate_form_34910() {var x, text; var x = document.forms["form_34910"]["answer_34910"].value;if (x == "нет"){text = "правильно";} else {text = "у меня другой ответ";} document.getElementById("result_34910").innerHTML = text; return false;} </script>
 <div class="rmdtask">
 <p>
 Посчитайте значение энтропии для переменных <code>clarity</code>, <code>color</code> и <code>cut</code> из датасета <code>diamonds</code>. У какой переменной значение энтропии наибольшее?
 </p>
 </div>
-<form name="form_12_2" onsubmit="return validate_form_12_2()" method="post">
-<select name="answer_12_2"><option> clarity </option><option> color </option><option> cut </option></select><input type="submit" value="check">
+<form name="form_94372" onsubmit="return validate_form_94372()" method="post">
+<select name="answer_94372"><option> clarity </option><option> color </option><option> cut </option></select><br><input type="submit" value="check">
 </form>
-<br>
-<script> function validate_form_12_2() {var x = document.forms["form_12_2"]["answer_12_2"].value;if (x == "color"){alert("правильно");return false;} else {alert("у меня другой ответ");return false;}} </script>
+<p id="result_94372">
+</p>
+<script> function validate_form_94372() {var x, text; var x = document.forms["form_94372"]["answer_94372"].value;if (x == "color"){text = "правильно";} else {text = "у меня другой ответ";} document.getElementById("result_94372").innerHTML = text; return false;} </script>
 </div>
 <div id="числовые-переменные" class="section level3">
 <h3><span class="header-section-number">13.1.2</span> Числовые переменные</h3>
@@ -558,11 +565,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Какая доля имен героев из датасета <code>starwars</code> начинается на букву <code>B</code>? Ответ округлите до 3 знаков после запятой.
 </p>
 </div>
-<form name="form_12_3" onsubmit="return validate_form_12_3()" method="post">
-<input type="text" name="answer_12_3"><input type="submit" value="check">
+<form name="form_49434" onsubmit="return validate_form_49434()" method="post">
+<input type="text" name="answer_49434"><br><input type="submit" value="check">
 </form>
-<br>
-<script> function validate_form_12_3() {var x = document.forms["form_12_3"]["answer_12_3"].value;if (x == "0.103"){alert("правильно");return false;} else {alert("у меня другой ответ");return false;}} </script>
+<p id="result_49434">
+</p>
+<script> function validate_form_49434() {var x, text; var x = document.forms["form_49434"]["answer_49434"].value;if (x == "0.103"){text = "правильно";} else {text = "у меня другой ответ";} document.getElementById("result_49434").innerHTML = text; return false;} </script>
 <p>Мы получили такой результат на основании 9 успехов из 87 наблюдений. Но, что если они там еще чего-то наснимают? Какова вероятность, что в новом фильме будет герой на “B”, если предположить, что создатели стараются держать равновесие? 0.103? Но если там будет 13 новых героев, то полученная нами доля не будет иметь смысла, ведь 13*0.103 = 1.339. Для ответа на такие вопросы обычно используют биномиальное распределение.</p>
 <p><span class="math display">\[P(k | n, p) = \frac{n!}{k!(n-k)!} \times p^k \times (1-p)^{n-k} =  {n \choose k} \times p^k \times (1-p)^{n-k}\]</span></p>
 <p><span class="math display">\[ 0 \leq p \leq 1; n, k &gt; 0,\ где\]</span></p>
@@ -662,11 +670,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Рассмотрим задачу, которую обсуждали выше с именами героев из датасета <code>strawars</code>. Посчитайте значение функции плотности в точке 3 для биномиального распределения с вероятностью успеха 0.103. (округление до 3 знаков после запятой).
 </p>
 </div>
-<form name="form_12_4" onsubmit="return validate_form_12_4()" method="post">
-<input type="text" name="answer_12_4"><input type="submit" value="check">
+<form name="form_60217" onsubmit="return validate_form_60217()" method="post">
+<input type="text" name="answer_60217"><br><input type="submit" value="check">
 </form>
-<br>
-<script> function validate_form_12_4() {var x = document.forms["form_12_4"]["answer_12_4"].value;if (x == "0.105"){alert("правильно");return false;} else {alert("у меня другой ответ");return false;}} </script>
+<p id="result_60217">
+</p>
+<script> function validate_form_60217() {var x, text; var x = document.forms["form_60217"]["answer_60217"].value;if (x == "0.105"){text = "правильно";} else {text = "у меня другой ответ";} document.getElementById("result_60217").innerHTML = text; return false;} </script>
 </div>
 <div id="давайте-посчитаем-вероятности" class="section level3">
 <h3><span class="header-section-number">13.2.4</span> Давайте посчитаем вероятности</h3>

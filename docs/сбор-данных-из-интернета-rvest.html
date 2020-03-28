@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>12 Сбор данных из интернета: rvest | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
   <meta name="description" content="12 Сбор данных из интернета: rvest | Наука о данных в R для программы Цифровых гуманитарных исследований" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="12 Сбор данных из интернета: rvest | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta property="og:type" content="book" />
@@ -358,7 +358,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.8" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#послесловие"><i class="fa fa-check"></i><b>14.8</b> Послесловие</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="статистические-тесты-для-работы-с-категориальными-данными.html"><a href="статистические-тесты-для-работы-с-категориальными-данными.html"><i class="fa fa-check"></i><b>15</b> Статистические тесты для работы с категориальными данными</a></li>
-<li class="chapter" data-level="16" data-path="регрессия.html"><a href="регрессия.html"><i class="fa fa-check"></i><b>16</b> Регрессия</a></li>
+<li class="chapter" data-level="16" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html"><i class="fa fa-check"></i><b>16</b> Корреляция и регрессия</a><ul>
+<li class="chapter" data-level="16.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#дисперсия"><i class="fa fa-check"></i><b>16.1</b> Дисперсия</a></li>
+<li class="chapter" data-level="16.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#ковариация"><i class="fa fa-check"></i><b>16.2</b> Ковариация</a></li>
+<li class="chapter" data-level="16.3" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#корреляция"><i class="fa fa-check"></i><b>16.3</b> Корреляция</a></li>
+<li class="chapter" data-level="16.4" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#регрессионный-анализ"><i class="fa fa-check"></i><b>16.4</b> Регрессионный анализ</a></li>
+</ul></li>
 <li class="chapter" data-level="17" data-path="кластеризация.html"><a href="кластеризация.html"><i class="fa fa-check"></i><b>17</b> Кластеризация</a></li>
 <li class="chapter" data-level="18" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>18</b> Методы уменьшения размерностей</a></li>
 <li class="chapter" data-level="19" data-path="работа-с-сетями.html"><a href="работа-с-сетями.html"><i class="fa fa-check"></i><b>19</b> Работа с сетями</a></li>
@@ -432,30 +437,30 @@ Attaching package: &#39;rvest&#39;</code></pre>
 <div class="sourceCode" id="cb983"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb983-1"><a href="сбор-данных-из-интернета-rvest.html#cb983-1"></a>source <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb983-2"><a href="сбор-данных-из-интернета-rvest.html#cb983-2"></a><span class="st">  </span><span class="kw">html_nodes</span>(<span class="st">&quot;h2&quot;</span>)</span></code></pre></div>
 <pre><code>{xml_nodeset (10)}
- [1] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Цифровой архив «Отечественных записок ...
- [2] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Командные DH-проекты: «Отечественные  ...
- [3] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Цифровая трансформация культурного на ...
- [4] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Как цифровые гуманитарии зафрендились ...
- [5] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Виртуальные музеи — интернет-стартап  ...
- [6] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Где кутил Чайковский? Мастер-класс по ...
- [7] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;К полету готовы: школа по Digital Hum ...
- [8] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Terra Oblita: открытая карта памяти з ...
- [9] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Мир до вас дорастет: запущена первая  ...
-[10] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Лес, сосиски, (не)работающий код: вто ...</code></pre>
+ [1] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Цифровые гуманитарии прокачались в ге ...
+ [2] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Цифровой архив «Отечественных записок ...
+ [3] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Командные DH-проекты: «Отечественные  ...
+ [4] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Цифровая трансформация культурного на ...
+ [5] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Как цифровые гуманитарии зафрендились ...
+ [6] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Виртуальные музеи — интернет-стартап  ...
+ [7] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Где кутил Чайковский? Мастер-класс по ...
+ [8] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;К полету готовы: школа по Digital Hum ...
+ [9] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Terra Oblita: открытая карта памяти з ...
+[10] &lt;h2 class=&quot;first_child &quot;&gt;&lt;a title=&quot;Мир до вас дорастет: запущена первая  ...</code></pre>
 <p>Теперь если мы хотим обратиться к значениям этих узлов, мы можем использовать функцию <code>html_text()</code></p>
 <div class="sourceCode" id="cb985"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb985-1"><a href="сбор-данных-из-интернета-rvest.html#cb985-1"></a>source <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb985-2"><a href="сбор-данных-из-интернета-rvest.html#cb985-2"></a><span class="st">  </span><span class="kw">html_nodes</span>(<span class="st">&quot;h2&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb985-3"><a href="сбор-данных-из-интернета-rvest.html#cb985-3"></a><span class="st">  </span><span class="kw">html_text</span>()</span></code></pre></div>
-<pre><code> [1] &quot;Цифровой архив «Отечественных записок» выиграл грант «Инфокультуры»&quot;                
- [2] &quot;Командные DH-проекты: «Отечественные записки 2.0»&quot;                                  
- [3] &quot;Цифровая трансформация культурного наследия: цифровой архив узоров «Орнамика»&quot;      
- [4] &quot;Как цифровые гуманитарии зафрендились с ABBYY&quot;                                      
- [5] &quot;Виртуальные музеи — интернет-стартап 90-х или 70 лет эволюции?&quot;                     
- [6] &quot;Где кутил Чайковский? Мастер-класс по культурным GIS от St.Retrospect&quot;              
- [7] &quot;К полету готовы: школа по Digital Humanities как предчувствие гуманитарного космоса&quot;
- [8] &quot;Terra Oblita: открытая карта памяти забытых жертв нацизма&quot;                          
- [9] &quot;Мир до вас дорастет: запущена первая DH-ма­ги­стра­ту­ра в Москве&quot;                  
-[10] &quot;Лес, сосиски, (не)работающий код: второй хакатон по Digital Humanities&quot;             </code></pre>
+<pre><code> [1] &quot;Цифровые гуманитарии прокачались в геоинформатике&quot;                                  
+ [2] &quot;Цифровой архив «Отечественных записок» выиграл грант «Инфокультуры»&quot;                
+ [3] &quot;Командные DH-проекты: «Отечественные записки 2.0»&quot;                                  
+ [4] &quot;Цифровая трансформация культурного наследия: цифровой архив узоров «Орнамика»&quot;      
+ [5] &quot;Как цифровые гуманитарии зафрендились с ABBYY&quot;                                      
+ [6] &quot;Виртуальные музеи — интернет-стартап 90-х или 70 лет эволюции?&quot;                     
+ [7] &quot;Где кутил Чайковский? Мастер-класс по культурным GIS от St.Retrospect&quot;              
+ [8] &quot;К полету готовы: школа по Digital Humanities как предчувствие гуманитарного космоса&quot;
+ [9] &quot;Terra Oblita: открытая карта памяти забытых жертв нацизма&quot;                          
+[10] &quot;Мир до вас дорастет: запущена первая DH-ма­ги­стра­ту­ра в Москве&quot;                  </code></pre>
 <p>Если мы откроем превью узла <code>h2</code> (команда <code>View()</code>), то мы увидим что-то такое:</p>
 <p><img src="images/12_title_preview.png" /></p>
 <p>Эта схема показывает, что каждый узел <code>h2</code> содержит узел <code>a</code> который содержит три атрибута: <code>title</code> и <code>href</code>. Вложенность отображается знаком <code>&gt;</code>, а обращаться к атрибутам можно, используя функцию <code>html_attr()</code>:</p>
@@ -472,7 +477,7 @@ Attaching package: &#39;rvest&#39;</code></pre>
 <span id="cb987-11"><a href="сбор-данных-из-интернета-rvest.html#cb987-11"></a><span class="kw">tibble</span>(titles, links)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["titles"],"name":[1],"type":["chr"],"align":["left"]},{"label":["links"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"Цифровой архив «Отечественных записок» выиграл грант «Инфокультуры»","2":"https://www.hse.ru/ma/dh/news/348090631.html"},{"1":"Командные DH-проекты: «Отечественные записки 2.0»","2":"https://hum.hse.ru/digital/news/346244389.html"},{"1":"Цифровая трансформация культурного наследия: цифровой архив узоров «Орнамика»","2":"https://hum.hse.ru/digital/news/345295011.html"},{"1":"Как цифровые гуманитарии зафрендились с ABBYY","2":"https://hum.hse.ru/digital/news/342826901.html"},{"1":"Виртуальные музеи — интернет-стартап 90-х или 70 лет эволюции?","2":"https://hum.hse.ru/digital/news/340358329.html"},{"1":"Где кутил Чайковский? Мастер-класс по культурным GIS от St.Retrospect","2":"https://www.hse.ru/ma/dh/news/324836167.html"},{"1":"К полету готовы: школа по Digital Humanities как предчувствие гуманитарного космоса","2":"https://hum.hse.ru/digital/news/321597643.html"},{"1":"Terra Oblita: открытая карта памяти забытых жертв нацизма","2":"https://hum.hse.ru/digital/news/309545113.html"},{"1":"Мир до вас дорастет: запущена первая DH-магистратура в Москве","2":"https://hum.hse.ru/digital/news/306308322.html"},{"1":"Лес, сосиски, (не)работающий код: второй хакатон по Digital Humanities","2":"https://hum.hse.ru/digital/news/304027108.html"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["titles"],"name":[1],"type":["chr"],"align":["left"]},{"label":["links"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"Цифровые гуманитарии прокачались в геоинформатике","2":"https://hum.hse.ru/digital/news/351694288.html"},{"1":"Цифровой архив «Отечественных записок» выиграл грант «Инфокультуры»","2":"https://www.hse.ru/ma/dh/news/348090631.html"},{"1":"Командные DH-проекты: «Отечественные записки 2.0»","2":"https://hum.hse.ru/digital/news/346244389.html"},{"1":"Цифровая трансформация культурного наследия: цифровой архив узоров «Орнамика»","2":"https://hum.hse.ru/digital/news/345295011.html"},{"1":"Как цифровые гуманитарии зафрендились с ABBYY","2":"https://hum.hse.ru/digital/news/342826901.html"},{"1":"Виртуальные музеи — интернет-стартап 90-х или 70 лет эволюции?","2":"https://hum.hse.ru/digital/news/340358329.html"},{"1":"Где кутил Чайковский? Мастер-класс по культурным GIS от St.Retrospect","2":"https://www.hse.ru/ma/dh/news/324836167.html"},{"1":"К полету готовы: школа по Digital Humanities как предчувствие гуманитарного космоса","2":"https://hum.hse.ru/digital/news/321597643.html"},{"1":"Terra Oblita: открытая карта памяти забытых жертв нацизма","2":"https://hum.hse.ru/digital/news/309545113.html"},{"1":"Мир до вас дорастет: запущена первая DH-магистратура в Москве","2":"https://hum.hse.ru/digital/news/306308322.html"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Как видно из получившейся таблицы, на первой странице сайта всего 10 новостей. А что если мы хотим скачать все новости? Исследовав страницу Центра цифровых гуманитарных исследований, становится понятно, что все новые страницы генерятся по одному и тому же паттерну:</p>
@@ -559,25 +564,25 @@ Attaching package: &#39;rvest&#39;</code></pre>
 <div class="sourceCode" id="cb994"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb994-1"><a href="сбор-данных-из-интернета-rvest.html#cb994-1"></a>source <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb994-2"><a href="сбор-данных-из-интернета-rvest.html#cb994-2"></a><span class="st">  </span><span class="kw">html_nodes</span>(<span class="st">&quot;span.post__date&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb994-3"><a href="сбор-данных-из-интернета-rvest.html#cb994-3"></a><span class="st">  </span><span class="kw">html_text</span>()</span></code></pre></div>
-<pre><code> [1] &quot;\n\t\t\t\t\t\t10 марта\n\t\t\t\t\t&quot;           
- [2] &quot;\n\t\t\t\t\t\t2 марта\n\t\t\t\t\t&quot;            
- [3] &quot;\n\t\t\t\t\t\t28 февраля\n\t\t\t\t\t&quot;         
- [4] &quot;\n\t\t\t\t\t\t18 февраля\n\t\t\t\t\t&quot;         
- [5] &quot;\n\t\t\t\t\t\t10 февраля\n\t\t\t\t\t&quot;         
- [6] &quot;\n\t\t\t\t\t\t17 декабря, 2019 г.\n\t\t\t\t\t&quot;
- [7] &quot;\n\t\t\t\t\t\t3 декабря, 2019 г.\n\t\t\t\t\t&quot; 
- [8] &quot;\n\t\t\t\t\t\t6 октября, 2019 г.\n\t\t\t\t\t&quot; 
- [9] &quot;\n\t\t\t\t\t\t7 сентября, 2019 г.\n\t\t\t\t\t&quot;
-[10] &quot;\n\t\t\t\t\t\t30 августа, 2019 г.\n\t\t\t\t\t&quot;</code></pre>
+<pre><code> [1] &quot;\n\t\t\t\t\t\t23 марта\n\t\t\t\t\t&quot;           
+ [2] &quot;\n\t\t\t\t\t\t10 марта\n\t\t\t\t\t&quot;           
+ [3] &quot;\n\t\t\t\t\t\t2 марта\n\t\t\t\t\t&quot;            
+ [4] &quot;\n\t\t\t\t\t\t28 февраля\n\t\t\t\t\t&quot;         
+ [5] &quot;\n\t\t\t\t\t\t18 февраля\n\t\t\t\t\t&quot;         
+ [6] &quot;\n\t\t\t\t\t\t10 февраля\n\t\t\t\t\t&quot;         
+ [7] &quot;\n\t\t\t\t\t\t17 декабря, 2019 г.\n\t\t\t\t\t&quot;
+ [8] &quot;\n\t\t\t\t\t\t3 декабря, 2019 г.\n\t\t\t\t\t&quot; 
+ [9] &quot;\n\t\t\t\t\t\t6 октября, 2019 г.\n\t\t\t\t\t&quot; 
+[10] &quot;\n\t\t\t\t\t\t7 сентября, 2019 г.\n\t\t\t\t\t&quot;</code></pre>
 <p>Почистим:</p>
 <div class="sourceCode" id="cb996"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb996-1"><a href="сбор-данных-из-интернета-rvest.html#cb996-1"></a>source <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb996-2"><a href="сбор-данных-из-интернета-rvest.html#cb996-2"></a><span class="st">  </span><span class="kw">html_nodes</span>(<span class="st">&quot;span.post__date&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb996-3"><a href="сбор-данных-из-интернета-rvest.html#cb996-3"></a><span class="st">  </span><span class="kw">html_text</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb996-4"><a href="сбор-данных-из-интернета-rvest.html#cb996-4"></a><span class="st">  </span><span class="kw">str_remove_all</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">n|</span><span class="ch">\\</span><span class="st">t&quot;</span>)</span></code></pre></div>
-<pre><code> [1] &quot;10 марта&quot;            &quot;2 марта&quot;             &quot;28 февраля&quot;         
- [4] &quot;18 февраля&quot;          &quot;10 февраля&quot;          &quot;17 декабря, 2019 г.&quot;
- [7] &quot;3 декабря, 2019 г.&quot;  &quot;6 октября, 2019 г.&quot;  &quot;7 сентября, 2019 г.&quot;
-[10] &quot;30 августа, 2019 г.&quot;</code></pre>
+<pre><code> [1] &quot;23 марта&quot;            &quot;10 марта&quot;            &quot;2 марта&quot;            
+ [4] &quot;28 февраля&quot;          &quot;18 февраля&quot;          &quot;10 февраля&quot;         
+ [7] &quot;17 декабря, 2019 г.&quot; &quot;3 декабря, 2019 г.&quot;  &quot;6 октября, 2019 г.&quot; 
+[10] &quot;7 сентября, 2019 г.&quot;</code></pre>
 <div class="rmdtask">
 <p>
 Постройте график, показывающий количество новостей Центра цифровых гуманитарных исследований за каждый месяц.
