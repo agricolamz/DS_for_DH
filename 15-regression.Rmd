@@ -48,13 +48,14 @@ df %>%
                      xmax = mean(x), 
                      color = positive_negative),
                  show.legend = FALSE) + 
+  annotate(geom = "text", x = 56, y = 1, label = "среднее x")+
   geom_point()+
   scale_y_continuous(breaks = df$y)+
   labs(y = "номер наблюдений x",
        x = "значение наблюдений x")
 ```
 
-Для того, чтобы было понятнее, что такое дисперсия, давайте рассмотрим несколько расспределений с разными дисперсиями:
+Для того, чтобы было понятнее, что такое дисперсия, давайте рассмотрим несколько расспределений с одним и тем же средним, но разными дисперсиями:
 
 ```{r, echo=FALSE, message=FALSE}
 set.seed(42)
@@ -71,6 +72,21 @@ map_dfr(1:5*5, function(x){
   labs(x = "значение наблюдений",
        y = "дисперсия наблюдений")
 ```
+
+В R дисперсию можно посчитать при помощи функции `var()`.
+
+```{r}
+set.seed(42)
+x <- rnorm(20, mean = 50, sd = 10)
+var(x)
+```
+
+Проверим, что функция выдает то же, что мы записали в формуле.
+
+```{r}
+var(x) == sum((x - mean(x))^2)/(length(x)-1)
+```
+
 
 ## Ковариация
 
@@ -108,8 +124,10 @@ df %>%
   geom_hline(aes(yintercept = mean(y)), linetype = 2)+
   geom_vline(aes(xintercept = mean(x)), linetype = 2)+
   geom_rect(aes(ymin = mean(y), ymax = y[which.max(x)], 
-                xmin = mean(x), xmax = max(x), fill = TRUE),
-            show.legend = FALSE)+
+                xmin = mean(x), xmax = max(x)), 
+            fill = "red", alpha = 0.01, show.legend = FALSE)+
+  geom_text(aes(x = mean(x)+4), y = 25, label = "среднее x", alpha = 0.05)+
+  geom_text(aes(y = mean(y)+2), x = 25, label = "среднее y", alpha = 0.05)+
   geom_point()
 ```
 
@@ -125,6 +143,8 @@ df %>%
             alpha = 0.1, show.legend = FALSE)+
   geom_hline(aes(yintercept = mean(y)), linetype = 2)+
   geom_vline(aes(xintercept = mean(x)), linetype = 2)+
+  geom_text(aes(x = mean(x)+4), y = 25, label = "среднее x", alpha = 0.05)+
+  geom_text(aes(y = mean(y)+2), x = 25, label = "среднее y", alpha = 0.05)+
   geom_point()
 ```
 
@@ -134,15 +154,28 @@ df %>%
 
 ```{r}
 set.seed(42)
-x <- rnorm(20, mean = 50, sd = 10)
-y <-  x + rnorm(20, sd = 10)
+x <- rnorm(10, mean = 50, sd = 10)
+y <-  x + rnorm(10, sd = 10)
 cov(x, y)
 cov(x, -y*2)
 ```
 
 Как видно, простое умножение на два удвоило значение ковариации, что показывает, что непосредственно ковариацию использовать для сравнения разных датасетов не стоит.
 
+Проверим, что функция выдает то же, что мы записали в формуле.
+
+```{r}
+cov(x, y) == sum((x-mean(x))*(y - mean(y)))/(length(x)-1)
+```
+
+
 ## Корреляция
+
+### Корреляция Пирсона
+
+$$cor(X, Y) = \frac{cov(X, Y)}{\sigma_X\times\sigma_Y},$$
+
+### Корреляция Спирмана и Кендала
 
 ## Регрессионный анализ
 
