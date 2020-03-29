@@ -11,7 +11,7 @@ library(tidyverse)
 theme_set(theme_bw())
 ```
 
-## Дисперсия
+## Дисперсия и стандартное отклонение
 
 Дисперсия --- мера разброса значений наблюдений относительно среднего. 
 
@@ -87,6 +87,12 @@ var(x)
 var(x) == sum((x - mean(x))^2)/(length(x)-1)
 ```
 
+Так как дисперсия является квадратом отклонения, то часто вместо нее используют стандартное отклонение $\sigma$ --- корень из дисперсии. В R ее можно посчитать при помощи функции `sd()`:
+
+```{r}
+sqrt(var(x))
+sd(x)
+```
 
 ## Ковариация
 
@@ -105,8 +111,8 @@ $$cov(X, Y) = \frac{\sum_{i = 1}^n(x_i - \bar{x})(y_i-\bar{y})}{n - 1},$$
 
 ```{r, echo=FALSE}
 set.seed(42)
-tibble(x = rnorm(25, mean = 50, sd = 10), 
-       y = x + rnorm(25, sd = 10)) %>% 
+tibble(x = rnorm(30, mean = 50, sd = 10), 
+       y = x + rnorm(30, sd = 10)) %>% 
   mutate(x = x - mean(x)+ 50,
          y = y - mean(y)+ 55) ->
   df
@@ -173,9 +179,35 @@ cov(x, y) == sum((x-mean(x))*(y - mean(y)))/(length(x)-1)
 
 ### Корреляция Пирсона
 
-$$cor(X, Y) = \frac{cov(X, Y)}{\sigma_X\times\sigma_Y},$$
+$$\rho_{X,Y} = \frac{cov(X, Y)}{\sigma_X\times\sigma_Y} = \frac{\sum_{i = 1}^n(x_i - \bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i = 1}^n(x_i - \bar{x})^2\times\sum_{i = 1}^n(y_i - \bar{y})^2}},$$
 
-### Корреляция Спирмана и Кендала
+где 
+
+* $(x_1, y_1), ..., (x_n, y_n)$ --- пары наблюдений;
+* $\bar{x}, \bar{y}$ --- средние наблюдений;
+* $X, Y$ --- векторы всех наблюдений;
+* $n$ --- количество наблюдений.
+
+```{r}
+cor(df$x, df$y)
+
+cov(df$x, df$y)/(sd(df$x)*sd(df$y))
+```
+
+
+```{r}
+df %>% 
+  ggplot()+
+  geom_point(aes(x = x, y = y))+
+  geom_smooth(aes(x = x, y = y), method = "lm", se = FALSE, color = "red")+
+  geom_smooth(aes(x = y, y = x), method = "lm", se = FALSE)
+
+lm(df$x~df$y)
+lm(df$y~df$x)
+```
+
+
+### Ранговые корреляции Спирмана и Кендала
 
 ## Регрессионный анализ
 
