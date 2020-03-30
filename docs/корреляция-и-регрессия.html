@@ -347,12 +347,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15" data-path="статистические-тесты-для-работы-с-категориальными-данными.html"><a href="статистические-тесты-для-работы-с-категориальными-данными.html"><i class="fa fa-check"></i><b>15</b> Статистические тесты для работы с категориальными данными</a></li>
 <li class="chapter" data-level="16" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html"><i class="fa fa-check"></i><b>16</b> Корреляция и регрессия</a><ul>
 <li class="chapter" data-level="16.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#дисперсия-и-стандартное-отклонение"><i class="fa fa-check"></i><b>16.1</b> Дисперсия и стандартное отклонение</a></li>
-<li class="chapter" data-level="16.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#ковариация"><i class="fa fa-check"></i><b>16.2</b> Ковариация</a></li>
-<li class="chapter" data-level="16.3" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#корреляция"><i class="fa fa-check"></i><b>16.3</b> Корреляция</a><ul>
-<li class="chapter" data-level="16.3.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#корреляция-пирсона"><i class="fa fa-check"></i><b>16.3.1</b> Корреляция Пирсона</a></li>
-<li class="chapter" data-level="16.3.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#ранговые-корреляции-спирмана-и-кендала"><i class="fa fa-check"></i><b>16.3.2</b> Ранговые корреляции Спирмана и Кендала</a></li>
+<li class="chapter" data-level="16.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#z-преобразование"><i class="fa fa-check"></i><b>16.2</b> <span class="math inline">\(z\)</span>-преобразование</a></li>
+<li class="chapter" data-level="16.3" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#ковариация"><i class="fa fa-check"></i><b>16.3</b> Ковариация</a></li>
+<li class="chapter" data-level="16.4" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#корреляция"><i class="fa fa-check"></i><b>16.4</b> Корреляция</a><ul>
+<li class="chapter" data-level="16.4.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#корреляция-пирсона"><i class="fa fa-check"></i><b>16.4.1</b> Корреляция Пирсона</a></li>
+<li class="chapter" data-level="16.4.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#ранговые-корреляции-спирмана-и-кендала"><i class="fa fa-check"></i><b>16.4.2</b> Ранговые корреляции Спирмана и Кендала</a></li>
 </ul></li>
-<li class="chapter" data-level="16.4" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#регрессионный-анализ"><i class="fa fa-check"></i><b>16.4</b> Регрессионный анализ</a></li>
+<li class="chapter" data-level="16.5" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#регрессионный-анализ"><i class="fa fa-check"></i><b>16.5</b> Регрессионный анализ</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="кластеризация.html"><a href="кластеризация.html"><i class="fa fa-check"></i><b>17</b> Кластеризация</a></li>
 <li class="chapter" data-level="18" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>18</b> Методы уменьшения размерностей</a></li>
@@ -408,7 +409,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Тогда дисперсия — это сумма квадратов расстояний от каждой точки до среднего выборки (пунктирная линия) разделенное на количество наблюдений - 1 (по духу эта мера — обычное среднее, но если вас инетересует разница смещенной и несмещенной оценки дисперсии, см. <a href="https://youtu.be/Cn0skMJ2F3c">видео</a>).</p>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>Для того, чтобы было понятнее, что такое дисперсия, давайте рассмотрим несколько расспределений с одним и тем же средним, но разными дисперсиями:</p>
+<p>Для того чтобы было понятнее, что такое дисперсия, давайте рассмотрим несколько расспределений с одним и тем же средним, но разными дисперсиями:</p>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>В R дисперсию можно посчитать при помощи функции <code>var()</code>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="корреляция-и-регрессия.html#cb1-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
@@ -424,8 +425,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="корреляция-и-регрессия.html#cb7-1"></a><span class="kw">sd</span>(x)</span></code></pre></div>
 <pre><code>## [1] 13.12628</code></pre>
 </div>
+<div id="z-преобразование" class="section level2">
+<h2><span class="header-section-number">16.2</span> <span class="math inline">\(z\)</span>-преобразование</h2>
+</div>
 <div id="ковариация" class="section level2">
-<h2><span class="header-section-number">16.2</span> Ковариация</h2>
+<h2><span class="header-section-number">16.3</span> Ковариация</h2>
 <p>Ковариация — эта мера ассоциации двух переменных.</p>
 <p><span class="math display">\[cov(X, Y) = \frac{\sum_{i = 1}^n(x_i - \bar{x})(y_i-\bar{y})}{n - 1},\]</span></p>
 <p>где</p>
@@ -456,10 +460,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="корреляция" class="section level2">
-<h2><span class="header-section-number">16.3</span> Корреляция</h2>
+<h2><span class="header-section-number">16.4</span> Корреляция</h2>
 <div id="корреляция-пирсона" class="section level3">
-<h3><span class="header-section-number">16.3.1</span> Корреляция Пирсона</h3>
-<p><span class="math display">\[\rho_{X,Y} = \frac{cov(X, Y)}{\sigma_X\times\sigma_Y} = \frac{\sum_{i = 1}^n(x_i - \bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i = 1}^n(x_i - \bar{x})^2\times\sum_{i = 1}^n(y_i - \bar{y})^2}},\]</span></p>
+<h3><span class="header-section-number">16.4.1</span> Корреляция Пирсона</h3>
+<p><span class="math display">\[\rho_{X,Y} = \frac{cov(X, Y)}{\sigma_X\times\sigma_Y} = \frac{1}{n-1}\times\sum_{i = 1}^n\left(\frac{x_i-\bar{x}}{\sigma_X}\times\frac{y_i-\bar{y}}{\sigma_Y}\right),\]</span></p>
 <p>где</p>
 <ul>
 <li><span class="math inline">\((x_1, y_1), ..., (x_n, y_n)\)</span> — пары наблюдений;</li>
@@ -467,41 +471,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(X, Y\)</span> — векторы всех наблюдений;</li>
 <li><span class="math inline">\(n\)</span> — количество наблюдений.</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="корреляция-и-регрессия.html#cb15-1"></a><span class="kw">cor</span>(df<span class="op">$</span>x, df<span class="op">$</span>y)</span></code></pre></div>
-<pre><code>## [1] 0.7114793</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="корреляция-и-регрессия.html#cb17-1"></a><span class="kw">cov</span>(df<span class="op">$</span>x, df<span class="op">$</span>y)<span class="op">/</span>(<span class="kw">sd</span>(df<span class="op">$</span>x)<span class="op">*</span><span class="kw">sd</span>(df<span class="op">$</span>y))</span></code></pre></div>
-<pre><code>## [1] 0.7114793</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="корреляция-и-регрессия.html#cb19-1"></a>df <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb19-2"><a href="корреляция-и-регрессия.html#cb19-2"></a><span class="st">  </span><span class="kw">ggplot</span>()<span class="op">+</span></span>
-<span id="cb19-3"><a href="корреляция-и-регрессия.html#cb19-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y))<span class="op">+</span></span>
-<span id="cb19-4"><a href="корреляция-и-регрессия.html#cb19-4"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y), <span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span></span>
-<span id="cb19-5"><a href="корреляция-и-регрессия.html#cb19-5"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">x =</span> y, <span class="dt">y =</span> x), <span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;
-## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p>Последнее уравнение показывает, что коэффициент корреляции Пирсона можно представить как среднее (с поправкой) произведение <span class="math inline">\(z\)</span>-нормализованных значений двух переменных.</p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Эта нормализация приводит к тому, что</p>
+<ul>
+<li>значения корреляции имеют те же свойства знака коэффициента что и ковариация:
+<ul>
+<li>если коэффициент положительный (т. е. много красных прямоугольников) — связь между переменными положительная (чем <strong>больше</strong> <span class="math inline">\(x\)</span>, тем <strong>больше</strong> <span class="math inline">\(y\)</span>),</li>
+<li>если коэффициент отрицательный (т. е. много синих прямоугольников) — связь между переменными отрицательная (чем <strong>больше</strong> <span class="math inline">\(x\)</span>, тем <strong>меньше</strong> <span class="math inline">\(y\)</span>);</li>
+</ul></li>
+<li>значение корреляции имееет не зависимое от типа данных интеретация:
+<ul>
+<li>если модуль коэффициента близок к 1 или ему равен — связь между переменными сильная,</li>
+<li>если модуль коэффициента близок к 0 или ему равен — связь между переменными слабая.</li>
+</ul></li>
+</ul>
+<p>Для того чтобы было понятнее, что такое корреляция, давайте рассмотрим несколько расспределений с разными значениями корреляции:</p>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="корреляция-и-регрессия.html#cb21-1"></a><span class="kw">lm</span>(df<span class="op">$</span>x<span class="op">~</span>df<span class="op">$</span>y)</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = df$x ~ df$y)
-## 
-## Coefficients:
-## (Intercept)         df$y  
-##     16.4285       0.6104</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="корреляция-и-регрессия.html#cb23-1"></a><span class="kw">lm</span>(df<span class="op">$</span>y<span class="op">~</span>df<span class="op">$</span>x)</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = df$y ~ df$x)
-## 
-## Coefficients:
-## (Intercept)         df$x  
-##     13.5346       0.8293</code></pre>
+<p>Как видно из этого графика, чем ближе модуль корреляции к 1, тем боллее компактно расположены точки, чем ближе к 0, тем более рассеяны значения. Достаточно легко научиться приблизительно оценивать коэфициент корреляции на глаз, поиграв 2–5 минут в игру <a href="http://guessthecorrelation.com/">Guess the correlation</a>.</p>
+<p>В R коэффициент корреляции Пирсона можно посчитать при помощи функции <code>cor()</code>.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="корреляция-и-регрессия.html#cb15-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb15-2"><a href="корреляция-и-регрессия.html#cb15-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb15-3"><a href="корреляция-и-регрессия.html#cb15-3"></a>y &lt;-<span class="st">  </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb15-4"><a href="корреляция-и-регрессия.html#cb15-4"></a><span class="kw">cor</span>(x, y)</span></code></pre></div>
+<pre><code>## [1] 0.6659041</code></pre>
+<p>Проверим, что функция выдает то же, что мы записали в формуле.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="корреляция-и-регрессия.html#cb17-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">cov</span>(x, y)<span class="op">/</span>(<span class="kw">sd</span>(x)<span class="op">*</span><span class="kw">sd</span>(y))</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="корреляция-и-регрессия.html#cb19-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">scale</span>(x)<span class="op">*</span><span class="kw">scale</span>(y))<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="ранговые-корреляции-спирмана-и-кендала" class="section level3">
-<h3><span class="header-section-number">16.3.2</span> Ранговые корреляции Спирмана и Кендала</h3>
+<h3><span class="header-section-number">16.4.2</span> Ранговые корреляции Спирмана и Кендала</h3>
 </div>
 </div>
 <div id="регрессионный-анализ" class="section level2">
-<h2><span class="header-section-number">16.4</span> Регрессионный анализ</h2>
+<h2><span class="header-section-number">16.5</span> Регрессионный анализ</h2>
 <p><a href="https://antoinesoetewey.shinyapps.io/statistics-202/" class="uri">https://antoinesoetewey.shinyapps.io/statistics-202/</a></p>
 
 </div>

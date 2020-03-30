@@ -55,7 +55,7 @@ df %>%
        x = "значение наблюдений x")
 ```
 
-Для того, чтобы было понятнее, что такое дисперсия, давайте рассмотрим несколько расспределений с одним и тем же средним, но разными дисперсиями:
+Для того чтобы было понятнее, что такое дисперсия, давайте рассмотрим несколько расспределений с одним и тем же средним, но разными дисперсиями:
 
 ```{r, echo=FALSE, message=FALSE}
 set.seed(42)
@@ -93,6 +93,10 @@ var(x) == sum((x - mean(x))^2)/(length(x)-1)
 sqrt(var(x))
 sd(x)
 ```
+
+## $z$-преобразование
+
+
 
 ## Ковариация
 
@@ -179,7 +183,7 @@ cov(x, y) == sum((x-mean(x))*(y - mean(y)))/(length(x)-1)
 
 ### Корреляция Пирсона
 
-$$\rho_{X,Y} = \frac{cov(X, Y)}{\sigma_X\times\sigma_Y} = \frac{\sum_{i = 1}^n(x_i - \bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i = 1}^n(x_i - \bar{x})^2\times\sum_{i = 1}^n(y_i - \bar{y})^2}},$$
+$$\rho_{X,Y} = \frac{cov(X, Y)}{\sigma_X\times\sigma_Y} = \frac{1}{n-1}\times\sum_{i = 1}^n\left(\frac{x_i-\bar{x}}{\sigma_X}\times\frac{y_i-\bar{y}}{\sigma_Y}\right),$$
 
 где 
 
@@ -188,22 +192,70 @@ $$\rho_{X,Y} = \frac{cov(X, Y)}{\sigma_X\times\sigma_Y} = \frac{\sum_{i = 1}^n(x
 * $X, Y$ --- векторы всех наблюдений;
 * $n$ --- количество наблюдений.
 
-```{r}
-cor(df$x, df$y)
+Последнее уравнение показывает, что коэффициент корреляции Пирсона можно представить как среднее (с поправкой) произведение $z$-нормализованных значений двух переменных.
 
-cov(df$x, df$y)/(sd(df$x)*sd(df$y))
+```{r, echo=FALSE}
+df %>% 
+  mutate_all(scale) %>% 
+  mutate(fill_color = (x > mean(x) & y > mean(y)) | (!x > mean(x) & !y > mean(y)),
+         fill_color = !fill_color) %>% 
+  ggplot(aes(x, y))+
+  geom_rect(aes(xmin = mean(x), xmax = x, 
+                ymin = mean(y), ymax = y, fill = fill_color, color = fill_color),
+            alpha = 0.1, show.legend = FALSE)+
+  geom_hline(aes(yintercept = mean(y)), linetype = 2)+
+  geom_vline(aes(xintercept = mean(x)), linetype = 2)+
+  geom_text(aes(x = mean(x)+0.8), y = -2, label = "нормализованное среднее x", alpha = 0.05)+
+  geom_text(aes(y = mean(y)+0.1), x = -1.6, label = "нормализованное среднее y", alpha = 0.05)+
+  geom_point()
 ```
 
+Эта нормализация приводит к тому, что 
+
+* значения корреляции имеют те же свойства знака коэффициента что и ковариация:
+    * если коэффициент положительный (т. е. много красных прямоугольников) --- связь между переменными положительная (чем **больше** $x$, тем **больше** $y$), 
+    * если коэффициент отрицательный (т. е. много синих прямоугольников) --- связь между переменными отрицательная (чем **больше** $x$, тем **меньше** $y$);
+* значение корреляции имееет не зависимое от типа данных интеретация:
+    * если модуль коэффициента близок к 1 или ему равен --- связь между переменными сильная,
+    * если модуль коэффициента близок к 0 или ему равен --- связь между переменными слабая.
+
+Для того чтобы было понятнее, что такое корреляция, давайте рассмотрим несколько расспределений с разными значениями корреляции:
+
+```{r, message = FALSE, warning=FALSE, echo = FALSE}
+set.seed(42)
+map_dfr(c(-0.5, -0.75, -0.95, 0.5, 0.75, 0.95), function(i){
+  MASS::mvrnorm(n=100, 
+                mu=rep(50,2), 
+                Sigma=matrix(i, nrow=2, ncol=2) + diag(2)*(1-i)) %>% 
+    as_tibble() %>% 
+    mutate(id = i) %>% 
+    rename(x = V1,
+           y = V2)}) %>% 
+  group_by(id) %>% 
+  mutate(cor = round(cor(x, y), 3)) %>%
+  ggplot(aes(x, y))+
+  geom_smooth(method = "lm", se = FALSE, color = "gray80")+
+  geom_point()+
+  facet_wrap(~cor, nrow = 2, scales = "free")+
+  labs(x = "", y = "")
+```
+
+Как видно из этого графика, чем ближе модуль корреляции к 1, тем боллее компактно расположены точки, чем ближе к 0, тем более рассеяны значения. Достаточно легко научиться приблизительно оценивать коэфициент корреляции на глаз, поиграв 2--5 минут в игру [Guess the correlation](http://guessthecorrelation.com/).
+
+В R коэффициент корреляции Пирсона можно посчитать при помощи функции `cor()`.
 
 ```{r}
-df %>% 
-  ggplot()+
-  geom_point(aes(x = x, y = y))+
-  geom_smooth(aes(x = x, y = y), method = "lm", se = FALSE, color = "red")+
-  geom_smooth(aes(x = y, y = x), method = "lm", se = FALSE)
+set.seed(42)
+x <- rnorm(15, mean = 50, sd = 10)
+y <-  x + rnorm(15, sd = 10)
+cor(x, y)
+```
 
-lm(df$x~df$y)
-lm(df$y~df$x)
+Проверим, что функция выдает то же, что мы записали в формуле.
+
+```{r}
+cor(x, y) == cov(x, y)/(sd(x)*sd(y))
+cor(x, y) == sum(scale(x)*scale(y))/(length(x)-1)
 ```
 
 
