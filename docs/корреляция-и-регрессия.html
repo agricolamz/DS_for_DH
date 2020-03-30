@@ -396,7 +396,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">16</span> Корреляция и регрессия</h1>
 <div id="дисперсия-и-стандартное-отклонение" class="section level2">
 <h2><span class="header-section-number">16.1</span> Дисперсия и стандартное отклонение</h2>
-<p>Дисперсия — мера разброса значений наблюдений относительно среднего.</p>
+<p><strong>Дисперсия</strong> — мера разброса значений наблюдений относительно среднего.</p>
 <p><span class="math display">\[\sigma^2_X = \frac{\sum_{i = 1}^n(x_i - \bar{x})^2}{n - 1},\]</span></p>
 <p>где</p>
 <ul>
@@ -427,10 +427,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="z-преобразование" class="section level2">
 <h2><span class="header-section-number">16.2</span> z-преобразование</h2>
+<p><strong>z-преобразование</strong> (еще используют термин <strong>нормализация</strong>) — это способ представления данных в виде расстояний от среднего, измеряемых в стандартных откланениях. Для того чтобы его получить, нужно из каждого наблюдения вычесть среднее и результат разделить на стандартное отклонение.</p>
+<p><span class="math display">\[x_i = \frac{x_i - \bar{x}}{\sigma_X}\]</span></p>
+<p>Если все наблюдения z-преобразовать, то получиться распределение с средним в 0 и стандартным отклонением 1 (или очень близко к ним).</p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Само по себе z-преобразование ничего особенного нам про данные не говорит. Однако это преобразование позволяет привести к “общему знаменателю” разные переменные. Т. е. это преобразование ничего нам не говорит про конкретный набор данных, но позволяет сравнивать разные наборы данных.</p>
 </div>
 <div id="ковариация" class="section level2">
 <h2><span class="header-section-number">16.3</span> Ковариация</h2>
-<p>Ковариация — эта мера ассоциации двух переменных.</p>
+<p><strong>Ковариация</strong> — эта мера ассоциации двух переменных.</p>
 <p><span class="math display">\[cov(X, Y) = \frac{\sum_{i = 1}^n(x_i - \bar{x})(y_i-\bar{y})}{n - 1},\]</span></p>
 <p>где</p>
 <ul>
@@ -440,11 +445,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(n\)</span> — количество наблюдений.</li>
 </ul>
 <p>Представим, что у нас есть следующие данные:</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<p>Тогда, согласно формуле, для каждой точки вычисляется следующая площадь (пуктирными линиями обозначены средние):</p>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<p>Если значения <span class="math inline">\(x_i\)</span> и <span class="math inline">\(y_i\)</span> какой-то точки либо оба больше, либо оба меньше средних <span class="math inline">\(\bar{x}\)</span> и <span class="math inline">\(\bar{y}\)</span>, то получившееся произведение будет иметь знак <code>+</code>, если же наоборот — знак <code>-</code>. На графике это показано цветом.</p>
+<p>Тогда, согласно формуле, для каждой точки вычисляется следующая площадь (пуктирными линиями обозначены средние):</p>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Если значения <span class="math inline">\(x_i\)</span> и <span class="math inline">\(y_i\)</span> какой-то точки либо оба больше, либо оба меньше средних <span class="math inline">\(\bar{x}\)</span> и <span class="math inline">\(\bar{y}\)</span>, то получившееся произведение будет иметь знак <code>+</code>, если же наоборот — знак <code>-</code>. На графике это показано цветом.</p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Таким образом, если много красных прямоугольников, то значение суммы будет положительное и обозначать положительную связь (чем больше <span class="math inline">\(x\)</span>, тем больше <span class="math inline">\(y\)</span>), а если будет много синий прямоугольников, то значение суммы отрицательное и обозначать положительную связь (чем больше <span class="math inline">\(x\)</span>, тем меньше <span class="math inline">\(y\)</span>). Непосредственно значение ковариации не очень информативно, так как может достаточно сильно варьироваться от датасета к датасету.</p>
 <p>В R ковариацию можно посчитать при помощи функции <code>cov()</code>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="корреляция-и-регрессия.html#cb9-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
@@ -472,7 +477,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(n\)</span> — количество наблюдений.</li>
 </ul>
 <p>Последнее уравнение показывает, что коэффициент корреляции Пирсона можно представить как среднее (с поправкой) произведение <span class="math inline">\(z\)</span>-нормализованных значений двух переменных.</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>Эта нормализация приводит к тому, что</p>
 <ul>
 <li>значения корреляции имеют те же свойства знака коэффициента что и ковариация:
@@ -487,8 +492,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p>Для того чтобы было понятнее, что такое корреляция, давайте рассмотрим несколько расспределений с разными значениями корреляции:</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p>Как видно из этого графика, чем ближе модуль корреляции к 1, тем боллее компактно расположены точки, чем ближе к 0, тем более рассеяны значения. Достаточно легко научиться приблизительно оценивать коэфициент корреляции на глаз, поиграв 2–5 минут в игру <a href="http://guessthecorrelation.com/">Guess the correlation</a>.</p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>Как видно из этого графика, чем ближе модуль корреляции к 1, тем боллее компактно расположены точки друг к другу, чем ближе к 0, тем более рассеяны значения. Достаточно легко научиться приблизительно оценивать коэфициент корреляции на глаз, поиграв 2–5 минут в игру <a href="http://guessthecorrelation.com/">Guess the correlation</a>.</p>
 <p>В R коэффициент корреляции Пирсона можно посчитать при помощи функции <code>cor()</code>.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="корреляция-и-регрессия.html#cb15-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
 <span id="cb15-2"><a href="корреляция-и-регрессия.html#cb15-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
