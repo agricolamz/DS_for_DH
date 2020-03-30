@@ -347,7 +347,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15" data-path="статистические-тесты-для-работы-с-категориальными-данными.html"><a href="статистические-тесты-для-работы-с-категориальными-данными.html"><i class="fa fa-check"></i><b>15</b> Статистические тесты для работы с категориальными данными</a></li>
 <li class="chapter" data-level="16" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html"><i class="fa fa-check"></i><b>16</b> Корреляция и регрессия</a><ul>
 <li class="chapter" data-level="16.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#дисперсия-и-стандартное-отклонение"><i class="fa fa-check"></i><b>16.1</b> Дисперсия и стандартное отклонение</a></li>
-<li class="chapter" data-level="16.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#z-преобразование"><i class="fa fa-check"></i><b>16.2</b> <span class="math inline">\(z\)</span>-преобразование</a></li>
+<li class="chapter" data-level="16.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#z-преобразование"><i class="fa fa-check"></i><b>16.2</b> z-преобразование</a></li>
 <li class="chapter" data-level="16.3" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#ковариация"><i class="fa fa-check"></i><b>16.3</b> Ковариация</a></li>
 <li class="chapter" data-level="16.4" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#корреляция"><i class="fa fa-check"></i><b>16.4</b> Корреляция</a><ul>
 <li class="chapter" data-level="16.4.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#корреляция-пирсона"><i class="fa fa-check"></i><b>16.4.1</b> Корреляция Пирсона</a></li>
@@ -420,13 +420,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="корреляция-и-регрессия.html#cb3-1"></a><span class="kw">var</span>(x) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>((x <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(x))<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Так как дисперсия является квадратом отклонения, то часто вместо нее используют стандартное отклонение <span class="math inline">\(\sigma\)</span> — корень из дисперсии. В R ее можно посчитать при помощи функции <code>sd()</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="корреляция-и-регрессия.html#cb5-1"></a><span class="kw">sqrt</span>(<span class="kw">var</span>(x))</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="корреляция-и-регрессия.html#cb5-1"></a><span class="kw">sd</span>(x)</span></code></pre></div>
 <pre><code>## [1] 13.12628</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="корреляция-и-регрессия.html#cb7-1"></a><span class="kw">sd</span>(x)</span></code></pre></div>
-<pre><code>## [1] 13.12628</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="корреляция-и-регрессия.html#cb7-1"></a><span class="kw">sd</span>(x) <span class="op">==</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">var</span>(x))</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="z-преобразование" class="section level2">
-<h2><span class="header-section-number">16.2</span> <span class="math inline">\(z\)</span>-преобразование</h2>
+<h2><span class="header-section-number">16.2</span> z-преобразование</h2>
 </div>
 <div id="ковариация" class="section level2">
 <h2><span class="header-section-number">16.3</span> Ковариация</h2>
