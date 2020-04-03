@@ -3,7 +3,7 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-# Работа с текстами: gutenbergr, tidytext, udpipe {#tidytext}
+# Работа с текстами: `gutenbergr`, `tidytext`, `udpipe` {#tidytext}
 
 ```{r,message=FALSE}
 library(tidyverse)
@@ -157,7 +157,7 @@ books %>%
 ```
 
 
-## Пакет udpipe
+## Пакет `udpipe`
 
 Пакет `udpipe` представляет лемматизацию, морфологический и синтаксический анализ разных языков. Туториал можно найти [здесь](https://bnosac.github.io/udpipe/docs/doc1.html), там же есть список доступных языков.
 
