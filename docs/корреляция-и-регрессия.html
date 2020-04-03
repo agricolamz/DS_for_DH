@@ -419,7 +419,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Проверим, что функция выдает то же, что мы записали в формуле.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="корреляция-и-регрессия.html#cb3-1"></a><span class="kw">var</span>(x) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>((x <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(x))<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<p>Так как дисперсия является квадратом отклонения, то часто вместо нее используют стандартное отклонение <span class="math inline">\(\sigma\)</span> — корень из дисперсии. В R ее можно посчитать при помощи функции <code>sd()</code>:</p>
+<p>Так как дисперсия является квадратом отклонения, то часто вместо нее используют более интерпретируемое стандартное отклонение <span class="math inline">\(\sigma\)</span> — корень из дисперсии. В R ее можно посчитать при помощи функции <code>sd()</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="корреляция-и-регрессия.html#cb5-1"></a><span class="kw">sd</span>(x)</span></code></pre></div>
 <pre><code>## [1] 13.12628</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="корреляция-и-регрессия.html#cb7-1"></a><span class="kw">sd</span>(x) <span class="op">==</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">var</span>(x))</span></code></pre></div>
@@ -427,11 +427,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="z-преобразование" class="section level2">
 <h2><span class="header-section-number">16.2</span> z-преобразование</h2>
-<p><strong>z-преобразование</strong> (еще используют термин <strong>нормализация</strong>) — это способ представления данных в виде расстояний от среднего, измеряемых в стандартных откланениях. Для того чтобы его получить, нужно из каждого наблюдения вычесть среднее и результат разделить на стандартное отклонение.</p>
+<p><strong>z-преобразование</strong> (еще используют термин <strong>нормализация</strong>) — это способ представления данных в виде расстояний от среднего, измеряемых в стандартных отклонениях. Для того чтобы его получить, нужно из каждого наблюдения вычесть среднее и результат разделить на стандартное отклонение.</p>
 <p><span class="math display">\[x_i = \frac{x_i - \bar{x}}{\sigma_X}\]</span></p>
 <p>Если все наблюдения z-преобразовать, то получиться распределение с средним в 0 и стандартным отклонением 1 (или очень близко к ним).</p>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Само по себе z-преобразование ничего особенного нам про данные не говорит. Однако это преобразование позволяет привести к “общему знаменателю” разные переменные. Т. е. это преобразование ничего нам не говорит про конкретный набор данных, но позволяет сравнивать разные наборы данных.</p>
+<p>В R z-преобразование можно сделать при помощи функции <code>scale()</code>. Эта функция вовзращает матрицу, поэтому я использую индекс <code>[,1]</code>, чтобы результат был вектором.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="корреляция-и-регрессия.html#cb9-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb9-2"><a href="корреляция-и-регрессия.html#cb9-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb9-3"><a href="корреляция-и-регрессия.html#cb9-3"></a><span class="kw">scale</span>(x)[,<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>##  [1]  0.8982271 -0.5764146  0.1304317  0.3359234  0.1617734 -0.2270593
+##  [7]  1.0053127 -0.2183246  1.3914857 -0.1939880  0.8478787  1.5958251
+## [13] -1.2042865 -0.3586002 -0.2477787  0.3382758 -0.3627629 -2.1699785
+## [19] -2.0054319  0.8594918</code></pre>
+<p>Проверим, что функция выдает то же, что мы записали в формуле.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="корреляция-и-регрессия.html#cb11-1"></a><span class="kw">scale</span>(x)[,<span class="dv">1</span>] <span class="op">==</span><span class="st"> </span>(x<span class="op">-</span><span class="kw">mean</span>(x))<span class="op">/</span><span class="kw">sd</span>(x)</span></code></pre></div>
+<pre><code>##  [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+## [16] TRUE TRUE TRUE TRUE TRUE</code></pre>
 </div>
 <div id="ковариация" class="section level2">
 <h2><span class="header-section-number">16.3</span> Ковариация</h2>
@@ -445,23 +457,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(n\)</span> — количество наблюдений.</li>
 </ul>
 <p>Представим, что у нас есть следующие данные:</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<p>Тогда, согласно формуле, для каждой точки вычисляется следующая площадь (пуктирными линиями обозначены средние):</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<p>Если значения <span class="math inline">\(x_i\)</span> и <span class="math inline">\(y_i\)</span> какой-то точки либо оба больше, либо оба меньше средних <span class="math inline">\(\bar{x}\)</span> и <span class="math inline">\(\bar{y}\)</span>, то получившееся произведение будет иметь знак <code>+</code>, если же наоборот — знак <code>-</code>. На графике это показано цветом.</p>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Тогда, согласно формуле, для каждой точки вычисляется следующая площадь (пуктирными линиями обозначены средние):</p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Если значения <span class="math inline">\(x_i\)</span> и <span class="math inline">\(y_i\)</span> какой-то точки либо оба больше, либо оба меньше средних <span class="math inline">\(\bar{x}\)</span> и <span class="math inline">\(\bar{y}\)</span>, то получившееся произведение будет иметь знак <code>+</code>, если же наоборот — знак <code>-</code>. На графике это показано цветом.</p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>Таким образом, если много красных прямоугольников, то значение суммы будет положительное и обозначать положительную связь (чем больше <span class="math inline">\(x\)</span>, тем больше <span class="math inline">\(y\)</span>), а если будет много синий прямоугольников, то значение суммы отрицательное и обозначать положительную связь (чем больше <span class="math inline">\(x\)</span>, тем меньше <span class="math inline">\(y\)</span>). Непосредственно значение ковариации не очень информативно, так как может достаточно сильно варьироваться от датасета к датасету.</p>
 <p>В R ковариацию можно посчитать при помощи функции <code>cov()</code>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="корреляция-и-регрессия.html#cb9-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb9-2"><a href="корреляция-и-регрессия.html#cb9-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb9-3"><a href="корреляция-и-регрессия.html#cb9-3"></a>y &lt;-<span class="st">  </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb9-4"><a href="корреляция-и-регрессия.html#cb9-4"></a><span class="kw">cov</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="корреляция-и-регрессия.html#cb13-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb13-2"><a href="корреляция-и-регрессия.html#cb13-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb13-3"><a href="корреляция-и-регрессия.html#cb13-3"></a>y &lt;-<span class="st">  </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb13-4"><a href="корреляция-и-регрессия.html#cb13-4"></a><span class="kw">cov</span>(x, y)</span></code></pre></div>
 <pre><code>## [1] 18.72204</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="корреляция-и-регрессия.html#cb11-1"></a><span class="kw">cov</span>(x, <span class="op">-</span>y<span class="op">*</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="корреляция-и-регрессия.html#cb15-1"></a><span class="kw">cov</span>(x, <span class="op">-</span>y<span class="op">*</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] -37.44407</code></pre>
 <p>Как видно, простое умножение на два удвоило значение ковариации, что показывает, что непосредственно ковариацию использовать для сравнения разных датасетов не стоит.</p>
 <p>Проверим, что функция выдает то же, что мы записали в формуле.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="корреляция-и-регрессия.html#cb13-1"></a><span class="kw">cov</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>((x<span class="op">-</span><span class="kw">mean</span>(x))<span class="op">*</span>(y <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(y)))<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="корреляция-и-регрессия.html#cb17-1"></a><span class="kw">cov</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>((x<span class="op">-</span><span class="kw">mean</span>(x))<span class="op">*</span>(y <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(y)))<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="корреляция" class="section level2">
@@ -478,8 +490,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(X, Y\)</span> — векторы всех наблюдений;</li>
 <li><span class="math inline">\(n\)</span> — количество наблюдений.</li>
 </ul>
-<p>Последнее уравнение показывает, что коэффициент корреляции Пирсона можно представить как среднее (с поправкой) произведение <span class="math inline">\(z\)</span>-нормализованных значений двух переменных.</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Последнее уравнение показывает, что коэффициент корреляции Пирсона можно представить как среднее (с поправкой, поэтому <span class="math inline">\(n-1\)</span>, а не <span class="math inline">\(n\)</span>) произведение <span class="math inline">\(z\)</span>-нормализованных значений двух переменных.</p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p>Эта нормализация приводит к тому, что</p>
 <ul>
 <li>значения корреляции имеют те же свойства знака коэффициента что и ковариация:
@@ -494,18 +506,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p>Для того чтобы было понятнее, что такое корреляция, давайте рассмотрим несколько расспределений с разными значениями корреляции:</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p>Как видно из этого графика, чем ближе модуль корреляции к 1, тем боллее компактно расположены точки друг к другу, чем ближе к 0, тем более рассеяны значения. Достаточно легко научиться приблизительно оценивать коэфициент корреляции на глаз, поиграв 2–5 минут в игру <a href="http://guessthecorrelation.com/">Guess the correlation</a>.</p>
 <p>В R коэффициент корреляции Пирсона можно посчитать при помощи функции <code>cor()</code>.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="корреляция-и-регрессия.html#cb15-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb15-2"><a href="корреляция-и-регрессия.html#cb15-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb15-3"><a href="корреляция-и-регрессия.html#cb15-3"></a>y &lt;-<span class="st">  </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb15-4"><a href="корреляция-и-регрессия.html#cb15-4"></a><span class="kw">cor</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="корреляция-и-регрессия.html#cb19-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb19-2"><a href="корреляция-и-регрессия.html#cb19-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb19-3"><a href="корреляция-и-регрессия.html#cb19-3"></a>y &lt;-<span class="st">  </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb19-4"><a href="корреляция-и-регрессия.html#cb19-4"></a><span class="kw">cor</span>(x, y)</span></code></pre></div>
 <pre><code>## [1] 0.6659041</code></pre>
 <p>Проверим, что функция выдает то же, что мы записали в формуле.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="корреляция-и-регрессия.html#cb17-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">cov</span>(x, y)<span class="op">/</span>(<span class="kw">sd</span>(x)<span class="op">*</span><span class="kw">sd</span>(y))</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="корреляция-и-регрессия.html#cb21-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">cov</span>(x, y)<span class="op">/</span>(<span class="kw">sd</span>(x)<span class="op">*</span><span class="kw">sd</span>(y))</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="корреляция-и-регрессия.html#cb19-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">scale</span>(x)<span class="op">*</span><span class="kw">scale</span>(y))<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="корреляция-и-регрессия.html#cb23-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">scale</span>(x)<span class="op">*</span><span class="kw">scale</span>(y))<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="ранговые-корреляции-спирмана-и-кендала" class="section level3">
