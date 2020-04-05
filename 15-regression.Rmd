@@ -158,7 +158,18 @@ scale(x)[,1] == (x-mean(x))/sd(x)
 ```
 
 ```{block, type = "rmdtask"}
-Однаждый я заполучил градусник с шкалой Фаренгейта и целый год измерял температуру в Москве при помощи градусника с шкалой Фарингейта и Цельсия. В датасет записаны средние значения для каждого месяца. Постройте график нормализованных и ненормализованных измерений. Что можно сказать про измерения, сделанные разными термометрами?
+Однаждый я заполучил градусник со шкалой Фаренгейта и целый год измерял температуру в Москве при помощи градусников с шкалой Фарингейта и Цельсия. [В датасет](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/moscow_average_temperature.csv) записаны средние значения для каждого месяца. Постройте график нормализованных и ненормализованных измерений. Что можно сказать про измерения, сделанные разными термометрами?
+```
+
+```{r, echo=FALSE, message=FALSE}
+read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/moscow_average_temperature.csv") %>% 
+  group_by(type) %>% 
+  mutate(normalised = scale(non_normalised)) %>% 
+  pivot_longer(names_to = "normalisation", values_to = "value", non_normalised:normalised) %>% 
+  ggplot(aes(value, color = type))+
+  geom_density()+
+  geom_rug()+
+  facet_wrap(~normalisation, scales = "free")
 ```
 
 
