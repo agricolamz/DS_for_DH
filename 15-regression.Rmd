@@ -294,7 +294,7 @@ df %>%
 * значения корреляции имеют те же свойства знака коэффициента что и ковариация:
     * если коэффициент положительный (т. е. много красных прямоугольников) --- связь между переменными положительная (чем **больше** $x$, тем **больше** $y$), 
     * если коэффициент отрицательный (т. е. много синих прямоугольников) --- связь между переменными отрицательная (чем **больше** $x$, тем **меньше** $y$);
-* значение корреляции имееет не зависимое от типа данных интеретация:
+* значение корреляции имееет независимое от типа данных интеретация:
     * если модуль коэффициента близок к 1 или ему равен --- связь между переменными сильная,
     * если модуль коэффициента близок к 0 или ему равен --- связь между переменными слабая.
 
@@ -341,4 +341,85 @@ cor(x, y) == sum(scale(x)*scale(y))/(length(x)-1)
 
 ## Регрессионный анализ
 
-https://antoinesoetewey.shinyapps.io/statistics-202/
+Формула прямой на плоскости зависит от двух параметров: случайного члена (intercept) и углового коэффициента (slope).
+
+```{r, echo=FALSE}
+set.seed(42)
+tibble(x = rnorm(100)+1,
+       y = rnorm(100)+3) %>% 
+  ggplot(aes(x, y))+
+  geom_point(alpha = 0)+
+  geom_hline(yintercept = 0)+
+  geom_vline(xintercept = 0)+
+  geom_abline(intercept = 1, slope = 1, color = "red")+
+  geom_abline(intercept = 2, slope = 2, color = "darkgreen")+
+  geom_abline(intercept = 3, slope = -1, color = "navy")+
+  scale_x_continuous(breaks = -2:4)+
+  scale_y_continuous(breaks = 0:5)+
+  coord_equal()
+```
+
+```{block, type = "rmdtask"}
+Укажите значение свободного члена для красной прямой.
+```
+
+```{r, results='asis', echo = FALSE}
+check_question(1, options = -2:4, type = "radio", alignment = TRUE)
+```
+
+```{block, type = "rmdtask"}
+Укажите значение свободного члена для зеленой прямой.
+```
+
+```{r, results='asis', echo = FALSE}
+check_question(2, options = -2:4, type = "radio", alignment = TRUE)
+```
+
+```{block, type = "rmdtask"}
+Укажите значение свободного члена для синей прямой.
+```
+
+```{r, results='asis', echo = FALSE}
+check_question(3, options = -2:4, type = "radio", alignment = TRUE)
+```
+
+```{block, type = "rmdtask"}
+Укажите значение углового коэффициента для красной прямой.
+```
+
+```{r, results='asis', echo = FALSE}
+check_question(1, options = -2:4, type = "radio", alignment = TRUE)
+```
+
+```{block, type = "rmdtask"}
+Укажите значение углового коэффициента для зеленой прямой.
+```
+
+```{r, results='asis', echo = FALSE}
+check_question(2, options = -2:4, type = "radio", alignment = TRUE)
+```
+
+```{block, type = "rmdtask"}
+Укажите значение углового коэффициента для синей прямой.
+```
+
+```{r, results='asis', echo = FALSE}
+check_question(-1, options = -2:4, type = "radio", alignment = TRUE)
+```
+
+Когда мы пытаемся предсказать данные одной переменной $Y$ при помощи другой переменной $X$, мы получаем похожую формулу:
+
+$$y_i = \hat\beta_0 + \hat\beta_1 \times x_i + \epsilon_i,$$
+где
+
+* $x_i$ --- $i$-ый элемент вектора значений $X$;
+* $y_i$ --- $i$-ый элемент вектора значений $Y$;
+* $\hat\beta_0$ --- оценка случайного члена (intercept);
+* $\hat\beta_1$ --- оценка углового коэффициента (slope);
+* $\epsilon_i$ --- $i$-ый остаток, разница между оценкой модели ($\hat\beta_0 + \hat\beta_1 \times x_i$) и реальным значением $y_i$; весь вектор остатков иногда называют случайным шумом.
+
+Задача регрессии --- оценить параметры $\hat\beta_0$ и $\hat\beta_1$, если нам известны все значения $x_i$ и $y_i$.
+
+$$\hat\beta_1 = \frac{(\sum_{i=1}^n x_i\times y_i)-n\times\bar x \times \bar y}{\sum_{i = 1}^n(x_i-\bar x)^2}$$
+
+$$\hat\beta_0 = \bar y - \hat\beta_1\times\bar x$$

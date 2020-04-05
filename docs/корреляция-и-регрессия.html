@@ -527,7 +527,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>если коэффициент положительный (т. е. много красных прямоугольников) — связь между переменными положительная (чем <strong>больше</strong> <span class="math inline">\(x\)</span>, тем <strong>больше</strong> <span class="math inline">\(y\)</span>),</li>
 <li>если коэффициент отрицательный (т. е. много синих прямоугольников) — связь между переменными отрицательная (чем <strong>больше</strong> <span class="math inline">\(x\)</span>, тем <strong>меньше</strong> <span class="math inline">\(y\)</span>);</li>
 </ul></li>
-<li>значение корреляции имееет не зависимое от типа данных интеретация:
+<li>значение корреляции имееет независимое от типа данных интеретация:
 <ul>
 <li>если модуль коэффициента близок к 1 или ему равен — связь между переменными сильная,</li>
 <li>если модуль коэффициента близок к 0 или ему равен — связь между переменными слабая.</li>
@@ -554,7 +554,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="регрессионный-анализ" class="section level2">
 <h2><span class="header-section-number">16.5</span> Регрессионный анализ</h2>
-<p><a href="https://antoinesoetewey.shinyapps.io/statistics-202/" class="uri">https://antoinesoetewey.shinyapps.io/statistics-202/</a></p>
+<p>Формула прямой на плоскости зависит от двух параметров: случайного члена (intercept) и углового коэффициента (slope).</p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<div class="rmdtask">
+<p>
+Укажите значение свободного члена для красной прямой.
+</p>
+</div>
+<form name="form_99172" onsubmit="return validate_form_99172()" method="post">
+<input type="radio" name="answer_99172" id="99172_1" value="-2"><label for="1">-2</label> <input type="radio" name="answer_99172" id="99172_2" value="-1"><label for="2">-1</label> <input type="radio" name="answer_99172" id="99172_3" value="0"><label for="3">0</label> <input type="radio" name="answer_99172" id="99172_4" value="1"><label for="4">1</label> <input type="radio" name="answer_99172" id="99172_5" value="2"><label for="5">2</label> <input type="radio" name="answer_99172" id="99172_6" value="3"><label for="6">3</label> <input type="radio" name="answer_99172" id="99172_7" value="4"><label for="7">4</label> <br><input type="submit" value="check">
+</form>
+<p id="result_99172">
+</p>
+<script> function validate_form_99172() {var x, text; var x = document.forms["form_99172"]["answer_99172"].value;if (x == "1"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_99172").innerHTML = text; return false;} </script>
+<div class="rmdtask">
+<p>
+Укажите значение свободного члена для зеленой прямой.
+</p>
+</div>
+<form name="form_92981" onsubmit="return validate_form_92981()" method="post">
+<input type="radio" name="answer_92981" id="92981_1" value="-2"><label for="1">-2</label> <input type="radio" name="answer_92981" id="92981_2" value="-1"><label for="2">-1</label> <input type="radio" name="answer_92981" id="92981_3" value="0"><label for="3">0</label> <input type="radio" name="answer_92981" id="92981_4" value="1"><label for="4">1</label> <input type="radio" name="answer_92981" id="92981_5" value="2"><label for="5">2</label> <input type="radio" name="answer_92981" id="92981_6" value="3"><label for="6">3</label> <input type="radio" name="answer_92981" id="92981_7" value="4"><label for="7">4</label> <br><input type="submit" value="check">
+</form>
+<p id="result_92981">
+</p>
+<script> function validate_form_92981() {var x, text; var x = document.forms["form_92981"]["answer_92981"].value;if (x == "2"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_92981").innerHTML = text; return false;} </script>
+<div class="rmdtask">
+<p>
+Укажите значение свободного члена для синей прямой.
+</p>
+</div>
+<form name="form_72614" onsubmit="return validate_form_72614()" method="post">
+<input type="radio" name="answer_72614" id="72614_1" value="-2"><label for="1">-2</label> <input type="radio" name="answer_72614" id="72614_2" value="-1"><label for="2">-1</label> <input type="radio" name="answer_72614" id="72614_3" value="0"><label for="3">0</label> <input type="radio" name="answer_72614" id="72614_4" value="1"><label for="4">1</label> <input type="radio" name="answer_72614" id="72614_5" value="2"><label for="5">2</label> <input type="radio" name="answer_72614" id="72614_6" value="3"><label for="6">3</label> <input type="radio" name="answer_72614" id="72614_7" value="4"><label for="7">4</label> <br><input type="submit" value="check">
+</form>
+<p id="result_72614">
+</p>
+<script> function validate_form_72614() {var x, text; var x = document.forms["form_72614"]["answer_72614"].value;if (x == "3"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_72614").innerHTML = text; return false;} </script>
+<div class="rmdtask">
+<p>
+Укажите значение углового коэффициента для красной прямой.
+</p>
+</div>
+<form name="form_82901" onsubmit="return validate_form_82901()" method="post">
+<input type="radio" name="answer_82901" id="82901_1" value="-2"><label for="1">-2</label> <input type="radio" name="answer_82901" id="82901_2" value="-1"><label for="2">-1</label> <input type="radio" name="answer_82901" id="82901_3" value="0"><label for="3">0</label> <input type="radio" name="answer_82901" id="82901_4" value="1"><label for="4">1</label> <input type="radio" name="answer_82901" id="82901_5" value="2"><label for="5">2</label> <input type="radio" name="answer_82901" id="82901_6" value="3"><label for="6">3</label> <input type="radio" name="answer_82901" id="82901_7" value="4"><label for="7">4</label> <br><input type="submit" value="check">
+</form>
+<p id="result_82901">
+</p>
+<script> function validate_form_82901() {var x, text; var x = document.forms["form_82901"]["answer_82901"].value;if (x == "1"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_82901").innerHTML = text; return false;} </script>
+<div class="rmdtask">
+<p>
+Укажите значение углового коэффициента для зеленой прямой.
+</p>
+</div>
+<form name="form_90827" onsubmit="return validate_form_90827()" method="post">
+<input type="radio" name="answer_90827" id="90827_1" value="-2"><label for="1">-2</label> <input type="radio" name="answer_90827" id="90827_2" value="-1"><label for="2">-1</label> <input type="radio" name="answer_90827" id="90827_3" value="0"><label for="3">0</label> <input type="radio" name="answer_90827" id="90827_4" value="1"><label for="4">1</label> <input type="radio" name="answer_90827" id="90827_5" value="2"><label for="5">2</label> <input type="radio" name="answer_90827" id="90827_6" value="3"><label for="6">3</label> <input type="radio" name="answer_90827" id="90827_7" value="4"><label for="7">4</label> <br><input type="submit" value="check">
+</form>
+<p id="result_90827">
+</p>
+<script> function validate_form_90827() {var x, text; var x = document.forms["form_90827"]["answer_90827"].value;if (x == "2"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_90827").innerHTML = text; return false;} </script>
+<div class="rmdtask">
+<p>
+Укажите значение углового коэффициента для синей прямой.
+</p>
+</div>
+<form name="form_47310" onsubmit="return validate_form_47310()" method="post">
+<input type="radio" name="answer_47310" id="47310_1" value="-2"><label for="1">-2</label> <input type="radio" name="answer_47310" id="47310_2" value="-1"><label for="2">-1</label> <input type="radio" name="answer_47310" id="47310_3" value="0"><label for="3">0</label> <input type="radio" name="answer_47310" id="47310_4" value="1"><label for="4">1</label> <input type="radio" name="answer_47310" id="47310_5" value="2"><label for="5">2</label> <input type="radio" name="answer_47310" id="47310_6" value="3"><label for="6">3</label> <input type="radio" name="answer_47310" id="47310_7" value="4"><label for="7">4</label> <br><input type="submit" value="check">
+</form>
+<p id="result_47310">
+</p>
+<script> function validate_form_47310() {var x, text; var x = document.forms["form_47310"]["answer_47310"].value;if (x == "-1"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_47310").innerHTML = text; return false;} </script>
+<p>Когда мы пытаемся предсказать данные одной переменной <span class="math inline">\(Y\)</span> при помощи другой переменной <span class="math inline">\(X\)</span>, мы получаем похожую формулу:</p>
+<p><span class="math display">\[y_i = \hat\beta_0 + \hat\beta_1 \times x_i + \epsilon_i,\]</span>
+где</p>
+<ul>
+<li><span class="math inline">\(x_i\)</span> — <span class="math inline">\(i\)</span>-ый элемент вектора значений <span class="math inline">\(X\)</span>;</li>
+<li><span class="math inline">\(y_i\)</span> — <span class="math inline">\(i\)</span>-ый элемент вектора значений <span class="math inline">\(Y\)</span>;</li>
+<li><span class="math inline">\(\hat\beta_0\)</span> — оценка случайного члена (intercept);</li>
+<li><span class="math inline">\(\hat\beta_1\)</span> — оценка углового коэффициента (slope);</li>
+<li><span class="math inline">\(\epsilon_i\)</span> — <span class="math inline">\(i\)</span>-ый остаток, разница между оценкой модели (<span class="math inline">\(\hat\beta_0 + \hat\beta_1 \times x_i\)</span>) и реальным значением <span class="math inline">\(y_i\)</span>; весь вектор остатков иногда называют случайным шумом.</li>
+</ul>
+<p>Задача регрессии — оценить параметры <span class="math inline">\(\hat\beta_0\)</span> и <span class="math inline">\(\hat\beta_1\)</span>, если нам известны все значения <span class="math inline">\(x_i\)</span> и <span class="math inline">\(y_i\)</span>.</p>
+<p><span class="math display">\[\hat\beta_1 = \frac{(\sum_{i=1}^n x_i\times y_i)-n\times\bar x \times \bar y}{\sum_{i = 1}^n(x_i-\bar x)^2}\]</span></p>
+<p><span class="math display">\[\hat\beta_0 = \bar y - \hat\beta_1\times\bar x\]</span></p>
 
 </div>
 </div>
