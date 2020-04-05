@@ -535,7 +535,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Для того чтобы было понятнее, что такое корреляция, давайте рассмотрим несколько расспределений с разными значениями корреляции:</p>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
-<p>Как видно из этого графика, чем ближе модуль корреляции к 1, тем боллее компактно расположены точки друг к другу, чем ближе к 0, тем более рассеяны значения. Достаточно легко научиться приблизительно оценивать коэфициент корреляции на глаз, поиграв 2–5 минут в игру <a href="http://guessthecorrelation.com/">Guess the correlation</a>.</p>
+<p>Как видно из этого графика, чем ближе модуль корреляции к 1, тем боллее компактно расположены точки друг к другу, чем ближе к 0, тем более рассеяны значения. Достаточно легко научиться приблизительно оценивать коэфициент корреляции на глаз, поиграв 2–5 минут в игру “Угадай корреляцию” <a href="http://guessthecorrelation.com/">здесь</a> или <a href="https://cheng-dsdp.shinyapps.io/CorApp/">здесь</a>.</p>
 <p>В R коэффициент корреляции Пирсона можно посчитать при помощи функции <code>cor()</code>.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="корреляция-и-регрессия.html#cb19-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
 <span id="cb19-2"><a href="корреляция-и-регрессия.html#cb19-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
