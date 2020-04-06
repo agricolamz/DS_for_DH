@@ -267,7 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.3" data-path="lists.html"><a href="lists.html#операции-со-списками"><i class="fa fa-check"></i><b>6.2.3</b> Операции со списками</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="data-presentation.html"><a href="data-presentation.html"><i class="fa fa-check"></i><b>7</b> Представление данных: rmarkdown, shiny</a><ul>
+<li class="chapter" data-level="7" data-path="data-presentation.html"><a href="data-presentation.html"><i class="fa fa-check"></i><b>7</b> Представление данных: <code>rmarkdown</code></a><ul>
 <li class="chapter" data-level="7.1" data-path="data-presentation.html"><a href="data-presentation.html#rmarkdown"><i class="fa fa-check"></i><b>7.1</b> <code>rmarkdown</code></a><ul>
 <li class="chapter" data-level="7.1.1" data-path="data-presentation.html"><a href="data-presentation.html#установка"><i class="fa fa-check"></i><b>7.1.1</b> Установка</a></li>
 <li class="chapter" data-level="7.1.2" data-path="data-presentation.html"><a href="data-presentation.html#составляющие-rmarkdown-документа"><i class="fa fa-check"></i><b>7.1.2</b> Составляющие <code>rmarkdown</code>-документа</a></li>
@@ -532,7 +532,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb821-4"><a href="tidytext.html#cb821-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">narrative_time =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb821-5"><a href="tidytext.html#cb821-5"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(word, <span class="st">&quot;knightley$|woodhouse$|churchill$|fairfax$&quot;</span>)) <span class="op">%&gt;%</span><span class="st">  </span></span>
 <span id="cb821-6"><a href="tidytext.html#cb821-6"></a><span class="st">  </span><span class="kw">ggplot</span>()<span class="op">+</span></span>
-<span id="cb821-7"><a href="tidytext.html#cb821-7"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="kw">aes</span>(<span class="dt">xintercept =</span> narrative_time))<span class="op">+</span></span>
+<span id="cb821-7"><a href="tidytext.html#cb821-7"></a><span class="st">      </span><span class="kw">geom_vline</span>(<span class="kw">aes</span>(<span class="dt">xintercept =</span> narrative_time))<span class="op">+</span></span>
 <span id="cb821-8"><a href="tidytext.html#cb821-8"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>word, <span class="dt">ncol =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-388-1.png" width="672" /></p>
 </div>
