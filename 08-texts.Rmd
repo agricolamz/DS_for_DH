@@ -9,6 +9,10 @@ editor_options:
 library(tidyverse)
 ```
 
+```{r, echo=FALSE}
+theme_set(theme_bw())
+```
+
 
 ## Пакет `gutenbergr`
 
@@ -154,6 +158,19 @@ x %>%
 ```{r}
 books %>% 
   unnest_tokens(word, text, token = "ngrams", n = 2)
+```
+
+Поиск самых частотных слов --- не едиснственная задача, которую можно решать при работе с текстом. Иногда имеет смысл узнать распределение слов в произведении. Давайте посмотрим как распределены в романе "Эмма" фамилии главных героев:
+
+```{r}
+books %>% 
+  filter(title == "Emma") %>% 
+  unnest_tokens(word, text) %>% 
+  mutate(narrative_time = 1:n()) %>% 
+  filter(str_detect(word, "knightley$|woodhouse$|churchill$|fairfax$")) %>%  
+  ggplot()+
+  geom_vline(aes(xintercept = narrative_time))+
+  facet_wrap(~word, ncol = 1)
 ```
 
 
