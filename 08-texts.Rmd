@@ -169,7 +169,7 @@ books %>%
   mutate(narrative_time = 1:n()) %>% 
   filter(str_detect(word, "knightley$|woodhouse$|churchill$|fairfax$")) %>%  
   ggplot()+
-  geom_vline(aes(xintercept = narrative_time))+
+      geom_vline(aes(xintercept = narrative_time))+
   facet_wrap(~word, ncol = 1)
 ```
 
