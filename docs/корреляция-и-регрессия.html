@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="проверка-статистических-гипотез.html"/>
-<link rel="next" href="кластеризация.html"/>
+<link rel="next" href="работа-статистического-детектива.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -367,9 +367,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="15.5" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#регрессионный-анализ"><i class="fa fa-check"></i><b>15.5</b> Регрессионный анализ</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="кластеризация.html"><a href="кластеризация.html"><i class="fa fa-check"></i><b>16</b> Кластеризация</a></li>
-<li class="chapter" data-level="17" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>17</b> Методы уменьшения размерностей</a></li>
-<li class="chapter" data-level="18" data-path="работа-с-сетями.html"><a href="работа-с-сетями.html"><i class="fa fa-check"></i><b>18</b> Работа с сетями</a></li>
+<li class="chapter" data-level="16" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html"><i class="fa fa-check"></i><b>16</b> Работа статистического детектива</a><ul>
+<li class="chapter" data-level="16.1" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#введение-1"><i class="fa fa-check"></i><b>16.1</b> Введение</a></li>
+<li class="chapter" data-level="16.2" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#возможно-ли-такое-среднее"><i class="fa fa-check"></i><b>16.2</b> Возможно ли такое среднее?</a></li>
+<li class="chapter" data-level="16.3" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#granularity-related-inconsistent-means-grim-test"><i class="fa fa-check"></i><b>16.3</b> Granularity-Related Inconsistent Means (GRIM) test</a></li>
+<li class="chapter" data-level="16.4" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-statcheck"><i class="fa fa-check"></i><b>16.4</b> Пакет <code>statcheck</code></a></li>
+<li class="chapter" data-level="16.5" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-digitize"><i class="fa fa-check"></i><b>16.5</b> Пакет <code>digitize</code></a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="кластеризация.html"><a href="кластеризация.html"><i class="fa fa-check"></i><b>17</b> Кластеризация</a></li>
+<li class="chapter" data-level="18" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>18</b> Методы уменьшения размерностей</a></li>
 <li class="chapter" data-level="19" data-path="tasks.html"><a href="tasks.html"><i class="fa fa-check"></i><b>19</b> Задания</a><ul>
 <li class="chapter" data-level="19.1" data-path="tasks.html"><a href="tasks.html#vec_task_1"><i class="fa fa-check"></i><b>19.1</b> Вектор</a></li>
 <li class="chapter" data-level="19.2" data-path="tasks.html"><a href="tasks.html#vec_op"><i class="fa fa-check"></i><b>19.2</b> Вектор. Операции с векторами</a></li>
@@ -424,17 +430,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Для того чтобы было понятнее, что такое дисперсия, давайте рассмотрим несколько расспределений с одним и тем же средним, но разными дисперсиями:</p>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-517-1.png" width="672" /></p>
 <p>В R дисперсию можно посчитать при помощи функции <code>var()</code>.</p>
-<div class="sourceCode" id="cb1058"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1058-1"><a href="корреляция-и-регрессия.html#cb1058-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb1058-2"><a href="корреляция-и-регрессия.html#cb1058-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb1058-3"><a href="корреляция-и-регрессия.html#cb1058-3"></a><span class="kw">var</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb1059"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1059-1"><a href="корреляция-и-регрессия.html#cb1059-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1059-2"><a href="корреляция-и-регрессия.html#cb1059-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb1059-3"><a href="корреляция-и-регрессия.html#cb1059-3"></a><span class="kw">var</span>(x)</span></code></pre></div>
 <pre><code>[1] 172.2993</code></pre>
 <p>Проверим, что функция выдает то же, что мы записали в формуле.</p>
-<div class="sourceCode" id="cb1060"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1060-1"><a href="корреляция-и-регрессия.html#cb1060-1"></a><span class="kw">var</span>(x) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>((x <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(x))<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1061"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1061-1"><a href="корреляция-и-регрессия.html#cb1061-1"></a><span class="kw">var</span>(x) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>((x <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(x))<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>[1] TRUE</code></pre>
 <p>Так как дисперсия является квадратом отклонения, то часто вместо нее используют более интерпретируемое стандартное отклонение <span class="math inline">\(\sigma\)</span> — корень из дисперсии. В R ее можно посчитать при помощи функции <code>sd()</code>:</p>
-<div class="sourceCode" id="cb1062"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1062-1"><a href="корреляция-и-регрессия.html#cb1062-1"></a><span class="kw">sd</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb1063"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1063-1"><a href="корреляция-и-регрессия.html#cb1063-1"></a><span class="kw">sd</span>(x)</span></code></pre></div>
 <pre><code>[1] 13.12628</code></pre>
-<div class="sourceCode" id="cb1064"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1064-1"><a href="корреляция-и-регрессия.html#cb1064-1"></a><span class="kw">sd</span>(x) <span class="op">==</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">var</span>(x))</span></code></pre></div>
+<div class="sourceCode" id="cb1065"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1065-1"><a href="корреляция-и-регрессия.html#cb1065-1"></a><span class="kw">sd</span>(x) <span class="op">==</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">var</span>(x))</span></code></pre></div>
 <pre><code>[1] TRUE</code></pre>
 <div class="rmdtask">
 <p>
@@ -446,7 +452,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </form>
 <p id="result_28559">
 </p>
-<script> function validate_form_28559() {var x, text; var x = document.forms["form_28559"]["answer_28559"].value;if (x == "19.81"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_28559").innerHTML = text; return false;} </script>
+<script> function validate_form_28559() {var x, text; var x = document.forms["form_28559"]["answer_28559"].value;if (x == "19.81"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_28559').innerHTML = text; return false;} </script>
 <div class="rmdtask">
 <p>
 Посчитайте стандартное отклонение переменной <code>sleep_total</code> в датасете <code>msleep</code>, встроенный в <code>tidyverse</code>. Ответ округлите до двух знаков после запятой.
@@ -457,7 +463,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </form>
 <p id="result_88261">
 </p>
-<script> function validate_form_88261() {var x, text; var x = document.forms["form_88261"]["answer_88261"].value;if (x == "4.45"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_88261").innerHTML = text; return false;} </script>
+<script> function validate_form_88261() {var x, text; var x = document.forms["form_88261"]["answer_88261"].value;if (x == "4.45"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_88261').innerHTML = text; return false;} </script>
 </div>
 <div id="z-преобразование" class="section level2">
 <h2><span class="header-section-number">15.2</span> z-преобразование</h2>
@@ -465,17 +471,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math display">\[x_i = \frac{x_i - \bar{x}}{\sigma_X}\]</span></p>
 <p>Если все наблюдения z-преобразовать, то получиться распределение с средним в 0 и стандартным отклонением 1 (или очень близко к ним).</p>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-525-1.png" width="672" /></p>
-<p>Само по себе z-преобразование ничего особенного нам про данные не говорит. Однако это преобразование позволяет привести к “общему знаменателю” разные переменные. Т. е. это преобразование ничего нам не говорит про конкретный набор данных, но позволяет сравнивать разные наборы данных.</p>
+<p>Само по себе <span class="math inline">\(z\)</span>-преобразование ничего особенного нам про данные не говорит. Однако это преобразование позволяет привести к “общему знаменателю” разные переменные. Т. е. это преобразование ничего нам не говорит про конкретный набор данных, но позволяет сравнивать разные наборы данных.</p>
 <p>В R z-преобразование можно сделать при помощи функции <code>scale()</code>. Эта функция вовзращает матрицу, поэтому я использую индекс <code>[,1]</code>, чтобы результат был вектором.</p>
-<div class="sourceCode" id="cb1066"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1066-1"><a href="корреляция-и-регрессия.html#cb1066-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb1066-2"><a href="корреляция-и-регрессия.html#cb1066-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb1066-3"><a href="корреляция-и-регрессия.html#cb1066-3"></a><span class="kw">scale</span>(x)[,<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb1067"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1067-1"><a href="корреляция-и-регрессия.html#cb1067-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1067-2"><a href="корреляция-и-регрессия.html#cb1067-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb1067-3"><a href="корреляция-и-регрессия.html#cb1067-3"></a><span class="kw">scale</span>(x)[,<span class="dv">1</span>]</span></code></pre></div>
 <pre><code> [1]  0.8982271 -0.5764146  0.1304317  0.3359234  0.1617734 -0.2270593
  [7]  1.0053127 -0.2183246  1.3914857 -0.1939880  0.8478787  1.5958251
 [13] -1.2042865 -0.3586002 -0.2477787  0.3382758 -0.3627629 -2.1699785
 [19] -2.0054319  0.8594918</code></pre>
 <p>Проверим, что функция выдает то же, что мы записали в формуле.</p>
-<div class="sourceCode" id="cb1068"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1068-1"><a href="корреляция-и-регрессия.html#cb1068-1"></a><span class="kw">scale</span>(x)[,<span class="dv">1</span>] <span class="op">==</span><span class="st"> </span>(x<span class="op">-</span><span class="kw">mean</span>(x))<span class="op">/</span><span class="kw">sd</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb1069"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1069-1"><a href="корреляция-и-регрессия.html#cb1069-1"></a><span class="kw">scale</span>(x)[,<span class="dv">1</span>] <span class="op">==</span><span class="st"> </span>(x<span class="op">-</span><span class="kw">mean</span>(x))<span class="op">/</span><span class="kw">sd</span>(x)</span></code></pre></div>
 <pre><code> [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
 [16] TRUE TRUE TRUE TRUE TRUE</code></pre>
 <div class="rmdtask">
@@ -504,16 +510,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-532-1.png" width="672" /></p>
 <p>Таким образом, если много красных прямоугольников, то значение суммы будет положительное и обозначать положительную связь (чем больше <span class="math inline">\(x\)</span>, тем больше <span class="math inline">\(y\)</span>), а если будет много синий прямоугольников, то значение суммы отрицательное и обозначать положительную связь (чем больше <span class="math inline">\(x\)</span>, тем меньше <span class="math inline">\(y\)</span>). Непосредственно значение ковариации не очень информативно, так как может достаточно сильно варьироваться от датасета к датасету.</p>
 <p>В R ковариацию можно посчитать при помощи функции <code>cov()</code>.</p>
-<div class="sourceCode" id="cb1070"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1070-1"><a href="корреляция-и-регрессия.html#cb1070-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb1070-2"><a href="корреляция-и-регрессия.html#cb1070-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb1070-3"><a href="корреляция-и-регрессия.html#cb1070-3"></a>y &lt;-<span class="st">  </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb1070-4"><a href="корреляция-и-регрессия.html#cb1070-4"></a><span class="kw">cov</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb1071"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1071-1"><a href="корреляция-и-регрессия.html#cb1071-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1071-2"><a href="корреляция-и-регрессия.html#cb1071-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb1071-3"><a href="корреляция-и-регрессия.html#cb1071-3"></a>y &lt;-<span class="st">  </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb1071-4"><a href="корреляция-и-регрессия.html#cb1071-4"></a><span class="kw">cov</span>(x, y)</span></code></pre></div>
 <pre><code>[1] 18.72204</code></pre>
-<div class="sourceCode" id="cb1072"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1072-1"><a href="корреляция-и-регрессия.html#cb1072-1"></a><span class="kw">cov</span>(x, <span class="op">-</span>y<span class="op">*</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1073"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1073-1"><a href="корреляция-и-регрессия.html#cb1073-1"></a><span class="kw">cov</span>(x, <span class="op">-</span>y<span class="op">*</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>[1] -37.44407</code></pre>
 <p>Как видно, простое умножение на два удвоило значение ковариации, что показывает, что непосредственно ковариацию использовать для сравнения разных датасетов не стоит.</p>
 <p>Проверим, что функция выдает то же, что мы записали в формуле.</p>
-<div class="sourceCode" id="cb1074"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1074-1"><a href="корреляция-и-регрессия.html#cb1074-1"></a><span class="kw">cov</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>((x<span class="op">-</span><span class="kw">mean</span>(x))<span class="op">*</span>(y <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(y)))<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1075"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1075-1"><a href="корреляция-и-регрессия.html#cb1075-1"></a><span class="kw">cov</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>((x<span class="op">-</span><span class="kw">mean</span>(x))<span class="op">*</span>(y <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(y)))<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>[1] TRUE</code></pre>
 </div>
 <div id="корреляция" class="section level2">
@@ -549,15 +555,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-536-1.png" width="672" /></p>
 <p>Как видно из этого графика, чем ближе модуль корреляции к 1, тем боллее компактно расположены точки друг к другу, чем ближе к 0, тем более рассеяны значения. Достаточно легко научиться приблизительно оценивать коэфициент корреляции на глаз, поиграв 2–5 минут в игру “Угадай корреляцию” <a href="http://guessthecorrelation.com/">здесь</a> или <a href="https://cheng-dsdp.shinyapps.io/CorApp/">здесь</a>.</p>
 <p>В R коэффициент корреляции Пирсона можно посчитать при помощи функции <code>cor()</code>.</p>
-<div class="sourceCode" id="cb1076"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1076-1"><a href="корреляция-и-регрессия.html#cb1076-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb1076-2"><a href="корреляция-и-регрессия.html#cb1076-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb1076-3"><a href="корреляция-и-регрессия.html#cb1076-3"></a>y &lt;-<span class="st">  </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb1076-4"><a href="корреляция-и-регрессия.html#cb1076-4"></a><span class="kw">cor</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb1077"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1077-1"><a href="корреляция-и-регрессия.html#cb1077-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1077-2"><a href="корреляция-и-регрессия.html#cb1077-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb1077-3"><a href="корреляция-и-регрессия.html#cb1077-3"></a>y &lt;-<span class="st">  </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb1077-4"><a href="корреляция-и-регрессия.html#cb1077-4"></a><span class="kw">cor</span>(x, y)</span></code></pre></div>
 <pre><code>[1] 0.6659041</code></pre>
 <p>Проверим, что функция выдает то же, что мы записали в формуле.</p>
-<div class="sourceCode" id="cb1078"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1078-1"><a href="корреляция-и-регрессия.html#cb1078-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">cov</span>(x, y)<span class="op">/</span>(<span class="kw">sd</span>(x)<span class="op">*</span><span class="kw">sd</span>(y))</span></code></pre></div>
+<div class="sourceCode" id="cb1079"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1079-1"><a href="корреляция-и-регрессия.html#cb1079-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">cov</span>(x, y)<span class="op">/</span>(<span class="kw">sd</span>(x)<span class="op">*</span><span class="kw">sd</span>(y))</span></code></pre></div>
 <pre><code>[1] TRUE</code></pre>
-<div class="sourceCode" id="cb1080"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1080-1"><a href="корреляция-и-регрессия.html#cb1080-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">scale</span>(x)<span class="op">*</span><span class="kw">scale</span>(y))<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1081"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1081-1"><a href="корреляция-и-регрессия.html#cb1081-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">scale</span>(x)<span class="op">*</span><span class="kw">scale</span>(y))<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>[1] TRUE</code></pre>
 </div>
 <div id="ранговые-корреляции-спирмана-и-кендала" class="section level3">
@@ -578,7 +584,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </form>
 <p id="result_99172">
 </p>
-<script> function validate_form_99172() {var x, text; var x = document.forms["form_99172"]["answer_99172"].value;if (x == "1"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_99172").innerHTML = text; return false;} </script>
+<script> function validate_form_99172() {var x, text; var x = document.forms["form_99172"]["answer_99172"].value;if (x == "1"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_99172').innerHTML = text; return false;} </script>
 <div class="rmdtask">
 <p>
 Укажите значение свободного члена для зеленой прямой.
@@ -589,7 +595,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </form>
 <p id="result_92981">
 </p>
-<script> function validate_form_92981() {var x, text; var x = document.forms["form_92981"]["answer_92981"].value;if (x == "2"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_92981").innerHTML = text; return false;} </script>
+<script> function validate_form_92981() {var x, text; var x = document.forms["form_92981"]["answer_92981"].value;if (x == "2"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_92981').innerHTML = text; return false;} </script>
 <div class="rmdtask">
 <p>
 Укажите значение свободного члена для синей прямой.
@@ -600,7 +606,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </form>
 <p id="result_72614">
 </p>
-<script> function validate_form_72614() {var x, text; var x = document.forms["form_72614"]["answer_72614"].value;if (x == "3"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_72614").innerHTML = text; return false;} </script>
+<script> function validate_form_72614() {var x, text; var x = document.forms["form_72614"]["answer_72614"].value;if (x == "3"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_72614').innerHTML = text; return false;} </script>
 <div class="rmdtask">
 <p>
 Укажите значение углового коэффициента для красной прямой.
@@ -611,7 +617,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </form>
 <p id="result_82901">
 </p>
-<script> function validate_form_82901() {var x, text; var x = document.forms["form_82901"]["answer_82901"].value;if (x == "1"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_82901").innerHTML = text; return false;} </script>
+<script> function validate_form_82901() {var x, text; var x = document.forms["form_82901"]["answer_82901"].value;if (x == "1"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_82901').innerHTML = text; return false;} </script>
 <div class="rmdtask">
 <p>
 Укажите значение углового коэффициента для зеленой прямой.
@@ -622,7 +628,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </form>
 <p id="result_90827">
 </p>
-<script> function validate_form_90827() {var x, text; var x = document.forms["form_90827"]["answer_90827"].value;if (x == "2"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_90827").innerHTML = text; return false;} </script>
+<script> function validate_form_90827() {var x, text; var x = document.forms["form_90827"]["answer_90827"].value;if (x == "2"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_90827').innerHTML = text; return false;} </script>
 <div class="rmdtask">
 <p>
 Укажите значение углового коэффициента для синей прямой.
@@ -633,7 +639,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </form>
 <p id="result_47310">
 </p>
-<script> function validate_form_47310() {var x, text; var x = document.forms["form_47310"]["answer_47310"].value;if (x == "-1"){text = "Correct";} else {text = "I have a different answer";} document.getElementById("result_47310").innerHTML = text; return false;} </script>
+<script> function validate_form_47310() {var x, text; var x = document.forms["form_47310"]["answer_47310"].value;if (x == "-1"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_47310').innerHTML = text; return false;} </script>
 <p>Когда мы пытаемся научиться предсказывать данные одной переменной <span class="math inline">\(Y\)</span> при помощи другой переменной <span class="math inline">\(X\)</span>, мы получаем похожую формулу:</p>
 <p><span class="math display">\[y_i = \hat\beta_0 + \hat\beta_1 \times x_i + \epsilon_i,\]</span>
 где</p>
@@ -656,7 +662,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="проверка-статистических-гипотез.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="кластеризация.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="работа-статистического-детектива.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

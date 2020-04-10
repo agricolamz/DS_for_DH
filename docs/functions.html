@@ -367,9 +367,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="15.5" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#регрессионный-анализ"><i class="fa fa-check"></i><b>15.5</b> Регрессионный анализ</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="кластеризация.html"><a href="кластеризация.html"><i class="fa fa-check"></i><b>16</b> Кластеризация</a></li>
-<li class="chapter" data-level="17" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>17</b> Методы уменьшения размерностей</a></li>
-<li class="chapter" data-level="18" data-path="работа-с-сетями.html"><a href="работа-с-сетями.html"><i class="fa fa-check"></i><b>18</b> Работа с сетями</a></li>
+<li class="chapter" data-level="16" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html"><i class="fa fa-check"></i><b>16</b> Работа статистического детектива</a><ul>
+<li class="chapter" data-level="16.1" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#введение-1"><i class="fa fa-check"></i><b>16.1</b> Введение</a></li>
+<li class="chapter" data-level="16.2" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#возможно-ли-такое-среднее"><i class="fa fa-check"></i><b>16.2</b> Возможно ли такое среднее?</a></li>
+<li class="chapter" data-level="16.3" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#granularity-related-inconsistent-means-grim-test"><i class="fa fa-check"></i><b>16.3</b> Granularity-Related Inconsistent Means (GRIM) test</a></li>
+<li class="chapter" data-level="16.4" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-statcheck"><i class="fa fa-check"></i><b>16.4</b> Пакет <code>statcheck</code></a></li>
+<li class="chapter" data-level="16.5" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-digitize"><i class="fa fa-check"></i><b>16.5</b> Пакет <code>digitize</code></a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="кластеризация.html"><a href="кластеризация.html"><i class="fa fa-check"></i><b>17</b> Кластеризация</a></li>
+<li class="chapter" data-level="18" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>18</b> Методы уменьшения размерностей</a></li>
 <li class="chapter" data-level="19" data-path="tasks.html"><a href="tasks.html"><i class="fa fa-check"></i><b>19</b> Задания</a><ul>
 <li class="chapter" data-level="19.1" data-path="tasks.html"><a href="tasks.html#vec_task_1"><i class="fa fa-check"></i><b>19.1</b> Вектор</a></li>
 <li class="chapter" data-level="19.2" data-path="tasks.html"><a href="tasks.html#vec_op"><i class="fa fa-check"></i><b>19.2</b> Вектор. Операции с векторами</a></li>
@@ -742,14 +748,15 @@ dogs %&gt;%
 [19] &quot;scary_letters.csv&quot;                                             
 [20] &quot;shakespeare_all.csv&quot;                                           
 [21] &quot;shakespeare_to_check.csv&quot;                                      
-[22] &quot;UK_pubs.csv&quot;                                                   
-[23] &quot;us_city_average_temperature.csv&quot;                               
-[24] &quot;visa_question.csv&quot;                                             
-[25] &quot;zhadina.csv&quot;                                                   </code></pre>
+[22] &quot;test_correlation_dataset.csv&quot;                                  
+[23] &quot;UK_pubs.csv&quot;                                                   
+[24] &quot;us_city_average_temperature.csv&quot;                               
+[25] &quot;visa_question.csv&quot;                                             
+[26] &quot;zhadina.csv&quot;                                                   </code></pre>
 <div class="sourceCode" id="cb794"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb794-1"><a href="functions.html#cb794-1"></a>all_datasets &lt;-<span class="st"> </span><span class="kw">map</span>(<span class="kw">str_c</span>(<span class="st">&quot;data/&quot;</span>, <span class="kw">list.files</span>(<span class="st">&quot;data/&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;.csv&quot;</span>)), read_csv)</span>
 <span id="cb794-2"><a href="functions.html#cb794-2"></a><span class="kw">str</span>(all_datasets, <span class="dt">max.level =</span> <span class="dv">1</span>)</span></code></pre></div>
-<pre><code>List of 25
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    521 obs. of  5 variables:
+<pre><code>List of 26
+ $ : tibble [521 × 5] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   date = col_character(),
@@ -758,7 +765,7 @@ dogs %&gt;%
   .. ..   no_answer = col_double(),
   .. ..   towards = col_character()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    44 obs. of  4 variables:
+ $ : tibble [44 × 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   id = col_double(),
@@ -766,12 +773,12 @@ dogs %&gt;%
   .. ..   x = col_double(),
   .. ..   y = col_double()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    6 obs. of  1 variable:
+ $ : tibble [6 × 1] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   article_text = col_character()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    917 obs. of  13 variables:
+ $ : tibble [917 × 13] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   Name = col_character(),
@@ -788,19 +795,19 @@ dogs %&gt;%
   .. ..   FfC = col_double(),
   .. ..   DwD = col_double()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    1097 obs. of  1 variable:
+ $ : tibble [1,097 × 1] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   city = col_character()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    1846 obs. of  3 variables:
+ $ : tibble [1,846 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   dataset = col_character(),
   .. ..   x = col_double(),
   .. ..   y = col_double()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    5506 obs. of  10 variables:
+ $ : tibble [5,506 × 10] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   id = col_double(),
@@ -814,24 +821,24 @@ dogs %&gt;%
   .. ..   collapsed_cause = col_character(),
   .. ..   cause_of_death = col_character()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    464 obs. of  2 variables:
+ $ : tibble [464 × 2] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   x = col_double(),
   .. ..   y = col_double()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    52138 obs. of  1 variable:
+ $ : tibble [52,138 × 1] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   `lemma    pos freq_ipm` = col_character()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    175 obs. of  2 variables:
+ $ : tibble [175 × 2] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   vowel.dur = col_double(),
   .. ..   aspiration = col_character()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    12 obs. of  5 variables:
+ $ : tibble [12 × 5] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   language = col_character(),
@@ -840,7 +847,7 @@ dogs %&gt;%
   .. ..   n_L3_sp = col_double(),
   .. ..   n_all_sp = col_double()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    106 obs. of  12 variables:
+ $ : tibble [106 × 12] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   name = col_character(),
@@ -856,21 +863,21 @@ dogs %&gt;%
   .. ..   frequency_be_in_the_fresh_air = col_character(),
   .. ..   fear_of_the_dark = col_character()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    15477 obs. of  3 variables:
+ $ : tibble [15,477 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   correct = col_character(),
   .. ..   spelling = col_character(),
   .. ..   count = col_double()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    24 obs. of  3 variables:
+ $ : tibble [24 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   id = col_character(),
   .. ..   type = col_character(),
   .. ..   non_normalised = col_double()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    2508 obs. of  4 variables:
+ $ : tibble [2,508 × 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   name = col_character(),
@@ -878,7 +885,7 @@ dogs %&gt;%
   .. ..   latitude = col_double(),
   .. ..   longitude = col_double()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    46 obs. of  17 variables:
+ $ : tibble [46 × 17] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   `Almost Certainly` = col_double(),
@@ -899,29 +906,29 @@ dogs %&gt;%
   .. ..   `Highly Unlikely` = col_double(),
   .. ..   `Chances Are Slight` = col_double()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    235 obs. of  1 variable:
+ $ : tibble [235 × 1] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   `data from https://readymag.com/u94255285/colors-of-classics/;;` = col_character()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    7640 obs. of  2 variables:
+ $ : tibble [7,640 × 2] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   word = col_character(),
   .. ..   score = col_double()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    3 obs. of  1 variable:
+ $ : tibble [3 × 1] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   `cyrillic;ipa_symbols;greek` = col_character()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    138691 obs. of  2 variables:
+ $ : tibble [138,691 × 2] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   title = col_character(),
   .. ..   text = col_character()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    13861 obs. of  4 variables:
+ $ : tibble [13,861 × 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   title = col_character(),
@@ -929,14 +936,21 @@ dogs %&gt;%
   .. ..   n = col_double(),
   .. ..   n_text = col_double()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    41097 obs. of  3 variables:
+ $ : tibble [21 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+  ..- attr(*, &quot;spec&quot;)=
+  .. .. cols(
+  .. ..   x = col_double(),
+  .. ..   y = col_double(),
+  .. ..   type = col_character()
+  .. .. )
+ $ : tibble [41,097 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   pub_ID = col_double(),
   .. ..   pub_name = col_character(),
   .. ..   pub_town = col_character()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    51 obs. of  26 variables:
+ $ : tibble [51 × 26] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   city = col_character(),
@@ -966,13 +980,13 @@ dogs %&gt;%
   .. ..   max_november = col_double(),
   .. ..   max_december = col_double()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    8 obs. of  2 variables:
+ $ : tibble [8 × 2] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   from = col_character(),
   .. ..   to = col_character()
   .. .. )
- $ :Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    26 obs. of  5 variables:
+ $ : tibble [26 × 5] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   word_1 = col_character(),
@@ -992,33 +1006,28 @@ dogs %&gt;%
 <span id="cb798-4"><a href="functions.html#cb798-4"></a></span>
 <span id="cb798-5"><a href="functions.html#cb798-5"></a><span class="kw">str</span>(seatle, <span class="dt">max.level =</span> <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>List of 15
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   3864 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   11197 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   12141 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   15526 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   16821 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   15046 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   13793 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   13091 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   15092 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   14197 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   12313 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   10705 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   10485 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   9593 obs. of  5 variables:
- $ :Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   6631 obs. of  5 variables:</code></pre>
+ $ : tibble [3,864 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [11,197 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [12,141 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [15,526 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [16,821 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [15,046 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [13,793 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [13,091 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [15,092 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [14,197 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [12,313 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [10,705 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [10,485 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [9,593 × 5] (S3: tbl_df/tbl/data.frame)
+ $ : tibble [6,631 × 5] (S3: tbl_df/tbl/data.frame)</code></pre>
 <p>Получился список, можно использовать <code>map_df()</code>, которая еще и соединит все в один датафрейм.</p>
 <div class="sourceCode" id="cb800"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb800-1"><a href="functions.html#cb800-1"></a><span class="kw">excel_sheets</span>(<span class="st">&quot;data/seattle_public_library_checkouts.xlsx&quot;</span>) <span class="op">%&gt;%</span></span>
 <span id="cb800-2"><a href="functions.html#cb800-2"></a><span class="st">  </span><span class="kw">map_df</span>(<span class="op">~</span><span class="kw">read_xlsx</span>(<span class="st">&quot;data/seattle_public_library_checkouts.xlsx&quot;</span>, .)) -&gt;</span>
 <span id="cb800-3"><a href="functions.html#cb800-3"></a><span class="st">  </span>seatle</span>
 <span id="cb800-4"><a href="functions.html#cb800-4"></a></span>
 <span id="cb800-5"><a href="functions.html#cb800-5"></a><span class="kw">str</span>(seatle, <span class="dt">max.level =</span> <span class="dv">1</span>)</span></code></pre></div>
-<pre><code>Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:   180495 obs. of  5 variables:
- $ id  : num  759 3053 5674 6248 8262 ...
- $ type: chr  &quot;bk&quot; &quot;bk&quot; &quot;bk&quot; &quot;bk&quot; ...
- $ name: chr  &quot;best nest&quot; &quot;Lovable Lyle&quot; &quot;Whose mouse are you&quot; &quot;In the night kitchen&quot; ...
- $ n   : num  103 101 110 243 185 172 278 221 204 324 ...
- $ year: num  2005 2005 2005 2005 2005 ...</code></pre>
+<pre><code>tibble [180,495 × 5] (S3: tbl_df/tbl/data.frame)</code></pre>
 
 </div>
 </div>
