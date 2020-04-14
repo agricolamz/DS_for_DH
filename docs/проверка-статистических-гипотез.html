@@ -759,27 +759,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">14.5.4</span> Критерий χ², тест Фишера</h3>
 <p>Если мы хотим сравнить распределение категориальных переменных, то обычно строят таблицы сопряженности и используют критерий χ².</p>
 <p>Например, из интервью с носителями одной деревни произвольным образом выбрали по пол часа и посчитали кол-во реализаций диалектных форм vs. недиалектных. В результате получилось что у женщин было 107 диалектных форм vs. 93 недиалектные, а у мужчин — 74 vs. 45. Значима ли зафиксированная разница?</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="проверка-статистических-гипотез.html#cb24-1"></a>dialect_forms &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/dialect_forms_fake.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## Parsed with column specification:
-## cols(
-##   form = col_character(),
-##   gender = col_character()
-## )</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="проверка-статистических-гипотез.html#cb26-1"></a>dialect_forms <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb26-2"><a href="проверка-статистических-гипотез.html#cb26-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(gender, <span class="dt">fill =</span> form))<span class="op">+</span></span>
-<span id="cb26-3"><a href="проверка-статистических-гипотез.html#cb26-3"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="проверка-статистических-гипотез.html#cb24-1"></a>dialect_forms &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/dialect_forms_fake.csv&quot;</span>)</span>
+<span id="cb24-2"><a href="проверка-статистических-гипотез.html#cb24-2"></a></span>
+<span id="cb24-3"><a href="проверка-статистических-гипотез.html#cb24-3"></a>dialect_forms <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb24-4"><a href="проверка-статистических-гипотез.html#cb24-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(gender, <span class="dt">fill =</span> form))<span class="op">+</span></span>
+<span id="cb24-5"><a href="проверка-статистических-гипотез.html#cb24-5"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="проверка-статистических-гипотез.html#cb27-1"></a><span class="kw">table</span>(dialect_forms)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="проверка-статистических-гипотез.html#cb25-1"></a><span class="kw">table</span>(dialect_forms)</span></code></pre></div>
 <pre><code>##           gender
 ## form       female male
 ##   dialect     107   74
 ##   standard     93   45</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="проверка-статистических-гипотез.html#cb29-1"></a><span class="kw">prop.table</span>(<span class="kw">table</span>(dialect_forms))</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="проверка-статистических-гипотез.html#cb27-1"></a><span class="kw">prop.table</span>(<span class="kw">table</span>(dialect_forms))</span></code></pre></div>
 <pre><code>##           gender
 ## form          female      male
 ##   dialect  0.3354232 0.2319749
 ##   standard 0.2915361 0.1410658</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="проверка-статистических-гипотез.html#cb31-1"></a><span class="kw">chisq.test</span>(<span class="kw">table</span>(dialect_forms))</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="проверка-статистических-гипотез.html#cb29-1"></a><span class="kw">chisq.test</span>(<span class="kw">table</span>(dialect_forms))</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
 ## 
@@ -788,18 +784,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Критерий χ² считают относительно наблюдаемых <span class="math inline">\(f_o\)</span> и ожидаемых <span class="math inline">\(f_e\)</span> значений:</p>
 <p><span class="math display">\[\chi^2 = \sum\frac{\left(f_0-f_e\right)^2}{f_e}\]</span></p>
 <p>Считается, что критерий χ² не стоит применять, если хотя бы одно из <strong>ожидаемых</strong> значений меньше 5. Давайте посмотрим на ожидаемые наблюдения:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="проверка-статистических-гипотез.html#cb33-1"></a><span class="kw">chisq.test</span>(<span class="kw">table</span>(dialect_forms))<span class="op">$</span>expected</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="проверка-статистических-гипотез.html#cb31-1"></a><span class="kw">chisq.test</span>(<span class="kw">table</span>(dialect_forms))<span class="op">$</span>expected</span></code></pre></div>
 <pre><code>##           gender
 ## form          female     male
 ##   dialect  113.47962 67.52038
 ##   standard  86.52038 51.47962</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="проверка-статистических-гипотез.html#cb35-1"></a><span class="kw">chisq.test</span>(<span class="kw">table</span>(dialect_forms))<span class="op">$</span>observed</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="проверка-статистических-гипотез.html#cb33-1"></a><span class="kw">chisq.test</span>(<span class="kw">table</span>(dialect_forms))<span class="op">$</span>observed</span></code></pre></div>
 <pre><code>##           gender
 ## form       female male
 ##   dialect     107   74
 ##   standard     93   45</code></pre>
 <p>Если одно из <strong>ожидаемых</strong> значений меньше 5, то следует использовать тест Фишера:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="проверка-статистических-гипотез.html#cb37-1"></a><span class="kw">fisher.test</span>(<span class="kw">table</span>(dialect_forms))</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="проверка-статистических-гипотез.html#cb35-1"></a><span class="kw">fisher.test</span>(<span class="kw">table</span>(dialect_forms))</span></code></pre></div>
 <pre><code>## 
 ##  Fisher&#39;s Exact Test for Count Data
 ## 
@@ -817,27 +813,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">14.5.5</span> Критерий Мак Немара</h3>
 <p>Во время диалектологической экспедиции от 20 информантов (10 мужчин, 10 женщин) были записаны списки слов. Получилось, что 13 информантов использовали в речи велярный фрикативный ɣ, а 22 — велярный стоп ɡ. Через 5 лет работали с теми же информантами и соотношение немного поменялось: 7 ɣ против 28 ɡ. Является ли
 получившаяся разница статистически значимой?</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="проверка-статистических-гипотез.html#cb39-1"></a>repeated_dialect_forms &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/dialect_forms_repeated_fake.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## Parsed with column specification:
-## cols(
-##   feature = col_character(),
-##   time = col_character()
-## )</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="проверка-статистических-гипотез.html#cb41-1"></a><span class="kw">table</span>(repeated_dialect_forms)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="проверка-статистических-гипотез.html#cb37-1"></a>repeated_dialect_forms &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/dialect_forms_repeated_fake.csv&quot;</span>)</span>
+<span id="cb37-2"><a href="проверка-статистических-гипотез.html#cb37-2"></a></span>
+<span id="cb37-3"><a href="проверка-статистических-гипотез.html#cb37-3"></a><span class="kw">table</span>(repeated_dialect_forms)</span></code></pre></div>
 <pre><code>##            time
 ## feature     after before
 ##   fricative     7     13
 ##   stop         28     22</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="проверка-статистических-гипотез.html#cb43-1"></a><span class="kw">prop.table</span>(<span class="kw">table</span>(repeated_dialect_forms))</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="проверка-статистических-гипотез.html#cb39-1"></a><span class="kw">prop.table</span>(<span class="kw">table</span>(repeated_dialect_forms))</span></code></pre></div>
 <pre><code>##            time
 ## feature         after    before
 ##   fricative 0.1000000 0.1857143
 ##   stop      0.4000000 0.3142857</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="проверка-статистических-гипотез.html#cb45-1"></a>repeated_dialect_forms <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb45-2"><a href="проверка-статистических-гипотез.html#cb45-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(time, <span class="dt">fill =</span> feature))<span class="op">+</span></span>
-<span id="cb45-3"><a href="проверка-статистических-гипотез.html#cb45-3"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="проверка-статистических-гипотез.html#cb41-1"></a>repeated_dialect_forms <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb41-2"><a href="проверка-статистических-гипотез.html#cb41-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(time, <span class="dt">fill =</span> feature))<span class="op">+</span></span>
+<span id="cb41-3"><a href="проверка-статистических-гипотез.html#cb41-3"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="проверка-статистических-гипотез.html#cb46-1"></a><span class="kw">mcnemar.test</span>(<span class="kw">table</span>(repeated_dialect_forms))</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="проверка-статистических-гипотез.html#cb42-1"></a><span class="kw">mcnemar.test</span>(<span class="kw">table</span>(repeated_dialect_forms))</span></code></pre></div>
 <pre><code>## 
 ##  McNemar&#39;s Chi-squared test with continuity correction
 ## 

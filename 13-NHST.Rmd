@@ -293,7 +293,7 @@ t.test(sample_1, sample_2, paired = TRUE)
 
 Если данные не распределены нормально, тогда используется критерий Манна-Уитни (по английски его тоже называют Wilcoxon test).
 
-```{r,  message=FALSE}
+```{r, message=FALSE}
 set.seed(42)
 data_1 <- rlnorm(n = 30, mean = 1.8, sd = 0.1)
 data_2 <- rlnorm(n = 30, mean = 1.6, sd = 0.1)
@@ -315,7 +315,7 @@ wilcox.test(data_1, data_2)
 
 Например, из интервью с носителями одной деревни произвольным образом выбрали по пол часа и посчитали кол-во реализаций диалектных форм vs. недиалектных. В результате получилось что у женщин было 107 диалектных форм vs. 93 недиалектные, а у мужчин — 74 vs. 45. Значима ли зафиксированная разница?
 
-```{r}
+```{r, message=FALSE}
 dialect_forms <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/dialect_forms_fake.csv")
 
 dialect_forms %>% 
@@ -352,7 +352,7 @@ fisher.test(table(dialect_forms))
 Во время диалектологической экспедиции от 20 информантов (10 мужчин, 10 женщин) были записаны списки слов. Получилось, что 13 информантов использовали в речи велярный фрикативный ɣ, а 22 — велярный стоп ɡ. Через 5 лет работали с теми же информантами и соотношение немного поменялось: 7 ɣ против 28 ɡ. Является ли
 получившаяся разница статистически значимой? 
 
-```{r}
+```{r, message=FALSE}
 repeated_dialect_forms <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/dialect_forms_repeated_fake.csv")
 
 table(repeated_dialect_forms)
