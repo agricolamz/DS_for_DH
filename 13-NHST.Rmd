@@ -365,8 +365,6 @@ repeated_dialect_forms %>%
 mcnemar.test(table(repeated_dialect_forms))
 ```
 
-
-
 ## Послесловие
 
 P-value очень много ругают
