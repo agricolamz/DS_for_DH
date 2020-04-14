@@ -369,8 +369,8 @@ mcnemar.test(table(repeated_dialect_forms))
 
 P-value очень много ругают
 
-* за то, что его очень часто понимают неправильно [@gigerenzer04, @goodman08]
-* за то, что само по себе p-value < 0.05 слабый довод [@sterne01, @nuzzo14, @wasserstein16]
+* за то, что его очень часто понимают неправильно [@gigerenzer04], [@goodman08]
+* за то, что само по себе p-value < 0.05 слабый довод [@sterne01], [@nuzzo14], [@wasserstein16]
 
 > Q: Why do so many colleges and grad schools teach p = 0.05?
 
