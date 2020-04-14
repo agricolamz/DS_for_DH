@@ -759,7 +759,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="критерий-χ²-тест-фишера" class="section level3">
 <h3><span class="header-section-number">14.5.4</span> Критерий χ², тест Фишера</h3>
-<p>Для категориальных данных,</p>
+<p>Если мы хотим сравнить распределение категориальных переменных, то обычно строят таблицы сопряженности и используют критерий χ².</p>
+<p>Например, из интервью с носителями одной деревни произвольным образом выбрали по пол часа и посчитали кол-во реализаций диалектных форм vs. недиалектных. В результате получилось что у женщин было 107 диалектных форм vs. 93 недиалектные, а у мужчин — 74 vs. 45. Значима ли зафиксированная разница?</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="проверка-статистических-гипотез.html#cb24-1"></a>dialect_forms &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/dialect_forms_fake.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   form = col_character(),
+##   gender = col_character()
+## )</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="проверка-статистических-гипотез.html#cb26-1"></a>dialect_forms <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb26-2"><a href="проверка-статистических-гипотез.html#cb26-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(gender, <span class="dt">fill =</span> form))<span class="op">+</span></span>
+<span id="cb26-3"><a href="проверка-статистических-гипотез.html#cb26-3"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="проверка-статистических-гипотез.html#cb27-1"></a><span class="kw">table</span>(dialect_forms)</span></code></pre></div>
+<pre><code>##           gender
+## form       female male
+##   dialect     107   74
+##   standard     93   45</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="проверка-статистических-гипотез.html#cb29-1"></a><span class="kw">prop.table</span>(<span class="kw">table</span>(dialect_forms))</span></code></pre></div>
+<pre><code>##           gender
+## form          female      male
+##   dialect  0.3354232 0.2319749
+##   standard 0.2915361 0.1410658</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="проверка-статистических-гипотез.html#cb31-1"></a><span class="kw">chisq.test</span>(<span class="kw">table</span>(dialect_forms))</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  table(dialect_forms)
+## X-squared = 1.9525, df = 1, p-value = 0.1623</code></pre>
+<p>Считается, что критерий χ² не стоит применять, если хотя бы одно из <strong>ожидаемых</strong> значений меньше 5. Давайте посмотрим на ожидаемые наблюдения:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="проверка-статистических-гипотез.html#cb33-1"></a><span class="kw">chisq.test</span>(<span class="kw">table</span>(dialect_forms))<span class="op">$</span>expected</span></code></pre></div>
+<pre><code>##           gender
+## form          female     male
+##   dialect  113.47962 67.52038
+##   standard  86.52038 51.47962</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="проверка-статистических-гипотез.html#cb35-1"></a><span class="kw">chisq.test</span>(<span class="kw">table</span>(dialect_forms))<span class="op">$</span>observed</span></code></pre></div>
+<pre><code>##           gender
+## form       female male
+##   dialect     107   74
+##   standard     93   45</code></pre>
+<p>Если одно из <strong>ожидаемых</strong> значений меньше 5, то следует использовать тест Фишера:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="проверка-статистических-гипотез.html#cb37-1"></a><span class="kw">fisher.test</span>(<span class="kw">table</span>(dialect_forms))</span></code></pre></div>
+<pre><code>## 
+##  Fisher&#39;s Exact Test for Count Data
+## 
+## data:  table(dialect_forms)
+## p-value = 0.1608
+## alternative hypothesis: true odds ratio is not equal to 1
+## 95 percent confidence interval:
+##  0.4279225 1.1396897
+## sample estimates:
+## odds ratio 
+##  0.7004421</code></pre>
+<p>Вообще таблицы сопряженности бывают разные, да и тестов куда больше см. <span class="citation">(Lydersen, Fagerland, and Laake <a href="#ref-lydersen09" role="doc-biblioref">2009</a>)</span></p>
 </div>
 <div id="критерий-мак-немара" class="section level3">
 <h3><span class="header-section-number">14.5.5</span> Критерий Мак Немара</h3>
@@ -775,8 +827,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">14.8</span> Послесловие</h2>
 <p>P-value очень много ругают</p>
 <ul>
-<li>за то, что его очень часто понимают неправильно [Gigerenzer 2004], [Goodman 2008]</li>
-<li>за то, что само по себе p-value &lt; 0.05 слабый довод [Sterne, Smith 2001], [Nuzzo et al. 2014], [Wasserstein, Lazar 2016]</li>
+<li>за то, что его очень часто понимают неправильно <span class="citation">(Gigerenzer <a href="#ref-gigerenzer04" role="doc-biblioref">2004</a>, @goodman08)</span></li>
+<li>за то, что само по себе p-value &lt; 0.05 слабый довод <span class="citation">(Sterne and Smith <a href="#ref-sterne01" role="doc-biblioref">2001</a>, @nuzzo14, @wasserstein16)</span></li>
 </ul>
 <blockquote>
 <p>Q: Why do so many colleges and grad schools teach p = 0.05?</p>
@@ -790,7 +842,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>A: Because that’s what they were taught in college or grad school</p>
 </blockquote>
-<p>[Wasserstein, Lazar 2016]</p>
+<p><span class="citation">(Wasserstein and Lazar <a href="#ref-wasserstein16" role="doc-biblioref">2016</a>)</span></p>
 <p>В связи с этим, сейчас можно наблюдать</p>
 <ul>
 <li>большое обсуждение p-value vs. доверительные интервалы</li>
@@ -806,7 +858,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a href="https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv">Рассказы Чехова</a> и <a href="https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv">Зощенко</a> собраны в tidy формате. Постройте график. Узнайте долю, которую составляют слова c леммой <em>деньги</em> от всех слов рассказа и проведите статистический тесты, сравнивающие [доли слов с леммой <em>деньги</em>] с знечением 0.000512 из частотного словаря русского языка [Шаров, Ляшевская 2011].
 </p>
 </div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <ul>
 <li>Приведите значение p-value для Чехова, округленное до 3 знаков после запятой:
 <form name="form_26912" onsubmit="return validate_form_26912()" method="post">
@@ -845,7 +897,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a href="https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv">Рассказы Чехова</a> и <a href="https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv">Зощенко</a> собраны в tidy формате. Постройте график. Проведите статистический тест, проверяющий, действительно ли Зощенко писал более короткие рассказы чем Чехов.
 </p>
 </div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 <ul>
 <li>Приведите значение p-value, округленное до 3 знаков после запятой
 <form name="form_39550" onsubmit="return validate_form_39550()" method="post">
@@ -870,7 +922,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Посчитайте энтропию каждого рассказа, визуализируйте разницу между авторами и проведите статистический тест, который показывает, что энтропия в рассказах Зощенко выше.
 </p>
 </div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 <ul>
 <li>Приведите название рассказа с минимальной энтропией
 <form name="form_72989" onsubmit="return validate_form_72989()" method="post">
@@ -909,7 +961,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Визуализируйте количество слов и энтропию каждого автора. Какие выводы можно сделать на основании полученого графика?
 </p>
 </div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
 </div>
 </div>
 <div id="obamacare" class="section level2">
@@ -919,7 +971,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 В 2010 Б. Обама подписал закон о доступном здравоохранении. В <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/obamacare.csv">датасет</a> записаны данные о доле незастрахованных людей (в процентах) в каждом штате в 2010 и в 2015 годах (исходные данные <a href="https://www.kaggle.com/hhs/health-insurance">на kaggle</a>). Нарисуйте график (я использовал <code>geom_linerange(aes(ymin = …, ymax = …))</code>) и проведите статистический тест, показывающий что произошло изменение.
 </p>
 </div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
 <ul>
 <li>Приведите среднее значение разниц между годами
 <form name="form_50845" onsubmit="return validate_form_50845()" method="post">
@@ -944,6 +996,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script> function validate_form_44576() {var x, text; var x = document.forms["form_44576"]["answer_44576"].value;if (x == "18.575"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_44576').innerHTML = text; return false;} </script></li>
 </ul>
 
+</div>
+</div>
+<h3>Ссылки на литературу</h3>
+<div id="refs" class="references">
+<div id="ref-gigerenzer04">
+<p>Gigerenzer, Gerd. 2004. “Mindless Statistics.” <em>The Journal of Socio-Economics</em> 33 (5): 587–606.</p>
+</div>
+<div id="ref-lydersen09">
+<p>Lydersen, Stian, Morten W Fagerland, and Petter Laake. 2009. “Recommended Tests for Association in 2 <span class="math inline">\(\times\)</span> 2 Tables.” <em>Statistics in Medicine</em> 28 (7): 1159–75.</p>
+</div>
+<div id="ref-sterne01">
+<p>Sterne, J. A. C., and G. D. Smith. 2001. “Sifting the Evidence—What’s Wrong with Significance Tests?” <em>Physical Therapy</em> 81 (8): 1464–9.</p>
+</div>
+<div id="ref-wasserstein16">
+<p>Wasserstein, Ronald L, and Nicole A Lazar. 2016. “The Asa Statement on P-Values: Context, Process, and Purpose.” Taylor &amp; Francis.</p>
 </div>
 </div>
             </section>
