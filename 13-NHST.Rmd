@@ -353,8 +353,16 @@ fisher.test(table(dialect_forms))
 получившаяся разница статистически значимой? 
 
 ```{r}
-reeated_dialect_forms <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/dialect_forms_repeated_fake.csv")
+repeated_dialect_forms <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/dialect_forms_repeated_fake.csv")
 
+table(repeated_dialect_forms)
+prop.table(table(repeated_dialect_forms))
+
+repeated_dialect_forms %>% 
+  ggplot(aes(time, fill = feature))+
+  geom_bar()
+
+mcnemar.test(table(repeated_dialect_forms))
 ```
 
 
