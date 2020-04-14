@@ -460,6 +460,18 @@ entropy %>%
   geom_violin()
 ```
 
+* Приведите название рассказа с минимальной энтропией
+```{r, echo=FALSE, results='asis'}
+check_question("Вывеска", options = c("Вывеска", "Крест", "Надул", "Библиография"), random_answer_order = TRUE)
+```
+
+* Приведите название рассказа с максимальной энтропией
+```{r, echo=FALSE, results='asis'}
+check_question("Черная магия", 
+               options = c("Черная магия", "Великосветская История", "Монастырь", "Вор"), 
+               random_answer_order = TRUE)
+```
+
 * Приведите значение p-value, округленное до 3 знаков после запятой
 ```{r, echo=FALSE, results='asis'}
 check_question(round(en_test$p.value, 3))
@@ -491,13 +503,25 @@ chekhov %>%
 
 ## Obamacare
 ```{block, type = "rmdtask"}
-В 2010 Б. Обама подписал закон о доступном здравоохранении. В [датасет](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/obamacare.csv) записаны данные о доле незастрахованных людей (в процентах) в каждом штате в 2010 и в 2015 годах. Проведите статистический тест, показывающий что произошло изменение.
+В 2010 Б. Обама подписал закон о доступном здравоохранении. В [датасет](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/obamacare.csv) записаны данные о доле незастрахованных людей (в процентах) в каждом штате в 2010 и в 2015 годах (исходные данные [на kaggle](https://www.kaggle.com/hhs/health-insurance)). Нарисуйте график (я использовал `geom_linerange(aes(ymin = ..., ymax = ...))`) и проведите статистический тест, показывающий что произошло изменение.
 ```
 
-```{r, echo=FALSE, message=FALSE}
+```{r, echo=FALSE, message=FALSE, fig.height=6}
 obamacare <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/obamacare.csv")
 
-obamacare.test <- t.test(obamacare$`Uninsured Rate (2010)`, obamacare$`Uninsured Rate (2015)`, data = obamacare, paired = TRUE)
+obamacare.test <- t.test(obamacare$uninsured_rate_2010, obamacare$uninsured_rate_2015, data = obamacare, paired = TRUE)
+
+obamacare %>% 
+  mutate(state = fct_reorder(state, uninsured_rate_2010-uninsured_rate_2015)) %>% 
+  ggplot(aes(state))+
+  geom_linerange(aes(ymin = uninsured_rate_2010,
+                     ymax = uninsured_rate_2015))+
+    geom_point(aes(y = uninsured_rate_2010),
+               color = "tomato") +
+      geom_point(aes(y = uninsured_rate_2015),
+               color = "blue")+
+  coord_flip()+
+  labs(x = "", y = "", title = "Difference between in uninsured rate in 2010 (red) and 2015 (blue)")
 ```
 
 * Приведите среднее значение разниц между годами

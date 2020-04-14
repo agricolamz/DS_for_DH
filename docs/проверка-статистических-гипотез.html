@@ -872,20 +872,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 <ul>
-<li>Приведите значение p-value, округленное до 3 знаков после запятой
+<li>Приведите название рассказа с минимальной энтропией
 <form name="form_72989" onsubmit="return validate_form_72989()" method="post">
-<input type="text" name="answer_72989"><br><input type="submit" value="check">
+<select name="answer_72989"><option> Надул </option><option> Крест </option><option> Вывеска </option><option> Библиография </option></select><br><input type="submit" value="check">
 </form>
 <p id="result_72989">
 </p>
-<script> function validate_form_72989() {var x, text; var x = document.forms["form_72989"]["answer_72989"].value;if (x == "0"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_72989').innerHTML = text; return false;} </script></li>
-<li>Приведите значение t-статистики, округленное до 3 знаков после запятой:
-<form name="form_40870" onsubmit="return validate_form_40870()" method="post">
-<input type="text" name="answer_40870"><br><input type="submit" value="check">
+<script> function validate_form_72989() {var x, text; var x = document.forms["form_72989"]["answer_72989"].value;if (x == "Вывеска"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_72989').innerHTML = text; return false;} </script></li>
+<li>Приведите название рассказа с максимальной энтропией
+<form name="form_53559" onsubmit="return validate_form_53559()" method="post">
+<select name="answer_53559"><option> Вор </option><option> Великосветская История </option><option> Черная магия </option><option> Монастырь </option></select><br><input type="submit" value="check">
 </form>
-<p id="result_40870">
+<p id="result_53559">
 </p>
-<script> function validate_form_40870() {var x, text; var x = document.forms["form_40870"]["answer_40870"].value;if (x == "10.971"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_40870').innerHTML = text; return false;} </script></li>
+<script> function validate_form_53559() {var x, text; var x = document.forms["form_53559"]["answer_53559"].value;if (x == "Черная магия"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_53559').innerHTML = text; return false;} </script></li>
+<li>Приведите значение p-value, округленное до 3 знаков после запятой
+<form name="form_86776" onsubmit="return validate_form_86776()" method="post">
+<input type="text" name="answer_86776"><br><input type="submit" value="check">
+</form>
+<p id="result_86776">
+</p>
+<script> function validate_form_86776() {var x, text; var x = document.forms["form_86776"]["answer_86776"].value;if (x == "0"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_86776').innerHTML = text; return false;} </script></li>
+<li>Приведите значение t-статистики, округленное до 3 знаков после запятой:
+<form name="form_25851" onsubmit="return validate_form_25851()" method="post">
+<input type="text" name="answer_25851"><br><input type="submit" value="check">
+</form>
+<p id="result_25851">
+</p>
+<script> function validate_form_25851() {var x, text; var x = document.forms["form_25851"]["answer_25851"].value;if (x == "10.971"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_25851').innerHTML = text; return false;} </script></li>
 </ul>
 </div>
 <div id="section-3" class="section level3">
@@ -895,38 +909,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Визуализируйте количество слов и энтропию каждого автора. Какие выводы можно сделать на основании полученого графика?
 </p>
 </div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
 </div>
 </div>
 <div id="obamacare" class="section level2">
 <h2><span class="header-section-number">14.10</span> Obamacare</h2>
 <div class="rmdtask">
 <p>
-В 2010 Б. Обама подписал закон о доступном здравоохранении. В <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/obamacare.csv">датасет</a> записаны данные о доле незастрахованных людей (в процентах) в каждом штате в 2010 и в 2015 годах. Проведите статистический тест, показывающий что произошло изменение.
+В 2010 Б. Обама подписал закон о доступном здравоохранении. В <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/obamacare.csv">датасет</a> записаны данные о доле незастрахованных людей (в процентах) в каждом штате в 2010 и в 2015 годах (исходные данные <a href="https://www.kaggle.com/hhs/health-insurance">на kaggle</a>). Нарисуйте график (я использовал <code>geom_linerange(aes(ymin = …, ymax = …))</code>) и проведите статистический тест, показывающий что произошло изменение.
 </p>
 </div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
 <ul>
 <li>Приведите среднее значение разниц между годами
-<form name="form_5261" onsubmit="return validate_form_5261()" method="post">
-<input type="text" name="answer_5261"><br><input type="submit" value="check">
+<form name="form_50845" onsubmit="return validate_form_50845()" method="post">
+<input type="text" name="answer_50845"><br><input type="submit" value="check">
 </form>
-<p id="result_5261">
+<p id="result_50845">
 </p>
-<script> function validate_form_5261() {var x, text; var x = document.forms["form_5261"]["answer_5261"].value;if (x == "5.446"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_5261').innerHTML = text; return false;} </script></li>
+<script> function validate_form_50845() {var x, text; var x = document.forms["form_50845"]["answer_50845"].value;if (x == "5.446"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_50845').innerHTML = text; return false;} </script></li>
 <li>Приведите значение p-value, округленное до 3 знаков после запятой
-<form name="form_53559" onsubmit="return validate_form_53559()" method="post">
-<input type="text" name="answer_53559"><br><input type="submit" value="check">
+<form name="form_1907" onsubmit="return validate_form_1907()" method="post">
+<input type="text" name="answer_1907"><br><input type="submit" value="check">
 </form>
-<p id="result_53559">
+<p id="result_1907">
 </p>
-<script> function validate_form_53559() {var x, text; var x = document.forms["form_53559"]["answer_53559"].value;if (x == "0"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_53559').innerHTML = text; return false;} </script></li>
+<script> function validate_form_1907() {var x, text; var x = document.forms["form_1907"]["answer_1907"].value;if (x == "0"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_1907').innerHTML = text; return false;} </script></li>
 <li>Приведите значение t-статистики, округленное до 3 знаков после запятой:
-<form name="form_9770" onsubmit="return validate_form_9770()" method="post">
-<input type="text" name="answer_9770"><br><input type="submit" value="check">
+<form name="form_44576" onsubmit="return validate_form_44576()" method="post">
+<input type="text" name="answer_44576"><br><input type="submit" value="check">
 </form>
-<p id="result_9770">
+<p id="result_44576">
 </p>
-<script> function validate_form_9770() {var x, text; var x = document.forms["form_9770"]["answer_9770"].value;if (x == "18.575"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_9770').innerHTML = text; return false;} </script></li>
+<script> function validate_form_44576() {var x, text; var x = document.forms["form_44576"]["answer_44576"].value;if (x == "18.575"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_44576').innerHTML = text; return false;} </script></li>
 </ul>
 
 </div>
