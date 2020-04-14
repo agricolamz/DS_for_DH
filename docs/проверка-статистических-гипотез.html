@@ -51,19 +51,6 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
-<script src="libs/Leaflet.Sync-0.0.5/L.Map.Sync.js"></script>
 
 
 <style type="text/css">
@@ -356,6 +343,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.6" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#об-эффекте-множественных-сравнений"><i class="fa fa-check"></i><b>14.6</b> Об эффекте множественных сравнений</a></li>
 <li class="chapter" data-level="14.7" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#велечина-эффекта"><i class="fa fa-check"></i><b>14.7</b> Велечина эффекта</a></li>
 <li class="chapter" data-level="14.8" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#послесловие"><i class="fa fa-check"></i><b>14.8</b> Послесловие</a></li>
+<li class="chapter" data-level="14.9" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#рассказы-чехова-и-зощенко"><i class="fa fa-check"></i><b>14.9</b> Рассказы Чехова и Зощенко</a><ul>
+<li class="chapter" data-level="14.9.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section"><i class="fa fa-check"></i><b>14.9.1</b> </a></li>
+<li class="chapter" data-level="14.9.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-1"><i class="fa fa-check"></i><b>14.9.2</b> </a></li>
+<li class="chapter" data-level="14.9.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-2"><i class="fa fa-check"></i><b>14.9.3</b> </a></li>
+<li class="chapter" data-level="14.9.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-3"><i class="fa fa-check"></i><b>14.9.4</b> </a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html"><i class="fa fa-check"></i><b>15</b> Корреляция и регрессия</a><ul>
 <li class="chapter" data-level="15.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#дисперсия-и-стандартное-отклонение"><i class="fa fa-check"></i><b>15.1</b> Дисперсия и стандартное отклонение</a></li>
@@ -443,22 +436,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(H_1\)</span> — (альтернативная гипотеза) разница является статистически значимой, т. е. наблюдаемые данные не могут происходят из ожидаемого распределения.</li>
 </ul>
 <p>Нулевая гипотеза — это гипотеза, которую каждый исследователь хочет отвергнуть, и принять альтернативную. После применения статистического критерия (каждый критерий зависит от конкретного статистического теста, а выбор теста зависит от типа данных) исследователь считает вероятность наблюдать такой или более экстремальный результат, если верна нулевая гипотеза (<strong>p-value, p-уровень значимости</strong>):</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-494-1.png" width="672" /></p>
-<div class="sourceCode" id="cb1036"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1036-1"><a href="проверка-статистических-гипотез.html#cb1036-1"></a><span class="kw">sum</span>(<span class="kw">dbinom</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">13</span>, <span class="dt">size =</span> <span class="dv">13</span>, <span class="dt">prob =</span> <span class="fl">0.103</span>))</span></code></pre></div>
-<pre><code>[1] 0.03758494</code></pre>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="проверка-статистических-гипотез.html#cb1-1"></a><span class="kw">sum</span>(<span class="kw">dbinom</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">13</span>, <span class="dt">size =</span> <span class="dv">13</span>, <span class="dt">prob =</span> <span class="fl">0.103</span>))</span></code></pre></div>
+<pre><code>## [1] 0.03758494</code></pre>
 <p>Это же можно сделать при помощи следующей функции:</p>
-<div class="sourceCode" id="cb1038"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1038-1"><a href="проверка-статистических-гипотез.html#cb1038-1"></a><span class="kw">binom.test</span>(<span class="dt">x =</span> <span class="dv">4</span>, <span class="dt">n =</span> <span class="dv">13</span>, <span class="dt">p =</span> <span class="fl">0.103</span>, <span class="dt">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span></code></pre></div>
-<pre><code>
-    Exact binomial test
-
-data:  4 and 13
-number of successes = 4, number of trials = 13, p-value = 0.03758
-alternative hypothesis: true probability of success is greater than 0.103
-95 percent confidence interval:
- 0.1126658 1.0000000
-sample estimates:
-probability of success 
-             0.3076923 </code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="проверка-статистических-гипотез.html#cb3-1"></a><span class="kw">binom.test</span>(<span class="dt">x =</span> <span class="dv">4</span>, <span class="dt">n =</span> <span class="dv">13</span>, <span class="dt">p =</span> <span class="fl">0.103</span>, <span class="dt">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  4 and 13
+## number of successes = 4, number of trials = 13, p-value = 0.03758
+## alternative hypothesis: true probability of success is greater than 0.103
+## 95 percent confidence interval:
+##  0.1126658 1.0000000
+## sample estimates:
+## probability of success 
+##              0.3076923</code></pre>
 <p>Дальше в разных науках принимают некоторое критическое значение (в большинстве случаев это 0.05), и если p-value меньше данного заветного значения, считается, что тогда разница является статистически значимой.</p>
 <div class="figure">
 <img src="https://imgs.xkcd.com/comics/p_values.png" alt="" />
@@ -472,24 +465,24 @@ probability of success
 <ul>
 <li>Одновыборочные тесты (one-sample tests)</li>
 </ul>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-497-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <ul>
 <li>Двухвыборочные тесты (two-sample tests)</li>
 </ul>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-498-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <ul>
 <li>многовыборочные тесты (multiple-sample tests)</li>
 </ul>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-499-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 <div id="направление" class="section level3">
 <h3><span class="header-section-number">14.3.2</span> Направление</h3>
 <ul>
 <li><p>односторонние
-<img src="DS_for_DH_files/figure-html/unnamed-chunk-500-1.png" width="672" /><img src="DS_for_DH_files/figure-html/unnamed-chunk-500-2.png" width="672" /></p></li>
+<img src="DS_for_DH_files/figure-html/unnamed-chunk-8-1.png" width="672" /><img src="DS_for_DH_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p></li>
 <li><p>двусторонние</p></li>
 </ul>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-501-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 <div id="парные-vs.-непарные" class="section level3">
 <h3><span class="header-section-number">14.3.3</span> Парные vs. непарные</h3>
@@ -577,34 +570,33 @@ probability of success
 <div id="биномиальный-тест" class="section level3">
 <h3><span class="header-section-number">14.4.1</span> Биномиальный тест</h3>
 <p>Мы уже обсудили биномиальный тест выше. В частотном словаре [Ляшевская Шаров 2009], созданном на базе корпуса объемом 92 млн. словоупотреблений, существительное <em>кенгуру</em> имеет абсолютную частотность 0.0000021, а предлог <em>к</em> — 0.005389 (его вариант <em>ко</em> в расчет не берется). В некотором тексте длиной 61981 слов существительное кенгуру встречается 58 раз, а предлог к — 254. Можем ли мы считать, что это обычный ничем не примечательный результат?</p>
-<div class="sourceCode" id="cb1040"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1040-1"><a href="проверка-статистических-гипотез.html#cb1040-1"></a><span class="co"># кенгуру</span></span>
-<span id="cb1040-2"><a href="проверка-статистических-гипотез.html#cb1040-2"></a><span class="kw">binom.test</span>(<span class="dt">x =</span> <span class="dv">58</span>, <span class="dt">n =</span> <span class="dv">61981</span>, <span class="dt">p =</span> <span class="fl">0.0000021</span>)</span></code></pre></div>
-<pre><code>
-    Exact binomial test
-
-data:  58 and 61981
-number of successes = 58, number of trials = 61981, p-value &lt;
-0.00000000000000022
-alternative hypothesis: true probability of success is not equal to 0.0000021
-95 percent confidence interval:
- 0.0007106442 0.0012095348
-sample estimates:
-probability of success 
-          0.0009357706 </code></pre>
-<div class="sourceCode" id="cb1042"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1042-1"><a href="проверка-статистических-гипотез.html#cb1042-1"></a><span class="co"># к</span></span>
-<span id="cb1042-2"><a href="проверка-статистических-гипотез.html#cb1042-2"></a><span class="kw">binom.test</span>(<span class="dt">x =</span> <span class="dv">254</span>, <span class="dt">n =</span> <span class="dv">61981</span>, <span class="dt">p =</span> <span class="fl">0.005389</span>)</span></code></pre></div>
-<pre><code>
-    Exact binomial test
-
-data:  254 and 61981
-number of successes = 254, number of trials = 61981, p-value =
-0.000005862
-alternative hypothesis: true probability of success is not equal to 0.005389
-95 percent confidence interval:
- 0.003610363 0.004632987
-sample estimates:
-probability of success 
-            0.00409803 </code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="проверка-статистических-гипотез.html#cb5-1"></a><span class="co"># кенгуру</span></span>
+<span id="cb5-2"><a href="проверка-статистических-гипотез.html#cb5-2"></a><span class="kw">binom.test</span>(<span class="dt">x =</span> <span class="dv">58</span>, <span class="dt">n =</span> <span class="dv">61981</span>, <span class="dt">p =</span> <span class="fl">0.0000021</span>)</span></code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  58 and 61981
+## number of successes = 58, number of trials = 61981, p-value &lt; 2.2e-16
+## alternative hypothesis: true probability of success is not equal to 2.1e-06
+## 95 percent confidence interval:
+##  0.0007106442 0.0012095348
+## sample estimates:
+## probability of success 
+##           0.0009357706</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="проверка-статистических-гипотез.html#cb7-1"></a><span class="co"># к</span></span>
+<span id="cb7-2"><a href="проверка-статистических-гипотез.html#cb7-2"></a><span class="kw">binom.test</span>(<span class="dt">x =</span> <span class="dv">254</span>, <span class="dt">n =</span> <span class="dv">61981</span>, <span class="dt">p =</span> <span class="fl">0.005389</span>)</span></code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  254 and 61981
+## number of successes = 254, number of trials = 61981, p-value =
+## 5.862e-06
+## alternative hypothesis: true probability of success is not equal to 0.005389
+## 95 percent confidence interval:
+##  0.003610363 0.004632987
+## sample estimates:
+## probability of success 
+##             0.00409803</code></pre>
 <div class="rmdtask">
 <p>
 Мы посчитали количество букв <em>а</em> в рассказе А. П. Чехова и получили 58 букв из рассказа длинной 699 букв (пробелы и латинские буквы выкинуты). Является ли этот результат неожиданным, если мы ожидали долю 0.08. Приведите значение p-value с точностью до 2 знаком после запятой.
@@ -620,27 +612,27 @@ probability of success
 <div id="одновыборочный-t-тест" class="section level3">
 <h3><span class="header-section-number">14.4.2</span> Одновыборочный t-тест</h3>
 <p>Из статьи С. Степановой 2011 мы знаем, что носители русского языка в среднем говорят 5.31 слога в секунду со стандартным отклонением 1,93 (мужчины 5.46 слога в секунду со средним отклонением 2.02, женщины 5.23 слога в секунду со средним отклонением 1.84, дети 3.86 слога в секунду со средним отклонением 1.67). Мы опросили 30 носителей деревни N и выяснили, что средняя равна 7, а стандартное отклонение равно 2. Является ли данная разницастатистически значимой?</p>
-<div class="sourceCode" id="cb1044"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1044-1"><a href="проверка-статистических-гипотез.html#cb1044-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb1044-2"><a href="проверка-статистических-гипотез.html#cb1044-2"></a>data &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">30</span>, <span class="dt">mean =</span> <span class="dv">7</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</span>
-<span id="cb1044-3"><a href="проверка-статистических-гипотез.html#cb1044-3"></a><span class="kw">tibble</span>(data) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1044-4"><a href="проверка-статистических-гипотез.html#cb1044-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(data))<span class="op">+</span></span>
-<span id="cb1044-5"><a href="проверка-статистических-гипотез.html#cb1044-5"></a><span class="st">  </span><span class="kw">geom_dotplot</span>()<span class="op">+</span></span>
-<span id="cb1044-6"><a href="проверка-статистических-гипотез.html#cb1044-6"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="kw">mean</span>(data), <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>)<span class="op">+</span></span>
-<span id="cb1044-7"><a href="проверка-статистических-гипотез.html#cb1044-7"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="fl">5.31</span>, <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span></span>
-<span id="cb1044-8"><a href="проверка-статистических-гипотез.html#cb1044-8"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="dt">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="dt">x =</span> <span class="dv">3</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">y =</span> <span class="fl">0.75</span>, <span class="dt">label =</span> <span class="st">&quot;среднее согласно</span><span class="ch">\n</span><span class="st">[Степанова 2011]&quot;</span>, <span class="dt">size =</span> <span class="dv">5</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-505-1.png" width="672" /></p>
-<div class="sourceCode" id="cb1045"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1045-1"><a href="проверка-статистических-гипотез.html#cb1045-1"></a><span class="kw">t.test</span>(data, <span class="dt">mu =</span> <span class="fl">5.31</span>)</span></code></pre></div>
-<pre><code>
-    One Sample t-test
-
-data:  data
-t = 3.9871, df = 29, p-value = 0.0004143
-alternative hypothesis: true mean is not equal to 5.31
-95 percent confidence interval:
- 6.199903 8.074444
-sample estimates:
-mean of x 
- 7.137174 </code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="проверка-статистических-гипотез.html#cb9-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb9-2"><a href="проверка-статистических-гипотез.html#cb9-2"></a>data &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">30</span>, <span class="dt">mean =</span> <span class="dv">7</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb9-3"><a href="проверка-статистических-гипотез.html#cb9-3"></a><span class="kw">tibble</span>(data) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb9-4"><a href="проверка-статистических-гипотез.html#cb9-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(data))<span class="op">+</span></span>
+<span id="cb9-5"><a href="проверка-статистических-гипотез.html#cb9-5"></a><span class="st">  </span><span class="kw">geom_dotplot</span>()<span class="op">+</span></span>
+<span id="cb9-6"><a href="проверка-статистических-гипотез.html#cb9-6"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="kw">mean</span>(data), <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>)<span class="op">+</span></span>
+<span id="cb9-7"><a href="проверка-статистических-гипотез.html#cb9-7"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="fl">5.31</span>, <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span></span>
+<span id="cb9-8"><a href="проверка-статистических-гипотез.html#cb9-8"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="dt">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="dt">x =</span> <span class="dv">3</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">y =</span> <span class="fl">0.75</span>, <span class="dt">label =</span> <span class="st">&quot;среднее согласно</span><span class="ch">\n</span><span class="st">[Степанова 2011]&quot;</span>, <span class="dt">size =</span> <span class="dv">5</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="проверка-статистических-гипотез.html#cb10-1"></a><span class="kw">t.test</span>(data, <span class="dt">mu =</span> <span class="fl">5.31</span>)</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  data
+## t = 3.9871, df = 29, p-value = 0.0004143
+## alternative hypothesis: true mean is not equal to 5.31
+## 95 percent confidence interval:
+##  6.199903 8.074444
+## sample estimates:
+## mean of x 
+##  7.137174</code></pre>
 <div class="rmdtask">
 <p>
 Создайте 30 нормально распределенных наблюдений со средним 6 и стандартным отклонением 2, используя <code>set.seed(42)</code> и сравните полученные данные с результатами Степановой. Является ли разница статистически значимой? Приведите значение p-value с точностью до 2 знаком после запятой.
@@ -661,22 +653,22 @@ mean of x
 <div id="тест-уилкоксона" class="section level3">
 <h3><span class="header-section-number">14.4.3</span> Тест Уилкоксона</h3>
 <p>Если данные не нормально распределено, обычно используют критерий Уилкоксона</p>
-<div class="sourceCode" id="cb1047"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1047-1"><a href="проверка-статистических-гипотез.html#cb1047-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb1047-2"><a href="проверка-статистических-гипотез.html#cb1047-2"></a>data &lt;-<span class="st"> </span><span class="kw">rlnorm</span>(<span class="dt">n =</span> <span class="dv">30</span>, <span class="dt">mean =</span> <span class="fl">1.8</span>, <span class="dt">sd =</span> <span class="fl">0.1</span>)</span>
-<span id="cb1047-3"><a href="проверка-статистических-гипотез.html#cb1047-3"></a><span class="kw">tibble</span>(data) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1047-4"><a href="проверка-статистических-гипотез.html#cb1047-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(data))<span class="op">+</span></span>
-<span id="cb1047-5"><a href="проверка-статистических-гипотез.html#cb1047-5"></a><span class="st">  </span><span class="kw">geom_dotplot</span>()<span class="op">+</span></span>
-<span id="cb1047-6"><a href="проверка-статистических-гипотез.html#cb1047-6"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="kw">mean</span>(data), <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>)<span class="op">+</span></span>
-<span id="cb1047-7"><a href="проверка-статистических-гипотез.html#cb1047-7"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="fl">5.31</span>, <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span></span>
-<span id="cb1047-8"><a href="проверка-статистических-гипотез.html#cb1047-8"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="dt">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="dt">x =</span> <span class="fl">4.9</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">y =</span> <span class="fl">0.75</span>, <span class="dt">label =</span> <span class="st">&quot;среднее согласно</span><span class="ch">\n</span><span class="st">[Степанова 2011]&quot;</span>, <span class="dt">size =</span> <span class="dv">5</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-509-1.png" width="672" /></p>
-<div class="sourceCode" id="cb1048"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1048-1"><a href="проверка-статистических-гипотез.html#cb1048-1"></a><span class="kw">wilcox.test</span>(data, <span class="dt">mu =</span> <span class="fl">5.31</span>)</span></code></pre></div>
-<pre><code>
-    Wilcoxon signed rank test
-
-data:  data
-V = 436, p-value = 0.000003239
-alternative hypothesis: true location is not equal to 5.31</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="проверка-статистических-гипотез.html#cb12-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb12-2"><a href="проверка-статистических-гипотез.html#cb12-2"></a>data &lt;-<span class="st"> </span><span class="kw">rlnorm</span>(<span class="dt">n =</span> <span class="dv">30</span>, <span class="dt">mean =</span> <span class="fl">1.8</span>, <span class="dt">sd =</span> <span class="fl">0.1</span>)</span>
+<span id="cb12-3"><a href="проверка-статистических-гипотез.html#cb12-3"></a><span class="kw">tibble</span>(data) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb12-4"><a href="проверка-статистических-гипотез.html#cb12-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(data))<span class="op">+</span></span>
+<span id="cb12-5"><a href="проверка-статистических-гипотез.html#cb12-5"></a><span class="st">  </span><span class="kw">geom_dotplot</span>()<span class="op">+</span></span>
+<span id="cb12-6"><a href="проверка-статистических-гипотез.html#cb12-6"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="kw">mean</span>(data), <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>)<span class="op">+</span></span>
+<span id="cb12-7"><a href="проверка-статистических-гипотез.html#cb12-7"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="fl">5.31</span>, <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span></span>
+<span id="cb12-8"><a href="проверка-статистических-гипотез.html#cb12-8"></a><span class="st">  </span><span class="kw">annotate</span>(<span class="dt">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="dt">x =</span> <span class="fl">4.9</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">y =</span> <span class="fl">0.75</span>, <span class="dt">label =</span> <span class="st">&quot;среднее согласно</span><span class="ch">\n</span><span class="st">[Степанова 2011]&quot;</span>, <span class="dt">size =</span> <span class="dv">5</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="проверка-статистических-гипотез.html#cb13-1"></a><span class="kw">wilcox.test</span>(data, <span class="dt">mu =</span> <span class="fl">5.31</span>)</span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon signed rank test
+## 
+## data:  data
+## V = 436, p-value = 3.239e-06
+## alternative hypothesis: true location is not equal to 5.31</code></pre>
 </div>
 </div>
 <div id="двухвыборочные-тесты" class="section level2">
@@ -684,30 +676,30 @@ alternative hypothesis: true location is not equal to 5.31</code></pre>
 <div id="двухвыборочный-t-тест" class="section level3">
 <h3><span class="header-section-number">14.5.1</span> Двухвыборочный t-тест</h3>
 <p>Логика двухвыборочного теста такая же как одновыборочного:</p>
-<div class="sourceCode" id="cb1050"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1050-1"><a href="проверка-статистических-гипотез.html#cb1050-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb1050-2"><a href="проверка-статистических-гипотез.html#cb1050-2"></a>sample_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">25</span>, <span class="dt">mean =</span> <span class="dv">40</span>, <span class="dt">sd =</span> <span class="dv">5</span>)</span>
-<span id="cb1050-3"><a href="проверка-статистических-гипотез.html#cb1050-3"></a>sample_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">25</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="fl">4.5</span>)</span>
-<span id="cb1050-4"><a href="проверка-статистических-гипотез.html#cb1050-4"></a></span>
-<span id="cb1050-5"><a href="проверка-статистических-гипотез.html#cb1050-5"></a><span class="kw">tibble</span>(sample_<span class="dv">1</span>, sample_<span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1050-6"><a href="проверка-статистических-гипотез.html#cb1050-6"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;dataset&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;values&quot;</span>, sample_<span class="dv">1</span><span class="op">:</span>sample_<span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1050-7"><a href="проверка-статистических-гипотез.html#cb1050-7"></a><span class="st">  </span><span class="kw">group_by</span>(dataset) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1050-8"><a href="проверка-статистических-гипотез.html#cb1050-8"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(values)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1050-9"><a href="проверка-статистических-гипотез.html#cb1050-9"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(values, <span class="dt">fill =</span> dataset))<span class="op">+</span></span>
-<span id="cb1050-10"><a href="проверка-статистических-гипотез.html#cb1050-10"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)<span class="op">+</span></span>
-<span id="cb1050-11"><a href="проверка-статистических-гипотез.html#cb1050-11"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="kw">aes</span>(<span class="dt">xintercept =</span> mean, <span class="dt">color =</span> dataset), <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-510-1.png" width="672" /></p>
-<div class="sourceCode" id="cb1051"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1051-1"><a href="проверка-статистических-гипотез.html#cb1051-1"></a><span class="kw">t.test</span>(sample_<span class="dv">1</span>, sample_<span class="dv">2</span>)</span></code></pre></div>
-<pre><code>
-    Welch Two Sample t-test
-
-data:  sample_1 and sample_2
-t = -5.0632, df = 41.295, p-value = 0.000009005
-alternative hypothesis: true difference in means is not equal to 0
-95 percent confidence interval:
- -11.046695  -4.748026
-sample estimates:
-mean of x mean of y 
- 40.93768  48.83504 </code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="проверка-статистических-гипотез.html#cb15-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb15-2"><a href="проверка-статистических-гипотез.html#cb15-2"></a>sample_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">25</span>, <span class="dt">mean =</span> <span class="dv">40</span>, <span class="dt">sd =</span> <span class="dv">5</span>)</span>
+<span id="cb15-3"><a href="проверка-статистических-гипотез.html#cb15-3"></a>sample_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">25</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="fl">4.5</span>)</span>
+<span id="cb15-4"><a href="проверка-статистических-гипотез.html#cb15-4"></a></span>
+<span id="cb15-5"><a href="проверка-статистических-гипотез.html#cb15-5"></a><span class="kw">tibble</span>(sample_<span class="dv">1</span>, sample_<span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb15-6"><a href="проверка-статистических-гипотез.html#cb15-6"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;dataset&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;values&quot;</span>, sample_<span class="dv">1</span><span class="op">:</span>sample_<span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb15-7"><a href="проверка-статистических-гипотез.html#cb15-7"></a><span class="st">  </span><span class="kw">group_by</span>(dataset) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb15-8"><a href="проверка-статистических-гипотез.html#cb15-8"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(values)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb15-9"><a href="проверка-статистических-гипотез.html#cb15-9"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(values, <span class="dt">fill =</span> dataset))<span class="op">+</span></span>
+<span id="cb15-10"><a href="проверка-статистических-гипотез.html#cb15-10"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)<span class="op">+</span></span>
+<span id="cb15-11"><a href="проверка-статистических-гипотез.html#cb15-11"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="kw">aes</span>(<span class="dt">xintercept =</span> mean, <span class="dt">color =</span> dataset), <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="проверка-статистических-гипотез.html#cb16-1"></a><span class="kw">t.test</span>(sample_<span class="dv">1</span>, sample_<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  sample_1 and sample_2
+## t = -5.0632, df = 41.295, p-value = 9.005e-06
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -11.046695  -4.748026
+## sample estimates:
+## mean of x mean of y 
+##  40.93768  48.83504</code></pre>
 <div class="rmdtask">
 <p>
 В работе (Coretta 2017, <a href="https://goo.gl/NrfgJm" class="uri">https://goo.gl/NrfgJm</a>) рассматривается отношения между длительностью гласного и придыхание согласного. Автор собрал данные 5 носителей исландского. Дальше он извлек длительность гласного, после которого были придыхательные и непридыхательные. Скачайте <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/icelandic.csv">данные</a> и Проверьте, правда ли, что гласные перед аспирированныем согласными статистикали значимо короче гласных после которых непридыхательные для носителя. В ответе приведите t-статистику c точностью до трех знаков после запятой.
@@ -716,53 +708,53 @@ mean of x mean of y
 </div>
 <div id="двухвыборочный-парный-t-тест" class="section level3">
 <h3><span class="header-section-number">14.5.2</span> Двухвыборочный парный t-тест</h3>
-<div class="sourceCode" id="cb1053"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1053-1"><a href="проверка-статистических-гипотез.html#cb1053-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb1053-2"><a href="проверка-статистических-гипотез.html#cb1053-2"></a>sample_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">25</span>, <span class="dt">mean =</span> <span class="dv">40</span>, <span class="dt">sd =</span> <span class="dv">5</span>)</span>
-<span id="cb1053-3"><a href="проверка-статистических-гипотез.html#cb1053-3"></a>sample_<span class="dv">2</span> &lt;-<span class="st"> </span>sample_<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">25</span>, <span class="dt">mean =</span> <span class="dv">5</span>)</span>
-<span id="cb1053-4"><a href="проверка-статистических-гипотез.html#cb1053-4"></a></span>
-<span id="cb1053-5"><a href="проверка-статистических-гипотез.html#cb1053-5"></a><span class="kw">tibble</span>(sample_<span class="dv">1</span>, sample_<span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1053-6"><a href="проверка-статистических-гипотез.html#cb1053-6"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;dataset&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;values&quot;</span>, sample_<span class="dv">1</span><span class="op">:</span>sample_<span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1053-7"><a href="проверка-статистических-гипотез.html#cb1053-7"></a><span class="st">  </span><span class="kw">group_by</span>(dataset) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1053-8"><a href="проверка-статистических-гипотез.html#cb1053-8"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(values)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1053-9"><a href="проверка-статистических-гипотез.html#cb1053-9"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(values, <span class="dt">fill =</span> dataset))<span class="op">+</span></span>
-<span id="cb1053-10"><a href="проверка-статистических-гипотез.html#cb1053-10"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)<span class="op">+</span></span>
-<span id="cb1053-11"><a href="проверка-статистических-гипотез.html#cb1053-11"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="kw">aes</span>(<span class="dt">xintercept =</span> mean, <span class="dt">color =</span> dataset), <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-512-1.png" width="672" /></p>
-<div class="sourceCode" id="cb1054"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1054-1"><a href="проверка-статистических-гипотез.html#cb1054-1"></a><span class="kw">t.test</span>(sample_<span class="dv">1</span>, sample_<span class="dv">2</span>, <span class="dt">paired =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<pre><code>
-    Paired t-test
-
-data:  sample_1 and sample_2
-t = 25.034, df = 24, p-value &lt; 0.00000000000000022
-alternative hypothesis: true difference in means is not equal to 0
-95 percent confidence interval:
- 4.350251 5.131990
-sample estimates:
-mean of the differences 
-                4.74112 </code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="проверка-статистических-гипотез.html#cb18-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb18-2"><a href="проверка-статистических-гипотез.html#cb18-2"></a>sample_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">25</span>, <span class="dt">mean =</span> <span class="dv">40</span>, <span class="dt">sd =</span> <span class="dv">5</span>)</span>
+<span id="cb18-3"><a href="проверка-статистических-гипотез.html#cb18-3"></a>sample_<span class="dv">2</span> &lt;-<span class="st"> </span>sample_<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">25</span>, <span class="dt">mean =</span> <span class="dv">5</span>)</span>
+<span id="cb18-4"><a href="проверка-статистических-гипотез.html#cb18-4"></a></span>
+<span id="cb18-5"><a href="проверка-статистических-гипотез.html#cb18-5"></a><span class="kw">tibble</span>(sample_<span class="dv">1</span>, sample_<span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb18-6"><a href="проверка-статистических-гипотез.html#cb18-6"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;dataset&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;values&quot;</span>, sample_<span class="dv">1</span><span class="op">:</span>sample_<span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb18-7"><a href="проверка-статистических-гипотез.html#cb18-7"></a><span class="st">  </span><span class="kw">group_by</span>(dataset) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb18-8"><a href="проверка-статистических-гипотез.html#cb18-8"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(values)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb18-9"><a href="проверка-статистических-гипотез.html#cb18-9"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(values, <span class="dt">fill =</span> dataset))<span class="op">+</span></span>
+<span id="cb18-10"><a href="проверка-статистических-гипотез.html#cb18-10"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)<span class="op">+</span></span>
+<span id="cb18-11"><a href="проверка-статистических-гипотез.html#cb18-11"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="kw">aes</span>(<span class="dt">xintercept =</span> mean, <span class="dt">color =</span> dataset), <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="проверка-статистических-гипотез.html#cb19-1"></a><span class="kw">t.test</span>(sample_<span class="dv">1</span>, sample_<span class="dv">2</span>, <span class="dt">paired =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Paired t-test
+## 
+## data:  sample_1 and sample_2
+## t = 25.034, df = 24, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  4.350251 5.131990
+## sample estimates:
+## mean of the differences 
+##                 4.74112</code></pre>
 </div>
 <div id="критерий-манна-уитни" class="section level3">
 <h3><span class="header-section-number">14.5.3</span> Критерий Манна-Уитни</h3>
 <p>Если данные не распределены нормально, тогда используется критерий Манна-Уитни (по английски его тоже называют Wilcoxon test).</p>
-<div class="sourceCode" id="cb1056"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1056-1"><a href="проверка-статистических-гипотез.html#cb1056-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb1056-2"><a href="проверка-статистических-гипотез.html#cb1056-2"></a>data_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">rlnorm</span>(<span class="dt">n =</span> <span class="dv">30</span>, <span class="dt">mean =</span> <span class="fl">1.8</span>, <span class="dt">sd =</span> <span class="fl">0.1</span>)</span>
-<span id="cb1056-3"><a href="проверка-статистических-гипотез.html#cb1056-3"></a>data_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">rlnorm</span>(<span class="dt">n =</span> <span class="dv">30</span>, <span class="dt">mean =</span> <span class="fl">1.6</span>, <span class="dt">sd =</span> <span class="fl">0.1</span>)</span>
-<span id="cb1056-4"><a href="проверка-статистических-гипотез.html#cb1056-4"></a></span>
-<span id="cb1056-5"><a href="проверка-статистических-гипотез.html#cb1056-5"></a><span class="kw">tibble</span>(data_<span class="dv">1</span>, data_<span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1056-6"><a href="проверка-статистических-гипотез.html#cb1056-6"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;dataset&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;values&quot;</span>, data_<span class="dv">1</span><span class="op">:</span>data_<span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1056-7"><a href="проверка-статистических-гипотез.html#cb1056-7"></a><span class="st">  </span><span class="kw">group_by</span>(dataset) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1056-8"><a href="проверка-статистических-гипотез.html#cb1056-8"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(values)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1056-9"><a href="проверка-статистических-гипотез.html#cb1056-9"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(values, <span class="dt">fill =</span> dataset))<span class="op">+</span></span>
-<span id="cb1056-10"><a href="проверка-статистических-гипотез.html#cb1056-10"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)<span class="op">+</span></span>
-<span id="cb1056-11"><a href="проверка-статистических-гипотез.html#cb1056-11"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="kw">aes</span>(<span class="dt">xintercept =</span> mean, <span class="dt">color =</span> dataset), <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-513-1.png" width="672" /></p>
-<div class="sourceCode" id="cb1057"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1057-1"><a href="проверка-статистических-гипотез.html#cb1057-1"></a><span class="kw">wilcox.test</span>(data_<span class="dv">1</span>, data_<span class="dv">2</span>)</span></code></pre></div>
-<pre><code>
-    Wilcoxon rank sum test
-
-data:  data_1 and data_2
-W = 818, p-value = 0.000000002419
-alternative hypothesis: true location shift is not equal to 0</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="проверка-статистических-гипотез.html#cb21-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb21-2"><a href="проверка-статистических-гипотез.html#cb21-2"></a>data_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">rlnorm</span>(<span class="dt">n =</span> <span class="dv">30</span>, <span class="dt">mean =</span> <span class="fl">1.8</span>, <span class="dt">sd =</span> <span class="fl">0.1</span>)</span>
+<span id="cb21-3"><a href="проверка-статистических-гипотез.html#cb21-3"></a>data_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">rlnorm</span>(<span class="dt">n =</span> <span class="dv">30</span>, <span class="dt">mean =</span> <span class="fl">1.6</span>, <span class="dt">sd =</span> <span class="fl">0.1</span>)</span>
+<span id="cb21-4"><a href="проверка-статистических-гипотез.html#cb21-4"></a></span>
+<span id="cb21-5"><a href="проверка-статистических-гипотез.html#cb21-5"></a><span class="kw">tibble</span>(data_<span class="dv">1</span>, data_<span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-6"><a href="проверка-статистических-гипотез.html#cb21-6"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;dataset&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;values&quot;</span>, data_<span class="dv">1</span><span class="op">:</span>data_<span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-7"><a href="проверка-статистических-гипотез.html#cb21-7"></a><span class="st">  </span><span class="kw">group_by</span>(dataset) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-8"><a href="проверка-статистических-гипотез.html#cb21-8"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(values)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-9"><a href="проверка-статистических-гипотез.html#cb21-9"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(values, <span class="dt">fill =</span> dataset))<span class="op">+</span></span>
+<span id="cb21-10"><a href="проверка-статистических-гипотез.html#cb21-10"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)<span class="op">+</span></span>
+<span id="cb21-11"><a href="проверка-статистических-гипотез.html#cb21-11"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="kw">aes</span>(<span class="dt">xintercept =</span> mean, <span class="dt">color =</span> dataset), <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="dv">2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="проверка-статистических-гипотез.html#cb22-1"></a><span class="kw">wilcox.test</span>(data_<span class="dv">1</span>, data_<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon rank sum test
+## 
+## data:  data_1 and data_2
+## W = 818, p-value = 2.419e-09
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
 </div>
 <div id="χ²-тест-фишера" class="section level3">
 <h3><span class="header-section-number">14.5.4</span> χ², тест Фишера</h3>
@@ -802,7 +794,108 @@ alternative hypothesis: true location shift is not equal to 0</code></pre>
 <li>большое обсуждение p-value vs. доверительные интервалы</li>
 <li>все нарастающую популярность Байесовской статистики</li>
 </ul>
+</div>
+<div id="рассказы-чехова-и-зощенко" class="section level2">
+<h2><span class="header-section-number">14.9</span> Рассказы Чехова и Зощенко</h2>
+<div id="section" class="section level3">
+<h3><span class="header-section-number">14.9.1</span> </h3>
+<div class="rmdtask">
+<p>
+<a href="https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv">Рассказы Чехова</a> и <a href="https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv">Зощенко</a> собраны в tidy формате. Постройте график. Узнайте долю, которую составляют слова c леммой <em>деньги</em> от всех слов рассказа и проведите статистический тесты, сравнивающие [доли слов с леммой <em>деньги</em>] с знечением 0.000512 из частотного словаря русского языка [Шаров, Ляшевская 2011].
+</p>
+</div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<ul>
+<li>Приведите значение p-value для Чехова, округленное до 3 знаков после запятой:
+<form name="form_26912" onsubmit="return validate_form_26912()" method="post">
+<input type="text" name="answer_26912"><br><input type="submit" value="check">
+</form>
+<p id="result_26912">
+</p>
+<script> function validate_form_26912() {var x, text; var x = document.forms["form_26912"]["answer_26912"].value;if (x == "0"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_26912').innerHTML = text; return false;} </script></li>
+<li>Приведите значение t-статистики для Чехова, округленное до 3 знаков после запятой:
+<form name="form_91421" onsubmit="return validate_form_91421()" method="post">
+<input type="text" name="answer_91421"><br><input type="submit" value="check">
+</form>
+<p id="result_91421">
+</p>
+<script> function validate_form_91421() {var x, text; var x = document.forms["form_91421"]["answer_91421"].value;if (x == "7.627"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_91421').innerHTML = text; return false;} </script></li>
+<li>Приведите значение p-value для Зощенко, округленное до 3 знаков после запятой:
+<form name="form_63084" onsubmit="return validate_form_63084()" method="post">
+<input type="text" name="answer_63084"><br><input type="submit" value="check">
+</form>
+<p id="result_63084">
+</p>
+<script> function validate_form_63084() {var x, text; var x = document.forms["form_63084"]["answer_63084"].value;if (x == "0.03"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_63084').innerHTML = text; return false;} </script></li>
+<li>Приведите значение t-статистики для Зощенко, округленное до 3 знаков после запятой:
+<form name="form_47481" onsubmit="return validate_form_47481()" method="post">
+<input type="text" name="answer_47481"><br><input type="submit" value="check">
+</form>
+<p id="result_47481">
+</p>
+<script> function validate_form_47481() {var x, text; var x = document.forms["form_47481"]["answer_47481"].value;if (x == "2.331"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_47481').innerHTML = text; return false;} </script></li>
+</ul>
+</div>
+<div id="section-1" class="section level3">
+<h3><span class="header-section-number">14.9.2</span> </h3>
+<div class="rmdtask">
+<p>
+<a href="https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv">Рассказы Чехова</a> и <a href="https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv">Зощенко</a> собраны в tidy формате. Постройте график. Проведите статистический тест, проверяющий, действительно ли Зощенко писал более короткие рассказы чем Чехов.
+</p>
+</div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<ul>
+<li>Приведите значение p-value, округленное до 3 знаков после запятой
+<form name="form_39550" onsubmit="return validate_form_39550()" method="post">
+<input type="text" name="answer_39550"><br><input type="submit" value="check">
+</form>
+<p id="result_39550">
+</p>
+<script> function validate_form_39550() {var x, text; var x = document.forms["form_39550"]["answer_39550"].value;if (x == "0.002"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_39550').innerHTML = text; return false;} </script></li>
+<li>Приведите значение t-статистики, округленное до 3 знаков после запятой:
+<form name="form_61433" onsubmit="return validate_form_61433()" method="post">
+<input type="text" name="answer_61433"><br><input type="submit" value="check">
+</form>
+<p id="result_61433">
+</p>
+<script> function validate_form_61433() {var x, text; var x = document.forms["form_61433"]["answer_61433"].value;if (x == "-3.171"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_61433').innerHTML = text; return false;} </script></li>
+</ul>
+</div>
+<div id="section-2" class="section level3">
+<h3><span class="header-section-number">14.9.3</span> </h3>
+<div class="rmdtask">
+<p>
+Посчитайте энтропию каждого рассказа, визуализируйте разницу между авторами и проведите статистический тест, который показывает, что энтропия в рассказах Зощенко выше.
+</p>
+</div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<ul>
+<li>Приведите значение p-value, округленное до 3 знаков после запятой
+<form name="form_72989" onsubmit="return validate_form_72989()" method="post">
+<input type="text" name="answer_72989"><br><input type="submit" value="check">
+</form>
+<p id="result_72989">
+</p>
+<script> function validate_form_72989() {var x, text; var x = document.forms["form_72989"]["answer_72989"].value;if (x == "0"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_72989').innerHTML = text; return false;} </script></li>
+<li>Приведите значение t-статистики, округленное до 3 знаков после запятой:
+<form name="form_40870" onsubmit="return validate_form_40870()" method="post">
+<input type="text" name="answer_40870"><br><input type="submit" value="check">
+</form>
+<p id="result_40870">
+</p>
+<script> function validate_form_40870() {var x, text; var x = document.forms["form_40870"]["answer_40870"].value;if (x == "10.971"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_40870').innerHTML = text; return false;} </script></li>
+</ul>
+</div>
+<div id="section-3" class="section level3">
+<h3><span class="header-section-number">14.9.4</span> </h3>
+<div class="rmdtask">
+<p>
+Визуализируйте количество слов и энтропию каждого автора. Какие выводы можно сделать на основании полученого графика?
+</p>
+</div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
 
+</div>
 </div>
 </div>
             </section>

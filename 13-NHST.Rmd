@@ -341,8 +341,147 @@ P-value очень много ругают
 * большое обсуждение p-value vs. доверительные интервалы
 * все нарастающую популярность Байесовской статистики
 
-## Задачи
+## Рассказы Чехова и Зощенко
+
+###
 
 ```{block, type = "rmdtask"}
+[Рассказы Чехова](https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv) и [Зощенко](https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv) собраны в tidy формате. Постройте график. Узнайте долю, которую составляют слова c леммой *деньги* от всех слов рассказа и проведите статистический тесты, сравнивающие [доли слов с леммой *деньги*] с знечением 0.000512 из частотного словаря русского языка [Шаров, Ляшевская 2011].
+```
 
+```{r, echo=FALSE, message=FALSE, cache=TRUE}
+chekhov <- read_tsv("https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv")
+zoshenko <- read_tsv("https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv")
+
+chekhov %>% 
+  filter(str_detect(word, "деньг")) %>% 
+  group_by(titles, n_words) %>% 
+  summarise(n = sum(n)) %>% 
+  mutate(ratio = n/n_words) %>% 
+  t.test(x = .$ratio, mu = 0.000512, data = .) ->
+  ch_money
+
+zoshenko %>% 
+  filter(str_detect(word, "деньг")) %>% 
+  group_by(titles, n_words) %>% 
+  summarise(n = sum(n)) %>% 
+  mutate(ratio = n/n_words) %>% 
+  t.test(x = .$ratio, mu = 0.000512, data = .) ->
+  z_money
+
+chekhov$author <- "Чехов"
+zoshenko$author <- "Зощенко"
+
+chekhov %>% 
+  bind_rows(zoshenko) %>% 
+  filter(str_detect(word, "деньг")) %>% 
+  group_by(author, titles, n_words) %>% 
+  summarise(n = sum(n)) %>% 
+  mutate(ratio = n/n_words) %>% 
+  ggplot(aes(author, ratio))+
+  geom_violin()+
+  scale_y_log10()+
+  labs(x = "", y = "доля слов с леммой 'деньги' (лог шкала)")
+```
+
+* Приведите значение p-value для Чехова, округленное до 3 знаков после запятой:
+```{r, results='asis', echo = FALSE}
+library(checkdown)
+check_question(round(ch_money$p.value, 3))
+```
+
+* Приведите значение t-статистики для Чехова, округленное до 3 знаков после запятой:
+```{r, results='asis', echo = FALSE}
+check_question(round(ch_money$statistic, 3))
+```
+
+* Приведите значение p-value для Зощенко, округленное до 3 знаков после запятой:
+```{r, results='asis', echo = FALSE}
+check_question(round(z_money$p.value, 3))
+```
+
+* Приведите значение t-статистики для Зощенко, округленное до 3 знаков после запятой:
+```{r, results='asis', echo = FALSE}
+check_question(round(z_money$statistic, 3))
+```
+
+###
+
+```{block, type = "rmdtask"}
+[Рассказы Чехова](https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv) и [Зощенко](https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv) собраны в tidy формате. Постройте график. Проведите статистический тест, проверяющий, действительно ли Зощенко писал более короткие рассказы чем Чехов.
+```
+
+```{r, echo=FALSE}
+chekhov %>% 
+  bind_rows(zoshenko) %>% 
+  distinct(author, titles, n_words) ->
+  novels
+  
+fit <- t.test(data = novels, n_words~author)
+novels %>% 
+  ggplot(aes(author, n_words))+
+  geom_violin()+
+  labs(x = "", y = "количество слов в рассказе")
+```
+
+
+* Приведите значение p-value, округленное до 3 знаков после запятой
+```{r, echo=FALSE, results='asis'}
+check_question(round(fit$p.value, 3))
+```
+
+* Приведите значение t-статистики, округленное до 3 знаков после запятой:
+```{r, results='asis', echo = FALSE}
+check_question(round(fit$statistic, 3))
+```
+
+
+###
+
+```{block, type = "rmdtask"}
+Посчитайте энтропию каждого рассказа, визуализируйте разницу между авторами и проведите статистический тест, который показывает, что энтропия в рассказах Зощенко выше.
+```
+
+
+```{r, echo=FALSE}
+chekhov %>% 
+  bind_rows(zoshenko) %>% 
+  group_by(author, titles, n_words) %>% 
+  mutate(ratio = n/n_words) %>% 
+  summarise(entropy = -sum(ratio*log2(ratio))) ->
+  entropy
+
+en_test <- t.test(data = entropy, entropy~author)
+
+entropy %>% 
+  ggplot(aes(author, entropy))+
+  geom_violin()
+```
+
+* Приведите значение p-value, округленное до 3 знаков после запятой
+```{r, echo=FALSE, results='asis'}
+check_question(round(en_test$p.value, 3))
+```
+
+* Приведите значение t-статистики, округленное до 3 знаков после запятой:
+```{r, results='asis', echo = FALSE}
+check_question(round(en_test$statistic, 3))
+```
+
+
+###
+
+```{block, type = "rmdtask"}
+Визуализируйте количество слов и энтропию каждого автора. Какие выводы можно сделать на основании полученого графика?
+```
+
+```{r, echo=FALSE}
+chekhov %>% 
+  bind_rows(zoshenko) %>% 
+  group_by(author, titles, n_words) %>% 
+  mutate(ratio = n/n_words) %>% 
+  summarise(entropy = -sum(ratio*log2(ratio))) %>% 
+  ggplot(aes(entropy, n_words, color = author))+
+  geom_point()+
+  labs(x = "энтропия", y = "количество слов")
 ```
