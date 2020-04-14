@@ -337,7 +337,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.5.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#двухвыборочный-t-тест"><i class="fa fa-check"></i><b>14.5.1</b> Двухвыборочный t-тест</a></li>
 <li class="chapter" data-level="14.5.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#двухвыборочный-парный-t-тест"><i class="fa fa-check"></i><b>14.5.2</b> Двухвыборочный парный t-тест</a></li>
 <li class="chapter" data-level="14.5.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#критерий-манна-уитни"><i class="fa fa-check"></i><b>14.5.3</b> Критерий Манна-Уитни</a></li>
-<li class="chapter" data-level="14.5.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#χ²-тест-фишера"><i class="fa fa-check"></i><b>14.5.4</b> χ², тест Фишера</a></li>
+<li class="chapter" data-level="14.5.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#критерий-χ²-тест-фишера"><i class="fa fa-check"></i><b>14.5.4</b> Критерий χ², тест Фишера</a></li>
 <li class="chapter" data-level="14.5.5" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#критерий-мак-немара"><i class="fa fa-check"></i><b>14.5.5</b> Критерий Мак Немара</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#об-эффекте-множественных-сравнений"><i class="fa fa-check"></i><b>14.6</b> Об эффекте множественных сравнений</a></li>
@@ -349,6 +349,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.9.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-2"><i class="fa fa-check"></i><b>14.9.3</b> </a></li>
 <li class="chapter" data-level="14.9.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-3"><i class="fa fa-check"></i><b>14.9.4</b> </a></li>
 </ul></li>
+<li class="chapter" data-level="14.10" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#obamacare"><i class="fa fa-check"></i><b>14.10</b> Obamacare</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html"><i class="fa fa-check"></i><b>15</b> Корреляция и регрессия</a><ul>
 <li class="chapter" data-level="15.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#дисперсия-и-стандартное-отклонение"><i class="fa fa-check"></i><b>15.1</b> Дисперсия и стандартное отклонение</a></li>
@@ -756,8 +757,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## W = 818, p-value = 2.419e-09
 ## alternative hypothesis: true location shift is not equal to 0</code></pre>
 </div>
-<div id="χ²-тест-фишера" class="section level3">
-<h3><span class="header-section-number">14.5.4</span> χ², тест Фишера</h3>
+<div id="критерий-χ²-тест-фишера" class="section level3">
+<h3><span class="header-section-number">14.5.4</span> Критерий χ², тест Фишера</h3>
+<p>Для категориальных данных,</p>
 </div>
 <div id="критерий-мак-немара" class="section level3">
 <h3><span class="header-section-number">14.5.5</span> Критерий Мак Немара</h3>
@@ -894,8 +896,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
-
 </div>
+</div>
+<div id="obamacare" class="section level2">
+<h2><span class="header-section-number">14.10</span> Obamacare</h2>
+<div class="rmdtask">
+<p>
+В 2010 Б. Обама подписал закон о доступном здравоохранении. В <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/obamacare.csv">датасет</a> записаны данные о доле незастрахованных людей (в процентах) в каждом штате в 2010 и в 2015 годах. Проведите статистический тест, показывающий что произошло изменение.
+</p>
+</div>
+<ul>
+<li>Приведите среднее значение разниц между годами
+<form name="form_5261" onsubmit="return validate_form_5261()" method="post">
+<input type="text" name="answer_5261"><br><input type="submit" value="check">
+</form>
+<p id="result_5261">
+</p>
+<script> function validate_form_5261() {var x, text; var x = document.forms["form_5261"]["answer_5261"].value;if (x == "5.446"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_5261').innerHTML = text; return false;} </script></li>
+<li>Приведите значение p-value, округленное до 3 знаков после запятой
+<form name="form_53559" onsubmit="return validate_form_53559()" method="post">
+<input type="text" name="answer_53559"><br><input type="submit" value="check">
+</form>
+<p id="result_53559">
+</p>
+<script> function validate_form_53559() {var x, text; var x = document.forms["form_53559"]["answer_53559"].value;if (x == "0"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_53559').innerHTML = text; return false;} </script></li>
+<li>Приведите значение t-статистики, округленное до 3 знаков после запятой:
+<form name="form_9770" onsubmit="return validate_form_9770()" method="post">
+<input type="text" name="answer_9770"><br><input type="submit" value="check">
+</form>
+<p id="result_9770">
+</p>
+<script> function validate_form_9770() {var x, text; var x = document.forms["form_9770"]["answer_9770"].value;if (x == "18.575"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_9770').innerHTML = text; return false;} </script></li>
+</ul>
+
 </div>
 </div>
             </section>

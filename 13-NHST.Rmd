@@ -309,7 +309,9 @@ tibble(data_1, data_2) %>%
 wilcox.test(data_1, data_2)
 ```
 
-### χ², тест Фишера
+### Критерий χ², тест Фишера
+
+Для категориальных данных, 
 
 ### Критерий Мак Немара
 
@@ -484,4 +486,32 @@ chekhov %>%
   ggplot(aes(entropy, n_words, color = author))+
   geom_point()+
   labs(x = "энтропия", y = "количество слов")
+```
+
+
+## Obamacare
+```{block, type = "rmdtask"}
+В 2010 Б. Обама подписал закон о доступном здравоохранении. В [датасет](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/obamacare.csv) записаны данные о доле незастрахованных людей (в процентах) в каждом штате в 2010 и в 2015 годах. Проведите статистический тест, показывающий что произошло изменение.
+```
+
+```{r, echo=FALSE, message=FALSE}
+obamacare <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/obamacare.csv")
+
+obamacare.test <- t.test(obamacare$`Uninsured Rate (2010)`, obamacare$`Uninsured Rate (2015)`, data = obamacare, paired = TRUE)
+```
+
+* Приведите среднее значение разниц между годами
+```{r, echo=FALSE, results='asis'}
+check_question(round(obamacare.test$estimate, 3))
+```
+
+
+* Приведите значение p-value, округленное до 3 знаков после запятой
+```{r, echo=FALSE, results='asis'}
+check_question(round(obamacare.test$p.value, 3))
+```
+
+* Приведите значение t-статистики, округленное до 3 знаков после запятой:
+```{r, results='asis', echo = FALSE}
+check_question(round(obamacare.test$statistic, 3))
 ```
