@@ -337,11 +337,63 @@ cor(x, y) == cov(x, y)/(sd(x)*sd(y))
 cor(x, y) == sum(scale(x)*scale(y))/(length(x)-1)
 ```
 
-### Ранговые корреляции Спирмана и Кендала
+```{block, type = "rmdtask"}
+Посчитайте на основе [датасета с температурой](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/moscow_average_temperature.csv) корреляцию между разными измерениями в шкалах Фарингейта и Цельсия? Результаты округлите до трех знаков после запятой.
+```
+
+```{r, echo=FALSE, results='asis', message=FALSE}
+read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/moscow_average_temperature.csv") %>% 
+  pivot_wider(names_from = type, values_from = non_normalised) %>% 
+  summarise(cor = round(cor(c, f), 3)) %>% 
+  unlist() %>% 
+  check_question()
+```
+
+### Ранговые корреляции Спирмана и Кендалла
+
+Коэффициент корреляции Пирсона к сожалению, чувствителен к значениям наблюдений. Если связь между переменными нелинейна, то оценка будет получаться смещенной. Рассмотрим, например, словарь [Ляшевской, Шарова 2011]:
+
+```{r, message=FALSE}
+freqdict <- read_tsv("https://github.com/agricolamz/DS_for_DH/raw/master/data/freq_dict_2011.csv")
+freqdict %>% 
+  arrange(desc(freq_ipm)) %>% 
+  mutate(id = 1:n()) %>% 
+  slice(1:100) ->
+  filered_freqdict
+
+filered_freqdict %>% 
+  ggplot(aes(id, freq_ipm, label = lemma))+
+  geom_point()+
+  ggrepel::geom_text_repel()+
+  scale_y_log10()
+```
+
+В целом корреляция между рангом и частотой должна быть высокая, однако связь между этими переменными нелинейна, так что коэффициент корреляции Пирсона не такой уж и высокий:
+
+```{r}
+cor(filered_freqdict$freq_ipm, filered_freqdict$id)
+```
+
+Для решения той проблемы обычно используют ранговые коэффециенты коррляции Спирмана и Кендала, которые принимают во внимание ранг значения, а не его непосредственное значение.
+
+```{r}
+cor(filered_freqdict$freq_ipm, filered_freqdict$id, method = "spearman")
+cor(filered_freqdict$freq_ipm, filered_freqdict$id, method = "kendall")
+```
+
+Давайте сравним с предыдущими наблюдениями и их логаотфмамиы:
+
+```{r}
+cor(x, y) == cor(log(x), log(y))
+cor(x, y, method = "spearman") == cor(log(x), log(y), method = "spearman")
+cor(x, y, method = "kendall") == cor(log(x), log(y), method = "kendall")
+```
 
 ## Регрессионный анализ
 
-Формула прямой на плоскости зависит от двух параметров: случайного члена (intercept) и углового коэффициента (slope).
+### Основы
+
+Суть регрессионного анализа в моделировании связи между двумя и более переменными при помощи прямой на плоскости. Формула прямой зависит от двух параметров: свободного члена (intercept) и углового коэффициента (slope).
 
 ```{r, echo=FALSE}
 set.seed(42)
@@ -416,10 +468,144 @@ $$y_i = \hat\beta_0 + \hat\beta_1 \times x_i + \epsilon_i,$$
 * $y_i$ --- $i$-ый элемент вектора значений $Y$;
 * $\hat\beta_0$ --- оценка случайного члена (intercept);
 * $\hat\beta_1$ --- оценка углового коэффициента (slope);
-* $\epsilon_i$ --- $i$-ый остаток, разница между оценкой модели ($\hat\beta_0 + \hat\beta_1 \times x_i$) и реальным значением $y_i$; весь вектор остатков иногда называют случайным шумом.
+* $\epsilon_i$ --- $i$-ый остаток, разница между оценкой модели ($\hat\beta_0 + \hat\beta_1 \times x_i$) и реальным значением $y_i$; весь вектор остатков иногда называют случайным шумом (на графике выделены красным).
 
-Задача регрессии --- оценить параметры $\hat\beta_0$ и $\hat\beta_1$, если нам известны все значения $x_i$ и $y_i$.
+```{r, message=FALSE, echo = FALSE, warning=FALSE}
+set.seed(42)
+tibble(x = rnorm(30, mean = 50, sd = 10), 
+       y = x + rnorm(30, sd = 10)) %>% 
+  mutate(x = x - mean(x)+ 50,
+         y = y - mean(y)+ 55) ->
+  df
+
+coef <- round(coef(lm(y~x, data = df)), 3)
+df %>% 
+  ggplot(aes(x, y))+
+  geom_point(size = 2)+
+  geom_smooth(se = FALSE, method = "lm")+
+  annotate(geom = "label", x = 35, y =70, size = 5,
+           label = latex2exp::TeX(str_c("$y_i$ = ", coef[1], " + ", coef[2], "$\\times x_i + \\epsilon_i$")))+
+  geom_segment(aes(xend = x, yend = predict(lm(y~x, data = df))), color = "red", linetype = 2)
+```
+
+Задача регрессии --- оценить параметры $\hat\beta_0$ и $\hat\beta_1$, если нам известны все значения $x_i$ и $y_i$ и мы пытаемся минимизировать значния $\epsilon_i$. В данном конкретном случае, задачу можно решить аналитически и получить следующие формулы:
 
 $$\hat\beta_1 = \frac{(\sum_{i=1}^n x_i\times y_i)-n\times\bar x \times \bar y}{\sum_{i = 1}^n(x_i-\bar x)^2}$$
 
 $$\hat\beta_0 = \bar y - \hat\beta_1\times\bar x$$
+
+### Практика
+
+Давайте попробуем смоделировать количество слов *и* в рассказах М. Зощенко в зависимости от длины рассказа:
+```{r, message=FALSE}
+zo <- read_tsv("https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv")
+
+zo %>% 
+  filter(word == "и") %>% 
+  distinct() %>% 
+  ggplot(aes(n_words, n))+
+  geom_point()+
+  labs(x = "количество слов в рассказе",
+       y = "количество и")
+```
+
+Мы видим, несколько одиночных точек, давайте избавимся от них и добавим регрессионную линию при помощи функции `geom_smooth()`:
+
+```{r, message=FALSE}
+zo %>% 
+  filter(word == "и",
+         n_words < 1500) %>% 
+  distinct() ->
+  zo_filtered
+
+zo_filtered %>%   
+  ggplot(aes(n_words, n))+
+  geom_point()+
+  geom_smooth(method = "lm", se = FALSE)+
+  labs(x = "количество слов в рассказе",
+       y = "количество и")
+```
+
+Чтобы получить формулу этой линии нужно запустить функцию, которая оценивает линейную регрессию:
+
+```{r}
+fit <- lm(n~n_words, data = zo_filtered)
+fit
+```
+
+Вот мы и получили коэффициенты, теперь мы видим, что наша модель считает следующее:
+
+$$n\_words = -1.47184 + 0.04405 \times n$$
+
+Более подробную информцию можно посмотреть, если запустить модель в функцию `summary()`:
+
+```{r}
+summary(fit)
+```
+
+В разделе `Coefficients` содержится информацию про наши коэффициенты: 
+
+* `Estimate` -- полученная оценка коэффициентов;
+* `Std. Error` -- стандартная ошибка среднего;
+* `t value` -- $t$-статистика, полученная при проведении одновыборочного $t$-теста, сравнивающего данный коэфициент с 0;
+* `Pr(>|t|)` -- полученное $p$-значение;
+* `Multiple R-squared` и	`Adjusted R-squared` --- одна из оценок модели, показывает связь между переменными. Без поправок совпадает с квадратом коэффициента корреляции Пирсона:
+
+```{r}
+cor(zo_filtered$n_words, zo_filtered$n)^2
+```
+
+* `F-statistic` --- $F$-статистика полученная при проведении теста, проверяющего, не являются ли хотя бы один из коэффицинтов статистически значимо отличается от нуля. Совпадает с результатами дисперсионного анализа (ANOVA).
+
+Теперь мы можем даже предсказывать значения, которые мы еще не видели. Например, сколько будет и в рассказе Зощенко длиной 1000 слов?
+
+```{r, echo = FALSE, message=FALSE}
+pr <- predict(fit, tibble(n_words = 1000))
+zo_filtered %>%   
+  ggplot(aes(n_words, n))+
+  geom_point()+
+  geom_smooth(method = "lm", se = FALSE)+
+  labs(x = "количество слов в рассказе М. Зощенко",
+       y = "количество и")+
+  annotate(geom = "segment", x = 1000, xend = 1000, y = -Inf, yend = pr, 
+           linetype = 2, color = "red")+
+  annotate(geom = "segment", x = 1000, xend = 0, y = pr, yend = pr, 
+           linetype = 2, color = "red", arrow = arrow(type = "closed", length = unit(0.2, "inches")))+
+  scale_y_continuous(breaks = round(c(1:3*20, unname(pr)), 2))
+```
+
+```{r}
+predict(fit, tibble(n_words = 1000))
+```
+
+```{block, type = "rmdtask"}
+Постройте ленейную ргерессию на основании [рассказов А. Чехова](https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv), предсказывая количество и на основании количства слов. При моделировании используйте только рассказы длиной меньше 2500 слов. Укажите свободный член получившейся модели, округлив его до 3 знаков после запятой.
+```
+
+```{r, results='asis', echo = FALSE, message = FALSE}
+chekhov <- read_tsv("https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv")
+
+chekhov %>% 
+  filter(word == "и",
+         n_words < 2500) %>%
+  lm(data = ., n~n_words) ->
+  fit_ch
+check_question(round(fit_ch$coefficients[1], 3))
+```
+
+```{block, type = "rmdtask"}
+Укажите угловой коффициент получившейся модели, округлив его до 3 знаков после запятой.
+```
+
+
+```{r, results='asis', echo = FALSE, message = FALSE}
+check_question(round(fit_ch$coefficients[2], 3))
+```
+
+```{block, type = "rmdtask"}
+Укажите предсказания модели для рассказа длиной 1000 слов, округлив получнное значение до 3 знаков после запятой.
+```
+
+```{r, results='asis', echo = FALSE, message = FALSE}
+check_question(round(predict(fit_ch, tibble(n_words = 1000)), 3))
+```
