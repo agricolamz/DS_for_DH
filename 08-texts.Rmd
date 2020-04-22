@@ -3,7 +3,7 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-# Работа с текстами: `gutenbergr`, `tidytext`, `udpipe` {#tidytext}
+# Работа с текстами: `gutenbergr`, `tidytext`, `stopwords`, `udpipe` {#tidytext}
 
 ```{r,message=FALSE}
 library(tidyverse)
@@ -13,10 +13,32 @@ library(tidyverse)
 theme_set(theme_bw())
 ```
 
+## Загрузка текста в R
+
+В пакете `readr` (входит в `tidyverse`) для чтения текста есть функция `read_lines()`. В качестве первой переменной может выступать путь к файлу на компьютере или интернет ссылка:
+
+```{r}
+t <- read_lines("https://raw.githubusercontent.com/agricolamz/2020_HSE_DPO/master/data/Chang.txt")
+head(t)
+```
+
+Тексты хранятся в интернете по разному. Часто бывает так, что текст дигитализировали так, как он напечатан, так что в результате каждая строка в печатной книжке соответствует строке в текстовом файле (так, например, в нашем примере). Такой файл следует склеить воедино, используя пробел в качестве разделителя:
+
+```{r}
+t2 <- str_c(t, collapse = " ")
+length(t2)
+str_length(t2)
+```
+
+При таком слиянии, стоит проверить, не было ли в анализируемом тексте знаков переноса, иначе они сольются неправильно:
+
+```{r}
+str_c(c("... она запо-", "лучила ..."), collapse = " ")
+```
 
 ## Пакет `gutenbergr`
 
-Пакет `gutenbergr` является API для очень старого [проекта Guttenberg](http://www.gutenberg.org/).
+Пакет `gutenbergr` является API для очень старого [проекта Gutenberg](http://www.gutenberg.org/).
 
 ```{r}
 library(gutenbergr)
@@ -70,28 +92,31 @@ books %>%
 Сколько уникальных заголовков из базы данных содержит "Sherlock Holmes"?
 ```
 
-```{r, include=FALSE}
+```{r, echo=FALSE, results='asis'}
+library(checkdown)
 gutenberg_metadata %>% 
   filter(str_detect(title, "Sherlock Holmes")) %>% 
-  distinct(title)
-# 9
+  distinct(title) %>% 
+  nrow() %>% 
+  check_question()
 ```
+
 
 ## Библиотека `tidytext`
 
-Сейчас скачанные книги записаны в таблицу, где одна строка это один абзац. Хочется мочь посчитать слова. Для этого книги нужно привести в tidy формат и для этого написан пакет `tidytext` (онлайн книга доступна [здесь](https://www.tidytextmining.com/)):
+Сейчас скачанные книги записаны в таблицу, где одна строка это один абзац. Хочется мочь посчитать слова. Для этого книги нужно привести в tidy формат и для этого написан пакет `tidytext` (онлайн книга доступна [здесь](https://www.tidytextmining.com/)). Основное "оружие" пакета `tidytext` функция `unnest_tokens()`, которая переводит текст в tidy формат. В аргумент `output` подается вектор с именем будущей переменной, а аргумент `input` принимает переменную с текстом.
 
 ```{r}
 library(tidytext)
 books %>% 
-  unnest_tokens(word, text)
+  unnest_tokens(output = "word", input = text)
 ```
 
 Теперь можно посчитать самые частотные слова в обоих произведениях:
 
 ```{r}
 books %>% 
-  unnest_tokens(word, text) %>% 
+  unnest_tokens(output = "word", input = text) %>% 
   count(title, word, sort = TRUE)
 ```
 
@@ -108,50 +133,85 @@ books %>%
 Постройте следующий график, на котором представлены самые частотные 20 слов каждого из произведений.
 ```
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, message=FALSE}
 books %>% 
   unnest_tokens(word, text) %>% 
   count(title, word, sort = TRUE) %>% 
   anti_join(stop_words) %>% 
   group_by(title) %>% 
   slice(1:20) %>% 
-  ggplot(aes(word, n))+
+  ggplot(aes(n, word))+
   geom_col()+
-  coord_flip()+
   facet_wrap(~title, scale = "free")
 ```
 
+Как видно, на графике все не упорядочено, давайте начнем с такого примера:
 
-
-
-
-```{r, eval = FALSE, include=FALSE}
-library(tidyverse)
-library(udpipe)
-dl <- udpipe_download_model(language = "russian")
-udmodel_ru <- udpipe_load_model(file = dl$file_model)
-
-txt <- read_lines("/home/agricolamz/Desktop/kolobok")
-txt <- str_c(txt, collapse = " ")
-
-x <- udpipe_annotate(udmodel_ru, x = txt)
-x <- as.data.frame(x)
-
-sentiment <- read_csv("https://raw.githubusercontent.com/text-machine-lab/sentimental/master/sentimental/word_list/russian.csv")
-
-x %>% 
-  left_join(sentiment, by = c("lemma" = "word")) ->
-  x
-
-x %>% 
-  select(score) %>% 
-  as.data.frame()
-  group_by(sentence_id) %>% 
-  summarise(sentiment = sum(score, na.rm = TRUE)) 
-  mutate(sentiment_type = ifelse(sentiment>= 0, "positive", "negative")) %>% 
-  ggplot(aes(sentence_id, sentiment, fill = sentiment_type))+
+```{r}
+books %>% 
+  unnest_tokens(word, text) %>% 
+  count(word, sort = TRUE) %>% 
+  slice(1:20) %>% 
+  ggplot(aes(n, word))+
   geom_col()
 ```
+
+Если мы работаем с одним фасетом, то все проблемы может решить функция `fct_reorder()`, которая упорядочивает на основании некоторой переменной:
+
+```{r}
+books %>% 
+  unnest_tokens(word, text) %>% 
+  count(word, sort = TRUE) %>% 
+  slice(1:20) %>% 
+  mutate(word = fct_reorder(word, n)) %>% 
+  ggplot(aes(n, word))+
+  geom_col()
+```
+
+Однако, если мы применим это к нашим данным, то получится неупорядочено:
+
+```{r}
+books %>% 
+  unnest_tokens(word, text) %>% 
+  count(title, word, sort = TRUE) %>% 
+  group_by(title) %>% 
+  slice(1:20) %>% 
+  ungroup() %>%
+  mutate(word = fct_reorder(word, n)) %>% 
+  ggplot(aes(n, word))+
+  geom_col()+
+  facet_wrap(~title, scales = "free")
+```
+
+В пакете `tidytext` есть функция `reorder_within()`, которая позволяет упорядочить нужным образом:
+```{r}
+books %>% 
+  unnest_tokens(word, text) %>% 
+  count(title, word, sort = TRUE) %>% 
+  group_by(title) %>% 
+  slice(1:20) %>% 
+  ungroup() %>%
+  mutate(word = reorder_within(x = word, by = n, within = title)) %>% 
+  ggplot(aes(n, word))+
+  geom_col()+
+  facet_wrap(~title, scales = "free")
+```
+
+Чтобы избавиться от дополнительной подписи нужно использовать `scale_y_reordered()` или `scale_x_reordered()`:
+```{r}
+books %>% 
+  unnest_tokens(word, text) %>% 
+  count(title, word, sort = TRUE) %>% 
+  group_by(title) %>% 
+  slice(1:20) %>% 
+  ungroup() %>%
+  mutate(word = reorder_within(x = word, by = n, within = title)) %>% 
+  ggplot(aes(n, word))+
+  geom_col()+
+  facet_wrap(~title, scales = "free")+
+  scale_y_reordered()
+```
+
 
 Функция `unnest_tokens()` позволяет работать не только со словами, но и, напрмиер, с биграммами:
 
@@ -173,6 +233,31 @@ books %>%
   facet_wrap(~word, ncol = 1)
 ```
 
+## Пакет `stopwords`
+
+Выше мы упомянули, что в пакет `tidytext` встроен список английских стопслов. Стопслова для других язков можно раздобыть списки для других языков, используя пакет `stopwords`. Вместо имени языка, функция принимает ISO код языыка:
+
+```{r}
+library(stopwords)
+stopwords("ru")
+```
+
+Пакет предоставляет несколько источников списков:
+```{r}
+stopwords_getsources()
+```
+
+Давайте посмотрем какие языки сейчас доступны:
+
+```{r}
+map(stopwords_getsources(), stopwords_getlanguages)
+```
+
+Мы видим, что есть несколько источников для русского языка:
+```{r}
+length(stopwords("ru", source = "snowball"))
+length(stopwords("ru", source = "stopwords-iso"))
+```
 
 ## Пакет `udpipe`
 
@@ -181,7 +266,6 @@ books %>%
 ```{r}
 library(udpipe)
 ```
-
 
 Модели качаются очень долго.
 ```{r download_en_model, cache=TRUE}
@@ -202,9 +286,8 @@ rumodel <- udpipe_download_model(language = "russian-syntagrus")
 udpipe("Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.", object = rumodel)
 ```
 
-После того, как модель загружена можно уже к ней обращаться просто по имени:
+После того, как модель скачана можно уже к ней обращаться просто по имени файла:
 
 ```{r}
 udpipe("Жила-была на свете крыса в морском порту Вальпараисо, на складе мяса и маиса, какао и вина.", object = "russian-syntagrus-ud-2.4-190531.udpipe")
 ```
-

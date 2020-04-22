@@ -289,10 +289,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="functions.html"><a href="functions.html#reinvent-the-map-function"><i class="fa fa-check"></i><b>8.4</b> Reinvent the <code>map</code> function</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="tidytext.html"><a href="tidytext.html"><i class="fa fa-check"></i><b>9</b> Работа с текстами: <code>gutenbergr</code>, <code>tidytext</code>, <code>udpipe</code></a><ul>
-<li class="chapter" data-level="9.1" data-path="tidytext.html"><a href="tidytext.html#пакет-gutenbergr"><i class="fa fa-check"></i><b>9.1</b> Пакет <code>gutenbergr</code></a></li>
-<li class="chapter" data-level="9.2" data-path="tidytext.html"><a href="tidytext.html#библиотека-tidytext"><i class="fa fa-check"></i><b>9.2</b> Библиотека <code>tidytext</code></a></li>
-<li class="chapter" data-level="9.3" data-path="tidytext.html"><a href="tidytext.html#пакет-udpipe"><i class="fa fa-check"></i><b>9.3</b> Пакет <code>udpipe</code></a></li>
+<li class="chapter" data-level="9" data-path="tidytext.html"><a href="tidytext.html"><i class="fa fa-check"></i><b>9</b> Работа с текстами: <code>gutenbergr</code>, <code>tidytext</code>, <code>stopwords</code>, <code>udpipe</code></a><ul>
+<li class="chapter" data-level="9.1" data-path="tidytext.html"><a href="tidytext.html#загрузка-текста-в-r"><i class="fa fa-check"></i><b>9.1</b> Загрузка текста в R</a></li>
+<li class="chapter" data-level="9.2" data-path="tidytext.html"><a href="tidytext.html#пакет-gutenbergr"><i class="fa fa-check"></i><b>9.2</b> Пакет <code>gutenbergr</code></a></li>
+<li class="chapter" data-level="9.3" data-path="tidytext.html"><a href="tidytext.html#библиотека-tidytext"><i class="fa fa-check"></i><b>9.3</b> Библиотека <code>tidytext</code></a></li>
+<li class="chapter" data-level="9.4" data-path="tidytext.html"><a href="tidytext.html#пакет-stopwords"><i class="fa fa-check"></i><b>9.4</b> Пакет <code>stopwords</code></a></li>
+<li class="chapter" data-level="9.5" data-path="tidytext.html"><a href="tidytext.html#пакет-udpipe"><i class="fa fa-check"></i><b>9.5</b> Пакет <code>udpipe</code></a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html"><i class="fa fa-check"></i><b>10</b> Работа с геоданными: <code>leaflet</code></a><ul>
 <li class="chapter" data-level="10.1" data-path="работа-с-геоданными-leaflet.html"><a href="работа-с-геоданными-leaflet.html#векторная-и-растровая-графика"><i class="fa fa-check"></i><b>10.1</b> Векторная и растровая графика</a></li>
@@ -497,7 +499,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="vec_task_2" class="section level2">
 <h2><span class="header-section-number">19.3</span> Вектор. Индексирование</h2>
 <p>Создайте вектор <code>vec1</code>:</p>
-<div class="sourceCode" id="cb1160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1160-1"><a href="tasks.html#cb1160-1"></a>vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">15</span>, <span class="dv">1</span>, <span class="dv">11</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1190-1"><a href="tasks.html#cb1190-1"></a>vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">15</span>, <span class="dv">1</span>, <span class="dv">11</span>)</span></code></pre></div>
 <ul>
 <li>Найдите второй элемент вектора <code>vec1</code>:</li>
 </ul>
@@ -542,8 +544,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="list_ta" class="section level2">
 <h2><span class="header-section-number">19.4</span> Списки</h2>
 <p>Дан список <code>list_1</code>:</p>
-<div class="sourceCode" id="cb1170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1170-1"><a href="tasks.html#cb1170-1"></a>list_<span class="dv">1</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">numbers =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letters =</span> letters, <span class="dt">logic =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1170-2"><a href="tasks.html#cb1170-2"></a>list_<span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb1200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1200-1"><a href="tasks.html#cb1200-1"></a>list_<span class="dv">1</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">numbers =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letters =</span> letters, <span class="dt">logic =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb1200-2"><a href="tasks.html#cb1200-2"></a>list_<span class="dv">1</span></span></code></pre></div>
 <pre><code>$numbers
 [1] 1 2 3 4 5
 
