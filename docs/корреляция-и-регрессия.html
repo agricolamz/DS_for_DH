@@ -356,7 +356,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="15.5" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#регрессионный-анализ"><i class="fa fa-check"></i><b>15.5</b> Регрессионный анализ</a><ul>
 <li class="chapter" data-level="15.5.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#основы"><i class="fa fa-check"></i><b>15.5.1</b> Основы</a></li>
-<li class="chapter" data-level="15.5.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#практика"><i class="fa fa-check"></i><b>15.5.2</b> Практика</a></li>
+<li class="chapter" data-level="15.5.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#первая-регрессия"><i class="fa fa-check"></i><b>15.5.2</b> Первая регрессия</a></li>
+<li class="chapter" data-level="15.5.3" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#категориальные-переменные-1"><i class="fa fa-check"></i><b>15.5.3</b> Категориальные переменные</a></li>
+<li class="chapter" data-level="15.5.4" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#множественная-регрессия"><i class="fa fa-check"></i><b>15.5.4</b> Множественная регрессия</a></li>
+<li class="chapter" data-level="15.5.5" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#сравнение-моделей"><i class="fa fa-check"></i><b>15.5.5</b> Сравнение моделей</a></li>
+<li class="chapter" data-level="15.5.6" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#послесловие-1"><i class="fa fa-check"></i><b>15.5.6</b> Послесловие</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html"><i class="fa fa-check"></i><b>16</b> Работа статистического детектива</a><ul>
@@ -689,8 +693,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math display">\[\hat\beta_1 = \frac{(\sum_{i=1}^n x_i\times y_i)-n\times\bar x \times \bar y}{\sum_{i = 1}^n(x_i-\bar x)^2}\]</span></p>
 <p><span class="math display">\[\hat\beta_0 = \bar y - \hat\beta_1\times\bar x\]</span></p>
 </div>
-<div id="практика" class="section level3">
-<h3><span class="header-section-number">15.5.2</span> Практика</h3>
+<div id="первая-регрессия" class="section level3">
+<h3><span class="header-section-number">15.5.2</span> Первая регрессия</h3>
 <p>Давайте попробуем смоделировать количество слов <em>и</em> в рассказах М. Зощенко в зависимости от длины рассказа:</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="корреляция-и-регрессия.html#cb38-1"></a>zo &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&quot;https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv&quot;</span>)</span>
 <span id="cb38-2"><a href="корреляция-и-регрессия.html#cb38-2"></a></span>
@@ -799,6 +803,231 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p id="result_63084">
 </p>
 <script> function validate_form_63084() {var x, text; var x = document.forms["form_63084"]["answer_63084"].value;if (x == "42.771"){text = 'Correct';} else {text = 'I have a different answer';} document.getElementById('result_63084').innerHTML = text; return false;} </script>
+</div>
+<div id="категориальные-переменные-1" class="section level3">
+<h3><span class="header-section-number">15.5.3</span> Категориальные переменные</h3>
+<p>Что если мы хотим включить в наш анализ категориальные переменные? Давайте рассмотрим простой пример с <a href="https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv">рассказами Чехова</a> и <a href="https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv">Зощенко</a>, которые мы рассматривали в прошлом разделе. Мы будем анализировать логарифм доли слов деньги:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="корреляция-и-регрессия.html#cb48-1"></a>chekhov &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&quot;https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv&quot;</span>)</span></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   titles = col_character(),
+##   word = col_character(),
+##   n = col_double(),
+##   n_words = col_double()
+## )</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="корреляция-и-регрессия.html#cb50-1"></a>zoshenko &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&quot;https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   titles = col_character(),
+##   word = col_character(),
+##   n = col_double(),
+##   n_words = col_double()
+## )</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="корреляция-и-регрессия.html#cb52-1"></a>chekhov<span class="op">$</span>author &lt;-<span class="st"> &quot;Чехов&quot;</span></span>
+<span id="cb52-2"><a href="корреляция-и-регрессия.html#cb52-2"></a>zoshenko<span class="op">$</span>author &lt;-<span class="st"> &quot;Зощенко&quot;</span></span>
+<span id="cb52-3"><a href="корреляция-и-регрессия.html#cb52-3"></a></span>
+<span id="cb52-4"><a href="корреляция-и-регрессия.html#cb52-4"></a>chekhov <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb52-5"><a href="корреляция-и-регрессия.html#cb52-5"></a><span class="st">  </span><span class="kw">bind_rows</span>(zoshenko) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb52-6"><a href="корреляция-и-регрессия.html#cb52-6"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(word, <span class="st">&quot;деньг&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb52-7"><a href="корреляция-и-регрессия.html#cb52-7"></a><span class="st">  </span><span class="kw">group_by</span>(author, titles, n_words) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb52-8"><a href="корреляция-и-регрессия.html#cb52-8"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">sum</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb52-9"><a href="корреляция-и-регрессия.html#cb52-9"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">log_ratio =</span> <span class="kw">log</span>(n<span class="op">/</span>n_words)) -&gt;</span>
+<span id="cb52-10"><a href="корреляция-и-регрессия.html#cb52-10"></a><span class="st">  </span>checkov_zoshenko</span></code></pre></div>
+<p>Визуализация выглядит так:
+<img src="DS_for_DH_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+<p>Красной точкой обозначены средние значения, так что мы видим, что между двумя писателями есть разница, но является ли она статистически значимой? В прошлом разделе, мы рассмотрели, что в таком случае можно сделать t-test:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="корреляция-и-регрессия.html#cb53-1"></a><span class="kw">t.test</span>(log_ratio<span class="op">~</span>author, </span>
+<span id="cb53-2"><a href="корреляция-и-регрессия.html#cb53-2"></a>       <span class="dt">data =</span> checkov_zoshenko, </span>
+<span id="cb53-3"><a href="корреляция-и-регрессия.html#cb53-3"></a>       <span class="dt">var.equal =</span><span class="ot">TRUE</span>) <span class="co"># здесь я мухлюю, отключая поправку Уэлча</span></span></code></pre></div>
+<pre><code>## 
+##  Two Sample t-test
+## 
+## data:  log_ratio by author
+## t = 5.6871, df = 125, p-value = 8.665e-08
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.8606107 1.7793181
+## sample estimates:
+## mean in group Зощенко   mean in group Чехов 
+##             -5.021262             -6.341226</code></pre>
+<p>Разница между группами является статистически значимой (t(125) = 5.6871, p-value = 8.665e-08).</p>
+<p>Для того, чтобы запустить регрессию на категориальных данных категориальная переменная автоматически разбивается на группу бинарных dummy-переменных:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="корреляция-и-регрессия.html#cb55-1"></a><span class="kw">tibble</span>(<span class="dt">author =</span> <span class="kw">c</span>(<span class="st">&quot;Чехов&quot;</span>, <span class="st">&quot;Зощенко&quot;</span>),</span>
+<span id="cb55-2"><a href="корреляция-и-регрессия.html#cb55-2"></a>       <span class="dt">dummy_chekhov =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb55-3"><a href="корреляция-и-регрессия.html#cb55-3"></a>       <span class="dt">dummy_zoshenko =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["author"],"name":[1],"type":["chr"],"align":["left"]},{"label":["dummy_chekhov"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["dummy_zoshenko"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Чехов","2":"1","3":"0"},{"1":"Зощенко","2":"0","3":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Дальше для регрессионного анализа выкидывают одну из переменных, так как иначе модель не сойдется (dummy-переменных всегда n-1, где n — количество категорий в переменной).</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="корреляция-и-регрессия.html#cb56-1"></a><span class="kw">tibble</span>(<span class="dt">author =</span> <span class="kw">c</span>(<span class="st">&quot;Чехов&quot;</span>, <span class="st">&quot;Зощенко&quot;</span>),</span>
+<span id="cb56-2"><a href="корреляция-и-регрессия.html#cb56-2"></a>       <span class="dt">dummy_chekhov =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>))</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["author"],"name":[1],"type":["chr"],"align":["left"]},{"label":["dummy_chekhov"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Чехов","2":"1"},{"1":"Зощенко","2":"0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Если переменная <code>dummy_chekhov</code> принимает значение 1, значит речь о рассказе Чехова, а если принимает значение 0, то о рассказе Зощенко. Если вставить нашу переменную в регрессионную формулу получится следующее:</p>
+<p><span class="math display">\[y_i = \hat\beta_0 + \hat\beta_1 \times \text{dummy_chekhov} + \epsilon_i,\]</span></p>
+<p>Так как <code>dummy_chekhov</code> принимает либо значение 1, либо значение 0, то получается, что модель предсказывает лишь два значения:</p>
+<p><span class="math display">\[y_i = \left\{\begin{array}{ll}\hat\beta_0 + \hat\beta_1 \times 1 + \epsilon_i = \hat\beta_0 + \hat\beta_1 + \epsilon_i\text{, если рассказ Чехова}\\ 
+\hat\beta_0 + \hat\beta_1 \times 0 + \epsilon_i = \hat\beta_0 + \epsilon_i\text{, если рассказ Зощенко}
+\end{array}\right.\]</span></p>
+<p>Таким образом, получается, что свободный член <span class="math inline">\(\beta_0\)</span> и угловой коэффициент <span class="math inline">\(\beta_1\)</span> в регресси с категориальной переменной получает другую интерпретацию. Одно из значений переменной кодируется при помощи <span class="math inline">\(\beta_0\)</span>, а сумма коэффициентов <span class="math inline">\(\beta_0+\beta_1\)</span> дают другое значение переменной. Так что <span class="math inline">\(\beta_1\)</span> — это разница между оценками двух значений переменной.</p>
+<p>Давайте теперь запустим регрессию на этих же данных:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="корреляция-и-регрессия.html#cb57-1"></a>fit2 &lt;-<span class="st"> </span><span class="kw">lm</span>(log_ratio<span class="op">~</span>author, <span class="dt">data =</span> checkov_zoshenko)</span>
+<span id="cb57-2"><a href="корреляция-и-регрессия.html#cb57-2"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = n ~ n_words, data = zo_filtered)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -19.6830  -4.3835   0.8986   4.6486  19.6413 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -1.471840   2.467149  -0.597    0.553    
+## n_words      0.044049   0.003666  12.015   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 7.945 on 64 degrees of freedom
+## Multiple R-squared:  0.6928, Adjusted R-squared:  0.688 
+## F-statistic: 144.4 on 1 and 64 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Во-первых стоит обратить внимание на то, что R сам преобразовал нашу категориальную переменную в dummy-переменную <code>authorЧехов</code>. Во-вторых, можно заметить, что значения t-статистики и p-value совпадают с результатами полученными нами в t-тесте выше. Статистическти значимый коэффициент при аргументе <code>authorЧехов</code> следует интерпретировать как разницу средних между логарифмом долей в рассказах Чехова и Зощенко.</p>
+<div class="rmdtask">
+<p>
+В работе (Coretta 2017, <a href="https://goo.gl/NrfgJm" class="uri">https://goo.gl/NrfgJm</a>) рассматривается отношения между длительностью гласного и придыхание согласного. Автор собрал данные 5 носителей исландского. Дальше он извлек длительность гласного, после которого были придыхательные и непридыхательные. Скачайте <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/icelandic.csv">данные</a> и постройте регрессионную модель, предсказывающую длительность гласного на основе .
+</p>
+</div>
+</div>
+<div id="множественная-регрессия" class="section level3">
+<h3><span class="header-section-number">15.5.4</span> Множественная регрессия</h3>
+<p>Множественная регрессия позволяет проанализировать связь между зависимой и несколькими зависимыми переменными. Формула множественной регрессии не сильно отличается от формулы обычной линейной регрессии:</p>
+<p><span class="math display">\[y_i = \hat\beta_0 + \hat\beta_1 \times x_{1i}+ \dots+ \hat\beta_n \times x_{ni} + \epsilon_i,\]</span></p>
+<ul>
+<li><span class="math inline">\(x_{ki}\)</span> — <span class="math inline">\(i\)</span>-ый элемент векторов значений <span class="math inline">\(X_1, \dots, X_n\)</span>;</li>
+<li><span class="math inline">\(y_i\)</span> — <span class="math inline">\(i\)</span>-ый элемент вектора значений <span class="math inline">\(Y\)</span>;</li>
+<li><span class="math inline">\(\hat\beta_0\)</span> — оценка случайного члена (intercept);</li>
+<li><span class="math inline">\(\hat\beta_k\)</span> — коэфциент при переменной <span class="math inline">\(X_{k}\)</span>;</li>
+<li><span class="math inline">\(\epsilon_i\)</span> — <span class="math inline">\(i\)</span>-ый остаток, разница между оценкой модели (<span class="math inline">\(\hat\beta_0 + \hat\beta_1 \times x_i\)</span>) и реальным значением <span class="math inline">\(y_i\)</span>; весь вектор остатков иногда называют случайным шумом.</li>
+</ul>
+<p>В такой регресии предикторы могут быть как числовыми, так и категориальными (со всеми вытекающими последствиями, которые мы обсудили в предудщем разделе). Такую регрессию чаще всего сложно визуализировать, так как в одну регрессионную линию вкладываются сразу несколько переменных.</p>
+<p>Попробуем предсказать длину лепестка на основе длины чашелистик и вида ириса:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="корреляция-и-регрессия.html#cb59-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb59-2"><a href="корреляция-и-регрессия.html#cb59-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Sepal.Length, Petal.Length, <span class="dt">color =</span> Species))<span class="op">+</span></span>
+<span id="cb59-3"><a href="корреляция-и-регрессия.html#cb59-3"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
+<p>Запустим регрессию:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="корреляция-и-регрессия.html#cb60-1"></a>fit3 &lt;-<span class="st"> </span><span class="kw">lm</span>(Petal.Length <span class="op">~</span><span class="st"> </span>Sepal.Length<span class="op">+</span><span class="st"> </span>Species, <span class="dt">data =</span> iris)</span>
+<span id="cb60-2"><a href="корреляция-и-регрессия.html#cb60-2"></a><span class="kw">summary</span>(fit3)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Petal.Length ~ Sepal.Length + Species, data = iris)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.76390 -0.17875  0.00716  0.17461  0.79954 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)       -1.70234    0.23013  -7.397 1.01e-11 ***
+## Sepal.Length       0.63211    0.04527  13.962  &lt; 2e-16 ***
+## Speciesversicolor  2.21014    0.07047  31.362  &lt; 2e-16 ***
+## Speciesvirginica   3.09000    0.09123  33.870  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2826 on 146 degrees of freedom
+## Multiple R-squared:  0.9749, Adjusted R-squared:  0.9744 
+## F-statistic:  1890 on 3 and 146 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Все предикторы статистически значимы. Давайте посмотрим предсказания модели для всех наблюдений:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="корреляция-и-регрессия.html#cb62-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb62-2"><a href="корреляция-и-регрессия.html#cb62-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">prediction =</span> <span class="kw">predict</span>(fit3)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb62-3"><a href="корреляция-и-регрессия.html#cb62-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Sepal.Length, prediction, <span class="dt">color =</span> Species))<span class="op">+</span></span>
+<span id="cb62-4"><a href="корреляция-и-регрессия.html#cb62-4"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<p>Всегда имеет смысл визуализировать, что нам говорит наша модель. Если использовать пакет <code>ggeffects</code> (или предшествовавший ему пакет <code>effects</code>), это можно сделать не сильно задумываясь, как это делать:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="корреляция-и-регрессия.html#cb63-1"></a><span class="kw">library</span>(ggeffects)</span>
+<span id="cb63-2"><a href="корреляция-и-регрессия.html#cb63-2"></a><span class="kw">plot</span>(<span class="kw">ggpredict</span>(fit3, <span class="dt">terms =</span> <span class="kw">c</span>(<span class="st">&quot;Sepal.Length&quot;</span>, <span class="st">&quot;Species&quot;</span>)))</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<p>Как видно из графиков, наша модель имеет одинаковые угловые коэффициенты (slope) для каждого из видов ириса и разные свободные члены (intercept).</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="корреляция-и-регрессия.html#cb64-1"></a><span class="kw">summary</span>(fit3)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Petal.Length ~ Sepal.Length + Species, data = iris)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.76390 -0.17875  0.00716  0.17461  0.79954 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)       -1.70234    0.23013  -7.397 1.01e-11 ***
+## Sepal.Length       0.63211    0.04527  13.962  &lt; 2e-16 ***
+## Speciesversicolor  2.21014    0.07047  31.362  &lt; 2e-16 ***
+## Speciesvirginica   3.09000    0.09123  33.870  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2826 on 146 degrees of freedom
+## Multiple R-squared:  0.9749, Adjusted R-squared:  0.9744 
+## F-statistic:  1890 on 3 and 146 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p><span class="math display">\[y_i = \left\{\begin{array}{ll} -1.70234 + 0.63211 \times \text{Sepal.Length} + \epsilon_i\text{, если вид setosa}\\ 
+-1.70234 + 2.2101 + 0.63211 \times \text{Sepal.Length} + \epsilon_i\text{, если вид versicolor} \\
+-1.70234 + 3.09 \times \text{Sepal.Length} + \epsilon_i\text{, если вид virginica}
+\end{array}\right.\]</span></p>
+</div>
+<div id="сравнение-моделей" class="section level3">
+<h3><span class="header-section-number">15.5.5</span> Сравнение моделей</h3>
+<p>Как нам решить, какая модель лучше? Ведь теперь можно добавить сколько угодно предикторов? Давайте создадим новую модель без предиктора <code>Species</code>:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="корреляция-и-регрессия.html#cb66-1"></a>fit4 &lt;-<span class="st"> </span><span class="kw">lm</span>(Petal.Length <span class="op">~</span><span class="st"> </span>Sepal.Length, <span class="dt">data =</span> iris)</span></code></pre></div>
+<ul>
+<li>можно сравнивать статистическую значимость предикторов</li>
+<li>можно сравнивать <span class="math inline">\(R^2\)</span></li>
+</ul>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="корреляция-и-регрессия.html#cb67-1"></a><span class="kw">summary</span>(fit3)<span class="op">$</span>adj.r.squared</span></code></pre></div>
+<pre><code>## [1] 0.9743786</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="корреляция-и-регрессия.html#cb69-1"></a><span class="kw">summary</span>(fit4)<span class="op">$</span>adj.r.squared</span></code></pre></div>
+<pre><code>## [1] 0.7583327</code></pre>
+<ul>
+<li>чаще всего используют так называемые информационные критерии, самый популярный – AIC (Akaike information criterion). Сами по себе значение этого критерия не имеет значения – только в сравнении моделей, построенных на похожих данных. Чем меньше значение, тем модель лучше.</li>
+</ul>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="корреляция-и-регрессия.html#cb71-1"></a><span class="kw">AIC</span>(fit3, fit4)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["df"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["AIC"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"5","2":"52.47418","_rn_":"fit3"},{"1":"3","2":"387.13500","_rn_":"fit4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="послесловие-1" class="section level3">
+<h3><span class="header-section-number">15.5.6</span> Послесловие</h3>
+<ul>
+<li>сущетсвуют ограничения на применение линейной регресии
+<ul>
+<li>связь между предсказываемой переменной и предикторами должна быть линейной</li>
+<li>остатки должны быть нормально распределены (оценивайте визуально)</li>
+<li>дисперсия остатков вокруг регрессионной линии должно быть постоянно (гомоскидастично)</li>
+<li>предикторы не должны коррелировать друг с другом</li>
+<li>все наблюдения в регрессии должны быть независимы друг от друга</li>
+</ul></li>
+</ul>
+<p>Вот так вот выглядят остатки нашей первой модели (связь количества слов “и” и количества слов в рассказе Зощенко). Смотрите <a href="https://www.qualtrics.com/support/stats-iq/analyses/regression-guides/interpreting-residual-plots-improve-regression/">пост</a>, в котором обсуждается, как интерпретировать график остатков.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="корреляция-и-регрессия.html#cb72-1"></a><span class="kw">plot</span>(fit, <span class="dt">which=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-74-1.png" width="672" /><img src="DS_for_DH_files/figure-html/unnamed-chunk-74-2.png" width="672" /></p>
+<ul>
+<li>сущетсвуют трюки, позволяющие автоматически отбирать модели (см. функцию <code>step()</code>)</li>
+<li>существует достаточно большое семейство регрессий, который зависят от типа независимой (предсказываемой) переменной или ее распределения
+<ul>
+<li>логистическая (если предсказываемая переменная имеет два возможных исхода)</li>
+<li>мультиномиальная (если предсказываемая переменная имеет больше двух возможных дискретных исхода)</li>
+<li>нилиненые регресии (если связь между переменными нелинейна)</li>
+<li>регрессия со смешанными эффектами (если внутри данных есть группировки, т. е. наблюдения не независимы)</li>
+<li>и другие.</li>
+</ul></li>
+</ul>
 
 </div>
 </div>
