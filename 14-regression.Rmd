@@ -617,7 +617,7 @@ check_question(round(predict(fit_ch, tibble(n_words = 1000)), 3))
 
 Что если мы хотим включить в наш анализ категориальные переменные? Давайте рассмотрим простой пример с [рассказами Чехова](https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv) и [Зощенко](https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv), которые мы рассматривали в прошлом разделе. Мы будем анализировать логарифм доли слов деньги:
 
-```{r}
+```{r, message=FALSE}
 chekhov <- read_tsv("https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv")
 zoshenko <- read_tsv("https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv")
 
@@ -750,7 +750,7 @@ summary(fit3)
 
 $$y_i = \left\{\begin{array}{ll} -1.70234 + 0.63211 \times \text{Sepal.Length} + \epsilon_i\text{, если вид setosa}\\ 
 -1.70234 + 2.2101 + 0.63211 \times \text{Sepal.Length} + \epsilon_i\text{, если вид versicolor} \\
--1.70234 + 3.09 \times \text{Sepal.Length} + \epsilon_i\text{, если вид virginica}
+-1.70234 + 3.09 + 0.63211 \times \text{Sepal.Length} + \epsilon_i\text{, если вид virginica}
 \end{array}\right.$$
 
 ### Сравнение моделей
@@ -783,10 +783,10 @@ AIC(fit3, fit4)
     * предикторы не должны коррелировать друг с другом
     * все наблюдения в регрессии должны быть независимы друг от друга
     
-Вот так вот выглядят остатки нашей первой модели (связь количества слов "и" и количества слов в рассказе Зощенко). Смотрите [пост](https://www.qualtrics.com/support/stats-iq/analyses/regression-guides/interpreting-residual-plots-improve-regression/), в котором обсуждается, как интерпретировать график остатков.
+Вот так вот выглядят остатки нашей модели на основе датасета `iris`. Смотрите [пост](https://www.qualtrics.com/support/stats-iq/analyses/regression-guides/interpreting-residual-plots-improve-regression/), в котором обсуждается, как интерпретировать график остатков.
 
 ```{r}
-plot(fit, which=c(1, 2))
+plot(fit3, which=c(1, 2))
 ```
 
 * сущетсвуют трюки, позволяющие автоматически отбирать модели (см. функцию `step()`) 
