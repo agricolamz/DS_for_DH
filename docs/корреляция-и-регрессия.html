@@ -864,25 +864,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Таким образом, получается, что свободный член <span class="math inline">\(\beta_0\)</span> и угловой коэффициент <span class="math inline">\(\beta_1\)</span> в регресси с категориальной переменной получает другую интерпретацию. Одно из значений переменной кодируется при помощи <span class="math inline">\(\beta_0\)</span>, а сумма коэффициентов <span class="math inline">\(\beta_0+\beta_1\)</span> дают другое значение переменной. Так что <span class="math inline">\(\beta_1\)</span> — это разница между оценками двух значений переменной.</p>
 <p>Давайте теперь запустим регрессию на этих же данных:</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="корреляция-и-регрессия.html#cb53-1"></a>fit2 &lt;-<span class="st"> </span><span class="kw">lm</span>(log_ratio<span class="op">~</span>author, <span class="dt">data =</span> checkov_zoshenko)</span>
-<span id="cb53-2"><a href="корреляция-и-регрессия.html#cb53-2"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
+<span id="cb53-2"><a href="корреляция-и-регрессия.html#cb53-2"></a><span class="kw">summary</span>(fit2)</span></code></pre></div>
 <pre><code>## 
 ## Call:
-## lm(formula = n ~ n_words, data = zo_filtered)
+## lm(formula = log_ratio ~ author, data = checkov_zoshenko)
 ## 
 ## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -19.6830  -4.3835   0.8986   4.6486  19.6413 
+##     Min      1Q  Median      3Q     Max 
+## -2.8652 -0.6105 -0.0607  0.6546  3.2398 
 ## 
 ## Coefficients:
-##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) -1.471840   2.467149  -0.597    0.553    
-## n_words      0.044049   0.003666  12.015   &lt;2e-16 ***
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  -5.0213     0.2120 -23.680  &lt; 2e-16 ***
+## authorЧехов  -1.3200     0.2321  -5.687 8.67e-08 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 7.945 on 64 degrees of freedom
-## Multiple R-squared:  0.6928, Adjusted R-squared:  0.688 
-## F-statistic: 144.4 on 1 and 64 DF,  p-value: &lt; 2.2e-16</code></pre>
+## Residual standard error: 0.9717 on 125 degrees of freedom
+## Multiple R-squared:  0.2056, Adjusted R-squared:  0.1992 
+## F-statistic: 32.34 on 1 and 125 DF,  p-value: 8.665e-08</code></pre>
 <p>Во-первых стоит обратить внимание на то, что R сам преобразовал нашу категориальную переменную в dummy-переменную <code>authorЧехов</code>. Во-вторых, можно заметить, что значения t-статистики и p-value совпадают с результатами полученными нами в t-тесте выше. Статистическти значимый коэффициент при аргументе <code>authorЧехов</code> следует интерпретировать как разницу средних между логарифмом долей в рассказах Чехова и Зощенко.</p>
 <div class="rmdtask">
 <p>
