@@ -239,7 +239,7 @@ str_sort(unsorted_cyrillic, locale = "ru_UA")
 
 Не углубляясь в [разнообразие алгоритмов сортировки](https://www.youtube.com/watch?v=BeoCbJPuvSE), отмечу, что алгоритм по-умолчанию хуже работает с большими данными:
 
-```{r, cache= TRUE}
+```{r, cache=TRUE}
 set.seed(42)
 huge <- sample(letters, 1e7, replace = TRUE)
 head(huge)
@@ -261,6 +261,7 @@ system.time(
     arrange(huge)
 )
 ```
+
 
 Предварительный вывод: для больших данных -- `sort(..., method = "radix")`.
 
