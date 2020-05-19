@@ -64,7 +64,7 @@ tibble(ratio = round(1:322/322, 5)) %>%
 round(200:400*0.095) == 200:400*0.095
 ```
 
-## Granularity-Related Inconsistent Means (GRIM) test
+Эта идея лежит в основе Granularity-Related Inconsistent Means test (GRIM). Я не нашел его реализации на R, но вот есть [он-лайн приложение](http://www.prepubmed.org/grim_test/).
 
 ## Пакет `statcheck`
 
