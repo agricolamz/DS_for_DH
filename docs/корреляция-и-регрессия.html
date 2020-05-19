@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>15 Корреляция и регрессия | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
   <meta name="description" content="15 Корреляция и регрессия | Наука о данных в R для программы Цифровых гуманитарных исследований" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="15 Корреляция и регрессия | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta property="og:type" content="book" />
@@ -51,6 +51,19 @@
 
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
+<script src="libs/Leaflet.Sync-0.0.5/L.Map.Sync.js"></script>
 
 
 <style type="text/css">
@@ -343,7 +356,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.5.5" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#критерий-мак-немара"><i class="fa fa-check"></i><b>14.5.5</b> Критерий Мак Немара</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#послесловие"><i class="fa fa-check"></i><b>14.6</b> Послесловие</a></li>
-<li class="chapter" data-level="14.7" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#рассказы-чехова-и-зощенко"><i class="fa fa-check"></i><b>14.7</b> Рассказы Чехова и Зощенко</a></li>
+<li class="chapter" data-level="14.7" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#рассказы-чехова-и-зощенко"><i class="fa fa-check"></i><b>14.7</b> Рассказы Чехова и Зощенко</a><ul>
+<li class="chapter" data-level="14.7.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section"><i class="fa fa-check"></i><b>14.7.1</b> </a></li>
+<li class="chapter" data-level="14.7.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-1"><i class="fa fa-check"></i><b>14.7.2</b> </a></li>
+<li class="chapter" data-level="14.7.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-2"><i class="fa fa-check"></i><b>14.7.3</b> </a></li>
+<li class="chapter" data-level="14.7.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-3"><i class="fa fa-check"></i><b>14.7.4</b> </a></li>
+</ul></li>
 <li class="chapter" data-level="14.8" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#obamacare"><i class="fa fa-check"></i><b>14.8</b> Obamacare</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html"><i class="fa fa-check"></i><b>15</b> Корреляция и регрессия</a><ul>
@@ -366,11 +384,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html"><i class="fa fa-check"></i><b>16</b> Работа статистического детектива</a><ul>
 <li class="chapter" data-level="16.1" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#введение-1"><i class="fa fa-check"></i><b>16.1</b> Введение</a></li>
 <li class="chapter" data-level="16.2" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#возможно-ли-такое-среднее"><i class="fa fa-check"></i><b>16.2</b> Возможно ли такое среднее?</a></li>
-<li class="chapter" data-level="16.3" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#granularity-related-inconsistent-means-grim-test"><i class="fa fa-check"></i><b>16.3</b> Granularity-Related Inconsistent Means (GRIM) test</a></li>
-<li class="chapter" data-level="16.4" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-statcheck"><i class="fa fa-check"></i><b>16.4</b> Пакет <code>statcheck</code></a></li>
-<li class="chapter" data-level="16.5" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-digitize"><i class="fa fa-check"></i><b>16.5</b> Пакет <code>digitize</code></a></li>
+<li class="chapter" data-level="16.3" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-statcheck"><i class="fa fa-check"></i><b>16.3</b> Пакет <code>statcheck</code></a></li>
+<li class="chapter" data-level="16.4" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-digitize"><i class="fa fa-check"></i><b>16.4</b> Пакет <code>digitize</code></a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="кластеризация.html"><a href="кластеризация.html"><i class="fa fa-check"></i><b>17</b> Кластеризация</a></li>
+<li class="chapter" data-level="17" data-path="кластеризация.html"><a href="кластеризация.html"><i class="fa fa-check"></i><b>17</b> Кластеризация</a><ul>
+<li class="chapter" data-level="17.1" data-path="кластеризация.html"><a href="кластеризация.html#метод-k-средних-k-means"><i class="fa fa-check"></i><b>17.1</b> Метод k-средних (k-means)</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="кластеризация.html"><a href="кластеризация.html#пример"><i class="fa fa-check"></i><b>17.1.1</b> Пример</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="кластеризация.html"><a href="кластеризация.html#иерархическая-кластеризация"><i class="fa fa-check"></i><b>17.2</b> Иерархическая кластеризация</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="кластеризация.html"><a href="кластеризация.html#матрица-расстояний"><i class="fa fa-check"></i><b>17.2.1</b> Матрица расстояний</a></li>
+<li class="chapter" data-level="17.2.2" data-path="кластеризация.html"><a href="кластеризация.html#расстояние-между-словами"><i class="fa fa-check"></i><b>17.2.2</b> Расстояние между словами</a></li>
+<li class="chapter" data-level="17.2.3" data-path="кластеризация.html"><a href="кластеризация.html#применение-иерархической-кластеризации"><i class="fa fa-check"></i><b>17.2.3</b> Применение иерархической кластеризации</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="18" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>18</b> Методы уменьшения размерностей</a></li>
 <li class="chapter" data-level="19" data-path="tasks.html"><a href="tasks.html"><i class="fa fa-check"></i><b>19</b> Задания</a><ul>
 <li class="chapter" data-level="19.1" data-path="tasks.html"><a href="tasks.html#vec_task_1"><i class="fa fa-check"></i><b>19.1</b> Вектор</a></li>
@@ -420,24 +446,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(n\)</span> — количество наблюдений.</li>
 </ul>
 <p>Представим, что у нас есть следующие данные:</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-554-1.png" width="672" /></p>
 <p>Тогда дисперсия — это сумма квадратов расстояний от каждой точки до среднего выборки (пунктирная линия) разделенное на количество наблюдений - 1 (по духу эта мера — обычное среднее, но если вас инетересует разница смещенной и несмещенной оценки дисперсии, см. <a href="https://youtu.be/Cn0skMJ2F3c">видео</a>).</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-555-1.png" width="672" /></p>
 <p>Для того чтобы было понятнее, что такое дисперсия, давайте рассмотрим несколько расспределений с одним и тем же средним, но разными дисперсиями:</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>В R дисперсию можно посчитать при помощи функции <code>var()</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="корреляция-и-регрессия.html#cb1-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb1-2"><a href="корреляция-и-регрессия.html#cb1-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb1-3"><a href="корреляция-и-регрессия.html#cb1-3"></a><span class="kw">var</span>(x)</span></code></pre></div>
-<pre><code>## [1] 172.2993</code></pre>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-556-1.png" width="672" /></p>
+<p>В R дисперсию можно посчитать при помощи функции <code>var()</code><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+<div class="sourceCode" id="cb1100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1100-1"><a href="корреляция-и-регрессия.html#cb1100-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1100-2"><a href="корреляция-и-регрессия.html#cb1100-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb1100-3"><a href="корреляция-и-регрессия.html#cb1100-3"></a><span class="kw">var</span>(x)</span></code></pre></div>
+<pre><code>[1] 172.2993</code></pre>
 <p>Проверим, что функция выдает то же, что мы записали в формуле.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="корреляция-и-регрессия.html#cb3-1"></a><span class="kw">var</span>(x) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>((x <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(x))<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb1102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1102-1"><a href="корреляция-и-регрессия.html#cb1102-1"></a><span class="kw">var</span>(x) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>((x <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(x))<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
 <p>Так как дисперсия является квадратом отклонения, то часто вместо нее используют более интерпретируемое стандартное отклонение <span class="math inline">\(\sigma\)</span> — корень из дисперсии. В R ее можно посчитать при помощи функции <code>sd()</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="корреляция-и-регрессия.html#cb5-1"></a><span class="kw">sd</span>(x)</span></code></pre></div>
-<pre><code>## [1] 13.12628</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="корреляция-и-регрессия.html#cb7-1"></a><span class="kw">sd</span>(x) <span class="op">==</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">var</span>(x))</span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb1104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1104-1"><a href="корреляция-и-регрессия.html#cb1104-1"></a><span class="kw">sd</span>(x)</span></code></pre></div>
+<pre><code>[1] 13.12628</code></pre>
+<div class="sourceCode" id="cb1106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1106-1"><a href="корреляция-и-регрессия.html#cb1106-1"></a><span class="kw">sd</span>(x) <span class="op">==</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">var</span>(x))</span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
 <div class="rmdtask">
 <p>
 Посчитайте дисперсию переменной <code>sleep_total</code> в датасете <code>msleep</code>, встроенный в <code>tidyverse</code>. Ответ округлите до двух знаков после запятой.
@@ -466,26 +492,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>z-преобразование</strong> (еще используют термин <strong>нормализация</strong>) — это способ представления данных в виде расстояний от среднего, измеряемых в стандартных отклонениях. Для того чтобы его получить, нужно из каждого наблюдения вычесть среднее и результат разделить на стандартное отклонение.</p>
 <p><span class="math display">\[x_i = \frac{x_i - \bar{x}}{\sigma_X}\]</span></p>
 <p>Если все наблюдения z-преобразовать, то получиться распределение с средним в 0 и стандартным отклонением 1 (или очень близко к ним).</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-564-1.png" width="672" /></p>
 <p>Само по себе <span class="math inline">\(z\)</span>-преобразование ничего особенного нам про данные не говорит. Однако это преобразование позволяет привести к “общему знаменателю” разные переменные. Т. е. это преобразование ничего нам не говорит про конкретный набор данных, но позволяет сравнивать разные наборы данных.</p>
 <p>В R z-преобразование можно сделать при помощи функции <code>scale()</code>. Эта функция вовзращает матрицу, поэтому я использую индекс <code>[,1]</code>, чтобы результат был вектором.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="корреляция-и-регрессия.html#cb9-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb9-2"><a href="корреляция-и-регрессия.html#cb9-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb9-3"><a href="корреляция-и-регрессия.html#cb9-3"></a><span class="kw">scale</span>(x)[,<span class="dv">1</span>]</span></code></pre></div>
-<pre><code>##  [1]  0.8982271 -0.5764146  0.1304317  0.3359234  0.1617734 -0.2270593
-##  [7]  1.0053127 -0.2183246  1.3914857 -0.1939880  0.8478787  1.5958251
-## [13] -1.2042865 -0.3586002 -0.2477787  0.3382758 -0.3627629 -2.1699785
-## [19] -2.0054319  0.8594918</code></pre>
+<div class="sourceCode" id="cb1108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1108-1"><a href="корреляция-и-регрессия.html#cb1108-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1108-2"><a href="корреляция-и-регрессия.html#cb1108-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb1108-3"><a href="корреляция-и-регрессия.html#cb1108-3"></a><span class="kw">scale</span>(x)[,<span class="dv">1</span>]</span></code></pre></div>
+<pre><code> [1]  0.8982271 -0.5764146  0.1304317  0.3359234  0.1617734 -0.2270593
+ [7]  1.0053127 -0.2183246  1.3914857 -0.1939880  0.8478787  1.5958251
+[13] -1.2042865 -0.3586002 -0.2477787  0.3382758 -0.3627629 -2.1699785
+[19] -2.0054319  0.8594918</code></pre>
 <p>Проверим, что функция выдает то же, что мы записали в формуле.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="корреляция-и-регрессия.html#cb11-1"></a><span class="kw">scale</span>(x)[,<span class="dv">1</span>] <span class="op">==</span><span class="st"> </span>(x<span class="op">-</span><span class="kw">mean</span>(x))<span class="op">/</span><span class="kw">sd</span>(x)</span></code></pre></div>
-<pre><code>##  [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
-## [16] TRUE TRUE TRUE TRUE TRUE</code></pre>
+<div class="sourceCode" id="cb1110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1110-1"><a href="корреляция-и-регрессия.html#cb1110-1"></a><span class="kw">scale</span>(x)[,<span class="dv">1</span>] <span class="op">==</span><span class="st"> </span>(x<span class="op">-</span><span class="kw">mean</span>(x))<span class="op">/</span><span class="kw">sd</span>(x)</span></code></pre></div>
+<pre><code> [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[16] TRUE TRUE TRUE TRUE TRUE</code></pre>
 <div class="rmdtask">
 <p>
 Однаждый я заполучил градусник со шкалой Фаренгейта и целый год измерял температуру в Москве при помощи градусников с шкалой Фарингейта и Цельсия. <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/moscow_average_temperature.csv">В датасет</a> записаны средние значения для каждого месяца. Постройте график нормализованных и ненормализованных измерений. Что можно сказать про измерения, сделанные разными термометрами?
 </p>
 </div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-568-1.png" width="672" /></p>
 </div>
 <div id="ковариация" class="section level2">
 <h2><span class="header-section-number">15.3</span> Ковариация</h2>
@@ -499,24 +525,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(n\)</span> — количество наблюдений.</li>
 </ul>
 <p>Представим, что у нас есть следующие данные:</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-569-1.png" width="672" /></p>
 <p>Тогда, согласно формуле, для каждой точки вычисляется следующая площадь (пуктирными линиями обозначены средние):</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-570-1.png" width="672" /></p>
 <p>Если значения <span class="math inline">\(x_i\)</span> и <span class="math inline">\(y_i\)</span> какой-то точки либо оба больше, либо оба меньше средних <span class="math inline">\(\bar{x}\)</span> и <span class="math inline">\(\bar{y}\)</span>, то получившееся произведение будет иметь знак <code>+</code>, если же наоборот — знак <code>-</code>. На графике это показано цветом.</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-571-1.png" width="672" /></p>
 <p>Таким образом, если много красных прямоугольников, то значение суммы будет положительное и обозначать положительную связь (чем больше <span class="math inline">\(x\)</span>, тем больше <span class="math inline">\(y\)</span>), а если будет много синий прямоугольников, то значение суммы отрицательное и обозначать положительную связь (чем больше <span class="math inline">\(x\)</span>, тем меньше <span class="math inline">\(y\)</span>). Непосредственно значение ковариации не очень информативно, так как может достаточно сильно варьироваться от датасета к датасету.</p>
 <p>В R ковариацию можно посчитать при помощи функции <code>cov()</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="корреляция-и-регрессия.html#cb13-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb13-2"><a href="корреляция-и-регрессия.html#cb13-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb13-3"><a href="корреляция-и-регрессия.html#cb13-3"></a>y &lt;-<span class="st">  </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb13-4"><a href="корреляция-и-регрессия.html#cb13-4"></a><span class="kw">cov</span>(x, y)</span></code></pre></div>
-<pre><code>## [1] 18.72204</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="корреляция-и-регрессия.html#cb15-1"></a><span class="kw">cov</span>(x, <span class="op">-</span>y<span class="op">*</span><span class="dv">2</span>)</span></code></pre></div>
-<pre><code>## [1] -37.44407</code></pre>
+<div class="sourceCode" id="cb1112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1112-1"><a href="корреляция-и-регрессия.html#cb1112-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1112-2"><a href="корреляция-и-регрессия.html#cb1112-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb1112-3"><a href="корреляция-и-регрессия.html#cb1112-3"></a>y &lt;-<span class="st">  </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb1112-4"><a href="корреляция-и-регрессия.html#cb1112-4"></a><span class="kw">cov</span>(x, y)</span></code></pre></div>
+<pre><code>[1] 18.72204</code></pre>
+<div class="sourceCode" id="cb1114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1114-1"><a href="корреляция-и-регрессия.html#cb1114-1"></a><span class="kw">cov</span>(x, <span class="op">-</span>y<span class="op">*</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>[1] -37.44407</code></pre>
 <p>Как видно, простое умножение на два удвоило значение ковариации, что показывает, что непосредственно ковариацию использовать для сравнения разных датасетов не стоит.</p>
 <p>Проверим, что функция выдает то же, что мы записали в формуле.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="корреляция-и-регрессия.html#cb17-1"></a><span class="kw">cov</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>((x<span class="op">-</span><span class="kw">mean</span>(x))<span class="op">*</span>(y <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(y)))<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb1116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1116-1"><a href="корреляция-и-регрессия.html#cb1116-1"></a><span class="kw">cov</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>((x<span class="op">-</span><span class="kw">mean</span>(x))<span class="op">*</span>(y <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(y)))<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
 </div>
 <div id="корреляция" class="section level2">
 <h2><span class="header-section-number">15.4</span> Корреляция</h2>
@@ -533,7 +559,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(n\)</span> — количество наблюдений.</li>
 </ul>
 <p>Последнее уравнение показывает, что коэффициент корреляции Пирсона можно представить как среднее (с поправкой, поэтому <span class="math inline">\(n-1\)</span>, а не <span class="math inline">\(n\)</span>) произведение <span class="math inline">\(z\)</span>-нормализованных значений двух переменных.</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-574-1.png" width="672" /></p>
 <p>Эта нормализация приводит к тому, что</p>
 <ul>
 <li>значения корреляции имеют те же свойства знака коэффициента что и ковариация:
@@ -548,19 +574,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p>Для того чтобы было понятнее, что такое корреляция, давайте рассмотрим несколько расспределений с разными значениями корреляции:</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-575-1.png" width="672" /></p>
 <p>Как видно из этого графика, чем ближе модуль корреляции к 1, тем боллее компактно расположены точки друг к другу, чем ближе к 0, тем более рассеяны значения. Достаточно легко научиться приблизительно оценивать коэфициент корреляции на глаз, поиграв 2–5 минут в игру “Угадай корреляцию” <a href="http://guessthecorrelation.com/">здесь</a> или <a href="https://cheng-dsdp.shinyapps.io/CorApp/">здесь</a>.</p>
 <p>В R коэффициент корреляции Пирсона можно посчитать при помощи функции <code>cor()</code>.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="корреляция-и-регрессия.html#cb19-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb19-2"><a href="корреляция-и-регрессия.html#cb19-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb19-3"><a href="корреляция-и-регрессия.html#cb19-3"></a>y &lt;-<span class="st">  </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb19-4"><a href="корреляция-и-регрессия.html#cb19-4"></a><span class="kw">cor</span>(x, y)</span></code></pre></div>
-<pre><code>## [1] 0.6659041</code></pre>
+<div class="sourceCode" id="cb1118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1118-1"><a href="корреляция-и-регрессия.html#cb1118-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1118-2"><a href="корреляция-и-регрессия.html#cb1118-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">mean =</span> <span class="dv">50</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb1118-3"><a href="корреляция-и-регрессия.html#cb1118-3"></a>y &lt;-<span class="st">  </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">15</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb1118-4"><a href="корреляция-и-регрессия.html#cb1118-4"></a><span class="kw">cor</span>(x, y)</span></code></pre></div>
+<pre><code>[1] 0.6659041</code></pre>
 <p>Проверим, что функция выдает то же, что мы записали в формуле.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="корреляция-и-регрессия.html#cb21-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">cov</span>(x, y)<span class="op">/</span>(<span class="kw">sd</span>(x)<span class="op">*</span><span class="kw">sd</span>(y))</span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="корреляция-и-регрессия.html#cb23-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">scale</span>(x)<span class="op">*</span><span class="kw">scale</span>(y))<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb1120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1120-1"><a href="корреляция-и-регрессия.html#cb1120-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">cov</span>(x, y)<span class="op">/</span>(<span class="kw">sd</span>(x)<span class="op">*</span><span class="kw">sd</span>(y))</span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb1122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1122-1"><a href="корреляция-и-регрессия.html#cb1122-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">sum</span>(<span class="kw">scale</span>(x)<span class="op">*</span><span class="kw">scale</span>(y))<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
 <div class="rmdtask">
 <p>
 Посчитайте на основе <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/moscow_average_temperature.csv">датасета с температурой</a> корреляцию между разными измерениями в шкалах Фарингейта и Цельсия? Результаты округлите до трех знаков после запятой.
@@ -576,34 +602,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="ранговые-корреляции-спирмана-и-кендалла" class="section level3">
 <h3><span class="header-section-number">15.4.2</span> Ранговые корреляции Спирмана и Кендалла</h3>
 <p>Коэффициент корреляции Пирсона к сожалению, чувствителен к значениям наблюдений. Если связь между переменными нелинейна, то оценка будет получаться смещенной. Рассмотрим, например, словарь [Ляшевской, Шарова 2011]:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="корреляция-и-регрессия.html#cb25-1"></a>freqdict &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&quot;https://github.com/agricolamz/DS_for_DH/raw/master/data/freq_dict_2011.csv&quot;</span>)</span>
-<span id="cb25-2"><a href="корреляция-и-регрессия.html#cb25-2"></a>freqdict <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb25-3"><a href="корреляция-и-регрессия.html#cb25-3"></a><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(freq_ipm)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb25-4"><a href="корреляция-и-регрессия.html#cb25-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb25-5"><a href="корреляция-и-регрессия.html#cb25-5"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) -&gt;</span>
-<span id="cb25-6"><a href="корреляция-и-регрессия.html#cb25-6"></a><span class="st">  </span>filered_freqdict</span>
-<span id="cb25-7"><a href="корреляция-и-регрессия.html#cb25-7"></a></span>
-<span id="cb25-8"><a href="корреляция-и-регрессия.html#cb25-8"></a>filered_freqdict <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb25-9"><a href="корреляция-и-регрессия.html#cb25-9"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(id, freq_ipm, <span class="dt">label =</span> lemma))<span class="op">+</span></span>
-<span id="cb25-10"><a href="корреляция-и-регрессия.html#cb25-10"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
-<span id="cb25-11"><a href="корреляция-и-регрессия.html#cb25-11"></a><span class="st">  </span>ggrepel<span class="op">::</span><span class="kw">geom_text_repel</span>()<span class="op">+</span></span>
-<span id="cb25-12"><a href="корреляция-и-регрессия.html#cb25-12"></a><span class="st">  </span><span class="kw">scale_y_log10</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<div class="sourceCode" id="cb1124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1124-1"><a href="корреляция-и-регрессия.html#cb1124-1"></a>freqdict &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&quot;https://github.com/agricolamz/DS_for_DH/raw/master/data/freq_dict_2011.csv&quot;</span>)</span>
+<span id="cb1124-2"><a href="корреляция-и-регрессия.html#cb1124-2"></a>freqdict <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1124-3"><a href="корреляция-и-регрессия.html#cb1124-3"></a><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(freq_ipm)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1124-4"><a href="корреляция-и-регрессия.html#cb1124-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1124-5"><a href="корреляция-и-регрессия.html#cb1124-5"></a><span class="st">  </span><span class="kw">slice</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) -&gt;</span>
+<span id="cb1124-6"><a href="корреляция-и-регрессия.html#cb1124-6"></a><span class="st">  </span>filered_freqdict</span>
+<span id="cb1124-7"><a href="корреляция-и-регрессия.html#cb1124-7"></a></span>
+<span id="cb1124-8"><a href="корреляция-и-регрессия.html#cb1124-8"></a>filered_freqdict <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1124-9"><a href="корреляция-и-регрессия.html#cb1124-9"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(id, freq_ipm, <span class="dt">label =</span> lemma))<span class="op">+</span></span>
+<span id="cb1124-10"><a href="корреляция-и-регрессия.html#cb1124-10"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
+<span id="cb1124-11"><a href="корреляция-и-регрессия.html#cb1124-11"></a><span class="st">  </span>ggrepel<span class="op">::</span><span class="kw">geom_text_repel</span>()<span class="op">+</span></span>
+<span id="cb1124-12"><a href="корреляция-и-регрессия.html#cb1124-12"></a><span class="st">  </span><span class="kw">scale_y_log10</span>()</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-580-1.png" width="672" /></p>
 <p>В целом корреляция между рангом и частотой должна быть высокая, однако связь между этими переменными нелинейна, так что коэффициент корреляции Пирсона не такой уж и высокий:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="корреляция-и-регрессия.html#cb26-1"></a><span class="kw">cor</span>(filered_freqdict<span class="op">$</span>freq_ipm, filered_freqdict<span class="op">$</span>id)</span></code></pre></div>
-<pre><code>## [1] -0.6307876</code></pre>
+<div class="sourceCode" id="cb1125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1125-1"><a href="корреляция-и-регрессия.html#cb1125-1"></a><span class="kw">cor</span>(filered_freqdict<span class="op">$</span>freq_ipm, filered_freqdict<span class="op">$</span>id)</span></code></pre></div>
+<pre><code>[1] -0.6307876</code></pre>
 <p>Для решения той проблемы обычно используют ранговые коэффециенты коррляции Спирмана и Кендала, которые принимают во внимание ранг значения, а не его непосредственное значение.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="корреляция-и-регрессия.html#cb28-1"></a><span class="kw">cor</span>(filered_freqdict<span class="op">$</span>freq_ipm, filered_freqdict<span class="op">$</span>id, <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] -1</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="корреляция-и-регрессия.html#cb30-1"></a><span class="kw">cor</span>(filered_freqdict<span class="op">$</span>freq_ipm, filered_freqdict<span class="op">$</span>id, <span class="dt">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] -1</code></pre>
+<div class="sourceCode" id="cb1127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1127-1"><a href="корреляция-и-регрессия.html#cb1127-1"></a><span class="kw">cor</span>(filered_freqdict<span class="op">$</span>freq_ipm, filered_freqdict<span class="op">$</span>id, <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<pre><code>[1] -1</code></pre>
+<div class="sourceCode" id="cb1129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1129-1"><a href="корреляция-и-регрессия.html#cb1129-1"></a><span class="kw">cor</span>(filered_freqdict<span class="op">$</span>freq_ipm, filered_freqdict<span class="op">$</span>id, <span class="dt">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
+<pre><code>[1] -1</code></pre>
 <p>Давайте сравним с предыдущими наблюдениями и их логаотфмамиы:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="корреляция-и-регрессия.html#cb32-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">cor</span>(<span class="kw">log</span>(x), <span class="kw">log</span>(y))</span></code></pre></div>
-<pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="корреляция-и-регрессия.html#cb34-1"></a><span class="kw">cor</span>(x, y, <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>) <span class="op">==</span><span class="st"> </span><span class="kw">cor</span>(<span class="kw">log</span>(x), <span class="kw">log</span>(y), <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="корреляция-и-регрессия.html#cb36-1"></a><span class="kw">cor</span>(x, y, <span class="dt">method =</span> <span class="st">&quot;kendall&quot;</span>) <span class="op">==</span><span class="st"> </span><span class="kw">cor</span>(<span class="kw">log</span>(x), <span class="kw">log</span>(y), <span class="dt">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb1131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1131-1"><a href="корреляция-и-регрессия.html#cb1131-1"></a><span class="kw">cor</span>(x, y) <span class="op">==</span><span class="st"> </span><span class="kw">cor</span>(<span class="kw">log</span>(x), <span class="kw">log</span>(y))</span></code></pre></div>
+<pre><code>[1] FALSE</code></pre>
+<div class="sourceCode" id="cb1133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1133-1"><a href="корреляция-и-регрессия.html#cb1133-1"></a><span class="kw">cor</span>(x, y, <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>) <span class="op">==</span><span class="st"> </span><span class="kw">cor</span>(<span class="kw">log</span>(x), <span class="kw">log</span>(y), <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode" id="cb1135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1135-1"><a href="корреляция-и-регрессия.html#cb1135-1"></a><span class="kw">cor</span>(x, y, <span class="dt">method =</span> <span class="st">&quot;kendall&quot;</span>) <span class="op">==</span><span class="st"> </span><span class="kw">cor</span>(<span class="kw">log</span>(x), <span class="kw">log</span>(y), <span class="dt">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
 </div>
 </div>
 <div id="регрессионный-анализ" class="section level2">
@@ -611,7 +637,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="основы" class="section level3">
 <h3><span class="header-section-number">15.5.1</span> Основы</h3>
 <p>Суть регрессионного анализа в моделировании связи между двумя и более переменными при помощи прямой на плоскости. Формула прямой зависит от двух параметров: свободного члена (intercept) и углового коэффициента (slope).</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-584-1.png" width="672" /></p>
 <div class="rmdtask">
 <p>
 Укажите значение свободного члена для красной прямой.
@@ -688,7 +714,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(\hat\beta_1\)</span> — оценка углового коэффициента (slope);</li>
 <li><span class="math inline">\(\epsilon_i\)</span> — <span class="math inline">\(i\)</span>-ый остаток, разница между оценкой модели (<span class="math inline">\(\hat\beta_0 + \hat\beta_1 \times x_i\)</span>) и реальным значением <span class="math inline">\(y_i\)</span>; весь вектор остатков иногда называют случайным шумом (на графике выделены красным).</li>
 </ul>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-597-1.png" width="672" /></p>
 <p>Задача регрессии — оценить параметры <span class="math inline">\(\hat\beta_0\)</span> и <span class="math inline">\(\hat\beta_1\)</span>, если нам известны все значения <span class="math inline">\(x_i\)</span> и <span class="math inline">\(y_i\)</span> и мы пытаемся минимизировать значния <span class="math inline">\(\epsilon_i\)</span>. В данном конкретном случае, задачу можно решить аналитически и получить следующие формулы:</p>
 <p><span class="math display">\[\hat\beta_1 = \frac{(\sum_{i=1}^n x_i\times y_i)-n\times\bar x \times \bar y}{\sum_{i = 1}^n(x_i-\bar x)^2}\]</span></p>
 <p><span class="math display">\[\hat\beta_0 = \bar y - \hat\beta_1\times\bar x\]</span></p>
@@ -696,62 +722,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="первая-регрессия" class="section level3">
 <h3><span class="header-section-number">15.5.2</span> Первая регрессия</h3>
 <p>Давайте попробуем смоделировать количество слов <em>и</em> в рассказах М. Зощенко в зависимости от длины рассказа:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="корреляция-и-регрессия.html#cb38-1"></a>zo &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&quot;https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv&quot;</span>)</span>
-<span id="cb38-2"><a href="корреляция-и-регрессия.html#cb38-2"></a></span>
-<span id="cb38-3"><a href="корреляция-и-регрессия.html#cb38-3"></a>zo <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb38-4"><a href="корреляция-и-регрессия.html#cb38-4"></a><span class="st">  </span><span class="kw">filter</span>(word <span class="op">==</span><span class="st"> &quot;и&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb38-5"><a href="корреляция-и-регрессия.html#cb38-5"></a><span class="st">  </span><span class="kw">distinct</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb38-6"><a href="корреляция-и-регрессия.html#cb38-6"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(n_words, n))<span class="op">+</span></span>
-<span id="cb38-7"><a href="корреляция-и-регрессия.html#cb38-7"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
-<span id="cb38-8"><a href="корреляция-и-регрессия.html#cb38-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;количество слов в рассказе&quot;</span>,</span>
-<span id="cb38-9"><a href="корреляция-и-регрессия.html#cb38-9"></a>       <span class="dt">y =</span> <span class="st">&quot;количество и&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<div class="sourceCode" id="cb1137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1137-1"><a href="корреляция-и-регрессия.html#cb1137-1"></a>zo &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&quot;https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv&quot;</span>)</span>
+<span id="cb1137-2"><a href="корреляция-и-регрессия.html#cb1137-2"></a></span>
+<span id="cb1137-3"><a href="корреляция-и-регрессия.html#cb1137-3"></a>zo <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1137-4"><a href="корреляция-и-регрессия.html#cb1137-4"></a><span class="st">  </span><span class="kw">filter</span>(word <span class="op">==</span><span class="st"> &quot;и&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1137-5"><a href="корреляция-и-регрессия.html#cb1137-5"></a><span class="st">  </span><span class="kw">distinct</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1137-6"><a href="корреляция-и-регрессия.html#cb1137-6"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(n_words, n))<span class="op">+</span></span>
+<span id="cb1137-7"><a href="корреляция-и-регрессия.html#cb1137-7"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
+<span id="cb1137-8"><a href="корреляция-и-регрессия.html#cb1137-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;количество слов в рассказе&quot;</span>,</span>
+<span id="cb1137-9"><a href="корреляция-и-регрессия.html#cb1137-9"></a>       <span class="dt">y =</span> <span class="st">&quot;количество и&quot;</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-598-1.png" width="672" /></p>
 <p>Мы видим, несколько одиночных точек, давайте избавимся от них и добавим регрессионную линию при помощи функции <code>geom_smooth()</code>:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="корреляция-и-регрессия.html#cb39-1"></a>zo <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb39-2"><a href="корреляция-и-регрессия.html#cb39-2"></a><span class="st">  </span><span class="kw">filter</span>(word <span class="op">==</span><span class="st"> &quot;и&quot;</span>,</span>
-<span id="cb39-3"><a href="корреляция-и-регрессия.html#cb39-3"></a>         n_words <span class="op">&lt;</span><span class="st"> </span><span class="dv">1500</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb39-4"><a href="корреляция-и-регрессия.html#cb39-4"></a><span class="st">  </span><span class="kw">distinct</span>() -&gt;</span>
-<span id="cb39-5"><a href="корреляция-и-регрессия.html#cb39-5"></a><span class="st">  </span>zo_filtered</span>
-<span id="cb39-6"><a href="корреляция-и-регрессия.html#cb39-6"></a></span>
-<span id="cb39-7"><a href="корреляция-и-регрессия.html#cb39-7"></a>zo_filtered <span class="op">%&gt;%</span><span class="st">   </span></span>
-<span id="cb39-8"><a href="корреляция-и-регрессия.html#cb39-8"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(n_words, n))<span class="op">+</span></span>
-<span id="cb39-9"><a href="корреляция-и-регрессия.html#cb39-9"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
-<span id="cb39-10"><a href="корреляция-и-регрессия.html#cb39-10"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)<span class="op">+</span></span>
-<span id="cb39-11"><a href="корреляция-и-регрессия.html#cb39-11"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;количество слов в рассказе&quot;</span>,</span>
-<span id="cb39-12"><a href="корреляция-и-регрессия.html#cb39-12"></a>       <span class="dt">y =</span> <span class="st">&quot;количество и&quot;</span>)</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<div class="sourceCode" id="cb1138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1138-1"><a href="корреляция-и-регрессия.html#cb1138-1"></a>zo <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1138-2"><a href="корреляция-и-регрессия.html#cb1138-2"></a><span class="st">  </span><span class="kw">filter</span>(word <span class="op">==</span><span class="st"> &quot;и&quot;</span>,</span>
+<span id="cb1138-3"><a href="корреляция-и-регрессия.html#cb1138-3"></a>         n_words <span class="op">&lt;</span><span class="st"> </span><span class="dv">1500</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1138-4"><a href="корреляция-и-регрессия.html#cb1138-4"></a><span class="st">  </span><span class="kw">distinct</span>() -&gt;</span>
+<span id="cb1138-5"><a href="корреляция-и-регрессия.html#cb1138-5"></a><span class="st">  </span>zo_filtered</span>
+<span id="cb1138-6"><a href="корреляция-и-регрессия.html#cb1138-6"></a></span>
+<span id="cb1138-7"><a href="корреляция-и-регрессия.html#cb1138-7"></a>zo_filtered <span class="op">%&gt;%</span><span class="st">   </span></span>
+<span id="cb1138-8"><a href="корреляция-и-регрессия.html#cb1138-8"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(n_words, n))<span class="op">+</span></span>
+<span id="cb1138-9"><a href="корреляция-и-регрессия.html#cb1138-9"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
+<span id="cb1138-10"><a href="корреляция-и-регрессия.html#cb1138-10"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>)<span class="op">+</span></span>
+<span id="cb1138-11"><a href="корреляция-и-регрессия.html#cb1138-11"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;количество слов в рассказе&quot;</span>,</span>
+<span id="cb1138-12"><a href="корреляция-и-регрессия.html#cb1138-12"></a>       <span class="dt">y =</span> <span class="st">&quot;количество и&quot;</span>)</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-599-1.png" width="672" /></p>
 <p>Чтобы получить формулу этой линии нужно запустить функцию, которая оценивает линейную регрессию:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="корреляция-и-регрессия.html#cb40-1"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(n<span class="op">~</span>n_words, <span class="dt">data =</span> zo_filtered)</span>
-<span id="cb40-2"><a href="корреляция-и-регрессия.html#cb40-2"></a>fit</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = n ~ n_words, data = zo_filtered)
-## 
-## Coefficients:
-## (Intercept)      n_words  
-##    -1.47184      0.04405</code></pre>
+<div class="sourceCode" id="cb1139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1139-1"><a href="корреляция-и-регрессия.html#cb1139-1"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(n<span class="op">~</span>n_words, <span class="dt">data =</span> zo_filtered)</span>
+<span id="cb1139-2"><a href="корреляция-и-регрессия.html#cb1139-2"></a>fit</span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = n ~ n_words, data = zo_filtered)
+
+Coefficients:
+(Intercept)      n_words  
+   -1.47184      0.04405  </code></pre>
 <p>Вот мы и получили коэффициенты, теперь мы видим, что наша модель считает следующее:</p>
 <p><span class="math display">\[n = -1.47184 + 0.04405 \times n\_words\]</span></p>
 <p>Более подробную информцию можно посмотреть, если запустить модель в функцию <code>summary()</code>:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="корреляция-и-регрессия.html#cb42-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = n ~ n_words, data = zo_filtered)
-## 
-## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -19.6830  -4.3835   0.8986   4.6486  19.6413 
-## 
-## Coefficients:
-##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) -1.471840   2.467149  -0.597    0.553    
-## n_words      0.044049   0.003666  12.015   &lt;2e-16 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 7.945 on 64 degrees of freedom
-## Multiple R-squared:  0.6928, Adjusted R-squared:  0.688 
-## F-statistic: 144.4 on 1 and 64 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb1141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1141-1"><a href="корреляция-и-регрессия.html#cb1141-1"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = n ~ n_words, data = zo_filtered)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-19.6830  -4.3835   0.8986   4.6486  19.6413 
+
+Coefficients:
+             Estimate Std. Error t value            Pr(&gt;|t|)    
+(Intercept) -1.471840   2.467149  -0.597               0.553    
+n_words      0.044049   0.003666  12.015 &lt;0.0000000000000002 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 7.945 on 64 degrees of freedom
+Multiple R-squared:  0.6928,    Adjusted R-squared:  0.688 
+F-statistic: 144.4 on 1 and 64 DF,  p-value: &lt; 0.00000000000000022</code></pre>
 <p>В разделе <code>Coefficients</code> содержится информацию про наши коэффициенты:</p>
 <ul>
 <li><code>Estimate</code> – полученная оценка коэффициентов;</li>
@@ -760,16 +786,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>Pr(&gt;|t|)</code> – полученное <span class="math inline">\(p\)</span>-значение;</li>
 <li><code>Multiple R-squared</code> и <code>Adjusted R-squared</code> — одна из оценок модели, показывает связь между переменными. Без поправок совпадает с квадратом коэффициента корреляции Пирсона:</li>
 </ul>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="корреляция-и-регрессия.html#cb44-1"></a><span class="kw">cor</span>(zo_filtered<span class="op">$</span>n_words, zo_filtered<span class="op">$</span>n)<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
-<pre><code>## [1] 0.6928376</code></pre>
+<div class="sourceCode" id="cb1143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1143-1"><a href="корреляция-и-регрессия.html#cb1143-1"></a><span class="kw">cor</span>(zo_filtered<span class="op">$</span>n_words, zo_filtered<span class="op">$</span>n)<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>[1] 0.6928376</code></pre>
 <ul>
 <li><code>F-statistic</code> — <span class="math inline">\(F\)</span>-статистика полученная при проведении теста, проверяющего, не являются ли хотя бы один из коэффицинтов статистически значимо отличается от нуля. Совпадает с результатами дисперсионного анализа (ANOVA).</li>
 </ul>
 <p>Теперь мы можем даже предсказывать значения, которые мы еще не видели. Например, сколько будет и в рассказе Зощенко длиной 1000 слов?</p>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="корреляция-и-регрессия.html#cb46-1"></a><span class="kw">predict</span>(fit, <span class="kw">tibble</span>(<span class="dt">n_words =</span> <span class="dv">1000</span>))</span></code></pre></div>
-<pre><code>##        1 
-## 42.57715</code></pre>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-603-1.png" width="672" /></p>
+<div class="sourceCode" id="cb1145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1145-1"><a href="корреляция-и-регрессия.html#cb1145-1"></a><span class="kw">predict</span>(fit, <span class="kw">tibble</span>(<span class="dt">n_words =</span> <span class="dv">1000</span>))</span></code></pre></div>
+<pre><code>       1 
+42.57715 </code></pre>
 <div class="rmdtask">
 <p>
 Постройте ленейную ргерессию на основании <a href="https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv">рассказов А. Чехова</a>, предсказывая количество и на основании количства слов. При моделировании используйте только рассказы длиной меньше 2500 слов. Укажите свободный член получившейся модели, округлив его до 3 знаков после запятой.
@@ -807,49 +833,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="категориальные-переменные-1" class="section level3">
 <h3><span class="header-section-number">15.5.3</span> Категориальные переменные</h3>
 <p>Что если мы хотим включить в наш анализ категориальные переменные? Давайте рассмотрим простой пример с <a href="https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv">рассказами Чехова</a> и <a href="https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv">Зощенко</a>, которые мы рассматривали в прошлом разделе. Мы будем анализировать логарифм доли слов деньги:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="корреляция-и-регрессия.html#cb48-1"></a>chekhov &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&quot;https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv&quot;</span>)</span>
-<span id="cb48-2"><a href="корреляция-и-регрессия.html#cb48-2"></a>zoshenko &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&quot;https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv&quot;</span>)</span>
-<span id="cb48-3"><a href="корреляция-и-регрессия.html#cb48-3"></a></span>
-<span id="cb48-4"><a href="корреляция-и-регрессия.html#cb48-4"></a>chekhov<span class="op">$</span>author &lt;-<span class="st"> &quot;Чехов&quot;</span></span>
-<span id="cb48-5"><a href="корреляция-и-регрессия.html#cb48-5"></a>zoshenko<span class="op">$</span>author &lt;-<span class="st"> &quot;Зощенко&quot;</span></span>
-<span id="cb48-6"><a href="корреляция-и-регрессия.html#cb48-6"></a></span>
-<span id="cb48-7"><a href="корреляция-и-регрессия.html#cb48-7"></a>chekhov <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb48-8"><a href="корреляция-и-регрессия.html#cb48-8"></a><span class="st">  </span><span class="kw">bind_rows</span>(zoshenko) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb48-9"><a href="корреляция-и-регрессия.html#cb48-9"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(word, <span class="st">&quot;деньг&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb48-10"><a href="корреляция-и-регрессия.html#cb48-10"></a><span class="st">  </span><span class="kw">group_by</span>(author, titles, n_words) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb48-11"><a href="корреляция-и-регрессия.html#cb48-11"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">sum</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb48-12"><a href="корреляция-и-регрессия.html#cb48-12"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">log_ratio =</span> <span class="kw">log</span>(n<span class="op">/</span>n_words)) -&gt;</span>
-<span id="cb48-13"><a href="корреляция-и-регрессия.html#cb48-13"></a><span class="st">  </span>checkov_zoshenko</span></code></pre></div>
+<div class="sourceCode" id="cb1147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1147-1"><a href="корреляция-и-регрессия.html#cb1147-1"></a>chekhov &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&quot;https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_chekhov.tsv&quot;</span>)</span>
+<span id="cb1147-2"><a href="корреляция-и-регрессия.html#cb1147-2"></a>zoshenko &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&quot;https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv&quot;</span>)</span>
+<span id="cb1147-3"><a href="корреляция-и-регрессия.html#cb1147-3"></a></span>
+<span id="cb1147-4"><a href="корреляция-и-регрессия.html#cb1147-4"></a>chekhov<span class="op">$</span>author &lt;-<span class="st"> &quot;Чехов&quot;</span></span>
+<span id="cb1147-5"><a href="корреляция-и-регрессия.html#cb1147-5"></a>zoshenko<span class="op">$</span>author &lt;-<span class="st"> &quot;Зощенко&quot;</span></span>
+<span id="cb1147-6"><a href="корреляция-и-регрессия.html#cb1147-6"></a></span>
+<span id="cb1147-7"><a href="корреляция-и-регрессия.html#cb1147-7"></a>chekhov <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1147-8"><a href="корреляция-и-регрессия.html#cb1147-8"></a><span class="st">  </span><span class="kw">bind_rows</span>(zoshenko) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1147-9"><a href="корреляция-и-регрессия.html#cb1147-9"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(word, <span class="st">&quot;деньг&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1147-10"><a href="корреляция-и-регрессия.html#cb1147-10"></a><span class="st">  </span><span class="kw">group_by</span>(author, titles, n_words) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1147-11"><a href="корреляция-и-регрессия.html#cb1147-11"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">sum</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1147-12"><a href="корреляция-и-регрессия.html#cb1147-12"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">log_ratio =</span> <span class="kw">log</span>(n<span class="op">/</span>n_words)) -&gt;</span>
+<span id="cb1147-13"><a href="корреляция-и-регрессия.html#cb1147-13"></a><span class="st">  </span>checkov_zoshenko</span></code></pre></div>
 <p>Визуализация выглядит так:
-<img src="DS_for_DH_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+<img src="DS_for_DH_files/figure-html/unnamed-chunk-612-1.png" width="672" /></p>
 <p>Красной точкой обозначены средние значения, так что мы видим, что между двумя писателями есть разница, но является ли она статистически значимой? В прошлом разделе, мы рассмотрели, что в таком случае можно сделать t-test:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="корреляция-и-регрессия.html#cb49-1"></a><span class="kw">t.test</span>(log_ratio<span class="op">~</span>author, </span>
-<span id="cb49-2"><a href="корреляция-и-регрессия.html#cb49-2"></a>       <span class="dt">data =</span> checkov_zoshenko, </span>
-<span id="cb49-3"><a href="корреляция-и-регрессия.html#cb49-3"></a>       <span class="dt">var.equal =</span><span class="ot">TRUE</span>) <span class="co"># здесь я мухлюю, отключая поправку Уэлча</span></span></code></pre></div>
-<pre><code>## 
-##  Two Sample t-test
-## 
-## data:  log_ratio by author
-## t = 5.6871, df = 125, p-value = 8.665e-08
-## alternative hypothesis: true difference in means is not equal to 0
-## 95 percent confidence interval:
-##  0.8606107 1.7793181
-## sample estimates:
-## mean in group Зощенко   mean in group Чехов 
-##             -5.021262             -6.341226</code></pre>
+<div class="sourceCode" id="cb1148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1148-1"><a href="корреляция-и-регрессия.html#cb1148-1"></a><span class="kw">t.test</span>(log_ratio<span class="op">~</span>author, </span>
+<span id="cb1148-2"><a href="корреляция-и-регрессия.html#cb1148-2"></a>       <span class="dt">data =</span> checkov_zoshenko, </span>
+<span id="cb1148-3"><a href="корреляция-и-регрессия.html#cb1148-3"></a>       <span class="dt">var.equal =</span><span class="ot">TRUE</span>) <span class="co"># здесь я мухлюю, отключая поправку Уэлча</span></span></code></pre></div>
+<pre><code>
+    Two Sample t-test
+
+data:  log_ratio by author
+t = 5.6871, df = 125, p-value = 0.00000008665
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.8606107 1.7793181
+sample estimates:
+mean in group Зощенко   mean in group Чехов 
+            -5.021262             -6.341226 </code></pre>
 <p>Разница между группами является статистически значимой (t(125) = 5.6871, p-value = 8.665e-08).</p>
 <p>Для того, чтобы запустить регрессию на категориальных данных категориальная переменная автоматически разбивается на группу бинарных dummy-переменных:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="корреляция-и-регрессия.html#cb51-1"></a><span class="kw">tibble</span>(<span class="dt">author =</span> <span class="kw">c</span>(<span class="st">&quot;Чехов&quot;</span>, <span class="st">&quot;Зощенко&quot;</span>),</span>
-<span id="cb51-2"><a href="корреляция-и-регрессия.html#cb51-2"></a>       <span class="dt">dummy_chekhov =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb51-3"><a href="корреляция-и-регрессия.html#cb51-3"></a>       <span class="dt">dummy_zoshenko =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1150-1"><a href="корреляция-и-регрессия.html#cb1150-1"></a><span class="kw">tibble</span>(<span class="dt">author =</span> <span class="kw">c</span>(<span class="st">&quot;Чехов&quot;</span>, <span class="st">&quot;Зощенко&quot;</span>),</span>
+<span id="cb1150-2"><a href="корреляция-и-регрессия.html#cb1150-2"></a>       <span class="dt">dummy_chekhov =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb1150-3"><a href="корреляция-и-регрессия.html#cb1150-3"></a>       <span class="dt">dummy_zoshenko =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["author"],"name":[1],"type":["chr"],"align":["left"]},{"label":["dummy_chekhov"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["dummy_zoshenko"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Чехов","2":"1","3":"0"},{"1":"Зощенко","2":"0","3":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Дальше для регрессионного анализа выкидывают одну из переменных, так как иначе модель не сойдется (dummy-переменных всегда n-1, где n — количество категорий в переменной).</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="корреляция-и-регрессия.html#cb52-1"></a><span class="kw">tibble</span>(<span class="dt">author =</span> <span class="kw">c</span>(<span class="st">&quot;Чехов&quot;</span>, <span class="st">&quot;Зощенко&quot;</span>),</span>
-<span id="cb52-2"><a href="корреляция-и-регрессия.html#cb52-2"></a>       <span class="dt">dummy_chekhov =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1151-1"><a href="корреляция-и-регрессия.html#cb1151-1"></a><span class="kw">tibble</span>(<span class="dt">author =</span> <span class="kw">c</span>(<span class="st">&quot;Чехов&quot;</span>, <span class="st">&quot;Зощенко&quot;</span>),</span>
+<span id="cb1151-2"><a href="корреляция-и-регрессия.html#cb1151-2"></a>       <span class="dt">dummy_chekhov =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["author"],"name":[1],"type":["chr"],"align":["left"]},{"label":["dummy_chekhov"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Чехов","2":"1"},{"1":"Зощенко","2":"0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -863,26 +889,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{array}\right.\]</span></p>
 <p>Таким образом, получается, что свободный член <span class="math inline">\(\beta_0\)</span> и угловой коэффициент <span class="math inline">\(\beta_1\)</span> в регресси с категориальной переменной получает другую интерпретацию. Одно из значений переменной кодируется при помощи <span class="math inline">\(\beta_0\)</span>, а сумма коэффициентов <span class="math inline">\(\beta_0+\beta_1\)</span> дают другое значение переменной. Так что <span class="math inline">\(\beta_1\)</span> — это разница между оценками двух значений переменной.</p>
 <p>Давайте теперь запустим регрессию на этих же данных:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="корреляция-и-регрессия.html#cb53-1"></a>fit2 &lt;-<span class="st"> </span><span class="kw">lm</span>(log_ratio<span class="op">~</span>author, <span class="dt">data =</span> checkov_zoshenko)</span>
-<span id="cb53-2"><a href="корреляция-и-регрессия.html#cb53-2"></a><span class="kw">summary</span>(fit2)</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = log_ratio ~ author, data = checkov_zoshenko)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -2.8652 -0.6105 -0.0607  0.6546  3.2398 
-## 
-## Coefficients:
-##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)  -5.0213     0.2120 -23.680  &lt; 2e-16 ***
-## authorЧехов  -1.3200     0.2321  -5.687 8.67e-08 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 0.9717 on 125 degrees of freedom
-## Multiple R-squared:  0.2056, Adjusted R-squared:  0.1992 
-## F-statistic: 32.34 on 1 and 125 DF,  p-value: 8.665e-08</code></pre>
+<div class="sourceCode" id="cb1152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1152-1"><a href="корреляция-и-регрессия.html#cb1152-1"></a>fit2 &lt;-<span class="st"> </span><span class="kw">lm</span>(log_ratio<span class="op">~</span>author, <span class="dt">data =</span> checkov_zoshenko)</span>
+<span id="cb1152-2"><a href="корреляция-и-регрессия.html#cb1152-2"></a><span class="kw">summary</span>(fit2)</span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = log_ratio ~ author, data = checkov_zoshenko)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.8652 -0.6105 -0.0607  0.6546  3.2398 
+
+Coefficients:
+            Estimate Std. Error t value             Pr(&gt;|t|)    
+(Intercept)  -5.0213     0.2120 -23.680 &lt; 0.0000000000000002 ***
+authorЧехов  -1.3200     0.2321  -5.687         0.0000000867 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.9717 on 125 degrees of freedom
+Multiple R-squared:  0.2056,    Adjusted R-squared:  0.1992 
+F-statistic: 32.34 on 1 and 125 DF,  p-value: 0.00000008665</code></pre>
 <p>Во-первых стоит обратить внимание на то, что R сам преобразовал нашу категориальную переменную в dummy-переменную <code>authorЧехов</code>. Во-вторых, можно заметить, что значения t-статистики и p-value совпадают с результатами полученными нами в t-тесте выше. Статистическти значимый коэффициент при аргументе <code>authorЧехов</code> следует интерпретировать как разницу средних между логарифмом долей в рассказах Чехова и Зощенко.</p>
 <div class="rmdtask">
 <p>
@@ -903,65 +929,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>В такой регресии предикторы могут быть как числовыми, так и категориальными (со всеми вытекающими последствиями, которые мы обсудили в предудщем разделе). Такую регрессию чаще всего сложно визуализировать, так как в одну регрессионную линию вкладываются сразу несколько переменных.</p>
 <p>Попробуем предсказать длину лепестка на основе длины чашелистик и вида ириса:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="корреляция-и-регрессия.html#cb55-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb55-2"><a href="корреляция-и-регрессия.html#cb55-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Sepal.Length, Petal.Length, <span class="dt">color =</span> Species))<span class="op">+</span></span>
-<span id="cb55-3"><a href="корреляция-и-регрессия.html#cb55-3"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
+<div class="sourceCode" id="cb1154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1154-1"><a href="корреляция-и-регрессия.html#cb1154-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1154-2"><a href="корреляция-и-регрессия.html#cb1154-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Sepal.Length, Petal.Length, <span class="dt">color =</span> Species))<span class="op">+</span></span>
+<span id="cb1154-3"><a href="корреляция-и-регрессия.html#cb1154-3"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-618-1.png" width="672" /></p>
 <p>Запустим регрессию:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="корреляция-и-регрессия.html#cb56-1"></a>fit3 &lt;-<span class="st"> </span><span class="kw">lm</span>(Petal.Length <span class="op">~</span><span class="st"> </span>Sepal.Length<span class="op">+</span><span class="st"> </span>Species, <span class="dt">data =</span> iris)</span>
-<span id="cb56-2"><a href="корреляция-и-регрессия.html#cb56-2"></a><span class="kw">summary</span>(fit3)</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = Petal.Length ~ Sepal.Length + Species, data = iris)
-## 
-## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -0.76390 -0.17875  0.00716  0.17461  0.79954 
-## 
-## Coefficients:
-##                   Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)       -1.70234    0.23013  -7.397 1.01e-11 ***
-## Sepal.Length       0.63211    0.04527  13.962  &lt; 2e-16 ***
-## Speciesversicolor  2.21014    0.07047  31.362  &lt; 2e-16 ***
-## Speciesvirginica   3.09000    0.09123  33.870  &lt; 2e-16 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 0.2826 on 146 degrees of freedom
-## Multiple R-squared:  0.9749, Adjusted R-squared:  0.9744 
-## F-statistic:  1890 on 3 and 146 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb1155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1155-1"><a href="корреляция-и-регрессия.html#cb1155-1"></a>fit3 &lt;-<span class="st"> </span><span class="kw">lm</span>(Petal.Length <span class="op">~</span><span class="st"> </span>Sepal.Length<span class="op">+</span><span class="st"> </span>Species, <span class="dt">data =</span> iris)</span>
+<span id="cb1155-2"><a href="корреляция-и-регрессия.html#cb1155-2"></a><span class="kw">summary</span>(fit3)</span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = Petal.Length ~ Sepal.Length + Species, data = iris)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.76390 -0.17875  0.00716  0.17461  0.79954 
+
+Coefficients:
+                  Estimate Std. Error t value             Pr(&gt;|t|)    
+(Intercept)       -1.70234    0.23013  -7.397      0.0000000000101 ***
+Sepal.Length       0.63211    0.04527  13.962 &lt; 0.0000000000000002 ***
+Speciesversicolor  2.21014    0.07047  31.362 &lt; 0.0000000000000002 ***
+Speciesvirginica   3.09000    0.09123  33.870 &lt; 0.0000000000000002 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.2826 on 146 degrees of freedom
+Multiple R-squared:  0.9749,    Adjusted R-squared:  0.9744 
+F-statistic:  1890 on 3 and 146 DF,  p-value: &lt; 0.00000000000000022</code></pre>
 <p>Все предикторы статистически значимы. Давайте посмотрим предсказания модели для всех наблюдений:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="корреляция-и-регрессия.html#cb58-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb58-2"><a href="корреляция-и-регрессия.html#cb58-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">prediction =</span> <span class="kw">predict</span>(fit3)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb58-3"><a href="корреляция-и-регрессия.html#cb58-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Sepal.Length, prediction, <span class="dt">color =</span> Species))<span class="op">+</span></span>
-<span id="cb58-4"><a href="корреляция-и-регрессия.html#cb58-4"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<div class="sourceCode" id="cb1157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1157-1"><a href="корреляция-и-регрессия.html#cb1157-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1157-2"><a href="корреляция-и-регрессия.html#cb1157-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">prediction =</span> <span class="kw">predict</span>(fit3)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1157-3"><a href="корреляция-и-регрессия.html#cb1157-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Sepal.Length, prediction, <span class="dt">color =</span> Species))<span class="op">+</span></span>
+<span id="cb1157-4"><a href="корреляция-и-регрессия.html#cb1157-4"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-620-1.png" width="672" /></p>
 <p>Всегда имеет смысл визуализировать, что нам говорит наша модель. Если использовать пакет <code>ggeffects</code> (или предшествовавший ему пакет <code>effects</code>), это можно сделать не сильно задумываясь, как это делать:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="корреляция-и-регрессия.html#cb59-1"></a><span class="kw">library</span>(ggeffects)</span>
-<span id="cb59-2"><a href="корреляция-и-регрессия.html#cb59-2"></a><span class="kw">plot</span>(<span class="kw">ggpredict</span>(fit3, <span class="dt">terms =</span> <span class="kw">c</span>(<span class="st">&quot;Sepal.Length&quot;</span>, <span class="st">&quot;Species&quot;</span>)))</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<div class="sourceCode" id="cb1158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1158-1"><a href="корреляция-и-регрессия.html#cb1158-1"></a><span class="kw">library</span>(ggeffects)</span>
+<span id="cb1158-2"><a href="корреляция-и-регрессия.html#cb1158-2"></a><span class="kw">plot</span>(<span class="kw">ggpredict</span>(fit3, <span class="dt">terms =</span> <span class="kw">c</span>(<span class="st">&quot;Sepal.Length&quot;</span>, <span class="st">&quot;Species&quot;</span>)))</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-621-1.png" width="672" /></p>
 <p>Как видно из графиков, наша модель имеет одинаковые угловые коэффициенты (slope) для каждого из видов ириса и разные свободные члены (intercept).</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="корреляция-и-регрессия.html#cb60-1"></a><span class="kw">summary</span>(fit3)</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = Petal.Length ~ Sepal.Length + Species, data = iris)
-## 
-## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -0.76390 -0.17875  0.00716  0.17461  0.79954 
-## 
-## Coefficients:
-##                   Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)       -1.70234    0.23013  -7.397 1.01e-11 ***
-## Sepal.Length       0.63211    0.04527  13.962  &lt; 2e-16 ***
-## Speciesversicolor  2.21014    0.07047  31.362  &lt; 2e-16 ***
-## Speciesvirginica   3.09000    0.09123  33.870  &lt; 2e-16 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 0.2826 on 146 degrees of freedom
-## Multiple R-squared:  0.9749, Adjusted R-squared:  0.9744 
-## F-statistic:  1890 on 3 and 146 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb1159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1159-1"><a href="корреляция-и-регрессия.html#cb1159-1"></a><span class="kw">summary</span>(fit3)</span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = Petal.Length ~ Sepal.Length + Species, data = iris)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.76390 -0.17875  0.00716  0.17461  0.79954 
+
+Coefficients:
+                  Estimate Std. Error t value             Pr(&gt;|t|)    
+(Intercept)       -1.70234    0.23013  -7.397      0.0000000000101 ***
+Sepal.Length       0.63211    0.04527  13.962 &lt; 0.0000000000000002 ***
+Speciesversicolor  2.21014    0.07047  31.362 &lt; 0.0000000000000002 ***
+Speciesvirginica   3.09000    0.09123  33.870 &lt; 0.0000000000000002 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.2826 on 146 degrees of freedom
+Multiple R-squared:  0.9749,    Adjusted R-squared:  0.9744 
+F-statistic:  1890 on 3 and 146 DF,  p-value: &lt; 0.00000000000000022</code></pre>
 <p><span class="math display">\[y_i = \left\{\begin{array}{ll} -1.70234 + 0.63211 \times \text{Sepal.Length} + \epsilon_i\text{, если вид setosa}\\ 
 -1.70234 + 2.2101 + 0.63211 \times \text{Sepal.Length} + \epsilon_i\text{, если вид versicolor} \\
 -1.70234 + 3.09 + 0.63211 \times \text{Sepal.Length} + \epsilon_i\text{, если вид virginica}
@@ -970,19 +996,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="сравнение-моделей" class="section level3">
 <h3><span class="header-section-number">15.5.5</span> Сравнение моделей</h3>
 <p>Как нам решить, какая модель лучше? Ведь теперь можно добавить сколько угодно предикторов? Давайте создадим новую модель без предиктора <code>Species</code>:</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="корреляция-и-регрессия.html#cb62-1"></a>fit4 &lt;-<span class="st"> </span><span class="kw">lm</span>(Petal.Length <span class="op">~</span><span class="st"> </span>Sepal.Length, <span class="dt">data =</span> iris)</span></code></pre></div>
+<div class="sourceCode" id="cb1161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1161-1"><a href="корреляция-и-регрессия.html#cb1161-1"></a>fit4 &lt;-<span class="st"> </span><span class="kw">lm</span>(Petal.Length <span class="op">~</span><span class="st"> </span>Sepal.Length, <span class="dt">data =</span> iris)</span></code></pre></div>
 <ul>
 <li>можно сравнивать статистическую значимость предикторов</li>
 <li>можно сравнивать <span class="math inline">\(R^2\)</span></li>
 </ul>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="корреляция-и-регрессия.html#cb63-1"></a><span class="kw">summary</span>(fit3)<span class="op">$</span>adj.r.squared</span></code></pre></div>
-<pre><code>## [1] 0.9743786</code></pre>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="корреляция-и-регрессия.html#cb65-1"></a><span class="kw">summary</span>(fit4)<span class="op">$</span>adj.r.squared</span></code></pre></div>
-<pre><code>## [1] 0.7583327</code></pre>
+<div class="sourceCode" id="cb1162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1162-1"><a href="корреляция-и-регрессия.html#cb1162-1"></a><span class="kw">summary</span>(fit3)<span class="op">$</span>adj.r.squared</span></code></pre></div>
+<pre><code>[1] 0.9743786</code></pre>
+<div class="sourceCode" id="cb1164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1164-1"><a href="корреляция-и-регрессия.html#cb1164-1"></a><span class="kw">summary</span>(fit4)<span class="op">$</span>adj.r.squared</span></code></pre></div>
+<pre><code>[1] 0.7583327</code></pre>
 <ul>
 <li>чаще всего используют так называемые информационные критерии, самый популярный – AIC (Akaike information criterion). Сами по себе значение этого критерия не имеет значения – только в сравнении моделей, построенных на похожих данных. Чем меньше значение, тем модель лучше.</li>
 </ul>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="корреляция-и-регрессия.html#cb67-1"></a><span class="kw">AIC</span>(fit3, fit4)</span></code></pre></div>
+<div class="sourceCode" id="cb1166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1166-1"><a href="корреляция-и-регрессия.html#cb1166-1"></a><span class="kw">AIC</span>(fit3, fit4)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["df"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["AIC"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"5","2":"52.47418","_rn_":"fit3"},{"1":"3","2":"387.13500","_rn_":"fit4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -1002,15 +1028,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p>Вот так вот выглядят остатки нашей модели на основе датасета <code>iris</code>. Смотрите <a href="https://www.qualtrics.com/support/stats-iq/analyses/regression-guides/interpreting-residual-plots-improve-regression/">пост</a>, в котором обсуждается, как интерпретировать график остатков.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="корреляция-и-регрессия.html#cb68-1"></a><span class="kw">plot</span>(fit3, <span class="dt">which=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span></code></pre></div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-74-1.png" width="672" /><img src="DS_for_DH_files/figure-html/unnamed-chunk-74-2.png" width="672" /></p>
+<div class="sourceCode" id="cb1167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1167-1"><a href="корреляция-и-регрессия.html#cb1167-1"></a><span class="kw">plot</span>(fit3, <span class="dt">which=</span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span></code></pre></div>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-626-1.png" width="672" /><img src="DS_for_DH_files/figure-html/unnamed-chunk-626-2.png" width="672" /></p>
 <ul>
 <li>сущетсвуют трюки, позволяющие автоматически отбирать модели (см. функцию <code>step()</code>)</li>
 <li>существует достаточно большое семейство регрессий, который зависят от типа независимой (предсказываемой) переменной или ее распределения
 <ul>
 <li>логистическая (если предсказываемая переменная имеет два возможных исхода)</li>
 <li>мультиномиальная (если предсказываемая переменная имеет больше двух возможных дискретных исхода)</li>
-<li>нилиненые регресии (если связь между переменными нелинейна)</li>
+<li>нелиненые регресии (если связь между переменными нелинейна)</li>
 <li>регрессия со смешанными эффектами (если внутри данных есть группировки, т. е. наблюдения не независимы)</li>
 <li>и другие.</li>
 </ul></li>
@@ -1021,8 +1047,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>Как и в других функциях, вычисляющих описательную статистику (<code>mean()</code>, <code>median()</code>, <code>max()</code>, <code>min()</code> и др.), функция <code>var()</code> (и все остальные функции, которые мы будем обсуждать <code>sd()</code>, <code>cov()</code>) возвращают <code>NA</code>, если в векторе есть пропущенные значения. Чтобы изменить это поведение, нужно добавить аргумент <code>na.rm = TRUE</code>.<a href="корреляция-и-регрессия.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<ol start="3">
+<li id="fn3"><p>Как и в других функциях, вычисляющих описательную статистику (<code>mean()</code>, <code>median()</code>, <code>max()</code>, <code>min()</code> и др.), функция <code>var()</code> (и все остальные функции, которые мы будем обсуждать <code>sd()</code>, <code>cov()</code>) возвращают <code>NA</code>, если в векторе есть пропущенные значения. Чтобы изменить это поведение, нужно добавить аргумент <code>na.rm = TRUE</code>.<a href="корреляция-и-регрессия.html#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

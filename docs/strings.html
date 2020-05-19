@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Работа со строками | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
   <meta name="description" content="5 Работа со строками | Наука о данных в R для программы Цифровых гуманитарных исследований" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Работа со строками | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta property="og:type" content="book" />
@@ -54,6 +54,16 @@
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
 <script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
+<script src="libs/Leaflet.Sync-0.0.5/L.Map.Sync.js"></script>
 
 
 <style type="text/css">
@@ -346,7 +356,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.5.5" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#критерий-мак-немара"><i class="fa fa-check"></i><b>14.5.5</b> Критерий Мак Немара</a></li>
 </ul></li>
 <li class="chapter" data-level="14.6" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#послесловие"><i class="fa fa-check"></i><b>14.6</b> Послесловие</a></li>
-<li class="chapter" data-level="14.7" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#рассказы-чехова-и-зощенко"><i class="fa fa-check"></i><b>14.7</b> Рассказы Чехова и Зощенко</a></li>
+<li class="chapter" data-level="14.7" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#рассказы-чехова-и-зощенко"><i class="fa fa-check"></i><b>14.7</b> Рассказы Чехова и Зощенко</a><ul>
+<li class="chapter" data-level="14.7.1" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section"><i class="fa fa-check"></i><b>14.7.1</b> </a></li>
+<li class="chapter" data-level="14.7.2" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-1"><i class="fa fa-check"></i><b>14.7.2</b> </a></li>
+<li class="chapter" data-level="14.7.3" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-2"><i class="fa fa-check"></i><b>14.7.3</b> </a></li>
+<li class="chapter" data-level="14.7.4" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#section-3"><i class="fa fa-check"></i><b>14.7.4</b> </a></li>
+</ul></li>
 <li class="chapter" data-level="14.8" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#obamacare"><i class="fa fa-check"></i><b>14.8</b> Obamacare</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html"><i class="fa fa-check"></i><b>15</b> Корреляция и регрессия</a><ul>
@@ -369,11 +384,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html"><i class="fa fa-check"></i><b>16</b> Работа статистического детектива</a><ul>
 <li class="chapter" data-level="16.1" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#введение-1"><i class="fa fa-check"></i><b>16.1</b> Введение</a></li>
 <li class="chapter" data-level="16.2" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#возможно-ли-такое-среднее"><i class="fa fa-check"></i><b>16.2</b> Возможно ли такое среднее?</a></li>
-<li class="chapter" data-level="16.3" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#granularity-related-inconsistent-means-grim-test"><i class="fa fa-check"></i><b>16.3</b> Granularity-Related Inconsistent Means (GRIM) test</a></li>
-<li class="chapter" data-level="16.4" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-statcheck"><i class="fa fa-check"></i><b>16.4</b> Пакет <code>statcheck</code></a></li>
-<li class="chapter" data-level="16.5" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-digitize"><i class="fa fa-check"></i><b>16.5</b> Пакет <code>digitize</code></a></li>
+<li class="chapter" data-level="16.3" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-statcheck"><i class="fa fa-check"></i><b>16.3</b> Пакет <code>statcheck</code></a></li>
+<li class="chapter" data-level="16.4" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-digitize"><i class="fa fa-check"></i><b>16.4</b> Пакет <code>digitize</code></a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="кластеризация.html"><a href="кластеризация.html"><i class="fa fa-check"></i><b>17</b> Кластеризация</a></li>
+<li class="chapter" data-level="17" data-path="кластеризация.html"><a href="кластеризация.html"><i class="fa fa-check"></i><b>17</b> Кластеризация</a><ul>
+<li class="chapter" data-level="17.1" data-path="кластеризация.html"><a href="кластеризация.html#метод-k-средних-k-means"><i class="fa fa-check"></i><b>17.1</b> Метод k-средних (k-means)</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="кластеризация.html"><a href="кластеризация.html#пример"><i class="fa fa-check"></i><b>17.1.1</b> Пример</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="кластеризация.html"><a href="кластеризация.html#иерархическая-кластеризация"><i class="fa fa-check"></i><b>17.2</b> Иерархическая кластеризация</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="кластеризация.html"><a href="кластеризация.html#матрица-расстояний"><i class="fa fa-check"></i><b>17.2.1</b> Матрица расстояний</a></li>
+<li class="chapter" data-level="17.2.2" data-path="кластеризация.html"><a href="кластеризация.html#расстояние-между-словами"><i class="fa fa-check"></i><b>17.2.2</b> Расстояние между словами</a></li>
+<li class="chapter" data-level="17.2.3" data-path="кластеризация.html"><a href="кластеризация.html#применение-иерархической-кластеризации"><i class="fa fa-check"></i><b>17.2.3</b> Применение иерархической кластеризации</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="18" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>18</b> Методы уменьшения размерностей</a></li>
 <li class="chapter" data-level="19" data-path="tasks.html"><a href="tasks.html"><i class="fa fa-check"></i><b>19</b> Задания</a><ul>
 <li class="chapter" data-level="19.1" data-path="tasks.html"><a href="tasks.html#vec_task_1"><i class="fa fa-check"></i><b>19.1</b> Вектор</a></li>
@@ -419,9 +442,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>пакет <code>stringr</code> (часть <code>tidyverse</code>)</li>
 <li>пакет <code>stringi</code> – отдельный пакет, так что не забудьте его установить:</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="strings.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;stringi&quot;</span>)</span>
-<span id="cb1-2"><a href="strings.html#cb1-2"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="strings.html#cb1-3"></a><span class="kw">library</span>(stringi)</span></code></pre></div>
+<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="strings.html#cb450-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;stringi&quot;</span>)</span>
+<span id="cb450-2"><a href="strings.html#cb450-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb450-3"><a href="strings.html#cb450-3"></a><span class="kw">library</span>(stringi)</span></code></pre></div>
 <p>Мы будем пользоваться в основном пакетами <code>stingr</code> и <code>stringi</code>, так как они в большинстве случаях удобнее. К счастью функции этих пакетов легко отличить от остальных: функции пакет <code>stringr</code> всегда начинаются с <code>str_</code>, а функции пакета <code>stringi</code> — c <code>stri_</code>.</p>
 <p>Существует <a href="https://github.com/rstudio/cheatsheets/raw/master/strings.pdf">cheat sheet по <code>stringr</code></a>.</p>
 </div>
@@ -430,50 +453,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>следите за кавычками</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="strings.html#cb2-1"></a><span class="st">&quot;the quick brown fox jumps over the lazy dog&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="strings.html#cb451-1"></a><span class="st">&quot;the quick brown fox jumps over the lazy dog&quot;</span></span></code></pre></div>
 <pre><code>## [1] &quot;the quick brown fox jumps over the lazy dog&quot;</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="strings.html#cb4-1"></a><span class="st">&#39;the quick brown fox jumps over the lazy dog&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="strings.html#cb453-1"></a><span class="st">&#39;the quick brown fox jumps over the lazy dog&#39;</span></span></code></pre></div>
 <pre><code>## [1] &quot;the quick brown fox jumps over the lazy dog&quot;</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="strings.html#cb6-1"></a><span class="st">&quot;the quick &#39;brown&#39; fox jumps over the lazy dog&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="strings.html#cb455-1"></a><span class="st">&quot;the quick &#39;brown&#39; fox jumps over the lazy dog&quot;</span></span></code></pre></div>
 <pre><code>## [1] &quot;the quick &#39;brown&#39; fox jumps over the lazy dog&quot;</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="strings.html#cb8-1"></a><span class="st">&#39;the quick &quot;brown&quot; fox jumps over the lazy dog&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="strings.html#cb457-1"></a><span class="st">&#39;the quick &quot;brown&quot; fox jumps over the lazy dog&#39;</span></span></code></pre></div>
 <pre><code>## [1] &quot;the quick \&quot;brown\&quot; fox jumps over the lazy dog&quot;</code></pre>
 <ul>
 <li>пустая строка</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="strings.html#cb10-1"></a><span class="st">&quot;&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="strings.html#cb459-1"></a><span class="st">&quot;&quot;</span></span></code></pre></div>
 <pre><code>## [1] &quot;&quot;</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="strings.html#cb12-1"></a><span class="st">&#39;&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="strings.html#cb461-1"></a><span class="st">&#39;&#39;</span></span></code></pre></div>
 <pre><code>## [1] &quot;&quot;</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="strings.html#cb14-1"></a><span class="kw">character</span>(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="strings.html#cb463-1"></a><span class="kw">character</span>(<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;&quot; &quot;&quot; &quot;&quot;</code></pre>
 <ul>
 <li>преобразование</li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="strings.html#cb16-1"></a><span class="kw">typeof</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="strings.html#cb465-1"></a><span class="kw">typeof</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">7</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="strings.html#cb18-1"></a><span class="kw">as.character</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="strings.html#cb467-1"></a><span class="kw">as.character</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">7</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;4&quot; &quot;5&quot; &quot;6&quot; &quot;7&quot;</code></pre>
 <ul>
 <li>встроенные векторы</li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="strings.html#cb20-1"></a>letters</span></code></pre></div>
+<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="strings.html#cb469-1"></a>letters</span></code></pre></div>
 <pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot;
 ## [20] &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="strings.html#cb22-1"></a>LETTERS</span></code></pre></div>
+<div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb471-1"><a href="strings.html#cb471-1"></a>LETTERS</span></code></pre></div>
 <pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot; &quot;R&quot; &quot;S&quot;
 ## [20] &quot;T&quot; &quot;U&quot; &quot;V&quot; &quot;W&quot; &quot;X&quot; &quot;Y&quot; &quot;Z&quot;</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="strings.html#cb24-1"></a>month.name</span></code></pre></div>
+<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="strings.html#cb473-1"></a>month.name</span></code></pre></div>
 <pre><code>##  [1] &quot;January&quot;   &quot;February&quot;  &quot;March&quot;     &quot;April&quot;     &quot;May&quot;       &quot;June&quot;     
 ##  [7] &quot;July&quot;      &quot;August&quot;    &quot;September&quot; &quot;October&quot;   &quot;November&quot;  &quot;December&quot;</code></pre>
 <ul>
 <li>помните, что функции <code>data.frame()</code>, <code>read.csv()</code>, <code>read.csv2()</code>, <code>read.table()</code> из базового R всегда по-умолчанию преобразуют строки в факторы, и чтобы это предотвратить нужно использовать аргумент <code>stringsAsFactors</code>. Это много обсуждалось в сообществе R, можно, например, почитать про это <a href="https://simplystatistics.org/2015/07/24/stringsasfactors-an-unauthorized-biography/">вот этот блог пост Роджера Пенга</a>.</li>
 </ul>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="strings.html#cb26-1"></a><span class="kw">str</span>(<span class="kw">data.frame</span>(letters[<span class="dv">6</span><span class="op">:</span><span class="dv">10</span>], LETTERS[<span class="dv">4</span><span class="op">:</span><span class="dv">8</span>]))</span></code></pre></div>
+<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="strings.html#cb475-1"></a><span class="kw">str</span>(<span class="kw">data.frame</span>(letters[<span class="dv">6</span><span class="op">:</span><span class="dv">10</span>], LETTERS[<span class="dv">4</span><span class="op">:</span><span class="dv">8</span>]))</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    5 obs. of  2 variables:
 ##  $ letters.6.10.: chr  &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; ...
 ##  $ LETTERS.4.8. : chr  &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; ...</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="strings.html#cb28-1"></a><span class="kw">str</span>(<span class="kw">data.frame</span>(letters[<span class="dv">6</span><span class="op">:</span><span class="dv">10</span>], LETTERS[<span class="dv">4</span><span class="op">:</span><span class="dv">8</span>], <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="strings.html#cb477-1"></a><span class="kw">str</span>(<span class="kw">data.frame</span>(letters[<span class="dv">6</span><span class="op">:</span><span class="dv">10</span>], LETTERS[<span class="dv">4</span><span class="op">:</span><span class="dv">8</span>], <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>))</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    5 obs. of  2 variables:
 ##  $ letters.6.10.: chr  &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; ...
 ##  $ LETTERS.4.8. : chr  &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; ...</code></pre>
@@ -481,55 +504,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Создание рандомных строк</li>
 </ul>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="strings.html#cb30-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb30-2"><a href="strings.html#cb30-2"></a><span class="kw">stri_rand_strings</span>(<span class="dt">n =</span> <span class="dv">10</span>, <span class="dt">length =</span> <span class="dv">5</span><span class="op">:</span><span class="dv">14</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="strings.html#cb479-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb479-2"><a href="strings.html#cb479-2"></a><span class="kw">stri_rand_strings</span>(<span class="dt">n =</span> <span class="dv">10</span>, <span class="dt">length =</span> <span class="dv">5</span><span class="op">:</span><span class="dv">14</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;uwHpd&quot;          &quot;Wj8ehS&quot;         &quot;ivFSwy7&quot;        &quot;TYu8zw5V&quot;      
 ##  [5] &quot;OuRpjoOg0&quot;      &quot;p0CubNR2yQ&quot;     &quot;xtdycKLOm2k&quot;    &quot;fAGVfylZqBGp&quot;  
 ##  [9] &quot;gE28DTCi0NV0a&quot;  &quot;9MemYE55If0Cvv&quot;</code></pre>
 <ul>
 <li>Перемешивает символы внутри строки</li>
 </ul>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="strings.html#cb32-1"></a><span class="kw">stri_rand_shuffle</span>(<span class="st">&quot;любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="strings.html#cb481-1"></a><span class="kw">stri_rand_shuffle</span>(<span class="st">&quot;любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;,цо м,пюзгу   сл аиъ—в кжряд,ыщьчебэн х—штё фй&quot;</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="strings.html#cb34-1"></a><span class="kw">stri_rand_shuffle</span>(month.name)</span></code></pre></div>
+<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="strings.html#cb483-1"></a><span class="kw">stri_rand_shuffle</span>(month.name)</span></code></pre></div>
 <pre><code>##  [1] &quot;aJayunr&quot;   &quot;eyrbraFu&quot;  &quot;achMr&quot;     &quot;Aplri&quot;     &quot;ayM&quot;       &quot;Jnue&quot;     
 ##  [7] &quot;uJly&quot;      &quot;usuAgt&quot;    &quot;tpebermSe&quot; &quot;tOecrbo&quot;   &quot;oeNembvr&quot;  &quot;Dmceerbe&quot;</code></pre>
 <ul>
 <li>Генерирует псевдорандомный текст<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="strings.html#cb36-1"></a><span class="kw">stri_rand_lipsum</span>(<span class="dt">nparagraphs =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="strings.html#cb485-1"></a><span class="kw">stri_rand_lipsum</span>(<span class="dt">nparagraphs =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Lorem ipsum dolor sit amet, donec sit nunc urna sed ultricies ac pharetra orci luctus iaculis, ac tincidunt cum. Neque eu semper at sociosqu hendrerit. Eu aliquet lacus, eu hendrerit donec aliquam eros. Risus nibh, quam in sit facilisi ipsum. Amet sem sed donec sed molestie scelerisque tincidunt. Nisl donec et facilisis interdum non sed dolor purus. In ipsum dignissim torquent velit nec aliquam pellentesque. Ac, adipiscing, neque et at torquent, vestibulum ullamcorper. Ad dictumst enim velit non nulla felis habitant. Egestas placerat consectetur, dictum nostra sed nec. Erat phasellus dolor libero aliquam viverra. Vestibulum leo et. Suscipit egestas in in montes, sapien gravida? Conubia purus varius ut nec feugiat.&quot;
 ## [2] &quot;Risus eleifend magnis neque diam, suspendisse ullamcorper nulla adipiscing malesuada massa, nisi sociosqu velit id et. Aliquam facilisis et aenean. Parturient vel ac in convallis, massa diam nibh. Nulla interdum cursus et. Natoque amet, ut praesent. Tortor ultrices a consectetur, augue natoque class faucibus? Ut sed arcu elementum magna. Dignissim ac facilisi quis ut nisl eu, massa.&quot;</code></pre>
 </div>
 <div id="соединение-и-разделение-строк" class="section level2">
 <h2><span class="header-section-number">5.3</span> Соединение и разделение строк</h2>
 <p>Соединенить строки можно используя функцию <code>str_c()</code>, в которую, как и в функции <code>с()</code>, можно перечислять элементы через запятую:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="strings.html#cb38-1"></a><span class="kw">tibble</span>(<span class="dt">upper =</span> <span class="kw">rev</span>(LETTERS), <span class="dt">smaller =</span> letters) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb38-2"><a href="strings.html#cb38-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">merge =</span> <span class="kw">str_c</span>(upper, smaller))</span></code></pre></div>
+<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="strings.html#cb487-1"></a><span class="kw">tibble</span>(<span class="dt">upper =</span> <span class="kw">rev</span>(LETTERS), <span class="dt">smaller =</span> letters) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb487-2"><a href="strings.html#cb487-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">merge =</span> <span class="kw">str_c</span>(upper, smaller))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["upper"],"name":[1],"type":["chr"],"align":["left"]},{"label":["smaller"],"name":[2],"type":["chr"],"align":["left"]},{"label":["merge"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"Z","2":"a","3":"Za"},{"1":"Y","2":"b","3":"Yb"},{"1":"X","2":"c","3":"Xc"},{"1":"W","2":"d","3":"Wd"},{"1":"V","2":"e","3":"Ve"},{"1":"U","2":"f","3":"Uf"},{"1":"T","2":"g","3":"Tg"},{"1":"S","2":"h","3":"Sh"},{"1":"R","2":"i","3":"Ri"},{"1":"Q","2":"j","3":"Qj"},{"1":"P","2":"k","3":"Pk"},{"1":"O","2":"l","3":"Ol"},{"1":"N","2":"m","3":"Nm"},{"1":"M","2":"n","3":"Mn"},{"1":"L","2":"o","3":"Lo"},{"1":"K","2":"p","3":"Kp"},{"1":"J","2":"q","3":"Jq"},{"1":"I","2":"r","3":"Ir"},{"1":"H","2":"s","3":"Hs"},{"1":"G","2":"t","3":"Gt"},{"1":"F","2":"u","3":"Fu"},{"1":"E","2":"v","3":"Ev"},{"1":"D","2":"w","3":"Dw"},{"1":"C","2":"x","3":"Cx"},{"1":"B","2":"y","3":"By"},{"1":"A","2":"z","3":"Az"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Кроме того, если хочется, можно использовать особенный разделитель, указав его в аргументе <code>sep</code>:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="strings.html#cb39-1"></a><span class="kw">tibble</span>(<span class="dt">upper =</span> <span class="kw">rev</span>(LETTERS), <span class="dt">smaller =</span> letters) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb39-2"><a href="strings.html#cb39-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">merge =</span> <span class="kw">str_c</span>(upper, smaller, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="strings.html#cb488-1"></a><span class="kw">tibble</span>(<span class="dt">upper =</span> <span class="kw">rev</span>(LETTERS), <span class="dt">smaller =</span> letters) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb488-2"><a href="strings.html#cb488-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">merge =</span> <span class="kw">str_c</span>(upper, smaller, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["upper"],"name":[1],"type":["chr"],"align":["left"]},{"label":["smaller"],"name":[2],"type":["chr"],"align":["left"]},{"label":["merge"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"Z","2":"a","3":"Z_a"},{"1":"Y","2":"b","3":"Y_b"},{"1":"X","2":"c","3":"X_c"},{"1":"W","2":"d","3":"W_d"},{"1":"V","2":"e","3":"V_e"},{"1":"U","2":"f","3":"U_f"},{"1":"T","2":"g","3":"T_g"},{"1":"S","2":"h","3":"S_h"},{"1":"R","2":"i","3":"R_i"},{"1":"Q","2":"j","3":"Q_j"},{"1":"P","2":"k","3":"P_k"},{"1":"O","2":"l","3":"O_l"},{"1":"N","2":"m","3":"N_m"},{"1":"M","2":"n","3":"M_n"},{"1":"L","2":"o","3":"L_o"},{"1":"K","2":"p","3":"K_p"},{"1":"J","2":"q","3":"J_q"},{"1":"I","2":"r","3":"I_r"},{"1":"H","2":"s","3":"H_s"},{"1":"G","2":"t","3":"G_t"},{"1":"F","2":"u","3":"F_u"},{"1":"E","2":"v","3":"E_v"},{"1":"D","2":"w","3":"D_w"},{"1":"C","2":"x","3":"C_x"},{"1":"B","2":"y","3":"B_y"},{"1":"A","2":"z","3":"A_z"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Аналогичным образом, для разделение строки на подстроки можно использовать функцию <code>separate()</code>. Это функция разносит разделенные элементы строки в соответствующие столбцы. У функции три обязательных аргумента: <code>col</code> — колонка, которую следует разделить, <code>into</code> — вектор названий новых столбец, <code>sep</code> — разделитель.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="strings.html#cb40-1"></a><span class="kw">tibble</span>(<span class="dt">upper =</span> <span class="kw">rev</span>(LETTERS), <span class="dt">smaller =</span> letters) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb40-2"><a href="strings.html#cb40-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">merge =</span> <span class="kw">str_c</span>(upper, smaller, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb40-3"><a href="strings.html#cb40-3"></a><span class="st">  </span><span class="kw">separate</span>(<span class="dt">col =</span> merge, <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;column_1&quot;</span>, <span class="st">&quot;column_2&quot;</span>), <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="strings.html#cb489-1"></a><span class="kw">tibble</span>(<span class="dt">upper =</span> <span class="kw">rev</span>(LETTERS), <span class="dt">smaller =</span> letters) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb489-2"><a href="strings.html#cb489-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">merge =</span> <span class="kw">str_c</span>(upper, smaller, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb489-3"><a href="strings.html#cb489-3"></a><span class="st">  </span><span class="kw">separate</span>(<span class="dt">col =</span> merge, <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;column_1&quot;</span>, <span class="st">&quot;column_2&quot;</span>), <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["upper"],"name":[1],"type":["chr"],"align":["left"]},{"label":["smaller"],"name":[2],"type":["chr"],"align":["left"]},{"label":["column_1"],"name":[3],"type":["chr"],"align":["left"]},{"label":["column_2"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"Z","2":"a","3":"Z","4":"a"},{"1":"Y","2":"b","3":"Y","4":"b"},{"1":"X","2":"c","3":"X","4":"c"},{"1":"W","2":"d","3":"W","4":"d"},{"1":"V","2":"e","3":"V","4":"e"},{"1":"U","2":"f","3":"U","4":"f"},{"1":"T","2":"g","3":"T","4":"g"},{"1":"S","2":"h","3":"S","4":"h"},{"1":"R","2":"i","3":"R","4":"i"},{"1":"Q","2":"j","3":"Q","4":"j"},{"1":"P","2":"k","3":"P","4":"k"},{"1":"O","2":"l","3":"O","4":"l"},{"1":"N","2":"m","3":"N","4":"m"},{"1":"M","2":"n","3":"M","4":"n"},{"1":"L","2":"o","3":"L","4":"o"},{"1":"K","2":"p","3":"K","4":"p"},{"1":"J","2":"q","3":"J","4":"q"},{"1":"I","2":"r","3":"I","4":"r"},{"1":"H","2":"s","3":"H","4":"s"},{"1":"G","2":"t","3":"G","4":"t"},{"1":"F","2":"u","3":"F","4":"u"},{"1":"E","2":"v","3":"E","4":"v"},{"1":"D","2":"w","3":"D","4":"w"},{"1":"C","2":"x","3":"C","4":"x"},{"1":"B","2":"y","3":"B","4":"y"},{"1":"A","2":"z","3":"A","4":"z"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Кроме того, есть инструмент <code>str_split()</code>, которая позволяет разбивать строки на подстроки, но возвращает <em>список</em>.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="strings.html#cb41-1"></a><span class="kw">str_split</span>(month.name, <span class="st">&quot;r&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="strings.html#cb490-1"></a><span class="kw">str_split</span>(month.name, <span class="st">&quot;r&quot;</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;Janua&quot; &quot;y&quot;    
 ## 
@@ -571,8 +594,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="подсчет-количества-символов" class="section level3">
 <h3><span class="header-section-number">5.4.1</span> Подсчет количества символов</h3>
 <p><img src="images/5.01_str_length.png" /></p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="strings.html#cb43-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb43-2"><a href="strings.html#cb43-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">n_charactars =</span> <span class="kw">str_count</span>(mn))</span></code></pre></div>
+<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="strings.html#cb492-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb492-2"><a href="strings.html#cb492-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">n_charactars =</span> <span class="kw">str_count</span>(mn))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n_charactars"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"January","2":"7"},{"1":"February","2":"8"},{"1":"March","2":"5"},{"1":"April","2":"5"},{"1":"May","2":"3"},{"1":"June","2":"4"},{"1":"July","2":"4"},{"1":"August","2":"6"},{"1":"September","2":"9"},{"1":"October","2":"7"},{"1":"November","2":"8"},{"1":"December","2":"8"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -583,31 +606,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">5.4.2</span> Подгонка количества символов</h3>
 <p>Можно обрезать строки, используя функцию <code>str_trunc()</code>:</p>
 <p><img src="images/5.02_str_trunc.png" /></p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="strings.html#cb44-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb44-2"><a href="strings.html#cb44-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_trunc</span>(mn, <span class="dv">6</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="strings.html#cb493-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb493-2"><a href="strings.html#cb493-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_trunc</span>(mn, <span class="dv">6</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mn_new"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"January","2":"Jan..."},{"1":"February","2":"Feb..."},{"1":"March","2":"March"},{"1":"April","2":"April"},{"1":"May","2":"May"},{"1":"June","2":"June"},{"1":"July","2":"July"},{"1":"August","2":"August"},{"1":"September","2":"Sep..."},{"1":"October","2":"Oct..."},{"1":"November","2":"Nov..."},{"1":"December","2":"Dec..."}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Можно решить с какой стороны обрезать, используя аргумент <code>side</code>:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="strings.html#cb45-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb45-2"><a href="strings.html#cb45-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_trunc</span>(mn, <span class="dv">6</span>, <span class="dt">side =</span> <span class="st">&quot;left&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="strings.html#cb494-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb494-2"><a href="strings.html#cb494-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_trunc</span>(mn, <span class="dv">6</span>, <span class="dt">side =</span> <span class="st">&quot;left&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mn_new"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"January","2":"...ary"},{"1":"February","2":"...ary"},{"1":"March","2":"March"},{"1":"April","2":"April"},{"1":"May","2":"May"},{"1":"June","2":"June"},{"1":"July","2":"July"},{"1":"August","2":"August"},{"1":"September","2":"...ber"},{"1":"October","2":"...ber"},{"1":"November","2":"...ber"},{"1":"December","2":"...ber"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="strings.html#cb46-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb46-2"><a href="strings.html#cb46-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_trunc</span>(mn, <span class="dv">6</span>, <span class="dt">side =</span> <span class="st">&quot;center&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="strings.html#cb495-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb495-2"><a href="strings.html#cb495-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_trunc</span>(mn, <span class="dv">6</span>, <span class="dt">side =</span> <span class="st">&quot;center&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mn_new"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"January","2":"Ja...y"},{"1":"February","2":"Fe...y"},{"1":"March","2":"March"},{"1":"April","2":"April"},{"1":"May","2":"May"},{"1":"June","2":"June"},{"1":"July","2":"July"},{"1":"August","2":"August"},{"1":"September","2":"Se...r"},{"1":"October","2":"Oc...r"},{"1":"November","2":"No...r"},{"1":"December","2":"De...r"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Можно заменить многоточие, используя аргумент <code>ellipsis</code>:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="strings.html#cb47-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb47-2"><a href="strings.html#cb47-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_trunc</span>(mn, <span class="dv">3</span>, <span class="dt">ellipsis =</span> <span class="st">&quot;&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="strings.html#cb496-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb496-2"><a href="strings.html#cb496-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_trunc</span>(mn, <span class="dv">3</span>, <span class="dt">ellipsis =</span> <span class="st">&quot;&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mn_new"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"January","2":"Jan"},{"1":"February","2":"Feb"},{"1":"March","2":"Mar"},{"1":"April","2":"Apr"},{"1":"May","2":"May"},{"1":"June","2":"Jun"},{"1":"July","2":"Jul"},{"1":"August","2":"Aug"},{"1":"September","2":"Sep"},{"1":"October","2":"Oct"},{"1":"November","2":"Nov"},{"1":"December","2":"Dec"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -615,24 +638,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Можно наоборот “раздуть” строку:</p>
 <p><img src="images/5.03_str_pad.png" /></p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="strings.html#cb48-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb48-2"><a href="strings.html#cb48-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_pad</span>(mn, <span class="dv">10</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="strings.html#cb497-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb497-2"><a href="strings.html#cb497-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_pad</span>(mn, <span class="dv">10</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mn_new"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"January","2":"January"},{"1":"February","2":"February"},{"1":"March","2":"March"},{"1":"April","2":"April"},{"1":"May","2":"May"},{"1":"June","2":"June"},{"1":"July","2":"July"},{"1":"August","2":"August"},{"1":"September","2":"September"},{"1":"October","2":"October"},{"1":"November","2":"November"},{"1":"December","2":"December"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Опять же есть аргумент <code>side</code>:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="strings.html#cb49-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb49-2"><a href="strings.html#cb49-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_pad</span>(mn, <span class="dv">10</span>,  <span class="dt">side =</span> <span class="st">&quot;right&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="strings.html#cb498-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb498-2"><a href="strings.html#cb498-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_pad</span>(mn, <span class="dv">10</span>,  <span class="dt">side =</span> <span class="st">&quot;right&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mn_new"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"January","2":"January"},{"1":"February","2":"February"},{"1":"March","2":"March"},{"1":"April","2":"April"},{"1":"May","2":"May"},{"1":"June","2":"June"},{"1":"July","2":"July"},{"1":"August","2":"August"},{"1":"September","2":"September"},{"1":"October","2":"October"},{"1":"November","2":"November"},{"1":"December","2":"December"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Также можно выбрать, чем “раздувать строку”:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="strings.html#cb50-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb50-2"><a href="strings.html#cb50-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_pad</span>(mn, <span class="dv">10</span>,  <span class="dt">pad =</span> <span class="st">&quot;.&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="strings.html#cb499-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb499-2"><a href="strings.html#cb499-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mn_new =</span> <span class="kw">str_pad</span>(mn, <span class="dv">10</span>,  <span class="dt">pad =</span> <span class="st">&quot;.&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mn_new"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"January","2":"...January"},{"1":"February","2":"..February"},{"1":"March","2":".....March"},{"1":"April","2":".....April"},{"1":"May","2":".......May"},{"1":"June","2":"......June"},{"1":"July","2":"......July"},{"1":"August","2":"....August"},{"1":"September","2":".September"},{"1":"October","2":"...October"},{"1":"November","2":"..November"},{"1":"December","2":"..December"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -643,7 +666,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 На Pudding вышла <a href="https://pudding.cool/2019/10/pubs/">статья про английские пабы</a>. <a href="https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/UK_pubs.csv">Здесь</a> лежит немного обработанный датасет, которые они использовали. Визуализируйте 40 самых частотоных названий пабов в Великобритании, отложив по оси x количество символов, а по оси y – количество баров с таким названием.
 </p>
 </div>
-<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="DS_for_DH_files/figure-html/unnamed-chunk-251-1.png" width="672" /></p>
 <details>
 <p><summary> 📋 список подсказок ➡ </summary></p>
 <details>
@@ -684,54 +707,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="сортировка" class="section level2">
 <h2><span class="header-section-number">5.5</span> Сортировка</h2>
 <p>Для сортировки существует базовая функция <code>sort()</code> и функция из <code>stringr</code> <code>str_sort()</code>:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="strings.html#cb51-1"></a>unsorted_latin &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;I&quot;</span>, <span class="st">&quot;♥&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="st">&quot;Y&quot;</span>)</span>
-<span id="cb51-2"><a href="strings.html#cb51-2"></a><span class="kw">sort</span>(unsorted_latin)</span></code></pre></div>
+<div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="strings.html#cb500-1"></a>unsorted_latin &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;I&quot;</span>, <span class="st">&quot;♥&quot;</span>, <span class="st">&quot;N&quot;</span>, <span class="st">&quot;Y&quot;</span>)</span>
+<span id="cb500-2"><a href="strings.html#cb500-2"></a><span class="kw">sort</span>(unsorted_latin)</span></code></pre></div>
 <pre><code>## [1] &quot;♥&quot; &quot;I&quot; &quot;N&quot; &quot;Y&quot;</code></pre>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="strings.html#cb53-1"></a><span class="kw">str_sort</span>(unsorted_latin)</span></code></pre></div>
+<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="strings.html#cb502-1"></a><span class="kw">str_sort</span>(unsorted_latin)</span></code></pre></div>
 <pre><code>## [1] &quot;♥&quot; &quot;I&quot; &quot;N&quot; &quot;Y&quot;</code></pre>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="strings.html#cb55-1"></a><span class="kw">str_sort</span>(unsorted_latin, <span class="dt">locale =</span> <span class="st">&quot;lt&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb504-1"><a href="strings.html#cb504-1"></a><span class="kw">str_sort</span>(unsorted_latin, <span class="dt">locale =</span> <span class="st">&quot;lt&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;♥&quot; &quot;I&quot; &quot;Y&quot; &quot;N&quot;</code></pre>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="strings.html#cb57-1"></a>unsorted_cyrillic &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;я&quot;</span>, <span class="st">&quot;i&quot;</span>, <span class="st">&quot;ж&quot;</span>)</span>
-<span id="cb57-2"><a href="strings.html#cb57-2"></a><span class="kw">str_sort</span>(unsorted_cyrillic)</span></code></pre></div>
+<div class="sourceCode" id="cb506"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb506-1"><a href="strings.html#cb506-1"></a>unsorted_cyrillic &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;я&quot;</span>, <span class="st">&quot;i&quot;</span>, <span class="st">&quot;ж&quot;</span>)</span>
+<span id="cb506-2"><a href="strings.html#cb506-2"></a><span class="kw">str_sort</span>(unsorted_cyrillic)</span></code></pre></div>
 <pre><code>## [1] &quot;i&quot; &quot;ж&quot; &quot;я&quot;</code></pre>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="strings.html#cb59-1"></a><span class="kw">str_sort</span>(unsorted_cyrillic, <span class="dt">locale =</span> <span class="st">&quot;ru_UA&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="strings.html#cb508-1"></a><span class="kw">str_sort</span>(unsorted_cyrillic, <span class="dt">locale =</span> <span class="st">&quot;ru_UA&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;ж&quot; &quot;я&quot; &quot;i&quot;</code></pre>
 <p>Список локалей на копмьютере можно посмотреть командой <code>stringi::stri_locale_list()</code>. Список всех локалей вообще приведен <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">на этой странице</a>. Еще полезные команды: <code>stringi::stri_locale_info</code> и <code>stringi::stri_locale_set</code>.</p>
 <p>Не углубляясь в <a href="https://www.youtube.com/watch?v=BeoCbJPuvSE">разнообразие алгоритмов сортировки</a>, отмечу, что алгоритм по-умолчанию хуже работает с большими данными:</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="strings.html#cb61-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb61-2"><a href="strings.html#cb61-2"></a>huge &lt;-<span class="st"> </span><span class="kw">sample</span>(letters, <span class="fl">1e7</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb61-3"><a href="strings.html#cb61-3"></a><span class="kw">head</span>(huge)</span></code></pre></div>
+<div class="sourceCode" id="cb510"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb510-1"><a href="strings.html#cb510-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb510-2"><a href="strings.html#cb510-2"></a>huge &lt;-<span class="st"> </span><span class="kw">sample</span>(letters, <span class="fl">1e7</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb510-3"><a href="strings.html#cb510-3"></a><span class="kw">head</span>(huge)</span></code></pre></div>
 <pre><code>## [1] &quot;q&quot; &quot;e&quot; &quot;a&quot; &quot;y&quot; &quot;j&quot; &quot;d&quot;</code></pre>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="strings.html#cb63-1"></a><span class="kw">system.time</span>(</span>
-<span id="cb63-2"><a href="strings.html#cb63-2"></a>  <span class="kw">sort</span>(huge)</span>
-<span id="cb63-3"><a href="strings.html#cb63-3"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="strings.html#cb512-1"></a><span class="kw">system.time</span>(</span>
+<span id="cb512-2"><a href="strings.html#cb512-2"></a>  <span class="kw">sort</span>(huge)</span>
+<span id="cb512-3"><a href="strings.html#cb512-3"></a>)</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##   6.985   0.035   7.021</code></pre>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="strings.html#cb65-1"></a><span class="kw">system.time</span>(</span>
-<span id="cb65-2"><a href="strings.html#cb65-2"></a>  <span class="kw">sort</span>(huge, <span class="dt">method =</span> <span class="st">&quot;radix&quot;</span>)</span>
-<span id="cb65-3"><a href="strings.html#cb65-3"></a>)</span></code></pre></div>
+##   7.359   0.024   7.383</code></pre>
+<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="strings.html#cb514-1"></a><span class="kw">system.time</span>(</span>
+<span id="cb514-2"><a href="strings.html#cb514-2"></a>  <span class="kw">sort</span>(huge, <span class="dt">method =</span> <span class="st">&quot;radix&quot;</span>)</span>
+<span id="cb514-3"><a href="strings.html#cb514-3"></a>)</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##   0.300   0.040   0.341</code></pre>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="strings.html#cb67-1"></a><span class="kw">system.time</span>(</span>
-<span id="cb67-2"><a href="strings.html#cb67-2"></a>  <span class="kw">str_sort</span>(huge)</span>
-<span id="cb67-3"><a href="strings.html#cb67-3"></a>)</span></code></pre></div>
+##   0.330   0.028   0.358</code></pre>
+<div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="strings.html#cb516-1"></a><span class="kw">system.time</span>(</span>
+<span id="cb516-2"><a href="strings.html#cb516-2"></a>  <span class="kw">str_sort</span>(huge)</span>
+<span id="cb516-3"><a href="strings.html#cb516-3"></a>)</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##   6.464   0.060   6.524</code></pre>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="strings.html#cb69-1"></a>huge_tbl &lt;-<span class="st"> </span><span class="kw">tibble</span>(huge)</span>
-<span id="cb69-2"><a href="strings.html#cb69-2"></a><span class="kw">system.time</span>(</span>
-<span id="cb69-3"><a href="strings.html#cb69-3"></a>  huge_tbl <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb69-4"><a href="strings.html#cb69-4"></a><span class="st">    </span><span class="kw">arrange</span>(huge)</span>
-<span id="cb69-5"><a href="strings.html#cb69-5"></a>)</span></code></pre></div>
+##   6.566   0.072   6.679</code></pre>
+<div class="sourceCode" id="cb518"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb518-1"><a href="strings.html#cb518-1"></a>huge_tbl &lt;-<span class="st"> </span><span class="kw">tibble</span>(huge)</span>
+<span id="cb518-2"><a href="strings.html#cb518-2"></a><span class="kw">system.time</span>(</span>
+<span id="cb518-3"><a href="strings.html#cb518-3"></a>  huge_tbl <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb518-4"><a href="strings.html#cb518-4"></a><span class="st">    </span><span class="kw">arrange</span>(huge)</span>
+<span id="cb518-5"><a href="strings.html#cb518-5"></a>)</span></code></pre></div>
 <pre><code>##    user  system elapsed 
-##   3.415   0.077   3.490</code></pre>
+##   3.404   0.064   3.468</code></pre>
 <p>Предварительный вывод: для больших данных – <code>sort(..., method = "radix")</code>.</p>
 </div>
 <div id="поиск-подстроки" class="section level2">
 <h2><span class="header-section-number">5.6</span> Поиск подстроки</h2>
 <p>Можно использовать функцию <code>str_detect()</code>:</p>
 <p><img src="images/5.04_str_detect.png" /></p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="strings.html#cb71-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb71-2"><a href="strings.html#cb71-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">has_r =</span> <span class="kw">str_detect</span>(mn, <span class="st">&quot;r&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb520"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb520-1"><a href="strings.html#cb520-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb520-2"><a href="strings.html#cb520-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">has_r =</span> <span class="kw">str_detect</span>(mn, <span class="st">&quot;r&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["has_r"],"name":[2],"type":["lgl"],"align":["right"]}],"data":[{"1":"January","2":"TRUE"},{"1":"February","2":"TRUE"},{"1":"March","2":"TRUE"},{"1":"April","2":"TRUE"},{"1":"May","2":"FALSE"},{"1":"June","2":"FALSE"},{"1":"July","2":"FALSE"},{"1":"August","2":"FALSE"},{"1":"September","2":"TRUE"},{"1":"October","2":"TRUE"},{"1":"November","2":"TRUE"},{"1":"December","2":"TRUE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -739,8 +762,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Кроме того, существует функция, которая возвращает индексы, а не значения <code>TRUE</code>/<code>FALSE</code>:
 <img src="images/5.05_str_which.png" /></p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="strings.html#cb72-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb72-2"><a href="strings.html#cb72-2"></a><span class="st">  </span><span class="kw">slice</span>(<span class="kw">str_which</span>(month.name, <span class="st">&quot;r&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb521-1"><a href="strings.html#cb521-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb521-2"><a href="strings.html#cb521-2"></a><span class="st">  </span><span class="kw">slice</span>(<span class="kw">str_which</span>(month.name, <span class="st">&quot;r&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"January"},{"1":"February"},{"1":"March"},{"1":"April"},{"1":"September"},{"1":"October"},{"1":"November"},{"1":"December"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -748,8 +771,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Также можно посчитать количество вхождений какой-то подстроки:</p>
 <p><img src="images/5.06_str_count.png" /></p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="strings.html#cb73-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb73-2"><a href="strings.html#cb73-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">has_r =</span> <span class="kw">str_count</span>(mn, <span class="st">&quot;r&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb522"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb522-1"><a href="strings.html#cb522-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb522-2"><a href="strings.html#cb522-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">has_r =</span> <span class="kw">str_count</span>(mn, <span class="st">&quot;r&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["has_r"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"January","2":"1"},{"1":"February","2":"2"},{"1":"March","2":"1"},{"1":"April","2":"1"},{"1":"May","2":"0"},{"1":"June","2":"0"},{"1":"July","2":"0"},{"1":"August","2":"0"},{"1":"September","2":"1"},{"1":"October","2":"1"},{"1":"November","2":"1"},{"1":"December","2":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -760,36 +783,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.7</span> Изменение строк</h2>
 <div id="изменение-регистра" class="section level3">
 <h3><span class="header-section-number">5.7.1</span> Изменение регистра</h3>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="strings.html#cb74-1"></a>latin &lt;-<span class="st"> &quot;tHe QuIcK BrOwN fOx JuMpS OvEr ThE lAzY dOg&quot;</span></span>
-<span id="cb74-2"><a href="strings.html#cb74-2"></a>cyrillic &lt;-<span class="st"> &quot;лЮбЯ, сЪеШь ЩиПцЫ, — вЗдОхНёТ мЭр, — кАйФ жГуЧ&quot;</span></span>
-<span id="cb74-3"><a href="strings.html#cb74-3"></a><span class="kw">str_to_upper</span>(latin)</span></code></pre></div>
+<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="strings.html#cb523-1"></a>latin &lt;-<span class="st"> &quot;tHe QuIcK BrOwN fOx JuMpS OvEr ThE lAzY dOg&quot;</span></span>
+<span id="cb523-2"><a href="strings.html#cb523-2"></a>cyrillic &lt;-<span class="st"> &quot;лЮбЯ, сЪеШь ЩиПцЫ, — вЗдОхНёТ мЭр, — кАйФ жГуЧ&quot;</span></span>
+<span id="cb523-3"><a href="strings.html#cb523-3"></a><span class="kw">str_to_upper</span>(latin)</span></code></pre></div>
 <pre><code>## [1] &quot;THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG&quot;</code></pre>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="strings.html#cb76-1"></a><span class="kw">str_to_lower</span>(cyrillic)</span></code></pre></div>
+<div class="sourceCode" id="cb525"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb525-1"><a href="strings.html#cb525-1"></a><span class="kw">str_to_lower</span>(cyrillic)</span></code></pre></div>
 <pre><code>## [1] &quot;любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч&quot;</code></pre>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="strings.html#cb78-1"></a><span class="kw">str_to_title</span>(latin)</span></code></pre></div>
+<div class="sourceCode" id="cb527"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb527-1"><a href="strings.html#cb527-1"></a><span class="kw">str_to_title</span>(latin)</span></code></pre></div>
 <pre><code>## [1] &quot;The Quick Brown Fox Jumps Over The Lazy Dog&quot;</code></pre>
 </div>
 <div id="выделение-подстроки" class="section level3">
 <h3><span class="header-section-number">5.7.2</span> Выделение подстроки</h3>
 <p>Подстроку в строке можно выделить двумя способами: по индексам функцией <code>str_sub()</code>, и по подстроке функцией <code>str_png()</code>.</p>
 <p>extract(images/5.07_str_sub.png)</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="strings.html#cb80-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb80-2"><a href="strings.html#cb80-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mutate =</span> <span class="kw">str_sub</span>(mn, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb529-1"><a href="strings.html#cb529-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb529-2"><a href="strings.html#cb529-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mutate =</span> <span class="kw">str_sub</span>(mn, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">2</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mutate"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"January","2":"Ja"},{"1":"February","2":"Fe"},{"1":"March","2":"Ma"},{"1":"April","2":"Ap"},{"1":"May","2":"Ma"},{"1":"June","2":"Ju"},{"1":"July","2":"Ju"},{"1":"August","2":"Au"},{"1":"September","2":"Se"},{"1":"October","2":"Oc"},{"1":"November","2":"No"},{"1":"December","2":"De"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p><img src="images/5.08_str_extract.png" /></p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="strings.html#cb81-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb81-2"><a href="strings.html#cb81-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mutate =</span> <span class="kw">str_extract</span>(mn, <span class="st">&quot;r&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb530-1"><a href="strings.html#cb530-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb530-2"><a href="strings.html#cb530-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mutate =</span> <span class="kw">str_extract</span>(mn, <span class="st">&quot;r&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mutate"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"January","2":"r"},{"1":"February","2":"r"},{"1":"March","2":"r"},{"1":"April","2":"r"},{"1":"May","2":"NA"},{"1":"June","2":"NA"},{"1":"July","2":"NA"},{"1":"August","2":"NA"},{"1":"September","2":"r"},{"1":"October","2":"r"},{"1":"November","2":"r"},{"1":"December","2":"r"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>По умолчанию функция <code>str_extract()</code> возвращает первое вхождение подстроки, соответствующей шаблону. Также существует функция <code>str_extract_all()</code>, которая возвращает все вхождения подстрок, соответствующих шаблону, однако возвращает объект типа список.</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="strings.html#cb82-1"></a><span class="kw">str_extract_all</span>(month.name, <span class="st">&quot;r&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="strings.html#cb531-1"></a><span class="kw">str_extract_all</span>(month.name, <span class="st">&quot;r&quot;</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;r&quot;
 ## 
@@ -830,8 +853,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">5.7.3</span> Замена подстроки</h3>
 <p>Существует функция <code>str_replace()</code>, которая позволяет заменить одну подстроку в строке на другую:</p>
 <p><img src="images/5.11_str_replace.png" /></p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="strings.html#cb84-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb84-2"><a href="strings.html#cb84-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mutate =</span> <span class="kw">str_replace</span>(mn, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;R&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb533-1"><a href="strings.html#cb533-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb533-2"><a href="strings.html#cb533-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mutate =</span> <span class="kw">str_replace</span>(mn, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;R&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mutate"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"January","2":"JanuaRy"},{"1":"February","2":"FebRuary"},{"1":"March","2":"MaRch"},{"1":"April","2":"ApRil"},{"1":"May","2":"May"},{"1":"June","2":"June"},{"1":"July","2":"July"},{"1":"August","2":"August"},{"1":"September","2":"SeptembeR"},{"1":"October","2":"OctobeR"},{"1":"November","2":"NovembeR"},{"1":"December","2":"DecembeR"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -839,8 +862,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Как и другие функции <code>str_replace()</code> делает лишь одну замену, чтобы заменить все вхождения подстроки следует использовать функцию <code>str_replace_all()</code>:</p>
 <p><img src="images/5.12_str_replace_all.png" /></p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="strings.html#cb85-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb85-2"><a href="strings.html#cb85-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mutate =</span> <span class="kw">str_replace_all</span>(mn, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;R&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb534"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb534-1"><a href="strings.html#cb534-1"></a><span class="kw">tibble</span>(<span class="dt">mn =</span> month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb534-2"><a href="strings.html#cb534-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mutate =</span> <span class="kw">str_replace_all</span>(mn, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;R&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["mn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mutate"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"January","2":"JanuaRy"},{"1":"February","2":"FebRuaRy"},{"1":"March","2":"MaRch"},{"1":"April","2":"ApRil"},{"1":"May","2":"May"},{"1":"June","2":"June"},{"1":"July","2":"July"},{"1":"August","2":"August"},{"1":"September","2":"SeptembeR"},{"1":"October","2":"OctobeR"},{"1":"November","2":"NovembeR"},{"1":"December","2":"DecembeR"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -850,15 +873,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="удаление-подстроки" class="section level3">
 <h3><span class="header-section-number">5.7.4</span> Удаление подстроки</h3>
 <p>Для удаления подстроки на основе шаблона, используется функция <code>str_remove()</code> и <code>str_remove_all()</code></p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="strings.html#cb86-1"></a><span class="kw">tibble</span>(month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb86-2"><a href="strings.html#cb86-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mutate =</span> <span class="kw">str_remove</span>(month.name, <span class="st">&quot;r&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb535-1"><a href="strings.html#cb535-1"></a><span class="kw">tibble</span>(month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb535-2"><a href="strings.html#cb535-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mutate =</span> <span class="kw">str_remove</span>(month.name, <span class="st">&quot;r&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["month.name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mutate"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"January","2":"Januay"},{"1":"February","2":"Febuary"},{"1":"March","2":"Mach"},{"1":"April","2":"Apil"},{"1":"May","2":"May"},{"1":"June","2":"June"},{"1":"July","2":"July"},{"1":"August","2":"August"},{"1":"September","2":"Septembe"},{"1":"October","2":"Octobe"},{"1":"November","2":"Novembe"},{"1":"December","2":"Decembe"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="strings.html#cb87-1"></a><span class="kw">tibble</span>(month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb87-2"><a href="strings.html#cb87-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mutate =</span> <span class="kw">str_remove_all</span>(month.name, <span class="st">&quot;r&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb536-1"><a href="strings.html#cb536-1"></a><span class="kw">tibble</span>(month.name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb536-2"><a href="strings.html#cb536-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mutate =</span> <span class="kw">str_remove_all</span>(month.name, <span class="st">&quot;r&quot;</span>))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["month.name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mutate"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"January","2":"Januay"},{"1":"February","2":"Febuay"},{"1":"March","2":"Mach"},{"1":"April","2":"Apil"},{"1":"May","2":"May"},{"1":"June","2":"June"},{"1":"July","2":"July"},{"1":"August","2":"August"},{"1":"September","2":"Septembe"},{"1":"October","2":"Octobe"},{"1":"November","2":"Novembe"},{"1":"December","2":"Decembe"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -868,13 +891,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="транслитерация-строк" class="section level3">
 <h3><span class="header-section-number">5.7.5</span> Транслитерация строк</h3>
 <p>В пакете <code>stringi</code> сууществует достаточно много методов транслитераций строк, которые можно вывести командой <code>stri_trans_list()</code>. Вот пример использования некоторых из них:</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="strings.html#cb88-1"></a><span class="kw">stri_trans_general</span>(<span class="st">&quot;stringi&quot;</span>, <span class="st">&quot;latin-cyrillic&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb537-1"><a href="strings.html#cb537-1"></a><span class="kw">stri_trans_general</span>(<span class="st">&quot;stringi&quot;</span>, <span class="st">&quot;latin-cyrillic&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;стринги&quot;</code></pre>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="strings.html#cb90-1"></a><span class="kw">stri_trans_general</span>(<span class="st">&quot;сырники&quot;</span>, <span class="st">&quot;cyrillic-latin&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb539"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb539-1"><a href="strings.html#cb539-1"></a><span class="kw">stri_trans_general</span>(<span class="st">&quot;сырники&quot;</span>, <span class="st">&quot;cyrillic-latin&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;syrniki&quot;</code></pre>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="strings.html#cb92-1"></a><span class="kw">stri_trans_general</span>(<span class="st">&quot;stringi&quot;</span>, <span class="st">&quot;latin-greek&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb541-1"><a href="strings.html#cb541-1"></a><span class="kw">stri_trans_general</span>(<span class="st">&quot;stringi&quot;</span>, <span class="st">&quot;latin-greek&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;στριγγι&quot;</code></pre>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="strings.html#cb94-1"></a><span class="kw">stri_trans_general</span>(<span class="st">&quot;stringi&quot;</span>, <span class="st">&quot;latin-armenian&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb543-1"><a href="strings.html#cb543-1"></a><span class="kw">stri_trans_general</span>(<span class="st">&quot;stringi&quot;</span>, <span class="st">&quot;latin-armenian&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;ստրինգի&quot;</code></pre>
 <div class="rmdtask">
 <p>
@@ -924,55 +947,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>образец (pattern)</li>
 </ul>
 <p>Дальше мы будем использовать функцию <code>str_view_all()</code>, которая позволяет показывать, выделенное образцом в исходной строке.</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="strings.html#cb96-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Я всегда путаю с и c&quot;</span>, <span class="st">&quot;c&quot;</span>) <span class="co"># я ищу латинскую c</span></span></code></pre></div>
+<div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb545-1"><a href="strings.html#cb545-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Я всегда путаю с и c&quot;</span>, <span class="st">&quot;c&quot;</span>) <span class="co"># я ищу латинскую c</span></span></code></pre></div>
 <div id="htmlwidget-228ee45d79a34c19aeb5" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-228ee45d79a34c19aeb5">{"x":{"html":"<ul>\n  <li>Я всегда путаю с и <span class='match'>c<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div id="экранирование-метасимволов" class="section level3">
 <h3><span class="header-section-number">5.8.1</span> Экранирование метасимволов</h3>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="strings.html#cb97-1"></a>a &lt;-<span class="st"> &quot;Всем известно, что 4$</span><span class="ch">\\</span><span class="st">2 + 3$ * 5 = 17$? Да? Ну хорошо (а то я не был уверен). [|}^{|]&quot;</span></span>
-<span id="cb97-2"><a href="strings.html#cb97-2"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;$&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb546-1"><a href="strings.html#cb546-1"></a>a &lt;-<span class="st"> &quot;Всем известно, что 4$</span><span class="ch">\\</span><span class="st">2 + 3$ * 5 = 17$? Да? Ну хорошо (а то я не был уверен). [|}^{|]&quot;</span></span>
+<span id="cb546-2"><a href="strings.html#cb546-2"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;$&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-643c5add3cbeb49253c6" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-643c5add3cbeb49253c6">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$\\2 + 3$ * 5 = 17$? Да? Ну хорошо (а то я не был уверен). [|}^{|]<span class='match'><\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="strings.html#cb98-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">$&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb547-1"><a href="strings.html#cb547-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">$&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-c75da7e568ee2a9f199f" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-c75da7e568ee2a9f199f">{"x":{"html":"<ul>\n  <li>Всем известно, что 4<span class='match'>$<\/span>\\2 + 3<span class='match'>$<\/span> * 5 = 17<span class='match'>$<\/span>? Да? Ну хорошо (а то я не был уверен). [|}^{|]<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="strings.html#cb99-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb548"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb548-1"><a href="strings.html#cb548-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-085167ac2d569f0f908d" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-085167ac2d569f0f908d">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$\\2 + 3$ * 5 = 17$? Да? Ну хорошо (а то я не был уверен)<span class='match'>.<\/span> [|}^{|]<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="strings.html#cb100-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">*&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb549"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb549-1"><a href="strings.html#cb549-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">*&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-883ad9a237fbf413ca9a" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-883ad9a237fbf413ca9a">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$\\2 + 3$ <span class='match'>*<\/span> 5 = 17$? Да? Ну хорошо (а то я не был уверен). [|}^{|]<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="strings.html#cb101-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">+&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="strings.html#cb550-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">+&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-b6a74662ab76d79ae4fe" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-b6a74662ab76d79ae4fe">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$\\2 <span class='match'>+<\/span> 3$ * 5 = 17$? Да? Ну хорошо (а то я не был уверен). [|}^{|]<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="strings.html#cb102-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">?&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb551-1"><a href="strings.html#cb551-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">?&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-6057ff8699a0f636834a" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-6057ff8699a0f636834a">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$\\2 + 3$ * 5 = 17$<span class='match'>?<\/span> Да<span class='match'>?<\/span> Ну хорошо (а то я не был уверен). [|}^{|]<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="strings.html#cb103-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">(&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb552"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb552-1"><a href="strings.html#cb552-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">(&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-596f703ebb3131883e19" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-596f703ebb3131883e19">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$\\2 + 3$ * 5 = 17$? Да? Ну хорошо <span class='match'>(<\/span>а то я не был уверен). [|}^{|]<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="strings.html#cb104-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb553-1"><a href="strings.html#cb553-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">)&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-89addd0d2d684b688820" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-89addd0d2d684b688820">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$\\2 + 3$ * 5 = 17$? Да? Ну хорошо (а то я не был уверен<span class='match'>)<\/span>. [|}^{|]<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="strings.html#cb105-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">|&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb554-1"><a href="strings.html#cb554-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">|&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-fa9e20cb60c76ae7a0aa" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-fa9e20cb60c76ae7a0aa">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$\\2 + 3$ * 5 = 17$? Да? Ну хорошо (а то я не был уверен). [<span class='match'>|<\/span>}^{<span class='match'>|<\/span>]<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="strings.html#cb106-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">^&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb555-1"><a href="strings.html#cb555-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">^&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-58f60a5edc9ee0b11713" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-58f60a5edc9ee0b11713">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$\\2 + 3$ * 5 = 17$? Да? Ну хорошо (а то я не был уверен). [|}<span class='match'>^<\/span>{|]<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="strings.html#cb107-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">[&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb556"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb556-1"><a href="strings.html#cb556-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">[&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-98d93e1d043bd345e328" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-98d93e1d043bd345e328">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$\\2 + 3$ * 5 = 17$? Да? Ну хорошо (а то я не был уверен). <span class='match'>[<\/span>|}^{|]<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="strings.html#cb108-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">]&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="strings.html#cb557-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">]&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-fdd8caf63c737d4aec63" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-fdd8caf63c737d4aec63">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$\\2 + 3$ * 5 = 17$? Да? Ну хорошо (а то я не был уверен). [|}^{|<span class='match'>]<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="strings.html#cb109-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">{&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb558"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb558-1"><a href="strings.html#cb558-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">{&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-8c4cf5337fa25d70b4d6" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-8c4cf5337fa25d70b4d6">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$\\2 + 3$ * 5 = 17$? Да? Ну хорошо (а то я не был уверен). [|}^<span class='match'>{<\/span>|]<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="strings.html#cb110-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">}&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="strings.html#cb559-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">}&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-ef9a891f3d1c2696abce" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-ef9a891f3d1c2696abce">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$\\2 + 3$ * 5 = 17$? Да? Ну хорошо (а то я не был уверен). [|<span class='match'>}<\/span>^{|]<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="strings.html#cb111-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\\\</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb560"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb560-1"><a href="strings.html#cb560-1"></a><span class="kw">str_view_all</span>(a, <span class="st">&quot;</span><span class="ch">\\\\</span><span class="st">&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-191fe0a2a4563527ca33" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-191fe0a2a4563527ca33">{"x":{"html":"<ul>\n  <li>Всем известно, что 4$<span class='match'>\\<\/span>2 + 3$ * 5 = 17$? Да? Ну хорошо (а то я не был уверен). [|}^{|]<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
@@ -981,80 +1004,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>\\d</code> – цифры. <code>\\D</code> – не цифры.</li>
 </ul>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="strings.html#cb112-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">d&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb561"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb561-1"><a href="strings.html#cb561-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">d&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-507040303c610b53bd7b" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-507040303c610b53bd7b">{"x":{"html":"<ul>\n  <li>два <span class='match'>1<\/span><span class='match'>5<\/span> <span class='match'>4<\/span><span class='match'>2<\/span>. <span class='match'>4<\/span><span class='match'>2<\/span> <span class='match'>1<\/span><span class='match'>5<\/span>. <span class='match'>3<\/span><span class='match'>7<\/span> <span class='match'>0<\/span><span class='match'>8<\/span> <span class='match'>5<\/span>. <span class='match'>2<\/span><span class='match'>0<\/span> <span class='match'>2<\/span><span class='match'>0<\/span> <span class='match'>2<\/span><span class='match'>0<\/span>!<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="strings.html#cb113-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">D&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb562"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb562-1"><a href="strings.html#cb562-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">D&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-62301885e1fb74ff37d1" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-62301885e1fb74ff37d1">{"x":{"html":"<ul>\n  <li><span class='match'>д<\/span><span class='match'>в<\/span><span class='match'>а<\/span><span class='match'> <\/span>15<span class='match'> <\/span>42<span class='match'>.<\/span><span class='match'> <\/span>42<span class='match'> <\/span>15<span class='match'>.<\/span><span class='match'> <\/span>37<span class='match'> <\/span>08<span class='match'> <\/span>5<span class='match'>.<\/span><span class='match'> <\/span>20<span class='match'> <\/span>20<span class='match'> <\/span>20<span class='match'>!<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>\\s</code> – пробелы. <code>\\S</code> – не пробелы.</li>
 </ul>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="strings.html#cb114-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">s&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb563"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb563-1"><a href="strings.html#cb563-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">s&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-2bd151edb3e14e897e4a" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-2bd151edb3e14e897e4a">{"x":{"html":"<ul>\n  <li>два<span class='match'> <\/span>15<span class='match'> <\/span>42.<span class='match'> <\/span>42<span class='match'> <\/span>15.<span class='match'> <\/span>37<span class='match'> <\/span>08<span class='match'> <\/span>5.<span class='match'> <\/span>20<span class='match'> <\/span>20<span class='match'> <\/span>20!<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="strings.html#cb115-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">S&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb564"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb564-1"><a href="strings.html#cb564-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">S&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-ed83d85090d35778adb5" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-ed83d85090d35778adb5">{"x":{"html":"<ul>\n  <li><span class='match'>д<\/span><span class='match'>в<\/span><span class='match'>а<\/span> <span class='match'>1<\/span><span class='match'>5<\/span> <span class='match'>4<\/span><span class='match'>2<\/span><span class='match'>.<\/span> <span class='match'>4<\/span><span class='match'>2<\/span> <span class='match'>1<\/span><span class='match'>5<\/span><span class='match'>.<\/span> <span class='match'>3<\/span><span class='match'>7<\/span> <span class='match'>0<\/span><span class='match'>8<\/span> <span class='match'>5<\/span><span class='match'>.<\/span> <span class='match'>2<\/span><span class='match'>0<\/span> <span class='match'>2<\/span><span class='match'>0<\/span> <span class='match'>2<\/span><span class='match'>0<\/span><span class='match'>!<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>\\w</code> – не пробелы и не знаки препинания. <code>\\W</code> – пробелы и знаки препинания.</li>
 </ul>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="strings.html#cb116-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">w&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb565"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb565-1"><a href="strings.html#cb565-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">w&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-abba8abbfeff55233e38" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-abba8abbfeff55233e38">{"x":{"html":"<ul>\n  <li><span class='match'>д<\/span><span class='match'>в<\/span><span class='match'>а<\/span> <span class='match'>1<\/span><span class='match'>5<\/span> <span class='match'>4<\/span><span class='match'>2<\/span>. <span class='match'>4<\/span><span class='match'>2<\/span> <span class='match'>1<\/span><span class='match'>5<\/span>. <span class='match'>3<\/span><span class='match'>7<\/span> <span class='match'>0<\/span><span class='match'>8<\/span> <span class='match'>5<\/span>. <span class='match'>2<\/span><span class='match'>0<\/span> <span class='match'>2<\/span><span class='match'>0<\/span> <span class='match'>2<\/span><span class='match'>0<\/span>!<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="strings.html#cb117-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">W&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb566"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb566-1"><a href="strings.html#cb566-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">W&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-515a8e6c6a42b242b154" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-515a8e6c6a42b242b154">{"x":{"html":"<ul>\n  <li>два<span class='match'> <\/span>15<span class='match'> <\/span>42<span class='match'>.<\/span><span class='match'> <\/span>42<span class='match'> <\/span>15<span class='match'>.<\/span><span class='match'> <\/span>37<span class='match'> <\/span>08<span class='match'> <\/span>5<span class='match'>.<\/span><span class='match'> <\/span>20<span class='match'> <\/span>20<span class='match'> <\/span>20<span class='match'>!<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>произвольная группа символов и обратная к ней</li>
 </ul>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="strings.html#cb118-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Умей мечтать, не став рабом мечтанья&quot;</span>, <span class="st">&quot;[оауиыэёеяю]&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb567-1"><a href="strings.html#cb567-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Умей мечтать, не став рабом мечтанья&quot;</span>, <span class="st">&quot;[оауиыэёеяю]&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-b3af5237c766d6840294" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-b3af5237c766d6840294">{"x":{"html":"<ul>\n  <li>Ум<span class='match'>е<\/span>й м<span class='match'>е<\/span>чт<span class='match'>а<\/span>ть, н<span class='match'>е<\/span> ст<span class='match'>а<\/span>в р<span class='match'>а<\/span>б<span class='match'>о<\/span>м м<span class='match'>е<\/span>чт<span class='match'>а<\/span>нь<span class='match'>я<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="strings.html#cb119-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;И мыслить, мысли не обожествив&quot;</span>, <span class="st">&quot;[^оауиыэёеяю]&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb568"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb568-1"><a href="strings.html#cb568-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;И мыслить, мысли не обожествив&quot;</span>, <span class="st">&quot;[^оауиыэёеяю]&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-36f6b2317e27bd9fa260" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-36f6b2317e27bd9fa260">{"x":{"html":"<ul>\n  <li><span class='match'>И<\/span><span class='match'> <\/span><span class='match'>м<\/span>ы<span class='match'>с<\/span><span class='match'>л<\/span>и<span class='match'>т<\/span><span class='match'>ь<\/span><span class='match'>,<\/span><span class='match'> <\/span><span class='match'>м<\/span>ы<span class='match'>с<\/span><span class='match'>л<\/span>и<span class='match'> <\/span><span class='match'>н<\/span>е<span class='match'> <\/span>о<span class='match'>б<\/span>о<span class='match'>ж<\/span>е<span class='match'>с<\/span><span class='match'>т<\/span><span class='match'>в<\/span>и<span class='match'>в<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>встроенные группы символов</li>
 </ul>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="strings.html#cb120-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;[0-9]&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb569-1"><a href="strings.html#cb569-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;[0-9]&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-9af6d91a058b5d38f341" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-9af6d91a058b5d38f341">{"x":{"html":"<ul>\n  <li>два <span class='match'>1<\/span><span class='match'>5<\/span> <span class='match'>4<\/span><span class='match'>2<\/span>. <span class='match'>4<\/span><span class='match'>2<\/span> <span class='match'>1<\/span><span class='match'>5<\/span>. <span class='match'>3<\/span><span class='match'>7<\/span> <span class='match'>0<\/span><span class='match'>8<\/span> <span class='match'>5<\/span>. <span class='match'>2<\/span><span class='match'>0<\/span> <span class='match'>2<\/span><span class='match'>0<\/span> <span class='match'>2<\/span><span class='match'>0<\/span>!<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="strings.html#cb121-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;[а-я]&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="strings.html#cb570-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;[а-я]&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-039a16303f636d937570" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-039a16303f636d937570">{"x":{"html":"<ul>\n  <li>К<span class='match'>а<\/span><span class='match'>р<\/span><span class='match'>л<\/span> <span class='match'>у<\/span> К<span class='match'>л<\/span><span class='match'>а<\/span><span class='match'>р<\/span><span class='match'>ы<\/span> <span class='match'>у<\/span><span class='match'>к<\/span><span class='match'>р<\/span><span class='match'>а<\/span><span class='match'>л<\/span> <span class='match'>к<\/span><span class='match'>о<\/span><span class='match'>р<\/span><span class='match'>а<\/span><span class='match'>л<\/span><span class='match'>л<\/span><span class='match'>ы<\/span>, <span class='match'>а<\/span> К<span class='match'>л<\/span><span class='match'>а<\/span><span class='match'>р<\/span><span class='match'>а<\/span> <span class='match'>у<\/span> К<span class='match'>а<\/span><span class='match'>р<\/span><span class='match'>л<\/span><span class='match'>а<\/span> <span class='match'>у<\/span><span class='match'>к<\/span><span class='match'>р<\/span><span class='match'>а<\/span><span class='match'>л<\/span><span class='match'>а<\/span> <span class='match'>к<\/span><span class='match'>л<\/span><span class='match'>а<\/span><span class='match'>р<\/span><span class='match'>н<\/span><span class='match'>е<\/span><span class='match'>т<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="strings.html#cb122-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;[А-Я]&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb571"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb571-1"><a href="strings.html#cb571-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;[А-Я]&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-e69123c4ae3ae3c6840c" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-e69123c4ae3ae3c6840c">{"x":{"html":"<ul>\n  <li><span class='match'>К<\/span>арл у <span class='match'>К<\/span>лары украл кораллы, а <span class='match'>К<\/span>лара у <span class='match'>К<\/span>арла украла кларнет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="strings.html#cb123-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;[А-я]&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="strings.html#cb572-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;[А-я]&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-75e75864397e626acdc0" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-75e75864397e626acdc0">{"x":{"html":"<ul>\n  <li><span class='match'>К<\/span><span class='match'>а<\/span><span class='match'>р<\/span><span class='match'>л<\/span> <span class='match'>у<\/span> <span class='match'>К<\/span><span class='match'>л<\/span><span class='match'>а<\/span><span class='match'>р<\/span><span class='match'>ы<\/span> <span class='match'>у<\/span><span class='match'>к<\/span><span class='match'>р<\/span><span class='match'>а<\/span><span class='match'>л<\/span> <span class='match'>к<\/span><span class='match'>о<\/span><span class='match'>р<\/span><span class='match'>а<\/span><span class='match'>л<\/span><span class='match'>л<\/span><span class='match'>ы<\/span>, <span class='match'>а<\/span> <span class='match'>К<\/span><span class='match'>л<\/span><span class='match'>а<\/span><span class='match'>р<\/span><span class='match'>а<\/span> <span class='match'>у<\/span> <span class='match'>К<\/span><span class='match'>а<\/span><span class='match'>р<\/span><span class='match'>л<\/span><span class='match'>а<\/span> <span class='match'>у<\/span><span class='match'>к<\/span><span class='match'>р<\/span><span class='match'>а<\/span><span class='match'>л<\/span><span class='match'>а<\/span> <span class='match'>к<\/span><span class='match'>л<\/span><span class='match'>а<\/span><span class='match'>р<\/span><span class='match'>н<\/span><span class='match'>е<\/span><span class='match'>т<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="strings.html#cb124-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;The quick brown Fox jumps over the lazy Dog&quot;</span>, <span class="st">&quot;[a-z]&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="strings.html#cb573-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;The quick brown Fox jumps over the lazy Dog&quot;</span>, <span class="st">&quot;[a-z]&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-473fc444c88e33097842" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-473fc444c88e33097842">{"x":{"html":"<ul>\n  <li>T<span class='match'>h<\/span><span class='match'>e<\/span> <span class='match'>q<\/span><span class='match'>u<\/span><span class='match'>i<\/span><span class='match'>c<\/span><span class='match'>k<\/span> <span class='match'>b<\/span><span class='match'>r<\/span><span class='match'>o<\/span><span class='match'>w<\/span><span class='match'>n<\/span> F<span class='match'>o<\/span><span class='match'>x<\/span> <span class='match'>j<\/span><span class='match'>u<\/span><span class='match'>m<\/span><span class='match'>p<\/span><span class='match'>s<\/span> <span class='match'>o<\/span><span class='match'>v<\/span><span class='match'>e<\/span><span class='match'>r<\/span> <span class='match'>t<\/span><span class='match'>h<\/span><span class='match'>e<\/span> <span class='match'>l<\/span><span class='match'>a<\/span><span class='match'>z<\/span><span class='match'>y<\/span> D<span class='match'>o<\/span><span class='match'>g<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="strings.html#cb125-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;[^0-9]&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="strings.html#cb574-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;два 15 42. 42 15. 37 08 5. 20 20 20!&quot;</span>, <span class="st">&quot;[^0-9]&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-cd243fdd1d9f83f91b78" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-cd243fdd1d9f83f91b78">{"x":{"html":"<ul>\n  <li><span class='match'>д<\/span><span class='match'>в<\/span><span class='match'>а<\/span><span class='match'> <\/span>15<span class='match'> <\/span>42<span class='match'>.<\/span><span class='match'> <\/span>42<span class='match'> <\/span>15<span class='match'>.<\/span><span class='match'> <\/span>37<span class='match'> <\/span>08<span class='match'> <\/span>5<span class='match'>.<\/span><span class='match'> <\/span>20<span class='match'> <\/span>20<span class='match'> <\/span>20<span class='match'>!<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p><img src="images/5.13_alternates.png" /></p>
 <ul>
 <li>выбор из нескольких групп</li>
 </ul>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="strings.html#cb126-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;лар|рал|арл&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb575-1"><a href="strings.html#cb575-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;лар|рал|арл&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-98210ef191aaceb431bf" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-98210ef191aaceb431bf">{"x":{"html":"<ul>\n  <li>К<span class='match'>арл<\/span> у К<span class='match'>лар<\/span>ы ук<span class='match'>рал<\/span> ко<span class='match'>рал<\/span>лы, а К<span class='match'>лар<\/span>а у К<span class='match'>арл<\/span>а ук<span class='match'>рал<\/span>а к<span class='match'>лар<\/span>нет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>произвольный символ</li>
 </ul>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="strings.html#cb127-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Везет Сенька Саньку с Сонькой на санках. Санки скок, Сеньку с ног, Соньку в лоб, все — в сугроб&quot;</span>, <span class="st">&quot;[Сс].н&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="strings.html#cb576-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Везет Сенька Саньку с Сонькой на санках. Санки скок, Сеньку с ног, Соньку в лоб, все — в сугроб&quot;</span>, <span class="st">&quot;[Сс].н&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-5e3aa7280e2d20e98c96" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-5e3aa7280e2d20e98c96">{"x":{"html":"<ul>\n  <li>Везет <span class='match'>Сен<\/span>ька <span class='match'>Сан<\/span>ьку с <span class='match'>Сон<\/span>ькой на <span class='match'>сан<\/span>ках. <span class='match'>Сан<\/span>ки скок, <span class='match'>Сен<\/span>ьку <span class='match'>с н<\/span>ог, <span class='match'>Сон<\/span>ьку в лоб, все — в сугроб<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>знак начала и конца строки</li>
 </ul>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="strings.html#cb128-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;от топота копыт пыль по полю летит.&quot;</span>, <span class="st">&quot;^о&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb577"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb577-1"><a href="strings.html#cb577-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;от топота копыт пыль по полю летит.&quot;</span>, <span class="st">&quot;^о&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-158ade13b1bfada52299" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-158ade13b1bfada52299">{"x":{"html":"<ul>\n  <li><span class='match'>о<\/span>т топота копыт пыль по полю летит.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="strings.html#cb129-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;У ежа — ежата, у ужа — ужата&quot;</span>, <span class="st">&quot;жата$&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb578"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb578-1"><a href="strings.html#cb578-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;У ежа — ежата, у ужа — ужата&quot;</span>, <span class="st">&quot;жата$&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-9413dd05634d05430637" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-9413dd05634d05430637">{"x":{"html":"<ul>\n  <li>У ежа — ежата, у ужа — у<span class='match'>жата<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
@@ -1067,55 +1090,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>?</code> – ноль или один раз</li>
 </ul>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="strings.html#cb130-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;хорошее длинношеее животное&quot;</span>, <span class="st">&quot;еее?&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="strings.html#cb579-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;хорошее длинношеее животное&quot;</span>, <span class="st">&quot;еее?&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-187191424c2a33ab430b" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-187191424c2a33ab430b">{"x":{"html":"<ul>\n  <li>хорош<span class='match'>ее<\/span> длиннош<span class='match'>еее<\/span> животное<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>*</code> – ноль и более раз</li>
 </ul>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="strings.html#cb131-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;хорошее длинношеее животное&quot;</span>, <span class="st">&quot;ее*&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb580-1"><a href="strings.html#cb580-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;хорошее длинношеее животное&quot;</span>, <span class="st">&quot;ее*&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-bc75ea7d738b704b2bec" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-bc75ea7d738b704b2bec">{"x":{"html":"<ul>\n  <li>хорош<span class='match'>ее<\/span> длиннош<span class='match'>еее<\/span> животно<span class='match'>е<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>+</code> – один и более раз</li>
 </ul>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="strings.html#cb132-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;хорошее длинношеее животное&quot;</span>, <span class="st">&quot;е+&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="strings.html#cb581-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;хорошее длинношеее животное&quot;</span>, <span class="st">&quot;е+&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-e2beecef7d1f47fadd52" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-e2beecef7d1f47fadd52">{"x":{"html":"<ul>\n  <li>хорош<span class='match'>ее<\/span> длиннош<span class='match'>еее<\/span> животно<span class='match'>е<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>{n}</code> – <code>n</code> раз</li>
 </ul>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="strings.html#cb133-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;хорошее длинношеее животное&quot;</span>, <span class="st">&quot;е{2}&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb582"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb582-1"><a href="strings.html#cb582-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;хорошее длинношеее животное&quot;</span>, <span class="st">&quot;е{2}&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-14c66580304fdf0c0216" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-14c66580304fdf0c0216">{"x":{"html":"<ul>\n  <li>хорош<span class='match'>ее<\/span> длиннош<span class='match'>ее<\/span>е животное<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>{n,}</code> – <code>n</code> раз и более</li>
 </ul>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="strings.html#cb134-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;хорошее длинношеее животное&quot;</span>, <span class="st">&quot;е{1,}&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="strings.html#cb583-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;хорошее длинношеее животное&quot;</span>, <span class="st">&quot;е{1,}&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-180485259328194f1a01" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-180485259328194f1a01">{"x":{"html":"<ul>\n  <li>хорош<span class='match'>ее<\/span> длиннош<span class='match'>еее<\/span> животно<span class='match'>е<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>{n,m}</code> – от <code>n</code> до <code>m</code>. Отсутствие пробела важно: <code>{1,2}</code> – правильно, <code>{1,␣2}</code> – неправильно.</li>
 </ul>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="strings.html#cb135-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;хорошее длинношеее животное&quot;</span>, <span class="st">&quot;е{2,3}&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="strings.html#cb584-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;хорошее длинношеее животное&quot;</span>, <span class="st">&quot;е{2,3}&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-3bb322fcbfabfdb13093" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-3bb322fcbfabfdb13093">{"x":{"html":"<ul>\n  <li>хорош<span class='match'>ее<\/span> длиннош<span class='match'>еее<\/span> животное<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>группировка символов</li>
 </ul>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="strings.html#cb136-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Пушкиновед, Лермонтовед, Лермонтововед&quot;</span>, <span class="st">&quot;(ов)+&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="strings.html#cb585-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Пушкиновед, Лермонтовед, Лермонтововед&quot;</span>, <span class="st">&quot;(ов)+&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-5bb7f68cca430a2f9207" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-5bb7f68cca430a2f9207">{"x":{"html":"<ul>\n  <li>Пушкин<span class='match'>ов<\/span>ед, Лермонт<span class='match'>ов<\/span>ед, Лермонт<span class='match'>овов<\/span>ед<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="strings.html#cb137-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;беловатый, розоватый, розововатый&quot;</span>, <span class="st">&quot;(ов)+&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="strings.html#cb586-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;беловатый, розоватый, розововатый&quot;</span>, <span class="st">&quot;(ов)+&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-f986006b33e347923628" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-f986006b33e347923628">{"x":{"html":"<ul>\n  <li>бел<span class='match'>ов<\/span>атый, роз<span class='match'>ов<\/span>атый, роз<span class='match'>овов<\/span>атый<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li>жадный vs. нежадный алоритмы</li>
 </ul>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="strings.html#cb138-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Пушкиновед, Лермонтовед, Лермонтововед&quot;</span>, <span class="st">&quot;в.*ед&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb587"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb587-1"><a href="strings.html#cb587-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Пушкиновед, Лермонтовед, Лермонтововед&quot;</span>, <span class="st">&quot;в.*ед&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-61269570716950a4a35f" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-61269570716950a4a35f">{"x":{"html":"<ul>\n  <li>Пушкино<span class='match'>вед, Лермонтовед, Лермонтововед<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="strings.html#cb139-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Пушкиновед, Лермонтовед, Лермонтововед&quot;</span>, <span class="st">&quot;в.*?ед&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb588"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb588-1"><a href="strings.html#cb588-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Пушкиновед, Лермонтовед, Лермонтововед&quot;</span>, <span class="st">&quot;в.*?ед&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-26b876696651dd08e592" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-26b876696651dd08e592">{"x":{"html":"<ul>\n  <li>Пушкино<span class='match'>вед<\/span>, Лермонто<span class='match'>вед<\/span>, Лермонто<span class='match'>вовед<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p><img src="images/5.15_quantifiers.png" /></p>
@@ -1124,27 +1147,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">5.8.4</span> Позиционная проверка (look arounds)</h3>
 <p>Позиционная проверка – выглядит достаточно непоследовательно даже в свете остальных регулярных выражений.</p>
 <p>Давайте найдем все <em>а</em> <strong>перед</strong> <em>р</em>:</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="strings.html#cb140-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;а(?=р)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb589"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb589-1"><a href="strings.html#cb589-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;а(?=р)&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-36e5f12aa8f7514944b3" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-36e5f12aa8f7514944b3">{"x":{"html":"<ul>\n  <li>К<span class='match'>а<\/span>рл у Кл<span class='match'>а<\/span>ры украл кораллы, а Кл<span class='match'>а<\/span>ра у К<span class='match'>а<\/span>рла украла кл<span class='match'>а<\/span>рнет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>А теперь все <em>а</em> <strong>перед</strong> <em>р</em> или <em>л</em>:</p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="strings.html#cb141-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;а(?=[рл])&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb590"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb590-1"><a href="strings.html#cb590-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;а(?=[рл])&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-aacebf2b5d66a77c447b" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-aacebf2b5d66a77c447b">{"x":{"html":"<ul>\n  <li>К<span class='match'>а<\/span>рл у Кл<span class='match'>а<\/span>ры укр<span class='match'>а<\/span>л кор<span class='match'>а<\/span>ллы, а Кл<span class='match'>а<\/span>ра у К<span class='match'>а<\/span>рла укр<span class='match'>а<\/span>ла кл<span class='match'>а<\/span>рнет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>Давайте найдем все а <strong>после</strong> <em>р</em></p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="strings.html#cb142-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;(?&lt;=р)а&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="strings.html#cb591-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;(?&lt;=р)а&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-fdba825c805e818be138" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-fdba825c805e818be138">{"x":{"html":"<ul>\n  <li>Карл у Клары укр<span class='match'>а<\/span>л кор<span class='match'>а<\/span>ллы, а Клар<span class='match'>а<\/span> у Карла укр<span class='match'>а<\/span>ла кларнет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>А теперь все <em>а</em> <strong>после</strong> <em>р</em> или <em>л</em>:</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="strings.html#cb143-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;(?&lt;=[рл])а&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb592"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb592-1"><a href="strings.html#cb592-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;(?&lt;=[рл])а&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-99c0e72f9cc113ccb994" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-99c0e72f9cc113ccb994">{"x":{"html":"<ul>\n  <li>Карл у Кл<span class='match'>а<\/span>ры укр<span class='match'>а<\/span>л кор<span class='match'>а<\/span>ллы, а Кл<span class='match'>а<\/span>р<span class='match'>а<\/span> у Карл<span class='match'>а<\/span> укр<span class='match'>а<\/span>л<span class='match'>а<\/span> кл<span class='match'>а<\/span>рнет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>Также у этих выражений есть формы с отрицанием. Давайте найдем все <em>р</em> <strong>не перед</strong> <em>а</em>:</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="strings.html#cb144-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;р(?!а)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb593"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb593-1"><a href="strings.html#cb593-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;р(?!а)&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-1eedae62bd71d212e341" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1eedae62bd71d212e341">{"x":{"html":"<ul>\n  <li>Ка<span class='match'>р<\/span>л у Кла<span class='match'>р<\/span>ы украл кораллы, а Клара у Ка<span class='match'>р<\/span>ла украла кла<span class='match'>р<\/span>нет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>А теперь все <em>р</em> <strong>не после</strong> <em>а</em>:</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="strings.html#cb145-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;(?&lt;!а)р&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb594"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb594-1"><a href="strings.html#cb594-1"></a><span class="kw">str_view_all</span>(<span class="st">&quot;Карл у Клары украл кораллы, а Клара у Карла украла кларнет&quot;</span>, <span class="st">&quot;(?&lt;!а)р&quot;</span>)</span></code></pre></div>
 <div id="htmlwidget-8a18dbb9ec73b2217f3a" style="width:960px;height:100%;" class="str_view html-widget"></div>
 <script type="application/json" data-for="htmlwidget-8a18dbb9ec73b2217f3a">{"x":{"html":"<ul>\n  <li>Карл у Клары ук<span class='match'>р<\/span>ал ко<span class='match'>р<\/span>аллы, а Клара у Карла ук<span class='match'>р<\/span>ала кларнет<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>Запомнить с ходу это достаточно сложно, так что подсматривайте сюда:</p>
@@ -1220,36 +1243,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="определение-языка" class="section level2">
 <h2><span class="header-section-number">5.9</span> Определение языка</h2>
 <p>Для определения языка существует два пакета <code>cld2</code> (вероятностный) и <code>cld3</code> (нейросеть).</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="strings.html#cb146-1"></a>udhr_<span class="dv">24</span> &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/article_24_from_UDHR.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb595"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb595-1"><a href="strings.html#cb595-1"></a>udhr_<span class="dv">24</span> &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/article_24_from_UDHR.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   article_text = col_character()
 ## )</code></pre>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="strings.html#cb148-1"></a>udhr_<span class="dv">24</span></span></code></pre></div>
+<div class="sourceCode" id="cb597"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb597-1"><a href="strings.html#cb597-1"></a>udhr_<span class="dv">24</span></span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["article_text"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"Каждый человек имеет право на отдых и досуг, включая право на разумное ограничение рабочего дня и на оплачиваемый периодический отпуск."},{"1":"Everyone has the right to rest and leisure, including reasonable limitation of working hours and periodic holidays with pay."},{"1":"Toute personne a droit au repos et aux loisirs et notamment à une limitation raisonnable de la durée du travail et à des congés payés périodiques."},{"1":"Toda persona tiene derecho al descanso, al disfrute del tiempo libre, a una limitación razonable de la duración del trabajo y a vacaciones periódicas pagadas."},{"1":"لكلِّ شخص حقٌّ في الراحة وأوقات الفراغ، وخصوصًا في تحديد معقول لساعات العمل وفي إجازات دورية مأجورة."},{"1":"人人有享有休息和闲暇的权利，包括工作时间有合理限制和定期给薪休假的权利。"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="strings.html#cb149-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text)</span></code></pre></div>
+<div class="sourceCode" id="cb598"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb598-1"><a href="strings.html#cb598-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text)</span></code></pre></div>
 <pre><code>## [1] &quot;ru&quot; &quot;en&quot; &quot;fr&quot; &quot;es&quot; &quot;ar&quot; &quot;zh&quot;</code></pre>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="strings.html#cb151-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text, <span class="dt">lang_code =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb600"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb600-1"><a href="strings.html#cb600-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text, <span class="dt">lang_code =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;RUSSIAN&quot; &quot;ENGLISH&quot; &quot;FRENCH&quot;  &quot;SPANISH&quot; &quot;ARABIC&quot;  &quot;CHINESE&quot;</code></pre>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="strings.html#cb153-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text)</span></code></pre></div>
+<div class="sourceCode" id="cb602"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb602-1"><a href="strings.html#cb602-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(udhr_<span class="dv">24</span><span class="op">$</span>article_text)</span></code></pre></div>
 <pre><code>## [1] &quot;ru&quot; &quot;en&quot; &quot;fr&quot; &quot;es&quot; &quot;ar&quot; &quot;zh&quot;</code></pre>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="strings.html#cb155-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Ты женат? Говорите ли по-английски?&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb604"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb604-1"><a href="strings.html#cb604-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Ты женат? Говорите ли по-английски?&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;bg&quot;</code></pre>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="strings.html#cb157-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Ты женат? Говорите ли по-английски?&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb606"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb606-1"><a href="strings.html#cb606-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Ты женат? Говорите ли по-английски?&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="strings.html#cb159-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варкалось. Хливкие шорьки пырялись по наве, и хрюкотали зелюки, как мюмзики в мове.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb608"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb608-1"><a href="strings.html#cb608-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варкалось. Хливкие шорьки пырялись по наве, и хрюкотали зелюки, как мюмзики в мове.&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;ru&quot;</code></pre>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="strings.html#cb161-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варкалось. Хливкие шорьки пырялись по наве, и хрюкотали зелюки, как мюмзики в мове.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb610"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb610-1"><a href="strings.html#cb610-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варкалось. Хливкие шорьки пырялись по наве, и хрюкотали зелюки, как мюмзики в мове.&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;ru&quot;</code></pre>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="strings.html#cb163-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варчилось… Хлив&#39;язкі тхурки викрули, свербчись навкрузі, жасумновілі худоки гривіли зехряки в чузі.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb612"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb612-1"><a href="strings.html#cb612-1"></a>cld2<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варчилось… Хлив&#39;язкі тхурки викрули, свербчись навкрузі, жасумновілі худоки гривіли зехряки в чузі.&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;uk&quot;</code></pre>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="strings.html#cb165-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варчилось… Хлив&#39;язкі тхурки викрули, свербчись навкрузі, жасумновілі худоки гривіли зехряки в чузі.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb614"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb614-1"><a href="strings.html#cb614-1"></a>cld3<span class="op">::</span><span class="kw">detect_language</span>(<span class="st">&quot;Варчилось… Хлив&#39;язкі тхурки викрули, свербчись навкрузі, жасумновілі худоки гривіли зехряки в чузі.&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;uk&quot;</code></pre>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="strings.html#cb167-1"></a>cld2<span class="op">::</span><span class="kw">detect_language_mixed</span>(<span class="st">&quot;Многие в нашей команде OpenDataScience занимаются state-of-the-art технологиями машинного обучения: DL-фреймворками, байесовскими методами машинного обучения, вероятностным программированием и не только.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb616"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb616-1"><a href="strings.html#cb616-1"></a>cld2<span class="op">::</span><span class="kw">detect_language_mixed</span>(<span class="st">&quot;Многие в нашей команде OpenDataScience занимаются state-of-the-art технологиями машинного обучения: DL-фреймворками, байесовскими методами машинного обучения, вероятностным программированием и не только.&quot;</span>)</span></code></pre></div>
 <pre><code>## $classificaton
 ##   language code latin proportion
 ## 1  RUSSIAN   ru FALSE       0.87
@@ -1261,7 +1284,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## $reliabale
 ## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="strings.html#cb169-1"></a>cld3<span class="op">::</span><span class="kw">detect_language_mixed</span>(<span class="st">&quot;Многие в нашей команде OpenDataScience занимаются state-of-the-art технологиями машинного обучения: DL-фреймворками, байесовскими методами машинного обучения, вероятностным программированием и не только.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb618"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb618-1"><a href="strings.html#cb618-1"></a>cld3<span class="op">::</span><span class="kw">detect_language_mixed</span>(<span class="st">&quot;Многие в нашей команде OpenDataScience занимаются state-of-the-art технологиями машинного обучения: DL-фреймворками, байесовскими методами машинного обучения, вероятностным программированием и не только.&quot;</span>)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["language"],"name":[1],"type":["chr"],"align":["left"]},{"label":["probability"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["reliable"],"name":[3],"type":["lgl"],"align":["right"]},{"label":["proportion"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"ru","2":"0.9983915","3":"TRUE","4":"0.88951844"},{"1":"en","2":"0.9992564","3":"TRUE","4":"0.05099150"},{"1":"sr","2":"0.4266235","3":"FALSE","4":"0.04815864"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -1277,12 +1300,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>замена символа aOb → aNb</li>
 <li>перестановка символов ab → ba</li>
 </ul>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="strings.html#cb170-1"></a><span class="kw">library</span>(stringdist)</span>
-<span id="cb170-2"><a href="strings.html#cb170-2"></a><span class="kw">stringdist</span>(<span class="st">&quot;корова&quot;</span>,<span class="st">&quot;корова&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb619"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb619-1"><a href="strings.html#cb619-1"></a><span class="kw">library</span>(stringdist)</span>
+<span id="cb619-2"><a href="strings.html#cb619-2"></a><span class="kw">stringdist</span>(<span class="st">&quot;корова&quot;</span>,<span class="st">&quot;корова&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="strings.html#cb172-1"></a><span class="kw">stringdist</span>(<span class="st">&quot;коровы&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;курица&quot;</span>, <span class="st">&quot;бык&quot;</span>, <span class="st">&quot;утка&quot;</span>, <span class="st">&quot;корова&quot;</span>, <span class="st">&quot;осел&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb621"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb621-1"><a href="strings.html#cb621-1"></a><span class="kw">stringdist</span>(<span class="st">&quot;коровы&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;курица&quot;</span>, <span class="st">&quot;бык&quot;</span>, <span class="st">&quot;утка&quot;</span>, <span class="st">&quot;корова&quot;</span>, <span class="st">&quot;осел&quot;</span>))</span></code></pre></div>
 <pre><code>## [1] 4 6 6 1 5</code></pre>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="strings.html#cb174-1"></a><span class="kw">amatch</span>(<span class="kw">c</span>(<span class="st">&quot;быки&quot;</span>, <span class="st">&quot;коровы&quot;</span>), <span class="kw">c</span>(<span class="st">&quot;курица&quot;</span>, <span class="st">&quot;бык&quot;</span>, <span class="st">&quot;утка&quot;</span>, <span class="st">&quot;корова&quot;</span>, <span class="st">&quot;осел&quot;</span>), <span class="dt">maxDist =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb623"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb623-1"><a href="strings.html#cb623-1"></a><span class="kw">amatch</span>(<span class="kw">c</span>(<span class="st">&quot;быки&quot;</span>, <span class="st">&quot;коровы&quot;</span>), <span class="kw">c</span>(<span class="st">&quot;курица&quot;</span>, <span class="st">&quot;бык&quot;</span>, <span class="st">&quot;утка&quot;</span>, <span class="st">&quot;корова&quot;</span>, <span class="st">&quot;осел&quot;</span>), <span class="dt">maxDist =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 2 4</code></pre>
 
 </div>

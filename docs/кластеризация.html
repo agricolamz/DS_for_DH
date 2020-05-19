@@ -490,7 +490,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-3"><a href="кластеризация.html#cb6-3"></a>             <span class="dt">word_2 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
 <span id="cb6-4"><a href="кластеризация.html#cb6-4"></a>             <span class="dt">word_3 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
 <span id="cb6-5"><a href="кластеризация.html#cb6-5"></a>             <span class="dt">word_4 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb6-6"><a href="кластеризация.html#cb6-6"></a>             <span class="dt">word_5 =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div>
+<span id="cb6-6"><a href="кластеризация.html#cb6-6"></a>             <span class="dt">word_5 =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb6-7"><a href="кластеризация.html#cb6-7"></a>df</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["lang"],"name":[1],"type":["chr"],"align":["left"]},{"label":["word_1"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["word_2"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["word_3"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["word_4"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["word_5"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"Lithuanian","2":"1","3":"1","4":"1","5":"1","6":"0"},{"1":"Latvian","2":"1","3":"1","4":"1","5":"0","6":"0"},{"1":"Prussian","2":"1","3":"1","4":"0","5":"0","6":"0"},{"1":"ChurchSlavonic","2":"0","3":"0","4":"0","5":"0","6":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Существует множество мер для анализа бинарных данных. Самый распространенный — коэффициент Жаккара. Для каждой пары идиомов строим вот такую таблицу:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th></th>
+<th>идиом i</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>идиом j</td>
+<td>1</td>
+<td>a</td>
+<td>b</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>0</td>
+<td>c</td>
+<td>d</td>
+</tr>
+</tbody>
+</table>
+<p>А дальше мы считаем меру сходства:</p>
+<p><span class="math display">\[s(i, j)=\frac{a}{a+b+c}\]</span></p>
+<p>В работе [Gower and Legendre 1986] есть и другие методы (14 шт.). Большинство из них есть в функции <code>dist.binary()</code> пакета <code>ade4</code>.</p>
 <p>Дальше можно использовать функцию <code>dist()</code> с аргументом <code>binary</code>. Я использую функцию <code>tidy()</code> из пакета <code>broom</code>, чтобы получить таблицу:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="кластеризация.html#cb7-1"></a>df <span class="op">%&gt;%</span></span>
 <span id="cb7-2"><a href="кластеризация.html#cb7-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>lang) <span class="op">%&gt;%</span><span class="st"> </span></span>
