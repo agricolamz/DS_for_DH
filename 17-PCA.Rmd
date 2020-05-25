@@ -1,1 +1,108 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Методы уменьшения размерностей
+
+```{r, message=FALSE}
+library(tidyverse)
+```
+
+```{r, include=FALSE}
+theme_set(theme_bw())
+```
+
+Методы уменьшения размерностей -- это эксплораторные методы, которые позволяет использовать меньше переменных для того, чтобы найти связи в данных и связи между переменными. Немножко жаргона: размерность здесь является прямым аналогом размерности в описании физических объектов (например, 2-ухмерное, 3-ехмерное, 4-ехмерное и т. д. пространство). Важно понимать, что каждая переменная в любом датасете можно воспринимать как отдельную размерность, так что каждая строчка в датасете `mtcars` -- объект в `r ncol(mtcars)`-мерном пространстве просто потому что в этом датасете `r ncol(mtcars)` переменных.
+
+## Визуализация многомерных пространств
+
+Визуализация многомерного пространства --- дело сложное. Когда переменных не так уж и много, то в целом данную задачу можно решить используя разные трюки:
+
+* много диаграмм рассеяния
+```{r ggally, message = FALSE, cache=TRUE, fig.width=8, fig.height=8}
+library(GGally)
+ggpairs(mtcars)
+```
+
+* радиальная диаграмма (радар, паук)
+
+```{r}
+mtcars %>% 
+  mutate(car_names = rownames(mtcars)) %>% 
+  pivot_longer(names_to = "variables", values_to = "values", mpg:carb) %>%
+  mutate(variables = factor(variables, levels = colnames(mtcars))) %>%   
+  ggplot(aes(variables, values, color = car_names, group = car_names))+
+  geom_point()+
+  geom_polygon(fill = NA)+
+  ggproto("CordRadar", CoordPolar, theta = "x", r = "x", start = 0, direction = 1, is_linear = function(coord) TRUE)
+```
+
+Не очень видно. Давайте нормализуем переменные:
+
+```{r}
+mtcars %>% 
+  mutate_all(scale) %>% 
+  mutate(car_names = rownames(mtcars)) %>% 
+  pivot_longer(names_to = "variables", values_to = "values", mpg:carb) %>% 
+  mutate(variables = factor(variables, levels = colnames(mtcars))) %>%   
+  ggplot(aes(variables, values, color = car_names, group = car_names))+
+  geom_point()+
+  geom_polygon(fill = NA)+
+  ggproto("CordRadar", CoordPolar, theta = "x", r = "x", start = 0, direction = 1, is_linear = function(coord) TRUE)
+```
+
+Все равно не очень хорошо видно, давайте сделаем фасетизацию:
+
+```{r, fig.width=12, fig.height=12}
+mtcars %>% 
+  mutate_all(scale) %>% 
+  mutate(car_names = rownames(mtcars)) %>% 
+  pivot_longer(names_to = "variables", values_to = "values", mpg:carb) %>% 
+  mutate(variables = factor(variables, levels = colnames(mtcars))) %>%   
+  ggplot(aes(variables, values, group = car_names, color = car_names))+
+  geom_point(show.legend = FALSE)+
+  geom_polygon(fill = NA, show.legend = FALSE)+
+  facet_wrap(~car_names)+
+  ggproto("CordRadar", CoordPolar, theta = "x", r = "x", start = 0, direction = 1, is_linear = function(coord) TRUE)
+```
+
+
+## Простой пример: из двумерного пространства в одномерное пространство
+Мы уже рассматривали связь между количество слов в рассказе и количеством слов *и* в рассказах М. Зощенко:
+
+```{r}
+read_tsv("https://github.com/agricolamz/DS_for_DH/raw/master/data/tidy_zoshenko.csv") %>% 
+  filter(word == "и",
+         n_words < 1500) %>% 
+  distinct() ->
+  zo
+
+zo %>%   
+  ggplot(aes(n_words, n))+
+  geom_point()+
+  labs(x = "количество слов в рассказе",
+       y = "количество и")
+```
+
+Мы уже смотрели коэффициент корреляции между этими переменными (r = `r round(cor(zo$n_words, zo$n), 2)`).
+
+## Многомерное шкалирование
+
+```{r}
+iris %>% 
+  select(-Species) %>% 
+  dist() %>% 
+  cmdscale() %>% 
+  as_tibble() %>% 
+  bind_cols(iris) %>% 
+  ggplot(aes(V1, V2, color = Species))+
+  geom_point()
+```
+
+## Метод главных компонент
+
+## Множественный анализ соответствий
+
+## Другие методы  уменьшения размерности
+
