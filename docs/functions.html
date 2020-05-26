@@ -397,7 +397,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="17.2.3" data-path="кластеризация.html"><a href="кластеризация.html#применение-иерархической-кластеризации"><i class="fa fa-check"></i><b>17.2.3</b> Применение иерархической кластеризации</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>18</b> Методы уменьшения размерностей</a></li>
+<li class="chapter" data-level="18" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>18</b> Методы уменьшения размерностей</a><ul>
+<li class="chapter" data-level="18.1" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#визуализация-многомерных-пространств"><i class="fa fa-check"></i><b>18.1</b> Визуализация многомерных пространств</a></li>
+<li class="chapter" data-level="18.2" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#простой-пример-из-двумерного-пространства-в-одномерное-пространство"><i class="fa fa-check"></i><b>18.2</b> Простой пример: из двумерного пространства в одномерное пространство</a></li>
+<li class="chapter" data-level="18.3" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#многомерное-шкалирование-mds"><i class="fa fa-check"></i><b>18.3</b> Многомерное шкалирование (MDS)</a></li>
+<li class="chapter" data-level="18.4" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#метод-главных-компонент-pca"><i class="fa fa-check"></i><b>18.4</b> Метод главных компонент (PCA)</a></li>
+<li class="chapter" data-level="18.5" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#множественный-анализ-соответствий"><i class="fa fa-check"></i><b>18.5</b> Множественный анализ соответствий</a></li>
+<li class="chapter" data-level="18.6" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#другие-методы-уменьшения-размерности"><i class="fa fa-check"></i><b>18.6</b> Другие методы уменьшения размерности</a></li>
+</ul></li>
 <li class="chapter" data-level="19" data-path="tasks.html"><a href="tasks.html"><i class="fa fa-check"></i><b>19</b> Задания</a><ul>
 <li class="chapter" data-level="19.1" data-path="tasks.html"><a href="tasks.html#vec_task_1"><i class="fa fa-check"></i><b>19.1</b> Вектор</a></li>
 <li class="chapter" data-level="19.2" data-path="tasks.html"><a href="tasks.html#vec_op"><i class="fa fa-check"></i><b>19.2</b> Вектор. Операции с векторами</a></li>
@@ -753,36 +760,38 @@ dogs %&gt;%
  [2] &quot;anscombe.csv&quot;                                                  
  [3] &quot;article_24_from_UDHR.csv&quot;                                      
  [4] &quot;character-deaths.csv&quot;                                          
- [5] &quot;cities_of_russia.csv&quot;                                          
- [6] &quot;datasaurus.csv&quot;                                                
- [7] &quot;death_of_migrants_and_refugees_from_the_Unwelcomed_project.csv&quot;
- [8] &quot;dialect_forms_fake.csv&quot;                                        
- [9] &quot;dialect_forms_repeated_fake.csv&quot;                               
-[10] &quot;first_scatterplot.csv&quot;                                         
-[11] &quot;freq_dict_2011.csv&quot;                                            
-[12] &quot;icelandic.csv&quot;                                                 
-[13] &quot;languages_in_india.csv&quot;                                        
-[14] &quot;mad_questionary.csv&quot;                                           
-[15] &quot;misspelling_dataset.csv&quot;                                       
-[16] &quot;moscow_average_temperature.csv&quot;                                
-[17] &quot;MVC_Russia.csv&quot;                                                
-[18] &quot;obamacare.csv&quot;                                                 
-[19] &quot;perceptions_of_probability.csv&quot;                                
-[20] &quot;popovets_l_2019_colors_of_classic.csv&quot;                         
-[21] &quot;russian_sentiment.csv&quot;                                         
-[22] &quot;scary_letters.csv&quot;                                             
-[23] &quot;shakespeare_all.csv&quot;                                           
-[24] &quot;shakespeare_to_check.csv&quot;                                      
-[25] &quot;test_correlation_dataset.csv&quot;                                  
-[26] &quot;tidy_zoshenko.csv&quot;                                             
-[27] &quot;UK_pubs.csv&quot;                                                   
-[28] &quot;us_city_average_temperature.csv&quot;                               
-[29] &quot;visa_question.csv&quot;                                             
-[30] &quot;zhadina.csv&quot;                                                   
-[31] &quot;zoshenko.csv&quot;                                                  </code></pre>
+ [5] &quot;chekhov_zoshenko.csv&quot;                                          
+ [6] &quot;cities_of_russia.csv&quot;                                          
+ [7] &quot;datasaurus.csv&quot;                                                
+ [8] &quot;death_of_migrants_and_refugees_from_the_Unwelcomed_project.csv&quot;
+ [9] &quot;dialect_forms_fake.csv&quot;                                        
+[10] &quot;dialect_forms_repeated_fake.csv&quot;                               
+[11] &quot;first_scatterplot.csv&quot;                                         
+[12] &quot;freq_dict_2011.csv&quot;                                            
+[13] &quot;gospel_freq_words.csv&quot;                                         
+[14] &quot;icelandic.csv&quot;                                                 
+[15] &quot;languages_in_india.csv&quot;                                        
+[16] &quot;mad_questionary.csv&quot;                                           
+[17] &quot;misspelling_dataset.csv&quot;                                       
+[18] &quot;moscow_average_temperature.csv&quot;                                
+[19] &quot;MVC_Russia.csv&quot;                                                
+[20] &quot;obamacare.csv&quot;                                                 
+[21] &quot;perceptions_of_probability.csv&quot;                                
+[22] &quot;popovets_l_2019_colors_of_classic.csv&quot;                         
+[23] &quot;russian_sentiment.csv&quot;                                         
+[24] &quot;scary_letters.csv&quot;                                             
+[25] &quot;shakespeare_all.csv&quot;                                           
+[26] &quot;shakespeare_to_check.csv&quot;                                      
+[27] &quot;test_correlation_dataset.csv&quot;                                  
+[28] &quot;tidy_zoshenko.csv&quot;                                             
+[29] &quot;UK_pubs.csv&quot;                                                   
+[30] &quot;us_city_average_temperature.csv&quot;                               
+[31] &quot;visa_question.csv&quot;                                             
+[32] &quot;zhadina.csv&quot;                                                   
+[33] &quot;zoshenko.csv&quot;                                                  </code></pre>
 <div class="sourceCode" id="cb793"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb793-1"><a href="functions.html#cb793-1"></a>all_datasets &lt;-<span class="st"> </span><span class="kw">map</span>(<span class="kw">str_c</span>(<span class="st">&quot;data/&quot;</span>, <span class="kw">list.files</span>(<span class="st">&quot;data/&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;.csv&quot;</span>)), read_csv)</span>
 <span id="cb793-2"><a href="functions.html#cb793-2"></a><span class="kw">str</span>(all_datasets, <span class="dt">max.level =</span> <span class="dv">1</span>)</span></code></pre></div>
-<pre><code>List of 31
+<pre><code>List of 33
  $ : tibble [521 × 5] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
@@ -821,6 +830,80 @@ dogs %&gt;%
   .. ..   SoS = col_double(),
   .. ..   FfC = col_double(),
   .. ..   DwD = col_double()
+  .. .. )
+ $ : tibble [379 × 70] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+  ..- attr(*, &quot;spec&quot;)=
+  .. .. cols(
+  .. ..   titles = col_character(),
+  .. ..   text_author = col_character(),
+  .. ..   а = col_double(),
+  .. ..   без = col_double(),
+  .. ..   бы = col_double(),
+  .. ..   был = col_double(),
+  .. ..   было = col_double(),
+  .. ..   быть = col_double(),
+  .. ..   в = col_double(),
+  .. ..   вам = col_double(),
+  .. ..   вас = col_double(),
+  .. ..   во = col_double(),
+  .. ..   вот = col_double(),
+  .. ..   все = col_double(),
+  .. ..   вы = col_double(),
+  .. ..   да = col_double(),
+  .. ..   даже = col_double(),
+  .. ..   для = col_double(),
+  .. ..   до = col_double(),
+  .. ..   его = col_double(),
+  .. ..   ее = col_double(),
+  .. ..   ему = col_double(),
+  .. ..   если = col_double(),
+  .. ..   есть = col_double(),
+  .. ..   еще = col_double(),
+  .. ..   же = col_double(),
+  .. ..   за = col_double(),
+  .. ..   и = col_double(),
+  .. ..   из = col_double(),
+  .. ..   или = col_double(),
+  .. ..   к = col_double(),
+  .. ..   как = col_double(),
+  .. ..   когда = col_double(),
+  .. ..   ли = col_double(),
+  .. ..   меня = col_double(),
+  .. ..   мне = col_double(),
+  .. ..   мы = col_double(),
+  .. ..   на = col_double(),
+  .. ..   не = col_double(),
+  .. ..   него = col_double(),
+  .. ..   нет = col_double(),
+  .. ..   ни = col_double(),
+  .. ..   ничего = col_double(),
+  .. ..   но = col_double(),
+  .. ..   ну = col_double(),
+  .. ..   о = col_double(),
+  .. ..   он = col_double(),
+  .. ..   она = col_double(),
+  .. ..   от = col_double(),
+  .. ..   по = col_double(),
+  .. ..   под = col_double(),
+  .. ..   раз = col_double(),
+  .. ..   с = col_double(),
+  .. ..   себе = col_double(),
+  .. ..   себя = col_double(),
+  .. ..   со = col_double(),
+  .. ..   так = col_double(),
+  .. ..   теперь = col_double(),
+  .. ..   то = col_double(),
+  .. ..   только = col_double(),
+  .. ..   тут = col_double(),
+  .. ..   ты = col_double(),
+  .. ..   у = col_double(),
+  .. ..   уже = col_double(),
+  .. ..   чего = col_double(),
+  .. ..   человек = col_double(),
+  .. ..   чем = col_double(),
+  .. ..   что = col_double(),
+  .. ..   это = col_double(),
+  .. ..   я = col_double()
   .. .. )
  $ : tibble [1,097 × 1] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=
@@ -870,6 +953,15 @@ dogs %&gt;%
   ..- attr(*, &quot;spec&quot;)=
   .. .. cols(
   .. ..   `lemma    pos freq_ipm` = col_character()
+  .. .. )
+ $ : tibble [472 × 5] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+  ..- attr(*, &quot;spec&quot;)=
+  .. .. cols(
+  .. ..   word = col_character(),
+  .. ..   John = col_double(),
+  .. ..   Luke = col_double(),
+  .. ..   Mark = col_double(),
+  .. ..   Matthew = col_double()
   .. .. )
  $ : tibble [175 × 2] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
   ..- attr(*, &quot;spec&quot;)=

@@ -122,7 +122,7 @@ zo %>%
   labs(x = "новая переменная", y = "старые переменные")
 ```
 
-## Многомерное шкалирование
+## Многомерное шкалирование (MDS)
 
 Многомерное шкалирование -- преобразование из многомерного пространства в n-мерное пространство (чаще всего смотрят на n равное 2), которое старается как можно меньше исказить **расстояния** между наблюдениями.
 
@@ -157,11 +157,23 @@ stringdistmatrix(stopwords("ru")) %>%
 * можно обнаружить, есть ли связь между наблюдениями, в том числе невыраженная переменными, которые есть в датасете. Например, из графика со стопсловами, видна "скрытая" переменная -- длина слова.
 
 ```{block, type = "rmdtask"}
-
+[В датасет](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/chekhov_zoshenko.csv) записаны частотности некоторых слов в рассказах А. Чехова и М. Зощенко. Постройте многомерное шкалирование используя все переменные, и раскрасьте рассказы в зависимости от авторства. Делятся ли рассказы на кластеры? Как вы думаете почему?
 ```
 
+```{r, include=FALSE}
+df <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/chekhov_zoshenko.csv")
 
-## Метод главных компонент
+df %>% 
+  select(-titles, -text_author) %>% 
+  dist() %>% 
+  cmdscale() %>% 
+  as_tibble() %>% 
+  bind_cols(df) %>% 
+  ggplot(aes(V1, V2, color = text_author))+
+  geom_point()
+```
+
+## Метод главных компонент (PCA)
 
 Метод главных компонент -- преобразование из многомерного пространства в n-мерное пространство (чаще всего смотрят на n равное 2), которое старается как можно меньше исказить **корреляции** между переменными.
 
@@ -237,6 +249,32 @@ stringdistmatrix(st_words$words) %>%
   prcomp(scale. = TRUE) %>% 
   summary()
 ```
+
+```{block, type = "rmdtask"}
+[В датасет](https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/chekhov_zoshenko.csv) записаны частотности некоторых слов в рассказах А. Чехова и М. Зощенко. Проведите анализ методом главных компонент и визуализируйте первые две компоненты, используя все переменные, и раскрасьте рассказы в зависимости от авторства.
+```
+
+```{r, echo=FALSE, message=FALSE}
+df <- read_csv("https://raw.githubusercontent.com/agricolamz/DS_for_DH/master/data/chekhov_zoshenko.csv")
+
+df %>% 
+  select(-titles, -text_author) %>% 
+  prcomp(scale. = TRUE) %>% 
+  augment(df) %>% 
+  ggplot(aes(.fittedPC1, .fittedPC2, color = text_author))+
+  geom_point()+
+  stat_ellipse()
+```
+
+```{block, type = "rmdtask"}
+Посчитайте долю кумулятивной дисперсии, объясненной первыми двумя компонентами.
+```
+
+```{r, results="asis", echo=FALSE}
+library(checkdown)
+check_question("0.10", options = c("0.10", "0.20", "0.30", "0.40", "0.50"), alignment = TRUE)
+```
+
 
 ## Множественный анализ соответствий
 

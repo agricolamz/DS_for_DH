@@ -397,7 +397,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="17.2.3" data-path="кластеризация.html"><a href="кластеризация.html#применение-иерархической-кластеризации"><i class="fa fa-check"></i><b>17.2.3</b> Применение иерархической кластеризации</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>18</b> Методы уменьшения размерностей</a></li>
+<li class="chapter" data-level="18" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html"><i class="fa fa-check"></i><b>18</b> Методы уменьшения размерностей</a><ul>
+<li class="chapter" data-level="18.1" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#визуализация-многомерных-пространств"><i class="fa fa-check"></i><b>18.1</b> Визуализация многомерных пространств</a></li>
+<li class="chapter" data-level="18.2" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#простой-пример-из-двумерного-пространства-в-одномерное-пространство"><i class="fa fa-check"></i><b>18.2</b> Простой пример: из двумерного пространства в одномерное пространство</a></li>
+<li class="chapter" data-level="18.3" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#многомерное-шкалирование-mds"><i class="fa fa-check"></i><b>18.3</b> Многомерное шкалирование (MDS)</a></li>
+<li class="chapter" data-level="18.4" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#метод-главных-компонент-pca"><i class="fa fa-check"></i><b>18.4</b> Метод главных компонент (PCA)</a></li>
+<li class="chapter" data-level="18.5" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#множественный-анализ-соответствий"><i class="fa fa-check"></i><b>18.5</b> Множественный анализ соответствий</a></li>
+<li class="chapter" data-level="18.6" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#другие-методы-уменьшения-размерности"><i class="fa fa-check"></i><b>18.6</b> Другие методы уменьшения размерности</a></li>
+</ul></li>
 <li class="chapter" data-level="19" data-path="tasks.html"><a href="tasks.html"><i class="fa fa-check"></i><b>19</b> Задания</a><ul>
 <li class="chapter" data-level="19.1" data-path="tasks.html"><a href="tasks.html#vec_task_1"><i class="fa fa-check"></i><b>19.1</b> Вектор</a></li>
 <li class="chapter" data-level="19.2" data-path="tasks.html"><a href="tasks.html#vec_op"><i class="fa fa-check"></i><b>19.2</b> Вектор. Операции с векторами</a></li>
@@ -511,7 +518,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="vec_task_2" class="section level2">
 <h2><span class="header-section-number">19.3</span> Вектор. Индексирование</h2>
 <p>Создайте вектор <code>vec1</code>:</p>
-<div class="sourceCode" id="cb1226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1226-1"><a href="tasks.html#cb1226-1"></a>vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">15</span>, <span class="dv">1</span>, <span class="dv">11</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1247-1"><a href="tasks.html#cb1247-1"></a>vec1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">15</span>, <span class="dv">1</span>, <span class="dv">11</span>)</span></code></pre></div>
 <ul>
 <li>Найдите второй элемент вектора <code>vec1</code>:</li>
 </ul>
@@ -556,8 +563,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="list_ta" class="section level2">
 <h2><span class="header-section-number">19.4</span> Списки</h2>
 <p>Дан список <code>list_1</code>:</p>
-<div class="sourceCode" id="cb1236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1236-1"><a href="tasks.html#cb1236-1"></a>list_<span class="dv">1</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">numbers =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letters =</span> letters, <span class="dt">logic =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb1236-2"><a href="tasks.html#cb1236-2"></a>list_<span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb1257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1257-1"><a href="tasks.html#cb1257-1"></a>list_<span class="dv">1</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">numbers =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">letters =</span> letters, <span class="dt">logic =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb1257-2"><a href="tasks.html#cb1257-2"></a>list_<span class="dv">1</span></span></code></pre></div>
 <pre><code>$numbers
 [1] 1 2 3 4 5
 
