@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>17 Кластеризация | Наука о данных в R для программы Цифровых гуманитарных исследований</title>
   <meta name="description" content="17 Кластеризация | Наука о данных в R для программы Цифровых гуманитарных исследований" />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="17 Кластеризация | Наука о данных в R для программы Цифровых гуманитарных исследований" />
   <meta property="og:type" content="book" />
@@ -49,6 +49,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
@@ -375,14 +376,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.5" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#регрессионный-анализ"><i class="fa fa-check"></i><b>15.5</b> Регрессионный анализ</a><ul>
 <li class="chapter" data-level="15.5.1" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#основы"><i class="fa fa-check"></i><b>15.5.1</b> Основы</a></li>
 <li class="chapter" data-level="15.5.2" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#первая-регрессия"><i class="fa fa-check"></i><b>15.5.2</b> Первая регрессия</a></li>
-<li class="chapter" data-level="15.5.3" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#категориальные-переменные-1"><i class="fa fa-check"></i><b>15.5.3</b> Категориальные переменные</a></li>
+<li class="chapter" data-level="15.5.3" data-path="описательная-статистика-распределения.html"><a href="описательная-статистика-распределения.html#категориальные-переменные"><i class="fa fa-check"></i><b>15.5.3</b> Категориальные переменные</a></li>
 <li class="chapter" data-level="15.5.4" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#множественная-регрессия"><i class="fa fa-check"></i><b>15.5.4</b> Множественная регрессия</a></li>
 <li class="chapter" data-level="15.5.5" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#сравнение-моделей"><i class="fa fa-check"></i><b>15.5.5</b> Сравнение моделей</a></li>
-<li class="chapter" data-level="15.5.6" data-path="корреляция-и-регрессия.html"><a href="корреляция-и-регрессия.html#послесловие-1"><i class="fa fa-check"></i><b>15.5.6</b> Послесловие</a></li>
+<li class="chapter" data-level="15.5.6" data-path="проверка-статистических-гипотез.html"><a href="проверка-статистических-гипотез.html#послесловие"><i class="fa fa-check"></i><b>15.5.6</b> Послесловие</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html"><i class="fa fa-check"></i><b>16</b> Работа статистического детектива</a><ul>
-<li class="chapter" data-level="16.1" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#введение-1"><i class="fa fa-check"></i><b>16.1</b> Введение</a></li>
+<li class="chapter" data-level="16.1" data-path="сбор-данных-из-интернета-rvest.html"><a href="сбор-данных-из-интернета-rvest.html#введение"><i class="fa fa-check"></i><b>16.1</b> Введение</a></li>
 <li class="chapter" data-level="16.2" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#возможно-ли-такое-среднее"><i class="fa fa-check"></i><b>16.2</b> Возможно ли такое среднее?</a></li>
 <li class="chapter" data-level="16.3" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-statcheck"><i class="fa fa-check"></i><b>16.3</b> Пакет <code>statcheck</code></a></li>
 <li class="chapter" data-level="16.4" data-path="работа-статистического-детектива.html"><a href="работа-статистического-детектива.html#пакет-digitize"><i class="fa fa-check"></i><b>16.4</b> Пакет <code>digitize</code></a></li>
@@ -402,8 +403,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.2" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#простой-пример-из-двумерного-пространства-в-одномерное-пространство"><i class="fa fa-check"></i><b>18.2</b> Простой пример: из двумерного пространства в одномерное пространство</a></li>
 <li class="chapter" data-level="18.3" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#многомерное-шкалирование-mds"><i class="fa fa-check"></i><b>18.3</b> Многомерное шкалирование (MDS)</a></li>
 <li class="chapter" data-level="18.4" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#метод-главных-компонент-pca"><i class="fa fa-check"></i><b>18.4</b> Метод главных компонент (PCA)</a></li>
-<li class="chapter" data-level="18.5" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#множественный-анализ-соответствий"><i class="fa fa-check"></i><b>18.5</b> Множественный анализ соответствий</a></li>
-<li class="chapter" data-level="18.6" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#другие-методы-уменьшения-размерности"><i class="fa fa-check"></i><b>18.6</b> Другие методы уменьшения размерности</a></li>
+<li class="chapter" data-level="18.5" data-path="методы-уменьшения-размерностей.html"><a href="методы-уменьшения-размерностей.html#другие-методы-уменьшения-размерности"><i class="fa fa-check"></i><b>18.5</b> Другие методы уменьшения размерности</a></li>
 </ul></li>
 <li class="chapter" data-level="19" data-path="tasks.html"><a href="tasks.html"><i class="fa fa-check"></i><b>19</b> Задания</a><ul>
 <li class="chapter" data-level="19.1" data-path="tasks.html"><a href="tasks.html#vec_task_1"><i class="fa fa-check"></i><b>19.1</b> Вектор</a></li>
@@ -441,7 +441,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="кластеризация" class="section level1">
 <h1><span class="header-section-number">17</span> Кластеризация</h1>
-<div class="sourceCode" id="cb1190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1190-1"><a href="кластеризация.html#cb1190-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb1201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1201-1"><a href="кластеризация.html#cb1201-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
 <p>Кластеризация — это не метод, а задача, для решение которой придумано множество алгоритмов. Не существует “правильных”методов кластеризации, так как “clustering is in the eye of the beholder”[Estivill-Castro 2002]. Мы рассмотрим два семейства алгоритмов:</p>
 <ul>
 <li>метод k-средних (k-means)</li>
@@ -462,37 +462,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="пример" class="section level3">
 <h3><span class="header-section-number">17.1.1</span> Пример</h3>
 <p>Давайте проанализируем данные из датасета <code>iris</code>:</p>
-<div class="sourceCode" id="cb1191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1191-1"><a href="кластеризация.html#cb1191-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1191-2"><a href="кластеризация.html#cb1191-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Petal.Length, Petal.Width, <span class="dt">color =</span> Species))<span class="op">+</span></span>
-<span id="cb1191-3"><a href="кластеризация.html#cb1191-3"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1202-1"><a href="кластеризация.html#cb1202-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1202-2"><a href="кластеризация.html#cb1202-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Petal.Length, Petal.Width, <span class="dt">color =</span> Species))<span class="op">+</span></span>
+<span id="cb1202-3"><a href="кластеризация.html#cb1202-3"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-645-1.png" width="672" /></p>
 <p>Для того чтобы запустить метод k-средних в R нужно использовать функцию <code>kmeans()</code>, указав количество кластеров в <code>centers</code>:</p>
-<div class="sourceCode" id="cb1192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1192-1"><a href="кластеризация.html#cb1192-1"></a><span class="kw">library</span>(broom)</span>
-<span id="cb1192-2"><a href="кластеризация.html#cb1192-2"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
-<span id="cb1192-3"><a href="кластеризация.html#cb1192-3"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1192-4"><a href="кластеризация.html#cb1192-4"></a><span class="st">  </span><span class="kw">select</span>(Petal.Length, Petal.Width) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1192-5"><a href="кластеризация.html#cb1192-5"></a><span class="st">  </span><span class="kw">kmeans</span>(<span class="dt">centers =</span> <span class="dv">3</span>) -&gt;</span>
-<span id="cb1192-6"><a href="кластеризация.html#cb1192-6"></a><span class="st">  </span>km</span></code></pre></div>
+<div class="sourceCode" id="cb1203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1203-1"><a href="кластеризация.html#cb1203-1"></a><span class="kw">library</span>(broom)</span>
+<span id="cb1203-2"><a href="кластеризация.html#cb1203-2"></a><span class="kw">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1203-3"><a href="кластеризация.html#cb1203-3"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1203-4"><a href="кластеризация.html#cb1203-4"></a><span class="st">  </span><span class="kw">select</span>(Petal.Length, Petal.Width) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1203-5"><a href="кластеризация.html#cb1203-5"></a><span class="st">  </span><span class="kw">kmeans</span>(<span class="dt">centers =</span> <span class="dv">3</span>) -&gt;</span>
+<span id="cb1203-6"><a href="кластеризация.html#cb1203-6"></a><span class="st">  </span>km</span></code></pre></div>
 <p>Давайте посмотрим, насколько хорошо алгоритм k-средних справился с заданием. Я воспользуюсь функцией <code>augment()</code> из пакета <code>broom</code>, чтобы добавить результаты модели к исходным данным (это работает и с регрессиями)</p>
-<div class="sourceCode" id="cb1193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1193-1"><a href="кластеризация.html#cb1193-1"></a>km <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1193-2"><a href="кластеризация.html#cb1193-2"></a><span class="st">  </span><span class="kw">augment</span>(iris) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1193-3"><a href="кластеризация.html#cb1193-3"></a><span class="st">  </span><span class="kw">count</span>(Species, .cluster)</span></code></pre></div>
+<div class="sourceCode" id="cb1204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1204-1"><a href="кластеризация.html#cb1204-1"></a>km <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1204-2"><a href="кластеризация.html#cb1204-2"></a><span class="st">  </span><span class="kw">augment</span>(iris) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1204-3"><a href="кластеризация.html#cb1204-3"></a><span class="st">  </span><span class="kw">count</span>(Species, .cluster)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["Species"],"name":[1],"type":["fctr"],"align":["left"]},{"label":[".cluster"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["n"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"setosa","2":"1","3":"50"},{"1":"versicolor","2":"2","3":"48"},{"1":"versicolor","2":"3","3":"2"},{"1":"virginica","2":"2","3":"4"},{"1":"virginica","2":"3","3":"46"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Мы видим, что алгоритм все разбил на три кластера (<code>1</code>, <code>2</code>, <code>3</code>), <code>1</code> соответствует <code>setosa</code>, <code>2</code> соответствует <code>versicolor</code>, <code>3</code> соответсвтует <code>virginica</code> (я смотрю с какой группой ассоциировано наибольшое <code>n</code>). Я использую функцию <code>recode_factor()</code> для того чтобы перекодировать переменную <code>.cluster</code>:</p>
-<div class="sourceCode" id="cb1194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1194-1"><a href="кластеризация.html#cb1194-1"></a>km <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1194-2"><a href="кластеризация.html#cb1194-2"></a><span class="st">  </span><span class="kw">augment</span>(iris) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1194-3"><a href="кластеризация.html#cb1194-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">.cluster =</span> <span class="kw">recode_factor</span>(.cluster,</span>
-<span id="cb1194-4"><a href="кластеризация.html#cb1194-4"></a>                                  <span class="st">`</span><span class="dt">1</span><span class="st">`</span> =<span class="st"> &quot;setosa&quot;</span>, </span>
-<span id="cb1194-5"><a href="кластеризация.html#cb1194-5"></a>                                  <span class="st">`</span><span class="dt">2</span><span class="st">`</span> =<span class="st"> &quot;versicolor&quot;</span>,</span>
-<span id="cb1194-6"><a href="кластеризация.html#cb1194-6"></a>                                  <span class="st">`</span><span class="dt">3</span><span class="st">`</span> =<span class="st"> &quot;virginica&quot;</span>),</span>
-<span id="cb1194-7"><a href="кластеризация.html#cb1194-7"></a>         <span class="dt">correct =</span> Species <span class="op">==</span><span class="st"> </span>.cluster) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1194-8"><a href="кластеризация.html#cb1194-8"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Petal.Length, Petal.Width))<span class="op">+</span></span>
-<span id="cb1194-9"><a href="кластеризация.html#cb1194-9"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> correct, <span class="dt">shape =</span> Species))<span class="op">+</span></span>
-<span id="cb1194-10"><a href="кластеризация.html#cb1194-10"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(km<span class="op">$</span>centers)) <span class="co"># центроиды</span></span></code></pre></div>
+<div class="sourceCode" id="cb1205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1205-1"><a href="кластеризация.html#cb1205-1"></a>km <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1205-2"><a href="кластеризация.html#cb1205-2"></a><span class="st">  </span><span class="kw">augment</span>(iris) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1205-3"><a href="кластеризация.html#cb1205-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">.cluster =</span> <span class="kw">recode_factor</span>(.cluster,</span>
+<span id="cb1205-4"><a href="кластеризация.html#cb1205-4"></a>                                  <span class="st">`</span><span class="dt">1</span><span class="st">`</span> =<span class="st"> &quot;setosa&quot;</span>, </span>
+<span id="cb1205-5"><a href="кластеризация.html#cb1205-5"></a>                                  <span class="st">`</span><span class="dt">2</span><span class="st">`</span> =<span class="st"> &quot;versicolor&quot;</span>,</span>
+<span id="cb1205-6"><a href="кластеризация.html#cb1205-6"></a>                                  <span class="st">`</span><span class="dt">3</span><span class="st">`</span> =<span class="st"> &quot;virginica&quot;</span>),</span>
+<span id="cb1205-7"><a href="кластеризация.html#cb1205-7"></a>         <span class="dt">correct =</span> Species <span class="op">==</span><span class="st"> </span>.cluster) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1205-8"><a href="кластеризация.html#cb1205-8"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Petal.Length, Petal.Width))<span class="op">+</span></span>
+<span id="cb1205-9"><a href="кластеризация.html#cb1205-9"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> correct, <span class="dt">shape =</span> Species))<span class="op">+</span></span>
+<span id="cb1205-10"><a href="кластеризация.html#cb1205-10"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(km<span class="op">$</span>centers)) <span class="co"># центроиды</span></span></code></pre></div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-648-1.png" width="672" /></p>
 <p>Цветом выделены несовпадения с исходными данными, как видно, таких случаев всего 5: два цветка <code>virginica</code> были отнесены к классу <code>versicolor</code>, три цветка <code>virginica</code> были отнесены к <code>versicolor</code>. Так что в целом, можно сказать, что алгоритм хорошо справился. Черным обозначены центроиды получившихся кластеров.</p>
 </div>
@@ -510,13 +510,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="бинарные-данные" class="section level4">
 <h4><span class="header-section-number">17.2.1.1</span> Бинарные данные</h4>
 <p>Представим вот такие данные для нескольких языков:</p>
-<div class="sourceCode" id="cb1195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1195-1"><a href="кластеризация.html#cb1195-1"></a>df &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">lang =</span> <span class="kw">c</span>(<span class="st">&quot;Lithuanian&quot;</span>, <span class="st">&quot;Latvian&quot;</span>, <span class="st">&quot;Prussian&quot;</span>, <span class="st">&quot;ChurchSlavonic&quot;</span>),</span>
-<span id="cb1195-2"><a href="кластеризация.html#cb1195-2"></a>             <span class="dt">word_1 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb1195-3"><a href="кластеризация.html#cb1195-3"></a>             <span class="dt">word_2 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb1195-4"><a href="кластеризация.html#cb1195-4"></a>             <span class="dt">word_3 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb1195-5"><a href="кластеризация.html#cb1195-5"></a>             <span class="dt">word_4 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb1195-6"><a href="кластеризация.html#cb1195-6"></a>             <span class="dt">word_5 =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span>
-<span id="cb1195-7"><a href="кластеризация.html#cb1195-7"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb1206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1206-1"><a href="кластеризация.html#cb1206-1"></a>df &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">lang =</span> <span class="kw">c</span>(<span class="st">&quot;Lithuanian&quot;</span>, <span class="st">&quot;Latvian&quot;</span>, <span class="st">&quot;Prussian&quot;</span>, <span class="st">&quot;ChurchSlavonic&quot;</span>),</span>
+<span id="cb1206-2"><a href="кластеризация.html#cb1206-2"></a>             <span class="dt">word_1 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb1206-3"><a href="кластеризация.html#cb1206-3"></a>             <span class="dt">word_2 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb1206-4"><a href="кластеризация.html#cb1206-4"></a>             <span class="dt">word_3 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb1206-5"><a href="кластеризация.html#cb1206-5"></a>             <span class="dt">word_4 =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb1206-6"><a href="кластеризация.html#cb1206-6"></a>             <span class="dt">word_5 =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb1206-7"><a href="кластеризация.html#cb1206-7"></a>df</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["lang"],"name":[1],"type":["chr"],"align":["left"]},{"label":["word_1"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["word_2"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["word_3"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["word_4"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["word_5"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"Lithuanian","2":"1","3":"1","4":"1","5":"1","6":"0"},{"1":"Latvian","2":"1","3":"1","4":"1","5":"0","6":"0"},{"1":"Prussian","2":"1","3":"1","4":"0","5":"0","6":"0"},{"1":"ChurchSlavonic","2":"0","3":"0","4":"0","5":"0","6":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -557,43 +557,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math display">\[s(i, j)=\frac{a}{a+b+c}\]</span></p>
 <p>В работе [Gower and Legendre 1986] есть и другие методы (14 шт.). Большинство из них есть в функции <code>dist.binary()</code> пакета <code>ade4</code>.</p>
 <p>Дальше можно использовать функцию <code>dist()</code> с аргументом <code>binary</code>. Я использую функцию <code>tidy()</code> из пакета <code>broom</code>, чтобы получить таблицу:</p>
-<div class="sourceCode" id="cb1196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1196-1"><a href="кластеризация.html#cb1196-1"></a>df <span class="op">%&gt;%</span></span>
-<span id="cb1196-2"><a href="кластеризация.html#cb1196-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>lang) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1196-3"><a href="кластеризация.html#cb1196-3"></a><span class="st">  </span><span class="kw">dist</span>(<span class="dt">method =</span> <span class="st">&quot;binary&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1196-4"><a href="кластеризация.html#cb1196-4"></a><span class="st">  </span><span class="kw">tidy</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1207-1"><a href="кластеризация.html#cb1207-1"></a>df <span class="op">%&gt;%</span></span>
+<span id="cb1207-2"><a href="кластеризация.html#cb1207-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>lang) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1207-3"><a href="кластеризация.html#cb1207-3"></a><span class="st">  </span><span class="kw">dist</span>(<span class="dt">method =</span> <span class="st">&quot;binary&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1207-4"><a href="кластеризация.html#cb1207-4"></a><span class="st">  </span><span class="kw">tidy</span>()</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["item1"],"name":[1],"type":["int"],"align":["right"]},{"label":["item2"],"name":[2],"type":["int"],"align":["right"]},{"label":["distance"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2","2":"1","3":"0.2500000"},{"1":"3","2":"1","3":"0.5000000"},{"1":"4","2":"1","3":"1.0000000"},{"1":"3","2":"2","3":"0.3333333"},{"1":"4","2":"2","3":"1.0000000"},{"1":"4","2":"3","3":"1.0000000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["item1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["item2"],"name":[2],"type":["chr"],"align":["left"]},{"label":["distance"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"2","3":"0.2500000"},{"1":"1","2":"3","3":"0.5000000"},{"1":"1","2":"4","3":"1.0000000"},{"1":"2","2":"1","3":"0.2500000"},{"1":"2","2":"3","3":"0.3333333"},{"1":"2","2":"4","3":"1.0000000"},{"1":"3","2":"1","3":"0.5000000"},{"1":"3","2":"2","3":"0.3333333"},{"1":"3","2":"4","3":"1.0000000"},{"1":"4","2":"1","3":"1.0000000"},{"1":"4","2":"2","3":"1.0000000"},{"1":"4","2":"3","3":"1.0000000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Можно визуализировать матрицу расстояния:</p>
-<div class="sourceCode" id="cb1197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1197-1"><a href="кластеризация.html#cb1197-1"></a>df <span class="op">%&gt;%</span></span>
-<span id="cb1197-2"><a href="кластеризация.html#cb1197-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>lang) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1197-3"><a href="кластеризация.html#cb1197-3"></a><span class="st">  </span><span class="kw">dist</span>(<span class="dt">method =</span> <span class="st">&quot;binary&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1197-4"><a href="кластеризация.html#cb1197-4"></a><span class="st">  </span><span class="kw">tidy</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1197-5"><a href="кластеризация.html#cb1197-5"></a><span class="kw">mutate</span>(<span class="dt">item1 =</span><span class="kw">recode_factor</span>(item1, </span>
-<span id="cb1197-6"><a href="кластеризация.html#cb1197-6"></a>                            <span class="st">`</span><span class="dt">1</span><span class="st">`</span> =<span class="st"> &quot;Lithuanian&quot;</span>, </span>
-<span id="cb1197-7"><a href="кластеризация.html#cb1197-7"></a>                            <span class="st">`</span><span class="dt">2</span><span class="st">`</span> =<span class="st"> &quot;Latvian&quot;</span>, </span>
-<span id="cb1197-8"><a href="кластеризация.html#cb1197-8"></a>                            <span class="st">`</span><span class="dt">3</span><span class="st">`</span> =<span class="st"> &quot;Prussian&quot;</span>,</span>
-<span id="cb1197-9"><a href="кластеризация.html#cb1197-9"></a>                            <span class="st">`</span><span class="dt">4</span><span class="st">`</span> =<span class="st"> &quot;ChurchSlavonic&quot;</span>),</span>
-<span id="cb1197-10"><a href="кластеризация.html#cb1197-10"></a>       <span class="dt">item2 =</span><span class="kw">recode_factor</span>(item2, </span>
-<span id="cb1197-11"><a href="кластеризация.html#cb1197-11"></a>                            <span class="st">`</span><span class="dt">1</span><span class="st">`</span> =<span class="st"> &quot;Lithuanian&quot;</span>, </span>
-<span id="cb1197-12"><a href="кластеризация.html#cb1197-12"></a>                            <span class="st">`</span><span class="dt">2</span><span class="st">`</span> =<span class="st"> &quot;Latvian&quot;</span>, </span>
-<span id="cb1197-13"><a href="кластеризация.html#cb1197-13"></a>                            <span class="st">`</span><span class="dt">3</span><span class="st">`</span> =<span class="st"> &quot;Prussian&quot;</span>,</span>
-<span id="cb1197-14"><a href="кластеризация.html#cb1197-14"></a>                            <span class="st">`</span><span class="dt">4</span><span class="st">`</span> =<span class="st"> &quot;ChurchSlavonic&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1197-15"><a href="кластеризация.html#cb1197-15"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(item1, item2, <span class="dt">fill=</span>distance, <span class="dt">label =</span> <span class="kw">round</span>(distance, <span class="dv">2</span>))) <span class="op">+</span></span>
-<span id="cb1197-16"><a href="кластеризация.html#cb1197-16"></a><span class="st">  </span><span class="kw">geom_tile</span>()<span class="op">+</span></span>
-<span id="cb1197-17"><a href="кластеризация.html#cb1197-17"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1208-1"><a href="кластеризация.html#cb1208-1"></a>df <span class="op">%&gt;%</span></span>
+<span id="cb1208-2"><a href="кластеризация.html#cb1208-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>lang) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1208-3"><a href="кластеризация.html#cb1208-3"></a><span class="st">  </span><span class="kw">dist</span>(<span class="dt">method =</span> <span class="st">&quot;binary&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1208-4"><a href="кластеризация.html#cb1208-4"></a><span class="st">  </span><span class="kw">tidy</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1208-5"><a href="кластеризация.html#cb1208-5"></a><span class="kw">mutate</span>(<span class="dt">item1 =</span><span class="kw">recode_factor</span>(item1, </span>
+<span id="cb1208-6"><a href="кластеризация.html#cb1208-6"></a>                            <span class="st">`</span><span class="dt">1</span><span class="st">`</span> =<span class="st"> &quot;Lithuanian&quot;</span>, </span>
+<span id="cb1208-7"><a href="кластеризация.html#cb1208-7"></a>                            <span class="st">`</span><span class="dt">2</span><span class="st">`</span> =<span class="st"> &quot;Latvian&quot;</span>, </span>
+<span id="cb1208-8"><a href="кластеризация.html#cb1208-8"></a>                            <span class="st">`</span><span class="dt">3</span><span class="st">`</span> =<span class="st"> &quot;Prussian&quot;</span>,</span>
+<span id="cb1208-9"><a href="кластеризация.html#cb1208-9"></a>                            <span class="st">`</span><span class="dt">4</span><span class="st">`</span> =<span class="st"> &quot;ChurchSlavonic&quot;</span>),</span>
+<span id="cb1208-10"><a href="кластеризация.html#cb1208-10"></a>       <span class="dt">item2 =</span><span class="kw">recode_factor</span>(item2, </span>
+<span id="cb1208-11"><a href="кластеризация.html#cb1208-11"></a>                            <span class="st">`</span><span class="dt">1</span><span class="st">`</span> =<span class="st"> &quot;Lithuanian&quot;</span>, </span>
+<span id="cb1208-12"><a href="кластеризация.html#cb1208-12"></a>                            <span class="st">`</span><span class="dt">2</span><span class="st">`</span> =<span class="st"> &quot;Latvian&quot;</span>, </span>
+<span id="cb1208-13"><a href="кластеризация.html#cb1208-13"></a>                            <span class="st">`</span><span class="dt">3</span><span class="st">`</span> =<span class="st"> &quot;Prussian&quot;</span>,</span>
+<span id="cb1208-14"><a href="кластеризация.html#cb1208-14"></a>                            <span class="st">`</span><span class="dt">4</span><span class="st">`</span> =<span class="st"> &quot;ChurchSlavonic&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1208-15"><a href="кластеризация.html#cb1208-15"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(item1, item2, <span class="dt">fill=</span>distance, <span class="dt">label =</span> <span class="kw">round</span>(distance, <span class="dv">2</span>))) <span class="op">+</span></span>
+<span id="cb1208-16"><a href="кластеризация.html#cb1208-16"></a><span class="st">  </span><span class="kw">geom_tile</span>()<span class="op">+</span></span>
+<span id="cb1208-17"><a href="кластеризация.html#cb1208-17"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-651-1.png" width="672" /></p>
 </div>
-<div id="числовые-переменные-1" class="section level4">
+<div id="числовые-переменные" class="section level4">
 <h4><span class="header-section-number">17.2.1.2</span> Числовые переменные</h4>
-<div class="sourceCode" id="cb1198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1198-1"><a href="кластеризация.html#cb1198-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1198-2"><a href="кластеризация.html#cb1198-2"></a><span class="st">  </span><span class="kw">select</span>(Petal.Length, Petal.Width) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1198-3"><a href="кластеризация.html#cb1198-3"></a><span class="st">  </span><span class="kw">dist</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1198-4"><a href="кластеризация.html#cb1198-4"></a><span class="st">  </span><span class="kw">tidy</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1198-5"><a href="кластеризация.html#cb1198-5"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(item1, item2, <span class="dt">fill=</span>distance)) <span class="op">+</span></span>
-<span id="cb1198-6"><a href="кластеризация.html#cb1198-6"></a><span class="st">  </span><span class="kw">geom_tile</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1209-1"><a href="кластеризация.html#cb1209-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1209-2"><a href="кластеризация.html#cb1209-2"></a><span class="st">  </span><span class="kw">select</span>(Petal.Length, Petal.Width) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1209-3"><a href="кластеризация.html#cb1209-3"></a><span class="st">  </span><span class="kw">dist</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1209-4"><a href="кластеризация.html#cb1209-4"></a><span class="st">  </span><span class="kw">tidy</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1209-5"><a href="кластеризация.html#cb1209-5"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(item1, item2, <span class="dt">fill=</span>distance)) <span class="op">+</span></span>
+<span id="cb1209-6"><a href="кластеризация.html#cb1209-6"></a><span class="st">  </span><span class="kw">geom_tile</span>()</span></code></pre></div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-652-1.png" width="672" /></p>
 <p>Расстояние здесь сложнее интерпретировать, потому что на графике представлено расстояние между 150 цветками.</p>
 </div>
@@ -601,43 +601,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="расстояние-между-словами" class="section level3">
 <h3><span class="header-section-number">17.2.2</span> Расстояние между словами</h3>
 <p>Мы уже обсуждали расстояние между словами, его тоже можно использовать для кластеризации:</p>
-<div class="sourceCode" id="cb1199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1199-1"><a href="кластеризация.html#cb1199-1"></a><span class="kw">library</span>(stringdist)</span>
-<span id="cb1199-2"><a href="кластеризация.html#cb1199-2"></a><span class="kw">stringdistmatrix</span>(<span class="kw">c</span>(<span class="st">&quot;корова&quot;</span>, <span class="st">&quot;коровы&quot;</span>, <span class="st">&quot;гуси&quot;</span>)) </span></code></pre></div>
+<div class="sourceCode" id="cb1210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1210-1"><a href="кластеризация.html#cb1210-1"></a><span class="kw">library</span>(stringdist)</span>
+<span id="cb1210-2"><a href="кластеризация.html#cb1210-2"></a><span class="kw">stringdistmatrix</span>(<span class="kw">c</span>(<span class="st">&quot;корова&quot;</span>, <span class="st">&quot;коровы&quot;</span>, <span class="st">&quot;гуси&quot;</span>)) </span></code></pre></div>
 <pre><code>  1 2
 2 1  
 3 6 6</code></pre>
 </div>
 <div id="применение-иерархической-кластеризации" class="section level3">
 <h3><span class="header-section-number">17.2.3</span> Применение иерархической кластеризации</h3>
-<div class="sourceCode" id="cb1201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1201-1"><a href="кластеризация.html#cb1201-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1201-2"><a href="кластеризация.html#cb1201-2"></a><span class="st">  </span><span class="kw">select</span>(Petal.Length, Petal.Width) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1201-3"><a href="кластеризация.html#cb1201-3"></a><span class="st">  </span><span class="kw">dist</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1201-4"><a href="кластеризация.html#cb1201-4"></a><span class="st">  </span><span class="kw">hclust</span>() -&gt;</span>
-<span id="cb1201-5"><a href="кластеризация.html#cb1201-5"></a><span class="st">  </span>hc</span></code></pre></div>
+<div class="sourceCode" id="cb1212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1212-1"><a href="кластеризация.html#cb1212-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1212-2"><a href="кластеризация.html#cb1212-2"></a><span class="st">  </span><span class="kw">select</span>(Petal.Length, Petal.Width) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1212-3"><a href="кластеризация.html#cb1212-3"></a><span class="st">  </span><span class="kw">dist</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1212-4"><a href="кластеризация.html#cb1212-4"></a><span class="st">  </span><span class="kw">hclust</span>() -&gt;</span>
+<span id="cb1212-5"><a href="кластеризация.html#cb1212-5"></a><span class="st">  </span>hc</span></code></pre></div>
 <p>Объект иерархической кластеризации легко визуализировать:</p>
-<div class="sourceCode" id="cb1202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1202-1"><a href="кластеризация.html#cb1202-1"></a><span class="kw">plot</span>(hc)</span></code></pre></div>
+<div class="sourceCode" id="cb1213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1213-1"><a href="кластеризация.html#cb1213-1"></a><span class="kw">plot</span>(hc)</span></code></pre></div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-655-1.png" width="672" /></p>
 <p>Также можно выделить какое-то количество кластеров:</p>
-<div class="sourceCode" id="cb1203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1203-1"><a href="кластеризация.html#cb1203-1"></a><span class="kw">rect.hclust</span>(hc, <span class="dt">k=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1214-1"><a href="кластеризация.html#cb1214-1"></a><span class="kw">rect.hclust</span>(hc, <span class="dt">k=</span><span class="dv">3</span>)</span></code></pre></div>
 <p>Функция <code>cutree()</code> возвращает вектор номеров кластеров в соответсвтии с данными, так что можно строить все предыдущие графики:</p>
-<div class="sourceCode" id="cb1204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1204-1"><a href="кластеризация.html#cb1204-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1204-2"><a href="кластеризация.html#cb1204-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">cluster =</span> <span class="kw">cutree</span>(hc, <span class="dt">k=</span><span class="dv">3</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1204-3"><a href="кластеризация.html#cb1204-3"></a><span class="st">  </span><span class="kw">count</span>(Species, cluster)</span></code></pre></div>
+<div class="sourceCode" id="cb1215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1215-1"><a href="кластеризация.html#cb1215-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1215-2"><a href="кластеризация.html#cb1215-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">cluster =</span> <span class="kw">cutree</span>(hc, <span class="dt">k=</span><span class="dv">3</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1215-3"><a href="кластеризация.html#cb1215-3"></a><span class="st">  </span><span class="kw">count</span>(Species, cluster)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["Species"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["cluster"],"name":[2],"type":["int"],"align":["right"]},{"label":["n"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"setosa","2":"1","3":"50"},{"1":"versicolor","2":"2","3":"21"},{"1":"versicolor","2":"3","3":"29"},{"1":"virginica","2":"2","3":"50"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <p>Мы видим, что алгоритм все разбил на три кластера (<code>1</code>, <code>2</code>, <code>3</code>), <code>1</code> соответствует <code>setosa</code>, <code>2</code> соответствует <code>virginica</code> и <code>versicolor</code>, <code>3</code> соответсвтует <code>versicolor</code> (я смотрю с какой группой ассоциировано наибольшое <code>n</code>). Я использую функцию <code>recode_factor()</code> для того чтобы перекодировать переменную <code>.cluster</code>:</p>
-<div class="sourceCode" id="cb1205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1205-1"><a href="кластеризация.html#cb1205-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1205-2"><a href="кластеризация.html#cb1205-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">cluster =</span> <span class="kw">cutree</span>(hc, <span class="dt">k=</span><span class="dv">3</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1205-3"><a href="кластеризация.html#cb1205-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">cluster =</span> <span class="kw">recode_factor</span>(cluster,</span>
-<span id="cb1205-4"><a href="кластеризация.html#cb1205-4"></a>                                 <span class="st">`</span><span class="dt">1</span><span class="st">`</span> =<span class="st"> &quot;setosa&quot;</span>, </span>
-<span id="cb1205-5"><a href="кластеризация.html#cb1205-5"></a>                                 <span class="st">`</span><span class="dt">2</span><span class="st">`</span> =<span class="st"> &quot;virginica&quot;</span>,</span>
-<span id="cb1205-6"><a href="кластеризация.html#cb1205-6"></a>                                 <span class="st">`</span><span class="dt">3</span><span class="st">`</span> =<span class="st"> &quot;versicolor&quot;</span>),</span>
-<span id="cb1205-7"><a href="кластеризация.html#cb1205-7"></a>         <span class="dt">correct =</span> Species <span class="op">==</span><span class="st"> </span>cluster) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1205-8"><a href="кластеризация.html#cb1205-8"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Petal.Length, Petal.Width))<span class="op">+</span></span>
-<span id="cb1205-9"><a href="кластеризация.html#cb1205-9"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> correct, <span class="dt">shape =</span> Species))</span></code></pre></div>
+<div class="sourceCode" id="cb1216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1216-1"><a href="кластеризация.html#cb1216-1"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1216-2"><a href="кластеризация.html#cb1216-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">cluster =</span> <span class="kw">cutree</span>(hc, <span class="dt">k=</span><span class="dv">3</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1216-3"><a href="кластеризация.html#cb1216-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">cluster =</span> <span class="kw">recode_factor</span>(cluster,</span>
+<span id="cb1216-4"><a href="кластеризация.html#cb1216-4"></a>                                 <span class="st">`</span><span class="dt">1</span><span class="st">`</span> =<span class="st"> &quot;setosa&quot;</span>, </span>
+<span id="cb1216-5"><a href="кластеризация.html#cb1216-5"></a>                                 <span class="st">`</span><span class="dt">2</span><span class="st">`</span> =<span class="st"> &quot;virginica&quot;</span>,</span>
+<span id="cb1216-6"><a href="кластеризация.html#cb1216-6"></a>                                 <span class="st">`</span><span class="dt">3</span><span class="st">`</span> =<span class="st"> &quot;versicolor&quot;</span>),</span>
+<span id="cb1216-7"><a href="кластеризация.html#cb1216-7"></a>         <span class="dt">correct =</span> Species <span class="op">==</span><span class="st"> </span>cluster) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1216-8"><a href="кластеризация.html#cb1216-8"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Petal.Length, Petal.Width))<span class="op">+</span></span>
+<span id="cb1216-9"><a href="кластеризация.html#cb1216-9"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> correct, <span class="dt">shape =</span> Species))</span></code></pre></div>
 <p><img src="DS_for_DH_files/figure-html/unnamed-chunk-658-1.png" width="672" /></p>
 <p>Мы видим, что ошибки в осовном сгруппированы на границе двух кластеров (видимо, точек меньше, чем 21 потому что они совпадают).</p>
 
