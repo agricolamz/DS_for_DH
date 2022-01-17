@@ -1,6 +1,6 @@
 --- 
 title: "Наука о данных в R для программы Цифровых гуманитарных исследований"
-author: "Г. А. Мороз, И. С. Поздняков"
+author: "Г. А. Мороз"
 bibliography:
 - bibliography.bib
 editor_options:
@@ -9,6 +9,7 @@ link-citations: yes
 documentclass: book
 site: bookdown::bookdown_site
 biblio-style: apalike
+always_allow_html: true
 ---
 
 # О курсе

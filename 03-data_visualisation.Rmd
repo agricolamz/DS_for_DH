@@ -74,7 +74,7 @@ datasaurus %>%
 ```
 
 ## Основы `ggplot2`
-Пакет `ggplot2` -- современный стандарт для создания графиков в R. Для этого пакета пишут [массу расширений](http://www.ggplot2-exts.org/gallery/). В сжатом виде информация про ggplot2 [содержиться здесь](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf).
+Пакет `ggplot2` -- современный стандарт для создания графиков в R. Для этого пакета пишут [массу расширений](https://exts.ggplot2.tidyverse.org/). В сжатом виде информация про ggplot2 [содержиться здесь](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf).
 
 ### Диаграмма рассеяния (Scaterplot)
 
